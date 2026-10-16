@@ -1,0 +1,18 @@
+{
+  "schema": "llp.ags_core.integration.v1",
+  "version": "3.5.0",
+  "gateway": "litellm",
+  "agents": 38,
+  "policy": {
+    "empty_url_disables_integration": true,
+    "no_invented_endpoints": true,
+    "docker_ejecutado": false,
+    "health_litellm_real": true
+  },
+  "local_engine": {
+    "package": "app/ags_local",
+    "tool_agents": 6,
+    "agsgpt_agent": true,
+    "rules_first": true
+  }
+}
