@@ -1,7 +1,9 @@
 import pytest
 from registry import all_agents, get_agent, agents_by_domain
+from agents.project_agents import PROJECT_AGENTS
 pytestmark = pytest.mark.unit
-EXPECTED = 38
+CORE = 38  # agentes de la v3.5
+EXPECTED = CORE + len(PROJECT_AGENTS)  # v3.6: + un ProjectAgent por repositorio
 
 def test_registry_count():
     assert len(all_agents()) == EXPECTED

@@ -8,12 +8,21 @@ from registry import all_agents, get_agent, agents_by_domain
 from orchestrator import orchestrator
 import asyncio
 from ags_local import get_engine
+from supervisor import get_supervisor
+from projects import load_manifest, get_index
 
-app = FastAPI(title="AGs-Core", version="3.5.0")
+VERSION = "3.6.0"
+app = FastAPI(title="AGs-Core", version=VERSION)
 
 class TrainRequest(BaseModel):
     steps: int = Field(default=40, ge=1, le=200)
     text: str = Field(default="", max_length=200000)
+
+class SupervisorTask(BaseModel):
+    task: str = Field(min_length=1, max_length=5000)
+    projects: list[str] | None = Field(default=None, max_length=100)
+    kinds: list[str] | None = Field(default=None, max_length=10)
+    run_now: bool = False
 
 class TaskRequest(BaseModel):
     task: str = Field(min_length=1, max_length=20000)
@@ -42,7 +51,7 @@ async def litellm_state():
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "agents": len(all_agents()), "version": "3.5.0", "litellm": await litellm_state()}
+    return {"status": "ok", "agents": len(all_agents()), "version": VERSION, "litellm": await litellm_state()}
 
 @app.get("/agents")
 def list_agents():
@@ -108,3 +117,50 @@ async def agsgpt_train(req: TrainRequest, x_api_key: str | None = Header(default
         return await asyncio.to_thread(get_engine().train, req.steps, req.text)
     except RuntimeError as exc:
         raise HTTPException(503, str(exc))
+
+
+# ---------------- v3.6: proyectos, supervisor y cola de tareas ----------------
+@app.get("/projects")
+def list_projects():
+    ps = load_manifest()["projects"]
+    return {"total": len(ps), "projects": [{"id": p["id"], "agent": "proj_" + p["id"].replace("-", "_"), "url": p.get("url"),
+            "tools": p.get("tools", []), "license": p.get("license"), "files": p.get("files")} for p in ps]}
+
+@app.get("/projects/{pid}/search")
+def project_search(pid: str, q: str, k: int = 4, x_api_key: str | None = Header(default=None)):
+    auth(x_api_key)
+    if pid not in {p["id"] for p in load_manifest()["projects"]}:
+        raise HTTPException(404, f"Proyecto {pid} no existe")
+    return {"project": pid, "results": get_index().search(pid, q, max(1, min(k, 20)))}
+
+@app.post("/tasks", status_code=201)
+async def create_task(req: SupervisorTask, x_api_key: str | None = Header(default=None)):
+    auth(x_api_key)
+    sup = get_supervisor()
+    try:
+        res = sup.submit(req.task, req.projects, req.kinds)
+    except ValueError as exc:
+        raise HTTPException(422, str(exc))
+    if req.run_now:
+        res["cycle"] = await asyncio.to_thread(sup.run_cycle, res["subtasks"])
+    return res
+
+@app.get("/tasks")
+def get_tasks(status: str | None = None, project: str | None = None, parent_id: int | None = None, limit: int = 50,
+              x_api_key: str | None = Header(default=None)):
+    auth(x_api_key)
+    q = get_supervisor().queue
+    return {"counts": q.counts(), "tasks": q.list_tasks(status, project, max(1, min(limit, 500)), parent_id)}
+
+@app.get("/tasks/{tid}")
+def get_task(tid: int, x_api_key: str | None = Header(default=None)):
+    auth(x_api_key)
+    t = get_supervisor().queue.get(tid)
+    if not t:
+        raise HTTPException(404, f"Tarea {tid} no existe")
+    return t
+
+@app.get("/supervisor/status")
+def supervisor_status(x_api_key: str | None = Header(default=None)):
+    auth(x_api_key)
+    return get_supervisor().status()

@@ -2,3 +2,9 @@ __pycache__/
 *.db
 *.pt
 .venv/
+data/
+reports/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+.pytest_cache/

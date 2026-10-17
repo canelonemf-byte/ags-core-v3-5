@@ -1,8 +1,8 @@
 {
   "schema": "llp.ags_core.integration.v1",
-  "version": "3.5.0",
+  "version": "3.6.0",
   "gateway": "litellm",
-  "agents": 38,
+  "agents": 84,
   "policy": {
     "empty_url_disables_integration": true,
     "no_invented_endpoints": true,
@@ -14,5 +14,22 @@
     "tool_agents": 6,
     "agsgpt_agent": true,
     "rules_first": true
+  },
+  "project_agents": {
+    "manifest": "projects.json",
+    "count": 46,
+    "knowledge": "knowledge/",
+    "retrieval": "tfidf+keywords (scikit-learn opcional)"
+  },
+  "supervisor": {
+    "package": "app/supervisor",
+    "queue": "sqlite",
+    "autopilot": "python -m app.autopilot",
+    "task_kinds": [
+      "review_claims",
+      "missing_pieces",
+      "license_check"
+    ],
+    "llm": false
   }
 }

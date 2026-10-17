@@ -1,12 +1,14 @@
 import pytest
 from fastapi.testclient import TestClient
 from main import app
+from agents.project_agents import PROJECT_AGENTS
+TOTAL = 38 + len(PROJECT_AGENTS)
 pytestmark = pytest.mark.unit
 client = TestClient(app)
 
 def test_health():
     r = client.get("/health")
-    assert r.status_code == 200 and r.json()["agents"] == 38
+    assert r.status_code == 200 and r.json()["agents"] == TOTAL
 
 def test_request_id():
     r = client.get("/health", headers={"X-Request-ID": "test-123"})
@@ -14,7 +16,7 @@ def test_request_id():
 
 def test_agents():
     r = client.get("/agents")
-    assert r.status_code == 200 and r.json()["total"] == 38
+    assert r.status_code == 200 and r.json()["total"] == TOTAL
 
 def test_auth():
     assert client.post("/run/agent/searcher", json={"task": "x"}).status_code == 401
@@ -32,5 +34,5 @@ def test_integrations_configurable():
 
 def test_health_reports_litellm_state():
     j = client.get("/health").json()
-    assert j["version"] == "3.5.0" and j["litellm"] in {"ok", "unreachable"} or j["litellm"].startswith("http_")
+    assert j["version"] == "3.6.0" and j["litellm"] in {"ok", "unreachable"} or j["litellm"].startswith("http_")
     assert "docker" not in j

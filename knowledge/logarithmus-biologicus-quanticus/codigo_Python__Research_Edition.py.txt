@@ -1,0 +1,1443 @@
+"""
+================================================================================
+Canelone.mf Research Edition — CÓDIGO ÚNICO COMPLETO
+================================================================================
+Entorno personal de programación cuántica, mitigación de errores,
+VQE avanzado, CAM-VQE, calibración automática de lectura y ZNE real.
+
+Versión 1.8 — Julio 2026
+Implementación ORIGINAL y PERSONAL (publicable).
+
+CÓMO EJECUTAR (todo está en este único archivo):
+  pip install streamlit qiskit qiskit-aer qiskit-ibm-runtime matplotlib numpy scipy pillow pylatexenc
+  streamlit run Canelone_mf_Research_Edition.py
+
+DEPENDENCIAS:
+  streamlit>=1.32.0  qiskit>=1.2.0  qiskit-aer>=0.14.0  qiskit-ibm-runtime>=0.23.0
+  matplotlib>=3.8.0  numpy>=1.26.0  scipy>=1.11.0  pillow>=10.0.0  pylatexenc>=2.10
+
+CONTENIDO DE ESTE ARCHIVO (monolítico):
+  - Constructor de circuitos + plantillas + guardado/carga JSON + export Qiskit
+  - Simulación Aer + ruido depolarizing
+  - Mitigación de lectura (manual + calibración automática tensored/full)
+  - Zero-Noise Extrapolation (linear / Richardson) en simulación
+  - ZNE real en el bucle de energía de CAM-VQE
+  - VQE con 7 optimizadores + Hamiltonianos de investigación
+  - CAM-VQE (algoritmo adaptativo original: SPSA → ADAM → L-BFGS-B)
+  - Conexión IBM Quantum (token solo en memoria de sesión)
+  - Visualización, fidelidad, interfaz 100% en español
+
+No copia código ni diseños de IBM Composer, Quirk, Mitiq u otras herramientas.
+Solo APIs públicas open-source (Qiskit Apache 2.0, SciPy, Streamlit, etc.).
+================================================================================
+"""
+
+import streamlit as st
+import numpy as np
+import json
+from datetime import datetime
+from collections import Counter
+from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, transpile
+from qiskit_aer import AerSimulator
+from qiskit.visualization import plot_histogram, plot_bloch_multivector
+from qiskit.quantum_info import Statevector, state_fidelity, SparsePauliOp
+from qiskit.circuit.library import QFT, EfficientSU2
+from qiskit.primitives import StatevectorEstimator
+import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
+from scipy.optimize import minimize
+
+try:
+    from qiskit_ibm_runtime import QiskitRuntimeService
+    IBM_AVAILABLE = True
+except ImportError:
+    IBM_AVAILABLE = False
+
+st.set_page_config(
+    page_title="Canelone.mf Research Edition",
+    page_icon="⚛️",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+st.markdown("""
+<style>
+    .main-title { font-size: 2.1rem; font-weight: 700; color: #0f172a; margin-bottom: 0.1rem; }
+    .sub-title { font-size: 1.0rem; color: #475569; margin-bottom: 1.0rem; }
+    .stButton > button { width: 100%; border-radius: 6px; }
+    .small-note { font-size: 0.83rem; color: #64748b; }
+</style>
+""", unsafe_allow_html=True)
+
+# -----------------------------------------------------------------------------
+# Estado
+# -----------------------------------------------------------------------------
+DEFAULTS = {
+    "n_qubits": 2, "n_clbits": 2, "gate_history": [],
+    "last_counts": None, "last_statevector": None,
+    "project_name": "proyecto_canelone",
+    "ibm_token": "", "ibm_service": None, "ibm_backends": [],
+    "selected_backend": "local_aer",
+    "vqe_results": {}, "cam_history": [], "cam_best": None,
+    "readout_cal_matrix": None,   # matriz de calibración automática (numpy list)
+    "readout_cal_info": None,     # metadatos de la última calibración
+}
+for k, v in DEFAULTS.items():
+    if k not in st.session_state:
+        st.session_state[k] = v
+if "circuit" not in st.session_state:
+    st.session_state.circuit = None
+
+# -----------------------------------------------------------------------------
+# Utilidades de circuito
+# -----------------------------------------------------------------------------
+def create_empty_circuit(n_qubits, n_clbits):
+    qr = QuantumRegister(n_qubits, "q")
+    if n_clbits > 0:
+        return QuantumCircuit(qr, ClassicalRegister(n_clbits, "c"))
+    return QuantumCircuit(qr)
+
+def apply_gate(qc, gate_name, qubits, params=None):
+    g = gate_name.upper()
+    if g == "H": qc.h(qubits[0])
+    elif g == "X": qc.x(qubits[0])
+    elif g == "Y": qc.y(qubits[0])
+    elif g == "Z": qc.z(qubits[0])
+    elif g == "S": qc.s(qubits[0])
+    elif g == "SDG": qc.sdg(qubits[0])
+    elif g == "T": qc.t(qubits[0])
+    elif g == "TDG": qc.tdg(qubits[0])
+    elif g == "RX": qc.rx(params[0], qubits[0])
+    elif g == "RY": qc.ry(params[0], qubits[0])
+    elif g == "RZ": qc.rz(params[0], qubits[0])
+    elif g in ("CNOT", "CX"): qc.cx(qubits[0], qubits[1])
+    elif g == "CZ": qc.cz(qubits[0], qubits[1])
+    elif g == "SWAP": qc.swap(qubits[0], qubits[1])
+    elif g in ("CCX", "TOFFOLI"): qc.ccx(qubits[0], qubits[1], qubits[2])
+    elif g == "MEASURE":
+        if qc.num_clbits > qubits[0]:
+            qc.measure(qubits[0], qubits[0])
+    elif g == "BARRIER": qc.barrier()
+    elif g == "RESET": qc.reset(qubits[0])
+    elif g == "QFT":
+        qc.append(QFT(len(qubits), do_swaps=True).to_instruction(), qubits)
+
+def rebuild_circuit_from_history():
+    qc = create_empty_circuit(st.session_state.n_qubits, st.session_state.n_clbits)
+    for e in st.session_state.gate_history:
+        apply_gate(qc, e["gate"], e["qubits"], e.get("params"))
+    st.session_state.circuit = qc
+    return qc
+
+def add_gate(gate_name, qubits, params=None):
+    st.session_state.gate_history.append({
+        "gate": gate_name, "qubits": list(qubits),
+        "params": list(params) if params else None
+    })
+    rebuild_circuit_from_history()
+
+def reset_all():
+    st.session_state.gate_history = []
+    st.session_state.last_counts = None
+    st.session_state.last_statevector = None
+    rebuild_circuit_from_history()
+
+def generate_qiskit_code():
+    nq, nc = st.session_state.n_qubits, st.session_state.n_clbits
+    lines = [
+        '"""Circuito generado con Canelone.mf Research Edition"""',
+        f'# {datetime.now().strftime("%Y-%m-%d %H:%M")}',
+        'from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, transpile',
+        'from qiskit_aer import AerSimulator', '',
+        f'qr = QuantumRegister({nq}, "q")'
+    ]
+    if nc > 0:
+        lines += [f'cr = ClassicalRegister({nc}, "c")', 'qc = QuantumCircuit(qr, cr)']
+    else:
+        lines.append('qc = QuantumCircuit(qr)')
+    lines.append('')
+    for e in st.session_state.gate_history:
+        g, qs, ps = e["gate"].upper(), e["qubits"], e.get("params")
+        if g in ("H","X","Y","Z","S","T","SDG","TDG","RESET"):
+            lines.append(f'qc.{g.lower()}({qs[0]})')
+        elif g in ("RX","RY","RZ"):
+            lines.append(f'qc.{g.lower()}({ps[0]}, {qs[0]})')
+        elif g in ("CNOT","CX"):
+            lines.append(f'qc.cx({qs[0]}, {qs[1]})')
+        elif g == "CZ":
+            lines.append(f'qc.cz({qs[0]}, {qs[1]})')
+        elif g == "SWAP":
+            lines.append(f'qc.swap({qs[0]}, {qs[1]})')
+        elif g in ("CCX","TOFFOLI"):
+            lines.append(f'qc.ccx({qs[0]}, {qs[1]}, {qs[2]})')
+        elif g == "MEASURE":
+            lines.append(f'qc.measure({qs[0]}, {qs[0]})')
+        elif g == "BARRIER":
+            lines.append('qc.barrier()')
+        elif g == "QFT":
+            lines.append('from qiskit.circuit.library import QFT')
+            lines.append(f'qc.append(QFT({len(qs)}, do_swaps=True), {qs})')
+    lines += ['', 'sim = AerSimulator()',
+              'print(sim.run(transpile(qc, sim), shots=1024).result().get_counts())']
+    return '\n'.join(lines)
+
+def circuit_to_json():
+    return json.dumps({
+        "name": st.session_state.project_name,
+        "n_qubits": st.session_state.n_qubits,
+        "n_clbits": st.session_state.n_clbits,
+        "gate_history": st.session_state.gate_history,
+        "created": datetime.now().isoformat(),
+        "tool": "Canelone.mf Research Edition"
+    }, indent=2, ensure_ascii=False)
+
+def load_from_json(s):
+    try:
+        d = json.loads(s)
+        st.session_state.project_name = d.get("name", "cargado")
+        st.session_state.n_qubits = d["n_qubits"]
+        st.session_state.n_clbits = d.get("n_clbits", d["n_qubits"])
+        st.session_state.gate_history = d["gate_history"]
+        rebuild_circuit_from_history()
+        st.session_state.last_counts = None
+        st.session_state.last_statevector = None
+        return True
+    except Exception as e:
+        st.error(str(e))
+        return False
+
+def load_template(name):
+    reset_all()
+    if name == "Bell (entrelazamiento 2q)":
+        st.session_state.n_qubits = st.session_state.n_clbits = 2
+        add_gate("H", [0]); add_gate("CNOT", [0,1])
+        add_gate("MEASURE", [0]); add_gate("MEASURE", [1])
+    elif name == "GHZ (3 qubits)":
+        st.session_state.n_qubits = st.session_state.n_clbits = 3
+        add_gate("H", [0]); add_gate("CNOT", [0,1]); add_gate("CNOT", [0,2])
+        for i in range(3): add_gate("MEASURE", [i])
+    elif name == "Superposición uniforme":
+        st.session_state.n_qubits = st.session_state.n_clbits = 3
+        for i in range(3): add_gate("H", [i])
+        for i in range(3): add_gate("MEASURE", [i])
+    elif name == "QFT (4 qubits)":
+        st.session_state.n_qubits = st.session_state.n_clbits = 4
+        add_gate("QFT", [0,1,2,3])
+        for i in range(4): add_gate("MEASURE", [i])
+    elif name == "Circuito de fase (investigación)":
+        st.session_state.n_qubits = st.session_state.n_clbits = 2
+        add_gate("H", [0]); add_gate("RZ", [0], [np.pi/3])
+        add_gate("CNOT", [0,1]); add_gate("H", [0])
+        add_gate("MEASURE", [0]); add_gate("MEASURE", [1])
+    rebuild_circuit_from_history()
+
+# -----------------------------------------------------------------------------
+# Mitigación de errores
+# -----------------------------------------------------------------------------
+def build_readout_calibration_matrix(n_qubits, p1given0=0.03, p0given1=0.05):
+    """
+    Matriz de calibración de lectura (confusion matrix) por producto tensorial.
+
+    Convención A[i, j] = P(medir i | preparado j)
+    - p1given0: P(1|0)  error al medir 1 cuando era 0
+    - p0given1: P(0|1)  error al medir 0 cuando era 1
+
+    Para 1 qubit:
+        [[P(0|0), P(0|1)],
+         [P(1|0), P(1|1)]]
+      = [[1-p1given0, p0given1],
+         [p1given0,   1-p0given1]]
+    """
+    # Matriz 1-qubit (filas = medido, columnas = preparado)
+    a00 = 1.0 - p1given0
+    a01 = p0given1
+    a10 = p1given0
+    a11 = 1.0 - p0given1
+    single = np.array([[a00, a01], [a10, a11]], dtype=float)
+    # Producto tensorial para n qubits (qubits independientes)
+    conf = np.array([[1.0]])
+    for _ in range(n_qubits):
+        conf = np.kron(conf, single)
+    return conf
+
+
+def apply_readout_mitigation(counts, n_qubits, error_rate=0.04,
+                             p1given0=None, p0given1=None, method="tensored"):
+    """
+    Mitigación de errores de lectura (measurement/readout error mitigation).
+
+    method:
+      - "tensored": matriz por producto tensorial de errores 1-qubit (recomendado)
+      - "uniform":  modelo antiguo (error uniforme hacia todos los demás estados)
+
+    Si p1given0 / p0given1 no se pasan, se derivan de error_rate
+    (asimetría típica: P(0|1) un poco mayor que P(1|0)).
+    """
+    if p1given0 is None:
+        p1given0 = float(error_rate)
+    if p0given1 is None:
+        p0given1 = float(min(error_rate * 1.4, 0.49))  # asimetría suave
+
+    dim = 2 ** n_qubits
+    labels = [format(i, f"0{n_qubits}b") for i in range(dim)]
+    total = sum(counts.values()) or 1
+    p_meas = np.array([counts.get(lab, 0) / total for lab in labels], dtype=float)
+
+    if method == "uniform":
+        conf = np.eye(dim) * (1 - error_rate) + (error_rate / max(dim - 1, 1)) * (1 - np.eye(dim))
+    else:
+        conf = build_readout_calibration_matrix(n_qubits, p1given0=p1given0, p0given1=p0given1)
+
+    try:
+        inv = np.linalg.pinv(conf)
+    except Exception:
+        return dict(counts)
+
+    p_corr = inv @ p_meas
+    # Proyección a probabilidad (clip + renormalizar) — estabiliza inversas mal condicionadas
+    p_corr = np.clip(p_corr, 0.0, None)
+    s = p_corr.sum()
+    if s > 0:
+        p_corr = p_corr / s
+    else:
+        p_corr = p_meas
+
+    mitigated = {lab: int(round(float(p_corr[i]) * total)) for i, lab in enumerate(labels)}
+    # Ajuste fino para conservar el total de shots
+    diff = total - sum(mitigated.values())
+    if diff != 0 and labels:
+        # Asignar la diferencia al estado de mayor probabilidad corregida
+        k = int(np.argmax(p_corr))
+        mitigated[labels[k]] = mitigated.get(labels[k], 0) + int(diff)
+    return mitigated
+
+
+def readout_mitigation_report(counts_raw, counts_mit, n_qubits):
+    """Resumen comparativo raw vs mitigado para la UI."""
+    total_r = sum(counts_raw.values()) or 1
+    total_m = sum(counts_mit.values()) or 1
+    keys = sorted(set(counts_raw) | set(counts_mit), key=lambda s: int(s, 2) if set(s) <= set("01") else s)
+    rows = []
+    for k in keys:
+        pr = counts_raw.get(k, 0) / total_r
+        pm = counts_mit.get(k, 0) / total_m
+        rows.append({"estado": k, "p_raw": pr, "p_mit": pm, "delta": pm - pr})
+    return rows
+
+
+def run_automatic_readout_calibration(n_qubits, shots=2048, p1given0_true=0.03, p0given1_true=0.05,
+                                      method="tensored"):
+    """
+    Calibración automática de lectura.
+
+    Prepara estados base conocidos, los mide con un modelo de error de lectura
+    (ReadoutError de Aer) y estima la matriz de confusión.
+
+    method:
+      - "tensored": calibra solo |0> y |1> (1 qubit) y construye el producto tensorial
+                    (barato, escalable)
+      - "full":     calibra los 2^n estados computacionales (costoso; solo n pequeño)
+
+    Devuelve: (conf_matrix numpy, info dict)
+    """
+    from qiskit_aer import AerSimulator
+    from qiskit_aer.noise import NoiseModel, ReadoutError
+
+    # Error de lectura "físico" inyectado en la calibración (simula dispositivo)
+    re = ReadoutError([[1 - p1given0_true, p1given0_true],
+                       [p0given1_true, 1 - p0given1_true]])
+    nm = NoiseModel()
+    for q in range(n_qubits):
+        nm.add_readout_error(re, [q])
+    sim = AerSimulator(noise_model=nm)
+
+    def measure_prep(bitstring):
+        qc = QuantumCircuit(n_qubits, n_qubits)
+        for i, b in enumerate(bitstring):
+            if b == "1":
+                qc.x(i)
+        qc.measure(range(n_qubits), range(n_qubits))
+        counts = sim.run(transpile(qc, sim), shots=shots).result().get_counts()
+        return counts
+
+    labels = [format(i, f"0{n_qubits}b") for i in range(2 ** n_qubits)]
+
+    if method == "full" and n_qubits <= 4:
+        # A[i,j] = P(medir i | preparado j)
+        conf = np.zeros((2 ** n_qubits, 2 ** n_qubits), dtype=float)
+        for j, prep in enumerate(labels):
+            counts = measure_prep(prep)
+            total = sum(counts.values()) or 1
+            for i, meas in enumerate(labels):
+                conf[i, j] = counts.get(meas, 0) / total
+        info = {"method": "full", "n_qubits": n_qubits, "shots_per_state": shots,
+                "states_calibrated": len(labels)}
+    else:
+        # Tensored: calibrar qubit 0 en un registro de n qubits preparando 0...0 y 1000...
+        # Equivalente a estimar P(0|0), P(1|0), P(0|1), P(1|1) en un qubit
+        # Usamos el qubit 0 para la estadística agregada
+        counts0 = measure_prep("0" * n_qubits)
+        counts1 = measure_prep("1" + "0" * (n_qubits - 1))
+        total0 = sum(counts0.values()) or 1
+        total1 = sum(counts1.values()) or 1
+        # P(medir 0 en q0 | prep 0) = suma counts con bit0=0
+        def bit0_prob(counts, bit_val, total):
+            s = 0
+            for k, v in counts.items():
+                # Qiskit bitstring: qubit 0 es el carácter de la derecha
+                if len(k) >= 1 and k[-1] == bit_val:
+                    s += v
+            return s / total
+        # Para prep |0>: qubit 0 preparado en 0
+        p0_given0 = bit0_prob(counts0, "0", total0)
+        p1_given0 = bit0_prob(counts0, "1", total0)
+        # Para prep |1> en qubit 0:
+        p0_given1 = bit0_prob(counts1, "0", total1)
+        p1_given1 = bit0_prob(counts1, "1", total1)
+        # Normalizar por seguridad
+        s0 = p0_given0 + p1_given0
+        s1 = p0_given1 + p1_given1
+        if s0 > 0:
+            p0_given0, p1_given0 = p0_given0 / s0, p1_given0 / s0
+        if s1 > 0:
+            p0_given1, p1_given1 = p0_given1 / s1, p1_given1 / s1
+        conf = build_readout_calibration_matrix(
+            n_qubits, p1given0=p1_given0, p0given1=p0_given1
+        )
+        info = {
+            "method": "tensored",
+            "n_qubits": n_qubits,
+            "shots_per_state": shots,
+            "P(0|0)": float(p0_given0),
+            "P(1|0)": float(p1_given0),
+            "P(0|1)": float(p0_given1),
+            "P(1|1)": float(p1_given1),
+        }
+
+    return conf, info
+
+
+def apply_readout_mitigation_with_matrix(counts, n_qubits, conf_matrix):
+    """Aplica mitigación usando una matriz de calibración ya estimada."""
+    dim = 2 ** n_qubits
+    labels = [format(i, f"0{n_qubits}b") for i in range(dim)]
+    total = sum(counts.values()) or 1
+    p_meas = np.array([counts.get(lab, 0) / total for lab in labels], dtype=float)
+    conf = np.asarray(conf_matrix, dtype=float)
+    if conf.shape != (dim, dim):
+        # fallback
+        return apply_readout_mitigation(counts, n_qubits)
+    try:
+        inv = np.linalg.pinv(conf)
+    except Exception:
+        return dict(counts)
+    p_corr = inv @ p_meas
+    p_corr = np.clip(p_corr, 0.0, None)
+    s = p_corr.sum()
+    if s > 0:
+        p_corr = p_corr / s
+    mitigated = {lab: int(round(float(p_corr[i]) * total)) for i, lab in enumerate(labels)}
+    diff = total - sum(mitigated.values())
+    if diff != 0 and labels:
+        k = int(np.argmax(p_corr))
+        mitigated[labels[k]] = mitigated.get(labels[k], 0) + int(diff)
+    return mitigated
+
+
+def simple_zne_extrapolation(values, factors, method="linear"):
+    """
+    Extrapolación a ruido cero.
+    method: "linear" | "richardson" (polinomio grado 2 cuando hay >=3 puntos)
+    """
+    values = np.asarray(values, dtype=float)
+    factors = np.asarray(factors, dtype=float)
+    if len(values) < 2:
+        return float(values[0]) if len(values) else 0.0
+    if method == "richardson" and len(values) >= 3:
+        # Ajuste cuadrático (Richardson de orden 2)
+        coeffs = np.polyfit(factors, values, 2)
+        return float(coeffs[-1])  # término independiente (lambda=0)
+    # Lineal por defecto
+    coeffs = np.polyfit(factors, values, 1)
+    return float(coeffs[-1])
+
+def run_local_with_mitigation(qc, shots=1024, noise=True, readout_mit=True, zne=False,
+                               zne_method="linear", p1given0=0.03, p0given1=0.05,
+                               conf_matrix=None):
+    """
+    Ejecución local con mitigación opcional.
+    Si conf_matrix está definida, se usa calibración automática.
+    Devuelve: counts_mitigados, zne_value, all_results, exp_values, counts_raw
+    """
+    from qiskit_aer.noise import NoiseModel, depolarizing_error
+    sim = AerSimulator()
+    factors = [1.0, 3.0, 5.0] if zne else [1.0]
+    all_results = {}
+    exp_values = []
+    counts_raw_base = {}
+    for factor in factors:
+        noise_model = None
+        if noise:
+            p1 = min(0.012 * factor, 0.45)
+            p2 = min(0.025 * factor, 0.45)
+            nm = NoiseModel()
+            nm.add_all_qubit_quantum_error(depolarizing_error(p1, 1),
+                ["h","x","y","z","s","t","rx","ry","rz","sdg","tdg"])
+            nm.add_all_qubit_quantum_error(depolarizing_error(p2, 2), ["cx","cz","swap"])
+            noise_model = nm
+        job = sim.run(transpile(qc, sim), shots=shots, noise_model=noise_model)
+        counts_raw = job.result().get_counts()
+        if factor == 1.0:
+            counts_raw_base = dict(counts_raw)
+        if readout_mit:
+            if conf_matrix is not None:
+                counts = apply_readout_mitigation_with_matrix(
+                    counts_raw, qc.num_qubits, conf_matrix
+                )
+            else:
+                counts = apply_readout_mitigation(
+                    counts_raw, qc.num_qubits,
+                    p1given0=p1given0, p0given1=p0given1, method="tensored"
+                )
+        else:
+            counts = counts_raw
+        all_results[factor] = counts
+        total = sum(counts.values()) or 1
+        exp = sum((1 if bitstr[-1] == "0" else -1) * cnt for bitstr, cnt in counts.items()) / total
+        exp_values.append(exp)
+    if zne:
+        zne_val = simple_zne_extrapolation(exp_values, factors, method=zne_method)
+    else:
+        zne_val = exp_values[0] if exp_values else 0.0
+    return all_results.get(1.0, {}), float(zne_val), all_results, exp_values, counts_raw_base
+
+# -----------------------------------------------------------------------------
+# Optimizadores
+# -----------------------------------------------------------------------------
+def spsa_minimize(fun, x0, maxiter=40, a=0.2, c=0.1):
+    theta = np.array(x0, dtype=float)
+    history = []
+    for k in range(1, maxiter + 1):
+        ak = a / (k ** 0.602)
+        ck = c / (k ** 0.101)
+        delta = np.random.choice([-1., 1.], size=theta.shape)
+        f_plus = fun(theta + ck * delta)
+        f_minus = fun(theta - ck * delta)
+        ghat = (f_plus - f_minus) / (2.0 * ck * delta)
+        theta = theta - ak * ghat
+        history.append(float(fun(theta)))
+    return theta, history
+
+def get_hamiltonian(n_qubits, ham_type="ising"):
+    """
+    Hamiltonianos de demostración orientados a investigación.
+    Son modelos simplificados (no simulaciones de alta fidelidad).
+    """
+    # Normalizar nombres de investigación a familias base
+    research_map = {
+        "ising": "ising",
+        "heisenberg": "heisenberg",
+        "molecular": "molecular",
+        # Temas de investigación (mapeados a modelos base honestos)
+        "metamaterial_spin": "heisenberg",      # espines / YIG-like
+        "propulsion_opt": "ising",              # optimización de recursos / thruster
+        "he3_interaction": "heisenberg",        # interacción tipo espín / materia
+        "nanomedicine_mol": "molecular",        # estructura electrónica simplificada
+    }
+    base = research_map.get(ham_type, "ising")
+
+    if base == "ising":
+        if n_qubits == 2:
+            return SparsePauliOp.from_list([("ZZ", 1.0), ("XI", 0.5), ("IX", 0.5)])
+        return SparsePauliOp.from_list([
+            ("ZZ" + "I"*(n_qubits-2), 1.0),
+            ("X" + "I"*(n_qubits-1), 0.4)
+        ])
+    elif base == "heisenberg":
+        ops = []
+        for i in range(n_qubits - 1):
+            xx = ["I"] * n_qubits
+            yy = ["I"] * n_qubits
+            zz = ["I"] * n_qubits
+            xx[i] = "X"; xx[i+1] = "X"
+            yy[i] = "Y"; yy[i+1] = "Y"
+            zz[i] = "Z"; zz[i+1] = "Z"
+            ops.append(("".join(xx), 0.5))
+            ops.append(("".join(yy), 0.5))
+            ops.append(("".join(zz), 0.8))
+        return SparsePauliOp.from_list(ops)
+    else:  # molecular
+        if n_qubits == 2:
+            return SparsePauliOp.from_list([("II", -1.0), ("ZZ", 0.7), ("XX", 0.3), ("YY", 0.3)])
+        return SparsePauliOp.from_list([
+            ("Z" + "I"*(n_qubits-1), -0.8),
+            ("ZZ" + "I"*(n_qubits-2), 0.5),
+            ("X" + "I"*(n_qubits-1), 0.2)
+        ])
+
+def run_vqe_with_optimizer(n_qubits, optimizer_name, maxiter=40, learning_rate=0.05, ham_type="ising"):
+    hamiltonian = get_hamiltonian(n_qubits, ham_type)
+    ansatz = EfficientSU2(n_qubits, reps=1, entanglement="linear")
+    estimator = StatevectorEstimator()
+
+    def energy(params):
+        bound = ansatz.assign_parameters(params)
+        return float(estimator.run([(bound, hamiltonian)]).result()[0].data.evs)
+
+    x0 = np.random.uniform(-np.pi, np.pi, ansatz.num_parameters)
+    history = []
+
+    if optimizer_name == "SPSA":
+        theta_opt, history = spsa_minimize(energy, x0, maxiter=maxiter)
+        return energy(theta_opt), theta_opt, history, ansatz
+    elif optimizer_name == "ADAM":
+        theta = x0.copy()
+        m = np.zeros_like(theta)
+        v = np.zeros_like(theta)
+        beta1, beta2, eps = 0.9, 0.999, 1e-8
+        for t in range(1, maxiter + 1):
+            grad = np.zeros_like(theta)
+            f0 = energy(theta)
+            eps_fd = 1e-4
+            for i in range(len(theta)):
+                th = theta.copy()
+                th[i] += eps_fd
+                grad[i] = (energy(th) - f0) / eps_fd
+            m = beta1 * m + (1 - beta1) * grad
+            v = beta2 * v + (1 - beta2) * (grad ** 2)
+            m_hat = m / (1 - beta1 ** t)
+            v_hat = v / (1 - beta2 ** t)
+            theta = theta - learning_rate * m_hat / (np.sqrt(v_hat) + eps)
+            history.append(float(energy(theta)))
+        return energy(theta), theta, history, ansatz
+    else:
+        method_map = {
+            "COBYLA": "COBYLA", "L-BFGS-B": "L-BFGS-B", "SLSQP": "SLSQP",
+            "Nelder-Mead": "Nelder-Mead", "Powell": "Powell"
+        }
+        method = method_map.get(optimizer_name, "COBYLA")
+        def cb(xk):
+            history.append(float(energy(xk)))
+        res = minimize(energy, x0, method=method, options={"maxiter": maxiter},
+                       callback=cb if method != "COBYLA" else None)
+        if not history:
+            history = [float(res.fun)]
+        return res.fun, res.x, history, ansatz
+
+# -----------------------------------------------------------------------------
+# CAM-VQE mejorado (versión 1.6)
+# -----------------------------------------------------------------------------
+
+def _build_depolarizing_noise(factor=1.0):
+    """Modelo de ruido depolarizing escalado por factor (para ZNE)."""
+    from qiskit_aer.noise import NoiseModel, depolarizing_error
+    p1 = min(0.012 * factor, 0.45)
+    p2 = min(0.025 * factor, 0.45)
+    nm = NoiseModel()
+    single = ["h", "x", "y", "z", "s", "t", "rx", "ry", "rz", "sdg", "tdg", "id"]
+    double = ["cx", "cz", "swap", "rzz", "cp"]
+    nm.add_all_qubit_quantum_error(depolarizing_error(p1, 1), single)
+    nm.add_all_qubit_quantum_error(depolarizing_error(p2, 2), double)
+    return nm
+
+
+def energy_with_real_zne(params, ansatz, hamiltonian, factors=(1.0, 3.0, 5.0),
+                         zne_method="linear"):
+    """
+    Evaluación de energía con ZNE real:
+      1) Simula el estado con ruido depolarizing a varios factores λ
+      2) Calcula ⟨H⟩ en cada λ (density matrix)
+      3) Extrapola a λ → 0
+    Devuelve: (energia_mitigada, lista_valores_por_factor)
+    """
+    from qiskit_aer import AerSimulator
+    from qiskit.quantum_info import DensityMatrix
+
+    bound = ansatz.assign_parameters(params)
+    # Circuito sin medidas para density matrix
+    qc = bound.copy()
+    try:
+        qc.save_density_matrix()
+    except Exception:
+        pass
+
+    obs_matrix = hamiltonian.to_matrix()
+    values = []
+    for f in factors:
+        nm = _build_depolarizing_noise(f)
+        sim = AerSimulator(method="density_matrix", noise_model=nm)
+        tqc = transpile(qc, sim)
+        result = sim.run(tqc).result()
+        # Extraer densidad
+        try:
+            rho = result.data(0)["density_matrix"]
+        except Exception:
+            rho = list(result.data(0).values())[0]
+        # ⟨H⟩ = Re(Tr(ρ H))
+        exp_val = float(np.real(np.trace(rho @ obs_matrix)))
+        values.append(exp_val)
+
+    mitigated = simple_zne_extrapolation(values, list(factors), method=zne_method)
+    return float(mitigated), values
+
+
+def cam_vqe(n_qubits=2, total_budget=70, ham_type="ising",
+            mitigation_mode="standard", use_real_zne=False, zne_method="linear"):
+    """
+    CAM-VQE v1.8 — Canelone Adaptive Mitigation VQE
+
+    mitigation_mode:
+      - "standard": proxy de ruido normal
+      - "zne_aware": umbrales más sensibles (filosofía ZNE en el meta-controlador)
+
+    use_real_zne:
+      - False: energía exacta (StatevectorEstimator) — rápido, prototipo
+      - True:  ZNE real en cada evaluación de energía
+               (ruido depolarizing a λ=1,3,5 + extrapolación a λ=0)
+               Más costoso computacionalmente; presupuesto efectivo menor.
+    """
+    hamiltonian = get_hamiltonian(n_qubits, ham_type)
+    ansatz = EfficientSU2(n_qubits, reps=1, entanglement="linear")
+    estimator = StatevectorEstimator()
+    n_params = ansatz.num_parameters
+    theta = np.random.uniform(-np.pi, np.pi, n_params)
+
+    history = []
+    phase_log = []
+    current_phase = "exploration"
+    best_energy = float("inf")
+    best_theta = theta.copy()
+    noise_history = []
+    zne_raw_history = []  # valores pre-extrapolación cuando use_real_zne
+
+    def energy_ideal(params):
+        bound = ansatz.assign_parameters(params)
+        return float(estimator.run([(bound, hamiltonian)]).result()[0].data.evs)
+
+    def energy(params):
+        if not use_real_zne:
+            return energy_ideal(params)
+        mitigated, raw_vals = energy_with_real_zne(
+            params, ansatz, hamiltonian,
+            factors=(1.0, 3.0, 5.0),
+            zne_method=zne_method
+        )
+        zne_raw_history.append({"params_norm": float(np.linalg.norm(params)), "raw": raw_vals, "mitigated": mitigated})
+        return mitigated
+
+    def estimate_noise_proxy(params):
+        """Proxy de ruido: si ZNE real está activo, usa dispersión de los factores;
+        si no, usa perturbaciones del paisaje ideal."""
+        if use_real_zne:
+            # Usar la última evaluación ZNE o una nueva
+            _, raw = energy_with_real_zne(params, ansatz, hamiltonian,
+                                          factors=(1.0, 3.0, 5.0), zne_method=zne_method)
+            slope = abs(raw[-1] - raw[0]) / 4.0
+            variance = float(np.var(raw))
+            proxy = 0.6 * min(slope * 2, 1.0) + 0.4 * min(variance * 5, 1.0)
+            return float(np.clip(proxy, 0.0, 1.0))
+        vals = []
+        for scale in [1.0, 1.8, 2.6]:
+            pert = params + np.random.normal(0, 0.04 * scale, size=params.shape)
+            vals.append(energy_ideal(pert))
+        slope = abs(vals[-1] - vals[0]) / 1.6
+        variance = np.var(vals)
+        proxy = 0.6 * min(slope, 1.0) + 0.4 * min(variance * 5, 1.0)
+        return float(np.clip(proxy, 0.0, 1.0))
+
+    step = 0
+    stagnation = 0
+    prev_best = best_energy
+
+    while step < total_budget:
+        noise_est = estimate_noise_proxy(theta)
+        noise_history.append(noise_est)
+
+        # Meta-controlador (umbrales según mitigation_mode)
+        if mitigation_mode == "zne_aware":
+            # Más sensible al ruido: se mantiene más tiempo en exploración (espíritu ZNE)
+            th_high, th_mid = 0.18, 0.08
+            explore_bias = 0.45
+        else:
+            th_high, th_mid = 0.28, 0.12
+            explore_bias = 0.35
+
+        if noise_est > th_high or (current_phase == "exploration" and step < total_budget * explore_bias):
+            current_phase = "exploration"
+            a = 0.22
+            c = 0.11
+            delta = np.random.choice([-1., 1.], size=theta.shape)
+            f_plus = energy(theta + c * delta)
+            f_minus = energy(theta - c * delta)
+            ghat = (f_plus - f_minus) / (2.0 * c * delta)
+            theta = theta - a * ghat
+            e = energy(theta)
+            step += 2
+
+        elif noise_est > th_mid:
+            current_phase = "refinement"
+            grad = np.zeros_like(theta)
+            f0 = energy(theta)
+            eps_fd = 1e-4
+            for i in range(len(theta)):
+                th = theta.copy()
+                th[i] += eps_fd
+                grad[i] = (energy(th) - f0) / eps_fd
+            # Learning rate adaptativo al ruido
+            lr = 0.09 * (1.0 - 0.7 * noise_est)
+            theta = theta - lr * grad
+            e = energy(theta)
+            step += len(theta) + 1
+
+        else:
+            current_phase = "polishing"
+            def local_fun(x):
+                return energy(x)
+            res = minimize(local_fun, theta, method="L-BFGS-B",
+                           options={"maxiter": 6, "ftol": 1e-9})
+            theta = res.x
+            e = float(res.fun)
+            step += 6
+
+        history.append({
+            "step": step,
+            "energy": float(e),
+            "phase": current_phase,
+            "noise_est": float(noise_est)
+        })
+        phase_log.append(current_phase)
+
+        if e < best_energy - 1e-8:
+            best_energy = e
+            best_theta = theta.copy()
+            stagnation = 0
+        else:
+            stagnation += 1
+
+        # Criterio de parada mejorado
+        if step > 20 and stagnation >= 8:
+            break
+        if step > 25 and len(history) >= 6:
+            recent = [h["energy"] for h in history[-6:]]
+            if max(recent) - min(recent) < 5e-5:
+                break
+
+    return {
+        "best_energy": best_energy,
+        "best_params": best_theta.tolist(),
+        "history": history,
+        "phase_log": phase_log,
+        "noise_history": noise_history,
+        "ansatz": ansatz,
+        "hamiltonian_type": ham_type,
+        "n_qubits": n_qubits,
+        "mitigation_mode": mitigation_mode,
+        "use_real_zne": use_real_zne,
+        "zne_method": zne_method if use_real_zne else None,
+        "zne_raw_samples": len(zne_raw_history),
+    }
+
+# -----------------------------------------------------------------------------
+# Sidebar
+# -----------------------------------------------------------------------------
+with st.sidebar:
+    st.markdown("## ⚛️ Canelone.mf")
+    st.markdown("### Research Edition")
+    st.caption("Investigación cuántica personal · 2026")
+    st.divider()
+
+    st.session_state.project_name = st.text_input("Nombre del proyecto", st.session_state.project_name)
+
+    st.subheader("Registros")
+    nq = st.number_input("Qubits", 1, 8, st.session_state.n_qubits, 1)
+    nc = st.number_input("Bits clásicos", 0, 8, st.session_state.n_clbits, 1)
+    if st.button("Aplicar tamaño y reiniciar", type="primary"):
+        st.session_state.n_qubits = nq
+        st.session_state.n_clbits = nc
+        reset_all()
+        st.rerun()
+
+    st.divider()
+    st.subheader("Plantillas")
+    plantilla = st.selectbox("Ejemplo", [
+        "— Ninguna —", "Bell (entrelazamiento 2q)", "GHZ (3 qubits)",
+        "Superposición uniforme", "QFT (4 qubits)", "Circuito de fase (investigación)"
+    ])
+    if plantilla != "— Ninguna —" and st.button("Cargar plantilla"):
+        load_template(plantilla)
+        st.rerun()
+
+    st.divider()
+    st.subheader("Proyecto")
+    if st.button("Reiniciar circuito"):
+        reset_all()
+        st.rerun()
+    st.download_button("💾 Descargar JSON", circuit_to_json(),
+                       f"{st.session_state.project_name}.json", "application/json")
+    up = st.file_uploader("Cargar JSON", type=["json"])
+    if up and load_from_json(up.read().decode()):
+        st.success("Cargado")
+        st.rerun()
+
+    st.divider()
+    st.subheader("Conexión a ordenadores cuánticos")
+    if IBM_AVAILABLE:
+        st.caption("🔒 El token se usa solo en memoria de sesión. No se guarda en disco.")
+        token = st.text_input(
+            "IBM Quantum API Token",
+            type="password",
+            value=st.session_state.ibm_token,
+            help="Nunca compartas ni subas este token a repositorios públicos."
+        )
+        st.session_state.ibm_token = token
+
+        col_a, col_b = st.columns(2)
+        with col_a:
+            if st.button("Conectar / Actualizar backends"):
+                if token:
+                    try:
+                        service = QiskitRuntimeService(channel="ibm_quantum", token=token)
+                        st.session_state.ibm_service = service
+                        backends = service.backends()
+                        st.session_state.ibm_backends = [b.name for b in backends]
+                        st.success(f"Conectado · {len(backends)} backends")
+                    except Exception as e:
+                        st.session_state.ibm_service = None
+                        st.session_state.ibm_backends = []
+                        st.error(f"Error: {e}")
+                else:
+                    st.warning("Introduce un token")
+        with col_b:
+            if st.button("Desconectar / Borrar token"):
+                st.session_state.ibm_token = ""
+                st.session_state.ibm_service = None
+                st.session_state.ibm_backends = []
+                st.session_state.selected_backend = "local_aer"
+                st.success("Token eliminado de la sesión")
+                st.rerun()
+
+        options = ["local_aer"] + st.session_state.ibm_backends
+        idx = 0
+        if st.session_state.selected_backend in options:
+            idx = options.index(st.session_state.selected_backend)
+        st.session_state.selected_backend = st.selectbox("Backend", options, index=idx)
+        if st.session_state.ibm_backends:
+            st.caption(", ".join(st.session_state.ibm_backends[:4]) +
+                       ("..." if len(st.session_state.ibm_backends) > 4 else ""))
+    else:
+        st.caption("Instala qiskit-ibm-runtime para hardware real")
+        st.session_state.selected_backend = "local_aer"
+
+    st.divider()
+    st.markdown(
+        '<p class="small-note"><b>Canelone.mf Research Edition v1.8</b><br>'
+        'CAM-VQE · Mitigación · VQE avanzado<br>'
+        'Implementación original</p>',
+        unsafe_allow_html=True
+    )
+
+# -----------------------------------------------------------------------------
+# Cabecera
+# -----------------------------------------------------------------------------
+st.markdown('<p class="main-title">Canelone.mf Research Edition</p>', unsafe_allow_html=True)
+st.markdown('<p class="sub-title">Programación · Mitigación de errores · VQE avanzado · CAM-VQE (algoritmo adaptativo original)</p>', unsafe_allow_html=True)
+
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
+    "🛠️ Constructor",
+    "▶️ Simulación + Mitigación",
+    "📊 Visualización",
+    "🧬 VQE Avanzado",
+    "🚀 CAM-VQE (Original)",
+    "📋 Código",
+    "ℹ️ Originalidad & Conectividad"
+])
+
+# TAB 1
+with tab1:
+    st.subheader("Constructor de circuitos")
+    c1, c2 = st.columns([1, 1.35])
+    with c1:
+        cols = st.columns(4)
+        for i, g in enumerate(["H","X","Y","Z","S","T","SDG","TDG"]):
+            with cols[i % 4]:
+                if st.button(g, key=f"g1_{g}"):
+                    add_gate(g, [st.session_state.get("active_q", 0)])
+                    st.rerun()
+        r1, r2 = st.columns(2)
+        with r1:
+            rg = st.selectbox("Rotación", ["RX","RY","RZ"], key="rg")
+            ang = st.slider("Ángulo", 0.0, 2*np.pi, np.pi/2, 0.01)
+        with r2:
+            rq = st.number_input("Qubit", 0, max(0, st.session_state.n_qubits-1), 0, key="rq")
+            if st.button("Añadir rot"):
+                add_gate(rg, [rq], [float(ang)])
+                st.rerun()
+        t1, t2, t3 = st.columns(3)
+        with t1:
+            c = st.number_input("Control", 0, max(0, st.session_state.n_qubits-1), 0, key="c")
+        with t2:
+            t = st.number_input("Target", 0, max(0, st.session_state.n_qubits-1),
+                               min(1, st.session_state.n_qubits-1), key="t")
+        with t3:
+            tg = st.selectbox("2q", ["CNOT","CZ","SWAP"], key="tg")
+        if st.button("Añadir 2q"):
+            if c != t:
+                add_gate(tg, [c, t])
+                st.rerun()
+            else:
+                st.warning("Control ≠ Target")
+        o1, o2, o3 = st.columns(3)
+        with o1:
+            mq = st.number_input("Medir", 0, max(0, st.session_state.n_qubits-1), 0, key="mq")
+            if st.button("Medir"):
+                add_gate("MEASURE", [mq])
+                st.rerun()
+        with o2:
+            if st.button("Barrera"):
+                add_gate("BARRIER", [])
+                st.rerun()
+        with o3:
+            if st.button("Reset 0"):
+                add_gate("RESET", [0])
+                st.rerun()
+        st.session_state.active_q = st.selectbox(
+            "Qubit activo", list(range(st.session_state.n_qubits)), key="aq")
+    with c2:
+        rebuild_circuit_from_history()
+        if st.session_state.gate_history:
+            try:
+                fig = st.session_state.circuit.draw(output="mpl", style="iqp", fold=-1)
+                st.pyplot(fig, use_container_width=True)
+                plt.close(fig)
+            except Exception:
+                st.code(str(st.session_state.circuit.draw(output="text")))
+        else:
+            st.info("Circuito vacío.")
+        with st.expander("Historial"):
+            for i, h in enumerate(st.session_state.gate_history):
+                st.text(f"{i+1:02d}. {h['gate']:8} q={h['qubits']}")
+
+# TAB 2
+with tab2:
+    st.subheader("Simulación + Mitigación de errores")
+    if not st.session_state.gate_history:
+        st.warning("Construye un circuito primero.")
+    else:
+        shots = st.slider("Shots", 128, 8192, 1024, 128)
+        colm1, colm2, colm3 = st.columns(3)
+        with colm1:
+            use_noise = st.checkbox("Ruido depolarizing", True)
+        with colm2:
+            use_readout = st.checkbox("Mitigación de lectura (readout)", True)
+        with colm3:
+            use_zne = st.checkbox("Zero-Noise Extrapolation (ZNE)", False)
+
+        p1g0, p0g1 = 0.03, 0.05
+        if use_readout:
+            with st.expander("Calibración y parámetros de lectura", expanded=True):
+                st.markdown("**Calibración automática**")
+                st.caption(
+                    "Prepara estados conocidos, los mide con error de lectura simulado "
+                    "y estima la matriz de confusión."
+                )
+                cal_shots = st.slider("Shots de calibración", 512, 8192, 2048, 512, key="cal_shots")
+                cal_method = st.radio(
+                    "Método de calibración",
+                    ["tensored", "full"],
+                    horizontal=True,
+                    help="tensored: calibra 1 qubit y extiende por producto tensorial (rápido). "
+                         "full: calibra los 2^n estados (solo n≤4)."
+                )
+                c1, c2 = st.columns(2)
+                with c1:
+                    if st.button("▶ Calibrar lectura automáticamente"):
+                        with st.spinner("Calibrando..."):
+                            try:
+                                nq_cal = st.session_state.n_qubits
+                                conf, info = run_automatic_readout_calibration(
+                                    nq_cal, shots=cal_shots, method=cal_method
+                                )
+                                st.session_state.readout_cal_matrix = conf.tolist()
+                                st.session_state.readout_cal_info = info
+                                st.success("Calibración completada")
+                            except Exception as e:
+                                st.error(f"Error en calibración: {e}")
+                with c2:
+                    if st.button("Borrar calibración"):
+                        st.session_state.readout_cal_matrix = None
+                        st.session_state.readout_cal_info = None
+                        st.info("Calibración eliminada; se usarán parámetros manuales.")
+
+                if st.session_state.readout_cal_info:
+                    st.write("**Última calibración:**", st.session_state.readout_cal_info)
+                else:
+                    st.caption("Sin calibración activa → se usan P(1|0) y P(0|1) manuales.")
+
+                st.markdown("**Parámetros manuales (si no hay calibración)**")
+                r1, r2 = st.columns(2)
+                with r1:
+                    p1g0 = st.slider("P(medir 1 | era 0)", 0.0, 0.2, 0.03, 0.01, key="p1g0")
+                with r2:
+                    p0g1 = st.slider("P(medir 0 | era 1)", 0.0, 0.2, 0.05, 0.01, key="p0g1")
+
+        zne_method = "linear"
+        if use_zne:
+            zne_method = st.radio(
+                "Método de extrapolación ZNE",
+                ["linear", "richardson"],
+                horizontal=True,
+                help="Linear: ajuste de grado 1. Richardson: ajuste cuadrático (necesita 3 puntos)."
+            )
+
+        st.info(f"Backend seleccionado: **{st.session_state.selected_backend}**")
+
+        if st.button("▶ Ejecutar con mitigación", type="primary"):
+            with st.spinner("Ejecutando..."):
+                try:
+                    qc = rebuild_circuit_from_history().copy()
+                    if qc.num_clbits > 0 and not any(i.operation.name == "measure" for i in qc.data):
+                        for i in range(min(qc.num_qubits, qc.num_clbits)):
+                            qc.measure(i, i)
+                    conf_m = None
+                    if use_readout and st.session_state.readout_cal_matrix is not None:
+                        conf_m = np.array(st.session_state.readout_cal_matrix, dtype=float)
+                    counts, zne_val, all_res, exp_vals, counts_raw = run_local_with_mitigation(
+                        qc, shots=shots, noise=use_noise,
+                        readout_mit=use_readout, zne=use_zne, zne_method=zne_method,
+                        p1given0=p1g0 if use_readout else 0.03,
+                        p0given1=p0g1 if use_readout else 0.05,
+                        conf_matrix=conf_m,
+                    )
+                    st.session_state.last_counts = counts
+                    st.success("Ejecución local con mitigación finalizada")
+
+                    if use_readout and counts_raw:
+                        st.markdown("**Mitigación de lectura — comparación raw vs corregido**")
+                        report = readout_mitigation_report(counts_raw, counts, qc.num_qubits)
+                        st.table([
+                            {
+                                "estado": r["estado"],
+                                "p_raw": f"{r['p_raw']:.4f}",
+                                "p_mitigado": f"{r['p_mit']:.4f}",
+                                "delta": f"{r['delta']:+.4f}",
+                            }
+                            for r in report
+                        ])
+                        c1, c2 = st.columns(2)
+                        with c1:
+                            st.caption("Counts raw")
+                            st.json(counts_raw)
+                        with c2:
+                            st.caption("Counts tras mitigación de lectura")
+                            st.json(counts)
+
+                    if use_zne:
+                        st.metric(f"Valor extrapolado ZNE ({zne_method}) ≈ ⟨Z⟩", f"{zne_val:.4f}")
+                        if len(all_res) > 1:
+                            st.write("**Valores por factor de ruido:**")
+                            factors = list(all_res.keys())
+                            for f, ev in zip(factors, exp_vals):
+                                st.write(f"Factor {f}× → ⟨Z⟩ ≈ {ev:.4f}  |  counts: {all_res[f]}")
+                            try:
+                                fig, ax = plt.subplots(figsize=(6, 3.2))
+                                ax.plot(factors, exp_vals, "o-", label="Valores medidos")
+                                ax.axhline(zne_val, color="green", linestyle="--",
+                                           label=f"ZNE ({zne_method}) = {zne_val:.4f}")
+                                ax.set_xlabel("Factor de ruido λ")
+                                ax.set_ylabel("⟨Z⟩ aproximado")
+                                ax.set_title("Zero-Noise Extrapolation")
+                                ax.legend()
+                                st.pyplot(fig)
+                                plt.close(fig)
+                            except Exception:
+                                pass
+                    try:
+                        svqc = rebuild_circuit_from_history().copy()
+                        svqc.remove_final_measurements(inplace=True)
+                        st.session_state.last_statevector = Statevector.from_instruction(svqc)
+                    except Exception:
+                        st.session_state.last_statevector = None
+                except Exception as e:
+                    st.error(str(e))
+
+        if st.session_state.last_counts:
+            st.json(st.session_state.last_counts)
+            fig, ax = plt.subplots(figsize=(7, 3.5))
+            plot_histogram(st.session_state.last_counts, ax=ax)
+            st.pyplot(fig)
+            plt.close(fig)
+
+# TAB 3
+with tab3:
+    st.subheader("Visualización y fidelidad")
+    if st.session_state.last_statevector is not None:
+        sv = st.session_state.last_statevector
+        st.write(sv)
+        if st.session_state.n_qubits <= 4:
+            try:
+                fig = plot_bloch_multivector(sv)
+                st.pyplot(fig)
+                plt.close(fig)
+            except Exception as e:
+                st.warning(str(e))
+        st.write(sv.probabilities_dict())
+        ref_choice = st.selectbox("Referencia", ["|0...0⟩", "|+...+⟩", "Bell |Φ+⟩ (2q)"])
+        if st.button("Calcular fidelidad"):
+            n = st.session_state.n_qubits
+            if ref_choice == "|0...0⟩":
+                ref = Statevector.from_label("0" * n)
+            elif ref_choice == "|+...+⟩":
+                ref = Statevector.from_label("+" * n)
+            else:
+                if n != 2:
+                    st.warning("Bell requiere 2 qubits")
+                    ref = None
+                else:
+                    qc_ref = QuantumCircuit(2)
+                    qc_ref.h(0)
+                    qc_ref.cx(0, 1)
+                    ref = Statevector.from_instruction(qc_ref)
+            if ref is not None:
+                st.metric("Fidelidad", f"{state_fidelity(sv, ref):.6f}")
+    else:
+        st.info("Ejecuta una simulación primero.")
+
+# TAB 4
+with tab4:
+    st.subheader("VQE con optimizadores avanzados")
+    col1, col2 = st.columns(2)
+    with col1:
+        vq = st.number_input("Qubits", 2, 4, 2, key="vq")
+        opt = st.selectbox("Optimizador", [
+            "SPSA", "ADAM", "COBYLA", "L-BFGS-B", "SLSQP", "Nelder-Mead", "Powell"
+        ])
+        iters = st.slider("Iteraciones", 10, 80, 40)
+    with col2:
+        lr = st.number_input("Learning rate (ADAM)", 0.001, 0.5, 0.05, 0.005, format="%.3f")
+        ham_vqe = st.selectbox("Hamiltoniano", [
+            "ising", "heisenberg", "molecular",
+            "metamaterial_spin", "propulsion_opt", "he3_interaction", "nanomedicine_mol"
+        ], key="ham_vqe")
+        compare = st.checkbox("Comparar varios optimizadores", False)
+
+    if st.button("▶ Ejecutar VQE", type="primary"):
+        with st.spinner("Optimizando..."):
+            try:
+                if compare:
+                    results = {}
+                    fig, ax = plt.subplots(figsize=(8, 4))
+                    for name in ["SPSA", "ADAM", "COBYLA", "L-BFGS-B"]:
+                        fun, params, hist, ansatz = run_vqe_with_optimizer(
+                            vq, name, iters, lr, ham_vqe)
+                        results[name] = {"energy": fun, "history": hist}
+                        if hist:
+                            ax.plot(hist, label=f"{name} ({fun:.4f})", marker="o", markersize=2)
+                    ax.legend()
+                    ax.set_title("Comparación de optimizadores VQE")
+                    st.pyplot(fig)
+                    plt.close(fig)
+                    for n, r in results.items():
+                        st.write(f"**{n}**: {r['energy']:.6f}")
+                else:
+                    fun, params, hist, ansatz = run_vqe_with_optimizer(
+                        vq, opt, iters, lr, ham_vqe)
+                    st.success(f"Energía ({opt}): {fun:.6f}")
+                    st.write("Parámetros:", params)
+                    if hist:
+                        fig, ax = plt.subplots(figsize=(7, 3.5))
+                        ax.plot(hist, marker="o", markersize=3)
+                        ax.set_title(f"Convergencia – {opt}")
+                        st.pyplot(fig)
+                        plt.close(fig)
+                    st.pyplot(ansatz.decompose().draw(output="mpl", fold=-1))
+                    plt.close()
+            except Exception as e:
+                st.error(str(e))
+
+# TAB 5 — CAM-VQE mejorado
+with tab5:
+    st.subheader("🚀 CAM-VQE — Canelone Adaptive Mitigation VQE (v1.8 · ZNE real opcional)")
+    st.markdown("""
+**Algoritmo híbrido adaptativo original** de Canelone.mf Research Edition.
+
+**Mejoras de esta versión:**
+- Selección de Hamiltoniano orientado a investigación:
+  - `metamaterial_spin` → modelo tipo Heisenberg (espines / metamateriales magnéticos)
+  - `propulsion_opt` → modelo tipo Ising (optimización de recursos / propulsión)
+  - `he3_interaction` → interacción tipo espín (Helio-3 / materia)
+  - `nanomedicine_mol` → Hamiltoniano molecular simplificado (nanomedicina)
+- Estimación de ruido más robusta (pendiente + varianza)
+- Learning rate y cambio de fase adaptativos
+- Criterio de parada por estancamiento
+- Exportación completa de resultados (JSON)
+- Visualización de fases + evolución del ruido estimado
+
+Documentación técnica completa disponible en `docs/CAM-VQE_Technical_Report.md`
+""")
+
+    colc1, colc2 = st.columns(2)
+    with colc1:
+        cam_q = st.number_input("Qubits", 2, 4, 2, key="cam_q")
+        cam_budget = st.slider("Presupuesto de evaluaciones", 25, 150, 70)
+        use_real_zne = st.checkbox(
+            "ZNE real en el bucle de energía",
+            value=False,
+            help="Evalúa ⟨H⟩ con ruido a λ=1,3,5 y extrapola a λ=0 en cada llamada a energy(). Más lento."
+        )
+    with colc2:
+        cam_ham = st.selectbox("Hamiltoniano / Tema de investigación", [
+            "ising", "heisenberg", "molecular",
+            "metamaterial_spin", "propulsion_opt", "he3_interaction", "nanomedicine_mol"
+        ], key="cam_ham")
+        cam_mit = st.selectbox(
+            "Modo de mitigación (meta-controlador)",
+            ["standard", "zne_aware"],
+            help="zne_aware: umbrales más sensibles al ruido"
+        )
+        zne_method_cam = st.radio(
+            "Método ZNE (si ZNE real activo)",
+            ["linear", "richardson"],
+            horizontal=True,
+            key="cam_zne_method"
+        )
+        st.caption("El meta-controlador decide la fase según el ruido percibido.")
+
+    if st.button("▶ Ejecutar CAM-VQE (algoritmo original)", type="primary"):
+        spinner_msg = "Ejecutando CAM-VQE con ZNE real (puede tardar)..." if use_real_zne else "Ejecutando CAM-VQE adaptativo..."
+        with st.spinner(spinner_msg):
+            try:
+                # Con ZNE real el coste por evaluación sube ~3×: reducir presupuesto efectivo si es muy alto
+                budget = cam_budget
+                if use_real_zne and cam_budget > 60:
+                    budget = 60
+                    st.info("Presupuesto limitado a 60 con ZNE real para mantener el tiempo razonable.")
+                result = cam_vqe(
+                    n_qubits=cam_q,
+                    total_budget=budget,
+                    ham_type=cam_ham,
+                    mitigation_mode=cam_mit,
+                    use_real_zne=use_real_zne,
+                    zne_method=zne_method_cam
+                )
+                st.session_state.cam_history = result["history"]
+                st.session_state.cam_best = result
+
+                st.success(f"Mejor energía encontrada: **{result['best_energy']:.6f}**")
+                st.write("Parámetros óptimos:", result["best_params"])
+                st.write(
+                    f"Hamiltoniano: **{result['hamiltonian_type']}** · Qubits: **{result['n_qubits']}** · "
+                    f"Modo: **{result.get('mitigation_mode', 'standard')}** · "
+                    f"ZNE real: **{'sí (' + str(result.get('zne_method')) + ')' if result.get('use_real_zne') else 'no'}**"
+                )
+
+                history = result["history"]
+                if history:
+                    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(9, 6), sharex=True,
+                                                   gridspec_kw={"height_ratios": [2, 1]})
+                    steps = [h["step"] for h in history]
+                    energies = [h["energy"] for h in history]
+                    phases = [h["phase"] for h in history]
+                    noises = [h["noise_est"] for h in history]
+                    colors = {"exploration": "#e74c3c", "refinement": "#f39c12", "polishing": "#27ae60"}
+
+                    for i in range(len(steps)-1):
+                        ax1.plot(steps[i:i+2], energies[i:i+2],
+                                 color=colors.get(phases[i], "gray"), linewidth=2)
+                    ax1.scatter(steps, energies, c=[colors.get(p, "gray") for p in phases], s=28)
+                    ax1.set_ylabel("Energía")
+                    ax1.set_title("CAM-VQE — Convergencia por fases adaptativas")
+                    legend_elements = [
+                        Line2D([0], [0], color="#e74c3c", lw=2, label="Exploración (SPSA)"),
+                        Line2D([0], [0], color="#f39c12", lw=2, label="Refinamiento (ADAM)"),
+                        Line2D([0], [0], color="#27ae60", lw=2, label="Pulido (L-BFGS-B)")
+                    ]
+                    ax1.legend(handles=legend_elements, loc="upper right")
+
+                    ax2.plot(steps, noises, color="#8e44ad", linewidth=1.5)
+                    ax2.fill_between(steps, noises, alpha=0.3, color="#8e44ad")
+                    ax2.set_xlabel("Evaluaciones aproximadas")
+                    ax2.set_ylabel("Proxy de ruido")
+                    ax2.set_ylim(0, 1.05)
+
+                    plt.tight_layout()
+                    st.pyplot(fig)
+                    plt.close(fig)
+
+                st.markdown("**Ansatz (EfficientSU2)**")
+                st.pyplot(result["ansatz"].decompose().draw(output="mpl", fold=-1))
+                plt.close()
+
+                phase_counts = Counter(result["phase_log"])
+                st.write("Distribución de fases:", dict(phase_counts))
+
+                # Exportación de resultados CAM-VQE
+                export_data = {
+                    "algorithm": "CAM-VQE",
+                    "version": "1.6",
+                    "best_energy": result["best_energy"],
+                    "best_params": result["best_params"],
+                    "hamiltonian_type": result["hamiltonian_type"],
+                    "n_qubits": result["n_qubits"],
+                    "mitigation_mode": result.get("mitigation_mode", "standard"),
+                    "use_real_zne": result.get("use_real_zne", False),
+                    "zne_method": result.get("zne_method"),
+                    "zne_raw_samples": result.get("zne_raw_samples", 0),
+                    "history": result["history"],
+                    "phase_distribution": dict(phase_counts),
+                    "timestamp": datetime.now().isoformat()
+                }
+                st.download_button(
+                    "⬇️ Descargar resultados CAM-VQE (.json)",
+                    data=json.dumps(export_data, indent=2),
+                    file_name=f"cam_vqe_{st.session_state.project_name}.json",
+                    mime="application/json"
+                )
+
+            except Exception as e:
+                st.error(f"Error en CAM-VQE: {e}")
+
+# TAB 6
+with tab6:
+    st.subheader("Código Qiskit exportable")
+    code = generate_qiskit_code()
+    st.code(code, language="python")
+    st.download_button("⬇️ Descargar .py", code,
+                       f"{st.session_state.project_name}_canelone.py", "text/x-python")
+    st.download_button("💾 Descargar proyecto JSON", circuit_to_json(),
+                       f"{st.session_state.project_name}.json", "application/json")
+
+# TAB 7
+with tab7:
+    st.subheader("Originalidad, conectividad y resumen final")
+    st.markdown(f"""
+**Canelone.mf Research Edition v1.8**
+
+### Conectividad
+- **Local (AerSimulator)**: siempre disponible + mitigación completa.
+- **IBM Quantum**: token + listado dinámico de backends + selector.
+  - Estado: **{"Conectado" if st.session_state.ibm_service else "No conectado"}**
+  - Backends detectados: **{len(st.session_state.ibm_backends)}**
+  - Backend seleccionado: **{st.session_state.selected_backend}**
+
+### Algoritmo original: CAM-VQE v1.8
+- Estimación dinámica de ruido (pendiente + varianza)
+- Tres fases adaptativas: Exploración (SPSA) → Refinamiento (ADAM) → Pulido (L-BFGS-B)
+- Selección de Hamiltoniano (Ising / Heisenberg / Molecular)
+- Criterio de parada por estancamiento
+- Exportación completa de resultados
+
+### Técnicas integradas
+- Constructor de circuitos
+- Simulación + **Readout Mitigation** + **ZNE**
+- VQE con 7 optimizadores + comparación + diferentes Hamiltonianos
+- **CAM-VQE** (algoritmo adaptativo original)
+- Visualización, fidelidad, exportación, proyectos
+- Interfaz 100 % en español
+
+### Anti-plagio
+Toda la lógica de interfaz, mitigación, optimizadores propios, CAM-VQE y gestión de proyectos
+es implementación original de Canelone.mf Research Edition.
+""")
+
+st.divider()
+st.caption("Canelone.mf Research Edition v1.8 · Código único · CAM-VQE · Mitigación · 2026")

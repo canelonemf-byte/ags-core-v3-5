@@ -1,0 +1,293 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\sisetup{
+    output-decimal-marker = {.},
+    range-phrase = {--},
+    range-units = single,
+    per-mode = symbol
+}
+\DeclareSIUnit\year{a}
+\usepackage{float}
+\usepackage{caption}
+\usepackage[hidelinks]{hyperref}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usetikzlibrary{arrows.meta, positioning, shapes, calc, shadows, decorations.pathreplacing}
+\geometry{margin=2.5cm}
+% ========================
+% DECLARACIÓN DE INVENCIÓN Y PATENTE
+% ========================
+\title{\textbf{Análisis Comparativo: Recolección de Helio-3 (³He) – Regolito Lunar vs. Viento Solar}\\[1em]
+       \large \textbf{Documento de Invención y Patente en Trámite}}
+\author{\textbf{Inventado y patentado por:} \\[0.3em]
+        \textbf{Lázaro López Paz} \\[0.3em]
+        El Prat de Llobregat, Barcelona, España \\[0.3em]
+        \texttt{© 2026 Lázaro López Paz. Todos los derechos reservados.}}
+\date{\today}
+\begin{document}
+\maketitle
+% Aviso legal en la primera página
+\vspace{-1.5em}
+\begin{flushleft}
+\small
+\textbf{Aviso legal:} Este documento constituye una divulgación de invención protegida. \\
+Queda prohibida la reproducción total o parcial sin autorización expresa del titular. \\
+Patente en trámite – Prioridad internacional 2026.
+\end{flushleft}
+\vspace{1em}
+\section{Resumen Ejecutivo}
+El helio-3 (³He) es el recurso estratégico más valioso del siglo XXI. Este documento presenta un análisis comparativo completo de las dos rutas viables para su obtención: la minería del regolito lunar y la captura directa del viento solar en el punto de Lagrange L1. Además, se detalla el plan integral: viabilidad técnica, materiales, transporte, ensamblaje, coste por kilogramo, diagrama de flujo de costes, tabla de riesgos y la transición estratégica hacia la extracción a gran escala mediante viento solar.
+\section{1. Viabilidad Técnica del Proyecto}
+\subsection{Niveles de Madurez Tecnológica (TRL) – 2026}
+\begin{table}[H]
+\centering
+\begin{tabular}{l c l}
+\toprule
+\textbf{Tecnología} & \textbf{TRL Actual} & \textbf{Comentario} \\
+\midrule
+Minería robótica lunar & 5--6 & Prototipos probados en análogos lunares \\
+Clasificación electrostática regolito & 5 & Validado en vacío y gravedad simulada \\
+Extracción térmica de ³He & 4--5 & Experimentos en laboratorio y simuladores \\
+Sistemas criogénicos (< \SI{50}{\milli\kelvin}) & 7--8 & Tecnología madura (usada en física cuántica) \\
+Starship (lanzamiento reutilizable) & 6--7 & Vuelos orbitales exitosos, lunar en desarrollo \\
+TWDEC (conversión directa) & 3--4 & Prototipos de laboratorio, pendiente validación en vacío \\
+Lentes magnéticas a gran escala & 2--3 & Concepto teórico, sin prototipos orbitales \\
+Fabricación aditiva en órbita & 3--4 & Primeros experimentos en ISS \\
+Propulsión nuclear térmica & 4--5 & Pruebas en tierra, pendiente vuelo \\
+\bottomrule
+\end{tabular}
+\end{table}
+\subsection{Desafíos Técnicos Críticos y Soluciones}
+\begin{itemize}
+\item \textbf{Carga espacial en TWDEC}: Mitigación mediante inyectores de electrones LaB$_6$ + enfoque magnético fuerte.
+\item \textbf{Supervivencia en radiación lunar}: Componentes rad-hard + blindaje de regolito.
+\item \textbf{Mantenimiento autónomo}: Enjambres de robots reparadores + IA predictiva.
+\item \textbf{Eficiencia energética lunar}: Combinación de paneles solares + reactores Kilopower + almacenamiento criogénico.
+\item \textbf{Escalabilidad de la lente magnética}: Diseño modular ensamblable en órbita con robots autónomos.
+\end{itemize}
+\subsection{Conclusión de Viabilidad Técnica}
+El proyecto es \textbf{técnicamente viable} con un horizonte de 8--12 años para la fase lunar productiva y 12--18 años para la fase de viento solar a gran escala. La mayoría de tecnologías críticas ya están en TRL 5+ y evolucionarán rápidamente con la inversión adecuada.
+\section{2. Minería Lunar de ³He – Materiales, Transporte y Ensamblaje}
+\subsection{Materiales Necesarios para la Fase Lunar (2026-2030)}
+\begin{table}[H]
+\centering
+\begin{tabular}{l l r l}
+\toprule
+\textbf{Categoría} & \textbf{Material / Equipo} & \textbf{Cantidad} & \textbf{Notas} \\
+\midrule
+Robótica & Excavadoras autónomas (SILT) & 20 & Regolito polar \\
+ & Clasificadores electrostáticos & 15 & Partículas < \SI{100}{\micro\metre} \\
+ & Robots de ensamblaje pesado & 30 & Fabricación aditiva \\
+Procesamiento & Hornos microondas resonantes & 8 & Calentamiento selectivo \\
+ & Sist. criogénicos (dilución ³He-⁴He) & 6 & < \SI{50}{\milli\kelvin} \\
+ & Destiladores fraccionados & 4 & Purificación isotópica \\
+Energía & Paneles solares desplegables & 50 & \SI{100}{\kilo\watt} pico \\
+ & Reactores Kilopower (\SI{10}{\kilo\watt}) & 8 & Operación nocturna \\
+Estructuras & Módulos presurizados & 25 & Hábitats + laboratorios \\
+ & Estructuras de soporte (regolito) & \SI{500}{\tonne} & Impresión 3D lunar \\
+Logística & Contenedores retorno criogénicos & 100 & \SI{50}{\kilo\gram} ³He c/u \\
+\bottomrule
+\end{tabular}
+\end{table}
+\subsection{Transporte a la Luna}
+\begin{itemize}
+\item \textbf{Vehículo principal}: SpaceX Starship (capacidad \SIrange{100}{150}{\tonne} por vuelo).
+\item \textbf{Número de lanzamientos}: 80--120 vuelos entre 2026 y 2030.
+\item \textbf{Costo objetivo por lanzamiento}: 10--15 millones USD.
+\item \textbf{Ruta}: LEO → Repostaje → Transferencia trans-lunar → Aterrizaje polo sur.
+\end{itemize}
+\subsection{Ensamblaje en la Luna – Fases Detalladas}
+\begin{enumerate}
+\item \textbf{Fase 1 (Meses 1-6)}: Despliegue inicial de robots, módulos y energía.
+\item \textbf{Fase 2 (Meses 7-18)}: Ensamblaje de planta de procesamiento + impresión 3D.
+\item \textbf{Fase 3 (Meses 19-36)}: Puesta en marcha y primeras pruebas de producción.
+\item \textbf{Fase 4 (Meses 37-60)}: Operación productiva (\SIrange{5}{10}{\kilo\gram\per\year}).
+\end{enumerate}
+\section{3. Análisis de Coste por Kilogramo de ³He}
+\begin{table}[H]
+\centering
+\begin{tabular}{l r r l}
+\toprule
+\textbf{Fuente} & \textbf{Coste Estimado (USD/kg)} & \textbf{Producción Anual} & \textbf{Notas} \\
+\midrule
+Minería Lunar (Fase 2026-2030) & 180.000 -- 350.000 & \SIrange{5}{10}{\kilo\gram} & Coste inicial alto \\
+Minería Lunar (Fase 2030-2040) & 80.000 -- 150.000 & \SIrange{20}{50}{\kilo\gram} & Economías de escala \\
+Captura Viento Solar (2035-2040) & 25.000 -- 60.000 & \SI{500}{--}\SI{2000+}{\kilo\gram} & Mega-estructura L1 \\
+Mercado Actual (2026) & \(\sim\)20.000.000 & < \SI{1}{\kilo\gram} & Muy limitado \\
+\bottomrule
+\end{tabular}
+\caption{Coste proyectado del ³He según método de obtención. Las cifras del mercado actual provienen de transacciones puntuales de ³He criogénico para detectores de neutrones, extrapoladas a escala de fusión \cite{wittenberg1986}.}
+\label{tab:coste}
+\end{table}
+\section{4. Diagrama de Flujo de Costes del Proyecto}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    node distance=1.0cm and 1.0cm,
+    box/.style={draw, rectangle, minimum width=2.4cm, minimum height=1.2cm, align=center, font=\scriptsize, fill=blue!8},
+    arrow/.style={->, thick, >=Stealth}
+]
+\node[box] (inv) {Inversión Inicial\\(Capital + I+D)};
+\node[box, right=of inv] (lanz) {Lanzamientos\\Starship (80-120)};
+\node[box, right=of lanz] (ens) {Ensamblaje Lunar\\+ Operación};
+\node[box, right=of ens] (prod) {Producción ³He\\(\SIrange{5}{50}{\kilo\gram\per\year})};
+\node[box, right=of prod] (rev) {Ingresos\\(Fusión + Cuántica)};
+\draw[arrow] (inv) -- (lanz);
+\draw[arrow] (lanz) -- (ens);
+\draw[arrow] (ens) -- (prod);
+\draw[arrow] (prod) -- (rev);
+\node[below=0.6cm of lanz, font=\footnotesize, align=center] {10.000--15.000 M\$};
+\node[below=0.6cm of ens, font=\footnotesize, align=center] {6.000--10.000 M\$};
+\node[below=0.6cm of prod, font=\footnotesize, align=center] {Ingresos\\80k--350k \$/kg};
+\end{tikzpicture}
+\caption{Diagrama de flujo de costes del proyecto (2026-2040). Los costes se indican en millones de USD (M\$) para las fases de inversión, y en USD/kg para los ingresos.}
+\label{fig:cost_flow}
+\end{figure}
+\section{5. Comparación Directa: Regolito Lunar vs. Viento Solar}
+\label{sec:comparacion}
+Para decidir la estrategia de recolección a largo plazo, es esencial contrastar ambos métodos en sus parámetros fundamentales. La Tabla~\ref{tab:comparativa} resume las diferencias más relevantes.
+\begin{table}[H]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{l X X}
+\toprule
+\textbf{Criterio} & \textbf{Minería de Regolito Lunar} & \textbf{Captura de Viento Solar (L1)} \\
+\midrule
+\textbf{Concentración de ³He} & 1--15 ppb en masa (partes por billón) en regolito polar maduro. & \(\sim\SI{4}{\per\cubic\centi\metre}\) átomos en el viento solar (flujo \(\approx \SI{10^{8}}{\per\square\centi\metre\per\second}\)). \\
+\addlinespace
+\textbf{Mecanismo de recolección} & Excavación, clasificación electrostática y calentamiento a \SIrange{700}{800}{\celsius} para liberar gases atrapados. & Imanes superconductores que desvían los iones hacia una lámina colectora, seguido de separación isotópica criogénica. \\
+\addlinespace
+\textbf{Masa a procesar por kg de ³He} & \(\sim \SI{10^{8}}{\tonne}\) de regolito (asumiendo una eficiencia de extracción del \SI{10}{\percent}). & Captura directa de iones; la masa a procesar es esencialmente la del plasma incidente sobre el área efectiva del colector. \\
+\addlinespace
+\textbf{Pureza isotópica} & Mezclado con ⁴He y otros volátiles; requiere destilación fraccionada criogénica. & Alta pureza desde el origen, pero necesita separación del ⁴He (relación ³He/⁴He en viento solar \(\sim \num{4e-4}\)). \\
+\addlinespace
+\textbf{TRL del sistema de recolección} & 4--5 (validado en laboratorio y simuladores lunares). & 2--3 (lentes magnéticas, concepto teórico; TWDEC en TRL 3--4). \\
+\addlinespace
+\textbf{Coste energético primario} & Energía térmica para calentamiento del regolito + sistemas de clasificación y criogenia. & Energía para mantener campos magnéticos (superconductores) + criogenia para separación y almacenamiento. \\
+\addlinespace
+\textbf{Escalabilidad} & Limitada por la logística de excavación y transporte lunar; difícil superar \(\sim\SI{100}{\kilo\gram\per\year}\) sin inversión masiva. & Teóricamente ilimitada: el área del colector puede crecer modularmente; \SI{1000+}{\kilo\gram\per\year} es factible con una lámina de varios \si{\square\kilo\metre}. \\
+\addlinespace
+\textbf{Productos secundarios} & Agua, metales, oxígeno, otros volátiles (aprovechables \textit{in situ}). & Ninguno; la estructura está dedicada exclusivamente al ³He. \\
+\addlinespace
+\textbf{Autonomía operativa} & Alta: robots mineros y plantas en superficie lunar con mantenimiento remoto. & Muy baja: requiere ensamblaje y reparaciones en órbita; alta dependencia de teleoperación o IA avanzada. \\
+\addlinespace
+\textbf{Principales riesgos técnicos} & Radiación lunar, polvo abrasivo, fallos criogénicos. & Carga espacial en haces de iones, estabilidad orbital de la megaestructura, micrometeoritos. \\
+\addlinespace
+\textbf{Coste estimado (maduro)} & \SI{80000}{--}\SI{150000}{USD/kg} (a partir de 2030). & \SI{25000}{--}\SI{60000}{USD/kg} (a partir de 2035). \\
+\bottomrule
+\end{tabularx}
+\caption{Comparación detallada entre la minería de regolito lunar y la captura de viento solar en L1.}
+\label{tab:comparativa}
+\end{table}
+\subsection{Arquitectura de una trampa de viento solar en L1}
+La captura de ³He del viento solar se basa en un campo magnético dipolar o cuadrupolar generado por bobinas superconductoras. El viento solar, compuesto principalmente por protones y una pequeña fracción de iones de helio (³He²⁺ y ⁴He²⁺), es desviado selectivamente: los iones de helio, al tener mayor rigidez magnética, se concentran en regiones del campo donde son recolectados por una lámina de material poroso o directamente enfocados hacia una unidad TWDEC (Travelling Wave Direct Energy Converter). Una vez capturados, los iones se neutralizan y se someten a un proceso de separación isotópica por destilación criogénica, aprovechando las distintas presiones de vapor de ³He y ⁴He por debajo de \SI{2.17}{\kelvin}. Todo el sistema se sitúa en el punto de Lagrange L1, a \SI{1.5e6}{\kilo\metre} de la Tierra, donde el viento solar no está perturbado por la magnetosfera terrestre.
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    scale=0.95,
+    ion/.style={->, very thick, red!70!black}
+]
+% Campo magnético
+\draw[fill=blue!10, draw=blue!40, very thick] (-2.5, -1.8) rectangle (2.5, 1.8);
+\node at (0, 1.5) {\textbf{Campo magnético (L1)}};
+% Lámina colectora
+\draw[fill=gray!30, thick] (2.2, -1.5) rectangle (2.8, 1.5);
+\node[rotate=90] at (2.5, 0) {Lámina colectora};
+% Flujo de viento solar entrando
+\foreach \y in {0.8, 0.3, -0.2, -0.7} {
+    \draw[ion] (-3, \y) -- (-2.6, \y);
+}
+\node at (-3.5, 1.2) {Viento solar};
+% Trayectorias desviadas
+\draw[ion] (-2.6, 0.8) to[out=0, in=180] (0.5, 1.2) to[out=0, in=90] (2.2, 0.5);
+\draw[ion] (-2.6, 0.3) to[out=0, in=180] (0.5, 0.8) to[out=0, in=90] (2.2, 0.0);
+\draw[ion] (-2.6, -0.2) to[out=0, in=180] (0.5, -0.8) to[out=0, in=-90] (2.2, -0.0);
+\draw[ion] (-2.6, -0.7) to[out=0, in=180] (0.5, -1.2) to[out=0, in=-90] (2.2, -0.5);
+% Bobinas superconductoras
+\foreach \y in {-0.8, 0.8} {
+    \draw[thick, fill=red!30] (-2.0, \y-0.1) rectangle (-1.6, \y+0.1);
+    \draw[thick, fill=red!30] (1.6, \y-0.1) rectangle (2.0, \y+0.1);
+}
+\node[font=\footnotesize] at (-1.8, -1.3) {Bobinas superconductoras};
+% TWDEC / separación
+\draw[thick, fill=orange!30] (2.8, -0.3) rectangle (3.8, 0.3);
+\node at (3.3, 0) {TWDEC};
+\draw[->] (3.8, 0) -- (4.5, 0);
+\node at (4.8, 0.3) {³He puro};
+\node at (4.8, -0.3) {⁴He};
+\end{tikzpicture}
+\caption{Esquema conceptual del sistema de captura de viento solar en L1. Los iones de helio son desviados por un campo magnético hacia una lámina colectora y posteriormente procesados mediante conversión directa de energía (TWDEC) y separación criogénica.}
+\label{fig:L1_trap}
+\end{figure}
+\section{6. Tabla de Riesgos del Proyecto}
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l X X X}
+\toprule
+\textbf{Riesgo} & \textbf{Descripción} & \textbf{Impacto} & \textbf{Mitigación} \\
+\midrule
+Técnico -- Carga Espacial & Expansión del haz en TWDEC & Alto & Neutralización electrónica + enfoque magnético \\
+Técnico -- Fallo criogénico & Pérdida de ³He en almacenamiento & Medio-Alto & Sistemas redundantes + sensores IoT \\
+Financiero -- Sobrecoste & Desviación > \SI{30}{\percent} del presupuesto & Alto & Fases escalonadas + contratos a precio fijo \\
+Financiero -- Bajada precio ³He & Caída del valor de mercado & Medio & Diversificación (fusión + cuántica) \\
+Geopolítico -- Conflicto Lunar & Disputas por polos lunares & Muy Alto & Artemis Accords + diplomacia multilateral \\
+Geopolítico -- Bloqueo ILRS & China/Rusia restringen acceso & Alto & Alianzas Europa-EE.UU.-Japón-India \\
+Operacional -- Fallo Starship & Retrasos en lanzamientos & Medio & Flota diversificada (Blue Origin + Ariane) \\
+Operacional -- Radiación & Daños en electrónica lunar & Medio & Blindaje + componentes rad-hard \\
+Legal -- Propiedad recursos & Ambigüedad Outer Space Treaty & Medio & Avance en tratados internacionales \\
+\bottomrule
+\end{tabularx}
+\caption{Riesgos del proyecto y estrategias de mitigación.}
+\end{table}
+\section{7. Empresas Capaces de Ejecutar el Proyecto Completo}
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l X X}
+\toprule
+\textbf{Empresa / Consorcio} & \textbf{Rol Principal} & \textbf{Capacidad} \\
+\midrule
+SpaceX (EE.UU.) & Lanzamientos + Starship + Starfactory orbital & Muy Alta \\
+Blue Origin (EE.UU.) & Módulos + robótica + sistemas criogénicos & Alta \\
+Helion Energy (EE.UU.) & Reactores D-³He + TWDEC + fusión & Alta \\
+Interlune (EE.UU.) & Minería lunar de ³He & Media-Alta \\
+AstroForge (EE.UU.) & Minería de asteroides metálicos (complemento) & Media \\
+Airbus Defence \& Space (Europa) & Módulos + sistemas criogénicos & Alta \\
+Thales Alenia Space (Europa) & Estructuras presurizadas + robótica lunar + ensamblaje & Alta \\
+ispace (Japón/Europa) & Rovers + robótica lunar + misiones de apoyo & Media-Alta \\
+CNSA + CAST (China) & ILRS + minería lunar paralela + robótica & Muy Alta \\
+Roscosmos (Rusia) & ILRS + sistemas nucleares + criogenia & Media-Alta \\
+LuxSpace + ESA (Europa) & Misiones de apoyo + I+D + coordinación & Media \\
+\bottomrule
+\end{tabularx}
+\caption{Empresas y consorcios con capacidades para ejecutar fases del proyecto.}
+\end{table}
+\section{8. Recomendación Estratégica Final (Lázaro López Paz)}
+\textbf{Los tres puntos estratégicos clave:}
+1. \textbf{Prioridad 2026-2030}: Inversión agresiva en infraestructura lunar completa — materiales, transporte con Starship, ensamblaje robótico y operación productiva de \SIrange{5}{10}{\kilo\gram\per\year} de ³He.
+2. \textbf{Inversión en I+D Long-tail (2027-2040)}: Desarrollo paralelo de tecnologías avanzadas (superconductores mejorados, IA de enjambre, fabricación orbital, propulsión nuclear, meta-materiales) para hacer viable la transición al viento solar.
+3. \textbf{Transición Estratégica (2030-2040)}: Cuando la Luna esté produciendo ³He de forma estable y rentable, iniciar el despliegue de la mega-estructura de captura de viento solar en L1 utilizando las lecciones aprendidas y las tecnologías mejoradas disponibles en ese momento.
+Esta transición permitirá aumentar la producción en dos órdenes de magnitud y reducir el coste hasta los \SI{25000}{--}\SI{60000}{USD/kg}, convirtiendo el ³He en el combustible definitivo para la fusión nuclear limpia y la computación cuántica del futuro.
+\begin{thebibliography}{9}
+\bibitem{wittenberg1986}
+Wittenberg, L. J. (1986). \textit{Non-terrestrial resources for helium-3 fusion power}. Space Solar Power Review, 6(1), 63--79.
+\end{thebibliography}
+% ========================
+% NOTA FINAL DE PATENTE
+% ========================
+\vfill
+\begin{center}
+\small
+\textit{Este documento y todas las estrategias, sistemas y diagramas contenidos en él son propiedad intelectual de Lázaro López Paz.} \\
+\textit{Patente en trámite -- Todos los derechos reservados -- \today}
+\end{center}
+\end{document}

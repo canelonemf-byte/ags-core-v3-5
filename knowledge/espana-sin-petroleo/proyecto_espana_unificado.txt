@@ -1,0 +1,456 @@
+\# \==============================================================================  
+\# PROYECTO ESPAÑA — ARCHIVO UNIFICADO  
+\# \==============================================================================  
+\#  
+\# Este documento contiene el proyecto completo en un único archivo.  
+\#  
+\# Para desplegarlo en GitHub y Streamlit Community Cloud, crea los archivos  
+\# indicados en cada bloque, respetando exactamente las rutas:  
+\#  
+\# proyecto-espana/  
+\# ├── .github/  
+\# │   └── workflows/  
+\# │       └── validate.yml  
+\# ├── data/  
+\# │   └── table\_20260925.csv  
+\# ├── app.py  
+\# ├── requirements.txt  
+\# ├── README.md  
+\# └── LICENSE  
+\#  
+\# \==============================================================================
+
+\# \==============================================================================  
+\# ARCHIVO: requirements.txt  
+\# \==============================================================================
+
+streamlit\>=1.30,\<2  
+pandas\>=2.0,\<3  
+plotly\>=5.18,\<7  
+folium\>=0.15,\<1  
+streamlit-folium\>=0.18,\<1
+
+\# \==============================================================================  
+\# ARCHIVO: data/table\_20260925.csv  
+\# \==============================================================================
+
+Archivo,Formato,Uso  
+Propuesta\_Espana\_Sin\_Petroleo\_2026.pdf,PDF,Documento ejecutivo con gráficos  
+mapa\_proyectos\_espana.html,HTML,Presentación interactiva (navegador)  
+mapa\_proyectos\_espana.png,PNG,Imagen para insertar en Word/PPT  
+propuesta.pdf,PDF,Versión tipográfica profesional (LaTeX)
+
+\# \==============================================================================  
+\# ARCHIVO: app.py  
+\# \==============================================================================
+
+from \_\_future\_\_ import annotations
+
+from pathlib import Path  
+from typing import Iterable
+
+import folium  
+import pandas as pd  
+import plotly.express as px  
+import streamlit as st  
+from streamlit\_folium import st\_folium
+
+st.set\_page\_config(  
+    page\_title="España: transición energética",  
+    page\_icon="🇪🇸",  
+    layout="wide",  
+    initial\_sidebar\_state="expanded",  
+)
+
+BASE\_DIR \= Path(\_\_file\_\_).resolve().parent  
+INVENTORY\_PATH \= BASE\_DIR / "data" / "table\_20260925.csv"
+
+REQUIRED\_INVENTORY\_COLUMNS \= {  
+    "Archivo",  
+    "Formato",  
+    "Uso",  
+}
+
+@st.cache\_data(show\_spinner=False)  
+def load\_inventory(path: Path) \-\> pd.DataFrame:  
+    """Carga y valida el inventario documental del proyecto."""
+
+    if not path.is\_file():  
+        raise FileNotFoundError(  
+            f"No se encontró el archivo de inventario en: {path.as\_posix()}"  
+        )
+
+    dataframe \= pd.read\_csv(path, encoding="utf-8-sig")  
+    dataframe.columns \= dataframe.columns.str.strip()
+
+    missing\_columns \= REQUIRED\_INVENTORY\_COLUMNS.difference(dataframe.columns)
+
+    if missing\_columns:  
+        missing \= ", ".join(sorted(missing\_columns))  
+        raise ValueError(  
+            f"El CSV no contiene las columnas requeridas: {missing}."  
+        )
+
+    dataframe \= dataframe.loc\[:, \["Archivo", "Formato", "Uso"\]\].copy()  
+    dataframe \= dataframe.dropna(how="all")
+
+    dataframe\["Archivo"\] \= dataframe\["Archivo"\].astype(str).str.strip()  
+    dataframe\["Formato"\] \= (  
+        dataframe\["Formato"\]  
+        .astype(str)  
+        .str.strip()  
+        .str.upper()  
+    )  
+    dataframe\["Uso"\] \= dataframe\["Uso"\].astype(str).str.strip()
+
+    return dataframe
+
+def as\_csv(dataframe: pd.DataFrame) \-\> bytes:  
+    """Convierte un DataFrame a CSV descargable con codificación UTF-8-SIG."""
+
+    return dataframe.to\_csv(index=False).encode("utf-8-sig")
+
+def unique\_nonempty(values: Iterable\[str\]) \-\> list\[str\]:  
+    """Devuelve una lista ordenada de valores únicos y no vacíos."""
+
+    return sorted(  
+        {  
+            value  
+            for value in values  
+            if value and value.lower() \!= "nan"  
+        }  
+    )
+
+def render\_reference\_map() \-\> None:  
+    """  
+    Renderiza un mapa territorial de referencia.
+
+    No sitúa proyectos energéticos concretos porque el CSV disponible solo  
+    contiene un inventario documental, no coordenadas verificadas.  
+    """
+
+    map\_object \= folium.Map(  
+        location=\[40.15, \-3.70\],  
+        zoom\_start=5,  
+        tiles="OpenStreetMap",  
+        control\_scale=True,  
+    )
+
+    folium.Marker(  
+        location=\[40.15, \-3.70\],  
+        tooltip="España",  
+        popup="Ámbito territorial de referencia del proyecto",  
+        icon=folium.Icon(  
+            color="blue",  
+            icon="info-sign",  
+        ),  
+    ).add\_to(map\_object)
+
+    st\_folium(  
+        map\_object,  
+        height=530,  
+        use\_container\_width=True,  
+        returned\_objects=\[\],  
+    )
+
+def metric\_card(label: str, value: int) \-\> None:  
+    """Muestra una métrica con formato numérico español."""
+
+    st.metric(  
+        label=label,  
+        value=f"{value:,}".replace(",", "."),  
+    )
+
+try:  
+    inventory \= load\_inventory(INVENTORY\_PATH)
+
+except (  
+    FileNotFoundError,  
+    ValueError,  
+    pd.errors.ParserError,  
+    UnicodeDecodeError,  
+) as error:  
+    st.error("No se pudo cargar el inventario documental.")  
+    st.exception(error)  
+    st.stop()
+
+st.title("España: transición energética y descarbonización")
+
+st.caption(  
+    "Panel reproducible para organizar documentación y preparar la "  
+    "incorporación de datos energéticos verificados."  
+)
+
+with st.sidebar:  
+    st.header("Navegación")
+
+    page \= st.radio(  
+        "Selecciona una sección",  
+        options=\[  
+            "Resumen",  
+            "Inventario documental",  
+            "Mapa de referencia",  
+            "Metodología",  
+        \],  
+        label\_visibility="collapsed",  
+    )
+
+    st.divider()
+
+    st.caption(  
+        "Versión inicial organizada · septiembre de 2026"  
+    )
+
+if page \== "Resumen":  
+    st.header("Resumen")
+
+    st.write(  
+        "La aplicación centraliza el inventario de entregables del proyecto. "  
+        "La tabla incluida describe documentos y recursos; no contiene aún "  
+        "datos georreferenciados, capacidades, inversiones ni estados "  
+        "administrativos verificables."  
+    )
+
+    col1, col2, col3 \= st.columns(3)
+
+    with col1:  
+        metric\_card(  
+            "Archivos registrados",  
+            len(inventory),  
+        )
+
+    with col2:  
+        metric\_card(  
+            "Formatos distintos",  
+            inventory\["Formato"\].nunique(),  
+        )
+
+    with col3:  
+        metric\_card(  
+            "Usos documentados",  
+            inventory\["Uso"\].nunique(),  
+        )
+
+    st.subheader("Distribución por formato")
+
+    format\_counts \= (  
+        inventory\["Formato"\]  
+        .value\_counts()  
+        .rename\_axis("Formato")  
+        .reset\_index(name="Cantidad")  
+        .sort\_values("Formato")  
+    )
+
+    chart \= px.bar(  
+        format\_counts,  
+        x="Formato",  
+        y="Cantidad",  
+        text="Cantidad",  
+        color="Formato",  
+        title="Recursos registrados por formato",  
+        labels={  
+            "Cantidad": "Número de archivos",  
+        },  
+    )
+
+    chart.update\_layout(  
+        showlegend=False,  
+        xaxis\_title="Formato",  
+        yaxis\_title="Archivos",  
+    )
+
+    chart.update\_traces(  
+        textposition="outside",  
+        cliponaxis=False,  
+    )
+
+    st.plotly\_chart(  
+        chart,  
+        use\_container\_width=True,  
+    )
+
+    st.subheader("Control de publicación")
+
+    st.warning(  
+        "Antes de incorporar cifras o mapas de proyectos reales, documenta "  
+        "cada dato con fuente, fecha de consulta, unidad, ubicación y nivel "  
+        "de certeza."  
+    )
+
+elif page \== "Inventario documental":  
+    st.header("Inventario documental")
+
+    st.write(  
+        "Consulta, filtra y exporta los recursos registrados en el CSV "  
+        "del repositorio."  
+    )
+
+    formats \= unique\_nonempty(  
+        inventory\["Formato"\].tolist()  
+    )
+
+    selected\_formats \= st.multiselect(  
+        "Filtrar por formato",  
+        options=formats,  
+        default=formats,  
+    )
+
+    search \= st.text\_input(  
+        "Buscar por nombre o uso",  
+        placeholder="Ej.: mapa, PDF, LaTeX",  
+    )
+
+    filtered \= inventory\[  
+        inventory\["Formato"\].isin(selected\_formats)  
+    \].copy()
+
+    if search.strip():  
+        query \= search.strip()
+
+        matching \= (  
+            filtered\["Archivo"\].str.contains(  
+                query,  
+                case=False,  
+                na=False,  
+                regex=False,  
+            )  
+            |  
+            filtered\["Uso"\].str.contains(  
+                query,  
+                case=False,  
+                na=False,  
+                regex=False,  
+            )  
+        )
+
+        filtered \= filtered\[matching\]
+
+    st.dataframe(  
+        filtered,  
+        use\_container\_width=True,  
+        hide\_index=True,  
+    )
+
+    st.download\_button(  
+        "Descargar inventario filtrado",  
+        data=as\_csv(filtered),  
+        file\_name="inventario\_filtrado.csv",  
+        mime="text/csv",  
+    )
+
+elif page \== "Mapa de referencia":  
+    st.header("Mapa de referencia")
+
+    st.info(  
+        "El CSV disponible es un inventario documental. Para evitar "  
+        "representar datos no verificados, este mapa no sitúa proyectos "  
+        "energéticos específicos."  
+    )
+
+    render\_reference\_map()
+
+    st.subheader(  
+        "Esquema requerido para un mapa de proyectos"  
+    )
+
+    schema \= pd.DataFrame(  
+        \[  
+            (  
+                "Proyecto",  
+                "Texto",  
+                "Nombre oficial del proyecto",  
+            ),  
+            (  
+                "Latitud",  
+                "Número",  
+                "Coordenada WGS84 validada",  
+            ),  
+            (  
+                "Longitud",  
+                "Número",  
+                "Coordenada WGS84 validada",  
+            ),  
+            (  
+                "Tecnología",  
+                "Texto",  
+                "Ej.: H₂ renovable, biometano o SAF",  
+            ),  
+            (  
+                "Capacidad",  
+                "Texto",  
+                "Valor, unidad y periodo de referencia",  
+            ),  
+            (  
+                "Inversión\_MEUR",  
+                "Número",  
+                "Inversión con fuente y fecha",  
+            ),  
+            (  
+                "Estado",  
+                "Texto",  
+                "Operativo, construcción, autorización, etc.",  
+            ),  
+            (  
+                "Fuente",  
+                "URL o referencia",  
+                "Documento primario o fuente pública",  
+            ),  
+            (  
+                "Fecha\_consulta",  
+                "Fecha ISO",  
+                "Fecha de comprobación del dato",  
+            ),  
+        \],  
+        columns=\[  
+            "Columna",  
+            "Tipo",  
+            "Uso",  
+        \],  
+    )
+
+    st.dataframe(  
+        schema,  
+        use\_container\_width=True,  
+        hide\_index=True,  
+    )
+
+elif page \== "Metodología":  
+    st.header("Metodología y límites")
+
+    st.markdown(  
+        """  
+\#\#\# Principios de calidad
+
+\- Separar documentación, datos primarios, cálculos y visualizaciones.  
+\- Mantener el código de la aplicación en \`app.py\` y los datos en \`data/\`.  
+\- Registrar para cada cifra la fuente, fecha de consulta, unidad y metodología.  
+\- Etiquetar claramente objetivos, escenarios y estimaciones para no confundirlos con hechos observados.  
+\- Validar unidades, coordenadas, duplicados y valores ausentes antes de publicar un mapa o una agregación.
+
+\#\#\# Alcance actual
+
+El repositorio preparado contiene una aplicación Streamlit funcional y el inventario documental suministrado. No incorpora como hechos verificables las cifras, ubicaciones o estados incluidos en borradores previos, porque esos elementos requieren fuentes trazables antes de su difusión pública.  
+        """  
+    )
+
+\# \==============================================================================  
+\# ARCHIVO: README.md  
+\# \==============================================================================
+
+\# España: transición energética y descarbonización
+
+Aplicación Streamlit para organizar el inventario documental de una propuesta sobre descarbonización del transporte en España y preparar una futura base de datos de proyectos energéticos verificables.
+
+\#\# Estructura
+
+\`\`\`text  
+proyecto-espana/  
+├── .github/  
+│   └── workflows/  
+│       └── validate.yml  
+├── data/  
+│   └── table\_20260925.csv  
+├── app.py  
+├── requirements.txt  
+├── README.md  
+└── LICENSE

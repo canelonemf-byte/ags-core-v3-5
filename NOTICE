@@ -1,4 +1,4 @@
-AGs-Core v3.5 — avisos de terceros y atribuciones
+AGs-Core v3.6 — avisos de terceros y atribuciones
 
 1) app/ags_local/model.py (AGsGPT: CausalSelfAttention, Block, generate con top-k,
    inicialización normal std=0.02) sigue de cerca el diseño de:
@@ -23,3 +23,9 @@ AGs-Core v3.5 — avisos de terceros y atribuciones
 
 6) Las herramientas físicas (app/ags_local/tools.py) usan constantes CODATA públicas y
    fórmulas de libro de texto; los supuestos se indican en cada salida.
+
+7) v3.6: knowledge/ contiene copias de texto de los repositorios del propio autor
+   (github.com/canelonemf-byte, licencia MIT) para el índice local. Los documentos citan a terceros
+   (empresas, software, autores); esas menciones no implican cesión de sus derechos. Ver los informes
+   license_check en reports/ para los avisos detectados.
+8) scikit-learn (BSD-3), opcional, para TF-IDF.

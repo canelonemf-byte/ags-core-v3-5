@@ -1,8 +1,31 @@
-# AGs-Core v3.5
+# AGs-Core v3.6
 
-38 agentes: 31 por LLM (vía LiteLLM, de la v3.4) + 6 agentes de herramientas físicas
+84 agentes: 46 agentes de proyecto (v3.6, uno por repositorio) + los 38 de la v3.5: 31 por LLM (vía LiteLLM, de la v3.4) + 6 agentes de herramientas físicas
 deterministas (`tool_<proyecto>`) + 1 agente local `agsgpt` (PyTorch + LoRA).
 La salida de un LLM o de AGsGPT **no** es evidencia; la de las herramientas sí indica supuestos.
+
+## Novedades v3.6
+- **46 ProjectAgents** (`proj_<proyecto>`), generados desde `projects.json` (no hay un archivo por agente).
+  Conocimiento: README/docs/código de cada repo copiados en `knowledge/<proyecto>/` e indexados en local
+  (TF-IDF + palabras clave; usa scikit-learn si está instalado). Los proyectos con física asociada
+  usan además las herramientas de `ags_local` (amoniaco, fusión D-He3, MEI-RIT, NV/ODMR, tDCS, ecosistema).
+  Regenerar: `python scripts/sync_knowledge.py --src /ruta/repos --github owner/repo`.
+- **Supervisor** (`app/supervisor/`): descompone una tarea en subtareas por proyecto y tipo, las guarda en
+  una cola SQLite persistente (`data/supervisor.sqlite`) y las ejecuta con como mucho `AGS_MAX_WORKERS`
+  tareas en paralelo (def. 4, máx. 16) y `AGS_WORKERS_PER_PROJECT` sub-agentes por tarea (def. 3, máx. 8),
+  con reintentos y registro de errores.
+- Tipos de tarea (deterministas, sin LLM): `review_claims` (afirmaciones sin respaldo, física
+  extraordinaria, cifras sin fuente, recálculo con herramientas locales), `missing_pieces` (código, tests,
+  referencias, validación, archivos que siguen en Drive) y `license_check` (originalidad y licencias:
+  «todos los derechos reservados»/CC BY-NC/patente frente a MIT, nombres de terceros, copyright ajeno,
+  contenido derivado sin NOTICE, texto con huella de asistente de IA).
+- **Autopilot**: `python -m app.autopilot [--cycles N] [--interval s] [--reseed s]`. Cada ciclo siembra las
+  revisiones que tocan (por defecto cada 6 h por proyecto y tipo), las ejecuta y escribe
+  `reports/<proyecto>/<tipo>.md|json` y `reports/SUMMARY.md`. Para pararlo: `kill <pid>` o crear `data/STOP`.
+- Endpoints nuevos (con `X-API-Key`): `POST /tasks` `{"task", "projects"?, "kinds"?, "run_now"?}`,
+  `GET /tasks`, `GET /tasks/{id}`, `GET /supervisor/status`, `GET /projects/{id}/search?q=`; y `GET /projects`.
+- Los informes son **indicios a revisar, no veredictos**: las reglas no comprueban plagio contra fuentes
+  externas (no hay acceso a internet en la revisión), solo señales internas.
 
 ## Novedades v3.5
 - `app/ags_local/`: motor local (herramientas, enrutado, planificador, memoria SQLite, AGsGPT/LoRA),
@@ -17,6 +40,7 @@ La salida de un LLM o de AGsGPT **no** es evidencia; la de las herramientas sí 
     pip install -r requirements-dev.txt     # torch CPU: ver requirements.txt
     cd app && AGS_API_KEY=xxx uvicorn main:app --port 8000
     pytest -m unit
+    python -m app.autopilot --cycles 3 --interval 2   # desde la raíz del repo
 
 ## Límites
 - AGsGPT: ~0,8 M parámetros, base aleatoria congelada **sin preentrenar**; solo se entrena LoRA.

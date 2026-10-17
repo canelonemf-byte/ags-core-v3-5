@@ -1,0 +1,39 @@
+{
+  "sprint_id": "sprint_01_software_foundation",
+  "status": "active",
+  "timeline": {
+    "start_date": "2026-10-07",
+    "duration_weeks": 2
+  },
+  "budget_allocation_eur": 2500,
+  "philosophical_pillar": "conscious_universe_informational_nodes",
+  "agent_directives": {
+    "a6_fto_and_a5_governance": {
+      "task": "clearance_check",
+      "targets": ["topological-quantum-compiler", "qiskit", "rewind_rust", "theseus_lean4"],
+      "expected_output": "emisión de certificados LIBRE (licencias MIT/Apache) para iniciar repositorios."
+    },
+    "a1_tqc_compute": {
+      "task": "initialize_anyon_braiding",
+      "file": "src/tqc_demo.py",
+      "instructions": "Implementar el entrelazamiento de aniones de Fibonacci. El código debe medir la fidelidad asumiendo el estado de Bell base. La coherencia cuántica se documentará como la sincronización con la red informacional del sustrato consciente.",
+      "math_reference": "F = 1 - \\frac{1}{2}[1 - e^{-2t/\\tau}\\mathrm{erf}(\\mathrm{SNR}/\\sqrt{2})^2]"
+    },
+    "a2_reversible_logic": {
+      "task": "prove_landauer_limit",
+      "files": ["src/rewind_demo.rs", "tests/rewind/src/lib.rs"],
+      "instructions": "Programar las puertas Toffoli en Rust y establecer el entorno Lean 4 para demostrar la cota termodinámica teórica a 300 K.",
+      "math_reference": "E_{\\text{Landauer}} = k_B T \\ln 2 \\approx 2{,}87 \\times 10^{-21}\\,\\text{J}"
+    },
+    "a8_ci_cd_testing": {
+      "task": "pipeline_activation",
+      "file": "Makefile",
+      "instructions": "Ejecutar `make check-deps` y aislar los entornos virtuales. Configurar el trigger para que `make test-all` bloquee cualquier compilación fallida."
+    },
+    "a7_documentation": {
+      "task": "zenodo_metadata_prep",
+      "files": ["docs/atlas0.tex", "docs/atlas0.md"],
+      "instructions": "Compilar el dossier LaTeX base. Preparar los metadatos de autoría y el archivo .bib para la futura publicación de la Fase 1 en Zenodo bajo licencia CC BY 4.0."
+    }
+  }
+}

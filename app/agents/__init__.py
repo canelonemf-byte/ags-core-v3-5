@@ -7,3 +7,4 @@ from . import validation
 from . import orchestration
 from . import physics_tools
 from . import agsgpt_agent
+from . import project_agents

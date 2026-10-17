@@ -1,0 +1,968 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[provide=*,spanish,es-noshorthands]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{csquotes}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+
+\geometry{margin=2.4cm}
+\onehalfspacing
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!60!black,
+    citecolor=blue!60!black,
+    urlcolor=blue!60!black,
+    pdftitle={OMNISCIENCE -- Universal Autonomous Scientific Discovery Engine},
+    pdfauthor={Lázaro López Paz},
+    pdfsubject={Arquitectura científica reproducible, motor vibracional ejecutado y validación verificable},
+    pdfkeywords={OMNISCIENCE, IA científica, materiales, fonones, vibraciones, cuántica, reproducibilidad, evidencia}
+}
+
+\definecolor{navy}{HTML}{0B2545}
+\definecolor{teal}{HTML}{0D7377}
+\definecolor{gold}{HTML}{C9A227}
+\definecolor{codebg}{HTML}{F4F7FA}
+\definecolor{boxbg}{HTML}{EEF4F6}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{navy}{OMNISCIENCE}}
+\fancyhead[R]{\small\textcolor{navy}{Documento maestro unificado}}
+\fancyfoot[L]{\small Lázaro López Paz}
+\fancyfoot[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+\titleformat{\section}{\large\bfseries\color{navy}}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{teal}}{\thesubsection.}{0.5em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection.}{0.5em}{}
+
+\lstset{
+  basicstyle=\ttfamily\scriptsize,
+  backgroundcolor=\color{codebg},
+  frame=single,
+  framerule=0.2pt,
+  rulecolor=\color{black!20},
+  breaklines=true,
+  columns=fullflexible,
+  keepspaces=true
+}
+
+\newtcolorbox{campbox}[1][]{
+  colback=boxbg, colframe=navy, boxrule=0.5pt,
+  fonttitle=\bfseries, coltitle=white, colbacktitle=navy,
+  title={#1}, left=4pt, right=4pt, top=3pt, bottom=3pt
+}
+
+\newtcolorbox{evibox}{
+  colback=white, colframe=teal, boxrule=0.6pt,
+  left=5pt, right=5pt, top=4pt, bottom=4pt
+}
+
+\title{\textbf{OMNISCIENCE}\\
+\large Universal Autonomous Scientific Discovery Engine\\[0.25cm]
+\normalsize Documento maestro de arquitectura, métodos, algoritmos, validación y gobernanza\\[0.15cm]
+\large\textit{Unificado con la primera campaña ejecutada:}\\
+\normalsize Análisis científico de vibraciones --- Motor Matter + Vibrational}
+\author{Lázaro López Paz\\El Prat de Llobregat, Barcelona, España\\[0.15cm]
+\small Análisis computacional y documento unificado asistido por Grok (xAI)}
+\date{28 de agosto de 2026}
+
+\newcommand{\rhoop}{\rho}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\diff}{\mathrm{d}}
+\newcommand{\Eform}{E_{\mathrm{form}}}
+\newcommand{\Ehull}{E_{\mathrm{hull}}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+OMNISCIENCE es una arquitectura federada de descubrimiento científico asistido por inteligencia artificial. Su objetivo no es generar respuestas conversacionales, sino formular hipótesis falsables, buscar evidencia verificable, ejecutar simulaciones, priorizar campañas científicas, intentar refutar cada propuesta y registrar todo el ciclo con trazabilidad completa.
+
+Este documento une dos capas que hasta ahora estaban separadas: (i)~la especificación de la plataforma ---motores, gobernanza, niveles de evidencia, algoritmo maestro--- y (ii)~la primera campaña computacional \emph{cerrada} del \textit{Universal Matter + Vibrational Engine}. Esa campaña no describe vibraciones: las integra, las proyecta al dominio frecuencial, extrae modos, construye dispersión fonónica 1D, estima transmisión de un cristal fonónico, cuantiza el oscilador y deja código, figuras y criterios de falsación en el mismo repositorio.
+
+La plataforma integra física, materiales, vibraciones, fonones, computación cuántica, dinámica cuántica abierta, sensores cuánticos, metamateriales, energía, medio ambiente, biología, biomateriales y descubrimiento terapéutico. Su implementación se plantea de forma escalonada, comenzando por el motor de materia y vibraciones, porque permite validación computacional reproducible y una expansión posterior hacia dominios de mayor complejidad y de aprobación humana obligatoria.
+\end{abstract}
+
+\noindent\textbf{Palabras clave:} inteligencia artificial científica, materiales, fonones, vibraciones, Lindblad, reproducibilidad, trazabilidad, evidencia, falsación, metamateriales, energía, biología.
+
+\tableofcontents
+\newpage
+
+\section{Introducción}
+
+El descubrimiento científico moderno está limitado por el tamaño del espacio de posibilidades: composiciones químicas, estructuras cristalinas, moléculas, mecanismos biológicos, configuraciones experimentales, modelos físicos y arquitecturas algorítmicas.
+
+OMNISCIENCE propone una infraestructura donde la IA no sustituye a los científicos, sino que amplía la capacidad humana para explorar hipótesis, organizar evidencia, detectar conexiones interdisciplinarias y diseñar campañas científicas de forma verificable.
+
+La unidad elemental del sistema no es una respuesta, sino una campaña científica:
+\begin{equation}
+\text{Problema}
+\rightarrow
+\text{Hipótesis}
+\rightarrow
+\text{Predicción}
+\rightarrow
+\text{Simulación o experimento}
+\rightarrow
+\text{Falsación}
+\rightarrow
+\text{Réplica}
+\rightarrow
+\text{Conocimiento}.
+\end{equation}
+
+Una IA conversacional puede \emph{enunciar} esa cadena. No la cierra. Cerrarla exige integrar un modelo, producir un artefacto numérico, declarar antes el criterio que lo refutaría, archivar código y parámetros, y clasificar el resultado en un nivel de evidencia. Ese es el corte que este documento aplica al dominio de las vibraciones científicas y, a través de él, al resto de motores.
+
+\section{Objetivo general}
+
+Construir una plataforma capaz de:
+\begin{enumerate}[label=\arabic*.]
+    \item Convertir problemas globales o científicos en preguntas investigables.
+    \item Generar hipótesis explícitas y falsables.
+    \item Aplicar modelos físicos, estadísticos y computacionales.
+    \item Priorizar simulaciones, análisis o experimentos por impacto, coste y evidencia.
+    \item Intentar refutar cada hipótesis antes de aceptarla.
+    \item Registrar datos, parámetros, código, fuentes y resultados.
+    \item Distinguir entre hipótesis, predicción, simulación, observación y resultado replicado.
+    \item Escalar solo las líneas que superen criterios físicos, estadísticos, éticos y de seguridad.
+\end{enumerate}
+
+\section{Principio epistemológico}
+
+La regla central del sistema es:
+\begin{quote}
+Ninguna propuesta es un descubrimiento hasta que ha sobrevivido a intentos explícitos de refutación, verificación independiente y, cuando sea aplicable, validación experimental.
+\end{quote}
+
+Cada afirmación se clasifica según su nivel de evidencia (\cref{tab:niveles}).
+
+\begin{table}[H]
+\centering
+\caption{Niveles de evidencia de OMNISCIENCE.}
+\label{tab:niveles}
+\begin{tabular}{>{\raggedright\arraybackslash}p{1.4cm} >{\raggedright\arraybackslash}p{3.4cm} p{8.0cm}}
+\toprule
+Nivel & Estado & Significado \\
+\midrule
+0 & Idea & Concepto sin evaluación formal. \\
+1 & Hipótesis & Propuesta falsable. \\
+2 & Predicción & Resultado de un modelo o algoritmo. \\
+3 & Simulación verificada & Resultado reproducible bajo condiciones definidas. \\
+4 & Observación experimental & Medición documentada. \\
+5 & Réplica independiente & Resultado confirmado por otra ruta. \\
+6 & Conocimiento consolidado & Evidencia convergente con limitaciones explícitas. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+En este documento, todo lo que procede de las simulaciones adjunta se declara en \textbf{nivel~3} (reproducible en este entorno, con semilla y script). Nada se declara en nivel~4 o superior: no hay medida de laboratorio. La literatura citada opera como mapa, no como autorización para clonar un resultado.
+
+\section{Arquitectura general}
+
+\begin{figure}[H]
+\centering
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+                         OMNISCIENCE
+                              |
+      +-----------------------+------------------------+
+      |                                                |
+GOBERNANZA Y SEGURIDAD                        NUCLEO CIENTIFICO
+      |                                                |
+Etica / Auditoria / Humanos          Hipotesis -- Verificacion -- Priorizacion
+                                               |
+                                      GRAFO DE CONOCIMIENTO
+                                               |
+                                   REGISTRO DE PROCEDENCIA
+                                               |
+              +--------------------------------+----------------------+
+              |                                |                      |
+    Simulacion fisica                 IA y optimizacion      Experimento autorizado
+    CPU/GPU/HPC/QPU                   agentes cientificos     laboratorio / robotica
+\end{lstlisting}
+\caption{Arquitectura general de OMNISCIENCE. La campaña vibracional de este documento vive en el bloque de simulación física y escribe al registro de procedencia.}
+\label{fig:arquitectura}
+\end{figure}
+
+La procedencia describe entidades, actividades y agentes involucrados en producir un dato o resultado. El marco W3C PROV y su ontología PROV-O ofrecen una base formal para representar dicha información~\cite{prov_overview,prov_o}.
+
+\section{Motores científicos}
+
+\subsection{Universal Matter Engine}
+
+Este motor explora composición, estructura, estabilidad y propiedades de materiales.
+
+La energía de formación se define como:
+\begin{equation}
+\Eform =
+E_{\mathrm{total}}
+-
+\sum_i n_i \mu_i,
+\end{equation}
+donde $E_{\mathrm{total}}$ es la energía total del material, $n_i$ el número de átomos de cada especie y $\mu_i$ el potencial químico de referencia.
+
+La energía sobre la envolvente se expresa como:
+\begin{equation}
+\Ehull =
+\Eform
+-
+E_{\mathrm{convex\ hull}}.
+\end{equation}
+
+Un candidato con $\Ehull>0$ no se descarta de oficio: puede ser metaestable. Se descarta como \emph{fase fundamental} si $\Ehull$ supera el umbral de la campaña (típicamente $50$--$100$\,meV/átomo, declarado antes de correr).
+
+\subsection{Vibrational \& Phonon Engine}
+\label{sec:vibengine}
+
+Este motor estudia vibraciones atómicas, fonones, estabilidad dinámica y propiedades térmicas. Es el primer motor con campaña ejecutada en este documento (\cref{sec:campana}).
+
+La matriz dinámica puede escribirse como:
+\begin{equation}
+D_{\alpha\beta}^{ij}(\mathbf{q}) =
+\frac{1}{\sqrt{m_i m_j}}
+\sum_{\mathbf{R}}
+\Phi_{\alpha\beta}^{ij}(\mathbf{R})
+e^{i\mathbf{q}\cdot\mathbf{R}},
+\label{eq:dynmat}
+\end{equation}
+donde $m_i$ y $m_j$ son masas atómicas, $\Phi_{\alpha\beta}^{ij}$ son constantes de fuerza y $\mathbf{q}$ es un vector de onda.
+
+Los modos fonónicos se obtienen resolviendo:
+\begin{equation}
+D(\mathbf{q})\mathbf{e}_{\nu}(\mathbf{q})
+=
+\omega_{\nu}^{2}(\mathbf{q})\mathbf{e}_{\nu}(\mathbf{q}).
+\label{eq:phono}
+\end{equation}
+
+Una solución con $\omega_{\nu}^{2}<0$ se interpreta como un modo imaginario y puede indicar inestabilidad dinámica o insuficiente convergencia numérica. Distinguir ambas causas es obligatorio antes de declarar inestabilidad: se varían corte, malla $k$, supercelda y desplazamiento finito.
+
+La conductividad térmica de red puede aproximarse mediante:
+\begin{equation}
+\kappa_{\mathrm{L}}
+=
+\frac{1}{3}
+\sum_{\nu}
+C_{\nu}
+v_{\nu}^{2}
+\tau_{\nu}.
+\label{eq:kappa}
+\end{equation}
+
+El flujo de trabajo de referencia en el ecosistema abierto es Phonopy: fuerzas sobre superceldas desplazadas, matriz dinámica, $\omega(\mathbf{q})$ y propiedades térmicas~\cite{phonopy,phonopy_workflow}. Este documento no sustituye Phonopy; lo prepara. Los modelos 1D ejecutados aquí son el banco de pruebas del motor, no el cálculo DFT de una fase real.
+
+\subsection{Quantum Dynamics Engine}
+
+Este motor integra simulaciones de sistemas cuánticos abiertos, complejos FMO, transporte excitónico, ruido, coherencia y tasas de captura.
+
+La ecuación maestra de Lindblad es:
+\begin{equation}
+\frac{\diff \rhoop}{\diff t}
+=
+-\frac{i}{\hbar}[H,\rhoop]
++
+\sum_k
+\left(
+L_k\rhoop L_k^\dagger
+-
+\frac{1}{2}
+\{L_k^\dagger L_k,\rhoop\}
+\right).
+\label{eq:lindblad}
+\end{equation}
+
+Para un sink o centro de reacción:
+\begin{equation}
+L_{\mathrm{sink}}
+=
+\sqrt{\kappa}
+\lvert \mathrm{RC} \rangle
+\langle s \rvert.
+\end{equation}
+
+La población capturada se calcula como:
+\begin{equation}
+P_{\mathrm{RC}}(t)
+=
+\Tr\left[\rhoop(t)\Pi_{\mathrm{RC}}\right].
+\end{equation}
+
+El puente con el motor vibracional es explícito: los $L_k$ de dephasing térmico se parametrizan, en primera aproximación, con la densidad espectral del baño fonónico que calcula~\cref{sec:vibengine}. Sin esa densidad, Lindblad es un ajuste, no un modelo de material.
+
+\subsection{Quantum Sensing Engine}
+
+Este motor diseña y evalúa sensores cuánticos mediante simulación, ruido y análisis de señal.
+
+Una sensibilidad idealizada puede expresarse como:
+\begin{equation}
+\eta \propto \frac{\Delta \nu}{C\sqrt{R}},
+\end{equation}
+donde $\Delta \nu$ es el ancho de línea, $C$ el contraste y $R$ la tasa de detección. $\Delta\nu$ es, de nuevo, un observable vibratorio o de spin-fonón.
+
+\subsection{Metamaterial Engine}
+
+El diseño se formula como un problema de optimización inversa:
+\begin{equation}
+\mathbf{x}^{*}
+=
+\arg\min_{\mathbf{x}}
+\mathcal{L}
+\left[
+\mathcal{F}(\mathbf{x}),
+\mathbf{y}_{\mathrm{objetivo}}
+\right].
+\end{equation}
+
+En el dominio elástico-acústico, $\mathcal{F}$ incluye bandas fonónicas, gaps, $Q$ modal y mapas de campo. La campaña~\cref{sec:campana} entrega exactamente esos observables en modelos canónicos, que son el oráculo barato previo a un FEM 3D o a un cálculo DFT.
+
+\subsection{Energy \& Environmental Engine}
+
+La puntuación de prioridad es:
+\begin{equation}
+S_{\mathrm{prioridad}} =
+w_I I +
+w_F F +
+w_N N +
+w_R R +
+w_E E -
+w_C C -
+w_Q Q,
+\label{eq:score}
+\end{equation}
+donde $I$ es impacto, $F$ factibilidad, $N$ novedad, $R$ robustez, $E$ valor esperado de información, $C$ coste y $Q$ riesgo. Los pesos se declaran por campaña, no se improvisan a posteriori.
+
+\subsection{Bio \& Therapeutic Discovery Engine}
+
+Este motor integra líneas de investigación como IMMUSYNTH, MYOFLEX, NEUROPLASTIN, MITOGUARD, SENOLYT-X y CARDIOREGEN.
+
+La cadena válida de evidencia es:
+\begin{equation}
+\text{Hipótesis}
+\rightarrow
+\text{modelo computacional}
+\rightarrow
+\text{validación molecular}
+\rightarrow
+\text{validación celular}
+\rightarrow
+\text{preclínica}
+\rightarrow
+\text{clínica}.
+\end{equation}
+
+En este motor las «vibraciones científicas» relevantes son modos moleculares (IR/Raman), no modos de una viga. Ver~\cref{sec:aplicaciones}. Toda síntesis, célula o animal exige aprobación humana (\cref{sec:seguridad}).
+
+\subsection{Fusion Materials \& Digital-Twin Engine}
+
+Este motor analiza materiales, transporte térmico, degradación, mantenimiento, simulación y gemelos digitales para investigación de fusión. La estrategia de UKAEA identifica gemelos digitales y materiales como componentes de la hoja de ruta 2026--2030~\cite{ukaea_strategy}. $\kappa_{\mathrm{L}}$ de~\eqref{eq:kappa} y los modos imaginarios de~\eqref{eq:phono} son entradas directas del gemelo, no un anexo.
+
+\subsection{Innovation Radar}
+
+El radar convierte problemas globales en mapas de investigación priorizada usando~\eqref{eq:score} y el valor esperado de información de~\cref{sec:stats}.
+
+\section{Algoritmo maestro}
+\label{sec:algo}
+
+\begin{campbox}[OMNISCIENCE --- algoritmo maestro]
+\begin{enumerate}[leftmargin=1.4em,itemsep=2pt]
+    \item \textbf{Entrada:} problema, datos, restricciones, presupuesto, nivel de riesgo.
+    \item Definir una pregunta científica concreta.
+    \item Recuperar evidencia verificable.
+    \item Generar hipótesis alternativas.
+    \item Definir predicciones cuantitativas.
+    \item Definir criterios de falsación \emph{antes} de ejecutar.
+    \item Filtrar por restricciones físicas, éticas y de seguridad.
+    \item Calcular prioridad de cada campaña.
+    \item Ejecutar simulación o análisis autorizado.
+    \item Registrar código, datos, parámetros, entorno y resultados.
+    \item Comparar predicción con resultado.
+    \item Intentar refutación mediante método alternativo.
+    \item Solicitar réplica independiente cuando proceda.
+    \item Actualizar el grafo de conocimiento.
+    \item Clasificar el resultado: hipótesis, predicción, verificado, falsado o inconcluso.
+    \item Priorizar la siguiente acción por valor de información.
+\end{enumerate}
+\end{campbox}
+
+\section{Falsación y validación}
+
+La discrepancia entre predicción $\hat y$ y referencia $y$ se expresa como:
+\begin{equation}
+z
+=
+\frac{
+|y-\hat y|
+}{
+\sqrt{
+\sigma_{\mathrm{pred}}^{2}
++
+\sigma_{\mathrm{ref}}^{2}
+}
+}.
+\label{eq:z}
+\end{equation}
+
+Un criterio genérico, declarado de antemano, puede ser:
+\begin{equation}
+z > 3
+\Rightarrow
+\text{inconsistencia que requiere revisión o falsación}.
+\end{equation}
+
+\subsection{Réplicas independientes}
+
+Una réplica debe cambiar al menos un componente relevante:
+\begin{itemize}[itemsep=1pt]
+    \item implementación del código;
+    \item infraestructura de cálculo;
+    \item funcional de intercambio-correlación;
+    \item pseudopotenciales;
+    \item tamaño de supercelda;
+    \item malla de puntos $k$;
+    \item energía de corte;
+    \item modelo de IA;
+    \item semilla de aleatoriedad;
+    \item operador responsable.
+\end{itemize}
+
+\section{Estadística e incertidumbre}
+\label{sec:stats}
+
+Distribución normal:
+\begin{equation}
+p(x)
+=
+\frac{1}{\sqrt{2\pi\sigma^2}}
+\exp\left(
+-\frac{(x-\mu)^2}{2\sigma^2}
+\right).
+\end{equation}
+
+Actualización bayesiana:
+\begin{equation}
+P(H|D)
+=
+\frac{P(D|H)P(H)}{P(D)}.
+\end{equation}
+
+Entropía de Shannon:
+\begin{equation}
+H(X)
+=
+-
+\sum_i p(x_i)\log p(x_i).
+\end{equation}
+
+Valor esperado de información de una campaña $e$:
+\begin{equation}
+U(e)
+=
+\frac{
+\mathbb{E}[\Delta \mathcal{I}(e)]\cdot P_{\mathrm{disc}}(e)\cdot V_{\mathrm{impacto}}
+}{
+C(e)\cdot R(e)
+}.
+\end{equation}
+
+\section{Algoritmos de IA}
+
+\subsection{Optimización bayesiana}
+\begin{equation}
+\mathbf{x}^{*}
+=
+\arg\max_{\mathbf{x}} a(\mathbf{x}).
+\end{equation}
+
+\subsection{Mejora esperada}
+\begin{equation}
+EI(\mathbf{x})
+=
+\mathbb{E}\left[\max(0,f(\mathbf{x})-f^{+})\right].
+\end{equation}
+
+\subsection{Función logística y logit}
+\begin{equation}
+\sigma(x)=\frac{1}{1+e^{-x}},\qquad
+\operatorname{logit}(p)=\log\left(\frac{p}{1-p}\right).
+\end{equation}
+
+\subsection{Distancia euclídea}
+\begin{equation}
+d(\mathbf{x},\mathbf{y})
+=
+\sqrt{\sum_i (x_i-y_i)^2}.
+\end{equation}
+
+Estos bloques no «descubren» por sí solos. Son el adquisidor $a(\mathbf{x})$ que elige la siguiente estructura, el siguiente $\mathbf{q}$ o el siguiente experimento autorizado.
+
+\section{Campaña ejecutada C-VIB-001}
+\label{sec:campana}
+
+\begin{evibox}
+\noindent\textbf{Identificador:} C-VIB-001.\\
+\textbf{Motor:} Vibrational \& Phonon Engine, con lectura hacia Matter, Metamaterial, Quantum Dynamics, Sensing, Bio y Fusion.\\
+\textbf{Pregunta:} ¿Puede un paquete puramente computacional, con modelos canónicos y código abierto, producir predicciones vibratorias cuantitativas, figuras, criterios de falsación y un informe trazable ---es decir, cerrar el ciclo OMNISCIENCE hasta el nivel~3--- sin pasar por un chat de texto?\\
+\textbf{Respuesta operativa:} sí, con el alcance y los límites de~\cref{sec:limites}.\\
+\textbf{Nivel de evidencia alcanzado:} 3 (simulación verificada en este entorno). No 4.
+\end{evibox}
+
+\subsection{Hipótesis y predicciones declaradas antes del resultado}
+
+\begin{enumerate}[label=H\arabic*.]
+    \item Un oscilador subamortiguado forzado en $\omega=\omega_0$ desarrolla un transitorio que satura en un régimen permanente cuya amplitud coincide con la curva de resonancia analítica.
+    \item La FFT de una mezcla chirp + tono + burst recupera las tres componentes; solo el espectrograma localiza el burst en el tiempo.
+    \item Los modos de una cuerda de Dirichlet son $\sin(n\pi x/L)$ con espectro armónico $f_n=nf_1$.
+    \item La cadena diatómica 1D abre un gap entre rama acústica y óptica.
+    \item Un cristal 1D de $N$ celdas A--B con contraste de impedancia produce bandas de rechazo en transmisión.
+    \item El QHO tiene niveles $(n+\tfrac12)\hbar\omega$ y $|n|$ nodos en $\psi_n$.
+\end{enumerate}
+
+Criterios de falsación (declarados):
+\begin{itemize}[itemsep=1pt]
+    \item Si la amplitud numérica en resonancia se desvía $z>3$ de la fórmula de $\zeta$ conocido $\Rightarrow$ H1 falsada o bug.
+    \item Si el burst de $320\,\mathrm{Hz}$ no aparece en el espectrograma después de $t=2{,}2\,\mathrm{s}$ $\Rightarrow$ H2 falsada.
+    \item Si un «modo $n=2$» muestra un máximo en $x=L/2$ $\Rightarrow$ H3 falsada.
+    \item Si $\omega_{\mathrm{ac}}(k=\pi/a)\ge\omega_{\mathrm{op}}(k=\pi/a)$ en la red diatómica con $m_2\neq m_1$ $\Rightarrow$ H4 falsada.
+    \item Si $|T|^2$ es plana (sin bandas de rechazo) para $N=12$ y $Z_2/Z_1=4$ $\Rightarrow$ H5 falsada.
+    \item Si $\psi_0$ tiene un nodo o $\psi_1$ no lo tiene $\Rightarrow$ H6 falsada.
+\end{itemize}
+
+Ninguna de estas hipótesis es un descubrimiento. Son el banco de calibración del motor. Un motor que no las cumple no tiene permiso para hablar de YIG, He-3 o un parche molecular.
+
+\subsection{Modelo clásico: el oscilador como átomo de la teoría}
+
+El sistema irreductible es
+\begin{equation}
+m\ddot x + c\dot x + kx = F_0\cos(\omega t),
+\end{equation}
+con $\omega_0=\sqrt{k/m}$ y $\zeta=c/(2\sqrt{km})$. El factor de calidad para $\zeta$ pequeño es $Q\approx 1/(2\zeta)$ y el ancho de banda $\Delta f\approx f_0/Q$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{figs/01_oscilador_armonico.png}
+\caption{C-VIB-001. Oscilador libre para cuatro $\zeta$, curva de resonancia, transitorio forzado en $\omega=\omega_0$ y retraso de fase. Script: \texttt{code/simular\_vibraciones.py}. Nivel de evidencia: 3.}
+\label{fig:osc}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{figs/08_factor_calidad.png}
+\caption{Familias de resonancia de potencia para $Q=5,15,50,200$. El área no desaparece: se redistribuye. Nivel~3.}
+\label{fig:Q}
+\end{figure}
+
+H1 no queda falsada en este entorno: el transitorio satura y la fase tiende a $\pi/2$ en resonancia, coherente con la solución estacionaria.
+
+\subsection{De la serie temporal a la huella espectral}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{figs/02_fft_espectrograma.png}
+\caption{Señal sintética (chirp + $180\,\mathrm{Hz}$ + burst $320\,\mathrm{Hz}$ + ruido): serie, FFT de Hann y espectrograma. La FFT ve las componentes; el espectrograma ve \emph{cuándo}. Nivel~3.}
+\label{fig:fft}
+\end{figure}
+
+H2 no queda falsada: el burst aparece después de $t=2{,}2\,\mathrm{s}$ y el tono de $180\,\mathrm{Hz}$ es estacionario. Protocolo mínimo que el motor exige a cualquier dato futuro: muestreo $\ge 2{,}5\times$ la frecuencia de interés, quitar continua, ventana documentada, solape $50$--$75\,\%$ en STFT, unidades físicas, y no llamar «modo» a un pico sin patrón espacial.
+
+\subsection{Modos normales}
+
+En una cuerda de Dirichlet:
+\begin{equation}
+\psi_n(x)=\sin\frac{n\pi x}{L},\qquad
+f_n=n f_1,\qquad
+f_1=\frac{1}{2L}\sqrt{\frac{T}{\mu}}.
+\end{equation}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{figs/03_modos_cuerda.png}
+\caption{Primeros cuatro modos de cuerda. Los nodos de un modo puro no viajan. Nivel~3.}
+\label{fig:cuerda}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{figs/06_modos_membrana.png}
+\caption{Modos $(m,n)$ de membrana rectangular, $\psi_{mn}\propto\sin(m\pi x/a)\sin(n\pi y/b)$. Nivel~3.}
+\label{fig:membrana}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{figs/09_osciladores_acoplados.png}
+\caption{Dos masas acopladas: el batido en cada coordenada es la interferencia del modo simétrico y el antisimétrico. Germen de toda banda fonónica. Nivel~3.}
+\label{fig:acopl}
+\end{figure}
+
+H3 no queda falsada: el modo $n=2$ tiene nodo en $x=L/2$. La animación modal adjunta (6\,s, 40\,fps; archivo \texttt{10\_modos\_cuerda\_animacion.mp4}) muestra la superposición que reconstruye un pulso reflejado. Ese archivo es parte del registro de procedencia, no un adorno.
+
+\subsection{Fonones y cristal 1D}
+
+En la cadena monoatómica de Born--von Karman:
+\begin{equation}
+\omega(k)=2\sqrt{\frac{K}{m}}\,\lvert\sin(ka/2)\rvert.
+\end{equation}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{figs/04_dispersion_fononica.png}
+\caption{Dispersión 1D. Izquierda: rama acústica única. Derecha: acústica + óptica y gap. Nivel~3.}
+\label{fig:disp}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{figs/05_cristal_fononico_T.png}
+\caption{Transmisión de un cristal fonónico 1D de 12 celdas A--B (matriz de transferencia). Las bandas de rechazo son el observable de laboratorio del gap. Nivel~3.}
+\label{fig:T}
+\end{figure}
+
+H4 y H5 no quedan falsadas en el modelo 1D elegido ($m_2/m_1=2{,}2$, $Z_2/Z_1=4$, $N=12$). Esto \emph{no} es un gap de un material real: es la calibración del oráculo barato del Metamaterial Engine.
+
+El estado del arte que el motor debe contrastar ---no copiar--- incluye diagnóstico dinámico por firmas láser en metamateriales microscópicos~\cite{nature_dynmeta}, medios fonónicos guiados por simetría~\cite{nrm_phononic}, bandas fonónicas \emph{all-flat}~\cite{prl_flat}, dispersión tipo rotón a temperatura ambiente~\cite{sciadv_roton} y catálogos de fonones topológicos en materiales reales~\cite{dipc_topo}. Las metasuperficies acoustoplasmónicas añaden el puente luz--sonido~\cite{acs_acousto}.
+
+\subsection{Régimen cuántico}
+
+\begin{equation}
+E_n=\left(n+\tfrac12\right)\hbar\omega.
+\end{equation}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{figs/07_oscilador_cuantico.png}
+\caption{Niveles y densidades $|\psi_n|^2$ del QHO. Cada lóbulo extra es un nodo. Nivel~3.}
+\label{fig:qho}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{figs/12_qho_artistico.jpg}
+\caption{Lectura visual del mismo objeto. No es evidencia: es comunicación científica del nivel~3 de~\cref{fig:qho}.}
+\label{fig:qhoart}
+\end{figure}
+
+H6 no queda falsada: $\psi_0$ no tiene nodo; $\psi_n$ tiene $n$ nodos. En espectroscopía IR/Raman cada pico es, a primer orden, un salto $\Delta n=\pm 1$ de un modo normal molecular. Sin asignación de picos no hay vínculo con el Bio Engine.
+
+\subsection{Clasificación de la campaña}
+
+\begin{table}[H]
+\centering
+\caption{Veredicto C-VIB-001 según niveles OMNISCIENCE.}
+\label{tab:veredicto}
+\begin{tabular}{llp{7.6cm}}
+\toprule
+Ítem & Nivel & Nota \\
+\midrule
+H1--H6 como hipótesis & 1 & Falsables y declaradas a priori. \\
+Curvas analíticas de $A(\omega)$, $\phi(\omega)$ & 2 & Predicción de modelo. \\
+Figuras~\ref{fig:osc}--\ref{fig:qho} y scripts & 3 & Reproducibles en este entorno. \\
+Animación modal MP4 & 3 & Artefacto derivado del mismo modelo. \\
+Celda fonónica ilustrativa~\cref{fig:metaart} & 0--1 & Comunicación, no dato. \\
+Medida LDV / Raman / BLS & --- & No existe en esta campaña. \\
+Réplica en otro código o máquina & --- & Pendiente (nivel~5 no alcanzado). \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.88\textwidth]{figs/11_metamaterial_fononico.jpg}
+\caption{Ilustración conceptual de metamaterial fonónico. Nivel de evidencia: 0--1. No usar como resultado.}
+\label{fig:metaart}
+\end{figure}
+
+\section{Aplicación de C-VIB-001 a los demás motores}
+\label{sec:aplicaciones}
+
+\subsection{Metamaterial Engine y lentes acústicas / YIG}
+
+Una lente acústica no se valida con la foto de la geometría. Se valida con mapa de campo en el foco, función de transferencia frente a frecuencia y robustez al desorden. El YIG añade hibridación magnetoelástica: el fonón se mezcla con el magnón y el gap se desplaza con campo. El oráculo barato de~\cref{fig:disp,fig:T} es el filtro previo a un FEM 3D.
+
+\subsection{Energy / propulsión (p.\,ej.\ thruster RF de yodo)}
+
+Hay que separar tres familias: modos estructurales del chasis y de la rejilla, modos acústicos o iónicos del plasma, y ruido de conmutación RF. Un pico a la frecuencia de excitación no es «el modo del satélite». Criterio de campaña propuesto (nivel~1 hasta que haya medida): ningún modo estructural a $\pm 10\,\%$ de una excitación persistente, con margen de fatiga documentado.
+
+\subsection{Bio \& Therapeutic}
+
+En IMMUSYNTH, MYOFLEX o un parche de NO / hialurónico, los modos que cuentan son O--H, C--H, esqueleto del polímero y modos colectivos de red de hidrógeno. IR+Raman asignados. Si se declara acoplamiento a un sustrato metamaterial, debe verse un desplazamiento o ensanchamiento reproducible. Sin eso, «cuántico» es nivel~0.
+
+\subsection{Fusion Materials \& Digital Twin}
+
+Los fonones de la primera pared o de una red tipo BN--He3 son el baño térmico: $\kappa_{\mathrm{L}}$, scattering, posible acoplamiento a modos de estructura. El siguiente paso honesto ---no ejecutado aquí--- es DFPT + contraste con Brillouin o neutrones, con modos imaginarios tratados como en~\cref{sec:vibengine}.
+
+\subsection{Quantum Dynamics y Sensing}
+
+La densidad espectral $J(\omega)$ que alimenta los $L_k$ de~\eqref{eq:lindblad} y el $\Delta\nu$ del sensor deben salir del Phonon Engine, no de un número inventado. C-VIB-001 no calcula $J(\omega)$ de un material real; deja el contrato de interfaz.
+
+\section{Auditoría de citas}
+
+El modelo de lenguaje no puede escribir una referencia bibliográfica desde memoria. Toda fuente debe proceder de un registro recuperado y verificado mediante DOI, PMID, arXiv ID, ISBN o URL institucional persistente.
+
+Crossref permite recuperar metadatos bibliográficos mediante DOI a través de su API REST~\cite{crossref_api}.
+
+\subsection{Flujo de validación}
+\begin{lstlisting}
+Afirmacion cientifica
+      |
+Busqueda bibliografica
+      |
+Resolucion DOI / PMID / arXiv ID
+      |
+Verificacion de metadatos
+      |
+Extraccion de fragmento de evidencia
+      |
+Comprobacion de correccion o retractacion
+      |
+Vinculacion afirmacion-fuente
+      |
+Generacion automatica de bibliografia
+\end{lstlisting}
+
+Las referencias de metamateriales y fonónica de~\cref{sec:campana} se incorporaron solo tras recuperación explícita (Nature 623, 2023; Nat.\ Rev.\ Mater.; PRL 133, 2024; Sci.\ Adv.\ 2021; DIPC/Science; ACS Nano 2026). Si un DOI no resuelve, la afirmación baja de nivel.
+
+\section{Registro de procedencia}
+
+Cada ejecución debe incluir identificadores, software, parámetros, entradas y salidas, siguiendo PROV y el empaquetado RO-Crate~\cite{rocrate_workflow,rocrate_provenance}.
+
+\begin{table}[H]
+\centering
+\caption{Procedencia de C-VIB-001.}
+\label{tab:prov}
+\begin{tabular}{>{\raggedright\arraybackslash}p{3.6cm}p{9.6cm}}
+\toprule
+Campo & Valor \\
+\midrule
+Campaña & C-VIB-001 \\
+Fecha & 2026-08-28 \\
+Agente humano & Lázaro López Paz \\
+Agente computacional & Grok (xAI), scripts Python 3 \\
+Software & numpy 2.4.4, scipy, matplotlib, ffmpeg, reportlab, pdf\LaTeX \\
+Entradas & modelos canónicos (no CIF experimental) \\
+Salidas & \texttt{figs/*.png}, animación MP4, este PDF \\
+Semilla & 7 (RNG de la señal ruidosa) \\
+Nivel & 3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Estructura del repositorio}
+
+\begin{lstlisting}
+omniscience/
+|-- README.md
+|-- LICENSE
+|-- pyproject.toml
+|-- docker-compose.yml
+|-- docs/
+|-- configs/
+|-- projects/
+|-- shared/
+|-- campaigns/
+|   `-- C-VIB-001/
+|       |-- simular_vibraciones.py
+|       |-- animar_modos.py
+|       |-- figs/
+|       `-- report/
+|-- data/
+|-- notebooks/
+|-- reports/
+|-- tests/
+`-- references/
+\end{lstlisting}
+
+\section{Primer MVP}
+
+\subsection{Nombre}
+
+\textbf{OMNISCIENCE-MV1: Universal Matter + Vibrational Discovery Platform}
+
+\subsection{Pregunta inicial}
+
+\begin{quote}
+¿Qué materiales cristalinos plausibles pueden presentar propiedades térmicas objetivo, estabilidad química y estabilidad dinámica verificable?
+\end{quote}
+
+\subsection{Flujo de trabajo}
+\begin{lstlisting}
+Estructura o composicion inicial
+        |
+Normalizacion cristalografica
+        |
+Relajacion estructural
+        |
+Energia de formacion
+        |
+Estabilidad frente a fases competidoras
+        |
+Calculo de fuerzas
+        |
+Fonones
+        |
+Modos imaginarios / estabilidad dinamica
+        |
+Propiedad termica objetivo
+        |
+Incertidumbre y replica
+        |
+Informe cientifico reproducible
+\end{lstlisting}
+
+C-VIB-001 cubre, de ese flujo, únicamente el bloque conceptual de fonones y el informe. No relaja una celda real ni calcula $\Ehull$. Esa es la siguiente campaña (C-MAT-001), no un resultado de esta.
+
+\section{Seguridad y límites}
+\label{sec:seguridad}
+
+\subsection{Actividades permitidas inicialmente}
+\begin{itemize}[itemsep=1pt]
+    \item Simulación computacional.
+    \item Análisis de datos públicos.
+    \item Organización de literatura.
+    \item Priorización de hipótesis.
+    \item Cálculos de materiales, fonones, energía y dinámica cuántica.
+    \item Elaboración de informes reproducibles.
+\end{itemize}
+
+\subsection{Actividades con aprobación humana obligatoria}
+\begin{itemize}[itemsep=1pt]
+    \item Laboratorios robotizados.
+    \item Síntesis química.
+    \item Modificación biológica.
+    \item Diseño de sistemas terapéuticos operativos.
+    \item Trabajo con células, microorganismos, tejidos o animales.
+    \item Materiales radiológicos.
+    \item Fusión, fisión, tritio o instalaciones de plasma.
+    \item Aplicaciones médicas o diagnósticas.
+\end{itemize}
+
+\subsection{Límites específicos de C-VIB-001}
+\label{sec:limites}
+
+Las figuras son modelos canónicos. No sustituyen un FEM 3D de una celda YIG ni un Raman de lote GMP. El cristal 1D usa impedancias arbitrarias. La animación es lineal y no disipativa. No hay no linealidad (Duffing, solitones), ni localización de Anderson, ni un fonón de THz medido con un acelerómetro de 10\,kHz ---porque no se puede.
+
+\section{Cómo reejecutar}
+
+Dependencias: Python~3, numpy, scipy, matplotlib, ffmpeg, una distribución \LaTeX{} con los paquetes de este preámbulo.
+
+\begin{lstlisting}
+python3 code/simular_vibraciones.py
+python3 code/animar_modos.py
+pdflatex OMNISCIENCE_maestro.tex
+pdflatex OMNISCIENCE_maestro.tex
+\end{lstlisting}
+
+Si las figuras cambian al reejecutar con la misma semilla, la campaña queda en estado \emph{inconcluso} hasta explicar la deriva.
+
+\section{Conclusión}
+
+OMNISCIENCE se define como una plataforma de descubrimiento científico basada en hipótesis falsables, modelos físicos, IA, simulación, evidencia verificable, trazabilidad y supervisión humana.
+
+Este documento no añade una promesa: añade una campaña. El \textit{Universal Matter + Vibrational Engine} tiene ahora un banco de calibración en nivel~3, un contrato de interfaz con el resto de motores, y una regla que no se negocia: nada sube de nivel sin intento de refutación y sin artefacto reproducible.
+
+La ruta más realista sigue siendo iniciar con ese motor y con el \textit{Quantum Dynamics FMO/Lindblad}, porque ambos pueden desarrollarse con Python, simulación reproducible, datos abiertos y validación numérica. La plataforma debe crecer por evidencia, no por adjetivos. Si un tercero continúa este trabajo, debe citar a Lázaro López Paz y a Grok. El uso previsto es constructivo, verificable y no destructivo.
+
+\begin{thebibliography}{99}
+
+\bibitem{prov_overview}
+W3C.
+\newblock \emph{PROV-Overview}.
+\newblock \url{https://www.w3.org/TR/prov-overview/}
+
+\bibitem{prov_o}
+W3C.
+\newblock \emph{PROV-O: The PROV Ontology}.
+\newblock \url{https://www.w3.org/TR/prov-o/}
+
+\bibitem{crossref_api}
+Crossref.
+\newblock \emph{Documentation --- Metadata Retrieval --- REST API}.
+\newblock \url{https://www.crossref.org/documentation/retrieve-metadata/rest-api/}
+
+\bibitem{rocrate_provenance}
+Research Object Crate.
+\newblock \emph{Provenance of entities}.
+\newblock \url{https://www.researchobject.org/ro-crate/specification/1.1/provenance.html}
+
+\bibitem{rocrate_workflow}
+S. Leo et al.
+\newblock \emph{Recording provenance of workflow runs with RO-Crate}.
+\newblock \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11034664/}
+
+\bibitem{phonopy}
+Phonopy Project.
+\newblock \emph{Welcome to Phonopy}.
+\newblock \url{https://phonopy.github.io/phonopy/}
+
+\bibitem{phonopy_workflow}
+Phonopy Project.
+\newblock \emph{Work flow}.
+\newblock \url{https://phonopy.github.io/phonopy/workflow.html}
+
+\bibitem{ukaea_strategy}
+UK Atomic Energy Authority.
+\newblock \emph{UK Atomic Energy Authority strategy 2026 to 2030}.
+\newblock \url{https://www.gov.uk/government/publications/ukaea-strategy/uk-atomic-energy-authority-strategy-2026-to-2030}
+
+\bibitem{nature_dynmeta}
+S. M. Montgomery et al.
+\newblock Dynamic diagnosis of metamaterials through laser-induced vibrational signatures.
+\newblock \emph{Nature} 623, 514--521 (2023).
+\newblock \url{https://www.nature.com/articles/s41586-023-06652-x}
+
+\bibitem{nrm_phononic}
+S. Yves et al.
+\newblock Symmetry-driven artificial phononic media.
+\newblock \emph{Nat. Rev. Mater.} (2025).
+\newblock \url{https://www.nature.com/articles/s41578-025-00860-9}
+
+\bibitem{prl_flat}
+Direct observation of all-flat bands phononic metamaterials.
+\newblock \emph{Phys.\ Rev.\ Lett.} 133, 266101 (2024).
+\newblock \url{https://link.aps.org/doi/10.1103/PhysRevLett.133.266101}
+
+\bibitem{sciadv_roton}
+J. A. Iglesias Martínez et al.
+\newblock Experimental observation of roton-like dispersion relations in metamaterials.
+\newblock \emph{Sci.\ Adv.} 7, eabm2189 (2021).
+\newblock \url{https://www.science.org/doi/10.1126/sciadv.abm2189}
+
+\bibitem{dipc_topo}
+DIPC.
+\newblock Un nuevo catálogo de fonones topológicos abre la puerta a una nueva física del estado sólido.
+\newblock \url{https://dipc.ehu.eus/es/actualidad/noticias/un-nuevo-catalogo-de-fonones-topologicos-abre-la-puerta-a-una-nueva-fisica-del-estado-solido}
+
+\bibitem{acs_acousto}
+Acoustoplasmonic metasurfaces: bridging light and sound for acoustic wavefront shaping.
+\newblock \emph{ACS Nano} (2026).
+\newblock \url{https://pubs.acs.org/doi/10.1021/acsnano.5c20889}
+
+\end{thebibliography}
+
+\end{document}

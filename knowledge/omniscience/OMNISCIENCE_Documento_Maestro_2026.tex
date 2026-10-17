@@ -1,0 +1,487 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{lmodern,microtype}
+\usepackage{geometry,setspace}
+\usepackage{amsmath,amssymb,amsfonts,bm,mathtools}
+\usepackage{graphicx,xcolor,booktabs,longtable,array,enumitem}
+\usepackage{hyperref,cleveref,float,caption,subcaption}
+\usepackage{algorithm,algpseudocode,fancyhdr,titlesec,csquotes}
+\geometry{margin=2.4cm}\onehalfspacing
+\hypersetup{colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black,pdftitle={OMNISCIENCE -- Universal Autonomous Scientific Discovery Engine},pdfauthor={Lázaro López Paz}}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{OMNISCIENCE}\fancyhead[R]{Documento maestro 2026}\fancyfoot[C]{\thepage}
+\newcommand{\Tr}{\operatorname{Tr}}\newcommand{\diff}{\mathrm d}\newcommand{\R}{\mathbb R}
+\title{\textbf{OMNISCIENCE}\\\large Universal Autonomous Scientific Discovery Engine\\[0.3cm]\normalsize Documento maestro integral de arquitectura, ciencia computacional, IA, cuántica, materiales, biología, energía, fusión, experimentación y gobernanza}
+\author{Lázaro López Paz\\España}
+\date{Agosto de 2026}
+\begin{document}\maketitle
+
+\begin{abstract}
+OMNISCIENCE es una arquitectura federada para descubrimiento científico asistido por inteligencia artificial. Su objetivo es convertir problemas abiertos en campañas científicas reproducibles: recuperar evidencia, formular hipótesis falsables, generar predicciones cuantitativas, ejecutar simulaciones, buscar activamente refutaciones, priorizar experimentos por valor de información, registrar procedencia y, cuando exista infraestructura autorizada, cerrar el ciclo mediante experimentación y réplica independiente.
+
+La plataforma integra ciencia de materiales, vibraciones atómicas y fonones, estructura electrónica, química computacional, metamateriales, fotónica, óptica, superconductividad, sensores cuánticos, dinámica cuántica abierta, computación cuántica híbrida, biología molecular, biomateriales, descubrimiento terapéutico, energía, almacenamiento, agua, medio ambiente, agricultura, ingeniería, robótica, gemelos digitales y fusión. La arquitectura no presupone que una IA, una QPU o un modelo concreto sea superior para todos los problemas: selecciona métodos por complejidad, incertidumbre, coste, reproducibilidad y valor esperado de información.
+
+El núcleo inicial recomendado es OMNISCIENCE-MV1, Universal Matter + Vibrational Discovery Platform, seguido por un motor de dinámica cuántica abierta y por diseño inverso de materiales. El proyecto se diseña alrededor de la separación entre generación y verificación, la trazabilidad de extremo a extremo y la supervisión humana en actividades físicas de riesgo.
+\end{abstract}
+
+\tableofcontents\newpage
+
+\section{Resumen ejecutivo}
+La hipótesis arquitectónica de OMNISCIENCE es que el mayor potencial no procede de un único modelo de inteligencia artificial, sino de una red de modelos especializados coordinados por un protocolo científico común. El sistema debe ser capaz de preguntar qué se sabe, qué no se sabe, qué predicción discrimina entre hipótesis, qué simulación es suficiente, qué experimento aporta más información y qué resultado podría demostrar que la hipótesis es incorrecta.
+
+La unidad de trabajo es una campaña:
+\[
+\boxed{P\rightarrow H\rightarrow M\rightarrow S\rightarrow F\rightarrow E\rightarrow R\rightarrow K\rightarrow H'}
+\]
+con $P$ problema, $H$ hipótesis, $M$ modelo, $S$ simulación, $F$ falsación, $E$ experimento autorizado, $R$ réplica y $K$ conocimiento actualizado.
+
+\section{Alcance y límites}
+OMNISCIENCE pretende abarcar cualquier rama científica en la medida en que pueda formalizarse como problema de conocimiento, modelado, observación, optimización o experimentación. Esto no significa que todo problema sea resoluble, ni que exista una representación única de la realidad, ni que la IA pueda sustituir la validación humana.
+
+El sistema debe distinguir entre: idea, hipótesis, predicción, simulación, observación, réplica y conocimiento consolidado. Una salida de IA no constituye por sí misma evidencia científica.
+
+\section{Principios epistemológicos}
+\begin{enumerate}
+\item Toda hipótesis importante debe ser falsable.
+\item Los criterios de falsación se fijan antes de observar el resultado siempre que sea posible.
+\item Generación y verificación deben estar separadas.
+\item Las incertidumbres deben acompañar a los resultados.
+\item La reproducibilidad forma parte del resultado, no es un añadido posterior.
+\item Las afirmaciones científicas deben vincularse a evidencia identificable.
+\item Las predicciones computacionales no se presentan como hechos experimentales.
+\item Las decisiones de alto impacto requieren revisión humana.
+\end{enumerate}
+
+\section{Niveles de evidencia}
+\begin{longtable}{p{1.2cm}p{4cm}p{9cm}}
+\toprule Nivel & Estado & Definición\\\midrule
+0 & Idea & Concepto sin evaluación formal.\\
+1 & Hipótesis & Propuesta explícita y falsable.\\
+2 & Predicción & Resultado derivado de un modelo o algoritmo.\\
+3 & Simulación reproducible & Resultado que puede repetirse bajo condiciones documentadas.\\
+4 & Observación experimental & Medición documentada con incertidumbre.\\
+5 & Réplica independiente & Confirmación mediante una ruta metodológica independiente.\\
+6 & Evidencia convergente & Varias líneas independientes apuntan al mismo resultado.\\
+7 & Conocimiento consolidado & Resultado robusto, replicado y con límites conocidos.\\\bottomrule
+\end{longtable}
+
+\section{Arquitectura de alto nivel}
+\begin{verbatim}
+                           OMNISCIENCE
+                                |
+                +---------------+---------------+
+                |                               |
+        META-CIENCIA                       GOBERNANZA
+                |                               |
+      +---------+---------+               Etica / Seguridad
+      |         |         |               Auditoria / Humanos
+  Evidencia  Modelos   Datos              Acceso / Trazabilidad
+      |         |         |
+      +---------+---------+
+                |
+       ORQUESTADOR CIENTIFICO
+                |
+  +------+------+------+------+------+------+------+------+
+  |      |      |      |      |      |      |      |      |
+Materia Fonon  Quantum Quimica Bio   Meta   Energia Fusion IA
+  |      |      |      |      |      |      |      |      |
+  +------+------+------+------+------+------+------+------+ 
+                |
+        SIMULACION / OPTIMIZACION
+                |
+        FALSACION ADVERSARIAL
+                |
+       EXPERIMENTO AUTORIZADO
+                |
+             REPLICA
+                |
+       GRAFO DE CONOCIMIENTO
+                |
+          NUEVA CAMPAÑA
+\end{verbatim}
+
+\section{Capa de datos y conocimiento}
+El sistema debe mantener un grafo de conocimiento que conecte entidades científicas, fuentes, modelos, simulaciones, experimentos y resultados. La procedencia puede representarse mediante W3C PROV/PROV-O y empaquetarse mediante RO-Crate, que permite describir datos, software, equipos, personas, workflows y contexto de producción. \cite{prov,provo,rocrate}
+
+Cada afirmación tendrá un registro mínimo: identificador, texto, dominio, fuente, fecha de recuperación, identificador persistente, evidencia asociada, nivel de evidencia, incertidumbre y estado de revisión.
+
+\section{Arquitectura multiagente}
+\subsection{Agentes generadores}
+Físicos, químicos, materiales, matemáticos, biólogos, ingenieros, especialistas en IA y agentes de síntesis interdisciplinaria.
+\subsection{Agentes verificadores}
+Un verificador independiente reconstruye el cálculo; un falsador intenta producir contraejemplos; un agente estadístico revisa incertidumbres; un agente bibliográfico busca literatura contradictoria; un agente experimental diseña pruebas discriminantes.
+\subsection{Agente de orquestación}
+El orquestador decide qué agente debe intervenir, con qué datos, qué método debe utilizarse y cuándo un resultado puede avanzar de nivel de evidencia.
+
+\section{Universal Matter Engine}
+Este motor representa composición, estructura, energía, estabilidad, defectos, superficies, interfaces y propiedades.
+\[
+E_{\mathrm{form}}=E_{\mathrm{total}}-\sum_i n_i\mu_i
+\]
+\[
+E_{\mathrm{hull}}=E_{\mathrm{form}}-E_{\mathrm{convex\ hull}}.
+\]
+Debe incorporar estructuras cristalinas, amorfas, nanoestructuras y fases metastables cuando los modelos utilizados sean adecuados.
+
+\section{Universal Vibrational and Phonon Engine}
+La vibración de una especie atómica no es una propiedad aislada: depende del entorno, enlace, masa, simetría, temperatura, presión y estado electrónico. Por ello el sistema debe explorar modos normales y colectivos, no una supuesta frecuencia única de cada elemento.
+\[
+D_{\alpha\beta}^{ij}(\mathbf q)=\frac{1}{\sqrt{m_im_j}}\sum_{\mathbf R}\Phi_{\alpha\beta}^{ij}(\mathbf R)e^{i\mathbf q\cdot\mathbf R}
+\]
+\[
+D(\mathbf q)\mathbf e_\nu(\mathbf q)=\omega_\nu^2(\mathbf q)\mathbf e_\nu(\mathbf q).
+\]
+El flujo de fonones puede implementarse mediante desplazamientos finitos o constantes de fuerza, tal como documenta Phonopy. \cite{phonopy}
+
+Se estudiarán densidad de estados fonónica, dispersión, velocidades de grupo, tiempos de vida, anharmonicidad, fonón-fonón, electrón-fonón, espín-fonón, transporte térmico y modos localizados.
+\[
+\kappa_L=\frac13\sum_\nu C_\nu v_\nu^2\tau_\nu.
+\]
+
+\section{Mapa vibracional universal}
+Para cada estructura se almacenará una firma:
+\[
+V=\{\omega,\mathbf e,\mathbf q,\tau,C,v,S,g,T,P\}
+\]
+que permita buscar materiales con patrones vibracionales similares o propiedades objetivo.
+
+Se explorarán relaciones entre vibración y estabilidad, transporte térmico, movilidad iónica, catálisis, óptica, magnetismo, superconductividad, respuesta mecánica y propiedades emergentes.
+
+\section{Estructura electrónica y química cuántica}
+El sistema podrá combinar DFT, métodos post-DFT y aproximaciones específicas según el problema. Ningún funcional será considerado universal. Las convergencias deberán tratar energía de corte, malla de puntos $k$, tamaño de celda, tolerancias de fuerza, magnetismo y otros parámetros relevantes.
+
+Para problemas adecuados se podrá utilizar Quantum ESPRESSO y otras herramientas especializadas; la arquitectura debe conservar independencia respecto de un único código. \cite{qe}
+
+\section{Quantum Dynamics Engine}
+Para sistemas cuánticos abiertos:
+\[
+\frac{d\rho}{dt}=-\frac{i}{\hbar}[H,\rho]+\sum_k\left(L_k\rho L_k^\dagger-\frac12\{L_k^\dagger L_k,\rho\}\right).
+\]
+Se estudiarán coherencia, decoherencia, transporte excitónico, captura, ruido y dinámica de sistemas abiertos.
+
+\section{Quantum Computing Engine}
+La computación cuántica será un recurso especializado. Un selector de hardware decidirá entre CPU, GPU, HPC, simuladores y QPU según complejidad, tamaño, precisión, disponibilidad y coste.
+
+El sistema utilizará QPU únicamente cuando el problema y la evidencia de ventaja lo justifiquen. Los resultados cuánticos deberán verificarse mediante simulación clásica, métodos analíticos o réplicas cuando sea posible.
+
+\section{Quantum Sensing Engine}
+El motor estudiará sensibilidad, ruido, contraste, ancho de línea y límites de detección. Un modelo idealizado puede escribirse:
+\[
+\eta\propto\frac{\Delta\nu}{C\sqrt R}.
+\]
+La expresión no se utilizará fuera de su régimen de validez y cada sensor tendrá un modelo específico de ruido y medición.
+
+\section{Metamaterial and Metasurface Engine}
+El diseño inverso será:
+\[
+\mathbf x^*=\arg\min_\mathbf x \mathcal L[\mathcal F(\mathbf x),\mathbf y_{objetivo}].
+\]
+Se podrán explorar metamateriales electromagnéticos, acústicos, mecánicos, fotónicos, fonónicos, metasuperficies, estructuras topológicas y sistemas reconfigurables.
+
+\section{Photonic Engine}
+Se estudiarán interacción luz-materia, fotónica integrada, materiales ópticos, metasuperficies, óptica no lineal, excitones, polaritones y dispositivos optoelectrónicos. El motor buscará combinaciones funcionales entre fotones, fonones, electrones y geometría.
+
+\section{Superconductivity Engine}
+El flujo será:
+\[
+\text{estructura}\rightarrow\text{electrones}\rightarrow\text{fonones}\rightarrow\text{acoplamiento}\rightarrow T_c.
+\]
+Se analizarán estabilidad, densidad de estados, acoplamiento electrón-fonón, presión y composición. Ninguna predicción será etiquetada como superconductividad demostrada sin validación experimental.
+
+\section{Chemical Discovery Engine}
+Se explorarán moléculas, reacciones, catalizadores, electrolitos, materiales funcionales y rutas químicas. La optimización multiobjetivo será:
+\[
+\max\{A,S,St,E\}-\{C,Tox,Env\}
+\]
+donde $A$ es actividad, $S$ selectividad, $St$ estabilidad y $E$ eficiencia.
+
+\section{Energy Engine}
+Se investigarán baterías, almacenamiento térmico, hidrógeno, amoníaco, combustibles sintéticos, termoeléctricos, fotovoltaica, catalizadores y sistemas electroquímicos. La función objetivo combinará eficiencia, densidad energética, vida útil, coste, disponibilidad de materiales, seguridad e impacto ambiental.
+
+\section{Fusion Materials and Digital Twin Engine}
+El motor integrará plasma, materiales, neutrones, refrigeración, superconductores, control, mantenimiento y gemelos digitales. La estrategia de UKAEA 2026--2030 identifica computación avanzada, gemelos digitales, materiales, robótica y control como capacidades relevantes para el ciclo de vida de sistemas de fusión. \cite{ukaea}
+
+Toda actividad con tritio, radiación, plasma de alta energía o instalaciones reales requerirá autorización y supervisión especializada.
+
+\section{Biology and Biomaterials Engine}
+La arquitectura conectará moléculas, proteínas, complejos, células, tejidos y sistemas. Las herramientas de IA podrán proponer hipótesis estructurales o funcionales, pero cada predicción deberá distinguirse de la validación experimental. Los avances recientes en predicción de interacciones biomoleculares muestran el potencial de integrar estructura y aprendizaje automático, pero no eliminan la necesidad de validación. \cite{alphafold3}
+
+\section{Therapeutic Discovery Engine}
+La cadena de evidencia será:
+\[
+\text{hipótesis}\rightarrow\text{modelo}\rightarrow\text{validación molecular}\rightarrow\text{celular}\rightarrow\text{preclínica}\rightarrow\text{clínica}.
+\]
+El sistema no deberá presentar un candidato computacional como tratamiento ni generar instrucciones clínicas sin evaluación regulatoria y profesional.
+
+\section{Environmental Engine}
+Se investigarán captura y transformación de CO$_2$, tratamiento de agua, descontaminación, reciclaje, recuperación de materiales, eficiencia energética y reducción de residuos. La optimización considerará ciclo de vida completo y posibles efectos secundarios.
+
+\section{Water Engine}
+Se estudiarán membranas, adsorbentes, catalizadores, sistemas electroquímicos y materiales selectivos para desalación, purificación y recuperación de recursos.
+
+\section{Agriculture and Food Engine}
+Podrá investigar sensores, materiales biodegradables, eficiencia hídrica, conservación de alimentos y optimización de procesos. Toda aplicación biológica o alimentaria deberá incorporar validación de seguridad apropiada.
+
+\section{Aerospace and Extreme Materials Engine}
+Se analizarán materiales sometidos a temperatura, presión, radiación, vacío, ciclos térmicos y cargas extremas. Se priorizarán ligereza, resistencia, estabilidad y manufacturabilidad.
+
+\section{AI Scientist Engine}
+OMNISCIENCE podrá utilizar IA para investigar nuevos algoritmos, arquitecturas, agentes y métodos científicos. La evaluación deberá separar mejoras de benchmark de mejoras científicas reales.
+
+\section{Innovation Radar}
+El radar convierte problemas en oportunidades de investigación:
+\[
+S=w_I I+w_FF+w_NN+w_RR+w_EE-w_CC-w_QQ.
+\]
+La función podrá adaptarse a cada dominio y deberá mostrar los pesos utilizados.
+
+\section{Diseño inverso universal}
+\[
+\text{propiedad objetivo}\rightarrow\text{estructura}\rightarrow\text{composición}\rightarrow\text{fabricación}\rightarrow\text{validación}.
+\]
+El motor generará candidatos, pero deberá filtrarlos mediante restricciones físicas, químicas, económicas, ambientales y de fabricación.
+
+\section{Optimización bayesiana y búsqueda activa}
+\[
+\mathbf x^*=\arg\max_\mathbf x a(\mathbf x)
+\]
+\[
+EI(\mathbf x)=\mathbb E[\max(0,f(\mathbf x)-f^+)].
+\]
+También se podrán utilizar optimización evolutiva, aprendizaje por refuerzo, modelos generativos, búsqueda multiobjetivo y optimización restringida.
+
+\section{Valor esperado de información}
+\[
+U(e)=\frac{\mathbb E[\Delta\mathcal I(e)]P_{disc}(e)V_{impacto}}{C(e)R(e)}.
+\]
+Esta métrica prioriza acciones que puedan reducir incertidumbre y modificar decisiones científicas importantes.
+
+\section{Estadística e incertidumbre}
+\[
+p(x)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-(x-\mu)^2/(2\sigma^2)}
+\]
+\[
+P(H|D)=\frac{P(D|H)P(H)}{P(D)}
+\]
+\[
+H(X)=-\sum_i p(x_i)\log p(x_i).
+\]
+La plataforma debe utilizar métodos apropiados al tipo de dato; las expresiones anteriores son componentes generales y no sustituyen modelos estadísticos específicos.
+
+\section{Falsación adversarial}
+\[
+z=\frac{|y-\hat y|}{\sqrt{\sigma_{pred}^2+\sigma_{ref}^2}}.
+\]
+Un valor elevado puede activar revisión, pero no constituye por sí mismo una regla universal de falsación. Los criterios deben definirse para cada problema.
+
+\section{Réplicas independientes}
+Una réplica puede cambiar código, funcional, pseudopotenciales, tamaño de supercelda, malla $k$, hardware, modelo de IA, semilla, instrumento, operador o método experimental. El objetivo es comprobar que el resultado no depende de un único camino de cálculo.
+
+\section{Active Experiment Design}
+Cuando exista laboratorio autorizado, el sistema propondrá el experimento que mejor discrimine entre hipótesis. El experimento debe tener:
+\begin{enumerate}
+\item objetivo;
+\item hipótesis comparadas;
+\item variable discriminante;
+\item protocolo aprobado;
+\item criterios de éxito y fracaso;
+\item incertidumbre esperada;
+\item condiciones de seguridad;
+\item registro de procedencia.
+\end{enumerate}
+
+\section{Laboratorio autónomo y robótica}
+La arquitectura podrá conectarse a equipos de caracterización y plataformas robóticas. El ciclo será:
+\[
+\text{predicción}\rightarrow\text{fabricación}\rightarrow\text{medición}\rightarrow\text{análisis}\rightarrow\text{nueva predicción}.
+\]
+Las acciones físicas de riesgo no serán autónomas por defecto.
+
+\section{Digital Twins}
+Los gemelos digitales representarán materiales, dispositivos, procesos, laboratorios y sistemas energéticos. Cada gemelo deberá tener un dominio de validez explícito y diferenciar estado observado de estado inferido.
+
+\section{Provenance y reproducibilidad}
+Cada ejecución debe almacenar código, versión, entorno, datos de entrada, parámetros, hardware, software, resultados, logs y hashes. RO-Crate ofrece un mecanismo de empaquetado de datos y metadatos que puede complementar W3C PROV. \cite{rocrate}
+
+\section{Auditoría bibliográfica}
+El sistema debe recuperar fuentes desde registros identificables y verificar DOI, PMID, arXiv ID u otros identificadores persistentes. Una referencia no debe generarse desde memoria del modelo. La evidencia debe quedar vinculada a la afirmación.
+
+\section{Seguridad y gobernanza}
+\subsection{Permitido inicialmente}
+Simulación, análisis de datos públicos, análisis bibliográfico, generación de hipótesis, optimización computacional y elaboración de informes.
+\subsection{Revisión humana obligatoria}
+Síntesis química, modificación biológica, trabajo con células, tejidos o animales, aplicaciones médicas, materiales radiactivos, tritio, fusión, plasma de alta energía y experimentos físicos potencialmente peligrosos.
+
+\section{Arquitectura de software}
+\begin{verbatim}
+omniscience/
+  README.md
+  LICENSE
+  pyproject.toml
+  configs/
+  docs/
+  knowledge/
+  ontology/
+  references/
+  agents/
+    physics/ chemistry/ materials/ biology/
+    quantum/ fusion/ mathematics/ verification/
+  engines/
+    matter/ vibrations/ phonons/ quantum/
+    metamaterials/ photonics/ chemistry/
+    biology/ energy/ fusion/ environment/
+    water/ innovation/
+  campaigns/
+  simulations/
+  experiments/
+  data/
+  notebooks/
+  reports/
+  tests/
+  audit/
+\end{verbatim}
+
+\section{Esquema mínimo de una campaña}
+\begin{verbatim}
+CampaignID
+Problem
+Question
+Hypotheses[]
+Predictions[]
+Models[]
+Datasets[]
+ComputationalRuns[]
+FalsificationTests[]
+Experiments[]
+Replications[]
+EvidenceLevel
+Uncertainty
+Provenance
+Decision
+NextAction
+\end{verbatim}
+
+\section{Algoritmo maestro}
+\begin{algorithm}[H]
+\caption{Ciclo universal de descubrimiento OMNISCIENCE}
+\begin{algorithmic}[1]
+\Require Problema, datos, restricciones, presupuesto, riesgo
+\State Definir pregunta científica
+\State Recuperar y verificar evidencia
+\State Construir grafo de conocimiento
+\State Generar hipótesis alternativas
+\State Formular predicciones cuantitativas
+\State Definir criterios de falsación
+\State Filtrar restricciones físicas, éticas y de seguridad
+\State Seleccionar modelos y hardware
+\State Ejecutar simulaciones
+\State Ejecutar verificación independiente
+\State Buscar contradicciones
+\State Cuantificar incertidumbre
+\State Diseñar experimento discriminante si procede
+\State Solicitar autorización humana si procede
+\State Ejecutar experimento autorizado
+\State Comparar predicción y observación
+\State Ejecutar réplica
+\State Actualizar evidencia y grafo
+\State Clasificar resultado
+\State Seleccionar siguiente acción por valor esperado de información
+\end{algorithmic}
+\end{algorithm}
+
+\section{Plan de implementación}
+\subsection{Fase 0: infraestructura}
+Python, contenedores, control de versiones, base de datos, almacenamiento de artefactos, registro de procedencia y pruebas automáticas.
+\subsection{Fase 1: MV1}
+Materiales, estructuras, relajación, energías, fuerzas, fonones y estabilidad dinámica. Phonopy documenta un flujo basado en celdas, superceldas, desplazamientos, fuerzas y constantes de fuerza. \cite{phonopy}
+\subsection{Fase 2: Quantum Dynamics}
+Hamiltonianos, Lindblad, ruido, coherencia y transporte.
+\subsection{Fase 3: diseño inverso}
+Generación de estructuras y materiales candidatos y filtrado mediante cálculos de alta fidelidad.
+\subsection{Fase 4: multiagente}
+Agentes generadores, verificadores y falsadores.
+\subsection{Fase 5: radar interdisciplinario}
+Conectar materiales, química, energía, biología, medio ambiente y dispositivos.
+\subsection{Fase 6: experimentación autorizada}
+Integración con laboratorios y robótica bajo supervisión.
+\subsection{Fase 7: gemelos digitales}
+Modelado continuo de sistemas complejos.
+
+\section{Métricas de éxito}
+\begin{itemize}
+\item porcentaje de resultados reproducibles;
+\item tasa de falsación de hipótesis;
+\item reducción de coste computacional por descubrimiento;
+\item tiempo desde problema hasta predicción verificable;
+\item valor esperado de información por campaña;
+\item diversidad de métodos independientes;
+\item cobertura de procedencia;
+\item número de predicciones experimentalmente verificadas;
+\item tasa de falsos positivos;
+\item impacto científico o tecnológico validado.
+\end{itemize}
+
+\section{Riesgos científicos}
+\begin{itemize}
+\item alucinaciones bibliográficas;
+\item sesgo de datos;
+\item fuga de información entre entrenamiento y evaluación;
+\item sobreajuste;
+\item errores numéricos;
+\item extrapolación fuera del dominio de validez;
+\item optimización de métricas equivocadas;
+\item correlación interpretada como causalidad;
+\item consenso artificial entre modelos similares.
+\end{itemize}
+
+\section{Mitigaciones}
+Se utilizarán fuentes verificadas, conjuntos de prueba independientes, múltiples modelos, cálculos de referencia, pruebas de convergencia, validación cruzada, agentes adversariales y revisión humana.
+
+\section{Ejemplos de campañas científicas}
+\subsection{Material térmico}
+Buscar un material con baja conductividad térmica y estabilidad dinámica. Flujo: generación de candidatos, relajación, estabilidad, fonones, transporte, réplica.
+\subsection{Material fotónico}
+Definir respuesta óptica objetivo y realizar diseño inverso de geometría y composición, seguido de simulación electromagnética y fabricación experimental si procede.
+\subsection{Catalizador}
+Optimizar actividad, selectividad, estabilidad, disponibilidad y toxicidad mediante modelos moleculares y validación experimental.
+\subsection{Sensor cuántico}
+Optimizar sensibilidad frente a ruido y temperatura, y diseñar una prueba experimental discriminante.
+\subsection{Fusión}
+Explorar materiales y arquitecturas térmicas mediante simulación multi-física y gemelo digital; la validación física requiere instalaciones especializadas.
+\subsection{Biomaterial}
+Generar candidatos, evaluar propiedades fisicoquímicas, estudiar interacciones biológicas y avanzar solo mediante validación progresiva autorizada.
+
+\section{Principio de descubrimiento universal}
+La plataforma debe buscar no solo mejores soluciones dentro de categorías existentes, sino cambios de representación. En términos generales:
+\[
+\text{nuevo material} + \text{nueva geometría} + \text{nuevo régimen físico} + \text{nuevo algoritmo}
+\]
+pueden abrir espacios de diseño que no aparecen al optimizar una sola variable.
+
+\section{Conclusión general}
+OMNISCIENCE es concebido como una infraestructura científica interoperable y verificable. El proyecto no promete descubrir cualquier cosa ni presupone que todas las disciplinas puedan reducirse a un mismo modelo. Su objetivo es construir un sistema capaz de coordinar múltiples métodos, representar explícitamente la incertidumbre, buscar refutaciones y utilizar computación avanzada allí donde aporte valor.
+
+El núcleo inicial recomendado es el motor universal de materia y vibraciones, porque permite conectar composición, estructura, fuerzas, fonones, propiedades térmicas y diseño inverso con datos y software reproducibles. Sobre este núcleo se incorporarán dinámica cuántica, metamateriales, fotónica, química, biología, energía, fusión y experimentación autónoma.
+
+La arquitectura final puede expresarse como:
+\[
+\boxed{
+\text{Problema}\rightarrow\text{Conocimiento}\rightarrow\text{Hipótesis}\rightarrow\text{Predicción}\rightarrow\text{Simulación}\rightarrow\text{Falsación}\rightarrow\text{Experimento}\rightarrow\text{Réplica}\rightarrow\text{Conocimiento}
+}
+\]
+
+La condición de éxito no será producir muchas hipótesis, sino producir hipótesis útiles que sobrevivan a pruebas independientes y puedan convertirse en conocimiento reproducible o en decisiones experimentales racionales.
+
+\newpage
+\begin{thebibliography}{99}
+\bibitem{prov} W3C. \emph{PROV-Overview}. \url{https://www.w3.org/TR/prov-overview/}
+\bibitem{provo} W3C. \emph{PROV-O: The PROV Ontology}. \url{https://www.w3.org/TR/prov-o/}
+\bibitem{rocrate} Research Object Crate. \emph{RO-Crate Specification}. \url{https://www.researchobject.org/ro-crate/specification/1.3/}
+\bibitem{phonopy} Phonopy Project. \emph{Workflow}. \url{https://phonopy.github.io/phonopy/workflow.html}
+\bibitem{qe} Quantum ESPRESSO. \emph{Official documentation}. \url{https://www.quantum-espresso.org/}
+\bibitem{ukaea} UK Atomic Energy Authority. \emph{UK Atomic Energy Authority strategy 2026 to 2030}. 2026. \url{https://www.gov.uk/government/publications/ukaea-strategy/uk-atomic-energy-authority-strategy-2026-to-2030}
+\bibitem{alphafold3} Abramson et al. \emph{Accurate structure prediction of biomolecular interactions with AlphaFold 3}. Nature, 2024. \url{https://www.nature.com/articles/s41586-024-07487-w}
+\end{thebibliography}
+
+\end{document}
