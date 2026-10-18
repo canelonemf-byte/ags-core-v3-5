@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 from PIL import Image as PILImage
@@ -27,7 +28,9 @@ from reportlab.platypus import (
     TableStyle,
 )
 
-ROOT = Path("/workspace")
+# Raíz configurable (antes fija en /workspace, la raíz del proyecto web OMNISCIENCE).
+# OMNISCIENCE_DOSSIER_ROOT=<dir> (por defecto "."); debe contener public/ y .grok/ como la web original.
+ROOT = Path(os.environ.get("OMNISCIENCE_DOSSIER_ROOT", "."))
 PUBLIC = ROOT / "public"
 STAGE = ROOT / ".grok" / "OMNISCIENCE_dossier_front.pdf"
 OUT = ROOT / "public" / "docs" / "OMNISCIENCE_dossier_completo.pdf"

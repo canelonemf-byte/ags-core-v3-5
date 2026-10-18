@@ -1,5 +1,7 @@
 > Texto extraído automáticamente (pdftotext) del PDF «OMNISCIENCE_dossier_completo.pdf» de grok-workspace-2.zip (Zenodo 10.5281/zenodo.22150378; misma copia que Drive id 1pyACZBxXqzJa_WR_Gc__UyaegijsrTM8), ruta `public/docs/OMNISCIENCE_dossier_completo.pdf`. Fórmulas, figuras y maquetación se han perdido.
 
+> **Nota de autoría.** Autor: Lázaro López Paz. Texto asistido por IA (herramienta: Grok, de xAI), revisado por el autor (revisión PENDIENTE DE VERIFICACIÓN). Se conserva sin cambios la declaración original de atribución que figura más abajo.
+
                    DOSSIER COMPLETO
 
      OMNISCIENCE

@@ -1,0 +1,11 @@
+# Dependencias del código de OMNISCIENCE (versiones con las que se ejecutaron los tests el 2026-10-18).
+# Además: ffmpeg en el sistema (animar_modos.py) y fuentes DejaVu en /usr/share/fonts/truetype/dejavu/
+# (crear_informe_pdf.py, generar_dossier_completo.py).
+numpy==2.5.4
+scipy==1.18.1
+matplotlib==3.11.2
+reportlab==5.0.1
+pillow==13.0.0
+pypdf==6.21.1
+# solo tests
+pytest==9.1.1

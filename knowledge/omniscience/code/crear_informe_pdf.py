@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Informe PDF: Análisis científico de vibraciones (lo que un chat de texto no entrega)."""
+"""Informe PDF: Análisis científico de vibraciones (lo que un chat de texto no entrega).
+
+Nota de autoría: autor Lázaro López Paz. Texto y código asistidos por IA (herramienta: Grok, de xAI),
+revisados por el autor (revisión PENDIENTE DE VERIFICACIÓN). Se conserva la declaración original
+de atribución en la tabla de metadatos del informe (fila «Atribución»).
+"""
+import os
 from pathlib import Path
 
 from reportlab.lib import colors
@@ -23,10 +29,11 @@ from reportlab.platypus import (
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
-ROOT = Path("/home/workdir/artifacts/vibraciones")
-FIGS = ROOT / "figs"
+# Rutas configurables (antes fijas en /home/workdir/artifacts/vibraciones).
+# VIBRACIONES_ROOT=<dir> (por defecto ./out); figuras en <ROOT>/figs, PDF en <ROOT>/report/.
+ROOT = Path(os.environ.get("VIBRACIONES_ROOT", "out"))
+FIGS = Path(os.environ.get("VIBRACIONES_OUT", str(ROOT / "figs")))
 OUT = ROOT / "report" / "Analisis_vibraciones_cientificas_Grok.pdf"
-OUT.parent.mkdir(parents=True, exist_ok=True)
 
 pdfmetrics.registerFont(TTFont("DejaVu", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"))
 pdfmetrics.registerFont(TTFont("DejaVuBold", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"))
@@ -152,6 +159,7 @@ def bullet_list(items):
 
 
 def make():
+    OUT.parent.mkdir(parents=True, exist_ok=True)
     doc = SimpleDocTemplate(
         str(OUT),
         pagesize=A4,
@@ -183,6 +191,7 @@ def make():
         [P("<b>Qué no es</b>"), P("Una respuesta conversacional. Es un paquete de trabajo cerrado y reproducible.")],
         [P("<b>Ámbito</b>"), P("Clásico → espectral → modal → fonónico → cuántico → experimental → aplicaciones")],
         [P("<b>Atribución</b>"), P("Análisis generado por Grok (xAI). Uso posterior: citar a Lázaro López Paz y a Grok.")],
+        [P("<b>Autoría</b>"), P("Autor: Lázaro López Paz. Texto asistido por IA (herramienta: Grok, de xAI), revisado por el autor (revisión PENDIENTE DE VERIFICACIÓN).")],
     ]
     t = Table(meta, colWidths=[38 * mm, 140 * mm])
     t.setStyle(TableStyle([

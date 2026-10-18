@@ -1,0 +1,25 @@
+OMNISCIENCE — avisos de terceros y atribuciones
+
+Autor: Lázaro López Paz. Licencia del proyecto: MIT (ver LICENSE).
+
+1) Dependencias de code/ (no se redistribuyen; cada una con su licencia; versiones en code/requirements.txt):
+   - NumPy        — BSD-3-Clause (las ruedas incluyen además componentes 0BSD, MIT, Zlib y CC0-1.0)
+   - SciPy        — BSD-3-Clause — Copyright (c) 2001-2002 Enthought, Inc.; 2003, SciPy Developers
+   - Matplotlib   — Matplotlib License (basada en la licencia PSF)
+   - ReportLab    — BSD (licencia de ReportLab Inc.)
+   - Pillow       — MIT-CMU (HPND)
+   - pypdf        — BSD-3-Clause
+   - pytest       — MIT (solo tests)
+   Herramientas del sistema usadas pero no incluidas:
+   - FFmpeg (animar_modos.py, vía matplotlib) — LGPL-2.1+ o GPL según la compilación
+   - Fuentes DejaVu (crear_informe_pdf.py, generar_dossier_completo.py) — licencia Bitstream Vera / DejaVu (libre)
+
+2) Contenido asistido por IA: code/crear_informe_pdf.py, docs/Analisis_vibraciones_cientificas_Grok.md y
+   docs/OMNISCIENCE_dossier_completo.md declaran en su fila «Atribución» que el análisis es de Grok (xAI).
+   Ver la nota de autoría en cada archivo. Grok y xAI son marcas de xAI; su mención no implica cesión de derechos ni respaldo.
+
+3) code/omniscience_mv1.py menciona ASE, MACE, Phonopy y VASP/Quantum ESPRESSO como integraciones
+   previstas; las llamadas están comentadas y no se usan (surrogate). VASP es software con licencia comercial.
+
+4) docs/OMNISCIENCE_Architecture_OCR.md procede de una presentación cuyas diapositivas llevaban la marca de
+   agua «Gemini Notebook» (herramienta de terceros); se retiró la marca en la limpieza del OCR.

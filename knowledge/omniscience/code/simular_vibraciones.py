@@ -17,8 +17,9 @@ from scipy.fft import rfft, rfftfreq
 from scipy.signal import spectrogram, windows
 from scipy.integrate import solve_ivp
 
-OUT = Path("/home/workdir/artifacts/vibraciones/figs")
-OUT.mkdir(parents=True, exist_ok=True)
+# Carpeta de salida configurable (antes fija en /home/workdir/artifacts/vibraciones/figs).
+# VIBRACIONES_OUT=<dir>  (por defecto ./out/figs, relativo al directorio de trabajo)
+OUT = Path(os.environ.get("VIBRACIONES_OUT", "out/figs"))
 
 plt.rcParams.update({
     "figure.facecolor": "white",
@@ -51,6 +52,7 @@ SKY = "#3498db"
 
 
 def save(fig, name: str):
+    OUT.mkdir(parents=True, exist_ok=True)
     path = OUT / name
     fig.savefig(path, pad_inches=0.18)
     plt.close(fig)

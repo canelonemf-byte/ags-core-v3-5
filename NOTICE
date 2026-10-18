@@ -29,3 +29,6 @@ AGs-Core v3.6 — avisos de terceros y atribuciones
    (empresas, software, autores); esas menciones no implican cesión de sus derechos. Ver los informes
    license_check en reports/ para los avisos detectados.
 8) scikit-learn (BSD-3), opcional, para TF-IDF.
+9) Streamlit (Apache-2.0), opcional, para la UI de estado (ui/app.py).
+10) knowledge/omniscience/code/ usa NumPy, SciPy, Matplotlib, ReportLab, Pillow y pypdf (licencias BSD/PSF/MIT-CMU);
+    detalle y herramientas del sistema (FFmpeg, fuentes DejaVu) en knowledge/omniscience/NOTICE.
