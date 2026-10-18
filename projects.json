@@ -305,10 +305,10 @@
       "tools": [
         "d3he_tokamak"
       ],
-      "license": "All-Rights-Reserved (patente en trámite)",
+      "license": "MIT",
+      "license_docs": "CC-BY-4.0",
       "files": 12,
-      "binaries_or_skipped": [],
-      "license_declared_by_author": true
+      "binaries_or_skipped": []
     },
     {
       "id": "hibridacion-ia-biologica-fmo",
@@ -715,10 +715,10 @@
         "metalub"
       ],
       "tools": [],
-      "license": "All-Rights-Reserved",
+      "license": "MIT",
+      "license_docs": "CC-BY-4.0",
       "files": 12,
-      "binaries_or_skipped": [],
-      "license_declared_by_author": true
+      "binaries_or_skipped": []
     },
     {
       "id": "red-neuronal-gpt-pytorch",

@@ -1,5 +1,7 @@
 > Texto extraído automáticamente del PDF original «Comparative Strategic Analysis_ The Acquisition of Helium-3 (³He) — Lunar Regolith Mining vs. Solar Wind Harvesting.pdf». Fórmulas, figuras y maquetación se han perdido; el original está en Drive: https://drive.google.com/file/d/1pbOmxJjYVjefCyVXBJsXVSoncWJp-vbW/view?usp=drivesdk
 
+> Licencia de esta copia: CC BY 4.0 (decisión del autor, 2026-10-18). El aviso de reserva de derechos del original se ha sustituido; el resto del texto no se ha modificado.
+
 
 
 C omparative Strategic A nalysis: The A cquisition of Helium-3 (³He) — 
@@ -15,7 +17,7 @@ energy security. This document serves as a formal invention disclosure for a pat
 strategic framework, providing the architectural blueprint to transition from terrestrial scarcity 
 to extraterrestrial abundance.INVENTION D ISC LOSURE: STRA TEGIC  ³He A C QUISITION 
 A RC HITEC TUREIn ven to r:  Lázaro López PazLo catio n :  El Prat de Llobregat, B arcelona, 
-SpainD ate:  June 2, 2026C o p yright:  © 2026 Lázaro López Paz. A ll Rights Reserved.Legal 
+SpainD ate:  June 2, 2026C o p yright:  © 2026 Lázaro López Paz. Licensed under CC BY 4.0.Legal 
 D isclaimer:  This document constitutes a protected invention disclosure. Total or partial 
 reproduction, distribution, or unauthorized use of the technical methodologies described 
 herein without the express written authorization of the holder is strictly prohibited. This 
@@ -205,5 +207,5 @@ mega-structure will increase production by two orders of magnitude, slashing cos
 $25,000/kg.Through this phased approach, Helium-3 will be transformed from a rare 
 scientific isotope into the  "Ultimate Fuel" —an abundant, clean commodity 
 powering the fusion-driven civilization of the next century.© 2026 Lázaro  Lóp ez Paz. 
-A ll Rights Reserved.Pro p iedad In telectual Pro tegida – Paten te en  Trámite 
+Licensed under CC BY 4.0.Pro p iedad In telectual Pro tegida – Paten te en  Trámite 
  

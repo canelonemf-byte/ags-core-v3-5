@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Informe PDF: Análisis científico de vibraciones (lo que un chat de texto no entrega).
 
-Nota de autoría: autor Lázaro López Paz. Texto y código asistidos por IA (herramienta: Grok, de xAI),
-revisados por el autor (revisión PENDIENTE DE VERIFICACIÓN). Se conserva la declaración original
+Nota de autoría: Lázaro López Paz (El Prat de Llobregat, Barcelona, España) e inteligencia artificial.
+Texto y código asistidos por IA (herramienta: Grok, de xAI), revisados por el autor (revisión PENDIENTE DE VERIFICACIÓN). Se conserva la declaración original
 de atribución en la tabla de metadatos del informe (fila «Atribución»).
 """
 import os
@@ -191,7 +191,7 @@ def make():
         [P("<b>Qué no es</b>"), P("Una respuesta conversacional. Es un paquete de trabajo cerrado y reproducible.")],
         [P("<b>Ámbito</b>"), P("Clásico → espectral → modal → fonónico → cuántico → experimental → aplicaciones")],
         [P("<b>Atribución</b>"), P("Análisis generado por Grok (xAI). Uso posterior: citar a Lázaro López Paz y a Grok.")],
-        [P("<b>Autoría</b>"), P("Autor: Lázaro López Paz. Texto asistido por IA (herramienta: Grok, de xAI), revisado por el autor (revisión PENDIENTE DE VERIFICACIÓN).")],
+        [P("<b>Autoría</b>"), P("Lázaro López Paz (El Prat de Llobregat, Barcelona, España) e inteligencia artificial. Texto asistido por IA (herramienta: Grok, de xAI), revisado por el autor (revisión PENDIENTE DE VERIFICACIÓN). Autor responsable: Lázaro López Paz.")],
     ]
     t = Table(meta, colWidths=[38 * mm, 140 * mm])
     t.setStyle(TableStyle([
