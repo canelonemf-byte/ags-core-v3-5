@@ -42,6 +42,13 @@ La salida de un LLM o de AGsGPT **no** es evidencia; la de las herramientas sí 
     pytest -m unit
     python -m app.autopilot --cycles 3 --interval 2   # desde la raíz del repo
 
+## UI de estado (Streamlit, opcional)
+    streamlit run ui/app.py --server.address 127.0.0.1 --server.port 8501
+Solo lectura: muestra `/health`, `/supervisor/status`, los proyectos con el recuento de hallazgos
+(high/medium/low/info) de `reports/<proyecto>/*.json` y `reports/SUMMARY.md`. La clave `X-API-Key`
+se lee en el servidor desde `data/api_key` (o `AGS_API_KEY`) y no llega al navegador.
+API base configurable con `AGS_BASE_URL` (def. `http://127.0.0.1:8000`).
+
 ## Límites
 - AGsGPT: ~0,8 M parámetros, base aleatoria congelada **sin preentrenar**; solo se entrena LoRA.
   Genera texto sin sentido hasta que se preentrene la base (fuera de alcance de v3.5).

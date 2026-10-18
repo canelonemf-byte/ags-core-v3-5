@@ -804,6 +804,25 @@
       "license": "MIT",
       "files": 3,
       "binaries_or_skipped": []
+    },
+    {
+      "id": "oraculo-mesoscopico",
+      "name": "ORÁCULO MESOSCÓPICO",
+      "repo": null,
+      "source": "local",
+      "url": null,
+      "description": "ORÁCULO MESOSCÓPICO: predicción probabilística y simulación mesoscópica; indicar siempre incertidumbre, supuestos y límites. Evidencia E0, PENDIENTE DE VERIFICACIÓN: sin documentos fuente.",
+      "keywords": [
+        "oraculo",
+        "mesoscopico",
+        "prediccion",
+        "probabilistica",
+        "simulacion"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 1,
+      "binaries_or_skipped": []
     }
   ]
 }
