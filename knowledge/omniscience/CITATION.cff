@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "Si usas este material, cítalo así. PROPUESTA pendiente de confirmación del autor."
+title: "C-VIB-001: Análisis computacional de vibraciones, modos y fonones 1D — paquete de reproducibilidad"
+version: "1.0.1-borrador"
+date-released: "2026-10-18"
+authors:
+  - family-names: "López Paz"
+    given-names: "Lázaro"
+    affiliation: "Investigador independiente, El Prat de Llobregat, Barcelona, España"
+license: MIT
+repository-code: "https://github.com/canelonemf-byte/omniscience"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22150378"
+    description: "Record de Zenodo existente (versión 1, 'Vibración proyectos cuánticos'). La nueva versión recibirá otro DOI."
+keywords: [OMNISCIENCE, vibraciones, fonones, modos normales, reproducibilidad]
+references:
+  - type: article
+    title: "Packaging research artefacts with RO-Crate"
+    authors: [{family-names: "Soiland-Reyes", given-names: "Stian"}]
+    journal: "Data Science"
+    year: 2022
+    doi: "10.3233/DS-210053"

@@ -24,3 +24,19 @@ def captured(monkeypatch):
     monkeypatch.setattr(sv, "save", fake_save)
     yield sv, figs
     plt.close("all")
+
+
+@pytest.fixture
+def capture(monkeypatch, tmp_path):
+    """(ORÁCULO) Ejecuta una función de figura de simular_vibraciones y devuelve la figura."""
+    import simular_vibraciones as sv
+    figs = {}
+    monkeypatch.setattr(sv, "OUT", tmp_path)
+    monkeypatch.setattr(sv, "save", lambda fig, name: figs.__setitem__(name, fig))
+
+    def run(fn):
+        figs.clear()
+        getattr(sv, fn)()
+        (name, fig), = figs.items()
+        return fig
+    return run
