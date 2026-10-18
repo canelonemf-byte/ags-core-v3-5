@@ -14,7 +14,9 @@ FIGS = ["01_oscilador_armonico.png", "02_fft_espectrograma.png", "03_modos_cuerd
 
 
 def run(script, env_extra, cwd):
-    env = {**os.environ, "MPLBACKEND": "Agg", **env_extra}
+    base = {k: v for k, v in os.environ.items()
+            if k not in ("VIBRACIONES_OUT", "VIBRACIONES_ROOT", "OMNISCIENCE_DOSSIER_ROOT")}
+    env = {**base, "MPLBACKEND": "Agg", **env_extra}
     return subprocess.run([sys.executable, str(CODE / script)], cwd=cwd, env=env,
                           capture_output=True, text=True, timeout=600)
 
