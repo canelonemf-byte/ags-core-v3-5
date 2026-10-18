@@ -1,7 +1,9 @@
 proyecto GlyD-QSense, 
 
+> Licencia de esta copia: CC BY 4.0 (decisión del autor, 2026-10-18). El aviso de licencia no comercial (NC) del original se ha sustituido; el resto del texto no se ha modificado.
+
 Nota sobre el formato:  
-El documento está redactado en español (excepto el abstract, que se presenta también en inglés para maximizar su alcance). Las referencias a proveedores, costes y pasos de registro simulado se han conservado para facilitar una futura implementación real. Todo el contenido es fruto de nuestra interacción y queda protegido bajo la licencia CC BY-NC-ND 4.0, con la autoría intelectual de Lázaro López Paz.
+El documento está redactado en español (excepto el abstract, que se presenta también en inglés para maximizar su alcance). Las referencias a proveedores, costes y pasos de registro simulado se han conservado para facilitar una futura implementación real. Todo el contenido es fruto de nuestra interacción y queda protegido bajo la licencia CC BY 4.0, con la autoría intelectual de Lázaro López Paz.
 
 \---
 

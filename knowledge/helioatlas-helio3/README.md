@@ -84,7 +84,7 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 
 ## Licencia
 
-Copyright (c) 2026 Lázaro López Paz. Documentos bajo CC BY 4.0 (ver `LICENSE-docs.md`); código y configuración bajo MIT (ver `LICENSE`). Decisión del autor del 2026-10-18; sustituye al aviso anterior de reserva de derechos. La mención «patente en trámite» de los documentos originales queda PENDIENTE DE VERIFICACIÓN (no hay número de solicitud documentado).
+Copyright (c) 2026 Lázaro López Paz. Documentos bajo CC BY 4.0 (ver `LICENSE-docs.md`); código y configuración bajo MIT (ver `LICENSE`). Decisión del autor del 2026-10-18; sustituye al aviso anterior de reserva de derechos. Nota: no existe patente; menciones previas eliminadas por decisión del autor (2026-10-18).
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.

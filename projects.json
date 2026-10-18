@@ -267,10 +267,10 @@
       "tools": [
         "q_matrix"
       ],
-      "license": "CC-BY-NC-ND-4.0",
+      "license": "MIT",
+      "license_docs": "CC-BY-4.0",
       "files": 6,
-      "binaries_or_skipped": [],
-      "license_declared_by_author": true
+      "binaries_or_skipped": []
     },
     {
       "id": "helio3-fusion-qmc-h3",
@@ -582,10 +582,10 @@
         "medico"
       ],
       "tools": [],
-      "license": "CC-BY-NC-SA-4.0",
+      "license": "MIT",
+      "license_docs": "CC-BY-4.0",
       "files": 5,
-      "binaries_or_skipped": [],
-      "license_declared_by_author": true
+      "binaries_or_skipped": []
     },
     {
       "id": "omniscience",

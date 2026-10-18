@@ -1,3 +1,4 @@
+% Licencia de esta copia: CC BY 4.0 (decisión del autor, 2026-10-18); aviso NC sustituido.
 \documentclass[12pt,a4paper]{article}
 
 % Paquetes esenciales
@@ -31,7 +32,7 @@
 \fancyhead[L]{Proyecto OMNI-Q}
 \fancyhead[R]{Arquitectura Multimodal}
 \fancyfoot[C]{\thepage}
-\fancyfoot[L]{\footnotesize Lázaro López Paz -- Creative Commons BY-NC-SA 4.0}
+\fancyfoot[L]{\footnotesize Lázaro López Paz -- Creative Commons BY 4.0}
 
 \begin{document}
 
@@ -53,7 +54,7 @@ El Proyecto OMNI-Q define una arquitectura médica de precisión absoluta capaz 
 
 \vspace{0.5cm}
 \begin{center}
-    \textit{Documento liberado bajo licencia Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0).}
+    \textit{Documento liberado bajo licencia Creative Commons Reconocimiento 4.0 Internacional (CC BY 4.0).}
 \end{center}
 \vspace{1cm}
 

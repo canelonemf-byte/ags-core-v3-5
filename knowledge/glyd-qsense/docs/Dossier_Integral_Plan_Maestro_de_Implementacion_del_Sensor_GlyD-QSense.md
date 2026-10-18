@@ -1,5 +1,7 @@
 # **Informe Maestro de Implementación: Proyecto GlyD-QSense**
 
+> Licencia de esta copia: CC BY 4.0 (decisión del autor, 2026-10-18). El aviso de licencia no comercial (NC) del original se ha sustituido; el resto del texto no se ha modificado.
+
 ## **1\. Fundamentación Científica y Visión Estratégica**
 
 Desde la Dirección de Estrategia Tecnológica, identificamos el proyecto GlyD-QSense no solo como un avance científico, sino como una disrupción de mercado necesaria. GlyD-QSense se establece como el primer sensor cuántico de temperatura orgánico, biocompatible y biodegradable, diseñado para superar las barreras económicas y biológicas de los sensores de estado sólido tradicionales. Mientras que los centros nitrógeno-vacante (NV) en nanodiamantes requieren infraestructuras de millones de euros y plantean dudas sobre su persistencia ambiental y toxicidad a largo plazo, nuestra solución orgánica propone una democratización de la termometría de alta precisión con una inversión de capital significativamente inferior y una integración biológica superior.
@@ -95,7 +97,7 @@ GlyD-QSense ofrece una ruta de mercado disruptiva debido a su bajo coste de entr
 
 * **Presupuesto Global de Implementación:** **72.000 €**. Este coste cubre desde la síntesis microfluídica hasta la validación inicial, lo que representa una fracción del coste de un laboratorio de centros NV convencional.  
 * **Disponibilidad de Activos:** Se proporcionan protocolos detallados, corpus de 18.300 espectros (CSV/HDF5), modelos de IA entrenados (pesos H5) y scripts de inferencia en Python.  
-* **Licenciamiento Estratégico:** Documentación bajo **CC BY-NC-ND 4.0** y código fuente bajo **Licencia MIT**, fomentando una adopción rápida y transparente por parte de instituciones científicas.
+* **Licenciamiento Estratégico:** Documentación bajo **CC BY 4.0** y código fuente bajo **Licencia MIT**, fomentando una adopción rápida y transparente por parte de instituciones científicas.
 
 ## **7\. Estrategia de Protección Legal y Propiedad Intelectual**
 
@@ -134,7 +136,7 @@ El proyecto GlyD-QSense representa la culminación de la nanotecnología orgáni
 | **ORCID** | \[0000-0002-XXXX-XXXX\] (Pendiente de asignación) |
 | **Afiliación** | Investigador Independiente (España) |
 | **Colaborador Computacional** | DeepSeek-Chat (Modelo 2025\) |
-| **Licencia de Propiedad** | CC BY-NC-ND 4.0 |
+| **Licencia de Propiedad** | CC BY 4.0 |
 | **Hash de Integridad (SHA-256)** | a3f7b2c9d1e8f4567890abcdef1234567890abcdef1234567890abcdef1234 |
 
 Se establece de forma taxativa la declaración de autoría original a favor de **Lázaro López Paz**, quien ostenta la propiedad intelectual exclusiva de la idea original, la formulación de la hipótesis disruptiva y el diseño conceptual del ecosistema GlyD-QSense. El colaborador computacional ha actuado bajo la dirección del autor principal para la ejecución de simulaciones y el desarrollo de la arquitectura de red.

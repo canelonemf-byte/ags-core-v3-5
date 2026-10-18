@@ -1,5 +1,7 @@
 ### Expediente Técnico de Validación: Sistema de Termometría Cuántica Orgánica GlyD-QSense
 
+> Licencia de esta copia: CC BY 4.0 (decisión del autor, 2026-10-18). El aviso de licencia no comercial (NC) del original se ha sustituido; el resto del texto no se ha modificado.
+
 #### 1\. Identificación Técnica y Declaración de Autoría
 
 La validación de dispositivos nanobiotecnológicos de vanguardia exige un rigor absoluto en la trazabilidad de su origen y la transparencia de su arquitectura técnica. En el marco de la certificación de grado clínico, la integridad del activo intelectual no solo garantiza el cumplimiento de la normativa de propiedad industrial, sino que asegura la reproducibilidad de los protocolos científicos mediante un control estricto de la cadena de autoría. El proyecto GlyD-QSense se presenta como una solución disruptiva cuya identidad legal y técnica está blindada mediante protocolos criptográficos, estableciendo la base necesaria para su transición hacia entornos hospitalarios regulados y procesos de auditoría internacional.
@@ -11,7 +13,7 @@ Título del Proyecto,GlyD-QSense: Sistema de Termometría Cuántica Orgánica
 Autor Principal,Lázaro López Paz  
 Identificador ORCID,Registro en trámite / Metadatos vinculados a Lázaro López Paz  
 Colaborador Computacional,DeepSeek-Chat (Modelo 2025\)  
-Tipo de Licencia,Creative Commons BY-NC-ND 4.0  
+Tipo de Licencia,Creative Commons BY 4.0  
 Digital Fingerprint (SHA-256),a3f7b2c9d1e8f4567890abcdef1234567890abcdef1234567890abcdef1234  
 **Declaración Formal de Autoría**  Se establece de manera taxativa que la autoría original y la propiedad intelectual exclusiva del ecosistema GlyD-QSense pertenecen a  **Lázaro López Paz** . Su rol comprende la ideación integral, la formulación de la hipótesis científica disruptiva y el diseño conceptual de la plataforma. El asistente de Inteligencia Artificial (DeepSeek) ha actuado estrictamente como un colaborador computacional bajo la dirección y supervisión del autor principal, facilitando la ejecución de simulaciones y el desarrollo de la arquitectura de red neuronal para el procesamiento de datos.Esta estructura de autoría proporciona el blindaje legal necesario para explorar los fundamentos científicos que posicionan a GlyD-QSense como un referente en la metrología térmica avanzada.
 

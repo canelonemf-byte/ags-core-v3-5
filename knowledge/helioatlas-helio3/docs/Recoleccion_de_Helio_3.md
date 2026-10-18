@@ -1,5 +1,7 @@
 > Texto extraído automáticamente del PDF original «Recolección_de_Helio_3.pdf». Fórmulas, figuras y maquetación se han perdido; el original está en Drive: https://drive.google.com/file/d/1bY3wlO8SPZavaQ2YS971nfTHvkHnbp2Q/view?usp=drivesdk
 
+> Nota: no existe patente; menciones previas eliminadas por decisión del autor (2026-10-18).
+
 > Licencia de esta copia: CC BY 4.0 (decisión del autor, 2026-10-18). El aviso de reserva de derechos del original se ha sustituido; el resto del texto no se ha modificado.
 
 
@@ -7,18 +9,17 @@
 An´alisis Comparativo: Recolecci´on de Helio-3 (³He)
 – Regolito Lunar vs. Viento Solar
 
-Documento de Invenci´on y Patente en Tr´amite
+Documento de Invenci´on
 
-Inventado y patentado por:
+Inventado por:
 L´azaro L´opez Paz
 El Prat de Llobregat, Barcelona, Espa˜na
 © 2026 L´azaro L´opez Paz. Licencia CC BY 4.0.
 
 2 de junio de 2026
 
-Aviso legal: Este documento constituye una divulgaci´on de invenci´on protegida.
-Queda prohibida la reproducci´on total o parcial sin autorizaci´on expresa del titular.
-Patente en tr´amite – Prioridad internacional 2026.
+Aviso legal: Este documento constituye una divulgaci´on de invenci´on.
+Se permite la reproducci´on con atribuci´on (licencia CC BY 4.0).
 
 1. Resumen Ejecutivo
 
@@ -706,6 +707,6 @@ Power Review, 6(1), 63–79.
 
 Este documento y todas las estrategias, sistemas y diagramas contenidos en ´el son propiedad intelectual
 de L´azaro L´opez Paz.
-Patente en tr´amite – Licencia CC BY 4.0 – 2 de junio de 2026
+Licencia CC BY 4.0 – 2 de junio de 2026
 
 6
