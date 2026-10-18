@@ -194,7 +194,15 @@ def project_level(kind: str, index, project: dict, findings: list[dict]) -> list
     if kind == "license_check":
         has_notice = any(n in ("NOTICE", "NOTICE.md", "ATTRIBUTION.md", "THIRD_PARTY.md") for n in names)
         lic_mit = project.get("license") == "MIT"
-        if not lic_mit:
+        if not lic_mit and project.get("license_declared_by_author"):
+            # el autor decidió conservar la licencia que declaran sus documentos:
+            # las cláusulas de reserva/patente/CC/Apache ya no chocan con el repo
+            for f in findings:
+                if f["kind"] == "reserved_clause":
+                    f["kind"], f["severity"] = "declared_license", "info"
+                    f["message"] = f"cláusula coherente con la licencia declarada del repositorio ({project.get('license')})"
+            extra.append(_f("declared_license", "info", "-", 0, f"licencia del repo: {project.get('license')} (declarada por el autor)"))
+        elif not lic_mit:
             extra.append(_f("no_mit", "high", "-", 0, f"licencia del repo: {project.get('license')} (se esperaba MIT)"))
         mentioned = sorted({f["name"] for f in findings if f["kind"] == "third_party"})
         need = [n for n in mentioned if n in NEEDS_NOTICE]

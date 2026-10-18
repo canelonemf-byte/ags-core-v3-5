@@ -2,7 +2,7 @@
 
 Sensor GlyD-QSense: termometría cuántica orgánica.
 
-**Autor:** Lázaro López Paz · **Licencia:** MIT (ver `LICENSE`)
+**Autor:** Lázaro López Paz · **Licencia:** CC BY-NC-ND 4.0 (ver `LICENSE`)
 
 ## Carpetas de origen en Google Drive
 
@@ -32,6 +32,10 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 ### Subcarpetas no importadas (pendiente: en Drive)
 
 - 1 proyecto · https://drive.google.com/drive/folders/10rR74mnpRtBNfjAo-GKoTQFfz3BR4njY
+
+## Licencia
+
+Documentación bajo [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.es), como declara el propio dossier. Ver `LICENSE`.
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.

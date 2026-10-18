@@ -2,7 +2,7 @@
 
 OMNI: proyecto de diagnóstico médico para todos.
 
-**Autor:** Lázaro López Paz · **Licencia:** MIT (ver `LICENSE`)
+**Autor:** Lázaro López Paz · **Licencia:** CC BY-NC-SA 4.0 (ver `LICENSE`)
 
 ## Carpetas de origen en Google Drive
 
@@ -22,6 +22,10 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 ### Subcarpetas no importadas (pendiente: en Drive)
 
 - OMNI_k_llp_elprat-APP · https://drive.google.com/drive/folders/1PFiFoq--z0qFofIXV2FQx2XzAxtrWW5J
+
+## Licencia
+
+Bajo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es), como declaran los documentos del proyecto. Ver `LICENSE`.
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.

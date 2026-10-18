@@ -181,7 +181,9 @@ def test_supervisor_cycle_writes_reports(tmp_path):
     assert st["done"] == 6 and st["errors"] == 0
     rep = json.loads((tmp_path / "reports" / "helioatlas-helio3" / "license_check.json").read_text())
     assert rep["summary"]["sub_agents"] == 2
-    assert any(f["kind"] == "reserved_clause" for f in rep["findings"])
+    # helioatlas conserva su licencia declarada (derechos reservados): no es conflicto
+    assert any(f["kind"] == "declared_license" for f in rep["findings"])
+    assert not any(f["kind"] in ("reserved_clause", "no_mit") for f in rep["findings"])
     assert (tmp_path / "reports" / "neuroglyq" / "missing_pieces.md").exists()
     assert "Resumen" in (tmp_path / "reports" / "SUMMARY.md").read_text()
     assert s.queue.get(r["id"])["status"] == "done"
@@ -243,3 +245,20 @@ def test_api_tasks_and_status():
     s = client.get("/supervisor/status", headers=H)
     assert s.status_code == 200 and s.json()["projects"] == len(PROJECT_AGENTS)
     assert client.get("/supervisor/status").status_code == 401
+
+
+def test_declared_license_not_flagged():
+    from app.supervisor import checks as c
+    fs = c.license_in_file("doc.md", "Patente en trámite – Todos los derechos reservados")
+    assert any(f["kind"] == "reserved_clause" for f in fs)
+
+    class Idx:
+        root = __import__("pathlib").Path("/nonexistent")
+        def files(self, pid): return []
+        def doc_files(self, pid): return []
+        def code_files(self, pid): return []
+        def read(self, p): return ""
+    proj = {"id": "x", "license": "All-Rights-Reserved", "license_declared_by_author": True, "tools": []}
+    extra = c.project_level("license_check", Idx(), proj, fs)
+    kinds = {f["kind"] for f in fs + extra}
+    assert "reserved_clause" not in kinds and "no_mit" not in kinds and "declared_license" in kinds

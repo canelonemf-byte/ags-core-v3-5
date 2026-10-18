@@ -2,7 +2,7 @@
 
 HelioAtlas: plano estratégico del Helio-3 y su recolección (regolito lunar vs. viento solar).
 
-**Autor:** Lázaro López Paz · **Licencia:** MIT (ver `LICENSE`)
+**Autor:** Lázaro López Paz · **Licencia:** Todos los derechos reservados · patente en trámite (ver `LICENSE`)
 
 ## Carpetas de origen en Google Drive
 
@@ -81,8 +81,10 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 
 ## Notas de revisión
 
-- «Recolección_de_Helio_3.pdf» contiene un aviso antiguo de «todos los derechos reservados» que choca con la licencia MIT del repositorio; conviene revisarlo.
-- «analisis_he3_completo_final.tex» contiene un aviso antiguo de «todos los derechos reservados» que choca con la licencia MIT del repositorio; conviene revisarlo.
+
+## Licencia
+
+Copyright (c) 2026 Lázaro López Paz. Todos los derechos reservados. Patente en trámite. Prohibida la reproducción, distribución o uso sin autorización expresa del titular. Ver `LICENSE`.
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
