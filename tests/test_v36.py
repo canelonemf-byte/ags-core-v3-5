@@ -181,9 +181,10 @@ def test_supervisor_cycle_writes_reports(tmp_path):
     assert st["done"] == 6 and st["errors"] == 0
     rep = json.loads((tmp_path / "reports" / "helioatlas-helio3" / "license_check.json").read_text())
     assert rep["summary"]["sub_agents"] == 2
-    # helioatlas conserva su licencia declarada (derechos reservados): no es conflicto
-    assert any(f["kind"] == "declared_license" for f in rep["findings"])
-    assert not any(f["kind"] in ("reserved_clause", "no_mit") for f in rep["findings"])
+    # helioatlas: MIT (código) + CC BY 4.0 (documentos) por decisión del autor (2026-10-18);
+    # avisos de reserva sustituidos -> sin hallazgos altos (las menciones de patente quedan en medium)
+    assert not any(f["severity"] == "high" for f in rep["findings"])
+    assert not any(f["kind"] == "no_mit" for f in rep["findings"])
     assert (tmp_path / "reports" / "neuroglyq" / "missing_pieces.md").exists()
     assert "Resumen" in (tmp_path / "reports" / "SUMMARY.md").read_text()
     assert s.queue.get(r["id"])["status"] == "done"
