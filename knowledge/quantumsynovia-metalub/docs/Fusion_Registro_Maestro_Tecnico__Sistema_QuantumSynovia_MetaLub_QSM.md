@@ -255,8 +255,8 @@ sido validados mediante el marco científico computacional establecido en julio 
 
 Registro Maestro de Tecnología: QuantumSynovia MetaLub (QSM)
 
-CONFIDENCIAL – PROPIEDAD INTELECTUAL PROTEGIDA – REGISTRO TÉCNICO DE 
-CLASE III1. Identificación, Autoría y Propiedad IntelectualSe establece mediante el 
+REGISTRO TÉCNICO DE CLASE III [nota 2026-10-19: cláusula de reserva de derechos eliminada por decisión del autor; documento bajo CC BY 4.0]
+1. Identificación, Autoría y Propiedad IntelectualSe establece mediante el 
 presente Registro Maestro que  Lázaro López Paz  (El Prat de Llobregat, Barcelona, 
 España, Julio 2026) es el único autor, creador y pensador original de la tecnología  
 QuantumSynovia MetaLub (QSM) . La totalidad de la arquitectura molecular, los modelos 

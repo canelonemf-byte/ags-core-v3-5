@@ -5,9 +5,9 @@ title ATLAS FMO - PUBLICACION CIENTIFICA (N=5000) - Windows 11 CORREGIDO V3
 
 echo ======================================================================
 echo   ATLAS FMO - SIMULACION CUANTICA Y BENCHMARK DE IA (N=5000)
-echo   Direccion Cientifica / Co-autoria: Lázaro López Paz
-echo   [!] ATRIBUCION OBLIGATORIA: Cualquier ejecucion externa o 
-echo       implementacion de terceros exige citar co-autoria.
+echo   Autor: Lázaro López Paz
+echo   Citese a Lázaro López Paz (atribucion CC BY 4.0; codigo MIT).
+echo   [nota 2026-10-19: requisito de co-autoria sustituido por decision del autor]
 echo ======================================================================
 echo.
 echo ATENCION: Esta ejecucion puede tomar 25-60 minutos segun tu CPU.
@@ -187,7 +187,7 @@ def generar_muestra(idx):
 def main():
     print("Iniciando Atlas Cientifico FMO (N=%d)" % N_SAMPLES)
     print("Arquitectura y Direccion Cientifica: Lazaro Lopez Paz")
-    print("AVISO: La ejecucion, uso o modificacion por terceros requiere atribucion explicita de co-autoria.")
+    print("Citese a Lázaro López Paz (atribucion CC BY 4.0; codigo MIT).")
     print("-" * 70)
     
     if not HEOM_AVAILABLE:

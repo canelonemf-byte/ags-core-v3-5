@@ -1,4 +1,4 @@
-> **Nota de autoría (2026-10-19).** Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España — con asistencia de inteligencia artificial (Gemini Notebook). La herramienta de IA se menciona como asistencia, no como autora. Atribución actualizada por decisión del autor; el resto del texto se conserva.
+> **Nota de autoría (2026-10-19).** Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España — con asistencia de inteligencia artificial (Gemini Notebook). La herramienta de IA se menciona como asistencia, no como autora. Atribución actualizada por decisión del autor; las marcas «Confidencial» del pie de página se han eliminado (2026-10-19); el resto del texto se conserva.
 
 > Texto extraído automáticamente del PDF original «informe_auditoria_quantum_blueprint.pdf». Fórmulas, figuras y maquetación se han perdido; el original está en Drive: https://drive.google.com/file/d/1W87-rx0wClx2YcASx96IFvgVsfuM6UHO/view?usp=drivesdk
 
@@ -6,7 +6,7 @@
 
 QUANTUM BLUEPRINT v2.1.0 — INFORME DE AUDITORÍA Y SEGURIDAD PILAR: EL UNIVERSO CONSCIENTE
 
-Confidencial — Generado por Gemini Notebook Página 1
+Documento elaborado con asistencia de IA (Gemini Notebook) — Página 1
 
 Informe de Auditoría de Seguridad y Gobernanza
 
@@ -60,7 +60,7 @@ Requiere Login
 
 QUANTUM BLUEPRINT v2.1.0 — INFORME DE AUDITORÍA Y SEGURIDAD PILAR: EL UNIVERSO CONSCIENTE
 
-Confidencial — Generado por Gemini Notebook Página 2
+Documento elaborado con asistencia de IA (Gemini Notebook) — Página 2
 
 [RESULTADO PRUEBA ANTIRROBO]: ÉXITO TOTAL.
 El intento de reutilización del Refresh Token #1 anuló automáticamente la vigencia del Refresh Token #2 de
@@ -112,7 +112,7 @@ están respaldadas por un esquema de pessimistic locking en base de datos.
 
 QUANTUM BLUEPRINT v2.1.0 — INFORME DE AUDITORÍA Y SEGURIDAD PILAR: EL UNIVERSO CONSCIENTE
 
-Confidencial — Generado por Gemini Notebook Página 3
+Documento elaborado con asistencia de IA (Gemini Notebook) — Página 3
 
 Conclusión de la Auditoría:
 El sistema  Quantum Blueprint v2.1.0 cumple satisfactoriamente con los estándares de seguridad y

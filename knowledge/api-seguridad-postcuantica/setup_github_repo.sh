@@ -4,7 +4,7 @@
 # Ecosistema Quantum Blueprint: Gobernanza, Seguridad y Simulación Cuántica
 #
 # Autores: Lázaro López Paz (El Prat de Llobregat, Barcelona, España) & IA
-# Licencia: Apache License 2.0 (Copyright 2026)
+# Licencia: MIT (Copyright 2026 Lázaro López Paz) — cambiada desde Apache 2.0 por decisión del autor (2026-10-19)
 # ==============================================================================
 
 set -e
@@ -38,7 +38,7 @@ git add .
 echo "  [✓] Archivos añadidos al Staging de Git"
 
 # 6. Crear Commit Inicial
-git commit -m "feat: Ecosistema Quantum Blueprint v2.1.0 (ML-DSA FIPS 204, CI/CD, Tests y Licencia Apache 2.0)" || echo "  [!] No hay cambios pendientes por conmitear."
+git commit -m "feat: Ecosistema Quantum Blueprint v2.1.0 (ML-DSA FIPS 204, CI/CD, Tests y Licencia MIT)" || echo "  [!] No hay cambios pendientes por conmitear."
 
 echo ""
 echo "=============================================================================="

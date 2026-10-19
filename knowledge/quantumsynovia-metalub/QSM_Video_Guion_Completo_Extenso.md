@@ -347,6 +347,6 @@ Usar **Unreal Engine 6** para las visualizaciones moleculares y de articulacione
 
 Este material es 100% fiel a todos los documentos del proyecto QSM, expandido y mejorado para máxima claridad, impacto y rigor científico.
 
-¿Quieres que genere más imágenes específicas para escenas concretas, que ajuste alguna parte del guion, o que prepare el siguiente paso (por ejemplo, subtítulos en inglés para alcance internacional, o un tráiler corto de 60-90 segundos)? 
+Posibles pasos siguientes: imágenes específicas para escenas concretas, ajustes del guion, subtítulos en inglés o un tráiler corto de 60-90 segundos. [nota 2026-10-19: reformulado por decisión del autor] 
 
 Estoy listo para continuar.

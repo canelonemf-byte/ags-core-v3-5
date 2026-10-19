@@ -13,7 +13,7 @@ Hibridación inteligencia artificial, biología y mecánica cuántica (pipeline 
 ## Archivos incluidos
 
 - `FMO_ATLAS_PAPER_WIN11.txt` ← FMO_ATLAS_PAPER_WIN11.txt
-- `docs/Aqui_tienes_el_script_maestro_unificado_main_atlas.md` ← Aquí tienes el script maestro unificado main_atlas.pdf
+- `docs/Aqui_tienes_el_script_maestro_unificado_main_atlas.md` ← PDF original «Aqui_tienes_el_script_maestro_unificado_main_atlas.pdf» (nombre de archivo de origen)
 - `docs/Ejecutable_proyecto_inteligencia_artificial_hibridacion.md` ← Ejecutable proyecto inteligencia artificial híbridación .pdf
 - `docs/FMO_Hybrid_AI_Technical_Report.md` ← FMO_Hybrid_AI_Technical_Report.pdf
 - `docs/Implementacion_Avanzada-_Proyecto_Atlas_Cientifico_FMO-HEOM-IA.md` ← Implementación Avanzada- Proyecto Atlas Científico FMO-HEOM-IA.pdf
