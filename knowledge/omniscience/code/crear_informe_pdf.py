@@ -190,7 +190,7 @@ def make():
         [P("<b>Qué se entrega</b>"), P("9 figuras de simulación + 2 visuales + animación MP4 + código Python + este PDF")],
         [P("<b>Qué no es</b>"), P("Una respuesta conversacional. Es un paquete de trabajo cerrado y reproducible.")],
         [P("<b>Ámbito</b>"), P("Clásico → espectral → modal → fonónico → cuántico → experimental → aplicaciones")],
-        [P("<b>Atribución</b>"), P("Análisis generado por Grok (xAI). Uso posterior: citar a Lázaro López Paz y a Grok.")],
+        [P("<b>Atribución</b>"), P("Autor: Lázaro López Paz, con asistencia de IA (Grok, xAI). Citar a Lázaro López Paz.")],
         [P("<b>Autoría</b>"), P("Lázaro López Paz (El Prat de Llobregat, Barcelona, España) e inteligencia artificial. Texto asistido por IA (herramienta: Grok, de xAI), revisado por el autor (revisión PENDIENTE DE VERIFICACIÓN). Autor responsable: Lázaro López Paz.")],
     ]
     t = Table(meta, colWidths=[38 * mm, 140 * mm])

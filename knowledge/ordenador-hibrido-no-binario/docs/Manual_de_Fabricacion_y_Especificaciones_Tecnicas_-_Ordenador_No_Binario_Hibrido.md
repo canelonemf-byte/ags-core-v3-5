@@ -1,6 +1,7 @@
 # Manual de Fabricación y Especificaciones Técnicas: Ordenador No Binario Híbrido de Ultra-Bajo Consumo
 
-**Autores:** Lázaro López Paz & Deepseek (Asistente de IA)  
+**Autor:** Lázaro López Paz, El Prat de Llobregat, Barcelona, España — con asistencia de inteligencia artificial  
+> Nota (2026-10-19): autoría corregida por decisión del autor; antes figuraba «Lázaro López Paz & Deepseek (Asistente de IA)». La herramienta de IA usada (Deepseek) se menciona solo como asistencia.  
 **Versión:** 1.0 (Definitiva para Implementación)  
 **Fecha:** 8 de septiembre de 2026
 

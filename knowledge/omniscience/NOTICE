@@ -15,7 +15,7 @@ Autor: Lázaro López Paz. Licencia del proyecto: MIT (ver LICENSE).
    - Fuentes DejaVu (crear_informe_pdf.py, generar_dossier_completo.py) — licencia Bitstream Vera / DejaVu (libre)
 
 2) Contenido asistido por IA: code/crear_informe_pdf.py, docs/Analisis_vibraciones_cientificas_Grok.md y
-   docs/OMNISCIENCE_dossier_completo.md declaran en su fila «Atribución» que el análisis es de Grok (xAI).
+   docs/OMNISCIENCE_dossier_completo.md declaran en su fila «Atribución»: autor Lázaro López Paz, con asistencia de IA (Grok, xAI) (actualizado 2026-10-19).
    Ver la nota de autoría en cada archivo. Grok y xAI son marcas de xAI; su mención no implica cesión de derechos ni respaldo.
 
 3) code/omniscience_mv1.py menciona ASE, MACE, Phonopy y VASP/Quantum ESPRESSO como integraciones

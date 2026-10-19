@@ -88,12 +88,14 @@ aprecia riesgo para su proceso, para las personas o para el vertido autorizado. 
 días de preaviso. Cualquiera de las partes puede resolver de inmediato por incumplimiento grave (vertido de
 químico a la red, ausencia de seguro, o manipulación de interlocks).
 
-6. Datos, propiedad intelectual y confidencialidad
+6. Datos y propiedad intelectual
 
-Los datos de proceso del piloto son del Promotor. Los datos de explotación de la EDAR no salen del recinto salvo
-los estrictamente necesarios para interpretar el efluente derivado. El Promotor no publica el nombre de la EDAR
-sin consentimiento. Los planos P&ID-001, SOP y memorias REMPLAST-Q son obra original del Promotor. Nada
-en este convenio cede patentes ni know-how de la EDAR.
+Los planos P&ID-001, SOP y memorias REMPLAST-Q son obra original del Promotor y se publican con licencia
+CC BY 4.0 (documentos) y MIT (software). Los datos de explotación propios de la EDAR no forman parte de esta
+publicación.
+
+> Nota: cláusula eliminada por decisión del autor (2026-10-19), por ser incompatible con las
+> licencias abiertas CC BY 4.0 / MIT del proyecto.
 
 7. Responsabilidad
 

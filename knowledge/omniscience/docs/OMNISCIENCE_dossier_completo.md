@@ -1,6 +1,6 @@
 > Texto extraído automáticamente (pdftotext) del PDF «OMNISCIENCE_dossier_completo.pdf» de grok-workspace-2.zip (Zenodo 10.5281/zenodo.22150378; misma copia que Drive id 1pyACZBxXqzJa_WR_Gc__UyaegijsrTM8), ruta `public/docs/OMNISCIENCE_dossier_completo.pdf`. Fórmulas, figuras y maquetación se han perdido.
 
-> **Nota de autoría.** Autoría: Lázaro López Paz (El Prat de Llobregat, Barcelona, España) e inteligencia artificial. Texto asistido por IA (herramienta: Grok, de xAI), revisado por el autor (revisión PENDIENTE DE VERIFICACIÓN). Autor responsable: Lázaro López Paz. Se conserva sin cambios la declaración original de atribución que figura más abajo.
+> **Nota de autoría.** Autoría: Lázaro López Paz (El Prat de Llobregat, Barcelona, España) e inteligencia artificial. Texto asistido por IA (herramienta: Grok, de xAI), revisado por el autor (revisión PENDIENTE DE VERIFICACIÓN). Autor responsable: Lázaro López Paz. La fila «Atribución» se actualizó el 2026-10-19 por decisión del autor.
 
                    DOSSIER COMPLETO
 
@@ -1443,8 +1443,7 @@ Análisis científico de vibraciones · Grok × Lázaro López Paz              
  Ámbito                     Clásico → espectral → modal → fonónico → cuántico → experimental →
                             aplicaciones
 
- Atribución                 Análisis generado por Grok (xAI). Uso posterior: citar a Lázaro López Paz y a
-                            Grok.
+ Atribución                 Autor: Lázaro López Paz, con asistencia de IA (Grok, xAI). Citar a Lázaro López Paz.
 
  1. Por qué «analizar vibraciones» no cabe en un chat
  Una IA conversacional puede describir la ecuación del oscilador armónico. No puede, en el mismo acto,
