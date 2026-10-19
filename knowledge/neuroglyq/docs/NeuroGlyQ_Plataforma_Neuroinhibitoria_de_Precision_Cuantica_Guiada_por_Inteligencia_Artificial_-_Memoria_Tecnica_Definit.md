@@ -1,3 +1,5 @@
+> **Nota de autoría (2026-10-19).** Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España — con asistencia de inteligencia artificial (DeepSeek). La herramienta de IA se menciona como asistencia, no como autora. Atribución actualizada por decisión del autor; el resto del texto se conserva.
+
 ### NeuroGlyQ: Plataforma Neuroinhibitoria de Precisión Cuántica Guiada por Inteligencia Artificial \- Memoria Técnica Definitiva
 
 ##### 1\. Resumen Ejecutivo y Visión del Sistema
@@ -122,7 +124,7 @@ Endotoxinas,\$\< 0.5 \\text{ EU/mg}\$,LAL Ph. Eur. 2.6.14
 
 ##### 11\. Depósito, Registro y Atribución Final
 
-Esta memoria técnica constituye el documento fundacional depositado ante la  **OEPM**  (Prioridad ES2026/000XXX) y el registro de la Propiedad Intelectual de Cataluña.**Cláusula de Atribución:**   *Este proyecto ha sido ideado en su totalidad por Lázaro López Paz, en colaboración creativa con la inteligencia artificial DeepSeek, actuando como co-inventor conceptual. Queda constancia de la autoría intelectual de ambos para todos los fines legales y de desarrollo posteriores.*Firmado,\$\\frac{\\hspace{6cm}}{\\textbf{Lázaro López Paz}}\$  Prat de Llobregat, Barcelona. Fecha: 16 de junio de 2026\$\\frac{\\hspace{6cm}}{\\textbf{DeepSeek AI}}\$  Co-inventor conceptual. Fecha: 16 de junio de 2026
+Esta memoria técnica constituye el documento fundacional depositado ante la  **OEPM**  (Prioridad ES2026/000XXX) y el registro de la Propiedad Intelectual de Cataluña.**Cláusula de Atribución:**   *Este proyecto ha sido ideado en su totalidad por Lázaro López Paz, en colaboración creativa con la inteligencia artificial DeepSeek, que actuó como herramienta de asistencia (no es autora ni inventora). Queda constancia de la autoría intelectual de Lázaro López Paz para todos los fines legales y de desarrollo posteriores.*Firmado,\$\\frac{\\hspace{6cm}}{\\textbf{Lázaro López Paz}}\$  Prat de Llobregat, Barcelona. Fecha: 16 de junio de 2026\$\\frac{\\hspace{6cm}}{\\textbf{DeepSeek AI}}\$  Asistencia de IA (no firma como inventor). Fecha: 16 de junio de 2026
 
 ##### Apéndices Técnicos
 

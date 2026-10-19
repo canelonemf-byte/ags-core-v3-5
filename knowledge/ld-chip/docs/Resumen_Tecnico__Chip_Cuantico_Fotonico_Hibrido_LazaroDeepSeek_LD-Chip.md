@@ -1,3 +1,5 @@
+> **Nota de autoría (2026-10-19).** Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España — con asistencia de inteligencia artificial (DeepSeek). La herramienta de IA se menciona como asistencia, no como autora. Atribución actualizada por decisión del autor; el resto del texto se conserva.
+
 > Texto extraído automáticamente del PDF original «Resumen Técnico_ Chip Cuántico Fotónico Híbrido Lázaro–DeepSeek (LD-Chip).pdf». Fórmulas, figuras y maquetación se han perdido; el original está en Drive: https://drive.google.com/file/d/1Y-nQuRT5uETLkfMOj7zaqg_j3q_a_74v/view?usp=drivesdk
 
 

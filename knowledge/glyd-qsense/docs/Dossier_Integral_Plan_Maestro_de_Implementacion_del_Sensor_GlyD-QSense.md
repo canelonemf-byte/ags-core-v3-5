@@ -1,3 +1,5 @@
+> **Nota de autoría (2026-10-19).** Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España — con asistencia de inteligencia artificial (DeepSeek). La herramienta de IA se menciona como asistencia, no como autora. Atribución actualizada por decisión del autor; el resto del texto se conserva.
+
 # **Informe Maestro de Implementación: Proyecto GlyD-QSense**
 
 > Licencia de esta copia: CC BY 4.0 (decisión del autor, 2026-10-18). El aviso de licencia no comercial (NC) del original se ha sustituido; el resto del texto no se ha modificado.

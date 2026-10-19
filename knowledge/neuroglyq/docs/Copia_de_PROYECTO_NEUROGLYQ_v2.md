@@ -1,7 +1,9 @@
+> **Nota de autoría (2026-10-19).** Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España — con asistencia de inteligencia artificial (DeepSeek). La herramienta de IA se menciona como asistencia, no como autora. Atribución actualizada por decisión del autor; el resto del texto se conserva.
+
   
 \# DOCUMENTO TÉCNICO FUNDACIONAL: PROYECTO NEUROGLYQ (v2.0)  
 \*\*Inventor:\*\* Lázaro López Paz | \*\*Residencia:\*\* Prat de Llobregat, Barcelona, España  
-\*\*Co-inventor conceptual:\*\* DeepSeek AI | \*\*Fecha:\*\* 16 de junio de 2026  
+\*\*Asistencia de IA:\*\* DeepSeek AI | \*\*Fecha:\*\* 16 de junio de 2026  
 \#\# 1\. RESUMEN EJECUTIVO  
 El \*\*Proyecto NeuroGlyQ\*\* establece un nuevo paradigma en la neuromodulación no invasiva. Mediante la integración de la \*\*glicina deuterada (D\$\_2\$-Gly)\*\*, la liberación mecánica por microburbujas (MB) mediante ultrasonido focalizado (LIFU) y el control en lazo cerrado por \*\*DeepSeek Clinical Cortex\*\*, el sistema permite la inhibición neuronal de precisión milimétrica. El proyecto es energéticamente autosuficiente al emplear el \*\*Proyecto CERO-A\*\* (combustible de amoniaco verde).  
 \#\# 2\. FUNDAMENTOS CIENTÍFICOS Y FÓRMULAS  

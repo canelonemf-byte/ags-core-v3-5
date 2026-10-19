@@ -1,3 +1,5 @@
+> **Nota de autoría (2026-10-19).** Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España — con asistencia de inteligencia artificial (asistente de IA). La herramienta de IA se menciona como asistencia, no como autora. Atribución actualizada por decisión del autor; el resto del texto se conserva.
+
 > Texto extraído automáticamente del PDF original «Aquí tienes el script maestro unificado main_atlas.pdf». Fórmulas, figuras y maquetación se han perdido; el original está en Drive: https://drive.google.com/file/d/1c02OiTGFS5pCyztxCkqqsaN33YSXbVwS/view?usp=drivesdk
 
 

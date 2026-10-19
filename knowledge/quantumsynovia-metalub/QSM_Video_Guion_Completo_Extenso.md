@@ -1,3 +1,5 @@
+> **Nota de autoría (2026-10-19).** Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España — con asistencia de inteligencia artificial (asistente de IA). La herramienta de IA se menciona como asistencia, no como autora. Atribución actualizada por decisión del autor; el resto del texto se conserva.
+
 # GUION COMPLETO PARA VIDEO EXPLICATIVO
 ## QuantumSynovia MetaLub (QSM): El Futuro de la Lubricación y Regeneración Articular
 
