@@ -54,3 +54,11 @@ API base configurable con `AGS_BASE_URL` (def. `http://127.0.0.1:8000`).
   Genera texto sin sentido hasta que se preentrene la base (fuera de alcance de v3.5).
 - Docker/litellm_config/docker-compose: el original no se pudo leer desde Drive; Dockerfile reconstruido sin probar.
 - Licencia: MIT (ver LICENSE). Atribuciones de terceros en NOTICE.
+
+## Fuentes NotebookLM
+
+Textos del paquete NotebookLM (Drive `NotebookLM_Fuentes_2026-08-30`) que no existían en este repositorio:
+
+- [docs/notebooklm/00_GUIA_NOTEBOOKLM.md](docs/notebooklm/00_GUIA_NOTEBOOKLM.md)
+- [docs/notebooklm/99_MAPA_CARGAS.md](docs/notebooklm/99_MAPA_CARGAS.md)
+- [docs/notebooklm/ATLAS_INTEGRADO_PORTFOLIO.md](docs/notebooklm/ATLAS_INTEGRADO_PORTFOLIO.md)

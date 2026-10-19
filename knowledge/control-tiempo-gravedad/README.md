@@ -31,3 +31,10 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Fuentes NotebookLM
+
+Textos del paquete NotebookLM (Drive `NotebookLM_Fuentes_2026-08-30`) que no existían en este repositorio:
+
+- [docs/notebooklm/06_GRAVEDAD_TIEMPO.md](docs/notebooklm/06_GRAVEDAD_TIEMPO.md)
+- Quantum_Metamaterial_Gravitation.pdf · pendiente: en Drive · https://drive.google.com/file/d/1QkklfSEbtYEBA20XDk8W8aGu7CjpIGLi/view?usp=drivesdk

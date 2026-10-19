@@ -37,3 +37,10 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Fuentes NotebookLM
+
+Textos del paquete NotebookLM (Drive `NotebookLM_Fuentes_2026-08-30`) que no existían en este repositorio:
+
+- [docs/notebooklm/01_HELIO3_QMC-H3.md](docs/notebooklm/01_HELIO3_QMC-H3.md)
+- [docs/notebooklm/DISCREPANCIAS_QMC_H3.md](docs/notebooklm/DISCREPANCIAS_QMC_H3.md)

@@ -52,3 +52,9 @@ Copyright (c) 2026 Lázaro López Paz. Documentos bajo CC BY 4.0 (ver `LICENSE-d
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Fuentes NotebookLM
+
+Textos del paquete NotebookLM (Drive `NotebookLM_Fuentes_2026-08-30`) que no existían en este repositorio:
+
+- [docs/notebooklm/03_QSM.md](docs/notebooklm/03_QSM.md)
