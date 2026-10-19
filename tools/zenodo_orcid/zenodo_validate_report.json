@@ -1,0 +1,335 @@
+[
+  {
+    "id": 20761277,
+    "doi": "10.5281/zenodo.20761277",
+    "title": "Expediente Técnico de Validación: Sistema de Termometría Cuántica Orgánica GlyD-QSense",
+    "creators": [
+      "Lázaro López Paz"
+    ],
+    "license": "apache2.0",
+    "files": 2,
+    "mb": 20.02,
+    "errors": [
+      "afiliación prohibida: Instituto de Investigaciones Químicas",
+      "licencia no permitida: apache2.0"
+    ],
+    "warnings": [
+      "nombre no canónico: Lázaro López Paz",
+      "afiliación sin El Prat: Instituto de Investigaciones Químicas",
+      "título ≠ ficha: Expediente Técnico de Validación: Sistema de Termometría Cuántica Orgá",
+      "related_identifiers vacío"
+    ],
+    "ok": false
+  },
+  {
+    "id": 20812704,
+    "doi": "10.5281/zenodo.20812704",
+    "title": "Innovación biomédica: sistemas de liberación controlada para enfermedades neurodegenerativas",
+    "creators": [
+      "Fundación Medina ( publicación: Lázaro López Paz, del Prat de Llobregat, barcelona)"
+    ],
+    "license": "cc-by-4.0",
+    "files": 5,
+    "mb": 98.22,
+    "errors": [
+      "creator institucional: Fundación Medina ( publicación: Lázaro López Paz, del Prat de Llobregat, barcelo"
+    ],
+    "warnings": [
+      "afiliación sin El Prat: (vacía)",
+      "título ≠ ficha: Innovación biomédica: sistemas de liberación controlada para enfermeda",
+      "related_identifiers vacío",
+      "idioma None ≠ 'spa'"
+    ],
+    "ok": false
+  },
+  {
+    "id": 21238123,
+    "doi": "10.5281/zenodo.21238123",
+    "title": "Mata materiale y 6G y 7G- aislamiento cuántico",
+    "creators": [
+      "Acoustic Metamaterials Group (China)/ Lázaro López Paz del Prat de Llobregat Barcelona España"
+    ],
+    "license": "cc-by-4.0",
+    "files": 18,
+    "mb": 80.87,
+    "errors": [
+      "creator institucional: Acoustic Metamaterials Group (China)/ Lázaro López Paz del Prat de Llobregat Bar",
+      "descripción corta (0 < 80)"
+    ],
+    "warnings": [
+      "afiliación sin El Prat: (vacía)",
+      "título ≠ ficha: Mata materiale y 6G y 7G- aislamiento cuántico",
+      "related_identifiers vacío"
+    ],
+    "ok": false
+  },
+  {
+    "id": 21321630,
+    "doi": "10.5281/zenodo.21321630",
+    "title": "Lubricación_articular_QuantumSynovia_MetaLub_(QSM)",
+    "creators": [
+      "Sociedad Española de Cirugía Ortopédica y Traumatología ( Lázaro López Paz- del Prat de Llobregat,Barcelona)"
+    ],
+    "license": "apache2.0",
+    "files": 1,
+    "mb": 0.47,
+    "errors": [
+      "creator institucional: Sociedad Española de Cirugía Ortopédica y Traumatología ( Lázaro López Paz- del ",
+      "afiliación prohibida: Japan Institute for Promoting Invention and Innovation",
+      "licencia no permitida: apache2.0"
+    ],
+    "warnings": [
+      "afiliación sin El Prat: Japan Institute for Promoting Invention and Innovation",
+      "título ≠ ficha: Lubricación_articular_QuantumSynovia_MetaLub_(QSM)",
+      "related_identifiers vacío",
+      "idioma None ≠ 'spa'"
+    ],
+    "ok": false
+  },
+  {
+    "id": 21345185,
+    "doi": "10.5281/zenodo.21345185",
+    "title": "Ingeniería de Sistemas Fotónicos y Metamateriales Fractale",
+    "creators": [
+      "Fractal Systems (Canada)_ y Lázaro López Paz, del Prat de Llobregat, Barcelona, España"
+    ],
+    "license": "cc-by-4.0",
+    "files": 3,
+    "mb": 39.19,
+    "errors": [
+      "creator institucional: Fractal Systems (Canada)_ y Lázaro López Paz, del Prat de Llobregat, Barcelona, ",
+      "descripción corta (0 < 80)"
+    ],
+    "warnings": [
+      "afiliación sin El Prat: (vacía)",
+      "título ≠ ficha: Ingeniería de Sistemas Fotónicos y Metamateriales Fractale",
+      "related_identifiers vacío"
+    ],
+    "ok": false
+  },
+  {
+    "id": 21361772,
+    "doi": "10.5281/zenodo.21361772",
+    "title": "Plataforma Meta Nano Microbiota Quantum: Implementación Integral de Optimización Intestinal",
+    "creators": [
+      "Institute of Microbiology_( Lázaro López Paz, del Prat de Llobregat, Barcelona)"
+    ],
+    "license": "cc-by-4.0",
+    "files": 6,
+    "mb": 2.35,
+    "errors": [
+      "creator institucional: Institute of Microbiology_( Lázaro López Paz, del Prat de Llobregat, Barcelona)"
+    ],
+    "warnings": [
+      "afiliación sin El Prat: (vacía)",
+      "título ≠ ficha: Plataforma Meta Nano Microbiota Quantum: Implementación Integral de Op",
+      "related_identifiers vacío",
+      "idioma None ≠ 'spa'"
+    ],
+    "ok": false
+  },
+  {
+    "id": 21401153,
+    "doi": "10.5281/zenodo.21401153",
+    "title": "Lo último en propulsión espacial",
+    "creators": [
+      "PERSEI Space__( Lázaro López Paz del Prat de Llobregat, Barcelona, España)",
+      "PERSEI Space ( Lázaro López Paz del Prat de Llobregat Barcelona España)"
+    ],
+    "license": "cc-by-4.0",
+    "files": 5,
+    "mb": 1.98,
+    "errors": [
+      "demasiados creators (2)",
+      "creator institucional: PERSEI Space__( Lázaro López Paz del Prat de Llobregat, Barcelona, España)",
+      "creator institucional: PERSEI Space ( Lázaro López Paz del Prat de Llobregat Barcelona España)",
+      "descripción corta (0 < 80)"
+    ],
+    "warnings": [
+      "afiliación sin El Prat: (vacía)",
+      "afiliación sin El Prat: (vacía)",
+      "título ≠ ficha: Lo último en propulsión espacial",
+      "related_identifiers vacío"
+    ],
+    "ok": false
+  },
+  {
+    "id": 21513673,
+    "doi": "10.5281/zenodo.21513673",
+    "title": "Software para ordenador cuántico dé hoy",
+    "creators": [
+      "State Key Laboratory of Software Engineering ( Lázaro López Paz del Prat de Llobregat, Barcelona, España)"
+    ],
+    "license": "cc-by-4.0",
+    "files": 3,
+    "mb": 0.96,
+    "errors": [
+      "creator institucional: State Key Laboratory of Software Engineering ( Lázaro López Paz del Prat de Llob",
+      "descripción corta (0 < 80)"
+    ],
+    "warnings": [
+      "afiliación sin El Prat: (vacía)",
+      "título ≠ ficha: Software para ordenador cuántico dé hoy",
+      "related_identifiers vacío"
+    ],
+    "ok": false
+  },
+  {
+    "id": 21640446,
+    "doi": "10.5281/zenodo.21640446",
+    "title": "logaritmo y algoritmo para poder encontrar vida entre las estrellas",
+    "creators": [
+      "Instituto de Astrofísica de Canarias ( Lázaro López Paz del Prat de Llobregat, Barcelona, España)"
+    ],
+    "license": "apache2.0",
+    "files": 5,
+    "mb": 33.39,
+    "errors": [
+      "creator institucional: Instituto de Astrofísica de Canarias ( Lázaro López Paz del Prat de Llobregat, B",
+      "licencia no permitida: apache2.0",
+      "descripción corta (0 < 80)"
+    ],
+    "warnings": [
+      "afiliación sin El Prat: (vacía)",
+      "título ≠ ficha: logaritmo y algoritmo para poder encontrar vida entre las estrellas",
+      "related_identifiers vacío"
+    ],
+    "ok": false
+  },
+  {
+    "id": 21721963,
+    "doi": "10.5281/zenodo.21721963",
+    "title": "Controlar con la vibración y la gravedad el futuro",
+    "creators": [
+      "Ingeniería de Sistemas para la Defensa de España (Lázaro López Paz del Prat de Llobregat Barcelona España)"
+    ],
+    "license": "cc-by-4.0",
+    "files": 5,
+    "mb": 40.03,
+    "errors": [
+      "creator institucional: Ingeniería de Sistemas para la Defensa de España (Lázaro López Paz del Prat de L",
+      "descripción corta (0 < 80)"
+    ],
+    "warnings": [
+      "afiliación sin El Prat: (vacía)",
+      "título ≠ ficha: Controlar con la vibración y la gravedad el futuro",
+      "related_identifiers vacío",
+      "idioma None ≠ 'spa'"
+    ],
+    "ok": false
+  },
+  {
+    "id": 21806526,
+    "doi": "10.5281/zenodo.21806526",
+    "title": "lo último en péptidos para mejorar al ser humano",
+    "creators": [
+      "Institut de Biologia Molecular de Barcelona ( Lázaro López Paz del Prat de Llobregat, Barcelona, España)"
+    ],
+    "license": "cc-by-4.0",
+    "files": 9,
+    "mb": 37.18,
+    "errors": [
+      "creator institucional: Institut de Biologia Molecular de Barcelona ( Lázaro López Paz del Prat de Llobr",
+      "descripción corta (0 < 80)"
+    ],
+    "warnings": [
+      "afiliación sin El Prat: (vacía)",
+      "título ≠ ficha: lo último en péptidos para mejorar al ser humano",
+      "related_identifiers vacío",
+      "posible duplicado (2 ficheros de 155836 bytes)"
+    ],
+    "ok": false
+  },
+  {
+    "id": 22028729,
+    "doi": "10.5281/zenodo.22028729",
+    "title": "Híbridación inteligencia artificial_biología_mecanica cuántica",
+    "creators": [
+      "Barcelona Institute of Science and Technology( Lázaro López Paz del Prat de Llobregat Barcelona España)"
+    ],
+    "license": "cc-by-4.0",
+    "files": 12,
+    "mb": 54.5,
+    "errors": [
+      "creator institucional: Barcelona Institute of Science and Technology( Lázaro López Paz del Prat de Llob"
+    ],
+    "warnings": [
+      "afiliación sin El Prat: (vacía)",
+      "título ≠ ficha: Híbridación inteligencia artificial_biología_mecanica cuántica",
+      "related_identifiers vacío",
+      "idioma None ≠ 'spa'",
+      "posible duplicado (2 ficheros de 10993054 bytes)",
+      "posible duplicado (2 ficheros de 10144916 bytes)"
+    ],
+    "ok": false
+  },
+  {
+    "id": 22131030,
+    "doi": "10.5281/zenodo.22131030",
+    "title": "Proyectos 26_8_2026_helio-3",
+    "creators": [
+      "Barcelona Institute of Science and Technology( Lázaro López Paz del Prat de Llobregat Barcelona España)"
+    ],
+    "license": "apl1.0",
+    "files": 3,
+    "mb": 40.87,
+    "errors": [
+      "creator institucional: Barcelona Institute of Science and Technology( Lázaro López Paz del Prat de Llob",
+      "licencia no permitida: apl1.0",
+      "descripción corta (0 < 80)"
+    ],
+    "warnings": [
+      "afiliación sin El Prat: (vacía)",
+      "título ≠ ficha: Proyectos 26_8_2026_helio-3",
+      "related_identifiers vacío"
+    ],
+    "ok": false
+  },
+  {
+    "id": 22131440,
+    "doi": "10.5281/zenodo.22131440",
+    "title": "Pedtidos realizados con inteligencia artificial",
+    "creators": [
+      "Peptides International (United States) ( Lázaro López Paz del Prat de Llobregat Barcelona España)"
+    ],
+    "license": "apache2.0",
+    "files": 5,
+    "mb": 38.86,
+    "errors": [
+      "creator institucional: Peptides International (United States) ( Lázaro López Paz del Prat de Llobregat ",
+      "licencia no permitida: apache2.0",
+      "descripción corta (0 < 80)"
+    ],
+    "warnings": [
+      "afiliación sin El Prat: (vacía)",
+      "título ≠ ficha: Pedtidos realizados con inteligencia artificial",
+      "related_identifiers vacío",
+      "fichero a versionar: noteboo.txt"
+    ],
+    "ok": false
+  },
+  {
+    "id": 22150378,
+    "doi": "10.5281/zenodo.22150378",
+    "title": "Vibración proyectos cuánticos",
+    "creators": [
+      "Institut de Nanociència i Nanotecnologia de la Universitat de Barcelona(Lázaro López Paz, del Prat de Llobregat, Barcelona, España)"
+    ],
+    "license": null,
+    "files": 4,
+    "mb": 179.1,
+    "errors": [
+      "creator institucional: Institut de Nanociència i Nanotecnologia de la Universitat de Barcelona(Lázaro L",
+      "licencia no permitida: None",
+      "descripción corta (0 < 80)"
+    ],
+    "warnings": [
+      "afiliación sin El Prat: (vacía)",
+      "título ≠ ficha: Vibración proyectos cuánticos",
+      "related_identifiers vacío",
+      "fichero a versionar: grok-workspace-2.zip",
+      "fichero grande 172.1 MB: grok-workspace-2.zip"
+    ],
+    "ok": false
+  }
+]

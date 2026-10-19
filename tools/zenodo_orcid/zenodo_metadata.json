@@ -1,0 +1,157 @@
+{
+  "creator": {
+    "name": "López Paz, Lázaro",
+    "affiliation": "Investigador independiente, El Prat de Llobregat, Barcelona, España"
+  },
+  "related_all": [
+    "10.5281/zenodo.20761277",
+    "10.5281/zenodo.20812704",
+    "10.5281/zenodo.21238123",
+    "10.5281/zenodo.21321630",
+    "10.5281/zenodo.21345185",
+    "10.5281/zenodo.21361772",
+    "10.5281/zenodo.21401153",
+    "10.5281/zenodo.21513673",
+    "10.5281/zenodo.21640446",
+    "10.5281/zenodo.21721963",
+    "10.5281/zenodo.21806526",
+    "10.5281/zenodo.22028729",
+    "10.5281/zenodo.22131030",
+    "10.5281/zenodo.22131440",
+    "10.5281/zenodo.22150378"
+  ],
+  "records": {
+    "20761277": {
+      "title": "GlyD-QSense: expediente técnico de termometría cuántica orgánica (glicina deuterada)",
+      "upload_type": "publication",
+      "publication_type": "technicalnote",
+      "license": "cc-by-4.0",
+      "language": "spa",
+      "keywords": ["GlyD-QSense", "termometría", "glicina deuterada", "sensor cuántico", "nanocristales orgánicos"],
+      "description": "<p><strong>Documento de trabajo.</strong> Autor: Lázaro López Paz (El Prat de Llobregat).</p><p><strong>Estado:</strong> concepto + expediente de implementación. <strong>Evidencia en este depósito:</strong> dossier de plan maestro y PDF técnico. <strong>No evidencia:</strong> instrumento calibrado en laboratorio independiente ni ensayo clínico.</p><p>Sensor de temperatura conceptual basado en nanocristales orgánicos de glicina deuterada. Uso exclusivo de documentación e investigación. No es un dispositivo médico certificado.</p>"
+    },
+    "20812704": {
+      "title": "Sistemas de liberación controlada para enfermedades neurodegenerativas: protocolos de validación (Higuchi / Korsmeyer–Peppas)",
+      "upload_type": "publication",
+      "publication_type": "technicalnote",
+      "license": "cc-by-4.0",
+      "language": "spa",
+      "keywords": ["Alzheimer", "Parkinson", "liberación controlada", "Higuchi", "Korsmeyer-Peppas", "BHE"],
+      "description": "<p><strong>Documento de trabajo.</strong> Autor: Lázaro López Paz (El Prat de Llobregat).</p><p><strong>Estado:</strong> protocolos de validación PK y capacidades de laboratorio. <strong>Evidencia:</strong> modelos Higuchi y Korsmeyer–Peppas, listado de fármacos de referencia. <strong>No evidencia:</strong> ensayo clínico ni nuevo principio activo demostrado.</p><p>No constituye prescripción ni protocolo asistencial.</p>"
+    },
+    "21238123": {
+      "title": "Metamateriales acústicos y fractales para aislamiento y enlaces 6G/7G: dossier conceptual",
+      "upload_type": "publication",
+      "publication_type": "technicalnote",
+      "license": "cc-by-4.0",
+      "language": "spa",
+      "keywords": ["metamateriales", "6G", "7G", "fractal", "aislamiento acústico", "CymaQuantum"],
+      "description": "<p><strong>Documento de trabajo.</strong> Autor: Lázaro López Paz (El Prat de Llobregat).</p><p><strong>Estado:</strong> dossier conceptual e ilustrativo. <strong>No evidencia:</strong> prototipo de enlace 6G/7G medido ni campaña de aislamiento certificada.</p>"
+    },
+    "21321630": {
+      "title": "Quantum Synovia Matrix (QSM / MetaLub): lubricación articular biomimética — tutorial técnico",
+      "upload_type": "publication",
+      "publication_type": "technicalnote",
+      "license": "cc-by-4.0",
+      "language": "spa",
+      "keywords": ["QSM", "ácido hialurónico", "DFT", "tribología", "osteoartritis", "siloxano"],
+      "description": "<p><strong>Documento de trabajo.</strong> Autor: Lázaro López Paz (El Prat de Llobregat).</p><p><strong>Estado:</strong> tutorial técnico + cálculos DFT de clúster. <strong>No evidencia:</strong> ensayo clínico de viscosuplementación.</p>"
+    },
+    "21345185": {
+      "title": "Ingeniería de sistemas fotónicos y metamateriales fractales: dossier de I+D",
+      "upload_type": "publication",
+      "publication_type": "report",
+      "license": "cc-by-4.0",
+      "language": "spa",
+      "keywords": ["fotónica", "metamateriales", "fractal", "hardware cuántico conceptual"],
+      "description": "<p><strong>Documento de trabajo.</strong> Autor: Lázaro López Paz (El Prat de Llobregat).</p><p>Dossier de I+D sobre fotónica y geometrías fractales. Concepto; no es un chip fabricado.</p>"
+    },
+    "21361772": {
+      "title": "Plataforma Meta Nano Microbiota Quantum: CQDs, encapsulación y modelo gLV",
+      "upload_type": "publication",
+      "publication_type": "technicalnote",
+      "license": "cc-by-4.0",
+      "language": "spa",
+      "keywords": ["microbiota", "carbon quantum dots", "alginato", "quitosano", "gLV", "tributirina"],
+      "description": "<p><strong>Documento de trabajo.</strong> Autor: Lázaro López Paz (El Prat de Llobregat).</p><p><strong>Estado:</strong> protocolo de síntesis de CQDs y modelo ecológico gLV. Los PDF de 3–6&nbsp;KB etiquetados como GMP/clínico/patente son <strong>borradores incompletos</strong>, no un expediente regulatorio.</p>"
+    },
+    "21401153": {
+      "title": "MEI-RIT: propulsor iónico de RF de yodo con metasuperficie — propuesta y verificación 2026",
+      "upload_type": "publication",
+      "publication_type": "preprint",
+      "license": "cc-by-4.0",
+      "language": "spa",
+      "keywords": ["MEI-RIT", "RF ion thruster", "iodine", "metasurface", "CubeSat", "electric propulsion"],
+      "description": "<p><strong>Preprint / propuesta de ingeniería.</strong> Autor: Lázaro López Paz (El Prat de Llobregat).</p><p><strong>Estado:</strong> diseño + ancla bibliográfica (ThrustMe/Busek) + optimización de metasuperficie. Rango declarado: 50–80&nbsp;W, Isp 2300–2800&nbsp;s, presupuesto orientativo 53–95&nbsp;k€, 12–18 meses. <strong>No evidencia:</strong> hardware volado ni campaña de empuje propia.</p>"
+    },
+    "21513673": {
+      "title": "Canelone_mf: software de investigación para circuitos cuánticos de pequeña escala",
+      "upload_type": "software",
+      "license": "mit",
+      "language": "spa",
+      "keywords": ["Qiskit", "software", "computación cuántica", "Canelone_mf"],
+      "description": "<p><strong>Software de investigación.</strong> Autor: Lázaro López Paz (El Prat de Llobregat).</p><p>Scripts y notas para circuitos de pocos qubits. No es un compilador de ordenador cuántico de propósito general.</p>"
+    },
+    "21640446": {
+      "title": "LCPB: marco computacional para índices biológicos en búsqueda de vida extrasolar",
+      "upload_type": "publication",
+      "publication_type": "preprint",
+      "license": "cc-by-4.0",
+      "language": "spa",
+      "keywords": ["astrobiología", "LCPB", "exoplanetas", "biosignature", "modelo computacional"],
+      "description": "<p><strong>Preprint / marco computacional.</strong> Autor: Lázaro López Paz (El Prat de Llobregat).</p><p>Índices y scripts de búsqueda. No es una detección de vida.</p>"
+    },
+    "21721963": {
+      "title": "Control espacio-tiempo cuántico: informe de viabilidad y límites (simulación Qiskit)",
+      "upload_type": "publication",
+      "publication_type": "report",
+      "license": "cc-by-4.0",
+      "language": "spa",
+      "keywords": ["Qiskit", "YIG", "gravitación simulación", "viabilidad", "no CTC"],
+      "description": "<p><strong>Informe de viabilidad.</strong> Autor: Lázaro López Paz (El Prat de Llobregat).</p><p>El propio informe <strong>descarta</strong> el control gravitatorio macroscópico y el viaje al pasado. Lo que queda es simulación de circuitos pequeños y un marco conceptual. No interpretar este DOI como motor de curvatura.</p>"
+    },
+    "21806526": {
+      "title": "Péptidos inteligentes v3: NeuroPlastin, Senolyt-X e ImmuSynth — protocolos realizables en laboratorio",
+      "upload_type": "publication",
+      "publication_type": "technicalnote",
+      "license": "cc-by-4.0",
+      "language": "spa",
+      "keywords": ["SPPS", "AzoF", "NeuroPlastin", "senolíticos", "péptidos"],
+      "description": "<p><strong>Protocolos de laboratorio.</strong> Autor: Lázaro López Paz (El Prat de Llobregat).</p><p>v3 recorta técnicas no habituales (origami de ADN, ncAA raros). Queda SPPS + HPLC + MS + LED. Presupuesto orientativo 800–2500&nbsp;€ por péptido hasta material de ensayo. No es un medicamento autorizado.</p>"
+    },
+    "22028729": {
+      "title": "Hibridación FMO–HEOM–IA: atlas y pipeline de simulación",
+      "upload_type": "publication",
+      "publication_type": "technicalnote",
+      "license": "cc-by-4.0",
+      "language": "spa",
+      "keywords": ["FMO", "HEOM", "fotosíntesis", "machine learning", "open quantum systems"],
+      "description": "<p><strong>Documento de trabajo + pipeline.</strong> Autor: Lázaro López Paz (El Prat de Llobregat).</p><p>Simulación de transferencia de excitón (FMO) acoplada a herramientas de IA. No es un dispositivo biológico fabricado.</p>"
+    },
+    "22131030": {
+      "title": "HelioAtlas 2026: catálogo conceptual de líneas de helio-3 (no es el modelo 0D QMC-H3)",
+      "upload_type": "other",
+      "license": "cc-by-4.0",
+      "language": "spa",
+      "keywords": ["helio-3", "HelioAtlas", "fusión aneutrónica concepto", "regolito lunar"],
+      "description": "<p><strong>Catálogo / material de plataforma.</strong> Autor: Lázaro López Paz (El Prat de Llobregat).</p><p>Este DOI cubre HelioAtlas (documentos y gráfico). <strong>No incluye</strong> el modelo 0D del reactor QMC-H3 ni su factor Q. El balance de potencia publicado en Drive da Q ≈ 0,04 bajo los supuestos del script 0D.</p>"
+    },
+    "22131440": {
+      "title": "Arquitectura de péptidos terapéuticos asistida por IA (dossier v1.1 / addendum v1.2)",
+      "upload_type": "publication",
+      "publication_type": "technicalnote",
+      "license": "cc-by-4.0",
+      "language": "spa",
+      "keywords": ["péptidos", "diseño asistido por IA", "SPPS"],
+      "description": "<p><strong>Documento de trabajo.</strong> Autor: Lázaro López Paz (El Prat de Llobregat).</p><p>Solapa temática con 10.5281/zenodo.21806526 (v3 realizable). Preferir la v3 para protocolos de laboratorio.</p>"
+    },
+    "22150378": {
+      "title": "OMNISCIENCE MVP: plataforma de descubrimiento científico (implementación técnica + maestro)",
+      "upload_type": "other",
+      "license": "cc-by-4.0",
+      "language": "spa",
+      "keywords": ["OMNISCIENCE", "plataforma científica", "MVP"],
+      "description": "<p><strong>Entregable de software / MVP.</strong> Autor: Lázaro López Paz (El Prat de Llobregat).</p><p>Los PDF de implementación son el objeto. El ZIP de workspace es material auxiliar, no el entregable científico.</p>"
+    }
+  }
+}

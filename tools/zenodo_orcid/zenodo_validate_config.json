@@ -1,0 +1,37 @@
+{
+  "records": [
+    20761277, 20812704, 21238123, 21321630, 21345185,
+    21361772, 21401153, 21513673, 21640446, 21721963,
+    21806526, 22028729, 22131030, 22131440, 22150378
+  ],
+  "author": {
+    "name": "López Paz, Lázaro",
+    "name_accepted": ["López Paz, Lázaro", "Lazaro Lopez Paz"],
+    "affiliation_must_contain": ["El Prat de Llobregat"],
+    "affiliation_forbidden": [
+      "Instituto de Investigaciones Químicas",
+      "Japan Institute for Promoting Invention and Innovation"
+    ],
+    "name_forbidden_substrings": [
+      "Institute", "Institut", "Fundación", "International",
+      "Group", "Sociedad", "PERSEI", "Laboratory",
+      "Astrofísica", "Ingeniería de Sistemas", "Nanociència",
+      "Barcelona Institute", "Peptides", "Fractal Systems",
+      "Microbiology", "Medina"
+    ],
+    "max_creators": 1
+  },
+  "license_allowed": ["cc-by-4.0", "mit", "cc0-1.0"],
+  "license_by_record": {
+    "21513673": ["mit", "cc-by-4.0"]
+  },
+  "description_min_chars": 80,
+  "require_related_identifiers": true,
+  "require_language": "spa",
+  "require_open_access": true,
+  "forbidden_filenames": ["noteboo.txt", "grok-workspace-2.zip"],
+  "warn_duplicate_file_sizes": true,
+  "max_file_mb_warn": 150,
+  "compare_titles_with_pack": true,
+  "pack_path": "zenodo_metadata.json"
+}

@@ -1,0 +1,954 @@
+[
+  {
+    "id": 20761277,
+    "doi": "10.5281/zenodo.20761277",
+    "conceptrecid": "20761276",
+    "created": "2026-06-19T11:52:38.535039+00:00",
+    "updated": "2026-06-19T11:52:39.067821+00:00",
+    "revision": null,
+    "title": "Expediente Técnico de Validación: Sistema de Termometría Cuántica Orgánica GlyD-QSense",
+    "creators": [
+      {
+        "name": "Lázaro López Paz",
+        "affiliation": "Instituto de Investigaciones Químicas"
+      }
+    ],
+    "type": {
+      "title": "Other",
+      "type": "other"
+    },
+    "license": "apache2.0",
+    "language": "spa",
+    "keywords": [
+      "glicina"
+    ],
+    "access": "open",
+    "desc_len": 1053,
+    "related": [],
+    "files": [
+      {
+        "key": "Dossier Integral_ Plan Maestro de Implementación del Sensor GlyD-QSense.pdf",
+        "size": 332663,
+        "type": null
+      },
+      {
+        "key": "GlyD-QSense_Organic_Quantum_Precision.pdf",
+        "size": 19684597,
+        "type": null
+      }
+    ],
+    "bytes": 20017260,
+    "communities": null,
+    "contributors": null,
+    "notes": "",
+    "publication_date": "2026-06-19"
+  },
+  {
+    "id": 20812704,
+    "doi": "10.5281/zenodo.20812704",
+    "conceptrecid": "20812703",
+    "created": "2026-06-23T11:32:45.903251+00:00",
+    "updated": "2026-06-23T11:32:47.237514+00:00",
+    "revision": null,
+    "title": "Innovación biomédica: sistemas de liberación controlada para enfermedades neurodegenerativas",
+    "creators": [
+      {
+        "name": "Fundación Medina ( publicación: Lázaro López Paz, del Prat de Llobregat, barcelona)",
+        "affiliation": null
+      }
+    ],
+    "type": {
+      "title": "Publication",
+      "type": "publication"
+    },
+    "license": "cc-by-4.0",
+    "language": null,
+    "keywords": [
+      "alzeimer"
+    ],
+    "access": "open",
+    "desc_len": 12355,
+    "related": [],
+    "files": [
+      {
+        "key": "The_Pharmacokinetic_Blueprint.pptx",
+        "size": 20251771,
+        "type": null
+      },
+      {
+        "key": "Reporte Técnico de Capacidades_ Validación de Protocolos de Liberación Controlada Neuroprotectora.pdf",
+        "size": 272261,
+        "type": null
+      },
+      {
+        "key": "Neuro-Kinetic_Engineering.pptx",
+        "size": 35800907,
+        "type": null
+      },
+      {
+        "key": "The_Pharmacokinetic_Blueprint.pdf",
+        "size": 15813570,
+        "type": null
+      },
+      {
+        "key": "Neuro-Kinetic_Engineering.pdf",
+        "size": 26080897,
+        "type": null
+      }
+    ],
+    "bytes": 98219406,
+    "communities": null,
+    "contributors": null,
+    "notes": "",
+    "publication_date": "2026-06-23"
+  },
+  {
+    "id": 21238123,
+    "doi": "10.5281/zenodo.21238123",
+    "conceptrecid": "21238122",
+    "created": "2026-07-07T11:30:41.210082+00:00",
+    "updated": "2026-07-07T11:30:45.829079+00:00",
+    "revision": null,
+    "title": "Mata materiale y 6G y 7G- aislamiento cuántico",
+    "creators": [
+      {
+        "name": "Acoustic Metamaterials Group (China)/ Lázaro López Paz del Prat de Llobregat Barcelona España",
+        "affiliation": null
+      }
+    ],
+    "type": {
+      "title": "Publication",
+      "type": "publication"
+    },
+    "license": "cc-by-4.0",
+    "language": "spa",
+    "keywords": [
+      "6G",
+      "7G",
+      "Metamatariales",
+      "mecánica cuántica"
+    ],
+    "access": "open",
+    "desc_len": 0,
+    "related": [],
+    "files": [
+      {
+        "key": "1777125562176-76af3451-4376-42c7-b9d3-153da6362f7d_10.jpg",
+        "size": 148780,
+        "type": null
+      },
+      {
+        "key": "1777125562176-76af3451-4376-42c7-b9d3-153da6362f7d_12.jpg",
+        "size": 148709,
+        "type": null
+      },
+      {
+        "key": "Mapa_Técnico_Organismo_Cuántico-Fractal.png",
+        "size": 8117885,
+        "type": null
+      },
+      {
+        "key": "1777125562176-76af3451-4376-42c7-b9d3-153da6362f7d_4.jpg",
+        "size": 128746,
+        "type": null
+      },
+      {
+        "key": "Quantum_Fractal_Synthesis.pdf",
+        "size": 20930858,
+        "type": null
+      },
+      {
+        "key": "The_Quantum_Fractal_Ecosystem(1).pptx",
+        "size": 16645326,
+        "type": null
+      },
+      {
+        "key": "1777125562176-76af3451-4376-42c7-b9d3-153da6362f7d_3.jpg",
+        "size": 98513,
+        "type": null
+      },
+      {
+        "key": "cymaquantun resonator.png",
+        "size": 5464788,
+        "type": null
+      },
+      {
+        "key": "1777125562176-76af3451-4376-42c7-b9d3-153da6362f7d_15.jpg",
+        "size": 131057,
+        "type": null
+      },
+      {
+        "key": "1777125562176-76af3451-4376-42c7-b9d3-153da6362f7d_9.jpg",
+        "size": 125835,
+        "type": null
+      },
+      {
+        "key": "1777125562176-76af3451-4376-42c7-b9d3-153da6362f7d_11.jpg",
+        "size": 130923,
+        "type": null
+      },
+      {
+        "key": "1777125562176-76af3451-4376-42c7-b9d3-153da6362f7d_13.jpg",
+        "size": 144466,
+        "type": null
+      },
+      {
+        "key": "1777125562176-76af3451-4376-42c7-b9d3-153da6362f7d_7.jpg",
+        "size": 140021,
+        "type": null
+      },
+      {
+        "key": "1777125562176-76af3451-4376-42c7-b9d3-153da6362f7d_14.jpg",
+        "size": 131188,
+        "type": null
+      },
+      {
+        "key": "Ecosistema_Cuántico-Fractal_Barcelona_2026.png",
+        "size": 6486278,
+        "type": null
+      },
+      {
+        "key": "Dossier Técnico de Replicación_ Ecosistema Cuántico-Fractal (Protocolo Barcelona 2026).pdf",
+        "size": 156437,
+        "type": null
+      },
+      {
+        "key": "1777125562176-76af3451-4376-42c7-b9d3-153da6362f7d_8.jpg",
+        "size": 134238,
+        "type": null
+      },
+      {
+        "key": "CymaQuantum_Resonator_Blueprint.pdf",
+        "size": 21610041,
+        "type": null
+      }
+    ],
+    "bytes": 80874089,
+    "communities": null,
+    "contributors": null,
+    "notes": "",
+    "publication_date": "2026-07-07"
+  },
+  {
+    "id": 21321630,
+    "doi": "10.5281/zenodo.21321630",
+    "conceptrecid": "21295445",
+    "created": "2026-07-12T11:18:38.420320+00:00",
+    "updated": "2026-07-12T11:21:31.711205+00:00",
+    "revision": null,
+    "title": "Lubricación_articular_QuantumSynovia_MetaLub_(QSM)",
+    "creators": [
+      {
+        "name": "Sociedad Española de Cirugía Ortopédica y Traumatología ( Lázaro López Paz- del Prat de Llobregat,Barcelona)",
+        "affiliation": "Japan Institute for Promoting Invention and Innovation"
+      }
+    ],
+    "type": {
+      "title": "Publication",
+      "type": "publication"
+    },
+    "license": "apache2.0",
+    "language": null,
+    "keywords": [
+      "traumatologia",
+      "Meta-materiales"
+    ],
+    "access": "open",
+    "desc_len": 17095,
+    "related": [],
+    "files": [
+      {
+        "key": "QSM_Tutorial_Tecnico.pdf",
+        "size": 466791,
+        "type": null
+      }
+    ],
+    "bytes": 466791,
+    "communities": null,
+    "contributors": null,
+    "notes": "",
+    "publication_date": "2026-07-12"
+  },
+  {
+    "id": 21345185,
+    "doi": "10.5281/zenodo.21345185",
+    "conceptrecid": "21345184",
+    "created": "2026-07-13T20:00:07.111473+00:00",
+    "updated": "2026-07-13T20:00:07.767804+00:00",
+    "revision": null,
+    "title": "Ingeniería de Sistemas Fotónicos y Metamateriales Fractale",
+    "creators": [
+      {
+        "name": "Fractal Systems (Canada)_ y Lázaro López Paz, del Prat de Llobregat, Barcelona, España",
+        "affiliation": null
+      }
+    ],
+    "type": {
+      "title": "Publication",
+      "type": "publication"
+    },
+    "license": "cc-by-4.0",
+    "language": "spa",
+    "keywords": [
+      "fractales",
+      "ingenieria"
+    ],
+    "access": "open",
+    "desc_len": 0,
+    "related": [],
+    "files": [
+      {
+        "key": "Dossier Maestro de I+D.pdf",
+        "size": 4827093,
+        "type": null
+      },
+      {
+        "key": "Fractal_Quantum_Hardware-1.pdf",
+        "size": 18669542,
+        "type": null
+      },
+      {
+        "key": "Fractal_Quantum_Hardware.pdf",
+        "size": 15695541,
+        "type": null
+      }
+    ],
+    "bytes": 39192176,
+    "communities": null,
+    "contributors": null,
+    "notes": "",
+    "publication_date": "2026-07-13"
+  },
+  {
+    "id": 21361772,
+    "doi": "10.5281/zenodo.21361772",
+    "conceptrecid": "21361771",
+    "created": "2026-07-14T16:57:02.120757+00:00",
+    "updated": "2026-07-14T16:57:04.672606+00:00",
+    "revision": null,
+    "title": "Plataforma Meta Nano Microbiota Quantum: Implementación Integral de Optimización Intestinal",
+    "creators": [
+      {
+        "name": "Institute of Microbiology_( Lázaro López Paz, del Prat de Llobregat, Barcelona)",
+        "affiliation": null
+      }
+    ],
+    "type": {
+      "title": "Publication",
+      "type": "publication"
+    },
+    "license": "cc-by-4.0",
+    "language": null,
+    "keywords": null,
+    "access": "open",
+    "desc_len": 5469,
+    "related": [],
+    "files": [
+      {
+        "key": "Final_Implementation_Package_MetaNanoMicrobiota_Quantum.pdf",
+        "size": 6257,
+        "type": null
+      },
+      {
+        "key": "Clinical_Pilot_Protocol_MetaNanoMicrobiota.pdf",
+        "size": 5524,
+        "type": null
+      },
+      {
+        "key": "GMP_DoE_Protocol_MetaNanoMicrobiota.pdf",
+        "size": 5838,
+        "type": null
+      },
+      {
+        "key": "MetaNanoMicrobiota_Quantum_Presentacion.pptx",
+        "size": 2119058,
+        "type": null
+      },
+      {
+        "key": "Plataforma Meta Nano Microbiota Quantum.pdf",
+        "size": 205906,
+        "type": null
+      },
+      {
+        "key": "Updated_Patent_Draft_MetaNanoMicrobiota_Quantum_v2.pdf",
+        "size": 5620,
+        "type": null
+      }
+    ],
+    "bytes": 2348203,
+    "communities": null,
+    "contributors": null,
+    "notes": "",
+    "publication_date": "2026-07-14"
+  },
+  {
+    "id": 21401153,
+    "doi": "10.5281/zenodo.21401153",
+    "conceptrecid": "21395967",
+    "created": "2026-07-18T13:09:49.687894+00:00",
+    "updated": "2026-07-18T13:09:50.427333+00:00",
+    "revision": null,
+    "title": "Lo último en propulsión espacial",
+    "creators": [
+      {
+        "name": "PERSEI Space__( Lázaro López Paz del Prat de Llobregat, Barcelona, España)",
+        "affiliation": null
+      },
+      {
+        "name": "PERSEI Space ( Lázaro López Paz del Prat de Llobregat Barcelona España)",
+        "affiliation": null
+      }
+    ],
+    "type": {
+      "title": "Event",
+      "type": "event"
+    },
+    "license": "cc-by-4.0",
+    "language": "spa",
+    "keywords": [
+      "propulsión espacial"
+    ],
+    "access": "open",
+    "desc_len": 0,
+    "related": [],
+    "files": [
+      {
+        "key": "MEI_RIT_Proyecto_Verificado_Lazaro_Lopez_Paz_2026.pdf",
+        "size": 80751,
+        "type": null
+      },
+      {
+        "key": "grok_1784204117842.png",
+        "size": 65405,
+        "type": null
+      },
+      {
+        "key": "Propuesta de Proyecto Tecnológico_ Propulsor MEI-RIT (Metasurface-Enhanced Iodine RF Ion Thruster).pdf",
+        "size": 1087581,
+        "type": null
+      },
+      {
+        "key": "propulsion_project última generación.pdf",
+        "size": 705871,
+        "type": null
+      },
+      {
+        "key": "import numpy as np 2 (Python).pdf",
+        "size": 45250,
+        "type": null
+      }
+    ],
+    "bytes": 1984858,
+    "communities": null,
+    "contributors": null,
+    "notes": "",
+    "publication_date": "2026-07-16"
+  },
+  {
+    "id": 21513673,
+    "doi": "10.5281/zenodo.21513673",
+    "conceptrecid": "21513672",
+    "created": "2026-07-23T16:25:16.807272+00:00",
+    "updated": "2026-07-26T14:17:47.370054+00:00",
+    "revision": null,
+    "title": "Software para ordenador cuántico dé hoy",
+    "creators": [
+      {
+        "name": "State Key Laboratory of Software Engineering ( Lázaro López Paz del Prat de Llobregat, Barcelona, España)",
+        "affiliation": null
+      }
+    ],
+    "type": {
+      "title": "Other",
+      "type": "other"
+    },
+    "license": "cc-by-4.0",
+    "language": "spa",
+    "keywords": [
+      "software"
+    ],
+    "access": "open",
+    "desc_len": 0,
+    "related": [],
+    "files": [
+      {
+        "key": "Canelone_mf_Research_Edition_TODO.pdf",
+        "size": 13321,
+        "type": null
+      },
+      {
+        "key": "Código Python_ordenador cuántico _software (1).pdf",
+        "size": 884284,
+        "type": null
+      },
+      {
+        "key": "Canelone_mf_Research_Edition.py",
+        "size": 61436,
+        "type": null
+      }
+    ],
+    "bytes": 959041,
+    "communities": null,
+    "contributors": null,
+    "notes": "",
+    "publication_date": "2026-07-23"
+  },
+  {
+    "id": 21640446,
+    "doi": "10.5281/zenodo.21640446",
+    "conceptrecid": "21640445",
+    "created": "2026-07-28T09:03:47.947196+00:00",
+    "updated": "2026-07-28T09:03:49.192168+00:00",
+    "revision": null,
+    "title": "logaritmo y algoritmo para poder encontrar vida entre las estrellas",
+    "creators": [
+      {
+        "name": "Instituto de Astrofísica de Canarias ( Lázaro López Paz del Prat de Llobregat, Barcelona, España)",
+        "affiliation": null
+      }
+    ],
+    "type": {
+      "title": "Publication",
+      "type": "publication"
+    },
+    "license": "apache2.0",
+    "language": "spa",
+    "keywords": [
+      "astrono"
+    ],
+    "access": "open",
+    "desc_len": 0,
+    "related": [],
+    "files": [
+      {
+        "key": "Búsqueda planetas_LCPB_v2_Lazaro_Lopez_Paz.pdf",
+        "size": 353939,
+        "type": null
+      },
+      {
+        "key": "lcpb_final_completo.py",
+        "size": 8806,
+        "type": null
+      },
+      {
+        "key": "LCPB Quantum Framework.pdf",
+        "size": 15218538,
+        "type": null
+      },
+      {
+        "key": "LCPB Quantum Astrobiology.pdf",
+        "size": 11401657,
+        "type": null
+      },
+      {
+        "key": "Evolución del Índice Biológico Cuántico.png",
+        "size": 6409429,
+        "type": null
+      }
+    ],
+    "bytes": 33392369,
+    "communities": null,
+    "contributors": null,
+    "notes": "",
+    "publication_date": "2026-07-28"
+  },
+  {
+    "id": 21721963,
+    "doi": "10.5281/zenodo.21721963",
+    "conceptrecid": "21721962",
+    "created": "2026-07-31T13:15:43.344802+00:00",
+    "updated": "2026-07-31T13:15:44.281345+00:00",
+    "revision": null,
+    "title": "Controlar con la vibración y la gravedad el futuro",
+    "creators": [
+      {
+        "name": "Ingeniería de Sistemas para la Defensa de España (Lázaro López Paz del Prat de Llobregat Barcelona España)",
+        "affiliation": null
+      }
+    ],
+    "type": {
+      "title": "Publication",
+      "type": "publication"
+    },
+    "license": "cc-by-4.0",
+    "language": null,
+    "keywords": null,
+    "access": "open",
+    "desc_len": 0,
+    "related": [],
+    "files": [
+      {
+        "key": "Digital Twin Spacetime Blueprint.pdf",
+        "size": 20473287,
+        "type": null
+      },
+      {
+        "key": "Informe_Control_Espacio_Tiempo_Cuantico.pdf",
+        "size": 39603,
+        "type": null
+      },
+      {
+        "key": "Spacetime Engineering Convergence.pdf",
+        "size": 14137152,
+        "type": null
+      },
+      {
+        "key": "informe_viabilidad_gravedad_tiempo.pdf",
+        "size": 221241,
+        "type": null
+      },
+      {
+        "key": "Control de convergencia espacio-temporal.png",
+        "size": 5158057,
+        "type": null
+      }
+    ],
+    "bytes": 40029340,
+    "communities": null,
+    "contributors": null,
+    "notes": "",
+    "publication_date": "2026-07-31"
+  },
+  {
+    "id": 21806526,
+    "doi": "10.5281/zenodo.21806526",
+    "conceptrecid": "21806525",
+    "created": "2026-08-05T11:38:20.044135+00:00",
+    "updated": "2026-08-05T11:38:37.194507+00:00",
+    "revision": null,
+    "title": "lo último en péptidos para mejorar al ser humano",
+    "creators": [
+      {
+        "name": "Institut de Biologia Molecular de Barcelona ( Lázaro López Paz del Prat de Llobregat, Barcelona, España)",
+        "affiliation": null
+      }
+    ],
+    "type": {
+      "title": "Publication",
+      "type": "publication"
+    },
+    "license": "cc-by-4.0",
+    "language": "spa",
+    "keywords": [
+      "tecnología",
+      "inteligencia artificial"
+    ],
+    "access": "open",
+    "desc_len": 0,
+    "related": [],
+    "files": [
+      {
+        "key": "Peptidos_Inteligentes_v2_Mejorado.pdf",
+        "size": 155836,
+        "type": null
+      },
+      {
+        "key": "Dossier_Peptidos_Inteligentes_v3_Realizable_Laboratorio.pdf",
+        "size": 126312,
+        "type": null
+      },
+      {
+        "key": "Paquete_Completo_NeuroPlastin_Protocolo_Patente_v3.pdf",
+        "size": 128627,
+        "type": null
+      },
+      {
+        "key": "Manual_Fabricacion_Todos_Peptidos_v31.pdf",
+        "size": 112394,
+        "type": null
+      },
+      {
+        "key": "Géminis _Dossier_Maestro_Peptidos_Inteligentes_v3-2.pdf",
+        "size": 33932,
+        "type": null
+      },
+      {
+        "key": "Protocolos_Laboratorio_NeuroPlastin_SenolytX_v3.pdf",
+        "size": 131806,
+        "type": null
+      },
+      {
+        "key": "Dossier_Peptidos_Inteligentes_v2_Mejorado.pdf",
+        "size": 155836,
+        "type": null
+      },
+      {
+        "key": "Next Gen Smart Peptides.pdf",
+        "size": 18027398,
+        "type": null
+      },
+      {
+        "key": "Smart Peptide Technical Dossier.pdf",
+        "size": 18306988,
+        "type": null
+      }
+    ],
+    "bytes": 37179129,
+    "communities": null,
+    "contributors": null,
+    "notes": "",
+    "publication_date": "2026-08-05"
+  },
+  {
+    "id": 22028729,
+    "doi": "10.5281/zenodo.22028729",
+    "conceptrecid": "22028728",
+    "created": "2026-08-20T12:03:46.202228+00:00",
+    "updated": "2026-08-20T17:55:56.215127+00:00",
+    "revision": null,
+    "title": "Híbridación inteligencia artificial_biología_mecanica cuántica",
+    "creators": [
+      {
+        "name": "Barcelona Institute of Science and Technology( Lázaro López Paz del Prat de Llobregat Barcelona España)",
+        "affiliation": null
+      }
+    ],
+    "type": {
+      "title": "Other",
+      "type": "other"
+    },
+    "license": "cc-by-4.0",
+    "language": null,
+    "keywords": [
+      "inteligencia artificial",
+      "biología",
+      "mecánica cuántica",
+      "programación"
+    ],
+    "access": "open",
+    "desc_len": 831,
+    "related": [],
+    "files": [
+      {
+        "key": "PROYECTO_COMPLETO_FMO_HEOM_IA_UNICO(1).pdf",
+        "size": 2663997,
+        "type": null
+      },
+      {
+        "key": "Híbridación inteligencia artificial FMO Quantum Pipeline.pdf",
+        "size": 10993054,
+        "type": null
+      },
+      {
+        "key": "PROYECTO_COMPLETO_FMO_HEOM_IA_UNICO.pdf",
+        "size": 11171,
+        "type": null
+      },
+      {
+        "key": "Pipeline Híbrido IA-Cuántico FMO.png",
+        "size": 4622443,
+        "type": null
+      },
+      {
+        "key": "Aquí tienes el script maestro unificado main_atlas.pdf",
+        "size": 81156,
+        "type": null
+      },
+      {
+        "key": "The Hybrid Quantum-Biological AI Pipeline.png",
+        "size": 4533026,
+        "type": null
+      },
+      {
+        "key": "Implementación Avanzada- Proyecto Atlas Científico FMO-HEOM-IA.pdf",
+        "size": 84932,
+        "type": null
+      },
+      {
+        "key": "FMO Quantum Pipeline.pdf",
+        "size": 10993054,
+        "type": null
+      },
+      {
+        "key": "Híbridación inteligencia artificial_FMO Hybrid AI Blueprint.pdf",
+        "size": 10144916,
+        "type": null
+      },
+      {
+        "key": "FMO_Hybrid_AI_Technical_Report.pdf",
+        "size": 215265,
+        "type": null
+      },
+      {
+        "key": "FMO Hybrid AI Blueprint.pdf",
+        "size": 10144916,
+        "type": null
+      },
+      {
+        "key": "FMO_ATLAS_PAPER_WIN11.txt",
+        "size": 10635,
+        "type": null
+      }
+    ],
+    "bytes": 54498565,
+    "communities": null,
+    "contributors": null,
+    "notes": "",
+    "publication_date": "2026-08-20"
+  },
+  {
+    "id": 22131030,
+    "doi": "10.5281/zenodo.22131030",
+    "conceptrecid": "22131029",
+    "created": "2026-08-27T15:52:46.145582+00:00",
+    "updated": "2026-08-27T15:52:46.681927+00:00",
+    "revision": null,
+    "title": "Proyectos 26_8_2026_helio-3",
+    "creators": [
+      {
+        "name": "Barcelona Institute of Science and Technology( Lázaro López Paz del Prat de Llobregat Barcelona España)",
+        "affiliation": null
+      }
+    ],
+    "type": {
+      "title": "Other",
+      "type": "other"
+    },
+    "license": "apl1.0",
+    "language": "spa",
+    "keywords": [
+      "helio 3",
+      "metamatariales",
+      "ciencia",
+      "tecnología"
+    ],
+    "access": "open",
+    "desc_len": 0,
+    "related": [],
+    "files": [
+      {
+        "key": "HelioAtlas Quantum Blueprints.pdf",
+        "size": 33460304,
+        "type": null
+      },
+      {
+        "key": "HELIOATLAS 2026 Quantum Frontier.png",
+        "size": 6356079,
+        "type": null
+      },
+      {
+        "key": "HelioAtlas-documento.pdf",
+        "size": 1054341,
+        "type": null
+      }
+    ],
+    "bytes": 40870724,
+    "communities": null,
+    "contributors": null,
+    "notes": "",
+    "publication_date": "2026-08-27"
+  },
+  {
+    "id": 22131440,
+    "doi": "10.5281/zenodo.22131440",
+    "conceptrecid": "22131439",
+    "created": "2026-08-27T16:24:40.909658+00:00",
+    "updated": "2026-08-27T16:24:41.754046+00:00",
+    "revision": null,
+    "title": "Pedtidos realizados con inteligencia artificial",
+    "creators": [
+      {
+        "name": "Peptides International (United States) ( Lázaro López Paz del Prat de Llobregat Barcelona España)",
+        "affiliation": null
+      }
+    ],
+    "type": {
+      "title": "Other",
+      "type": "other"
+    },
+    "license": "apache2.0",
+    "language": "spa",
+    "keywords": [
+      "pedtidos"
+    ],
+    "access": "open",
+    "desc_len": 0,
+    "related": [],
+    "files": [
+      {
+        "key": "Precision Peptide Architecture.pptx",
+        "size": 19322163,
+        "type": null
+      },
+      {
+        "key": "Dossier_Peptidos_Terapeuticos_IA_v1.1.pdf",
+        "size": 3272114,
+        "type": null
+      },
+      {
+        "key": "noteboo.txt",
+        "size": 143,
+        "type": null
+      },
+      {
+        "key": "Addendum_Mejoras_v1.2-1.docx",
+        "size": 12734,
+        "type": null
+      },
+      {
+        "key": "Precision Peptide Architecture.pdf",
+        "size": 16255106,
+        "type": null
+      }
+    ],
+    "bytes": 38862260,
+    "communities": null,
+    "contributors": null,
+    "notes": "",
+    "publication_date": "2026-08-27"
+  },
+  {
+    "id": 22150378,
+    "doi": "10.5281/zenodo.22150378",
+    "conceptrecid": "22150377",
+    "created": "2026-08-28T21:29:11.709148+00:00",
+    "updated": "2026-08-28T21:29:12.218075+00:00",
+    "revision": null,
+    "title": "Vibración proyectos cuánticos",
+    "creators": [
+      {
+        "name": "Institut de Nanociència i Nanotecnologia de la Universitat de Barcelona(Lázaro López Paz, del Prat de Llobregat, Barcelona, España)",
+        "affiliation": null
+      }
+    ],
+    "type": {
+      "title": "Presentation",
+      "type": "presentation"
+    },
+    "license": null,
+    "language": "spa",
+    "keywords": [
+      "vibración"
+    ],
+    "access": "open",
+    "desc_len": 0,
+    "related": [],
+    "files": [
+      {
+        "key": "grok-workspace-2.zip",
+        "size": 172130388,
+        "type": null
+      },
+      {
+        "key": "10_modos_cuerda_animacion.mp4",
+        "size": 2002395,
+        "type": null
+      },
+      {
+        "key": "OMNISCIENCE-MV1- Implementación Técnica MVP.pdf",
+        "size": 107942,
+        "type": null
+      },
+      {
+        "key": "OMNISCIENCE_maestro_unificado.pdf",
+        "size": 4854650,
+        "type": null
+      }
+    ],
+    "bytes": 179095375,
+    "communities": null,
+    "contributors": null,
+    "notes": "",
+    "publication_date": "2026-08-28"
+  }
+]

@@ -1,0 +1,59 @@
+{
+  "policy": "Solo afiliaciones reales. No BIST, IAC, ISDEFE, IIQ, Fundación Medina, PERSEI, IN2UB, SECOT.",
+  "person": {
+    "given_names": "Lázaro",
+    "family_name": "López Paz",
+    "credit_name": "Lázaro López Paz",
+    "country": "ES",
+    "city": "El Prat de Llobregat",
+    "region": "Cataluña"
+  },
+  "zenodo_affiliation_string": "Investigador independiente, El Prat de Llobregat, Barcelona, España",
+  "orcid_ui": {
+    "employment": {
+      "organization": "Investigador independiente",
+      "city": "El Prat de Llobregat",
+      "region": "Cataluña",
+      "country": "Spain",
+      "role_title": "Inventor e investigador independiente",
+      "department": "",
+      "start_date": {
+        "year": "2026"
+      },
+      "end_date": null,
+      "url": "",
+      "disambiguated_organization": null,
+      "visibility": "public",
+      "note": "Añadir a mano en orcid.org → Employment → Add. No elijas BIST/ICFO/IAC del autocompletado."
+    },
+    "websites": [
+      {
+        "label": "Zenodo HelioAtlas",
+        "url": "https://doi.org/10.5281/zenodo.22131030"
+      }
+    ],
+    "keywords": [
+      "helio-3",
+      "metamateriales",
+      "fusión aneutrónica (concepto)",
+      "propulsión eléctrica",
+      "nanomedicina"
+    ],
+    "also_known_as": [
+      "Lázaro López Paz",
+      "Lazaro Lopez Paz"
+    ]
+  },
+  "forbidden_orgs": [
+    "Barcelona Institute of Science and Technology",
+    "Instituto de Astrofísica de Canarias",
+    "Ingeniería de Sistemas para la Defensa de España",
+    "Instituto de Investigaciones Químicas",
+    "Peptides International",
+    "PERSEI Space",
+    "Institut de Nanociència i Nanotecnologia",
+    "Fundación Medina",
+    "Sociedad Española de Cirugía Ortopédica y Traumatología"
+  ],
+  "member_api_note": "POST /v3.0/{orcid}/employment exige Member API + OAuth /activities/update. Un particular usa la web de ORCID. No hay credenciales de miembro en este entorno."
+}

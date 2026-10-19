@@ -1,0 +1,1468 @@
+[
+  {
+    "doi": "10.5281/zenodo.20761277",
+    "state": "findable",
+    "prefix": "10.5281",
+    "client": null,
+    "publisher": "Zenodo",
+    "publicationYear": 2026,
+    "created": "2026-06-19T11:52:39.000Z",
+    "registered": "2026-06-19T11:52:39.000Z",
+    "updated": "2026-08-18T16:06:43.000Z",
+    "url": "https://zenodo.org/doi/10.5281/zenodo.20761277",
+    "titles": [
+      {
+        "title": "Expediente Técnico de Validación: Sistema de Termometría Cuántica Orgánica GlyD-QSense"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Lázaro López Paz",
+        "nameType": "Organizational",
+        "affiliation": [
+          "Instituto de Investigaciones Químicas"
+        ],
+        "nameIdentifiers": [
+          {
+            "nameIdentifier": "054vff263",
+            "nameIdentifierScheme": "ROR"
+          },
+          {
+            "nameIdentifier": "0000 0004 6478 7594",
+            "nameIdentifierScheme": "ISNI"
+          }
+        ]
+      }
+    ],
+    "contributors": [],
+    "types": {
+      "ris": "GEN",
+      "bibtex": "misc",
+      "citeproc": "article",
+      "schemaOrg": "CreativeWork",
+      "resourceType": "",
+      "resourceTypeGeneral": "Other"
+    },
+    "rightsList": [
+      {
+        "rights": "Apache License 2.0",
+        "rightsUri": "http://www.apache.org/licenses/LICENSE-2.0",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "apache-2.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "subjects": [
+      {
+        "subject": "Glycine",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Glycine/agonists",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Glycine/analysis",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Glycine/metabolism",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Glycine/standards",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Glycine/blood",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Glycine/chemistry",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Glycine/history",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Receptors, Glycine",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Glycine Agents",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Glycine/classification",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Glycine/economics",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "glicina"
+      }
+    ],
+    "language": "es",
+    "descriptions": [
+      {
+        "dtype": "Abstract",
+        "len": 735
+      }
+    ],
+    "relatedIdentifiers": [
+      {
+        "relationType": "IsVersionOf",
+        "relatedIdentifier": "10.5281/zenodo.20761276",
+        "relatedIdentifierType": "DOI"
+      }
+    ],
+    "sizes": [],
+    "formats": [],
+    "version": null,
+    "schemaVersion": "http://datacite.org/schema/kernel-4"
+  },
+  {
+    "doi": "10.5281/zenodo.20812704",
+    "state": "findable",
+    "prefix": "10.5281",
+    "client": null,
+    "publisher": "Zenodo",
+    "publicationYear": 2026,
+    "created": "2026-06-23T11:32:47.000Z",
+    "registered": "2026-06-23T11:32:47.000Z",
+    "updated": "2026-08-19T19:02:45.000Z",
+    "url": "https://zenodo.org/doi/10.5281/zenodo.20812704",
+    "titles": [
+      {
+        "title": "Innovación biomédica: sistemas de liberación controlada para enfermedades neurodegenerativas"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Fundación Medina ( publicación: Lázaro López Paz, del Prat de Llobregat, barcelona)",
+        "nameType": "Organizational",
+        "nameIdentifiers": [
+          {
+            "nameIdentifier": "042dh5y83",
+            "nameIdentifierScheme": "ROR"
+          },
+          {
+            "nameIdentifier": "0000 0004 1778 9140",
+            "nameIdentifierScheme": "ISNI"
+          }
+        ],
+        "affiliation": []
+      }
+    ],
+    "contributors": [],
+    "types": {
+      "ris": "RPRT",
+      "bibtex": "article",
+      "citeproc": "article-journal",
+      "schemaOrg": "ScholarlyArticle",
+      "resourceType": "",
+      "resourceTypeGeneral": "Text"
+    },
+    "rightsList": [
+      {
+        "rights": "Creative Commons Attribution 4.0 International",
+        "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc-by-4.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "subjects": [
+      {
+        "subject": "Alzheimer",
+        "subjectScheme": "EuroSciVoc"
+      },
+      {
+        "subject": "Alzheimer Vaccines",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Alzheimer Disease",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Alzheimer Disease/enzymology",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "alzeimer"
+      },
+      {
+        "subject": "Parkinson",
+        "subjectScheme": "EuroSciVoc"
+      },
+      {
+        "subject": "Parkinson Disease",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Parkinson Disease, Secondary",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Parkinson Disease/congenital",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Parkinson Disease/immunology",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Parkinson Disease/microbiology",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Parkinson Disease/pathology",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Parkinson Disease/psychology",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Parkinson Disease/therapy",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Parkinson Disease/complications",
+        "subjectScheme": "MeSH"
+      }
+    ],
+    "language": null,
+    "descriptions": [
+      {
+        "dtype": "Abstract",
+        "len": 8634
+      }
+    ],
+    "relatedIdentifiers": [
+      {
+        "relationType": "IsVersionOf",
+        "relatedIdentifier": "10.5281/zenodo.20812703",
+        "relatedIdentifierType": "DOI"
+      }
+    ],
+    "sizes": [],
+    "formats": [],
+    "version": null,
+    "schemaVersion": "http://datacite.org/schema/kernel-4"
+  },
+  {
+    "doi": "10.5281/zenodo.21238123",
+    "state": "findable",
+    "prefix": "10.5281",
+    "client": null,
+    "publisher": "Zenodo",
+    "publicationYear": 2026,
+    "created": "2026-07-07T11:30:46.000Z",
+    "registered": "2026-07-07T11:30:46.000Z",
+    "updated": "2026-08-21T21:53:22.000Z",
+    "url": "https://zenodo.org/doi/10.5281/zenodo.21238123",
+    "titles": [
+      {
+        "title": "Mata materiale y 6G y 7G- aislamiento cuántico"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Acoustic Metamaterials Group (China)/ Lázaro López Paz del Prat de Llobregat Barcelona España",
+        "nameType": "Organizational",
+        "nameIdentifiers": [
+          {
+            "nameIdentifier": "048adnk25",
+            "nameIdentifierScheme": "ROR"
+          }
+        ],
+        "affiliation": []
+      }
+    ],
+    "contributors": [],
+    "types": {
+      "ris": "RPRT",
+      "bibtex": "article",
+      "citeproc": "article-journal",
+      "schemaOrg": "ScholarlyArticle",
+      "resourceType": "",
+      "resourceTypeGeneral": "Text"
+    },
+    "rightsList": [
+      {
+        "rights": "Creative Commons Attribution 4.0 International",
+        "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc-by-4.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "subjects": [
+      {
+        "subject": "6G"
+      },
+      {
+        "subject": "7G"
+      },
+      {
+        "subject": "Metamatariales"
+      },
+      {
+        "subject": "mecánica cuántica"
+      }
+    ],
+    "language": "es",
+    "descriptions": [],
+    "relatedIdentifiers": [
+      {
+        "relationType": "IsVersionOf",
+        "relatedIdentifier": "10.5281/zenodo.21238122",
+        "relatedIdentifierType": "DOI"
+      }
+    ],
+    "sizes": [],
+    "formats": [],
+    "version": null,
+    "schemaVersion": "http://datacite.org/schema/kernel-4"
+  },
+  {
+    "doi": "10.5281/zenodo.21321630",
+    "state": "findable",
+    "prefix": "10.5281",
+    "client": null,
+    "publisher": "Zenodo",
+    "publicationYear": 2026,
+    "created": "2026-07-12T11:18:39.000Z",
+    "registered": "2026-07-12T11:18:39.000Z",
+    "updated": "2026-08-25T08:35:33.000Z",
+    "url": "https://zenodo.org/doi/10.5281/zenodo.21321630",
+    "titles": [
+      {
+        "title": "Lubricación_articular_QuantumSynovia_MetaLub_(QSM)"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Sociedad Española de Cirugía Ortopédica y Traumatología ( Lázaro López Paz- del Prat de Llobregat,Barcelona)",
+        "nameType": "Organizational",
+        "affiliation": [
+          "Japan Institute for Promoting Invention and Innovation"
+        ],
+        "nameIdentifiers": [
+          {
+            "nameIdentifier": "01xmgrn68",
+            "nameIdentifierScheme": "ROR"
+          },
+          {
+            "nameIdentifier": "0000 0000 9310 5223",
+            "nameIdentifierScheme": "ISNI"
+          }
+        ]
+      }
+    ],
+    "contributors": [],
+    "types": {
+      "ris": "RPRT",
+      "bibtex": "article",
+      "citeproc": "article-journal",
+      "schemaOrg": "ScholarlyArticle",
+      "resourceType": "",
+      "resourceTypeGeneral": "Text"
+    },
+    "rightsList": [
+      {
+        "rights": "Apache License 2.0",
+        "rightsUri": "http://www.apache.org/licenses/LICENSE-2.0",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "apache-2.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "subjects": [
+      {
+        "subject": "Traumatology",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Traumatology/history",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Traumatology/standards",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Traumatology/classification",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Traumatology/instrumentation",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Traumatology/education",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Traumatology/economics",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Traumatology/ethics",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Traumatology/methods",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Traumatology/trends",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Traumatology/legislation &amp; jurisprudence",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Traumatology/organization &amp; administration",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Traumatology/statistics &amp; numerical data",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "traumatologia"
+      },
+      {
+        "subject": "Meta-materiales"
+      }
+    ],
+    "language": null,
+    "descriptions": [
+      {
+        "dtype": "Abstract",
+        "len": 4140
+      }
+    ],
+    "relatedIdentifiers": [
+      {
+        "relationType": "IsVersionOf",
+        "relatedIdentifier": "10.5281/zenodo.21295445",
+        "relatedIdentifierType": "DOI"
+      }
+    ],
+    "sizes": [],
+    "formats": [],
+    "version": null,
+    "schemaVersion": "http://datacite.org/schema/kernel-4"
+  },
+  {
+    "doi": "10.5281/zenodo.21345185",
+    "state": "findable",
+    "prefix": "10.5281",
+    "client": null,
+    "publisher": "Zenodo",
+    "publicationYear": 2026,
+    "created": "2026-07-13T20:00:08.000Z",
+    "registered": "2026-07-13T20:00:08.000Z",
+    "updated": "2026-07-13T20:00:08.000Z",
+    "url": "https://zenodo.org/doi/10.5281/zenodo.21345185",
+    "titles": [
+      {
+        "title": "Ingeniería de Sistemas Fotónicos y Metamateriales Fractale"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Fractal Systems (Canada)_ y Lázaro López Paz, del Prat de Llobregat, Barcelona, España",
+        "nameType": "Organizational",
+        "nameIdentifiers": [
+          {
+            "nameIdentifier": "053ef7v72",
+            "nameIdentifierScheme": "ROR"
+          }
+        ],
+        "affiliation": []
+      }
+    ],
+    "contributors": [],
+    "types": {
+      "ris": "RPRT",
+      "bibtex": "article",
+      "citeproc": "article-journal",
+      "schemaOrg": "ScholarlyArticle",
+      "resourceType": "",
+      "resourceTypeGeneral": "Text"
+    },
+    "rightsList": [
+      {
+        "rights": "Creative Commons Attribution 4.0 International",
+        "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc-by-4.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "subjects": [
+      {
+        "subject": "Fractals",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Fractals/history",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "fractales"
+      },
+      {
+        "subject": "ingenieria"
+      }
+    ],
+    "language": "es",
+    "descriptions": [],
+    "relatedIdentifiers": [
+      {
+        "relationType": "IsVersionOf",
+        "relatedIdentifier": "10.5281/zenodo.21345184",
+        "relatedIdentifierType": "DOI"
+      }
+    ],
+    "sizes": [],
+    "formats": [],
+    "version": null,
+    "schemaVersion": "http://datacite.org/schema/kernel-4"
+  },
+  {
+    "doi": "10.5281/zenodo.21361772",
+    "state": "findable",
+    "prefix": "10.5281",
+    "client": null,
+    "publisher": "Zenodo",
+    "publicationYear": 2026,
+    "created": "2026-07-14T16:57:05.000Z",
+    "registered": "2026-07-14T16:57:05.000Z",
+    "updated": "2026-07-14T16:57:05.000Z",
+    "url": "https://zenodo.org/doi/10.5281/zenodo.21361772",
+    "titles": [
+      {
+        "title": "Plataforma Meta Nano Microbiota Quantum: Implementación Integral de Optimización Intestinal"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Institute of Microbiology_( Lázaro López Paz, del Prat de Llobregat, Barcelona)",
+        "nameType": "Organizational",
+        "nameIdentifiers": [
+          {
+            "nameIdentifier": "047yhep71",
+            "nameIdentifierScheme": "ROR"
+          },
+          {
+            "nameIdentifier": "0000 0004 0627 1442",
+            "nameIdentifierScheme": "ISNI"
+          }
+        ],
+        "affiliation": []
+      }
+    ],
+    "contributors": [],
+    "types": {
+      "ris": "RPRT",
+      "bibtex": "article",
+      "citeproc": "article-journal",
+      "schemaOrg": "ScholarlyArticle",
+      "resourceType": "",
+      "resourceTypeGeneral": "Text"
+    },
+    "rightsList": [
+      {
+        "rights": "Creative Commons Attribution 4.0 International",
+        "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc-by-4.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "subjects": [],
+    "language": null,
+    "descriptions": [
+      {
+        "dtype": "Abstract",
+        "len": 2784
+      }
+    ],
+    "relatedIdentifiers": [
+      {
+        "relationType": "IsVersionOf",
+        "relatedIdentifier": "10.5281/zenodo.21361771",
+        "relatedIdentifierType": "DOI"
+      }
+    ],
+    "sizes": [],
+    "formats": [],
+    "version": null,
+    "schemaVersion": "http://datacite.org/schema/kernel-4"
+  },
+  {
+    "doi": "10.5281/zenodo.21401153",
+    "state": "findable",
+    "prefix": "10.5281",
+    "client": null,
+    "publisher": "Zenodo",
+    "publicationYear": 2026,
+    "created": "2026-07-18T13:09:50.000Z",
+    "registered": "2026-07-18T13:09:51.000Z",
+    "updated": "2026-08-21T10:32:05.000Z",
+    "url": "https://zenodo.org/doi/10.5281/zenodo.21401153",
+    "titles": [
+      {
+        "title": "Lo último en propulsión espacial"
+      }
+    ],
+    "creators": [
+      {
+        "name": "PERSEI Space__( Lázaro López Paz del Prat de Llobregat, Barcelona, España)",
+        "nameType": "Organizational",
+        "nameIdentifiers": [
+          {
+            "nameIdentifier": "0564fn834",
+            "nameIdentifierScheme": "ROR"
+          }
+        ],
+        "affiliation": []
+      },
+      {
+        "name": "PERSEI Space ( Lázaro López Paz del Prat de Llobregat Barcelona España)",
+        "nameType": "Organizational",
+        "nameIdentifiers": [
+          {
+            "nameIdentifier": "0564fn834",
+            "nameIdentifierScheme": "ROR"
+          }
+        ],
+        "affiliation": []
+      }
+    ],
+    "contributors": [],
+    "types": {
+      "ris": "GEN",
+      "bibtex": "misc",
+      "citeproc": "article",
+      "schemaOrg": "Event",
+      "resourceType": "",
+      "resourceTypeGeneral": "Event"
+    },
+    "rightsList": [
+      {
+        "rights": "Creative Commons Attribution 4.0 International",
+        "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc-by-4.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "subjects": [
+      {
+        "subject": "propulsión espacial"
+      }
+    ],
+    "language": "es",
+    "descriptions": [],
+    "relatedIdentifiers": [
+      {
+        "relationType": "IsVersionOf",
+        "relatedIdentifier": "10.5281/zenodo.21395967",
+        "relatedIdentifierType": "DOI"
+      }
+    ],
+    "sizes": [],
+    "formats": [],
+    "version": null,
+    "schemaVersion": "http://datacite.org/schema/kernel-4"
+  },
+  {
+    "doi": "10.5281/zenodo.21513673",
+    "state": "findable",
+    "prefix": "10.5281",
+    "client": null,
+    "publisher": "Zenodo",
+    "publicationYear": 2026,
+    "created": "2026-07-23T16:25:17.000Z",
+    "registered": "2026-07-23T16:25:17.000Z",
+    "updated": "2026-07-26T14:17:47.000Z",
+    "url": "https://zenodo.org/doi/10.5281/zenodo.21513673",
+    "titles": [
+      {
+        "title": "Software para ordenador cuántico dé hoy"
+      }
+    ],
+    "creators": [
+      {
+        "name": "State Key Laboratory of Software Engineering ( Lázaro López Paz del Prat de Llobregat, Barcelona, España)",
+        "nameType": "Organizational",
+        "nameIdentifiers": [
+          {
+            "nameIdentifier": "01z3jn402",
+            "nameIdentifierScheme": "ROR"
+          },
+          {
+            "nameIdentifier": "0000 0004 7885 9368",
+            "nameIdentifierScheme": "ISNI"
+          }
+        ],
+        "affiliation": []
+      }
+    ],
+    "contributors": [],
+    "types": {
+      "ris": "GEN",
+      "bibtex": "misc",
+      "citeproc": "article",
+      "schemaOrg": "CreativeWork",
+      "resourceType": "",
+      "resourceTypeGeneral": "Other"
+    },
+    "rightsList": [
+      {
+        "rights": "Creative Commons Attribution 4.0 International",
+        "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc-by-4.0",
+        "rightsIdentifierScheme": "SPDX"
+      },
+      {
+        "rights": "",
+        "rightsUri": "http://rightsstatements.org/vocab/InC/1.0/"
+      }
+    ],
+    "subjects": [
+      {
+        "subject": "software"
+      },
+      {
+        "subject": "Software",
+        "subjectScheme": "EuroSciVoc"
+      },
+      {
+        "subject": "Software",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Software",
+        "subjectScheme": "GEMET"
+      },
+      {
+        "subject": "Software development",
+        "subjectScheme": "EuroSciVoc"
+      },
+      {
+        "subject": "Software/ethics",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Software/classification",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Software/trends",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Software Design",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Software applications",
+        "subjectScheme": "EuroSciVoc"
+      },
+      {
+        "subject": "System software",
+        "subjectScheme": "EuroSciVoc"
+      },
+      {
+        "subject": "Simulation software",
+        "subjectScheme": "EuroSciVoc"
+      },
+      {
+        "subject": "Software/history",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Software Validation",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Software development",
+        "subjectScheme": "GEMET"
+      },
+      {
+        "subject": "Software/supply &amp; distribution",
+        "subjectScheme": "MeSH"
+      }
+    ],
+    "language": "es",
+    "descriptions": [],
+    "relatedIdentifiers": [
+      {
+        "relationType": "IsVersionOf",
+        "relatedIdentifier": "10.5281/zenodo.21513672",
+        "relatedIdentifierType": "DOI"
+      }
+    ],
+    "sizes": [],
+    "formats": [],
+    "version": null,
+    "schemaVersion": "http://datacite.org/schema/kernel-4"
+  },
+  {
+    "doi": "10.5281/zenodo.21640446",
+    "state": "findable",
+    "prefix": "10.5281",
+    "client": null,
+    "publisher": "Zenodo",
+    "publicationYear": 2026,
+    "created": "2026-07-28T09:03:49.000Z",
+    "registered": "2026-07-28T09:03:49.000Z",
+    "updated": "2026-07-28T09:03:49.000Z",
+    "url": "https://zenodo.org/doi/10.5281/zenodo.21640446",
+    "titles": [
+      {
+        "title": "logaritmo y algoritmo para poder encontrar vida entre las estrellas"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Instituto de Astrofísica de Canarias ( Lázaro López Paz del Prat de Llobregat, Barcelona, España)",
+        "nameType": "Organizational",
+        "nameIdentifiers": [
+          {
+            "nameIdentifier": "03cmntr54",
+            "nameIdentifierScheme": "ROR"
+          },
+          {
+            "nameIdentifier": "0000 0004 1767 6621",
+            "nameIdentifierScheme": "ISNI"
+          }
+        ],
+        "affiliation": []
+      }
+    ],
+    "contributors": [],
+    "types": {
+      "ris": "RPRT",
+      "bibtex": "article",
+      "citeproc": "article-journal",
+      "schemaOrg": "ScholarlyArticle",
+      "resourceType": "",
+      "resourceTypeGeneral": "Text"
+    },
+    "rightsList": [
+      {
+        "rights": "Apache License 2.0",
+        "rightsUri": "http://www.apache.org/licenses/LICENSE-2.0",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "apache-2.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "subjects": [
+      {
+        "subject": "Astronomy",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Astronomy",
+        "subjectScheme": "GEMET"
+      },
+      {
+        "subject": "Radio astronomy",
+        "subjectScheme": "EuroSciVoc"
+      },
+      {
+        "subject": "Astronomy/methods",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Estrone/chemistry",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Estrone/classification",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Estrone/physiology",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Galactic astronomy",
+        "subjectScheme": "EuroSciVoc"
+      },
+      {
+        "subject": "Astronomy/instrumentation",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "astrono"
+      }
+    ],
+    "language": "es",
+    "descriptions": [],
+    "relatedIdentifiers": [
+      {
+        "relationType": "IsVersionOf",
+        "relatedIdentifier": "10.5281/zenodo.21640445",
+        "relatedIdentifierType": "DOI"
+      }
+    ],
+    "sizes": [],
+    "formats": [],
+    "version": null,
+    "schemaVersion": "http://datacite.org/schema/kernel-4"
+  },
+  {
+    "doi": "10.5281/zenodo.21721963",
+    "state": "findable",
+    "prefix": "10.5281",
+    "client": null,
+    "publisher": "Zenodo",
+    "publicationYear": 2026,
+    "created": "2026-07-31T13:15:44.000Z",
+    "registered": "2026-07-31T13:15:44.000Z",
+    "updated": "2026-07-31T13:15:44.000Z",
+    "url": "https://zenodo.org/doi/10.5281/zenodo.21721963",
+    "titles": [
+      {
+        "title": "Controlar con la vibración y la gravedad el futuro"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Ingeniería de Sistemas para la Defensa de España (Lázaro López Paz del Prat de Llobregat Barcelona España)",
+        "nameType": "Organizational",
+        "nameIdentifiers": [
+          {
+            "nameIdentifier": "00kznd563",
+            "nameIdentifierScheme": "ROR"
+          },
+          {
+            "nameIdentifier": "0000 0004 1768 0313",
+            "nameIdentifierScheme": "ISNI"
+          }
+        ],
+        "affiliation": []
+      }
+    ],
+    "contributors": [],
+    "types": {
+      "ris": "RPRT",
+      "bibtex": "article",
+      "citeproc": "article-journal",
+      "schemaOrg": "ScholarlyArticle",
+      "resourceType": "",
+      "resourceTypeGeneral": "Text"
+    },
+    "rightsList": [
+      {
+        "rights": "Creative Commons Attribution 4.0 International",
+        "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc-by-4.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "subjects": [],
+    "language": null,
+    "descriptions": [],
+    "relatedIdentifiers": [
+      {
+        "relationType": "IsVersionOf",
+        "relatedIdentifier": "10.5281/zenodo.21721962",
+        "relatedIdentifierType": "DOI"
+      }
+    ],
+    "sizes": [],
+    "formats": [],
+    "version": null,
+    "schemaVersion": "http://datacite.org/schema/kernel-4"
+  },
+  {
+    "doi": "10.5281/zenodo.21806526",
+    "state": "findable",
+    "prefix": "10.5281",
+    "client": null,
+    "publisher": "Zenodo",
+    "publicationYear": 2026,
+    "created": "2026-08-05T11:41:06.000Z",
+    "registered": "2026-08-05T11:41:06.000Z",
+    "updated": "2026-08-17T19:41:40.000Z",
+    "url": "https://zenodo.org/doi/10.5281/zenodo.21806526",
+    "titles": [
+      {
+        "title": "lo último en péptidos para mejorar al ser humano"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Institut de Biologia Molecular de Barcelona ( Lázaro López Paz del Prat de Llobregat, Barcelona, España)",
+        "nameType": "Organizational",
+        "nameIdentifiers": [
+          {
+            "nameIdentifier": "05t8khn72",
+            "nameIdentifierScheme": "ROR"
+          },
+          {
+            "nameIdentifier": "0000 0004 1757 9848",
+            "nameIdentifierScheme": "ISNI"
+          }
+        ],
+        "affiliation": []
+      }
+    ],
+    "contributors": [],
+    "types": {
+      "ris": "RPRT",
+      "bibtex": "article",
+      "citeproc": "article-journal",
+      "schemaOrg": "ScholarlyArticle",
+      "resourceType": "",
+      "resourceTypeGeneral": "Text"
+    },
+    "rightsList": [
+      {
+        "rights": "Creative Commons Attribution 4.0 International",
+        "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc-by-4.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "subjects": [
+      {
+        "subject": "tecnología"
+      },
+      {
+        "subject": "inteligencia artificial"
+      }
+    ],
+    "language": "es",
+    "descriptions": [],
+    "relatedIdentifiers": [
+      {
+        "relationType": "IsVersionOf",
+        "relatedIdentifier": "10.5281/zenodo.21806525",
+        "relatedIdentifierType": "DOI"
+      }
+    ],
+    "sizes": [],
+    "formats": [],
+    "version": null,
+    "schemaVersion": "http://datacite.org/schema/kernel-4"
+  },
+  {
+    "doi": "10.5281/zenodo.22028729",
+    "state": "findable",
+    "prefix": "10.5281",
+    "client": null,
+    "publisher": "Zenodo",
+    "publicationYear": 2026,
+    "created": "2026-08-20T12:03:48.000Z",
+    "registered": "2026-08-20T12:03:48.000Z",
+    "updated": "2026-08-20T17:55:56.000Z",
+    "url": "https://zenodo.org/doi/10.5281/zenodo.22028729",
+    "titles": [
+      {
+        "title": "Híbridación inteligencia artificial_biología_mecanica cuántica"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Barcelona Institute of Science and Technology( Lázaro López Paz del Prat de Llobregat Barcelona España)",
+        "nameType": "Organizational",
+        "nameIdentifiers": [
+          {
+            "nameIdentifier": "03kpps236",
+            "nameIdentifierScheme": "ROR"
+          },
+          {
+            "nameIdentifier": "0000 0004 6475 7299",
+            "nameIdentifierScheme": "ISNI"
+          }
+        ],
+        "affiliation": []
+      }
+    ],
+    "contributors": [],
+    "types": {
+      "ris": "GEN",
+      "bibtex": "misc",
+      "citeproc": "article",
+      "schemaOrg": "CreativeWork",
+      "resourceType": "",
+      "resourceTypeGeneral": "Other"
+    },
+    "rightsList": [
+      {
+        "rights": "Creative Commons Attribution 4.0 International",
+        "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc-by-4.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "subjects": [
+      {
+        "subject": "inteligencia artificial"
+      },
+      {
+        "subject": "biología"
+      },
+      {
+        "subject": "mecánica cuántica"
+      },
+      {
+        "subject": "programación"
+      }
+    ],
+    "language": null,
+    "descriptions": [
+      {
+        "dtype": "Abstract",
+        "len": 713
+      }
+    ],
+    "relatedIdentifiers": [
+      {
+        "relationType": "IsVersionOf",
+        "relatedIdentifier": "10.5281/zenodo.22028728",
+        "relatedIdentifierType": "DOI"
+      }
+    ],
+    "sizes": [],
+    "formats": [],
+    "version": null,
+    "schemaVersion": "http://datacite.org/schema/kernel-4"
+  },
+  {
+    "doi": "10.5281/zenodo.22131030",
+    "state": "findable",
+    "prefix": "10.5281",
+    "client": null,
+    "publisher": "Zenodo",
+    "publicationYear": 2026,
+    "created": "2026-08-27T15:52:47.000Z",
+    "registered": "2026-08-27T15:52:47.000Z",
+    "updated": "2026-08-27T15:52:47.000Z",
+    "url": "https://zenodo.org/doi/10.5281/zenodo.22131030",
+    "titles": [
+      {
+        "title": "Proyectos 26_8_2026_helio-3"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Barcelona Institute of Science and Technology( Lázaro López Paz del Prat de Llobregat Barcelona España)",
+        "nameType": "Organizational",
+        "nameIdentifiers": [
+          {
+            "nameIdentifier": "03kpps236",
+            "nameIdentifierScheme": "ROR"
+          },
+          {
+            "nameIdentifier": "0000 0004 6475 7299",
+            "nameIdentifierScheme": "ISNI"
+          }
+        ],
+        "affiliation": []
+      }
+    ],
+    "contributors": [],
+    "types": {
+      "ris": "GEN",
+      "bibtex": "misc",
+      "citeproc": "article",
+      "schemaOrg": "CreativeWork",
+      "resourceType": "",
+      "resourceTypeGeneral": "Other"
+    },
+    "rightsList": [
+      {
+        "rights": "Adaptive Public License 1.0",
+        "rightsUri": "https://opensource.org/licenses/APL-1.0",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "apl-1.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "subjects": [
+      {
+        "subject": "helio 3"
+      },
+      {
+        "subject": "Nano-materials",
+        "subjectScheme": "EuroSciVoc"
+      },
+      {
+        "subject": "Nano-processes",
+        "subjectScheme": "EuroSciVoc"
+      },
+      {
+        "subject": "metamatariales"
+      },
+      {
+        "subject": "ciencia"
+      },
+      {
+        "subject": "tecnología"
+      }
+    ],
+    "language": "es",
+    "descriptions": [],
+    "relatedIdentifiers": [
+      {
+        "relationType": "IsVersionOf",
+        "relatedIdentifier": "10.5281/zenodo.22131029",
+        "relatedIdentifierType": "DOI"
+      }
+    ],
+    "sizes": [],
+    "formats": [],
+    "version": null,
+    "schemaVersion": "http://datacite.org/schema/kernel-4"
+  },
+  {
+    "doi": "10.5281/zenodo.22131440",
+    "state": "findable",
+    "prefix": "10.5281",
+    "client": null,
+    "publisher": "Zenodo",
+    "publicationYear": 2026,
+    "created": "2026-08-27T16:24:42.000Z",
+    "registered": "2026-08-27T16:24:42.000Z",
+    "updated": "2026-08-27T16:24:42.000Z",
+    "url": "https://zenodo.org/doi/10.5281/zenodo.22131440",
+    "titles": [
+      {
+        "title": "Pedtidos realizados con inteligencia artificial"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Peptides International (United States) ( Lázaro López Paz del Prat de Llobregat Barcelona España)",
+        "nameType": "Organizational",
+        "nameIdentifiers": [
+          {
+            "nameIdentifier": "00grwm276",
+            "nameIdentifierScheme": "ROR"
+          }
+        ],
+        "affiliation": []
+      }
+    ],
+    "contributors": [],
+    "types": {
+      "ris": "GEN",
+      "bibtex": "misc",
+      "citeproc": "article",
+      "schemaOrg": "CreativeWork",
+      "resourceType": "",
+      "resourceTypeGeneral": "Other"
+    },
+    "rightsList": [
+      {
+        "rights": "Apache License 2.0",
+        "rightsUri": "http://www.apache.org/licenses/LICENSE-2.0",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "apache-2.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "subjects": [
+      {
+        "subject": "Peptides",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Peptides/chemistry",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Peptides/economics",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Peptides/metabolism",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Peptides/pharmacokinetics",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Opioid Peptides",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Natriuretic Peptides",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Peptides/genetics",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Peptides/pharmacology",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Peptides/physiology",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Peptides/urine",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Peptides/agonists",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Peptides/blood",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Peptides/classification",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Antimicrobial Peptides",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Peptides/deficiency",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Peptides/history",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Peptides/immunology",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Peptides/poisoning",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Peptides/standards",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "pedtidos"
+      }
+    ],
+    "language": "es",
+    "descriptions": [],
+    "relatedIdentifiers": [
+      {
+        "relationType": "IsVersionOf",
+        "relatedIdentifier": "10.5281/zenodo.22131439",
+        "relatedIdentifierType": "DOI"
+      }
+    ],
+    "sizes": [],
+    "formats": [],
+    "version": null,
+    "schemaVersion": "http://datacite.org/schema/kernel-4"
+  },
+  {
+    "doi": "10.5281/zenodo.22150378",
+    "state": "findable",
+    "prefix": "10.5281",
+    "client": null,
+    "publisher": "Zenodo",
+    "publicationYear": 2026,
+    "created": "2026-08-28T21:29:12.000Z",
+    "registered": "2026-08-28T21:29:12.000Z",
+    "updated": "2026-08-28T21:29:12.000Z",
+    "url": "https://zenodo.org/doi/10.5281/zenodo.22150378",
+    "titles": [
+      {
+        "title": "Vibración proyectos cuánticos"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Institut de Nanociència i Nanotecnologia de la Universitat de Barcelona(Lázaro López Paz, del Prat de Llobregat, Barcelona, España)",
+        "nameType": "Organizational",
+        "nameIdentifiers": [
+          {
+            "nameIdentifier": "034nc1205",
+            "nameIdentifierScheme": "ROR"
+          }
+        ],
+        "affiliation": []
+      }
+    ],
+    "contributors": [],
+    "types": {
+      "ris": "RPRT",
+      "bibtex": "article",
+      "citeproc": "article-journal",
+      "schemaOrg": "ScholarlyArticle",
+      "resourceType": "Presentation",
+      "resourceTypeGeneral": "Text"
+    },
+    "rightsList": [],
+    "subjects": [
+      {
+        "subject": "Nano-materials",
+        "subjectScheme": "EuroSciVoc"
+      },
+      {
+        "subject": "Nano-processes",
+        "subjectScheme": "EuroSciVoc"
+      },
+      {
+        "subject": "Vibration",
+        "subjectScheme": "GEMET"
+      },
+      {
+        "subject": "Vibration",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "Mechanical vibration",
+        "subjectScheme": "GEMET"
+      },
+      {
+        "subject": "Hand-Arm Vibration Syndrome/metabolism",
+        "subjectScheme": "MeSH"
+      },
+      {
+        "subject": "vibración"
+      }
+    ],
+    "language": "es",
+    "descriptions": [],
+    "relatedIdentifiers": [
+      {
+        "relationType": "IsVersionOf",
+        "relatedIdentifier": "10.5281/zenodo.22150377",
+        "relatedIdentifierType": "DOI"
+      }
+    ],
+    "sizes": [],
+    "formats": [],
+    "version": null,
+    "schemaVersion": "http://datacite.org/schema/kernel-4"
+  }
+]
