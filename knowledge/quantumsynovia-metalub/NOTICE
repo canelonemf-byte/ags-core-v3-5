@@ -1,0 +1,13 @@
+QuantumSynovia-MetaLub (QSM) — NOTICE (2026-10-19)
+
+Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España — con asistencia de inteligencia artificial.
+Licencias: documentos CC BY 4.0; software MIT.
+
+Librerías de terceros usadas por QSM_DFT_Postprocessing*.py (no se redistribuyen; se instalan aparte).
+Datos tomados de los metadatos de los paquetes instalados el 2026-10-19:
+
+- matplotlib 3.11.2 — Licencia de Matplotlib (basada en la PSF; clasificador
+  "License :: OSI Approved :: Python Software Foundation License").
+  Copyright (c) 2012- Matplotlib Development Team. Texto completo en el archivo LICENSE del paquete.
+- numpy 2.5.4 — License-Expression: BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0.
+  Copyright (c) 2005-2025, NumPy Developers. Texto completo en licenses/LICENSE.txt del paquete.

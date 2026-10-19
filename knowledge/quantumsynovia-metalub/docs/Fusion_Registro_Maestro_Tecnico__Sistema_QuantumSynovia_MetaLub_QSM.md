@@ -9,7 +9,7 @@ Registro Maestro Técnico: Sistema QuantumSynovia MetaLub (QSM)
 QuantumSynovia MetaLub (QSM) . Se establece de manera mandatoria que Lázaro 
 López Paz es el único autor, creador y pensador original detrás de cada avance conceptual, 
 parámetro técnico y protocolo de ingeniería aquí descrito.| Metadato | Especificación 
-Técnica || ------ | ------ || Autor y Propietario Intelectual | Lázaro López Paz || Tecnología | 
+Técnica || ------ | ------ || Autor | Lázaro López Paz (CC BY 4.0) [nota 2026-10-19: reformulado por decisión del autor] || Tecnología | 
 QuantumSynovia MetaLub (QSM) || Fecha de Emisión | Julio de 2026 || Ubicación del 
 Desarrollo | El Prat de Llobregat, Barcelona, España || Clasificación | Protocolo Maestro 
 de Ingeniería (GMP Grade) |
