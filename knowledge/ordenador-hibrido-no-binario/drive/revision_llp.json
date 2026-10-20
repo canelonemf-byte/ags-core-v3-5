@@ -156,5 +156,22 @@
  "pendiente": [
   "descargar blueprint y bajo consumo por navegador y aplicar OCR",
   "corregir autoría y aviso del manual (requiere aprobación)"
+ ],
+ "decisiones": [
+  {
+   "fecha": "2026-10-20",
+   "aprobado_por": "Lázaro López Paz",
+   "alcance": "solo copias extraídas en el repo; Drive sin tocar",
+   "cambios": [
+    "autoría unificada: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA",
+    "Grok y Deepseek retirados como coautores",
+    "eliminada frase 'sin coautoría de modelos de IA'",
+    "Lleida → El Prat de Llobregat",
+    "Manual: nitruro de litio → niobato de litio (LiNbO3)"
+   ],
+   "no_aprobado": [
+    "etiqueta 'versión definitiva' del Manual se mantiene"
+   ]
+  }
  ]
 }

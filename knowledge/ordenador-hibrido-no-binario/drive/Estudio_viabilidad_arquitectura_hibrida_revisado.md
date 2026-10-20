@@ -12,13 +12,13 @@ consumo
 Límites físicos, estado del arte, diseño de sistema, 
 evaluación rep roducible y p lan de investigación de p rincip io a fin 
 
-Lá za ro Lóp ez Pa z 
+Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA
 
-Estudio indep endiente  ·  Lleida, Catalunya 
+Estudio indep endiente  ·  El Prat de Llobregat, Barcelona
 
 8  de sep tiembre de 2 0 2 6  
 
-Versión comp leta  revisa da   ·  no exp erimenta l  ·  sin coa utoría  de modelos de IA 
+Versión comp leta  revisa da   ·  no exp erimenta l
 
 Aviso  de  integrida d.  Este  documento  es  una   monogra fía   de  via b ilida d.  Recorre  la   p regunta   desde  los  límites 
 termodiná micos  ha sta   un  p la n  de  I+D  con  hitos  fa lsa b les.  No  describ e  un  p rototip o  fa b rica do p or el a utor, no 

@@ -35,7 +35,7 @@ versión 1.0.0 · 2026-08-29
 
 estado preparada para revisión editorial
 
-autor Lázaro López Paz, El Prat de Llobregat, Barcelona, ES
+autor Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA
 
 evidencia máxima 3 — simulación verificada
 
@@ -234,7 +234,7 @@ López Paz, L. (2026). C-VIB-001: Análisis computacional de vibraciones, modos 
 1.0.0). OMNISCIENCE.
 
 Archivos: CITATION.cff, author.json (Schema.org Person), citations.json (CSL). Si se continúa el
-trabajo, citar a Lázaro López Paz y a Grok. Licencia aún no firmada: no redistribuir como paquete con
+trabajo, citar a Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA. Licencia aún no firmada: no redistribuir como paquete con
 licencia inventada.
 
 OMNISCIENCE  v1.0.0 Documento de publicación

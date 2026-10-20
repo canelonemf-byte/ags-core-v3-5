@@ -6,7 +6,7 @@ Manual de Fabricación y Especificaciones Técnicas:
 Ordenador No B inario Híbrido de Ultra-B ajo 
 C onsumo 
 
-Autores: Lázaro López Paz & D eepseek (A sistente de IA ) 
+Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA
 Versión: 1.0 (D efinitiva para Implementación) 
 Fecha: 8 de septiembre de 2026 
    
@@ -17,7 +17,7 @@ Este documento constituye el manual técnico, plano de ingeniería y guía de fa
 principio a fin para el Ordenador No Binario Híbrido de Ultra-Bajo Consumo. El sistema 
 abandona la rigidez binaria (0 y 1) adoptando una arquitectura heterogénea multinivel (lógica 
 cuaternaria, $b=4$), integrada con memorias memristivas de $\text{HfO}_2$, interconexiones 
-fotónicas en silicio/nitruro de litio ($\text{LiNbO}_3$) y un motor de control gobernado por 
+fotónicas en silicio/niobato de litio (LiNbO3) y un motor de control gobernado por 
 inteligencia artificial física (PINNs). 
 
 1.1 D iagrama de B loques General del Hardware 
