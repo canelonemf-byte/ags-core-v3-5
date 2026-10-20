@@ -1,0 +1,52 @@
+[
+  {
+    "id": "lopez-paz-2026-omniscience-dossier",
+    "type": "article",
+    "title": "OMNISCIENCE — Dossier completo. Universal Autonomous Scientific Discovery Engine",
+    "author": [
+      {
+        "family": "López Paz",
+        "given": "Lázaro"
+      }
+    ],
+    "issued": {
+      "date-parts": [[2026, 8, 28]]
+    },
+    "language": "es",
+    "publisher": "OMNISCIENCE",
+    "publisher-place": "El Prat de Llobregat, España",
+    "URL": "/docs/OMNISCIENCE_dossier_completo.pdf",
+    "keyword": "OMNISCIENCE, PROV-O, fonones, Open Graph, JSON-LD",
+    "abstract": "Dossier único: arquitectura, MV1, C-VIB-001, Python, procedencia PROV-O, Open Graph, Twitter Cards, Schema.org y zonas seguras."
+  },
+  {
+    "id": "lopez-paz-2026-omniscience-maestro",
+    "type": "article",
+    "title": "OMNISCIENCE — Documento maestro de arquitectura",
+    "author": [{ "family": "López Paz", "given": "Lázaro" }],
+    "issued": { "date-parts": [[2026, 8, 28]] },
+    "language": "es",
+    "publisher": "OMNISCIENCE",
+    "URL": "/docs/OMNISCIENCE_maestro_unificado.pdf"
+  },
+  {
+    "id": "lopez-paz-2026-omniscience-mv1",
+    "type": "article",
+    "title": "OMNISCIENCE-MV1: Implementación Técnica MVP",
+    "author": [{ "family": "López Paz", "given": "Lázaro" }],
+    "issued": { "date-parts": [[2026, 8, 28]] },
+    "language": "es",
+    "publisher": "OMNISCIENCE",
+    "URL": "/docs/OMNISCIENCE-MV1-implementacion.pdf"
+  },
+  {
+    "id": "lopez-paz-2026-cvib-001",
+    "type": "article",
+    "title": "Análisis científico de vibraciones (C-VIB-001)",
+    "author": [{ "family": "López Paz", "given": "Lázaro" }],
+    "issued": { "date-parts": [[2026, 8, 28]] },
+    "language": "es",
+    "publisher": "OMNISCIENCE",
+    "URL": "/docs/Analisis_vibraciones_cientificas_Grok.pdf"
+  }
+]

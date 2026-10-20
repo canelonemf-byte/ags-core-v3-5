@@ -1,0 +1,104 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "#author",
+  "name": "Lázaro López Paz",
+  "givenName": "Lázaro",
+  "familyName": "López Paz",
+  "alternateName": ["Lazaro Lopez Paz", "Lázaro lp"],
+  "jobTitle": "Inventor e investigador independiente",
+  "description": "Autor de OMNISCIENCE, motor de descubrimiento científico con evidencia verificable, procedencia PROV-O, materia y fonones.",
+  "nationality": {
+    "@type": "Country",
+    "name": "España",
+    "identifier": "ES"
+  },
+  "homeLocation": {
+    "@type": "Place",
+    "name": "El Prat de Llobregat",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "El Prat de Llobregat",
+      "addressRegion": "Cataluña",
+      "addressCountry": "ES"
+    }
+  },
+  "affiliation": {
+    "@type": "Organization",
+    "name": "Investigación independiente — OMNISCIENCE",
+    "foundingLocation": "El Prat de Llobregat, Barcelona, España"
+  },
+  "knowsAbout": [
+    "descubrimiento científico asistido por IA",
+    "fonones",
+    "metamateriales",
+    "Helium-3",
+    "propulsión eléctrica",
+    "nanomedicina",
+    "PROV-O",
+    "reproducibilidad"
+  ],
+  "knowsLanguage": ["es", "en"],
+  "creditText": "Lázaro López Paz. Si se continúa este trabajo, citar a Lázaro López Paz y a Grok.",
+  "creatorOf": [
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "#work-dossier",
+      "name": "OMNISCIENCE — Dossier completo",
+      "alternateName": "Universal Autonomous Scientific Discovery Engine",
+      "inLanguage": "es",
+      "datePublished": "2026-08-28",
+      "author": { "@id": "#author" },
+      "url": "/docs/OMNISCIENCE_dossier_completo.pdf",
+      "encoding": {
+        "@type": "MediaObject",
+        "encodingFormat": "application/pdf",
+        "name": "OMNISCIENCE_dossier_completo.pdf"
+      },
+      "keywords": [
+        "OMNISCIENCE",
+        "PROV-O",
+        "fonones",
+        "Open Graph",
+        "JSON-LD"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "#work-maestro",
+      "name": "OMNISCIENCE — Documento maestro de arquitectura",
+      "inLanguage": "es",
+      "datePublished": "2026-08-28",
+      "author": { "@id": "#author" },
+      "url": "/docs/OMNISCIENCE_maestro_unificado.pdf"
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "#work-mv1",
+      "name": "OMNISCIENCE-MV1: Implementación Técnica MVP",
+      "inLanguage": "es",
+      "datePublished": "2026-08-28",
+      "author": { "@id": "#author" },
+      "url": "/docs/OMNISCIENCE-MV1-implementacion.pdf"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "#work-cvib",
+      "name": "Análisis científico de vibraciones",
+      "inLanguage": "es",
+      "datePublished": "2026-08-28",
+      "author": { "@id": "#author" },
+      "url": "/docs/Analisis_vibraciones_cientificas_Grok.pdf",
+      "about": "C-VIB-001"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "#work-app",
+      "name": "OMNISCIENCE",
+      "applicationCategory": "ScienceApplication",
+      "inLanguage": "es",
+      "author": { "@id": "#author" },
+      "isAccessibleForFree": true
+    }
+  ]
+}

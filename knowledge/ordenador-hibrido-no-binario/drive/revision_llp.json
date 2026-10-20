@@ -1,0 +1,160 @@
+{
+ "proyecto": "ORDENADOR HÍBRIDO NO BINARIO",
+ "fuente": "Google Drive carpeta 1-me3Bhikfvlnpg3_uXloqTW_cV1rhtu5",
+ "metodo_extraccion": "read_file Drive (texto con pérdidas; DownloadFile no soporta Drive)",
+ "fecha_revision": "2026-10-20",
+ "documentos": [
+  {
+   "archivo": "documento_maestro_proyecto.md",
+   "id_drive": "1pmFEkWtoe1KmVOAMm9C3LWLiTdqz5aCq",
+   "texto": "documento_maestro_proyecto.md",
+   "evidencia_max": "E1",
+   "simulacion_vs_experimento": "declara sin fabricación ni experimento; cifras prospectivas; esquema de etiquetas LIMITE/SIMULADO/EXPERIMENTAL/PROYECCION",
+   "afirmaciones": [
+    {
+     "texto": "límite Landauer k_B T ln2 por bit equivalente",
+     "nivel": "E6",
+     "estado": "literatura establecida"
+    },
+    {
+     "texto": "arquitectura heterogénea memristor+fotónica+control IA",
+     "nivel": "E1",
+     "estado": "propuesta"
+    },
+    {
+     "texto": "cifras de rendimiento",
+     "nivel": "E0",
+     "estado": "objetivos prospectivos"
+    }
+   ],
+   "doi": [],
+   "originalidad": "síntesis propia sobre literatura citada (13 referencias)",
+   "copyright": "bajo; CC BY 4.0 declarada",
+   "sarfatti_alcubierre": "no aparecen",
+   "riesgos": [
+    "ref 4 'Diana et al. 2019 Entropy 21(11) 1066' conflicto con Bormashenko 2020 en el estudio de viabilidad: PENDIENTE DE VERIFICACIÓN",
+    "'Zenodo DOI' anunciado sin DOI"
+   ]
+  },
+  {
+   "archivo": "Ordenador híbrido @.pdf",
+   "id_drive": "1s-tFouvGwZ2Tcia3sq3_bA3gX2dzeoGe",
+   "texto": "Ordenador_hibrido_arroba.md",
+   "evidencia_max": "E1",
+   "simulacion_vs_experimento": "versión PDF del documento maestro (texto similar, no idéntico)",
+   "afirmaciones": [],
+   "doi": [],
+   "originalidad": "igual que documento maestro",
+   "copyright": "bajo",
+   "sarfatti_alcubierre": "no aparecen",
+   "riesgos": [
+    "duplicado parcial del maestro"
+   ]
+  },
+  {
+   "archivo": "Estudio_viabilidad_arquitectura_hibrida_revisado.docx.pdf",
+   "id_drive": "1_HFmRCW88Bx4nu2N_FQ2VNR0Ntoj0CEX",
+   "texto": "Estudio_viabilidad_arquitectura_hibrida_revisado.md",
+   "evidencia_max": "E1",
+   "simulacion_vs_experimento": "monografía conceptual, sin datos experimentales propios; eliminó 'resultados de simulación' no reproducibles",
+   "afirmaciones": [
+    {
+     "texto": "MVL no superior global a CMOS, sí local/especializado",
+     "nivel": "E1",
+     "estado": "síntesis de literatura"
+    },
+    {
+     "texto": "cálculos Landauer 300 K (Anexo A)",
+     "nivel": "E6",
+     "estado": "constantes físicas"
+    }
+   ],
+   "doi": [
+    {
+     "doi": "10.1038/s41467-024-44773-7",
+     "estado": "PENDIENTE DE VERIFICACIÓN"
+    },
+    {
+     "arxiv": "1908.06841",
+     "estado": "PENDIENTE DE VERIFICACIÓN"
+    }
+   ],
+   "originalidad": "buena; aviso de integridad atribuye tecnologías a sus comunidades",
+   "copyright": "bajo",
+   "sarfatti_alcubierre": "no aparecen",
+   "riesgos": [
+    "ubicación 'Lleida' vs El Prat de Llobregat",
+    "dice 'sin coautoría de modelos de IA' (contradice manual)",
+    "refs genéricas sin año/DOI (Smith, Ielmini, Xia)",
+    "extracción con espaciado roto"
+   ]
+  },
+  {
+   "archivo": "Manual de Fabricacion y Especificaciones Tecnicas - Ordenador No Binario Hibrido.pdf",
+   "id_drive": "1oRLFC04N5UCzpjwid5FY5rOwkWor4rS8",
+   "texto": "Manual_Fabricacion_Ordenador_No_Binario_Hibrido.md",
+   "evidencia_max": "E1",
+   "simulacion_vs_experimento": "scripts de juguete ('picosegundos simulados', modelo térmico) sin resultados reproducidos; protocolo de prototipo no ejecutado",
+   "afirmaciones": [
+    {
+     "texto": "'Versión definitiva para implementación'",
+     "nivel": "E0",
+     "estado": "sobredeclaración"
+    },
+    {
+     "texto": "disipación 0.2 W/mm2, T<55 °C",
+     "nivel": "E2",
+     "estado": "PENDIENTE DE VERIFICACIÓN"
+    },
+    {
+     "texto": "presupuesto 250 M€, 14 años",
+     "nivel": "E0",
+     "estado": "estimación"
+    }
+   ],
+   "doi": [],
+   "originalidad": "media; sin referencias",
+   "copyright": "medio: sin bibliografía ni atribución",
+   "sarfatti_alcubierre": "no aparecen",
+   "riesgos": [
+    "'Lázaro López Paz & Deepseek' como autor: cambiar a 'con asistencia de IA'",
+    "sin aviso de no-experimental",
+    "error técnico: 'nitruro de litio (LiNbO3)' es niobato de litio",
+    "menciona 'CERO-A / Atlas Científico' (mezcla de proyectos)",
+    "'coprocesador cuántico simulado / control biomecánico' sin respaldo"
+   ]
+  }
+ ],
+ "fallidos": [
+  {
+   "archivo": "Hybrid Non-Binary Blueprint.pptx",
+   "id_drive": "11BCyDpwRWXYZr7mxUHSY6NXG1PViNqfv",
+   "motivo": "pptx binario no soportado"
+  },
+  {
+   "archivo": "Hybrid Non-Binary Blueprint.pdf",
+   "id_drive": "1YWGpT7QqGl39Fb0Z1MB8Y0dTTa_Po_NY",
+   "motivo": "read_file devuelve texto vacío (probable PDF de imágenes; OCR imposible sin binario)"
+  },
+  {
+   "archivo": "Ultra-Low Power Hybrid Architectures.pptx",
+   "id_drive": "1HG6G9oD45pOnuJPnqKVn5K1Xpb4Ga3oo",
+   "motivo": "pptx binario no soportado"
+  },
+  {
+   "archivo": "Ultra-Low Power Hybrid Architectures.pdf",
+   "id_drive": "1vtH2C-mDHqMCLuFM76Nu_L5puhEdor1e",
+   "motivo": "texto vacío (probable PDF de imágenes)"
+  }
+ ],
+ "omitidos": [
+  "documento_maestro_proyecto.md.txt (duplicado)",
+  "Estudio_viabilidad...-1.docx (misma obra que el pdf)",
+  "3 mp4",
+  "2 png"
+ ],
+ "pendiente": [
+  "descargar blueprint y bajo consumo por navegador y aplicar OCR",
+  "corregir autoría y aviso del manual (requiere aprobación)"
+ ]
+}

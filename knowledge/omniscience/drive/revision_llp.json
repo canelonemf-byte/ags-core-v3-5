@@ -1,0 +1,93 @@
+{
+ "proyecto": "OMNISCIENCE",
+ "fuente": "Google Drive carpeta 1DxQUgo0_XeoX73L1YnG-Ffcn81cn8jF8",
+ "metodo_extraccion": "read_file Drive (texto con pérdidas; DownloadFile no soporta Drive)",
+ "fecha_revision": "2026-10-20",
+ "documentos": [
+  {
+   "archivo": "OMNISCIENCE_PUBLICACION_v1.0.0.pdf",
+   "id_drive": "1tCq3-SjVM_ghsYm2DaPuJOECI6nU8wmt",
+   "texto": "OMNISCIENCE_PUBLICACION_v1.0.0.md",
+   "evidencia_max": "E3",
+   "simulacion_vs_experimento": "C-VIB-001 simulación (semilla 7), experimental_measurement false, réplica pendiente; 7 campañas propuestas E1",
+   "afirmaciones": [
+    {
+     "texto": "C-VIB-001 ejecutada, simulación verificada",
+     "nivel": "E3",
+     "estado": "PENDIENTE DE VERIFICACIÓN"
+    },
+    {
+     "texto": "C-MAT/META/QDY/QSN/ENE/BIO/FUS-001",
+     "nivel": "E1",
+     "estado": "propuesto"
+    },
+    {
+     "texto": "SHA-256 del paquete",
+     "nivel": "E2",
+     "estado": "PENDIENTE DE VERIFICACIÓN (hashes abreviados, archivos no en Drive)"
+    }
+   ],
+   "doi": [],
+   "originalidad": "propia; modelos canónicos (oscilador, FFT, cristal 1D, QHO) son conocimiento estándar",
+   "copyright": "bajo; licencia 'pendiente de firmar' en el doc (CC BY 4.0 docs / MIT código ya acordado por el usuario)",
+   "sarfatti_alcubierre": "no aparecen",
+   "riesgos": [
+    "texto 'citar a Lázaro López Paz y a Grok': IA como autor citable contradice regla 'con asistencia de IA'",
+    "archivo Analisis_vibraciones_cientificas_Grok.pdf referenciado y no presente",
+    "bibliografía auditada y pytest marcados no hechos en el propio doc"
+   ]
+  },
+  {
+   "archivo": "Lazaro_Lopez_Paz_autor.json",
+   "id_drive": "1KLoDvhZAPho49aDsvsGPlj8saVCmVnvh",
+   "texto": "Lazaro_Lopez_Paz_autor.json",
+   "evidencia_max": "E0",
+   "simulacion_vs_experimento": "metadatos",
+   "afirmaciones": [],
+   "doi": [],
+   "originalidad": "propia",
+   "copyright": "ninguno",
+   "sarfatti_alcubierre": "no aparecen",
+   "riesgos": [
+    "falta ORCID 0000-0001-8601-1963",
+    "URLs relativas /docs/... sin destino",
+    "creditText cita a Grok"
+   ]
+  },
+  {
+   "archivo": "Lazaro_Lopez_Paz_citas.json",
+   "id_drive": "1gY_PzUGPHIPmFfKLa4Ns-Rzst3TTlxEb",
+   "texto": "Lazaro_Lopez_Paz_citas.json",
+   "evidencia_max": "E0",
+   "simulacion_vs_experimento": "metadatos CSL",
+   "afirmaciones": [],
+   "doi": [],
+   "originalidad": "propia",
+   "copyright": "ninguno",
+   "sarfatti_alcubierre": "no aparecen",
+   "riesgos": [
+    "4 obras sin DOI ni URL pública",
+    "publisher 'OMNISCIENCE' no es editorial"
+   ]
+  }
+ ],
+ "fallidos": [
+  {
+   "archivo": "OMNISCIENCE Architecture.pptx",
+   "id_drive": "1BFmmCy6suxCwwNfNUc7To6-JbTAOskqE",
+   "motivo": "binario pptx no soportado por read_file; DownloadFile no sirve Drive"
+  },
+  {
+   "archivo": "OMNISCIENCE Discovery Engine.pptx",
+   "id_drive": "1Vw7cPTekXFzs_COI_9L52r9oQs0Auh-t",
+   "motivo": "binario pptx no soportado por read_file; DownloadFile no sirve Drive"
+  }
+ ],
+ "omitidos": [
+  "3 archivos .trashed- (png, 2 mp4)"
+ ],
+ "pendiente": [
+  "descargar pptx por navegador y extraer con python-pptx",
+  "binarios originales no guardados, solo texto"
+ ]
+}
