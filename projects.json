@@ -861,6 +861,34 @@
       "binaries_or_skipped": [],
       "license_declared_by_author": true,
       "evidencia_nivel": "E1"
+    },
+    {
+      "id": "nnc",
+      "name": "nnc",
+      "repo": "",
+      "source": "local",
+      "url": "",
+      "description": "NNC + AGs-Core corregido 1.0.0 (/workspace/agsgpt/NNC). Software E3: suite 7/7 PASS (WGS84/ECEF Bowring, triangulación ENU sintética, entropía, EKF, CRC, HMAC, etiquetado simulado). Telemetría satelital sintética etiquetada. Solo build-beta/ws_vivo.py consulta datos reales (ADS-B adsb.lol Prat + ISS wheretheiss.at; ambas APIs respondieron 200 el 2026-10-20). GIBS/USGS/radar real: solo mencionados en docs, sin conector. Ninguna detección validada: E0-E1 para afirmaciones físicas.",
+      "keywords": [
+        "adsb",
+        "ecef",
+        "enu",
+        "ekf",
+        "radar",
+        "dashboard3d"
+      ],
+      "tools": [
+        "dashboard:8080",
+        "rest:8010"
+      ],
+      "license": "MIT",
+      "files": 70,
+      "binaries_or_skipped": [
+        "assets/*.png",
+        "docs/*.pdf"
+      ],
+      "license_declared_by_author": true,
+      "evidencia_nivel": "E3_software;E1_deteccion"
     }
   ]
 }
