@@ -1,2 +1,4 @@
 3a3b464ace26d087473d46a20f077bb67f19451fe44a0587d8916ed0e75fc5ae  Hybrid Non-Binary Blueprint.pptx
 7cb2ad8c205da01026edac536c0067289387777bf642fc6c0f6bf2d414992c35  Ultra-Low Power Hybrid Architectures.pptx
+d12a89152e4e2cbcc4e2eafcc2b6033b15ada7649e59e4489b6b7ec628d9b885  Hybrid Non-Binary Blueprint.pdf
+276a60c5af85882e8cf83c2d5d4882cb9d128f0f4dd2877f3c6eb26fdceab96c  Ultra-Low Power Hybrid Architectures.pdf

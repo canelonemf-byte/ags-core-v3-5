@@ -56,11 +56,12 @@
   },
   {
    "id": "ev_06",
-   "afirmacion": "Memresonador III–V/Si publicado en Nature Communications 2024, doi:10.1038/s41467-024-44773-7 (literatura ajena)",
+   "afirmacion": "Memresonador III–V/Si: Tossoun et al., 'High-speed and energy-efficient non-volatile silicon photonic memory based on heterogeneously integrated memresonator', Nature Communications 15, 551 (2024-01-16), doi:10.1038/s41467-024-44773-7 (literatura ajena)",
    "nivel": "E4",
    "tipo": "experimento",
-   "fuente": "docs/Estudio_viabilidad... referencias",
-   "estado": "PENDIENTE DE VERIFICACIÓN"
+   "fuente": "docs/Estudio_viabilidad... referencias; doi.org → 302 a nature.com/articles/s41467-024-44773-7; metadatos Crossref (2026-10-20)",
+   "estado": "verificado",
+   "nota": "Verificada la existencia y metadatos del DOI; contenido técnico no revisado ni sus cifras incorporadas"
   },
   {
    "id": "ev_07",
@@ -132,6 +133,14 @@
    "nivel": "E0",
    "tipo": "teorico",
    "fuente": "documento_maestro_proyecto.md cabecera; repo README",
+   "estado": "PENDIENTE DE VERIFICACIÓN"
+  },
+  {
+   "id": "ev_16",
+   "afirmacion": "Simulación MVM 256x256: CIM memristivo (2–16 niveles, ADC 4–8 bits) da error relativo 10,5–100 % frente a 0,4 % de CMOS 8 bits; ahorro energético modelado 95–96 % con ADC+DAC = 46–62 % de la energía CIM; todos los parámetros son supuestos",
+   "nivel": "E2",
+   "tipo": "simulacion",
+   "fuente": "sim/sim_mvm.py, sim/parametros.yaml, sim/salidas/resultados.csv (semilla 20261020)",
    "estado": "PENDIENTE DE VERIFICACIÓN"
   }
  ]
