@@ -1,0 +1,41 @@
+{
+  "fecha_revision": "2026-10-20",
+  "conflictos": [
+    {
+      "proyecto": "omniscience",
+      "pack": "E1 (fecha pack 2026-09-20)",
+      "verificado": "E3 código con 33 tests; registro del agente con campañas E2/E3 (simulaciones)",
+      "resolucion": "prevalece nivel verificado; pack es más antiguo"
+    },
+    {
+      "proyecto": "ordenador_hibrido",
+      "pack": "E1",
+      "verificado": "E1",
+      "resolucion": "coincide"
+    },
+    {
+      "proyecto": "llp_pack",
+      "pack": "14 JSON",
+      "verificado": "solo 2 contenidos recibidos + CAMBIO",
+      "resolucion": "PENDIENTE DE VERIFICACIÓN"
+    },
+    {
+      "proyecto": "pliegue",
+      "pack": "estado hecho",
+      "verificado": "E1: sin código en el ordenador; simulación declarada, no verificada",
+      "resolucion": "PENDIENTE DE VERIFICACIÓN"
+    },
+    {
+      "proyecto": "pliegue",
+      "pack": "tareas.T8.responsable=Grok",
+      "verificado": "autoría",
+      "resolucion": "Lázaro López Paz, con asistencia de IA (Grok, xAI); JSON original se conserva literal"
+    },
+    {
+      "proyecto": "llp_pack",
+      "pack": "ruta artifacts/llp/",
+      "verificado": "no existe en el ordenador",
+      "resolucion": "solo contenido pegado"
+    }
+  ]
+}

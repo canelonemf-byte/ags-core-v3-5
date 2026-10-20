@@ -823,6 +823,44 @@
       "license": "MIT",
       "files": 1,
       "binaries_or_skipped": []
+    },
+    {
+      "id": "agsgpt-lora",
+      "name": "agsgpt-lora",
+      "repo": "",
+      "source": "local",
+      "url": "",
+      "description": "AGsGPT + LoRA: capa de red neuronal con adaptadores LoRA sobre AGs-Core. Hipótesis E1; sin código ni adaptadores entrenados.",
+      "keywords": [
+        "agsgpt",
+        "lora",
+        "red-neuronal"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 1,
+      "binaries_or_skipped": [],
+      "license_declared_by_author": true,
+      "evidencia_nivel": "E1"
+    },
+    {
+      "id": "pliegue",
+      "name": "pliegue",
+      "repo": "",
+      "source": "local",
+      "url": "",
+      "description": "PLIEGUE (P001): simulación de métricas warp (rayo NEC, toro T00, Ford-Roman). Métricas Alcubierre/Natario/White son teoría publicada de terceros (citar). E1: sin código en el ordenador; 'hecho' declarado, no verificado.",
+      "keywords": [
+        "warp",
+        "nec",
+        "ford-roman"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 1,
+      "binaries_or_skipped": [],
+      "license_declared_by_author": true,
+      "evidencia_nivel": "E1"
     }
   ]
 }
