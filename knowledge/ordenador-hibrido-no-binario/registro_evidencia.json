@@ -1,0 +1,138 @@
+{
+ "meta": {
+  "proyecto": "ordenador_hibrido_no_binario",
+  "fecha": "2026-10-20",
+  "escala_evidencia": {
+   "E0": "especulación/objetivo sin respaldo",
+   "E1": "teoría establecida o cálculo derivado / hecho documental",
+   "E2": "simulación propia no reproducida",
+   "E3": "literatura citada sin referencia exacta",
+   "E4": "literatura revisada por pares con referencia",
+   "E5": "experimento propio reproducido",
+   "E6": "validación independiente"
+  },
+  "nota": "E5–E6 sin entradas: no hay experimentos propios"
+ },
+ "registro": [
+  {
+   "id": "ev_01",
+   "afirmacion": "El límite de Landauer por bit equivalente (k_B·T·ln2 ≈ 2,87e-21 J a 300 K) no se reduce con lógica multivaluada",
+   "nivel": "E1",
+   "tipo": "teorico",
+   "fuente": "documento_maestro_proyecto.md §2.1; repo README (Landauer 1961)",
+   "estado": "verificado"
+  },
+  {
+   "id": "ev_02",
+   "afirmacion": "Ruido térmico sigma_V=sqrt(kT/C) ≈ 2,04 mV para C=1 fF, 300 K; tabla de márgenes por base es cota idealizada",
+   "nivel": "E1",
+   "tipo": "teorico",
+   "fuente": "documento_maestro_proyecto.md §2.3",
+   "estado": "verificado"
+  },
+  {
+   "id": "ev_03",
+   "afirmacion": "No existe fabricación, demostración experimental ni validación independiente del ordenador híbrido",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "documento_maestro_proyecto.md §1.3; docs/Ordenador_hibrido.md",
+   "estado": "verificado"
+  },
+  {
+   "id": "ev_04",
+   "afirmacion": "Las cifras de rendimiento (≥20 % energía, ≥20 % temperatura, ≥99,9 % disponibilidad) son objetivos de diseño, no resultados",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "docs/Ordenador_hibrido.md §criterios",
+   "estado": "verificado"
+  },
+  {
+   "id": "ev_05",
+   "afirmacion": "Las tablas de 'resultados de simulación' del manuscrito previo no son reproducibles y se retiran; probabilidades 70 %/10 % sustituidas por tesis A/B/C",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "docs/Estudio_viabilidad_arquitectura_hibrida_revisado.docx.md cap. 7 y anexo",
+   "estado": "verificado"
+  },
+  {
+   "id": "ev_06",
+   "afirmacion": "Memresonador III–V/Si publicado en Nature Communications 2024, doi:10.1038/s41467-024-44773-7 (literatura ajena)",
+   "nivel": "E4",
+   "tipo": "experimento",
+   "fuente": "docs/Estudio_viabilidad... referencias",
+   "estado": "PENDIENTE DE VERIFICACIÓN"
+  },
+  {
+   "id": "ev_07",
+   "afirmacion": "Dispositivos resistivos de HfOx muestran múltiples estados de conductancia útiles para CIM (literatura ajena, sin cita concreta local)",
+   "nivel": "E3",
+   "tipo": "experimento",
+   "fuente": "documento_maestro_proyecto.md §3.2",
+   "estado": "PENDIENTE DE VERIFICACIÓN"
+  },
+  {
+   "id": "ev_08",
+   "afirmacion": "Código VQE, algoritmo genético de puertas multinivel y modelo térmico del Manual son simulaciones analíticas ilustrativas sin datos de salida archivados",
+   "nivel": "E2",
+   "tipo": "simulacion",
+   "fuente": "docs/Manual_de_Fabricacion... §3-5",
+   "estado": "PENDIENTE DE VERIFICACIÓN"
+  },
+  {
+   "id": "ev_09",
+   "afirmacion": "Protocolo de fabricación en sala blanca del Manual describe un prototipo experimental no realizado",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "docs/Manual_de_Fabricacion... §6",
+   "estado": "PENDIENTE DE VERIFICACIÓN"
+  },
+  {
+   "id": "ev_10",
+   "afirmacion": "Presupuestos de fases (p.ej. Fase 1 15 M€; MPW 5–25 M€) son estimaciones sin desglose verificable",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "docs/Manual §8; docs/Estudio_viabilidad cap. 8",
+   "estado": "PENDIENTE DE VERIFICACIÓN"
+  },
+  {
+   "id": "ev_11",
+   "afirmacion": "Repo Atlas0: demos TQC (anyones Fibonacci), lógica reversible Toffoli en Rust y dossier Zenodo marcados 'Ready'/'Green'",
+   "nivel": "E0",
+   "tipo": "simulacion",
+   "fuente": "github canelonemf-byte/Atlas0-ordenador2.6-x-10- README",
+   "estado": "PENDIENTE DE VERIFICACIÓN"
+  },
+  {
+   "id": "ev_12",
+   "afirmacion": "Repo Atlas0: árbol actual solo contiene .gitignore, LICENSE y Makefile; src/, docs/, scripts/ declarados en README no aparecen",
+   "nivel": "E1",
+   "tipo": "teorico",
+   "fuente": "GitHub API git/trees HEAD (2026-10-20)",
+   "estado": "verificado"
+  },
+  {
+   "id": "ev_13",
+   "afirmacion": "Descripción del repo: 2,6e32 unidades a 1 µm² ≈ 5,1e5 superficies terrestres; ≈1,4e5 t de ADN",
+   "nivel": "E1",
+   "tipo": "teorico",
+   "fuente": "GitHub descripción del repo",
+   "estado": "PENDIENTE DE VERIFICACIÓN"
+  },
+  {
+   "id": "ev_14",
+   "afirmacion": "'Conscious Substrate Informatics: coherencia como sincronización con la red informacional' (README Atlas0)",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "repo README",
+   "estado": "PENDIENTE DE VERIFICACIÓN"
+  },
+  {
+   "id": "ev_15",
+   "afirmacion": "Existe DOI Zenodo del proyecto",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "documento_maestro_proyecto.md cabecera; repo README",
+   "estado": "PENDIENTE DE VERIFICACIÓN"
+  }
+ ]
+}
