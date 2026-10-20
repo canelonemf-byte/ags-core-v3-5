@@ -3,6 +3,7 @@ import asyncio
 import json
 import time
 
+import os
 import pytest
 from fastapi.testclient import TestClient
 
@@ -206,6 +207,8 @@ def test_seed_respects_reseed(tmp_path):
     assert s.seed() == 0  # ya hay pendientes
 
 
+@pytest.mark.skipif(not os.getenv("AGS_RUN_SLOW"), reason="lento (~4.5 min): ejecuta checks reales sobre todo el manifiesto; AGS_RUN_SLOW=1 para correrlo")
+@pytest.mark.timeout(900)
 def test_autopilot_cycles(tmp_path, monkeypatch):
     import importlib
     monkeypatch.setenv("AGSGPT_DATA_DIR", str(tmp_path / "data"))
