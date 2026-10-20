@@ -8,3 +8,6 @@ reports/
 *.sqlite-wal
 *.sqlite-shm
 .pytest_cache/
+data/ucs_memory.sqlite3
+data/ucs_chunker_manifest.json
+ucs/.doc_chunker_manifest.json

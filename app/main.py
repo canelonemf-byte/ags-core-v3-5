@@ -164,3 +164,47 @@ def get_task(tid: int, x_api_key: str | None = Header(default=None)):
 def supervisor_status(x_api_key: str | None = Header(default=None)):
     auth(x_api_key)
     return get_supervisor().status()
+
+
+# ---------------- Unified Cognitive Stack: memoria ----------------
+import memory_store
+
+class MemoryNote(BaseModel):
+    subject: str = Field(min_length=1, max_length=500)
+    fact_contents: str = Field(min_length=1, max_length=20000)
+    keywords: list[str] = Field(default_factory=list, max_length=50)
+    importance_score: float = Field(default=0.6, ge=0.0, le=1.0)
+    pinned: bool = False
+
+class IngestRequest(BaseModel):
+    action: str = "ADD"
+    memory_note: MemoryNote
+
+class ChatRequest(BaseModel):
+    message: str = Field(min_length=1, max_length=5000)
+    top_k: int = Field(default=5, ge=1, le=50)
+
+@app.post("/ingest", status_code=201)
+def ingest(req: IngestRequest, x_api_key: str | None = Header(default=None)):
+    auth(x_api_key)
+    if req.action.upper() != "ADD":
+        raise HTTPException(400, "solo se admite action=ADD")
+    n = req.memory_note
+    mid = memory_store.add(n.subject, n.fact_contents, n.keywords, n.importance_score, n.pinned)
+    return {"id": mid, "status": "added"}
+
+@app.post("/chat")
+def chat(req: ChatRequest, x_api_key: str | None = Header(default=None)):
+    auth(x_api_key)
+    hits = memory_store.search(req.message, req.top_k)
+    if not hits:
+        answer = "No hay memorias relevantes. (Sin LLM: LiteLLM PENDIENTE de configurar.)"
+    else:
+        answer = "Memorias recuperadas (sin LLM; LiteLLM PENDIENTE):\n" + "\n".join(
+            f"- [{m.subject}] (S={s:.2f}) {m.fact_contents[:300]}" for m, _, s in hits)
+    return {"answer": answer, "used_memory_ids": [m.id for m, _, _ in hits]}
+
+@app.get("/memory/stats")
+def memory_stats(x_api_key: str | None = Header(default=None)):
+    auth(x_api_key)
+    return memory_store.stats()
