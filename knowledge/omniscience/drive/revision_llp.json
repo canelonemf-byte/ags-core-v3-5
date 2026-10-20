@@ -69,26 +69,85 @@
     "4 obras sin DOI ni URL pública",
     "publisher 'OMNISCIENCE' no es editorial"
    ]
-  }
- ],
- "fallidos": [
+  },
   {
    "archivo": "OMNISCIENCE Architecture.pptx",
    "id_drive": "1BFmmCy6suxCwwNfNUc7To6-JbTAOskqE",
-   "motivo": "binario pptx no soportado por read_file; DownloadFile no sirve Drive"
+   "texto": "OMNISCIENCE Architecture.ocr.md",
+   "tamano_bytes": 28927252,
+   "sha256": "ce7e3b8f091ad36e8f3bdf88e97f59ee92f4c3a1e36bbd362426fea4fc271e06",
+   "en_git": "no (>10 MB, .gitignore)",
+   "metodo_extraccion": "python-pptx sin texto (diapositivas son imágenes); OCR tesseract spa+eng",
+   "evidencia_max": "E3",
+   "simulacion_vs_experimento": "C-VIB-001 simulación (nivel 3); sin experimento",
+   "afirmaciones": [
+    {
+     "texto": "C-VIB-001 ejecutada con éxito, nivel 3",
+     "nivel": "E3",
+     "estado": "PENDIENTE DE VERIFICACIÓN"
+    },
+    {
+     "texto": "orquestador MLIP vs DFT, simulación ab initio",
+     "nivel": "E1",
+     "estado": "diseño; la publicación dice que C-VIB-001 no usa DFT/DFPT"
+    },
+    {
+     "texto": "RO-Crate garantiza 'reproducibilidad absoluta'",
+     "nivel": "E0",
+     "estado": "sobredeclaración"
+    }
+   ],
+   "doi": [],
+   "originalidad": "propia; modelos canónicos estándar (Born-von Kármán, QHO, Lindblad)",
+   "copyright": "diapositivas generadas con Google NotebookLM (marca 'Gemini Notebook' en cada lámina); revisar términos de uso de Google y declarar la herramienta",
+   "sarfatti_alcubierre": "no aparecen",
+   "coautoria_ia": "no aparecen Grok ni Deepseek; no hay autor nombrado",
+   "riesgos": [
+    "sin autor en las láminas",
+    "'Conocimiento Consolidado' como título de cierre con evidencia E3",
+    "conflicto: lámina 2 'ejecuta simulación Ab Initio' vs publicación 'no DFT/DFPT'"
+   ]
   },
   {
    "archivo": "OMNISCIENCE Discovery Engine.pptx",
    "id_drive": "1Vw7cPTekXFzs_COI_9L52r9oQs0Auh-t",
-   "motivo": "binario pptx no soportado por read_file; DownloadFile no sirve Drive"
+   "texto": "OMNISCIENCE Discovery Engine.ocr.md",
+   "tamano_bytes": 30800130,
+   "sha256": "4099e0647e474ccf2b9334d2a2cd88dea68df16a0dec86217b8c58789a5e104c",
+   "en_git": "no (>10 MB, .gitignore)",
+   "metodo_extraccion": "python-pptx sin texto (diapositivas son imágenes); OCR tesseract spa+eng",
+   "evidencia_max": "E3",
+   "simulacion_vs_experimento": "H1–H6 de C-VIB-001 'sobreviven'; simulación, sin experimento",
+   "afirmaciones": [
+    {
+     "texto": "H1–H6 sobreviven a la falsación",
+     "nivel": "E3",
+     "estado": "PENDIENTE DE VERIFICACIÓN"
+    },
+    {
+     "texto": "laboratorios robóticos autónomos, evidencia nivel 4+",
+     "nivel": "E0",
+     "estado": "horizonte"
+    }
+   ],
+   "doi": [],
+   "originalidad": "propia; física canónica",
+   "copyright": "diapositivas generadas con Google NotebookLM (marca 'Gemini Notebook' en cada lámina); revisar términos de uso de Google y declarar la herramienta; 'Unreal Laboratory' / 'UE6' podría aludir a Unreal Engine (marca de Epic Games): PENDIENTE DE VERIFICACIÓN",
+   "sarfatti_alcubierre": "no aparecen",
+   "coautoria_ia": "no aparecen Grok ni Deepseek; no hay autor nombrado",
+   "riesgos": [
+    "escala de evidencia N0–N7 (8 niveles) en lámina 3 contradice la escala 0–6 del proyecto",
+    "'rigorous, mathematically vetted truths' sobredeclara una simulación E3",
+    "sin autor en las láminas"
+   ]
   }
  ],
+ "fallidos": [],
  "omitidos": [
   "3 archivos .trashed- (png, 2 mp4)"
  ],
  "pendiente": [
-  "descargar pptx por navegador y extraer con python-pptx",
-  "binarios originales no guardados, solo texto"
+  "confirmar en Drive la duplicación de 'OMNISCIENCE Architecture (1).pptx' (ignorada, mismo tamaño)"
  ],
  "decisiones": [
   {
@@ -115,6 +174,20 @@
     "referencias: Analisis_vibraciones_cientificas_Grok.pdf → Analisis_vibraciones_cientificas.pdf (nombre original en Drive contenía 'Grok')"
    ],
    "no_aprobado": []
+  },
+  {
+   "fecha": "2026-10-20",
+   "aprobado_por": "Lázaro López Paz",
+   "alcance": "solo repo",
+   "cambios": [
+    "añadidos 6 binarios desde Downloads, fuera de git por tamaño, con sha256",
+    "texto por OCR (pptx sin texto nativo)"
+   ],
+   "no_aprobado": []
   }
+ ],
+ "conflictos": [
+  "escala N0–N7 vs E0–E6",
+  "Ab Initio/DFT en láminas vs 'no DFT' en publicación"
  ]
 }

@@ -123,30 +123,148 @@
     "menciona 'CERO-A / Atlas Científico' (mezcla de proyectos)",
     "'coprocesador cuántico simulado / control biomecánico' sin respaldo"
    ]
-  }
- ],
- "fallidos": [
+  },
   {
    "archivo": "Hybrid Non-Binary Blueprint.pptx",
    "id_drive": "11BCyDpwRWXYZr7mxUHSY6NXG1PViNqfv",
-   "motivo": "pptx binario no soportado"
+   "texto": "Hybrid Non-Binary Blueprint.ocr.md",
+   "tamano_bytes": 17104967,
+   "sha256": "3a3b464ace26d087473d46a20f077bb67f19451fe44a0587d8916ed0e75fc5ae",
+   "en_git": "no (>10 MB, .gitignore)",
+   "metodo_extraccion": "python-pptx sin texto (diapositivas son imágenes); OCR tesseract spa+eng",
+   "evidencia_max": "E1",
+   "simulacion_vs_experimento": "propuesta; scripts de juguete (VQE, genético, ODE térmica) sin resultados reproducibles; sin fabricación",
+   "afirmaciones": [
+    {
+     "texto": "Landauer kT ln2 ≈ 17.9 meV (2.87 zJ) a 300 K",
+     "nivel": "E6",
+     "estado": "constante física, cálculo correcto"
+    },
+    {
+     "texto": "ruido sqrt(kT/C) ≈ 2.04 mV a 1 fF",
+     "nivel": "E6",
+     "estado": "cálculo correcto"
+    },
+    {
+     "texto": "'Thesis B (Validated)'",
+     "nivel": "E1",
+     "estado": "sobredeclaración: no hay validación"
+    },
+    {
+     "texto": "CMOS 9.8 W/mm² vs híbrido 0.2 W/mm²",
+     "nivel": "E2",
+     "estado": "PENDIENTE DE VERIFICACIÓN"
+    },
+    {
+     "texto": "objetivos ≤0.4 energía/tarea, ≥2× rendimiento/W",
+     "nivel": "E0",
+     "estado": "objetivos prospectivos"
+    },
+    {
+     "texto": "presupuesto 250 M€, 14 años",
+     "nivel": "E0",
+     "estado": "estimación"
+    }
+   ],
+   "doi": [],
+   "originalidad": "síntesis propia; tecnologías (RRAM HfO2, MoS2, LiNbO3, CIM) de terceros sin citar en las láminas",
+   "copyright": "diapositivas generadas con Google NotebookLM (marca 'Gemini Notebook' en cada lámina); revisar términos de uso de Google y declarar la herramienta; sin referencias bibliográficas",
+   "sarfatti_alcubierre": "no aparecen",
+   "coautoria_ia": "no aparecen Grok ni Deepseek; no hay autor nombrado",
+   "riesgos": [
+    "'VERSION 1.0 (Definitive for Implementation)' y 'CLASSIFIED' en láminas",
+    "sin autor nombrado"
+   ]
   },
   {
    "archivo": "Hybrid Non-Binary Blueprint.pdf",
    "id_drive": "1YWGpT7QqGl39Fb0Z1MB8Y0dTTa_Po_NY",
-   "motivo": "read_file devuelve texto vacío (probable PDF de imágenes; OCR imposible sin binario)"
+   "texto": "Hybrid Non-Binary Blueprint.pdf.ocr.md",
+   "tamano_bytes": 15959445,
+   "sha256": "d12a89152e4e2cbcc4e2eafcc2b6033b15ada7649e59e4489b6b7ec628d9b885",
+   "en_git": "no (>10 MB, .gitignore)",
+   "metodo_extraccion": "OCR tesseract spa+eng a 150 dpi",
+   "evidencia_max": "E1",
+   "simulacion_vs_experimento": "igual que el pptx",
+   "afirmaciones": [],
+   "doi": [],
+   "originalidad": "exportación PDF del pptx (solapamiento léxico OCR 94 %)",
+   "copyright": "diapositivas generadas con Google NotebookLM (marca 'Gemini Notebook' en cada lámina); revisar términos de uso de Google y declarar la herramienta",
+   "sarfatti_alcubierre": "no aparecen",
+   "coautoria_ia": "no aparecen Grok ni Deepseek; no hay autor nombrado",
+   "riesgos": [
+    "mismos riesgos que el pptx"
+   ]
   },
   {
    "archivo": "Ultra-Low Power Hybrid Architectures.pptx",
    "id_drive": "1HG6G9oD45pOnuJPnqKVn5K1Xpb4Ga3oo",
-   "motivo": "pptx binario no soportado"
+   "texto": "Ultra-Low Power Hybrid Architectures.ocr.md",
+   "tamano_bytes": 21949305,
+   "sha256": "7cb2ad8c205da01026edac536c0067289387777bf642fc6c0f6bf2d414992c35",
+   "en_git": "no (>10 MB, .gitignore)",
+   "metodo_extraccion": "python-pptx sin texto (diapositivas son imágenes); OCR tesseract spa+eng",
+   "evidencia_max": "E1",
+   "simulacion_vs_experimento": "propuesta; modelo térmico ODE y optimizador genético ilustrativos; métricas 'banco de pruebas prospectivo'",
+   "afirmaciones": [
+    {
+     "texto": "Landauer y margen kT/C",
+     "nivel": "E6",
+     "estado": "cálculo correcto"
+    },
+    {
+     "texto": "b=4 garantiza BER < 10^-18",
+     "nivel": "E2",
+     "estado": "PENDIENTE DE VERIFICACIÓN"
+    },
+    {
+     "texto": "CMOS 0.8 W/mm² (>400 K) vs híbrido 0.2 W/mm² (328 K)",
+     "nivel": "E2",
+     "estado": "PENDIENTE DE VERIFICACIÓN"
+    },
+    {
+     "texto": "-60 % energía, 2× eficiencia",
+     "nivel": "E0",
+     "estado": "objetivo"
+    },
+    {
+     "texto": "criterios de abandono (ventaja <20 %)",
+     "nivel": "E1",
+     "estado": "bien planteados"
+    }
+   ],
+   "doi": [],
+   "originalidad": "síntesis propia; buena separación de 'hype' y criterios no-go",
+   "copyright": "diapositivas generadas con Google NotebookLM (marca 'Gemini Notebook' en cada lámina); revisar términos de uso de Google y declarar la herramienta; sin referencias bibliográficas",
+   "sarfatti_alcubierre": "no aparecen",
+   "coautoria_ia": "no aparecen Grok ni Deepseek; no hay autor nombrado",
+   "riesgos": [
+    "'supremacía térmica demostrada' contradice el carácter prospectivo",
+    "sin autor nombrado"
+   ]
   },
   {
    "archivo": "Ultra-Low Power Hybrid Architectures.pdf",
    "id_drive": "1vtH2C-mDHqMCLuFM76Nu_L5puhEdor1e",
-   "motivo": "texto vacío (probable PDF de imágenes)"
+   "texto": "Ultra-Low Power Hybrid Architectures.pdf.ocr.md",
+   "tamano_bytes": 20275375,
+   "sha256": "276a60c5af85882e8cf83c2d5d4882cb9d128f0f4dd2877f3c6eb26fdceab96c",
+   "en_git": "no (>10 MB, .gitignore)",
+   "metodo_extraccion": "OCR tesseract spa+eng a 150 dpi",
+   "evidencia_max": "E1",
+   "simulacion_vs_experimento": "igual que el pptx",
+   "afirmaciones": [],
+   "doi": [],
+   "originalidad": "exportación PDF del pptx (solapamiento léxico OCR 83 %)",
+   "copyright": "diapositivas generadas con Google NotebookLM (marca 'Gemini Notebook' en cada lámina); revisar términos de uso de Google y declarar la herramienta",
+   "sarfatti_alcubierre": "no aparecen",
+   "coautoria_ia": "no aparecen Grok ni Deepseek; no hay autor nombrado",
+   "riesgos": [
+    "mismos riesgos que el pptx"
+   ]
   }
  ],
+ "fallidos": [],
  "omitidos": [
   "documento_maestro_proyecto.md.txt (duplicado)",
   "Estudio_viabilidad...-1.docx (misma obra que el pdf)",
@@ -154,8 +272,7 @@
   "2 png"
  ],
  "pendiente": [
-  "descargar blueprint y bajo consumo por navegador y aplicar OCR",
-  "corregir autoría y aviso del manual (requiere aprobación)"
+  "corregir autoría/etiquetas de las láminas requiere aprobación"
  ],
  "decisiones": [
   {
@@ -182,6 +299,21 @@
     "referencias: Analisis_vibraciones_cientificas_Grok.pdf → Analisis_vibraciones_cientificas.pdf (nombre original en Drive contenía 'Grok')"
    ],
    "no_aprobado": []
+  },
+  {
+   "fecha": "2026-10-20",
+   "aprobado_por": "Lázaro López Paz",
+   "alcance": "solo repo",
+   "cambios": [
+    "añadidos 6 binarios desde Downloads, fuera de git por tamaño, con sha256",
+    "texto por OCR (pptx sin texto nativo)"
+   ],
+   "no_aprobado": []
   }
+ ],
+ "conflictos": [
+  "CMOS baseline 9.8 W/mm² (Blueprint) vs 0.8 W/mm² (Ultra-Low Power)",
+  "'Definitive for Implementation' en Blueprint vs 'Borrador conceptual E0–E1' aprobado para el Manual",
+  "'Thesis B (Validated)' y 'supremacía térmica demostrada' vs aviso 'no constituye evidencia' del documento maestro"
  ]
 }
