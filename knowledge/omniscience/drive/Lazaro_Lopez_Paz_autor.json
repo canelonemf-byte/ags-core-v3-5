@@ -5,7 +5,10 @@
   "name": "Lázaro López Paz",
   "givenName": "Lázaro",
   "familyName": "López Paz",
-  "alternateName": ["Lazaro Lopez Paz", "Lázaro lp"],
+  "alternateName": [
+    "Lazaro Lopez Paz",
+    "Lázaro lp"
+  ],
   "jobTitle": "Inventor e investigador independiente",
   "description": "Autor de OMNISCIENCE, motor de descubrimiento científico con evidencia verificable, procedencia PROV-O, materia y fonones.",
   "nationality": {
@@ -38,7 +41,10 @@
     "PROV-O",
     "reproducibilidad"
   ],
-  "knowsLanguage": ["es", "en"],
+  "knowsLanguage": [
+    "es",
+    "en"
+  ],
   "creditText": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA. Si se continúa este trabajo, citar a Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA.",
   "creatorOf": [
     {
@@ -48,7 +54,9 @@
       "alternateName": "Universal Autonomous Scientific Discovery Engine",
       "inLanguage": "es",
       "datePublished": "2026-08-28",
-      "author": { "@id": "#author" },
+      "author": {
+        "@id": "#author"
+      },
       "url": "/docs/OMNISCIENCE_dossier_completo.pdf",
       "encoding": {
         "@type": "MediaObject",
@@ -69,7 +77,9 @@
       "name": "OMNISCIENCE — Documento maestro de arquitectura",
       "inLanguage": "es",
       "datePublished": "2026-08-28",
-      "author": { "@id": "#author" },
+      "author": {
+        "@id": "#author"
+      },
       "url": "/docs/OMNISCIENCE_maestro_unificado.pdf"
     },
     {
@@ -78,7 +88,9 @@
       "name": "OMNISCIENCE-MV1: Implementación Técnica MVP",
       "inLanguage": "es",
       "datePublished": "2026-08-28",
-      "author": { "@id": "#author" },
+      "author": {
+        "@id": "#author"
+      },
       "url": "/docs/OMNISCIENCE-MV1-implementacion.pdf"
     },
     {
@@ -87,9 +99,12 @@
       "name": "Análisis científico de vibraciones",
       "inLanguage": "es",
       "datePublished": "2026-08-28",
-      "author": { "@id": "#author" },
-      "url": "/docs/Analisis_vibraciones_cientificas_Grok.pdf",
-      "about": "C-VIB-001"
+      "author": {
+        "@id": "#author"
+      },
+      "url": "/docs/Analisis_vibraciones_cientificas.pdf",
+      "about": "C-VIB-001",
+      "disambiguatingDescription": "Nombre original del archivo en Drive contenía \"Grok\": Analisis_vibraciones_cientificas_Grok.pdf"
     },
     {
       "@type": "SoftwareApplication",
@@ -97,7 +112,9 @@
       "name": "OMNISCIENCE",
       "applicationCategory": "ScienceApplication",
       "inLanguage": "es",
-      "author": { "@id": "#author" },
+      "author": {
+        "@id": "#author"
+      },
       "isAccessibleForFree": true
     }
   ]

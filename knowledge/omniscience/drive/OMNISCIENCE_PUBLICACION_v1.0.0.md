@@ -249,7 +249,7 @@ SHA-256 Archivo
 
 8226acdf4c70ba13… docs/OMNISCIENCE_maestro_unificado.pdf
 
-d40adb874610e02c… docs/Analisis_vibraciones_cientificas_Grok.pdf
+d40adb874610e02c… docs/Analisis_vibraciones_cientificas.pdf (nombre original en Drive contenía "Grok")
 
 ac24fd511dbadc43… docs/OMNISCIENCE-MV1-implementacion.pdf
 

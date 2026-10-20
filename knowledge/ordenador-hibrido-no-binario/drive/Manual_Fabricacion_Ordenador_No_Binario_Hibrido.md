@@ -1,5 +1,8 @@
 <!-- Fuente: Google Drive, Manual de Fabricacion y Especificaciones Tecnicas - Ordenador No Binario Hibrido.pdf (id 1oRLFC04N5UCzpjwid5FY5rOwkWor4rS8). Texto extraído con read_file de Drive (con pérdidas, no es el binario original). -->
 
+> **AVISO:** Documento no experimental. No ha habido fabricación ni validación. Las cifras de potencia y temperatura (p. ej. 0.2 W/mm², T < 55 °C) salen de scripts no validados (E2, PENDIENTE DE VERIFICACIÓN). El presupuesto (250 M€, 14 años) es una estimación E0.
+
+
 
 
 Manual de Fabricación y Especificaciones Técnicas: 
@@ -7,7 +10,7 @@ Ordenador No B inario Híbrido de Ultra-B ajo
 C onsumo 
 
 Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA
-Versión: 1.0 (D efinitiva para Implementación) 
+Versión: 1.0 (Borrador conceptual E0–E1) 
 Fecha: 8 de septiembre de 2026 
    
 

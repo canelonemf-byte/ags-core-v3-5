@@ -105,6 +105,16 @@
    "no_aprobado": [
     "etiqueta 'versión definitiva' del Manual se mantiene"
    ]
+  },
+  {
+   "fecha": "2026-10-20",
+   "aprobado_por": "Lázaro López Paz",
+   "alcance": "solo copias del repo; Drive sin tocar",
+   "cambios": [
+    "Manual: 'Definitiva para Implementación' → 'Borrador conceptual E0–E1' y aviso inicial (no experimental; potencia/temperatura E2 PENDIENTE DE VERIFICACIÓN; presupuesto E0)",
+    "referencias: Analisis_vibraciones_cientificas_Grok.pdf → Analisis_vibraciones_cientificas.pdf (nombre original en Drive contenía 'Grok')"
+   ],
+   "no_aprobado": []
   }
  ]
 }
