@@ -207,7 +207,7 @@ mapa invisible." (Sincronizar con átomos NIST).
 (Sincronizar con el Panning de lattices de Harvard).
 ● 1:10 – 2:30: "La hoja de ruta que conecta la inteligencia artificial con el poder de la 
 computación cuántica." (Sincronizar con chips de IBM y redes MIT).
-● 2:30 – 6:00: "Desde la supremacía cuántica… <break time="1s"/> hasta los 
+● 2:30 – 6:00: "Desde la supremacía cuántica… <break time="1s"/> hasta los [revisión LLP 2026-10-21: afirmación no verificada, PENDIENTE DE VERIFICACIÓN]
 sensores que detectarán la materia oscura." (Distribución equitativa entre Criostatos, 
 NV Centers, Metamateriales y AXION Detectors).
 ● 6:00 – 8:00: "El futuro ya no se predice… <break time="500ms"/> se diseña." 

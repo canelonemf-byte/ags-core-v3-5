@@ -1,0 +1,14 @@
+{
+  "proyecto": {
+    "meta": {
+      "id": "ordenador_hibrido"
+    },
+    "objetivo": "Computación clásica-cuántica.",
+    "datos_clave": {
+      "drive": "1-me3Bhikfvlnpg3_uXloqTW_cV1rhtu5"
+    },
+    "evidencia_nivel": "E1"
+  },
+  "_fuente": "pegado por el usuario en chat 2026-10-20; archivo original no disponible en el ordenador; reconstruido mínimo solo con los datos pegados (resumen, no JSON literal)",
+  "_evidencia_tipo": "declarada_en_pack"
+}

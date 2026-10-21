@@ -426,7 +426,7 @@ AVISO: Este documento es propuesta conceptual de investigacion. NO constituye ev
 1. Landauer, R. (1961). Irreversibility and Heat Generation in the Computing Process. IBM J. Res. Dev. 5(3), 183-191.
 2. Bennett, C. H. (1973). Logical Reversibility of Computation. IBM J. Res. Dev. 17(6), 525-532.
 3. Gammaitoni, L. et al. (2012). Towards the Fundamental Energy Costs of Computation. Nature Physics 8, 451-454.
-4. Diana, G. et al. (2019). Generalization of the Landauer Principle for Many-Valued Logic. Entropy 21(11), 1066.
+4. Diana, G. et al. (2019). Generalization of the Landauer Principle for Many-Valued Logic. Entropy 21(11), 1066. [PENDIENTE DE VERIFICACIÓN: referencia Diana 2019 y su relación con Bormashenko 2020 en el Estudio de viabilidad]
 5. Chen, W. et al. (2019). Multi-Level Memristor Based on Al-Doped HfO2. Nanoscale Res. Lett. 14, 198.
 6. Xia, Q. & Yang, J. J. (2019). Memristive Crossbar Arrays for Brain-Inspired Computing. Nature Materials 18, 309-323.
 7. Shastri, B. J. et al. (2021). Photonics for AI and Neuromorphic Computing. Nature Photonics 15, 102-114.

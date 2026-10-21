@@ -1076,7 +1076,7 @@ La s entra da s siguientes a ncla n la s a firma ciones del texto. No sustituyen
 ●  Landauer, R. (1 9 6 1 ). Irreversibility and heat generation in the comp uting p rocess. IBM J. Res. Dev. 
 ●  Bennett, C. H. (1 9 7 3 , 1 9 8 2 ). Trabajos fundacionales sobre comp utación lógica reversible. 
 ●  Toffoli, T.; Fredkin, E. Puertas reversibles. 
-●  Bormashenko, E. (2 0 2 0 ). Generalization of the Landauer p rincip le for many-valued logic. Entrop y. 
+●  Bormashenko, E. (2 0 2 0 ). Generalization of the Landauer p rincip le for many-valued logic. Entrop y.  [PENDIENTE DE VERIFICACIÓN: Bormashenko 2020 frente a Diana 2019 del documento maestro]
 ●  Kycia, R. A. (2 0 2 0 ). An exp lanation of the Landauer bound and its ineffectiveness with regard to multivalued 
 logic. 
 ●  Hayes, B. y literatura de op timal radix. 

@@ -1,0 +1,45 @@
+{
+  "proyecto": {
+    "meta": {
+      "id": "P001",
+      "nombre": "PLIEGUE",
+      "estado": "hecho",
+      "fecha": "2026-09-15",
+      "responsable": "LLP",
+      "tags": [
+        "warp",
+        "nec",
+        "t00",
+        "ford-roman"
+      ]
+    },
+    "objetivo": "Lab completo: rayo NEC, toro T00, Ford-Roman. Metricas Alcubierre/Natario/White.",
+    "datos_clave": [
+      "vistas:nec|toro|qi",
+      "ANEC_pared:-0.08_viola",
+      "T00_toro_eje_cero",
+      "QI_alc:10^50",
+      "Casimir:10^60",
+      "NEC_WEC_DEC_violan",
+      "geodesica_k=0_Delta_ll_R"
+    ],
+    "tareas": [
+      {
+        "id": "T8",
+        "tarea": "Unificar vistas rayo+toro+QI y geodesica nula",
+        "estado": "hecho",
+        "prioridad": "alta",
+        "responsable": "Grok",
+        "fecha": "2026-09-15"
+      }
+    ],
+    "riesgos": [
+      "kick_transverso_invisible_si_Delta_ll_R"
+    ],
+    "decisiones": [
+      "tres_vistas_no_sustituir",
+      "k_geodesica_0_ANEC_fiel"
+    ],
+    "proximo_paso": ""
+  }
+}

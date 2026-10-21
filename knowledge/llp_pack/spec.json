@@ -1,0 +1,53 @@
+{
+  "llp": {
+    "id": "llp.proyecto.v1",
+    "ley": "obligatoria",
+    "desde": "2026-09-15",
+    "alcance": [
+      "proyectos_actuales",
+      "proyectos_posteriores",
+      "documentos"
+    ],
+    "destino": {
+      "maquina": "json_canon",
+      "config": "yaml_esqueleto",
+      "humano_ia": "md_corto_apunta_json"
+    },
+    "reglas": [
+      "root=proyecto",
+      "sin_envoltorio_extra",
+      "vacio=\"\"_o_[]",
+      "nunca_null",
+      "claves_snake_case",
+      "sinonimos_prohibidos",
+      "min_tokens",
+      "no_prosa_si_basta_clave",
+      "no_duplicar_json_en_md",
+      "yaml_nunca_en_prompt"
+    ],
+    "campos": [
+      "meta.id",
+      "meta.nombre",
+      "meta.estado",
+      "meta.fecha",
+      "meta.responsable",
+      "meta.tags",
+      "objetivo",
+      "datos_clave",
+      "tareas.id",
+      "tareas.tarea",
+      "tareas.estado",
+      "tareas.prioridad",
+      "tareas.responsable",
+      "tareas.fecha",
+      "riesgos",
+      "decisiones",
+      "proximo_paso"
+    ],
+    "pack": "artifacts/llp/",
+    "esqueleto": [
+      "artifacts/llp/esqueleto.yaml",
+      "artifacts/llp/esqueleto.json"
+    ]
+  }
+}

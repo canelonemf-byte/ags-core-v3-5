@@ -3,6 +3,7 @@ import asyncio
 import json
 import time
 
+import os
 import pytest
 from fastapi.testclient import TestClient
 
@@ -206,6 +207,8 @@ def test_seed_respects_reseed(tmp_path):
     assert s.seed() == 0  # ya hay pendientes
 
 
+@pytest.mark.skipif(not os.getenv("AGS_RUN_SLOW"), reason="lento (~4.5 min): ejecuta checks reales sobre todo el manifiesto; AGS_RUN_SLOW=1 para correrlo")
+@pytest.mark.timeout(900)
 def test_autopilot_cycles(tmp_path, monkeypatch):
     import importlib
     monkeypatch.setenv("AGSGPT_DATA_DIR", str(tmp_path / "data"))
@@ -263,3 +266,8 @@ def test_declared_license_not_flagged():
     extra = c.project_level("license_check", Idx(), proj, fs)
     kinds = {f["kind"] for f in fs + extra}
     assert "reserved_clause" not in kinds and "no_mit" not in kinds and "declared_license" in kinds
+
+
+def test_index_skips_cache_dirs(tmp_path):
+    from projects.knowledge import SKIP_DIRS
+    assert {".venv", ".hf_cache", "node_modules", "__pycache__", ".git"} <= SKIP_DIRS

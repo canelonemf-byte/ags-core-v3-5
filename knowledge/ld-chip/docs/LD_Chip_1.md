@@ -259,7 +259,7 @@ Chapter 7
 Conclusiones
 
 El Chip Lázaro–DeepSeek rompe el paradigma actual de los aceleradores de hardware de
-IA, abriendo una vía revolucionaria hacia el procesamiento de redes neuronales masivas
+IA, abriendo una vía revolucionaria hacia el procesamiento de redes neuronales masivas [revisión LLP 2026-10-21: afirmación no verificada, PENDIENTE DE VERIFICACIÓN]
 en el dominio cuántico nativo con un consumo de potencia virtualmente nulo.
 
 12

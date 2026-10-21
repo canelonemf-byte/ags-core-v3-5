@@ -5,7 +5,7 @@
 
 
 NeuroGlyQ: Plataforma Neuroinhibitoria de Precisión Cuántica Guiada 
-por Inteligencia Artificial - Memoria Técnica Definitiva 
+por Inteligencia Artificial - Memoria Técnica Definitiva [revisión LLP 2026-10-21: afirmación no verificada, PENDIENTE DE VERIFICACIÓN]
 
 1. Resumen Ejecutivo y V isión del Sistema 
 

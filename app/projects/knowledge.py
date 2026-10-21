@@ -46,6 +46,11 @@ def chunk_text(text: str, size: int = 900, overlap: int = 150) -> list[str]:
     return out
 
 
+# Directorios de entorno/caché que no son obra del proyecto (no se escanean).
+SKIP_DIRS = frozenset({".venv", "venv", ".hf_cache", "node_modules", "__pycache__", ".git",
+                       ".pytest_cache", ".mypy_cache", ".ruff_cache", ".cache", ".ipynb_checkpoints", ".tox"})
+
+
 class _Tfidf:
     """TF-IDF mínimo con normalización L2 (fallback sin scikit-learn)."""
 
@@ -128,7 +133,8 @@ class KnowledgeIndex:
         base = self.root / pid
         if not base.exists():
             return []
-        return sorted(p for p in base.rglob("*") if p.is_file())
+        return sorted(p for p in base.rglob("*")
+                      if p.is_file() and not (set(p.relative_to(base).parts[:-1]) & SKIP_DIRS))
 
     def doc_files(self, pid: str) -> list[Path]:
         return [p for p in self.files(pid) if p.suffix.lower() in DOC_EXT or p.name in ("LICENSE", "NOTICE")]

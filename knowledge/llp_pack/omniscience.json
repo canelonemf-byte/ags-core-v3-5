@@ -1,0 +1,24 @@
+{
+  "proyecto": {
+    "meta": {
+      "id": "omniscience",
+      "nombre": "OMNISCIENCE",
+      "estado": "activo",
+      "fecha": "2026-09-20",
+      "responsable": "LLP",
+      "tags": [
+        "nucleo",
+        "descubrimiento",
+        "ia"
+      ]
+    },
+    "objetivo": "Plataforma de descubrimiento científico asistido por IA. Prioridad: Universal Matter + Vibrational/Phonon Engine.",
+    "datos_clave": {
+      "drive": "1DxQUgo0_XeoX73L1YnG-Ffcn81cn8jF8",
+      "rol": "nucleo_cientifico"
+    },
+    "evidencia_nivel": "E1"
+  },
+  "_fuente": "pegado por el usuario en chat 2026-10-20; archivo original no disponible en el ordenador",
+  "_evidencia_tipo": "declarada_en_pack"
+}

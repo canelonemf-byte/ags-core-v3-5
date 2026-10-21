@@ -301,7 +301,7 @@ time\_steps \= np.linspace(0, 50, 200\)
 
 \# Comparativa de disipación
 
-\# CMOS Binario Tradicional (Disipación alta: 0.8 W/mm2)
+\# CMOS Binario Tradicional (Disipación alta: 0.8 W/mm2) [PENDIENTE DE VERIFICACIÓN: otras fuentes del proyecto dan 9,8 W/mm²]
 
 temp\_cmos \= odeint(thermal\_diffusion\_model, T\_ambient, time\_steps, args=(0.8, 0.08, 0.04, T\_ambient))
 

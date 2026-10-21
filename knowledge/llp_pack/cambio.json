@@ -1,0 +1,11 @@
+{
+  "tipo": "pack_llp_canonico",
+  "n_proyectos_json": 14,
+  "evidencia_nivel": "E1",
+  "jsons_recibidos": [
+    "omniscience.json",
+    "ordenador_hibrido.json"
+  ],
+  "jsons_pendientes": "11 JSON de proyecto no proporcionados: PENDIENTE DE VERIFICACIÓN (nombres desconocidos)",
+  "_fuente": "pegado por el usuario en chat 2026-10-20; archivo original no disponible en el ordenador; nombre original CAMBIO.json"
+}
