@@ -1,6 +1,6 @@
 > **Nota de autoría (2026-10-19).** Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España — con asistencia de inteligencia artificial (DeepSeek). La herramienta de IA se menciona como asistencia, no como autora. Atribución actualizada por decisión del autor; el resto del texto se conserva.
 
-### NeuroGlyQ: Plataforma Neuroinhibitoria de Precisión Cuántica Guiada por Inteligencia Artificial \- Memoria Técnica Definitiva
+### NeuroGlyQ: Plataforma Neuroinhibitoria de Precisión Cuántica Guiada por Inteligencia Artificial \- Memoria Técnica Definitiva [revisión LLP 2026-10-21: afirmación no verificada, PENDIENTE DE VERIFICACIÓN]
 
 ##### 1\. Resumen Ejecutivo y Visión del Sistema
 

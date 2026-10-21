@@ -1,3 +1,7 @@
+> Nota de herramienta: Diapositivas generadas con Google Gemini NotebookLM; texto y contenido de Lázaro López Paz con asistencia de IA. Términos de uso de Google: PENDIENTE DE VERIFICACIÓN.
+> Nota de marca: Unreal Engine es marca de Epic Games. ("UE6"/"UEB"/"UEG" son lecturas OCR; versión real PENDIENTE DE VERIFICACIÓN.)
+> CMOS: discrepancia entre 9,8 W/mm² (Blueprint OCR desde pptx) y 0,8 W/mm² (Blueprint PDF, Ultra-Low Power, Manual). No se elige cifra: PENDIENTE DE VERIFICACIÓN.
+
 <!-- Fuente: Hybrid Non-Binary Blueprint.pdf (copia de Drive en Downloads). Texto por OCR tesseract spa+eng; puede contener errores de reconocimiento. -->
 
 ## p-01
@@ -15,7 +19,7 @@ TARGET HORIZON:
 CLASSIFICATION:
 
 Feasibility Study € RED Master Plan
-1.0 (Definitive for Implementation)
+1.0 (E1 borrador de diseño [corregido: original "Definitive for Implementation"])
 
 2026 - 2040
 
@@ -42,7 +46,7 @@ and signal robustness simultaneously.
 
 BS —
 
-Thesis B (Validated)
+Thesis B (E1 propuesta, no validada) [corregido: original "Validated"]
 
 Localized Hybrid Acceleration
 
@@ -207,7 +211,7 @@ fm Gemini Notebook
 ## p-09
 Operational Flow:
 
-CLASSIFIED UE6 ENGINEERING BLUEPRINT
+E1 DOCUMENTO DE DISEÑO [corregido: original "CLASSIFIED"] UE6 ENGINEERING BLUEPRINT
 
 GEMM Lifecycle in a Hybrid System
 
@@ -248,7 +252,7 @@ and OS handoff.
 
 
 ## p-10
-AS ee CLASSIFIED UEB ENGINEERING BLUEPRINT ——— a
+AS ee E1 DOCUMENTO DE DISEÑO [corregido: original "CLASSIFIED"] UEB ENGINEERING BLUEPRINT ——— a
 
 Cleanroom Fabrication Protocol
 
@@ -261,7 +265,7 @@ for Pt/Ti electrodes. and modulators.
 
 
 ## p-11
-CLASSIFIED UEB ENGINEERING BLUEPRINT
+E1 DOCUMENTO DE DISEÑO [corregido: original "CLASSIFIED"] UEB ENGINEERING BLUEPRINT
 
 Projected System Objectives vs. CMOS Baseline
 
@@ -283,7 +287,7 @@ hybrid system targets a 60% reduction in energy strictly for dense matrix worklo
 fm Gemini Notebook
 
 ## p-12
-CLASSIFIED UEB ENGINEERING BLUEPRINT
+E1 DOCUMENTO DE DISEÑO [corregido: original "CLASSIFIED"] UEB ENGINEERING BLUEPRINT
 
 Falsifiability 6 Diagnostic Risk Matrix
 
@@ -319,7 +323,7 @@ thresholds.
 
 
 ## p-13
-CLASSIFIED UEB ENGINEERING BLUEPRINT
+E1 DOCUMENTO DE DISEÑO [corregido: original "CLASSIFIED"] UEB ENGINEERING BLUEPRINT
 
 The 250M Euro RSD Master Plan (14-Year Horizon)
 

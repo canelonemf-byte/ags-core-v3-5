@@ -2,7 +2,7 @@
  "proyecto": "OMNISCIENCE",
  "fuente": "Google Drive carpeta 1DxQUgo0_XeoX73L1YnG-Ffcn81cn8jF8",
  "metodo_extraccion": "read_file Drive (texto con pérdidas; DownloadFile no soporta Drive)",
- "fecha_revision": "2026-10-20",
+ "fecha_revision": "2026-10-21",
  "documentos": [
   {
    "archivo": "OMNISCIENCE_PUBLICACION_v1.0.0.pdf",
@@ -147,7 +147,8 @@
   "3 archivos .trashed- (png, 2 mp4)"
  ],
  "pendiente": [
-  "confirmar en Drive la duplicación de 'OMNISCIENCE Architecture (1).pptx' (ignorada, mismo tamaño)"
+  "confirmar en Drive la duplicación de 'OMNISCIENCE Architecture (1).pptx' (ignorada, mismo tamaño)",
+  "verificar referencias marcadas PENDIENTE DE VERIFICACIÓN"
  ],
  "decisiones": [
   {
@@ -184,10 +185,27 @@
     "texto por OCR (pptx sin texto nativo)"
    ],
    "no_aprobado": []
+  },
+  {
+   "fecha": "2026-10-21",
+   "aprobado_por": "Lázaro López Paz",
+   "alcance": "solo copias en el ordenador; Drive sin tocar",
+   "cambios": [
+    "etiquetas exageradas sustituidas por nivel E real con nota [corregido: original ...]",
+    "nota de herramienta Google Gemini NotebookLM en los .ocr.md (términos de Google PENDIENTE DE VERIFICACIÓN)",
+    "escala N0–N6→E0–E6 1:1; N6+N7 del Discovery Engine agrupados en E6 (indicado)",
+    "nota: Unreal Engine es marca de Epic Games",
+    "CMOS 9,8 vs 0,8 W/mm²: discrepancia anotada, PENDIENTE DE VERIFICACIÓN",
+    "Diana 2019 y Bormashenko 2020: PENDIENTE DE VERIFICACIÓN"
+   ]
   }
  ],
  "conflictos": [
-  "escala N0–N7 vs E0–E6",
-  "Ab Initio/DFT en láminas vs 'no DFT' en publicación"
+  "Ab Initio/DFT en láminas vs 'no DFT' en publicación",
+  "términos de uso de Google NotebookLM"
+ ],
+ "conflictos_resueltos": [
+  "escala N0–N7 vs E0–E6 (convertida, correspondencia indicada)",
+  "'Conocimiento Consolidado' y 'reproducibilidad absoluta' (corregidos)"
  ]
 }

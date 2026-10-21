@@ -1,3 +1,7 @@
+> Nota de herramienta: Diapositivas generadas con Google Gemini NotebookLM; texto y contenido de Lázaro López Paz con asistencia de IA. Términos de uso de Google: PENDIENTE DE VERIFICACIÓN.
+> Nota de marca: Unreal Engine es marca de Epic Games. ("UE6"/"UEB"/"UEG" son lecturas OCR; versión real PENDIENTE DE VERIFICACIÓN.)
+> CMOS: discrepancia entre 9,8 W/mm² (Blueprint OCR desde pptx) y 0,8 W/mm² (Blueprint PDF, Ultra-Low Power, Manual). No se elige cifra: PENDIENTE DE VERIFICACIÓN.
+
 <!-- Fuente: Hybrid Non-Binary Blueprint.pptx (copia de Drive en Downloads). Texto por OCR tesseract spa+eng; puede contener errores de reconocimiento. -->
 
 ## s01
@@ -9,7 +13,7 @@ A Blueprint for Ultra-Low Power
 Heterogeneous Architectures
 
 DOCUMENT REF: Feasibility Study & R&D Master Plan
-VERSION: 1.0 (Definitive for Implementation)
+VERSION: 1.0 (E1 borrador de diseño [corregido: original "Definitive for Implementation"])
 
 TARGET HORIZON: 2026 - 2040
 
@@ -21,7 +25,7 @@ CLASSIFICATION: Technical Baseline
 Moving Past the Hype:
 The Three Theses of Feasibility
 
-Thesis A (Rejected) Thesis B (Validated) Thesis C (The Roadmap)
+Thesis A (Rejected) Thesis B (E1 propuesta, no validada) [corregido: original "Validated"] Thesis C (The Roadmap)
 Universal Non-Binary Replacement Localized Hybrid Acceleration | Full-System Integration
 
 Physically and economically implausible. Highly viable. Using non-binary representatio | Requires an 8-14 year industrial R&D
@@ -167,7 +171,7 @@ code, and general-purpose routing. vector-matrix multiplications natively in ana
 ## s09
 Operational Flow:
 
-CLASSIFIED UEG ENGINEERING BLUEPRINT
+E1 DOCUMENTO DE DISEÑO [corregido: original "CLASSIFIED"] UEG ENGINEERING BLUEPRINT
 
 tt!
 
@@ -214,7 +218,7 @@ and OS handoff.
 
 
 ## s10
-CLASSIFIED UEB ENGINEERING BLUEPRINT
+E1 DOCUMENTO DE DISEÑO [corregido: original "CLASSIFIED"] UEB ENGINEERING BLUEPRINT
 
 eZ,
 
@@ -256,7 +260,7 @@ integration).
 
 
 ## s11
-CLASSIFIED UEB ENGINEERING BLUEPRINT
+E1 DOCUMENTO DE DISEÑO [corregido: original "CLASSIFIED"] UEB ENGINEERING BLUEPRINT
 
 Projected System Objectives vs. CMOS Baseline
 
@@ -277,7 +281,7 @@ hybrid system targets a 60% reduction in energy strictly for dense matrix worklo
 (Gemini Notebook
 
 ## s12
-= = Ñ CLASSIFIED UEB ENGINEERING BLUEPRINT
+= = Ñ E1 DOCUMENTO DE DISEÑO [corregido: original "CLASSIFIED"] UEB ENGINEERING BLUEPRINT
 
 Falsifiability £ & > Diagnostic Risk Matrix
 
@@ -303,7 +307,7 @@ thresholds.
 Gemini Notebook
 
 ## s13
-CLASSIFIED UEB ENGINEERING BLUEPRINT
+E1 DOCUMENTO DE DISEÑO [corregido: original "CLASSIFIED"] UEB ENGINEERING BLUEPRINT
 
 The 250M Euro RSD Master Plan (14-Year Horizon)
 

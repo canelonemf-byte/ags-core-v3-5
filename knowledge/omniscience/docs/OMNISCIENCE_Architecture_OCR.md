@@ -1,3 +1,5 @@
+> Escala: niveles N originales convertidos a E0–E6 (LLP). N0–N6 → E0–E6 uno a uno. Donde el original tiene N7, N6 y N7 se agrupan en E6 (correspondencia no 1:1, indicada explícitamente).
+
 > **Salida de OCR** (tesseract 5.5.0, spa+eng, 300 dpi) del PDF «OMNISCIENCE Architecture.pdf» (Drive id 1TtM3as8l9-RMLuNyJNPsHhtY9k5KDPv9, 20 páginas, presentación escaneada sin capa de texto). **Puede contener errores de OCR**; los textos dentro de diagramas salen fragmentados. Limpieza mínima: solo se han quitado líneas de ruido y la marca de agua de la herramienta con la que se generaron las diapositivas (aparece en 15 páginas). No se ha reescrito ni completado nada. Contenido PENDIENTE DE VERIFICACIÓN frente al original.
 
 # OMNISCIENCE Architecture (OCR)
@@ -41,25 +43,25 @@ o matemática.
 
 La Escalera de Evidencia Científica
 
-N6 (Conocimiento consolidado):
+E6 (Conocimiento consolidado):
 Evidencia convergente con límites explícitos.
 
-\ N5 (Réplica): Confirmación independiente. —
+\ E5 (Réplica): Confirmación independiente. —
 
-N4 (Observación): Medición fi.
+E4 (Observación): Medición fi.
 experimental con incertidumbre. at |
 
-N3 (Simulación verificada):
+E3 (Simulación verificada):
 Reproducible bajo condiciones
 documentadas. (Límite actual C-VIB-001).
 
-N2 (Predicción): Resultado - _
+E2 (Predicción): Resultado - _
 derivado de un algoritmo.
 
-"\N1 (Hipótesis): Propuesta <=
+"\E1 (Hipótesis): Propuesta <=
 Sa explicita y falsable. A
 
-NO (Idea): Concepto N
+E0 (Idea): Concepto N
 sin evaluación formal:
 
 ## Página 4

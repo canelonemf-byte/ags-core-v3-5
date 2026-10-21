@@ -2,7 +2,7 @@
  "proyecto": "ORDENADOR HÍBRIDO NO BINARIO",
  "fuente": "Google Drive carpeta 1-me3Bhikfvlnpg3_uXloqTW_cV1rhtu5",
  "metodo_extraccion": "read_file Drive (texto con pérdidas; DownloadFile no soporta Drive)",
- "fecha_revision": "2026-10-20",
+ "fecha_revision": "2026-10-21",
  "documentos": [
   {
    "archivo": "documento_maestro_proyecto.md",
@@ -272,7 +272,7 @@
   "2 png"
  ],
  "pendiente": [
-  "corregir autoría/etiquetas de las láminas requiere aprobación"
+  "verificar referencias marcadas PENDIENTE DE VERIFICACIÓN"
  ],
  "decisiones": [
   {
@@ -309,11 +309,28 @@
     "texto por OCR (pptx sin texto nativo)"
    ],
    "no_aprobado": []
+  },
+  {
+   "fecha": "2026-10-21",
+   "aprobado_por": "Lázaro López Paz",
+   "alcance": "solo copias en el ordenador; Drive sin tocar",
+   "cambios": [
+    "etiquetas exageradas sustituidas por nivel E real con nota [corregido: original ...]",
+    "nota de herramienta Google Gemini NotebookLM en los .ocr.md (términos de Google PENDIENTE DE VERIFICACIÓN)",
+    "escala N0–N6→E0–E6 1:1; N6+N7 del Discovery Engine agrupados en E6 (indicado)",
+    "nota: Unreal Engine es marca de Epic Games",
+    "CMOS 9,8 vs 0,8 W/mm²: discrepancia anotada, PENDIENTE DE VERIFICACIÓN",
+    "Diana 2019 y Bormashenko 2020: PENDIENTE DE VERIFICACIÓN"
+   ]
   }
  ],
  "conflictos": [
-  "CMOS baseline 9.8 W/mm² (Blueprint) vs 0.8 W/mm² (Ultra-Low Power)",
-  "'Definitive for Implementation' en Blueprint vs 'Borrador conceptual E0–E1' aprobado para el Manual",
-  "'Thesis B (Validated)' y 'supremacía térmica demostrada' vs aviso 'no constituye evidencia' del documento maestro"
+  "CMOS 9,8 vs 0,8 W/mm² (anotado, sin elegir cifra)",
+  "Diana 2019 vs Bormashenko 2020",
+  "términos de uso de Google NotebookLM"
+ ],
+ "conflictos_resueltos": [
+  "'Definitive for Implementation', 'CLASSIFIED', 'Validated', 'supremacía térmica demostrada' (corregidos)",
+  "autoría/etiquetas de las láminas (aprobado y aplicado)"
  ]
 }

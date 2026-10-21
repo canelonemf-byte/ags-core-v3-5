@@ -1,3 +1,5 @@
+> Nota de herramienta: Diapositivas generadas con Google Gemini NotebookLM; texto y contenido de Lázaro López Paz con asistencia de IA. Términos de uso de Google: PENDIENTE DE VERIFICACIÓN.
+
 <!-- Fuente: Ultra-Low Power Hybrid Architectures.pdf (copia de Drive en Downloads). Texto por OCR tesseract spa+eng; puede contener errores de reconocimiento. -->
 
 ## p-01
@@ -375,6 +377,6 @@ impide que un ingeniero de software estándar
 despliegue un modelo real.
 
 La meta es el rigor extremo, la reproducibilidad
-absoluta y la supremacía térmica demostrada.
+trazable (objetivo E1) [corregido: original "reproducibilidad absoluta"] y la ventaja térmica estimada E1, no demostrada [corregido: original "supremacía térmica demostrada"].
 Nada de magia, solo ingeniería profunda.
 

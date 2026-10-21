@@ -230,7 +230,7 @@ def build_front() -> int:
     mot = [["Motor", "Estado", "Contrato"]]
     engines = [
         ("Universal Matter", "MVP activo", "Eform = Etotal − Σ ni μi. MLIP MACE, fallback DFT."),
-        ("Vibrational & Phonon", "C-VIB-001 N3", "D(q) eν = ων² eν. Phonopy en el orquestador."),
+        ("Vibrational & Phonon", "C-VIB-001 E3", "D(q) eν = ων² eν. Phonopy en el orquestador."),
         ("Quantum Dynamics", "Contrato J(ω)", "ρ̇ = −i/ℏ [H,ρ] + Σ Dk(ρ)."),
         ("Quantum Sensing", "Especificado", "η ∝ Δν / (C √R)."),
         ("Metamaterial", "Oráculo 1D", "x* = arg min L[F(x), y]."),

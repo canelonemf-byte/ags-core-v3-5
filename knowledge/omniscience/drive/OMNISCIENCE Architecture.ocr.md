@@ -1,3 +1,6 @@
+> Nota de herramienta: Diapositivas generadas con Google Gemini NotebookLM; texto y contenido de Lázaro López Paz con asistencia de IA. Términos de uso de Google: PENDIENTE DE VERIFICACIÓN.
+> Escala: niveles N originales convertidos a E0–E6 (LLP). N0–N6 → E0–E6 uno a uno. Donde el original tiene N7, N6 y N7 se agrupan en E6 (correspondencia no 1:1, indicada explícitamente).
+
 <!-- Fuente: OMNISCIENCE Architecture.pptx (copia de Drive en Downloads). Texto por OCR tesseract spa+eng; puede contener errores de reconocimiento. -->
 
 ## s01
@@ -34,26 +37,26 @@ EA Z
 ## s03
 La Escalera de Evidencia Científica
 
-N6 (Conocimiento consolidado):
+E6 (Conocimiento consolidado):
 Evidencia convergente con límites explícitos.
 
-Y N5 (Réplica): Confirmación independiente. —
+Y E5 (Réplica): Confirmación independiente. —
 
-N4 (Observación): Medición _
+E4 (Observación): Medición _
 experimental con incertidumbre.
 
-N3 (Simulación verificada):
+E3 (Simulación verificada):
 Reproducible bajo condiciones
 documentadas. (Límite actual C-VIB-001).
 
 ~
-N2 (Predicción): Resultado _—_
+E2 (Predicción): Resultado _—_
 derivado de un algoritmo.
 
 / iy AA ™~ A
-N1 (Hipótesis): Propuesta _ ¿A
+E1 (Hipótesis): Propuesta _ ¿A
 << cenplicia y falsable. E ~
-NO (Idea): Concepto Das
+E0 (Idea): Concepto Das
 
 AIN
 
@@ -109,7 +112,7 @@ CREATE TABLE prov.
 (activity_id,
 status);
 
-Empaquetado final mediante RO-Crate, garantizando reproducibilidad absoluta del artefacto científico.
+Empaquetado final mediante RO-Crate, garantizando reproducibilidad trazable (objetivo E1) [corregido: original "reproducibilidad absoluta"] del artefacto científico.
 
 
 ## s07
@@ -381,7 +384,7 @@ optimización matemática. plasma.
 OM emcemini Notebook
 
 ## s20
-Conocimiento Consolidado
+Estado actual: E3 simulación (C-VIB-001), no conocimiento consolidado [corregido: original "Conocimiento Consolidado"]
 
 E Arquitectura: Federada, trazable
 | (PROV-0), adversarial (MLIP vs DFT).

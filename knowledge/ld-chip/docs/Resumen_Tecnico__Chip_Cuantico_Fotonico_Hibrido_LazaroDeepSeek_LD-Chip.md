@@ -100,7 +100,7 @@ puramente pasivo con estados de luz no clásica. La explotación de no linealida
 inducidas en absorbedores saturables a escalas criogénicas permite realizar operaciones de 
 IA de alta complejidad sin la penalización térmica de la electrónica de silicio 
 convencional.En conclusión, esta tecnología no solo rompe el techo de eficiencia energética 
-actual, sino que abre una vía revolucionaria hacia el escalado de redes neuronales masivas 
+actual, sino que abre una vía revolucionaria hacia el escalado de redes neuronales masivas [revisión LLP 2026-10-21: afirmación no verificada, PENDIENTE DE VERIFICACIÓN]
 en el dominio cuántico. El impacto estratégico de operar con un consumo de potencia 
 
 virtualmente nulo posiciona al LD-Chip como la infraestructura base para la próxima 

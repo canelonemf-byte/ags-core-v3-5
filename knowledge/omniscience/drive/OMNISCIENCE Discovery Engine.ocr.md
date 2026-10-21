@@ -1,3 +1,7 @@
+> Nota de herramienta: Diapositivas generadas con Google Gemini NotebookLM; texto y contenido de Lázaro López Paz con asistencia de IA. Términos de uso de Google: PENDIENTE DE VERIFICACIÓN.
+> Escala: niveles N originales convertidos a E0–E6 (LLP). N0–N6 → E0–E6 uno a uno. Donde el original tiene N7, N6 y N7 se agrupan en E6 (correspondencia no 1:1, indicada explícitamente).
+> Nota de marca: Unreal Engine es marca de Epic Games. ("UE6"/"UEB"/"UEG" son lecturas OCR; versión real PENDIENTE DE VERIFICACIÓN.)
+
 <!-- Fuente: OMNISCIENCE Discovery Engine.pptx (copia de Drive en Downloads). Texto por OCR tesseract spa+eng; puede contener errores de reconocimiento. -->
 
 ## s01
@@ -49,24 +53,24 @@ o NO Idea:
 Concept without formal evaluation.
 A
 
-> N1 Hypothesis:
+> E1 Hypothesis:
 Explicit, falsifiable proposal.
 
-o N2 Prediction:
+o E2 Prediction:
 Model/algorithmic output. |e
 
-o N3 Verified Simulation: i y
+o E3 Verified Simulation: i y
 Reproducible under defined conditions.” —
 
 — CWA ©
-o N4 Experimental Observation: —
+o E4 Experimental Observation: —
 - Documented physical measurement.
 
-o N5 Independent Replica:
+o E5 Independent Replica:
 Confirmed via alternate methodological route.
 
-— N6 Convergent Evidence & => y
-N7 Consolidated Knowledge:
+— E6 Convergent Evidence & => y
+E6 (N7 original) Consolidated Knowledge:
 Replicated, robust truth with explicit limits.
 
 E

@@ -168,7 +168,7 @@ def make():
         topMargin=18 * mm,
         bottomMargin=16 * mm,
         title="Análisis científico de vibraciones",
-        author="Grok (xAI) para Lázaro López Paz",
+        author="Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA",
         subject="Simulaciones, modos, fonones, espectroscopía y metamateriales",
     )
     story = []
