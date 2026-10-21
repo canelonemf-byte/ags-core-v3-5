@@ -1,0 +1,6 @@
+SELFTEST con DATOS SINTÉTICOS (no son resultados de modelos)
+{"ic95_b7_c0_n66": [0.0252, 0.1807], "referencia_oraculo": [0.025, 0.181]}
+{"sintetico":true,"comparacion":{"sintetico_A":{"n":66,"b_lora_si_base_no":20,"c_base_si_lora_no":0,"p_base":0.45454545454545453,"p_lora":0.7575757575757576,"diferencia_pts":30.3,"ic95_diferencia":[0.182,0.4062],"criterio_10pts_puntual":true,"p":2e-06,"p_ajustado_holm":4e-06,"umbral":0.025,"rechaza_h0":true,"h1_enmienda":true},"sintetico_B":{"n":66,"b_lora_si_base_no":0,"c_base_si_lora_no":0,"p_base":0.4090909090909091,"p_lora":0.4090909090909091,"diferencia_pts":0.0,"ic95_diferencia":[-0.0288,0.0288],"criterio_10pts_puntual":false,"p":1.0,"p_ajustado_holm":1.0,"umbral":0.05,"rechaza_h0":false,"h1_enmienda":false}}}
+{"sintetico":true,"semillas":{"n_semillas":3,"media":0.61,"desv_tipica":0.03,"min":0.58,"max":0.64,"semillas":[42,43,44]}}
+{"potencia_n66_disc0.1_alfa0.05":0.657,"referencia_oraculo":0.657}
+SELFTEST OK

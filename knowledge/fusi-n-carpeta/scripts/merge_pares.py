@@ -121,7 +121,12 @@ def main():
             src_split.setdefault(x["source"], sp)
     for x in load("simulados"):  # dedup contra simulados ya apartados
         ids.add(x["id"]); hashes.add(nhash(x["instruction"], x["response"]))
-    index = [(x["id"], sp, shingles(x["instruction"], x["response"])) for sp, rows in data.items() for x in rows]
+    rf = DATA / "test_ampliado_reserva.json"  # enmienda ORÁCULO 2026-10-21: documentos reservados para test_ampliado
+    reservados = set(json.loads(rf.read_text())["datos_clave"]["documentos_reservados"]) if rf.exists() else set()
+    for x in load("test_ampliado"):
+        ids.add(x["id"]); hashes.add(nhash(x["instruction"], x["response"])); src_split.setdefault(x["source"], "test")
+    index = [(x["id"], "test_ampliado", shingles(x["instruction"], x["response"])) for x in load("test_ampliado")]
+    index += [(x["id"], sp, shingles(x["instruction"], x["response"])) for sp, rows in data.items() for x in rows]
     index += [(x["id"], "simulados", shingles(x["instruction"], x["response"])) for x in load("simulados")]
     orig = {}
     files = sorted((ROOT / "knowledge").glob("*/lora_pares.jsonl"))
@@ -140,6 +145,9 @@ def main():
             except Exception: rech.append({**ref, "motivo": "json_invalido"}); o["rechazados_esquema"] += 1; continue
             why = validate(r, proy)
             if why: o["rechazados_esquema"] += 1; rech.append({**ref, "motivo": why, "id_origen": str(r.get("id", "")) if isinstance(r, dict) else ""}); continue
+            if r["fuente"].split("#", 1)[0] in reservados:
+                o["rechazados_esquema"] += 1
+                rech.append({**ref, "motivo": "fuente_reservada_test_ampliado", "id_origen": str(r.get("id", ""))}); continue
             h = nhash(r["instruction"], r["response"])
             pid = hashlib.sha256((r["fuente"] + h).encode()).hexdigest()[:16]
             if pid in ids or h in hashes: dup += 1; o["dup_exacto"] += 1; continue
@@ -199,6 +207,12 @@ def main():
                         "por_split_origen": {s: sum(1 for x in sims if x.get("split_origen") == s) for s in ("train", "val")},
                         "decision": "excluir simulados de train/val/test (Lázaro, 2026-10-21)"}
     man["archivos_sha256"] = {f.name: hashlib.sha256(f.read_bytes()).hexdigest() for f in sorted(DATA.glob("*.jsonl"))}
+    for extra in ("test_prerregistro.json", "test_ampliado_reserva.json", "test_ampliado_prerregistro.json"):
+        if (DATA / extra).exists(): man["archivos_sha256"][extra] = hashlib.sha256((DATA / extra).read_bytes()).hexdigest()
+    sr = load("sin_respuesta")
+    man["sin_respuesta"] = {"version": "v2" if any(x.get("version") == "v2" for x in sr) else "v1", "n": len(sr),
+                            "por_estrato": {k: sum(1 for x in sr if x.get("estrato", "global") == k) for k in sorted({x.get("estrato", "global") for x in sr})},
+                            "v1_sha256": "64f6863b90be2a24d1a36299fd7bf9ac8d89e8956bbe316701371b473825365e"}
     man["total_pares"] = sum(len(v) for v in data.values())
     man["por_fuente"] = dict(sorted(por_fuente.items()))
     man["fecha"] = now

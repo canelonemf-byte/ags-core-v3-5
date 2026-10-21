@@ -6,8 +6,11 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, get_linear_schedul
 from peft import LoraConfig, get_peft_model
 sys.path.insert(0, str(Path(__file__).parent)); from common import prompt
 H = Path(__file__).resolve().parents[1]
-ap = argparse.ArgumentParser(); ap.add_argument("--profile", default="smoke"); a = ap.parse_args()
-cfg_all = yaml.safe_load(open(H / "configs/lora.yaml")); c = cfg_all[a.profile]; seed = cfg_all["seed"]
+ap = argparse.ArgumentParser(); ap.add_argument("--profile", default="smoke")
+ap.add_argument("--seed", type=int, default=None, help="enmienda ORÁCULO 2026-10-21: una ejecución por semilla de c['seeds']")
+a = ap.parse_args()
+cfg_all = yaml.safe_load(open(H / "configs/lora.yaml")); c = cfg_all[a.profile]; seed = cfg_all["seed"] if a.seed is None else a.seed
+TAG = a.profile if a.seed is None else f"{a.profile}_s{a.seed}"
 random.seed(seed); torch.manual_seed(seed); torch.set_num_threads(int(c.get("num_threads", __import__("os").environ.get("NUM_THREADS", "2"))))
 tok = AutoTokenizer.from_pretrained(c["base_model"])
 _kw = {"dtype": getattr(torch, c.get("dtype", "float32"))}  # 2026-10-21: perfiles 7B bf16/QLoRA
@@ -61,9 +64,9 @@ for step in range(steps):
     log.append(round(acc, 4)); print(f"step {step+1}/{steps} loss {acc:.4f} {time.time()-t0:.0f}s", flush=True)
     if vdata and c.get("val_every") and ((step + 1) % c["val_every"] == 0 or step + 1 == steps):
         v = val_loss(); vlog.append({"step": step + 1, "val_loss": v}); print(f"val step {step+1} {v}", flush=True)
-out = H / f"adapters/{a.profile}"; model.save_pretrained(out)
+out = H / f"adapters/{TAG}"; model.save_pretrained(out)
 json.dump({"profile": a.profile, "base_model": c["base_model"], "steps": steps, "ejemplos_vistos": i,
            "train_pares": len(data), "loss_inicial": log[0], "loss_final": log[-1], "loss": log, "val_loss": vlog, "grad_accum": GA, "max_len": c["max_len"],
            "segundos": round(time.time() - t0), "dispositivo": "cpu", "seed": seed,
            "nota": "smoke test en modelo pequeño, no es el objetivo 7B" if a.profile.startswith("smoke") else ""},
-          open(H / f"results/train_{a.profile}.json", "w"), indent=1)
+          open(H / f"results/train_{TAG}.json", "w"), indent=1)

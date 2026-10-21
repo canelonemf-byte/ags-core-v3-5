@@ -27,6 +27,7 @@ smoke_qwen05b:  # no ejecutado: RAM/CPU insuficiente en box compartido
   eval_max_samples: 12
   max_new_tokens: 256
 target_7b:
+  seeds: [42, 43, 44]   # enmienda ORÁCULO 2026-10-21: >=3 semillas LoRA; informar media y desviación (scripts/estadistica.py)
   base_model: Qwen/Qwen2.5-7B              # alternativa: mistralai/Mistral-7B-v0.3
   r: 16
   alpha: 32
@@ -62,6 +63,7 @@ smoke_lowmem:  # 2026-10-21: perfil tras OOM de 'smoke' en paso 4/60 (run.log). 
 # Hiperparámetros comunes = target_7b (r16, alpha32, dropout 0.05, 7 proyecciones, lr 1e-4, 3 épocas,
 # batch efectivo 4, max_len 1024, seed 42). VRAM/tiempo: PENDIENTE DE VERIFICACIÓN.
 target_7b_qwen_qlora4:
+  seeds: [42, 43, 44]   # enmienda ORÁCULO 2026-10-21: >=3 semillas LoRA; informar media y desviación (scripts/estadistica.py)
   base_model: Qwen/Qwen2.5-7B
   quantization: {load_in_4bit: true, bnb_4bit_quant_type: nf4, bnb_4bit_use_double_quant: true, bnb_4bit_compute_dtype: bfloat16}
   r: 16
@@ -79,6 +81,7 @@ target_7b_qwen_qlora4:
   max_new_tokens: 400
   vram_estimada_gb: "12-16 (PENDIENTE DE VERIFICACIÓN)"
 target_7b_mistral_qlora4:
+  seeds: [42, 43, 44]   # enmienda ORÁCULO 2026-10-21: >=3 semillas LoRA; informar media y desviación (scripts/estadistica.py)
   base_model: mistralai/Mistral-7B-v0.3
   quantization: {load_in_4bit: true, bnb_4bit_quant_type: nf4, bnb_4bit_use_double_quant: true, bnb_4bit_compute_dtype: bfloat16}
   r: 16
@@ -96,6 +99,7 @@ target_7b_mistral_qlora4:
   max_new_tokens: 400
   vram_estimada_gb: "12-16 (PENDIENTE DE VERIFICACIÓN)"
 target_7b_qwen_bf16:
+  seeds: [42, 43, 44]   # enmienda ORÁCULO 2026-10-21: >=3 semillas LoRA; informar media y desviación (scripts/estadistica.py)
   base_model: Qwen/Qwen2.5-7B
   dtype: bfloat16
   r: 16
@@ -113,6 +117,7 @@ target_7b_qwen_bf16:
   max_new_tokens: 400
   vram_estimada_gb: "~24 (PENDIENTE DE VERIFICACIÓN)"
 target_7b_mistral_bf16:
+  seeds: [42, 43, 44]   # enmienda ORÁCULO 2026-10-21: >=3 semillas LoRA; informar media y desviación (scripts/estadistica.py)
   base_model: mistralai/Mistral-7B-v0.3
   dtype: bfloat16
   r: 16
