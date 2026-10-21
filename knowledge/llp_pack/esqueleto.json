@@ -1,0 +1,1 @@
+{"schema":"llp.proyecto.v1.1","root":"proyecto","keys":"snake_case","campos":["meta","objetivo","datos_clave","tareas","riesgos","decisiones","proximo_paso","fuentes","evidencia_nivel","alias","drive_canonicos","drive_duplicados"],"evidencia":["E0","E1","E2","E3","E4","E5","E6"]}
