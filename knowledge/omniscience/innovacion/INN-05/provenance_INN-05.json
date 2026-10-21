@@ -1,0 +1,67 @@
+{
+ "campana": "INN-05",
+ "python": "3.13.5",
+ "plataforma": "Linux-6.12.94+-x86_64-with-glibc2.41",
+ "versiones": {
+  "torch": "2.14.1+cpu",
+  "ase": "3.29.0",
+  "phonopy": "4.8.3",
+  "mace-torch": "0.3.16",
+  "spglib": "2.8.0",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "matplotlib": "3.11.2"
+ },
+ "checkpoint": {
+  "nombre": "MACE-MP-0 medium 2023-12-03",
+  "sha256": "01bfe22100139f424713cf921144e5509cbe353d67aa9fa1be9c6e1e0ed35845"
+ },
+ "autoria": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de inteligencia artificial",
+ "orcid": "0000-0001-8601-1963",
+ "dispositivo": "cpu",
+ "prereg": {
+  "ruta": "prereg_INN-05_dos_overlap.FROZEN.md",
+  "sha256": "4d8f3ba147a2f501b42fc1ca4b7820a78bef8941db983c62cb767a601f05e4d2",
+  "congelado": "<=2026-10-18 23:15:23 UTC+2 (sistema de archivos); enmienda declara 22:55"
+ },
+ "ejecucion_principal": "2026-10-18 23:34:51-23:36:34 UTC+2",
+ "malla": "20x20x20",
+ "sigma_thz": 0.1,
+ "supercelda": "2x2x2",
+ "materiales": [
+  "Al",
+  "Co",
+  "Ru",
+  "TiN",
+  "Al2O3",
+  "Pb (control)",
+  "C (control, FC de C-MAT-001)"
+ ],
+ "veredicto": "NO SUPERADA (no evaluable: n=4<8; sin DOS DFT)",
+ "desviaciones": [
+  "D1 procedimiento: ejecucion previa anterior a la restauracion 23:15:23 (no situable respecto a la congelacion); la confirmatoria 23:34 la reproduce con diferencias <=1e-9; veredictos independientes de los valores"
+ ],
+ "referencias_doi": [
+  "10.1103/PhysRevB.102.205304",
+  "10.1103/PhysRevB.67.054302"
+ ],
+ "archivos": {
+  "code/inn05_eval.py": "aee7f3451e9fe7fd4f6c7a8d968963d97af6d637d8a7557a1c23f5dc4972886c",
+  "code/inn05_run.py": "9a57992fd49906bc9c0e36c28aa55c6ba41cf2c23c4609d51f1714d363ef2171",
+  "figs/inn05_dos_y_tbc.png": "3e9dfdeddc4b82f1086d5d3fd72be4bb83bedb4c073b747c12a720f149a694a3",
+  "informe_resultados.md": "181b8227f70fedeb2d4d2f8a3f729c4be9a3cdc23cc06d1901326fef8e2c55aa",
+  "out/Al2O3_phonopy.yaml": "22cacf141017aca011cb3e5d88b6db864b0c9ba609bca2e9396a7783573f7a2c",
+  "out/Al_phonopy.yaml": "7d7306d09adf5cf590a721025d13db0e1a7d864bca2360687a246e43b65ca54c",
+  "out/Co_phonopy.yaml": "5a0ad9b7ab95c0810dd10511e74bbbf61fd5030fc9e8d20bbd321551563c188e",
+  "out/Pb_phonopy.yaml": "93cfa67b7ac625830b4bf1ff12eb2c31e9ebf749319e8952fc2fc0f35beb22cd",
+  "out/Ru_phonopy.yaml": "9bff21ad096509c3fb84b523ab860933a6b183d68539bd4dc48ad705cb7baeff",
+  "out/TiN_phonopy.yaml": "ea115bb07317296b3ac040cd36a5f203becef4a782614a09c00c6c2938d26401",
+  "out/dos_grid.npy": "82ad6221aa069f2013e17607aa94c1035fbc57f073aaf23d655396a39c287f32",
+  "out/inn05_raw.json": "8504670d5bdb2a4b566d387bbe380295ebf425eb5f29b2a14005421ccf9f1976",
+  "out/run.log": "1042bed15ef6860ec499c729523ab0a6147c762581634298a9046e707765b691",
+  "prereg_INN-05_dos_overlap.FROZEN.md": "4d8f3ba147a2f501b42fc1ca4b7820a78bef8941db983c62cb767a601f05e4d2",
+  "prereg_INN-05_dos_overlap.md": "4d8f3ba147a2f501b42fc1ca4b7820a78bef8941db983c62cb767a601f05e4d2",
+  "prereg_INN-05_dos_overlap.sha256": "ac03f8f2e60109c1a833bc9fd8e76f3a4bdc5ea849a8fe11bad5cda435af8ca2",
+  "results.json": "84adf37821d828713e37042127d153fd078b1aff3b390f598768a595fbbf882f"
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "sha256": {
+  "code/cmat005_art_mlip.py": "96c571f16bae39a558208ea70d1388cbf7e6a191e0c97ba9c9f92fc76da2dbbf",
+  "code/cmat005_compare.py": "0232c7d16d883a86847661d05eb86b9e612785b766269bd7683394e3100c5661",
+  "code/cmat005_dft.py": "1b54930627588a89caa014bc5bfe8f36013a3fdc9e0f124fb1c17e5d85580b4a",
+  "code/cmat005_eval.py": "3a87d7a748976ec05ad590fe6dc2de7f6b5b8ee50057b97fcecb6b44a61c2646",
+  "code/cmat005_run.py": "e87b4adb53c9d793d56da1d768037bd6ccb08ba2d90905e9a8a892b1d03f20e5",
+  "code/run_all_dft.sh": "b6c2ad9758406aa5febde39cbb40b9dba1334d4d207bae68f2d392f61fdcaab7",
+  "code/run_all_mlip.sh": "4ddcf14ddecaf55174f3f6abccbda2ed88aaf9ebf4db0d70e187a581846eb347",
+  "prereg_C-MAT-005.md": "b6a80ede2238d5666b9e68773ef9600f8f5bdebf42b468fb8c1d315542fcc39e",
+  "refs/cif/cod_2100925.cif": "d0634ccbbf171ca5f1fb35e21cab119e4a333caf0a941bc870f5770c59327d28",
+  "refs/cif/cod_9007377.cif": "7a0428dd17754876fdab15ccfe0168b695779a743428e1120efaa77ef0dacf64",
+  "refs/cif/cod_9007531.cif": "8e25e18731dc68b97eb043d8c35d1ef84ab8b850b9356179c7d69844cee61554",
+  "refs/cif/cod_9013321.cif": "d7fbac5b43970cf0a0cda4c9bfc6564221af1b5d1efbb397b32e151e2bc267b8",
+  "refs/cif/cod_9016714.cif": "d5bbf9afc7add141169cec6a8ade0910c6453e1d3cf75599c6a0e7885b8498c3",
+  "refs/cif/cod_MgTiO3.cif": "96f72c3a4981eec1f0aaa1d5599f5982cee233f98502c5f09c9e7d24ad28d088",
+  "refs/cif/cod_ZrSiO4.cif": "082c093d4010d89d7348e4c3bf499cf3e6094f44cda31e0cce141781efaadb57",
+  "refs/refs_termo_C-MAT-005.json": "1aae3ef071feba711c7bc198a07d71cecdccbee398823af9c496be273e46c877",
+  "refs/vexp_C-MAT-005.json": "28f7d026d9f6b4916af37bdeaea6dadbdcd67f908d9f94223cdcfe01c8e382f3"
+ },
+ "versiones": {
+  "mattersim": "1.2.5 (MatterSim-v1.0.0-5M), torch 2.14.1, python 3.12.15",
+  "mace": "mace-torch 0.3.16 (MACE-MP-0 medium), torch 2.14.1+cpu, python 3.13.5",
+  "gpaw": "25.1.0, ase 3.24.0, python 3.13.5",
+  "ase_mlip": "3.29.0",
+  "phonopy": "4.8.3"
+ },
+ "c1_referencia": {
+  "/workspace/omniscience_cmat004/C-MAT-004/out/run1/mattersim/Si.json": "3e8417974c8fbd36436262306fc06613b37c6f8d80f596f8018e404369b01daf",
+  "/workspace/omniscience_cmat004/C-MAT-004/out/run1/mattersim/MgO.json": "9b0171aca6c89530ecfa3f85b805f957382d467ae121b97e00d34198827e1b40",
+  "/workspace/omniscience_cmat004/C-MAT-004/out/run1/mace/Si.json": "9758109ee03da12d8ec04fc914c44de172dcaffa8f1e6b00f407b9b8eae3adc5",
+  "/workspace/omniscience_cmat004/C-MAT-004/out/run1/mace/MgO.json": "58b31a4838f2b6e72cfc31626527671238ef51989380b98035e732c1cb1797d8"
+ }
+}

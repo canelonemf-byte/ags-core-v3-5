@@ -1,0 +1,229 @@
+{
+ "campana": "INN-01",
+ "n_evaluados": 8,
+ "excluidos_inestables": [
+  "AgI_RS"
+ ],
+ "h_a1": {
+  "rho_spearman": 0.5000000000000001,
+  "ic95_bootstrap": [
+   -0.4177215189873419,
+   0.9178082191780822
+  ],
+  "umbral": 0.8,
+  "resultado_criterio_enmendado_n9": "NO EVALUABLE",
+  "resultado_criterio_original_n10": "NO EVALUABLE (n<10)"
+ },
+ "h_a2": {
+  "sesgo_abs_medio": 0.12194865856625156,
+  "sesgo_firmado_medio": 0.09758365833984753,
+  "umbral": 0.05,
+  "resultado_criterio_enmendado_n9": "NO EVALUABLE",
+  "resultado_criterio_original_n10": "NO EVALUABLE (n<10)"
+ },
+ "h_a3": {
+  "resultado": "NO EVALUABLE (enmienda A5) - cuenta como no superada"
+ },
+ "por_material": {
+  "CuCl_ZB": {
+   "a_relajada_A": 5.406577371945935,
+   "fmin_malla_3x3x3_THz": -1.0415873753270738e-07,
+   "fmin_malla_2x2x2_THz": 7.944719510333655e-08,
+   "estable": true,
+   "sigma_a_3x3x3": 0.5915694914169942,
+   "ic95_3x3x3": [
+    0.5782599651465025,
+    0.6055906943504957
+   ],
+   "sigma_a_2x2x2": 0.6046601419099199,
+   "ic95_2x2x2": [
+    0.5788334964414751,
+    0.6277396974397215
+   ],
+   "control_trivial": 0.0,
+   "rms_u_A": 0.321982514971336,
+   "sigma_a_ref": 0.55
+  },
+  "CuBr_ZB": {
+   "a_relajada_A": 5.713260372328874,
+   "fmin_malla_3x3x3_THz": 5.373401585232229e-08,
+   "fmin_malla_2x2x2_THz": -9.141426143642849e-08,
+   "estable": true,
+   "sigma_a_3x3x3": 0.5235250919856251,
+   "ic95_3x3x3": [
+    0.5067644764492457,
+    0.5415433392701433
+   ],
+   "sigma_a_2x2x2": 0.5371157716957772,
+   "ic95_2x2x2": [
+    0.5068289748849742,
+    0.5644358752084716
+   ],
+   "control_trivial": 0.0,
+   "rms_u_A": 0.3047292708582191,
+   "sigma_a_ref": 0.52
+  },
+  "CuI_ZB": {
+   "a_relajada_A": 6.071345151184324,
+   "fmin_malla_3x3x3_THz": -7.818534188052805e-08,
+   "fmin_malla_2x2x2_THz": -6.268825626665201e-08,
+   "estable": true,
+   "sigma_a_3x3x3": 0.4378197086914532,
+   "ic95_3x3x3": [
+    0.4241015553179319,
+    0.4514177708852002
+   ],
+   "sigma_a_2x2x2": 0.4532795951416522,
+   "ic95_2x2x2": [
+    0.42551731437308193,
+    0.4788566853160465
+   ],
+   "control_trivial": 0.0,
+   "rms_u_A": 0.2753548511948277,
+   "sigma_a_ref": 0.37
+  },
+  "AgI_ZB": {
+   "a_relajada_A": 6.628255617363669,
+   "fmin_malla_3x3x3_THz": -6.503907305173962e-08,
+   "fmin_malla_2x2x2_THz": -2.0866046814452528e-08,
+   "estable": true,
+   "sigma_a_3x3x3": 0.5509564474126193,
+   "ic95_3x3x3": [
+    0.5338816027583759,
+    0.5679003810332742
+   ],
+   "sigma_a_2x2x2": 0.5647923790307007,
+   "ic95_2x2x2": [
+    0.532884158050803,
+    0.5933833280882135
+   ],
+   "control_trivial": 0.0,
+   "rms_u_A": 0.37052463514603506,
+   "sigma_a_ref": 0.41
+  },
+  "AgBr_ZB": {
+   "a_relajada_A": 6.318536351797263,
+   "fmin_malla_3x3x3_THz": -2.7896578657190715e-08,
+   "fmin_malla_2x2x2_THz": -3.615254482096852e-08,
+   "estable": true,
+   "sigma_a_3x3x3": 0.5825399990943839,
+   "ic95_3x3x3": [
+    0.5674575239183516,
+    0.5977798103621206
+   ],
+   "sigma_a_2x2x2": 0.5940198323312941,
+   "ic95_2x2x2": [
+    0.5664234758390511,
+    0.6201562336448054
+   ],
+   "control_trivial": 0.0,
+   "rms_u_A": 0.44115340734630953,
+   "sigma_a_ref": 0.68
+  },
+  "AgCl_RS": {
+   "a_relajada_A": 5.626443936993784,
+   "fmin_malla_3x3x3_THz": -7.209631692651305e-08,
+   "fmin_malla_2x2x2_THz": -5.663859025122587e-08,
+   "estable": true,
+   "sigma_a_3x3x3": 0.7086271013773465,
+   "ic95_3x3x3": [
+    0.6889915704543345,
+    0.7277087807807653
+   ],
+   "sigma_a_2x2x2": 0.764662296221829,
+   "ic95_2x2x2": [
+    0.7229474203630818,
+    0.8012309351787239
+   ],
+   "control_trivial": 0.0,
+   "rms_u_A": 0.3659311206600463,
+   "sigma_a_ref": 0.5
+  },
+  "AgBr_RS": {
+   "a_relajada_A": 5.858895813413255,
+   "fmin_malla_3x3x3_THz": -1.289761240357863e-08,
+   "fmin_malla_2x2x2_THz": 9.95382614051071e-09,
+   "estable": true,
+   "sigma_a_3x3x3": 0.8833864819793484,
+   "ic95_3x3x3": [
+    0.8638360448546349,
+    0.8986262445788527
+   ],
+   "sigma_a_2x2x2": 0.9202907706203394,
+   "ic95_2x2x2": [
+    0.8975397962206378,
+    0.9350967351304856
+   ],
+   "control_trivial": 0.0,
+   "rms_u_A": 0.4250551471591496,
+   "sigma_a_ref": 0.48
+  },
+  "AgI_RS": {
+   "a_relajada_A": 6.184173413913893,
+   "fmin_malla_3x3x3_THz": -0.8121493527365178,
+   "fmin_malla_2x2x2_THz": -0.7439012219166442,
+   "estable": false,
+   "sigma_a_ref": 0.52
+  },
+  "NaBr_RS": {
+   "a_relajada_A": 6.033230006424341,
+   "fmin_malla_3x3x3_THz": -9.802243122770874e-08,
+   "fmin_malla_2x2x2_THz": 5.113503605185465e-08,
+   "estable": true,
+   "sigma_a_3x3x3": 0.41224494476100965,
+   "ic95_3x3x3": [
+    0.3886941331013568,
+    0.4395227605561334
+   ],
+   "sigma_a_2x2x2": 0.39541314412477424,
+   "ic95_2x2x2": [
+    0.37036046216453916,
+    0.4260123296763267
+   ],
+   "control_trivial": 0.0,
+   "rms_u_A": 0.2684227795004524,
+   "sigma_a_ref": 0.4
+  },
+  "Si_control": {
+   "a_relajada_A": 5.455484543460856,
+   "fmin_malla_3x3x3_THz": -2.0309084944359543e-07,
+   "fmin_malla_2x2x2_THz": -2.0282979994364201e-07,
+   "estable": true,
+   "sigma_a_3x3x3": 0.2272775611518558,
+   "ic95_3x3x3": [
+    0.2198008210237163,
+    0.23389922942898506
+   ],
+   "sigma_a_2x2x2": 0.24159293102633111,
+   "ic95_2x2x2": [
+    0.22599423754912026,
+    0.2567672182325571
+   ],
+   "control_trivial": 0.0,
+   "rms_u_A": 0.15184492029006824,
+   "sigma_a_ref": 0.15
+  }
+ },
+ "controles": {
+  "si_control": {
+   "sigma_a_mace": 0.2272775611518558,
+   "ref_dft_aimd": 0.15
+  },
+  "trivial_max": 0.0,
+  "sensibilidad_2x2x2_vs_3x3x3_max_abs": 0.056035194844482494,
+  "md": {
+   "CuI_ZB": {
+    "sigma_a_md": 0.5709523561510488,
+    "sigma_a_muestreo": 0.4378197086914532
+   },
+   "AgCl_RS": {
+    "sigma_a_md": 1.0853124511753545,
+    "sigma_a_muestreo": 0.7086271013773465
+   }
+  }
+ },
+ "desviaciones": [],
+ "veredicto": "NO SUPERADA (no evaluable)",
+ "md_estado": "completada (CuI_ZB, AgCl_RS)",
+ "nota_h_a1": "texto original dice DFT-aiMD; enmienda A1 fija sigma_OS; se evalua con A1. vs aiMD (no prereg): rho=-0.04, n=7"
+}

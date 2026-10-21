@@ -1,0 +1,1 @@
+D1 2026-10-21 11:56:47 CEST: ase.build fcc100/fcc110/bcc100 no admiten orthogonal=False; se usa orthogonal=True para esas facetas. Detectado al fallar run1 en Ag(100) antes de obtener resultados de esas facetas. Sin cambio de protocolo físico.

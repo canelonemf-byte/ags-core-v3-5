@@ -1,0 +1,18 @@
+{
+ "congelado_codigo": "2026-10-19T09:35:21+02:00",
+ "prereg_sha256": "2d9a125647b675531cdfaa5508687b2b8032ffe78ccce4eb6410f4619b9dfc96",
+ "codigo": {
+  "cmat003_run.py": "448b9b8f5389ab712bcd011bc59f6d9aefec3b9eacdd2808185c35a29abe5c44",
+  "cmat003_eval.py": "2674af40f4f354bb0ab7e58e14ae59f78100e384c0e8486232c74f51c101765d"
+ },
+ "checkpoints": {
+  "mattersim-v1.0.0-5M.pth": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5",
+  "sevennet_0__11Jul2024": "7052cb42b7b3be42b40b97fa0d21077a48c54b5548948fc4dcf346629f813c36",
+  "mace_20231203mace128L1_epoch199model": "01bfe22100139f424713cf921144e5509cbe353d67aa9fa1be9c6e1e0ed35845"
+ },
+ "entornos": {
+  "mattersim": "{'mattersim': '1.2.5', 'phonopy': '4.8.3', 'ase': '3.29.0', 'torch': '2.14.1', 'numpy': '2.5.4'}",
+  "sevenn": "{'sevenn': '0.13.0', 'phonopy': '4.8.3', 'ase': '3.29.0', 'torch': '2.14.1', 'numpy': '2.5.4'}",
+  "mace": "{'mace-torch': '0.3.16', 'phonopy': '4.8.3', 'ase': '3.29.0', 'torch': '2.14.1+cpu', 'numpy': '2.5.4'}"
+ }
+}

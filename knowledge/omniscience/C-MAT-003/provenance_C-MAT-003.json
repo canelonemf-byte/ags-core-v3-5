@@ -1,0 +1,99 @@
+{
+ "meta": {
+  "id": "C-MAT-003",
+  "fecha": "2026-10-19",
+  "prov_tipo": "PROV-O simplificado (JSON)",
+  "autoria": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de inteligencia artificial (ORCID 0000-0001-8601-1963)"
+ },
+ "objetivo": "Procedencia de C-MAT-003",
+ "datos_clave": {
+  "prereg": {
+   "archivo": "prereg_C-MAT-003.md",
+   "sha256": "2d9a125647b675531cdfaa5508687b2b8032ffe78ccce4eb6410f4619b9dfc96",
+   "congelado": "2026-10-19T09:31:06+02:00",
+   "copia_solo_lectura": "prereg_C-MAT-003.FROZEN.md"
+  },
+  "cronologia": [
+   "09:30:58 prereg escrito y hasheado",
+   "09:31:06 congelado",
+   "09:32–09:35 prueba de humo con Ge y Cu (fuera del estudio)",
+   "09:35:21 hashes de código y checkpoints congelados (code_freeze.json)",
+   "09:35:28 run1 de los tres potenciales",
+   "09:42–09:58 run2",
+   "09:56 evaluación (fallo del script corregido como v1.1, sin cambiar criterios)",
+   "09:57–10:02 exploratorio no pre-registrado (celda de partida)"
+  ],
+  "codigo_congelado": {
+   "cmat003_run.py": "448b9b8f5389ab712bcd011bc59f6d9aefec3b9eacdd2808185c35a29abe5c44",
+   "cmat003_eval.py": "2674af40f4f354bb0ab7e58e14ae59f78100e384c0e8486232c74f51c101765d"
+  },
+  "codigo_final": {
+   "cmat003_eval.py": "0b753d4a8cf0ca629ccd2c30a3300cb2ce509cb53412a83cf134b7fd09c8883a",
+   "cmat003_eval_run2.py": "7113e037ea8e91c3518b8dc8f4205a223492ea91bb2b99a392bd0564a7da42db",
+   "cmat003_eval_v1_0_congelado.py": "2674af40f4f354bb0ab7e58e14ae59f78100e384c0e8486232c74f51c101765d",
+   "cmat003_explora_resumen.py": "5f7029cdf7f622f79c2e096f9ed10fb1ca6c9d9287a95d019296ab6a2bc9e4c5",
+   "cmat003_explora_vexp.py": "6d76bdd2530e6e98eab071f737df7b49c7e49a3dc7016423e47c1399b4502b9e",
+   "cmat003_fig.py": "149dd829e976a12d89cd385ff022436e6af3e1d391bd6ecb24965612e36a5f37",
+   "cmat003_run.py": "448b9b8f5389ab712bcd011bc59f6d9aefec3b9eacdd2808185c35a29abe5c44",
+   "diff_runs.py": "f9c980f87f29dca2b017fb1b4972e7c2158d09bfa163bf55209b7e4058086980",
+   "run_all.sh": "7f6c6a33d1a4c91ae9cb855cc22bee066505b84ee84d8b176c024a160476c8e6"
+  },
+  "checkpoints_sha256": {
+   "mattersim-v1.0.0-5M.pth": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5",
+   "sevennet_0__11Jul2024": "7052cb42b7b3be42b40b97fa0d21077a48c54b5548948fc4dcf346629f813c36",
+   "mace_20231203mace128L1_epoch199model": "01bfe22100139f424713cf921144e5509cbe353d67aa9fa1be9c6e1e0ed35845"
+  },
+  "checkpoints_origen": {
+   "mattersim": "https://raw.githubusercontent.com/microsoft/mattersim/main/pretrained_models/mattersim-v1.0.0-5M.pth",
+   "sevenn": "paquete sevenn 0.13.0, alias 7net-0 = SevenNet_0__11Jul2024",
+   "mace": "mace-torch 0.3.16, medium (20231203mace128L1_epoch199model)"
+  },
+  "entornos": {
+   "mattersim": "{'mattersim': '1.2.5', 'phonopy': '4.8.3', 'ase': '3.29.0', 'torch': '2.14.1', 'numpy': '2.5.4'}",
+   "sevenn": "{'sevenn': '0.13.0', 'phonopy': '4.8.3', 'ase': '3.29.0', 'torch': '2.14.1', 'numpy': '2.5.4'}",
+   "mace": "{'mace-torch': '0.3.16', 'phonopy': '4.8.3', 'ase': '3.29.0', 'torch': '2.14.1+cpu', 'numpy': '2.5.4'}"
+  },
+  "dispositivo": "CPU, 8 núcleos; 4 hilos de torch por proceso, 3 procesos en paralelo",
+  "salidas_core": {
+   "run1/results_core_mattersim.json": "eef0ebd9051ecec8bf81efcbb87d2c2fd8eaf518590e0b617a15f8e824c4b9f1",
+   "run1/results_core_sevenn.json": "5cf750832896d854ed02c6be66250f31f8ed0703e13744d94e5ac197ae6a106f",
+   "run1/results_core_mace.json": "8d99b36d28d4bb8c9201a48edc4e8712185be1656cf57954d27e048b2d9c3478",
+   "run2/results_core_mattersim.json": "f6bb9097a5d66390a719f06ea471da24058908c9ad434864a88222412c03ddf7",
+   "run2/results_core_sevenn.json": "59ad889d41857e33d1b7a597a6d516f90635a1f40d8e8b961a95d98b7a91521d",
+   "run2/results_core_mace.json": "70d0dc23a23b1f3f9444aebc08ed2db1a000b3390335cf6f3e72edb073a62b0e"
+  },
+  "resultados": {
+   "results.json": "599e846513b9ceb698cc30ba511e4ee71aa3c0fbe140a27bbc812df649f6211a",
+   "results_replica_run2.json": "e8034df24c96b1dddb01f2f927a7c6b17248c0d76d9955d65089cd605b8200d1",
+   "results_exploratorio_vexp.json": "e398550d0553f6a794dc1ca60a80cbfa791740f00f0490f442dc876ae48af720",
+   "figs/fig_S_err_JANAF.png": "001ebafd39bc2aa1478c32fbd00f24d08df5793d7b994e9273d7e0382be144f7",
+   "refs/refs_C-MAT-003.json": "fa7a05705f5ac321f928ced8c1c29b1443ba79e3536bb5af7a068cd90ac14f9b"
+  },
+  "referencias": [
+   "https://janaf.nist.gov/tables/Si-002.txt",
+   "https://janaf.nist.gov/tables/Mg-008.txt",
+   "https://janaf.nist.gov/tables/Cl-053.txt",
+   "https://janaf.nist.gov/tables/F-021.txt",
+   "https://janaf.nist.gov/tables/F-033.txt",
+   "https://janaf.nist.gov/tables/Cl-036.txt",
+   "https://janaf.nist.gov/tables/Br-015.txt",
+   "https://janaf.nist.gov/tables/Ca-027.txt",
+   "https://janaf.nist.gov/tables/Ca-014.txt",
+   "https://janaf.nist.gov/tables/Al-096.txt",
+   "https://janaf.nist.gov/tables/Be-044.txt",
+   "https://www.codata.info/resources/databases/key1.html",
+   "https://doi.org/10.3133/b2131",
+   "https://www.osti.gov/biblio/4314983"
+  ]
+ },
+ "tareas": [],
+ "riesgos": [
+  "D1 eval v1.0→v1.1: fallo con clave ausente en run2; sin cambio de criterios",
+  "D2 semántica de H-REP: no idénticos byte a byte; veredictos iguales en run2",
+  "D3 precisión float32 de MatterSim/SevenNet no fijada en el prereg",
+  "D4 Cp_QHA numérico ruidoso",
+  "Exploratorio en celda de partida no pre-registrado"
+ ],
+ "decisiones": [],
+ "proximo_paso": "C-MAT-004"
+}

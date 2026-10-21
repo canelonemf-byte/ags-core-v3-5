@@ -1,0 +1,81 @@
+{
+ "campana": "INN-01",
+ "python": "3.13.5",
+ "plataforma": "Linux-6.12.94+-x86_64-with-glibc2.41",
+ "versiones": {
+  "torch": "2.14.1+cpu",
+  "ase": "3.29.0",
+  "phonopy": "4.8.3",
+  "mace-torch": "0.3.16",
+  "spglib": "2.8.0",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "matplotlib": "3.11.2"
+ },
+ "checkpoint": {
+  "nombre": "MACE-MP-0 medium 2023-12-03",
+  "sha256": "01bfe22100139f424713cf921144e5509cbe353d67aa9fa1be9c6e1e0ed35845"
+ },
+ "autoria": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de inteligencia artificial",
+ "orcid": "0000-0001-8601-1963",
+ "dispositivo": "cpu",
+ "prereg": {
+  "ruta": "prereg_INN-01_sigmaA.FROZEN.md",
+  "sha256": "180ae31a8e56a653ed389a6fb36c0fb75e48c4f3bf496161ad37e732fcad9663",
+  "congelado": "<=2026-10-18 23:15:23 UTC+2 (sistema de archivos); enmienda declara 22:55"
+ },
+ "ejecucion_armonica": "2026-10-18 23:43:39-23:48:37 UTC+2",
+ "ejecucion_md": "2026-10-18 23:49:23 - 2026-10-19 ~00:53 UTC+2 (CuI 00:44, AgCl ~00:53)",
+ "semillas": "20261018 (muestreo, bootstrap, MD velocidades); 20261019 (Langevin)",
+ "code_sha256_pre_run": "out/code_sha256_pre_run.txt (verificado OK)",
+ "materiales": [
+  "CuCl_ZB",
+  "CuBr_ZB",
+  "CuI_ZB",
+  "AgI_ZB",
+  "AgBr_ZB",
+  "AgCl_RS",
+  "AgBr_RS",
+  "AgI_RS (excluido A4)",
+  "NaBr_RS",
+  "Si_control"
+ ],
+ "veredicto": "NO SUPERADA (no evaluable: n=8<9; H-A3 sin TO)",
+ "desviaciones": [],
+ "no_preregistrado": "code/inn01_suplementario.py -> out/inn01_suplementario.json (escrito tras ver resultados)",
+ "referencias_doi": [
+  "10.1103/PhysRevMaterials.4.083809"
+ ],
+ "archivos": {
+  "code/inn01_eval.py": "c73221018c45f7f005eddbed3e67c14b60e10ed7164958a90e5e3d3a589d1a03",
+  "code/inn01_md.py": "96266a1df6d42249762be3af63669d1143b8260379d36a272e99cf096b0fe1c3",
+  "code/inn01_run.py": "a952df6c823e78460d1c9aa035440a942dd53113f8dd444ccd8ca2fa964b7bb3",
+  "code/inn01_suplementario.py": "65a719bf370d5d3ad04ec0749720669878aba5cd7a5f71062b478c07a62ea7a9",
+  "figs/inn01_sigmaA_vs_dft.png": "00cb14210be0088896f77d3a23ca8ffb222a2e1394414e69dd3d9a6da100984a",
+  "informe_resultados.md": "cf633685fc200025fcad6162286529cd6f9d797189cd2c7289e5597e004224b0",
+  "out/AgBr_RS_phonopy_3x3x3.yaml": "45837ed22e2022048cfb3edd3f89648cc1fb94f32f814d6955037d2156d6de26",
+  "out/AgBr_ZB_phonopy_3x3x3.yaml": "76ed98147910b3213d336b8f91d8600c19cb12e9a163945b36893a4094c0ac49",
+  "out/AgCl_RS_md.json": "ce5a74d15925bc2eb1e2e868887ff6ff6e1c88531356cc9359fab144a0e3ce0d",
+  "out/AgCl_RS_phonopy_3x3x3.yaml": "2fd46d0a7b9a44d3bb1ff91656f97cd64d7fedad3b8ae5bf01e2d3cfa75a7ec6",
+  "out/AgI_RS_phonopy_3x3x3.yaml": "8491c47da87ee340a761d6d07f8b6c44291697ee4d7a6c5d75b49f8ac507be3c",
+  "out/AgI_ZB_phonopy_3x3x3.yaml": "bd6c52ed02d4610e5da512ae29e7758ad90b816ee0baed1647c101f3e6fbaf4a",
+  "out/CuBr_ZB_phonopy_3x3x3.yaml": "3a5efd854349acf7c616d6aa1b91e490ee3a247bf6a0326b1f5027e0bd76950e",
+  "out/CuCl_ZB_phonopy_3x3x3.yaml": "584e968a9c80e9b44fa6e8735e72ccb084004fd0c30412d6777a2e48863b18bc",
+  "out/CuI_ZB_md.json": "4285f540498b4bb8d5b16790ad618f976dcdad3b856d9823673a07542869c2f8",
+  "out/CuI_ZB_phonopy_3x3x3.yaml": "ed659cba3a00f86f22af1d2c166c749fdd91782f8c3f604fbfd39185809b8706",
+  "out/NaBr_RS_phonopy_3x3x3.yaml": "9ccfcb97de09fd45ca6cecc3f1045073055c9da9390794ca73a27c27c04554f9",
+  "out/Si_control_phonopy_3x3x3.yaml": "ff88f1b259637fc930128a32df7a3018cd512d3fd831bcaccc695166a7c9f923",
+  "out/code_sha256_pre_run.txt": "f72292a56bb412456ea53027166cba7624afdb124b48f3dc8795356388a0ac36",
+  "out/inn01_raw.json": "98d8c6db0897782dfd4fe554e3b29e061f7f65523ed6b19b0bcd0787ccea2cfd",
+  "out/inn01_suplementario.json": "b6c69c2b680d4021750a60cfdb50d53e70227bcf7cb71c7552c59e51c9fb0fe3",
+  "out/md_AgCl.log": "faad609b5b6ced6e402eb6ac37c3e2cf52f5836a60754193e64901c5f411c78d",
+  "out/md_CuI.log": "d6812d399efb40faa753f0e51583c351b0bb551998e68ad5edcba9d946cc487b",
+  "out/run.log": "dfe4b6c66b095528e0a8ca533dd2019cfa13a251de3aa05f9537f659c6e003d3",
+  "out/t_inicio.txt": "50971e5460ac712fd98bf8f9bc6a9a8662d81530aaecfc3bed3c07113ee784a2",
+  "out/t_md_inicio.txt": "abea5193cc88c13e4d8c10025a55ea2fe7e212b463fd889e09feac9b3fadf7e1",
+  "prereg_INN-01_sigmaA.FROZEN.md": "180ae31a8e56a653ed389a6fb36c0fb75e48c4f3bf496161ad37e732fcad9663",
+  "prereg_INN-01_sigmaA.md": "180ae31a8e56a653ed389a6fb36c0fb75e48c4f3bf496161ad37e732fcad9663",
+  "prereg_INN-01_sigmaA.sha256": "b3501e7253b15792f1d485a786668487574d7ad92399394683c81c5d37722d7c",
+  "results.json": "f3f771832df1bba164f86c2f1fe0291cd5fb62fa06147afe18e7c28d966e9683"
+ }
+}

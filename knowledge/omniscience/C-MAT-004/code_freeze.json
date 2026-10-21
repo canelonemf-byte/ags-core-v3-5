@@ -1,0 +1,18 @@
+{
+ "congelado_codigo": "2026-10-19T11:07:43+02:00",
+ "prereg_sha256": "160ce4b26fe555375174bd01c416e3ffe1e534c5ec43aaad5d211b6055af2363",
+ "codigo": {
+  "cmat004_eval.py": "a19e8f8a51ad6fadc317476f6328f0d1ecab0e959d9bcd219ae90fe25cbb74b7",
+  "cmat004_run.py": "44b0cd156f15fdd014f912efc108907b8837f4c1ee485951f680969ef25a0669",
+  "run_all.sh": "b8361cf0331cd401101d464d7c1c80459f6dd3f7e649d9f921b6afb9ced61303"
+ },
+ "refs": {
+  "vexp_C-MAT-004.json": "5d89fb2546d4b59ba037e15b18e20dae0690c6208e9720613c7c95c75b83ea57",
+  "refs_termo_C-MAT-004.json": "0e59c335ffbcf3bede4c5f9a55d0b8547b1ae3f281ab9f31a45b180697484a5f",
+  "cod_9013321.cif": "d7fbac5b43970cf0a0cda4c9bfc6564221af1b5d1efbb397b32e151e2bc267b8"
+ },
+ "checkpoints": {
+  "mattersim-v1.0.0-5M.pth": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5",
+  "mace_20231203mace128L1_epoch199model": "01bfe22100139f424713cf921144e5509cbe353d67aa9fa1be9c6e1e0ed35845"
+ }
+}

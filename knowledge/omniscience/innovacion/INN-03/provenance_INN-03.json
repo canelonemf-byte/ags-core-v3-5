@@ -1,0 +1,47 @@
+{
+ "campana": "INN-03",
+ "python": "3.13.5",
+ "plataforma": "Linux-6.12.94+-x86_64-with-glibc2.41",
+ "versiones": {
+  "torch": "2.14.1+cpu",
+  "ase": "3.29.0",
+  "phonopy": "4.8.3",
+  "mace-torch": "0.3.16",
+  "spglib": "2.8.0",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "matplotlib": "3.11.2"
+ },
+ "checkpoint": {
+  "nombre": "MACE-MP-0 medium 2023-12-03",
+  "sha256": "01bfe22100139f424713cf921144e5509cbe353d67aa9fa1be9c6e1e0ed35845"
+ },
+ "autoria": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de inteligencia artificial",
+ "orcid": "0000-0001-8601-1963",
+ "dispositivo": "cpu",
+ "prereg": {
+  "ruta": "prereg_INN-03_pozos_ferro.FROZEN.md",
+  "sha256": "839eeaec1697c226fdfff7449cbdbfcae61f8c8b2aca8b918030e313d99d728a",
+  "congelado": "≤2026-10-18 23:15:23 UTC+2 (marca del sistema de archivos); enmienda declara 22:55"
+ },
+ "ejecucion_principal": "2026-10-18 23:34:51–23:36:22 UTC+2",
+ "replica": "2026-10-18 23:39:02–23:41:08 UTC+2",
+ "semillas": "perturbación numpy default_rng(7); resto determinista",
+ "veredicto": "FALSADA",
+ "desviaciones": [],
+ "archivos": {
+  "code/inn03_eval.py": "83e170154ee4e5fa1d70994bcd642b8b5e7c21193012fb009a08e22e2d19d3bb",
+  "code/inn03_run.py": "9b30f8407795d9c3f06d7908deaf907f493a39f347abd4f51d53829f4b9b05ea",
+  "figs/inn03_pozos_vs_tc.png": "7fa4f8d73b6304b1c75e2868115b1ac5eca52230f70e747c3b2b9dc141e0eefd",
+  "informe_resultados.md": "ad14a9c420a77c5bf51ad52be774022e679c92bc9099b123fc0b36b1578ed005",
+  "out/inn03_raw.json": "5053688db325c19000e2aba683c042b4457bb949b0fdb57a19aefa0442598642",
+  "out/run.log": "e8f028ed82ac72bf1f31fac84f9a2a53bba97b3ffc1bfe85fc5d6e766c502038",
+  "prereg_INN-03_pozos_ferro.FROZEN.md": "839eeaec1697c226fdfff7449cbdbfcae61f8c8b2aca8b918030e313d99d728a",
+  "prereg_INN-03_pozos_ferro.md": "839eeaec1697c226fdfff7449cbdbfcae61f8c8b2aca8b918030e313d99d728a",
+  "prereg_INN-03_pozos_ferro.sha256": "1bbdb1ddb40bcb07c6c3ec7ee707d282fcc338a57dcac408b026f596e552c518",
+  "rep/inn03_raw_rep.json": "95f0d41b2065423d8e898cf9f23e3e0dd682b40f081d18512b5424f6a163bf98",
+  "rep/run_rep.log": "cb135349ba4b4b443f8fe3e42b7f22af8434caed54b3828a9b6b83223b7dd6b9",
+  "rep/tiempos_rep.txt": "aa5e8889f5513ff3276d30e826e288e34a88f8e545e1461406621801ac9307ac",
+  "results.json": "c9517497cc01c6ead3c04d0358503f896d37dd8cc895f1a4a4edfbff564eeef6"
+ }
+}

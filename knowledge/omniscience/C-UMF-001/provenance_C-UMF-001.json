@@ -1,0 +1,8 @@
+{
+ "meta": {"campana": "C-UMF-001", "fecha": "2026-10-20", "autoria": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de inteligencia artificial (ORCID 0000-0001-8601-1963)"},
+ "prereg": {"archivo": "prereg_C-UMF-001.md", "sha256": "c646ab82ab875b036c0d06e97e8f9695f14ff7993309d96fc1e94358b27ab83a", "congelado": "2026-10-20 09:09:48 +0200"},
+ "entorno": {"mattersim": "1.2.5 (MatterSim-v1.0.0-5M), ase 3.29.0, torch 2.14.1, python 3.12.15", "mace": "mace-torch 0.3.16 (MACE-MP-0 medium), ase 3.29.0, torch 2.14.1+cpu, python 3.13.5", "dtype": "float64", "hilos": 4, "semilla": 0},
+ "referencias": {"janaf": "NIST-JANAF 4.ª ed., tablas descargadas en C-MAT-003/004/005 (hash por tabla en results.json)", "mp2020": "pymatgen v2024.6.10 MP2020Compatibility.yaml sha256 90a5af2132c8eb85be1da4d89c2a78b58e045528bcba1189fa5ec356fb8e6d9a"},
+ "salidas_sha256": {"out/run1/mattersim.json": "8d2e9d6be4017eae36994334121f994eb396d67fa49aa4b51f3d80212b9be657", "out/run1/mace.json": "e5c4a47be5d7bb5eb0e0a45e3636833e746a6a6170f0556da34865a282323107", "out/run2/mattersim.json": "c124051c64c947d9ca38b72f1e811baa7f003d2dd8c2a6cd39efe1a507d6c931", "out/run2/mace.json": "c3903cb0c065c609996a42e416a1b6694ff2b4c983a68b12e75f50b028802257"},
+ "nota": "Los JSON de run1 y run2 difieren solo en los tiempos t_s; las energías son idénticas (rep_max_rel = 0)."
+}

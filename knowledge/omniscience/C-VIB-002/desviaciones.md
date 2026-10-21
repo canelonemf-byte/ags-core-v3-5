@@ -1,0 +1,1 @@
+D1 (declarada antes de calcular, 2026-10-21T09:10:02+02:00): a inicial = 4/√3·(r_cov,A + r_cov,B) de ASE en lugar de 5.6 Å fijo, para que la relajación de BN/BP no parta de una celda 55 % mayor. La geometría final la fija la relajación del modelo. Smoke de GaAs a malla 7 (no evaluable) antes de congelar código.

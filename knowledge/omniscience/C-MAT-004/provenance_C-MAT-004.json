@@ -1,0 +1,85 @@
+{
+ "meta": {
+  "id": "C-MAT-004",
+  "fecha": "2026-10-19",
+  "prov_tipo": "PROV-O simplificado (JSON)",
+  "autoria": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de inteligencia artificial (ORCID 0000-0001-8601-1963)"
+ },
+ "objetivo": "Procedencia de C-MAT-004",
+ "datos_clave": {
+  "prereg": {
+   "archivo": "prereg_C-MAT-004.md",
+   "sha256": "160ce4b26fe555375174bd01c416e3ffe1e534c5ec43aaad5d211b6055af2363",
+   "congelado": "2026-10-19T11:06:48+02:00",
+   "copia_solo_lectura": "prereg_C-MAT-004.FROZEN.md",
+   "copia_store": "C-MAT-004/ (11:06:55–11:06:57, sha256 igual)"
+  },
+  "cronologia": [
+   "11:05:09–11:05:24 referencias térmicas y de volumen escritas (refs/)",
+   "11:05 prueba de humo solo con Ge y Cu (fuera del estudio; smoke/, smoke2/)",
+   "11:06:48 prereg congelado",
+   "11:07:32 script de evaluación escrito (tras el prereg y antes de calcular)",
+   "11:07:43 hashes de código, refs y checkpoints congelados (code_freeze.json); arranque de run1",
+   "11:08:04 primer resultado del estudio (run1 MatterSim Si), 16 s después del congelado del código",
+   "11:20:35–11:33:57 run2 MatterSim",
+   "11:28:11–11:51:48 run2 MACE (el trabajador anterior se interrumpió; el proceso en segundo plano siguió y terminó sin relanzarse)",
+   "11:52 evaluación de run1 y run2 con el script congelado sin cambios; diff_runs.py y figura (posteriores, solo descriptivos)"
+  ],
+  "verificacion_hashes_al_evaluar": "prereg, cmat004_run.py, cmat004_eval.py, run_all.sh y referencias coinciden con code_freeze.json",
+  "codigo_congelado": {
+   "cmat004_eval.py": "a19e8f8a51ad6fadc317476f6328f0d1ecab0e959d9bcd219ae90fe25cbb74b7",
+   "cmat004_run.py": "44b0cd156f15fdd014f912efc108907b8837f4c1ee485951f680969ef25a0669",
+   "run_all.sh": "b8361cf0331cd401101d464d7c1c80459f6dd3f7e649d9f921b6afb9ced61303"
+  },
+  "refs_congeladas": {
+   "vexp_C-MAT-004.json": "5d89fb2546d4b59ba037e15b18e20dae0690c6208e9720613c7c95c75b83ea57",
+   "refs_termo_C-MAT-004.json": "0e59c335ffbcf3bede4c5f9a55d0b8547b1ae3f281ab9f31a45b180697484a5f",
+   "cod_9013321.cif": "d7fbac5b43970cf0a0cda4c9bfc6564221af1b5d1efbb397b32e151e2bc267b8"
+  },
+  "checkpoints_sha256": {
+   "mattersim-v1.0.0-5M.pth": "e3df9fa708725e3d453140646c7d1838324b347a3d1214cf1440522146f872b5",
+   "mace_20231203mace128L1_epoch199model": "01bfe22100139f424713cf921144e5509cbe353d67aa9fa1be9c6e1e0ed35845"
+  },
+  "codigo_posterior_descriptivo": {
+   "diff_runs.py": "f0b69e308e1306cff9d00b6fdf8d52356932b2d6e6c04653fb0184d729975163",
+   "cmat004_fig.py": "def52ff8d7877203f4599f64499ef136e741fcf74f517702d404f7ea826412be"
+  },
+  "entorno": "CPU, 4 hilos, Python 3.13.5 (venv de omniscience_cmat001), Phonopy 4.8.3, mattersim 1.2.5, mace-torch 0.3.16, float64 (versiones según el prereg)",
+  "salidas": {
+   "results.json": "ffa3c16f78fb844ac758e7a8b57933b288b32d7d82d2c13a0e30031f70d95ed3",
+   "results_replica_run2.json": "2edfd37522a714b5e1129b4ef8e1df2d805f059579d88f42f61ac780b4f3a422",
+   "diff_runs.json": "cb196e9f62e4a15321c560e28a2811d8bd3466545cc8b6ebcc95fb5d07419c2e",
+   "out/run1/results_core_mattersim.json": "e84ee5f8fdf2b579bd04462c4943c54ec449a10293fcd59892be518e09e3ca4f",
+   "out/run2/results_core_mattersim.json": "e84ee5f8fdf2b579bd04462c4943c54ec449a10293fcd59892be518e09e3ca4f",
+   "out/run1/results_core_mace.json": "03ec77c55aa1a750d6cc5a817d1c4242b12ef1bab40d0f98c26551e2c7752871",
+   "out/run2/results_core_mace.json": "30ed1282f48bcf601fb25de38be939d26f94e7d6de2745e9cea683fbd581a1f8",
+   "figs/fig_S298_err_JANAF.png": "9b51979ff2951f3367cd772216bb145391e9e26355d5d9a6cbde1e37d3993f56"
+  }
+ },
+ "tareas": {
+  "usado": [
+   "refs/refs_termo_C-MAT-004.json",
+   "refs/vexp_C-MAT-004.json",
+   "NIST-JANAF",
+   "Robie y Hemingway 1995 doi:10.3133/b2131",
+   "NBS Circular 539 vol. 1"
+  ],
+  "generado": [
+   "out/run1",
+   "out/run2",
+   "results.json",
+   "results_replica_run2.json",
+   "diff_runs.json",
+   "figs/fig_S298_err_JANAF.png",
+   "informe_resultados.md"
+  ]
+ },
+ "riesgos": [
+  "Ningún cambio de criterios ni de código tras ver resultados",
+  "MACE Si no byte-idéntico entre run1 y run2 (diferencia relativa máx. 3.9e-6)"
+ ],
+ "decisiones": [
+  "UM-15 en E2; no E3 (H-V1 y H-V3 falsadas, H-V2 inconclusa, H-REP falsada, C3 falla)"
+ ],
+ "proximo_paso": "Ver informe_resultados.md"
+}

@@ -1,0 +1,327 @@
+{
+ "campana": "C-MAT-001",
+ "prereg_sha256": "efb5f872cd581a88626cb9b3dbc2cb7b9e4f547c1bc1d1ec850de958c583ea90",
+ "modelo": "MACE-MP-0 medium (2023-12-03, 128L1 epoch199), float64, CPU",
+ "tolerancia_THz": -0.3,
+ "por_material": {
+  "Si": {
+   "esperado": "estable",
+   "veredicto": "estable",
+   "fmin_THz": {
+    "base_2x2x2_d0.01": -2.0282979994364201e-07,
+    "sc_3x3x3_d0.01": -2.0309084944359543e-07,
+    "disp_2x2x2_d0.03": -1.8932213620159275e-07
+   },
+   "veredicto_por_config": {
+    "base_2x2x2_d0.01": true,
+    "sc_3x3x3_d0.01": true,
+    "disp_2x2x2_d0.03": true
+   },
+   "H3_consistente": true,
+   "clasificacion_correcta": true,
+   "a_relajada_A": [
+    5.455484543460856,
+    5.455484543460856,
+    5.455484543460856
+   ],
+   "relax_convergida": true,
+   "omega_pred_THz": 11.183544851765909,
+   "omega_pred_cm": 373.0429019587247,
+   "omega_pred_conv_THz": {
+    "base_2x2x2_d0.01": 11.183544851765909,
+    "sc_3x3x3_d0.01": 11.183544999589229,
+    "disp_2x2x2_d0.03": 11.189460431345324
+   },
+   "ref_fuente": "Parker, Feldman, Ashkin, Phys. Rev. 155, 712 (1967), 300 K",
+   "omega_exp_cm": 520.2,
+   "omega_exp_THz": 15.59520366516,
+   "error_rel": -0.2828856171497027,
+   "H2_pasa": false
+  },
+  "C": {
+   "esperado": "estable",
+   "veredicto": "estable",
+   "fmin_THz": {
+    "base_2x2x2_d0.01": -3.911800951616844e-07,
+    "sc_3x3x3_d0.01": -6.166017199633738e-07,
+    "disp_2x2x2_d0.03": -8.467882798938817e-07
+   },
+   "veredicto_por_config": {
+    "base_2x2x2_d0.01": true,
+    "sc_3x3x3_d0.01": true,
+    "disp_2x2x2_d0.03": true
+   },
+   "H3_consistente": true,
+   "clasificacion_correcta": true,
+   "a_relajada_A": [
+    3.570334493421027,
+    3.570334493421027,
+    3.570334493421027
+   ],
+   "relax_convergida": true,
+   "omega_pred_THz": 35.13420347890594,
+   "omega_pred_cm": 1171.9508793949026,
+   "omega_pred_conv_THz": {
+    "base_2x2x2_d0.01": 35.13420347890594,
+    "sc_3x3x3_d0.01": 35.13416531880224,
+    "disp_2x2x2_d0.03": 35.086817783578404
+   },
+   "ref_fuente": "Solin & Ramdas, Phys. Rev. B 1, 1687 (1970), T amb.",
+   "omega_exp_cm": 1332.0,
+   "omega_exp_THz": 39.93235540559999,
+   "error_rel": -0.12015699745127434,
+   "H2_pasa": false
+  },
+  "GaAs": {
+   "esperado": "estable",
+   "veredicto": "estable",
+   "fmin_THz": {
+    "base_2x2x2_d0.01": -6.894082325485314e-08,
+    "sc_3x3x3_d0.01": -8.979415520321959e-08,
+    "disp_2x2x2_d0.03": -1.592556920067977e-08
+   },
+   "veredicto_por_config": {
+    "base_2x2x2_d0.01": true,
+    "sc_3x3x3_d0.01": true,
+    "disp_2x2x2_d0.03": true
+   },
+   "H3_consistente": true,
+   "clasificacion_correcta": true,
+   "a_relajada_A": [
+    5.740790383613763,
+    5.740790383613763,
+    5.740790383613763
+   ],
+   "relax_convergida": true,
+   "omega_pred_THz": 6.372400241636748,
+   "omega_pred_cm": 212.56039208420475,
+   "omega_pred_conv_THz": {
+    "base_2x2x2_d0.01": 6.372400241636748,
+    "sc_3x3x3_d0.01": 6.372400265052054,
+    "disp_2x2x2_d0.03": 6.370011244226447
+   },
+   "ref_fuente": "Holtz, Zallen, Brafman, Phys. Rev. B 38, 6097 (1988), TO, T amb.",
+   "omega_exp_cm": 269.0,
+   "omega_exp_THz": 8.0644171202,
+   "error_rel": -0.2098126688319526,
+   "H2_pasa": false
+  },
+  "MgO": {
+   "esperado": "estable",
+   "veredicto": "estable",
+   "fmin_THz": {
+    "base_2x2x2_d0.01": -2.0028069468650638e-07,
+    "sc_3x3x3_d0.01": -4.4524873846763394e-07,
+    "disp_2x2x2_d0.03": -2.0874451351624314e-07
+   },
+   "veredicto_por_config": {
+    "base_2x2x2_d0.01": true,
+    "sc_3x3x3_d0.01": true,
+    "disp_2x2x2_d0.03": true
+   },
+   "H3_consistente": true,
+   "clasificacion_correcta": true,
+   "a_relajada_A": [
+    4.254462584786228,
+    4.254462584786228,
+    4.254462584786228
+   ],
+   "relax_convergida": true,
+   "omega_pred_THz": 9.971115751132805,
+   "omega_pred_cm": 332.6006203642657,
+   "omega_pred_conv_THz": {
+    "base_2x2x2_d0.01": 9.971115751132805,
+    "sc_3x3x3_d0.01": 9.971108191912732,
+    "disp_2x2x2_d0.03": 10.08049397925454
+   },
+   "ref_fuente": "Komandin et al., Phys. Solid State 51 (2009) doi:10.1134/S1063783409100096, TO, 300 K",
+   "omega_exp_cm": 396.0,
+   "omega_exp_THz": 11.871781336799998,
+   "error_rel": -0.16009944352458158,
+   "H2_pasa": false
+  },
+  "NaCl": {
+   "esperado": "estable",
+   "veredicto": "estable",
+   "fmin_THz": {
+    "base_2x2x2_d0.01": -4.3218419699907534e-08,
+    "sc_3x3x3_d0.01": -1.4917565655940952e-07,
+    "disp_2x2x2_d0.03": -1.3043032160010139e-07
+   },
+   "veredicto_por_config": {
+    "base_2x2x2_d0.01": true,
+    "sc_3x3x3_d0.01": true,
+    "disp_2x2x2_d0.03": true
+   },
+   "H3_consistente": true,
+   "clasificacion_correcta": true,
+   "a_relajada_A": [
+    5.683102454617001,
+    5.683102454617001,
+    5.683102454617001
+   ],
+   "relax_convergida": true,
+   "omega_pred_THz": 4.429526611659753,
+   "omega_pred_cm": 147.7531036374422,
+   "omega_pred_conv_THz": {
+    "base_2x2x2_d0.01": 4.429526611659753,
+    "sc_3x3x3_d0.01": 4.429524691020226,
+    "disp_2x2x2_d0.03": 4.444819580170635
+   },
+   "ref_fuente": "no verificado (primaria Raunio et al. Phys. Rev. 178, 1496); 164 cm-1 compilación secundaria",
+   "omega_exp_cm": null,
+   "error_rel": null,
+   "H2_pasa": false,
+   "H2_nota": "referencia no verificada: cuenta como no superado (enmienda 8)",
+   "analisis_secundario": {
+    "omega_exp_cm": 164.0,
+    "error_rel": -0.09906644123510858,
+    "pasaria": true
+   }
+  },
+  "PbTe": {
+   "esperado": "estable",
+   "veredicto": "estable",
+   "fmin_THz": {
+    "base_2x2x2_d0.01": 4.069717622561244e-08,
+    "sc_3x3x3_d0.01": -2.383745248042124e-08,
+    "disp_2x2x2_d0.03": -2.2360270307164368e-08
+   },
+   "veredicto_por_config": {
+    "base_2x2x2_d0.01": true,
+    "sc_3x3x3_d0.01": true,
+    "disp_2x2x2_d0.03": true
+   },
+   "H3_consistente": true,
+   "clasificacion_correcta": true,
+   "a_relajada_A": [
+    6.576291198073656,
+    6.576291198073656,
+    6.576291198073656
+   ],
+   "relax_convergida": true,
+   "omega_pred_THz": 1.584227786715437,
+   "omega_pred_cm": 52.844150826350585,
+   "omega_pred_conv_THz": {
+    "base_2x2x2_d0.01": 1.584227786715437,
+    "sc_3x3x3_d0.01": 1.5842281575874753,
+    "disp_2x2x2_d0.03": 1.5903747394799224
+   },
+   "ref_fuente": "Kinch & Buss, Solid State Commun. 11 (1972) doi:10.1016/0038-1098(72)90241-4, TO, baja T",
+   "omega_exp_cm": 18.0,
+   "omega_exp_THz": 0.5396264244,
+   "error_rel": 1.935786157019477,
+   "H2_pasa": false
+  },
+  "SnSe": {
+   "esperado": "estable",
+   "veredicto": "estable",
+   "fmin_THz": {
+    "base_2x2x2_d0.01": -3.9515274151167556e-08,
+    "sc_3x3x3_d0.01": -4.4727687550228246e-08,
+    "disp_2x2x2_d0.03": -3.9343279078771884e-08
+   },
+   "veredicto_por_config": {
+    "base_2x2x2_d0.01": true,
+    "sc_3x3x3_d0.01": true,
+    "disp_2x2x2_d0.03": true
+   },
+   "H3_consistente": true,
+   "clasificacion_correcta": true,
+   "a_relajada_A": [
+    12.105789545074382,
+    4.280078095607152,
+    4.279909056434515
+   ],
+   "relax_convergida": true
+  },
+  "SrTiO3": {
+   "esperado": "inestable",
+   "veredicto": "inestable",
+   "fmin_THz": {
+    "base_2x2x2_d0.01": -2.3566712733097623,
+    "sc_3x3x3_d0.01": -2.35611304953448,
+    "disp_2x2x2_d0.03": -2.125231722936747
+   },
+   "veredicto_por_config": {
+    "base_2x2x2_d0.01": false,
+    "sc_3x3x3_d0.01": false,
+    "disp_2x2x2_d0.03": false
+   },
+   "H3_consistente": true,
+   "clasificacion_correcta": true,
+   "a_relajada_A": [
+    3.9428665976700827,
+    3.9428665976700827,
+    3.9428665976700827
+   ],
+   "relax_convergida": true
+  },
+  "BaTiO3": {
+   "esperado": "inestable",
+   "veredicto": "inestable",
+   "fmin_THz": {
+    "base_2x2x2_d0.01": -6.412300753338475,
+    "sc_3x3x3_d0.01": -6.41118718744287,
+    "disp_2x2x2_d0.03": -6.300313870299555
+   },
+   "veredicto_por_config": {
+    "base_2x2x2_d0.01": false,
+    "sc_3x3x3_d0.01": false,
+    "disp_2x2x2_d0.03": false
+   },
+   "H3_consistente": true,
+   "clasificacion_correcta": true,
+   "a_relajada_A": [
+    4.034082080482633,
+    4.034082080482633,
+    4.034082080482633
+   ],
+   "relax_convergida": true
+  }
+ },
+ "grupos_espaciales_relajados": {
+  "Si": "Fd-3m (227)",
+  "C": "Fd-3m (227)",
+  "GaAs": "F-43m (216)",
+  "MgO": "Fm-3m (225)",
+  "NaCl": "Fm-3m (225)",
+  "PbTe": "Fm-3m (225)",
+  "SnSe": "Fm-3m (225)",
+  "SrTiO3": "Pm-3m (221)",
+  "BaTiO3": "Pm-3m (221)"
+ },
+ "H_MAT_1": {
+  "regla": "clasificación correcta >= 8/9 y ambos controles negativos correctos; inconclusos cuentan como incorrectos",
+  "correctos": 9,
+  "total": 9,
+  "controles_negativos_ok": true,
+  "resultado": "PASA"
+ },
+ "H_MAT_2": {
+  "regla": "|w_pred-w_exp|/w_exp <= 10% en >= 5/6 (TO sin NAC)",
+  "pasan": 0,
+  "total": 6,
+  "resultado": "FALSADA"
+ },
+ "H_MAT_3": {
+  "regla": "veredicto invariante 2x2x2 vs 3x3x3 y 0.01 vs 0.03 A",
+  "inconclusos": [],
+  "resultado": "PASA"
+ },
+ "sensibilidad_no_prereg": {
+  "descripcion": "SnSe: la relajación con FixSymmetry(Pnma) convergió a una estructura Fm-3m (tipo NaCl); el veredicto 'estable' no corresponde a la fase Pnma experimental. Si SnSe se contase como incorrecto:",
+  "correctos": 8,
+  "resultado_H1": "PASA"
+ },
+ "exploratorio": {
+  "nota": "exploratorio, NO pre-registrado",
+  "error_medio_firmado_Si_C_GaAs_MgO": -0.1932386817393778,
+  "interpretacion": "ablandamiento sistemático de MACE-MP-0 (cf. Deng et al., npj Comput. Mater. 2025, doi:10.1038/s41524-024-01500-6)"
+ },
+ "desviaciones": [
+  "Ninguna desviación de criterios. Observación: SnSe relajó a Fm-3m (ver sensibilidad).",
+  "NAC no aplicado (sin cargas de Born), según protocolo: se compara TO."
+ ],
+ "generado": "2026-10-18T21:24:14+02:00"
+}

@@ -1,0 +1,122 @@
+{
+ "campana": "INN-05",
+ "n_pares_verificados": 4,
+ "n_requerido": 8,
+ "h_t1": {
+  "resultado": "NO EVALUABLE (n=4<8) - cuenta como no superada"
+ },
+ "h_t2": {
+  "resultado": "NO EVALUABLE (n=4<8) - cuenta como no superada"
+ },
+ "h_t3": {
+  "resultado": "NO EVALUABLE (sin DOS DFT de PhononDB) - cuenta como no superada"
+ },
+ "controles": {
+  "Al|Al": 0.9999999999999999,
+  "C|Pb": 3.12537730791522e-05
+ },
+ "control_identico_ok": true,
+ "control_extremo_ok": true,
+ "descriptivo_pares": {
+  "Al|Al2O3": {
+   "tbc_exp_MW_m2K": 350.0,
+   "solapamiento": 0.04691660105773622,
+   "t_amm": 0.685979690593906
+  },
+  "Co|Al2O3": {
+   "tbc_exp_MW_m2K": 350.0,
+   "solapamiento": 0.1124602897932582,
+   "t_amm": 0.9998890934310671
+  },
+  "Ru|Al2O3": {
+   "tbc_exp_MW_m2K": 350.0,
+   "solapamiento": 0.012886467098336438,
+   "t_amm": 0.877544914219334
+  },
+  "TiN|Al2O3": {
+   "tbc_exp_MW_m2K": 700.0,
+   "solapamiento": 0.3288089397186718,
+   "t_amm": 0.9999251977434527
+  }
+ },
+ "materiales": {
+  "Al": {
+   "cell_lengths_A": [
+    2.8711444187491253,
+    2.8711444187491253,
+    2.8711444187491253
+   ],
+   "fmin_THz": -1.9918024122000665e-08,
+   "v_debye_m_s": 2743.4520849156893,
+   "densidad_kg_m3": 2677.1067602984567,
+   "Z": 7344514.123082687
+  },
+  "Pb": {
+   "cell_lengths_A": [
+    3.554583786166251,
+    3.554583786166251,
+    3.554583786166251
+   ],
+   "fmin_THz": -7.682201410033671e-09,
+   "v_debye_m_s": 628.2249610874293,
+   "densidad_kg_m3": 10833.968777510192,
+   "Z": 6806169.613673764
+  },
+  "Co": {
+   "cell_lengths_A": [
+    2.4868865446900985,
+    2.486886544690098,
+    4.024126146549222
+   ],
+   "fmin_THz": -6.205374744936236e-08,
+   "v_debye_m_s": 2931.788200875297,
+   "densidad_kg_m3": 9080.816694608278,
+   "Z": 26623031.239563968
+  },
+  "Ru": {
+   "cell_lengths_A": [
+    2.726141926505965,
+    2.726141926505966,
+    4.338852961570111
+   ],
+   "fmin_THz": -3.618054984957042e-08,
+   "v_debye_m_s": 1044.3692994193418,
+   "densidad_kg_m3": 12019.845085471794,
+   "Z": 12553157.191043196
+  },
+  "TiN": {
+   "cell_lengths_A": [
+    3.003138294877784,
+    3.003138294877784,
+    3.003138294877784
+   ],
+   "fmin_THz": -3.7995878546622905e-08,
+   "v_debye_m_s": 4775.854699888239,
+   "densidad_kg_m3": 5364.710519726417,
+   "Z": 25621077.94917529
+  },
+  "Al2O3": {
+   "cell_lengths_A": [
+    5.174756424568688,
+    5.174756424568688,
+    5.174756424568688
+   ],
+   "fmin_THz": -2.409330457381015e-07,
+   "v_debye_m_s": 6737.768637062676,
+   "densidad_kg_m3": 3868.955808156671,
+   "Z": 26068129.102379497
+  }
+ },
+ "observacion": "Con TBC experimental igual dentro del error (350 ± 60) para Al, Co y Ru sobre zafiro, O MACE vale 0.047, 0.112 y 0.013 (factor ~9): O por sí solo no explica la TBC medida. TiN|Al2O3 (TBC 700) tiene el O más alto (0.33). v_D de Ru (1044 m/s) parece anómalamente bajo frente al orden experimental: posible artefacto de MACE o de la estimación por pendientes; no verificado.",
+ "desviaciones": [
+  "D1 procedimiento: ejecucion previa anterior a la restauracion 23:15:23 (no situable respecto a la congelacion); la confirmatoria 23:34 la reproduce con diferencias <=1e-9; veredictos independientes de los valores"
+ ],
+ "veredicto": "NO SUPERADA (no evaluable)",
+ "descriptivo_rho": {
+  "rho_O_tbc": 0.775,
+  "rho_tamm_tbc": 0.775,
+  "delta_rho": 0.0,
+  "n": 4,
+  "nota": "no confirmatorio; 3 empates en TBC"
+ }
+}

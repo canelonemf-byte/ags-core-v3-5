@@ -1,0 +1,148 @@
+{
+ "campana": "INN-03",
+ "n": 10,
+ "h_f1": {
+  "rho_spearman": 0.37553380809940534,
+  "p": 0.28489604383676104,
+  "umbral": 0.7,
+  "resultado": "FALSADA"
+ },
+ "h_f2": {
+  "aciertos": 6,
+  "total": 10,
+  "exactitud": 0.6,
+  "umbral": 0.8,
+  "resultado": "FALSADA"
+ },
+ "controles_negativos": {
+  "BaZrO3_bajo_umbral": true,
+  "CaTiO3_bajo_umbral": false
+ },
+ "veredicto_global": "FALSADA",
+ "por_material": {
+  "BiFeO3": {
+   "tc_exp_K": 1098,
+   "de_relajado_meV_fu": -870.6670636121565,
+   "de_congelado_meV_fu": -296.04405351703633,
+   "pred_fe": true,
+   "fe_real": true,
+   "acierto": true,
+   "grupo_relajado": "Pm (6)",
+   "f_opt_min_gamma_2x2x2_THz": -5.943490744717238,
+   "f_opt_min_gamma_3x3x3_THz": -5.9434789105291825,
+   "a_cubica_A": 3.9253826926287134
+  },
+  "CsGeCl3": {
+   "tc_exp_K": 428,
+   "de_relajado_meV_fu": -152.89412450662,
+   "de_congelado_meV_fu": -37.87600900052368,
+   "pred_fe": true,
+   "fe_real": true,
+   "acierto": true,
+   "grupo_relajado": "R3m (160)",
+   "f_opt_min_gamma_2x2x2_THz": -4.431959713342439,
+   "f_opt_min_gamma_3x3x3_THz": -4.431965211234858,
+   "a_cubica_A": 5.358649408888494
+  },
+  "CsGeBr3": {
+   "tc_exp_K": 511,
+   "de_relajado_meV_fu": -58.752995949383546,
+   "de_congelado_meV_fu": -15.086985072006343,
+   "pred_fe": true,
+   "fe_real": true,
+   "acierto": true,
+   "grupo_relajado": "R3m (160)",
+   "f_opt_min_gamma_2x2x2_THz": -2.4058832817344435,
+   "f_opt_min_gamma_3x3x3_THz": -2.405882361317384,
+   "a_cubica_A": 5.61973179617436
+  },
+  "CsGeI3": {
+   "tc_exp_K": 550,
+   "de_relajado_meV_fu": -27.011624014061653,
+   "de_congelado_meV_fu": -8.653506638122366,
+   "pred_fe": true,
+   "fe_real": true,
+   "acierto": true,
+   "grupo_relajado": "R3m (160)",
+   "f_opt_min_gamma_2x2x2_THz": -1.752054196198047,
+   "f_opt_min_gamma_3x3x3_THz": -1.7520512872283585,
+   "a_cubica_A": 6.024255374032714
+  },
+  "PbZrO3": {
+   "tc_exp_K": 0,
+   "de_relajado_meV_fu": -216.19129129030057,
+   "de_congelado_meV_fu": -99.33286031394317,
+   "pred_fe": true,
+   "fe_real": false,
+   "acierto": false,
+   "grupo_relajado": "R3m (160)",
+   "f_opt_min_gamma_2x2x2_THz": -3.316413749832216,
+   "f_opt_min_gamma_3x3x3_THz": -3.316436163756303,
+   "a_cubica_A": 4.206974707111504
+  },
+  "PbHfO3": {
+   "tc_exp_K": 0,
+   "de_relajado_meV_fu": -113.96093914982686,
+   "de_congelado_meV_fu": -54.888830275622524,
+   "pred_fe": true,
+   "fe_real": false,
+   "acierto": false,
+   "grupo_relajado": "R3m (160)",
+   "f_opt_min_gamma_2x2x2_THz": -2.7552752354665597,
+   "f_opt_min_gamma_3x3x3_THz": -2.7553047244886373,
+   "a_cubica_A": 4.151340284716273
+  },
+  "CaTiO3": {
+   "tc_exp_K": 0,
+   "de_relajado_meV_fu": -97.73321750621022,
+   "de_congelado_meV_fu": -19.034560383587973,
+   "pred_fe": true,
+   "fe_real": false,
+   "acierto": false,
+   "grupo_relajado": "P4mm (99)",
+   "f_opt_min_gamma_2x2x2_THz": -3.557571433198436,
+   "f_opt_min_gamma_3x3x3_THz": -3.5580243733701105,
+   "a_cubica_A": 3.887599876031692
+  },
+  "BaZrO3": {
+   "tc_exp_K": 0,
+   "de_relajado_meV_fu": 2.1963082019738067e-05,
+   "de_congelado_meV_fu": 0.0,
+   "pred_fe": false,
+   "fe_real": false,
+   "acierto": true,
+   "grupo_relajado": "Pm-3m (221)",
+   "f_opt_min_gamma_2x2x2_THz": 2.6392451185595416,
+   "f_opt_min_gamma_3x3x3_THz": 2.6392339759139927,
+   "a_cubica_A": 4.253634672082712
+  },
+  "SrZrO3": {
+   "tc_exp_K": 0,
+   "de_relajado_meV_fu": -15.300769838461292,
+   "de_congelado_meV_fu": -10.732638675271744,
+   "pred_fe": true,
+   "fe_real": false,
+   "acierto": false,
+   "grupo_relajado": "P4mm (99)",
+   "f_opt_min_gamma_2x2x2_THz": -2.07266615596378,
+   "f_opt_min_gamma_3x3x3_THz": -2.0727458224985003,
+   "a_cubica_A": 4.196541915248981
+  },
+  "BaSnO3": {
+   "tc_exp_K": 0,
+   "de_relajado_meV_fu": 2.3075582333831335e-05,
+   "de_congelado_meV_fu": 0.0,
+   "pred_fe": false,
+   "fe_real": false,
+   "acierto": true,
+   "grupo_relajado": "Pm-3m (221)",
+   "f_opt_min_gamma_2x2x2_THz": 3.1170342579771426,
+   "f_opt_min_gamma_3x3x3_THz": 3.1170293763175145,
+   "a_cubica_A": 4.197501642400863
+  }
+ },
+ "sensibilidad_no_prereg": {
+  "rho_profundidad_congelada": 0.2534008829990346
+ },
+ "desviaciones": []
+}

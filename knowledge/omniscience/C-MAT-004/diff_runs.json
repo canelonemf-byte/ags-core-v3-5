@@ -1,0 +1,197 @@
+{
+ "mattersim": {
+  "Si": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "MgO": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "NaCl": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "LiF": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "NaF": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "KCl": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "KBr": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "CaO": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "CaF2": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "Al2O3": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "BeO": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "SrO": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "MgF2": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "TiO2": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "SiO2": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "Li2O": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "MgAl2O4": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  }
+ },
+ "mace": {
+  "Si": {
+   "n_campos_distintos": 64,
+   "max_rel_campos_no_nulos": 3.921854452233047e-06,
+   "campos": [
+    "/arm_V0/Cv",
+    "/arm_V0/S",
+    "/arm_V0/fmin_THz",
+    "/arm_Vexp/fmin_THz",
+    "/arm_Vexp/gamma_THz",
+    "/qha/corr/Cp_phonopy_polyfit",
+    "/qha/corr/Cp_suave",
+    "/qha/corr/Cv_VT",
+    "/qha/corr/S",
+    "/qha/corr/S_phonopy",
+    "/qha/corr/V_sobre_Vexp",
+    "/qha/corr/alfa_V_298_1e6K",
+    "/qha/sin_corr/Cp_phonopy_polyfit",
+    "/qha/sin_corr/Cp_suave",
+    "/qha/sin_corr/Cv_VT",
+    "/qha/sin_corr/S",
+    "/qha/sin_corr/S_phonopy",
+    "/qha/sin_corr/V_sobre_Vexp",
+    "/qha/sin_corr/alfa_V_298_1e6K",
+    "/qha_input/fmin_THz"
+   ]
+  },
+  "MgO": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "NaCl": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "LiF": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "NaF": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "KCl": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "KBr": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "CaO": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "CaF2": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "Al2O3": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "BeO": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "SrO": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "MgF2": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "TiO2": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "SiO2": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "Li2O": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  },
+  "MgAl2O4": {
+   "n_campos_distintos": 0,
+   "max_rel_campos_no_nulos": 0.0,
+   "campos": []
+  }
+ }
+}

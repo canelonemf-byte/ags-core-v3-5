@@ -1,0 +1,67 @@
+import json
+U=lambda *x:list(x)
+C=[
+dict(id="INN-01",dominio="materiales / termoeléctricos low-κL",idea="Compuerta de validez armónica: calcular σᴬ(300 K) con MACE-MP-0 (muestreo armónico one-shot) en cada material del pipeline y marcar automáticamente las predicciones armónicas (frecuencias, κL-RTA) no fiables; además, usarla como prefiltro barato de candidatos a κL ultrabajo.",
+ nivel_E="E2",originalidad="parcial",fuentes=U("https://doi.org/10.1103/PhysRevMaterials.4.083809","https://arxiv.org/html/2209.12720v3","https://doi.org/10.1002/smll.202513476"),
+ plausibilidad="Alta: σᴬ es una medida establecida (Knoop et al. 2020) y ya se ha calculado con MLIP entrenados a medida. No está establecido si un uMLIP genérico la reproduce cuantitativamente. Exploratorio X1: Si da 0.264 con MACE frente a 0.15 en DFT-aiMD, un sesgo claro.",
+ viabilidad="CPU sí: ~2 min por material de 64 átomos con 24 instantáneas.",N=2,I=3,F=3,
+ proximo_paso="Ejecutar prereg_INN-01 en un conjunto nuevo (≥10 materiales con σᴬ DFT publicado), con FC 3×3×3 y control MD."),
+dict(id="INN-02",dominio="materiales / metodología",idea="Corrección del ablandamiento de uMLIP: factor de escala de frecuencias por modelo, con incertidumbre por validación cruzada (análogo a los factores de escala de química molecular).",
+ nivel_E="E2",originalidad="conocido",fuentes=U("https://doi.org/10.1038/s41524-024-01500-6","https://iopscience.iop.org/article/10.1088/2632-2153/ad86a1"),
+ plausibilidad="Media: el ablandamiento es sistemático, pero la literatura advierte que un escalado global no corrige la curvatura local. X5 lo confirma: el error LOO sigue en −14…+12 % (2/4 dentro del ±10 %).",
+ viabilidad="Trivial en CPU; lo que limita son las referencias experimentales verificadas.",N=1,I=3,F=3,
+ proximo_paso="Sustituir por ajuste fino (fine-tuning) o por un modelo más reciente; no adoptar el escalado global."),
+dict(id="INN-03",dominio="materiales / inestabilidades ferroeléctricas",idea="Profundidad del doble pozo (relajación libre desde el modo blando de Γ) calculada con MACE-MP-0 como predictor barato del orden de Tc en perovskitas ABO3, con un umbral para separar ferroeléctricos de paraeléctricos cuánticos/incipientes.",
+ nivel_E="E2",originalidad="parcial",fuentes=U("https://arxiv.org/html/2309.06391","https://arxiv.org/html/2601.13125v2","https://doi.org/10.2298/sos0802155v"),
+ plausibilidad="Alta en lo cualitativo: que la profundidad del pozo correlacione con Tc es física conocida, y los MLIP específicos reproducen las secuencias de fases. Exploratorio X2: ρ Spearman 0.97 con n = 5 (muestra mínima). PbTiO3 sale sobre-tetragonal (−190 meV/f.u.).",
+ viabilidad="CPU sí: unos minutos por material de 5 átomos.",N=2,I=2,F=3,
+ proximo_paso="Ejecutar prereg_INN-03 en ≥8 perovskitas nuevas, con Tc verificadas en fuentes primarias."),
+dict(id="INN-04",dominio="termoeléctricos",idea="Cribado de κL con uMLIP + phono3py (BTE).",nivel_E="E0",originalidad="conocido",
+ fuentes=U("https://github.com/MPA2suite/k_SRME","https://arxiv.org/abs/2509.03401"),plausibilidad="Establecida; se sabe que MACE produce errores grandes en las IFC de 3.er orden.",
+ viabilidad="Parcial: phono3py en CPU sirve para celdas pequeñas.",N=1,I=3,F=2,proximo_paso="Usar κ_SRME como benchmark externo antes de cualquier afirmación."),
+dict(id="INN-05",dominio="gestión térmica",idea="Solapamiento de la DOS fonónica (uMLIP) como prefiltro para elegir sustratos/intercapas de alta conductancia térmica de interfaz, comparado con una línea base de desajuste acústico.",
+ nivel_E="E2",originalidad="parcial",fuentes=U("https://par.nsf.gov/servlets/purl/10541004","https://arxiv.org/abs/2407.15404","https://doi.org/10.1115/mnhmt2024-131217"),
+ plausibilidad="Media: el solapamiento es necesario pero no suficiente para una TBC alta (también influyen la velocidad de grupo y la dispersión en la interfaz). X3 produce un ranking de solapamientos sin validar.",
+ viabilidad="CPU sí: posproceso de resultados Phonopy.",N=2,I=3,F=2,proximo_paso="Ejecutar prereg_INN-05 contra TBC experimentales verificadas."),
+dict(id="INN-06",dominio="metamateriales fonónicos",idea="Diseño inverso de cristales fonónicos 1D (matriz de transferencia del kit C-VIB-001) para gaps objetivo.",nivel_E="E0",originalidad="conocido",
+ fuentes=U("https://doi.org/10.1016/j.mattod.2024.09.012","https://doi.org/10.1016/j.cossms.2025.101218"),plausibilidad="Establecida.",viabilidad="CPU sí.",N=1,I=2,F=3,proximo_paso="Solo como demo educativa o de calibración."),
+dict(id="INN-07",dominio="química / espectroscopía",idea="Predicción de IR/Raman de sólidos (cargas de Born y polarizabilidad aprendidas, p. ej. MACE-Field) acoplada al pipeline.",nivel_E="E0",originalidad="conocido",
+ fuentes=U("https://arxiv.org/html/2508.17870v2","https://github.com/mdi-group/mace-field"),plausibilidad="Establecida; el modelo base da espectros ablandados.",viabilidad="Parcial (instalación y validación).",N=1,I=3,F=2,proximo_paso="Habilitaría NAC/LO-TO para C-MAT-001; evaluar como herramienta, no como innovación."),
+dict(id="INN-08",dominio="química / catálisis",idea="Frecuencias de adsorbatos (CO, H) obtenidas de Hessianos uMLIP como descriptores de cribado catalítico.",nivel_E="E0",originalidad="conocido",
+ fuentes=U("https://arxiv.org/html/2410.01650","https://pubs.acs.org/doi/10.1021/acs.jpclett.4c00011"),plausibilidad="Establecida (MAE ~58 cm⁻¹ en Hessianos con OCP).",viabilidad="Parcial (losas grandes en CPU).",N=1,I=3,F=2,proximo_paso=""),
+dict(id="INN-09",dominio="química / reacciones",idea="Verificación automática de estados de transición (exactamente un modo imaginario) y huella vibracional para cribar rutas de reacción.",nivel_E="E0",originalidad="conocido",
+ fuentes=U("https://arxiv.org/html/2410.01650"),plausibilidad="Práctica estándar.",viabilidad="CPU sí.",N=1,I=2,F=3,proximo_paso=""),
+dict(id="INN-10",dominio="biología / biomoléculas",idea="Modos de baja frecuencia (3–7 THz) de cristales de aminoácidos (α-glicina) con uMLIP frente a espectros THz/Raman experimentales; variante física correcta del núcleo de GlyD-QSense.",
+ nivel_E="E1",originalidad="parcial",fuentes=U("https://www.sciencedirect.com/science/article/abs/pii/S1386142521001207","https://arxiv.org/html/2312.15211v2","https://pubs.rsc.org/cp/article/27/22/11930/886085/Assessment-of-a-foundational-machine-learned"),
+ plausibilidad="Media: los cristales zwitteriónicos requieren electrostática de largo alcance y dispersión; MACE-OFF23 excluye pares iónicos.",viabilidad="Media en CPU (~40 átomos/celda, se necesita D3).",N=2,I=2,F=2,proximo_paso="Pre-registrar con picos experimentales verificados (93/152/188/223 cm⁻¹ según la fuente citada)."),
+dict(id="INN-11",dominio="tecnología cuántica / acústica",idea="Cribado de materiales para resonadores HBAR de qubits fonónicos mediante el límite de Akhiezer f·Q estimado con Grüneisen cuasiarmónico de uMLIP.",
+ nivel_E="E1",originalidad="parcial",fuentes=U("https://pmc.ncbi.nlm.nih.gov/articles/PMC7210958/","https://pubs.aip.org/aip/apl/article/117/12/124003/1061352/Temperature-evolution-of-frequency-and-anharmonic"),
+ plausibilidad="Media: la pérdida de Akhiezer es física establecida, pero en dispositivos reales suelen dominar los defectos y las interfaces; el criterio solo da un límite superior intrínseco.",
+ viabilidad="CPU sí (fonones a ±1 % de volumen).",N=2,I=3,F=2,proximo_paso="Probar primero con zafiro, cuarzo, SiC, AlN y diamante frente a f·Q intrínsecos publicados."),
+dict(id="INN-12",dominio="sensores / SAW",idea="Cribado de materiales SAW: constantes elásticas uMLIP → velocidades de onda superficial; la piezoelectricidad requiere otro modelo.",nivel_E="E0",originalidad="parcial",
+ fuentes=U("https://pubs.aip.org/aip/adv/article/14/7/075004/3300467/Analyzing-surface-acoustic-wave-characteristics","https://doi.org/10.1016/j.commatsci.2024.113445"),plausibilidad="Media; el acoplamiento electromecánico no sale de un MLIP estándar.",viabilidad="Parcial.",N=2,I=2,F=1,proximo_paso=""),
+dict(id="INN-13",dominio="biología / ultrasonidos (re-chequeo ADJ-02)",idea="Variante correcta del «antibiótico de fonones»: sonobactericida con microburbujas (cavitación estable/inercial, microstreaming) como adyuvante antibiótico contra biofilms; nada de resonancia de flagelos.",
+ nivel_E="E0",originalidad="conocido",fuentes=U("https://doi.org/10.1002/cbic.202400181","https://pmc.ncbi.nlm.nih.gov/articles/PMC9278652/","https://doi.org/10.1529/biophysj.106.094037"),
+ plausibilidad="Alta para la variante (hay evidencia experimental en la literatura). La idea original queda refutada por el cálculo X4: Q ≈ 3×10⁻⁴, el flagelo está sobreamortiguado.",viabilidad="No en esta caja (experimento biológico; requiere revisión humana).",N=1,I=3,F=1,proximo_paso="No avanzar sin aprobación humana (gobernanza C-BIO)."),
+dict(id="INN-14",dominio="qubits superconductores (re-chequeo ADJ-03)",idea="Variante correcta del «meta-enfriador»: trampas de down-conversion de fonones (islas de metal normal) contra el envenenamiento por cuasipartículas; no permite operar a 1–2 K.",
+ nivel_E="E0",originalidad="conocido",fuentes=U("https://doi.org/10.1038/s41467-022-33997-0","https://arxiv.org/html/2503.07354","https://doi.org/10.1103/physrevb.110.024519"),
+ plausibilidad="Alta (demostrado experimentalmente).",viabilidad="Solo modelado; los dispositivos quedan fuera de alcance.",N=1,I=3,F=1,proximo_paso="Posible enlace con INN-05: solapamiento de DOS sustrato/absorbente."),
+dict(id="INN-15",dominio="sensores bio (re-chequeo ADJ-01)",idea="Variante correcta de GlyD-QSense: termometría Raman anti-Stokes/Stokes de baja frecuencia con calibración y propagación de incertidumbre, sin llamarla «cuántica» ni presentar la validación celular simulada como observación.",
+ nivel_E="E0",originalidad="conocido",fuentes=U("https://doi.org/10.1177/0003702820933908","https://doi.org/10.1021/acsanm.4c03865"),
+ plausibilidad="Alta (técnica establecida, ±0.4–0.5 °C según la fuente citada); la «precisión 0.08 °C» de ADJ-01 no está respaldada.",viabilidad="Solo modelado del presupuesto de incertidumbre.",N=1,I=2,F=2,proximo_paso="Re-etiquetar ADJ-01 como predicción y verificar los picos frente a espectros experimentales."),
+dict(id="INN-16",dominio="materiales / cribado",idea="Prefiltro de estabilidad dinámica con uMLIP antes del DFT (ya validado internamente en C-MAT-001, H-MAT-1 9/9).",nivel_E="E2",originalidad="conocido",
+ fuentes=U("https://www.nature.com/articles/s41524-025-01650-1","https://export.arxiv.org/pdf/2511.22504"),plausibilidad="Alta para verdaderos positivos (~95 %); débil para detectar inestabilidades (54 % de verdaderos negativos en un estudio).",viabilidad="CPU sí.",N=1,I=3,F=3,proximo_paso="Añadir más controles negativos (fases inestables conocidas) a C-MAT-002."),
+]
+for c in C:
+    c["puntuacion"]=c["N"]*c["I"]*c["F"]; c["puntuacion_detalle"]=f"novedad {c['N']} × impacto {c['I']} × viabilidad {c['F']} (escala 1–3; máx. 27)"
+    for k in ("N","I","F"): c.pop(k)
+C.sort(key=lambda c:(-c["puntuacion"], ["INN-01","INN-03","INN-05","INN-11"].index(c["id"]) if c["id"] in ["INN-01","INN-03","INN-05","INN-11"] else 99))
+for i,c in enumerate(C,1): c["rango"]=i
+doc={"cartera":C,"fecha":"2026-10-18","escala_E":"escala_E0_E6.md (0–6, OMNISCIENCE_maestro.tex)",
+ "criterio_rango":"puntuacion = novedad × impacto × viabilidad (1–3 cada uno); desempates: viabilidad, luego existencia de un exploratorio",
+ "originalidad_y_derechos":"Todo el texto, el código y las figuras de esta cartera son de elaboración propia. No se ha copiado texto, figuras ni código de artículos ni patentes; las ideas y los datos externos solo se citan con su URL o DOI. Los valores numéricos externos (Tc, σᴬ de Si, EI del flagelo, frecuencias) se usan como datos citados. No se hizo búsqueda específica de patentes más allá de la búsqueda web general: la etiqueta de originalidad no equivale a un análisis de libertad de operación.",
+ "advertencias":["Las etiquetas nuevo/parcial/conocido proceden de búsquedas web acotadas (≈15 consultas) y no de una revisión sistemática; ninguna idea se etiqueta «nuevo».",
+   "Los exploratorios usan n = 4–6 materiales, sin potencia estadística; no son pruebas confirmatorias.",
+   "El nivel E2 indica que existe una predicción de un modelo, no que esté verificada."]}
+json.dump(doc,open("doc/cartera_innovacion.json","w"),indent=1,ensure_ascii=False)
+for c in C: print(c["rango"],c["id"],c["puntuacion"],c["originalidad"],c["nivel_E"])

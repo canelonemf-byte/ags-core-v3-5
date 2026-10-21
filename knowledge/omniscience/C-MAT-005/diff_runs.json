@@ -1,0 +1,48 @@
+{
+ "veredictos_run1": {
+  "H1": "PASA",
+  "H2": "PASA",
+  "H3": "PASA",
+  "H4": "PASA",
+  "H5": "PASA",
+  "H6": "PASA",
+  "H7": "PASA",
+  "H-D1": "INCONCLUSA",
+  "H-D2": "INCONCLUSA"
+ },
+ "veredictos_run2": {
+  "H1": "PASA",
+  "H2": "PASA",
+  "H3": "PASA",
+  "H4": "PASA",
+  "H5": "PASA",
+  "H6": "PASA",
+  "H7": "PASA",
+  "H-D1": "INCONCLUSA",
+  "H-D2": "INCONCLUSA"
+ },
+ "veredictos_iguales": true,
+ "controles_iguales": true,
+ "H-REP_numerico": "PASA",
+ "replica": {
+  "mattersim": {
+   "max_rel": 0.0,
+   "fuera_tolerancia": [],
+   "n_fuera": 0,
+   "clase_estabilidad_igual": true,
+   "sha256_run1": "acc441faa9f29f52072cbe93a1f2cd9a90aa3e22de36af2c4912b809b3874252",
+   "sha256_run2": "acc441faa9f29f52072cbe93a1f2cd9a90aa3e22de36af2c4912b809b3874252",
+   "byte_identico": true
+  },
+  "mace": {
+   "max_rel": 7.227181160226645e-10,
+   "fuera_tolerancia": [],
+   "n_fuera": 0,
+   "clase_estabilidad_igual": true,
+   "sha256_run1": "73589a8732488a0b0ac7a55f6e2c39fae034433a42750e44234b328cb7b67582",
+   "sha256_run2": "9a5a56902df88da2d0876ff767ac2bc0cffe1e21dc57a8f8616d012b71c66990",
+   "byte_identico": false
+  }
+ },
+ "H-REP_final": "PASA"
+}

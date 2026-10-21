@@ -1,0 +1,168 @@
+{
+ "mattersim:Si": {
+  "V0_relajado_sobre_V_partida": 1.0207,
+  "err_S298_V0": 0.0312,
+  "err_S298_Vpartida": 0.018,
+  "err_S600_Vpartida": 0.0059,
+  "fmin_Vpartida": -1.6424176e-07
+ },
+ "mattersim:MgO": {
+  "V0_relajado_sobre_V_partida": 1.0318,
+  "err_S298_V0": 0.0809,
+  "err_S298_Vpartida": 0.0134,
+  "err_S600_Vpartida": -0.0031,
+  "fmin_Vpartida": -1.6700126e-07
+ },
+ "mattersim:NaCl": {
+  "V0_relajado_sobre_V_partida": 1.0327,
+  "err_S298_V0": 0.0627,
+  "err_S298_Vpartida": 0.0245,
+  "err_S600_Vpartida": -0.0095,
+  "fmin_Vpartida": -1.3911259e-08
+ },
+ "mattersim:LiF": {
+  "V0_relajado_sobre_V_partida": 1.0316,
+  "err_S298_V0": 0.0973,
+  "err_S298_Vpartida": 0.0384,
+  "err_S600_Vpartida": -0.0044,
+  "fmin_Vpartida": -9.1875108e-08
+ },
+ "mattersim:NaF": {
+  "V0_relajado_sobre_V_partida": 1.043,
+  "err_S298_V0": 0.0586,
+  "err_S298_Vpartida": -0.0032,
+  "err_S600_Vpartida": -0.0241,
+  "fmin_Vpartida": 8.3445934e-09
+ },
+ "mattersim:KCl": {
+  "V0_relajado_sobre_V_partida": 1.0377,
+  "err_S298_V0": 0.0688,
+  "err_S298_Vpartida": 0.017,
+  "err_S600_Vpartida": -0.0143,
+  "fmin_Vpartida": -2.2911119e-08
+ },
+ "mattersim:KBr": {
+  "V0_relajado_sobre_V_partida": 1.0479,
+  "err_S298_V0": 0.105,
+  "err_S298_Vpartida": 0.0632,
+  "err_S600_Vpartida": 0.0205,
+  "fmin_Vpartida": -4.5183667e-08
+ },
+ "mattersim:CaO": {
+  "V0_relajado_sobre_V_partida": 1.0184,
+  "err_S298_V0": 0.1126,
+  "err_S298_Vpartida": 0.0807,
+  "err_S600_Vpartida": 0.0306,
+  "fmin_Vpartida": -7.9183878e-08
+ },
+ "mattersim:CaF2": {
+  "V0_relajado_sobre_V_partida": 1.0261,
+  "err_S298_V0": 0.0606,
+  "err_S298_Vpartida": 0.0157,
+  "err_S600_Vpartida": -0.0172,
+  "fmin_Vpartida": 1.6826869e-07
+ },
+ "mattersim:Al2O3": {
+  "V0_relajado_sobre_V_partida": 1.0295,
+  "err_S298_V0": 0.0841,
+  "err_S298_Vpartida": 0.0215,
+  "err_S600_Vpartida": 0.0027,
+  "fmin_Vpartida": -3.2033246e-07
+ },
+ "mattersim:BeO": {
+  "V0_relajado_sobre_V_partida": 1.0129,
+  "err_S298_V0": 0.0543,
+  "err_S298_Vpartida": 0.031,
+  "err_S600_Vpartida": 0.0045,
+  "fmin_Vpartida": -5.2056349e-07
+ },
+ "MARE_mattersim": {
+  "err_S298_V0": 0.0742,
+  "err_S298_Vpartida": 0.0297,
+  "err_S600_Vpartida": 0.0124,
+  "n": 11
+ },
+ "mace:Si": {
+  "V0_relajado_sobre_V_partida": 1.0136,
+  "err_S298_V0": 0.2784,
+  "err_S298_Vpartida": 0.2621,
+  "err_S600_Vpartida": 0.1574,
+  "fmin_Vpartida": -1.6047029e-07
+ },
+ "mace:MgO": {
+  "V0_relajado_sobre_V_partida": 1.0305,
+  "err_S298_V0": 0.222,
+  "err_S298_Vpartida": 0.1316,
+  "err_S600_Vpartida": 0.0671,
+  "fmin_Vpartida": 1.5715299e-07
+ },
+ "mace:NaCl": {
+  "V0_relajado_sobre_V_partida": 1.0231,
+  "err_S298_V0": 0.0511,
+  "err_S298_Vpartida": 0.0201,
+  "err_S600_Vpartida": -0.0123,
+  "fmin_Vpartida": -8.5076101e-08
+ },
+ "mace:LiF": {
+  "V0_relajado_sobre_V_partida": 1.0502,
+  "err_S298_V0": 0.2006,
+  "err_S298_Vpartida": 0.0862,
+  "err_S600_Vpartida": 0.0247,
+  "fmin_Vpartida": -1.2786911e-07
+ },
+ "mace:NaF": {
+  "V0_relajado_sobre_V_partida": 1.0425,
+  "err_S298_V0": 0.1042,
+  "err_S298_Vpartida": 0.0824,
+  "err_S600_Vpartida": 0.0307,
+  "fmin_Vpartida": -1.0749159e-07
+ },
+ "mace:KCl": {
+  "V0_relajado_sobre_V_partida": 1.0298,
+  "err_S298_V0": 0.0435,
+  "err_S298_Vpartida": 0.008,
+  "err_S600_Vpartida": -0.0206,
+  "fmin_Vpartida": -6.5095256e-08
+ },
+ "mace:KBr": {
+  "V0_relajado_sobre_V_partida": 1.058,
+  "err_S298_V0": 0.0529,
+  "err_S298_Vpartida": 0.0133,
+  "err_S600_Vpartida": -0.0153,
+  "fmin_Vpartida": -3.2674036e-08
+ },
+ "mace:CaO": {
+  "V0_relajado_sobre_V_partida": 1.0148,
+  "err_S298_V0": 0.1771,
+  "err_S298_Vpartida": 0.1559,
+  "err_S600_Vpartida": 0.075,
+  "fmin_Vpartida": -1.7601294e-07
+ },
+ "mace:CaF2": {
+  "V0_relajado_sobre_V_partida": 1.0256,
+  "err_S298_V0": 0.1036,
+  "err_S298_Vpartida": 0.0599,
+  "err_S600_Vpartida": 0.0104,
+  "fmin_Vpartida": 6.855605e-08
+ },
+ "mace:Al2O3": {
+  "V0_relajado_sobre_V_partida": 1.0305,
+  "err_S298_V0": 0.1314,
+  "err_S298_Vpartida": 0.0817,
+  "err_S600_Vpartida": 0.037,
+  "fmin_Vpartida": -2.6542007e-07
+ },
+ "mace:BeO": {
+  "V0_relajado_sobre_V_partida": 1.0157,
+  "err_S298_V0": 0.1803,
+  "err_S298_Vpartida": 0.1667,
+  "err_S600_Vpartida": 0.0827,
+  "fmin_Vpartida": -3.3329334e-07
+ },
+ "MARE_mace": {
+  "err_S298_V0": 0.1405,
+  "err_S298_Vpartida": 0.0971,
+  "err_S600_Vpartida": 0.0485,
+  "n": 11
+ }
+}

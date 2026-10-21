@@ -1,0 +1,54 @@
+{
+ "meta": {
+  "id": "C-MAT-002",
+  "fecha": "2026-10-19",
+  "prov_tipo": "PROV-O simplificado (JSON)"
+ },
+ "objetivo": "Procedencia de C-MAT-002",
+ "datos_clave": {
+  "prereg": {
+   "archivo": "prereg_C-MAT-002.md",
+   "sha256": "af9fd6d7e39a00bef5082bf8cfe47a35064e70dec189096606889bbda332aa70",
+   "congelado": "2026-10-19T09:10:31+02:00"
+  },
+  "codigo": {
+   "cmat002_run.py": "ba97b0d2bcfd1f8d02e80807c2e0e3ce81fb6f05efd66aa2ec62fe0d323469ea",
+   "cmat002_run_v1_1.py": "fae55fe7717cd39cbf43b43b23cd006f1284183104c8f102228e6edcd364f9d9",
+   "cmat002_eval.py": "ad6de55708f7ac030a9f872b87f5552e4268c10005d3eec9ab56152cbc3966cc",
+   "cmat002_eval_v1_1.py": "26c8b4ade39095250c0182fada0832deb20fddf5e40803411116a49b3f9433e6"
+  },
+  "salidas": {
+   "run1/results_core.json": "9b655af864cf177af887934e094a953659b646d517b0fb5d457b1d802f5b8290",
+   "run2/results_core.json": "b8b4eaee4d69b16a4bb135e2f0c490e94ba7f96e722ab540e89dd1c8d0dea7ad",
+   "v11_run1/results_core.json": "b82bd5ad6139cd843b57296a37e3b4c00ade762f3c83a2aaad9a3f0bc0e9cdbb",
+   "v11_run2/results_core.json": "b82bd5ad6139cd843b57296a37e3b4c00ade762f3c83a2aaad9a3f0bc0e9cdbb"
+  },
+  "resultados": {
+   "results.json": "56ca9a4749a43ea4c42903d1df5f9c00f649defb71f31818ba0b52c2c901cc7c",
+   "results_sensibilidad_v1_1.json": "ab5f679e0f9716d1729754f508ca539b95e4e34cac90661cae9363d15a520758"
+  },
+  "entorno": {
+   "python": "3.13.5",
+   "ase": "3.29.0",
+   "phonopy": "4.8.3",
+   "mace_torch": "0.3.16",
+   "matscipy": "1.3.1",
+   "numpy": "2.5.4",
+   "torch": "2.14.1+cpu",
+   "dispositivo": "CPU, 8 hilos",
+   "mace_ckpt": "20231203mace128L1_epoch199model (mismo que C-MAT-001)"
+  },
+  "referencias": [
+   "https://janaf.nist.gov/tables/Si-001.txt",
+   "https://janaf.nist.gov/tables/Mg-008.txt",
+   "https://janaf.nist.gov/tables/Cl-053.txt"
+  ]
+ },
+ "tareas": [],
+ "riesgos": [
+  "D1 exclude_gamma_acoustic post hoc",
+  "D2 normalización Cv(3000K)/3R ≤0.36 %"
+ ],
+ "decisiones": [],
+ "proximo_paso": "C-MAT-003"
+}

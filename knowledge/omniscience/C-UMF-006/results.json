@@ -1,0 +1,37 @@
+{
+ "dE_PBE_gamma": -58.202281668854994,
+ "dE_PBE0TC_gamma": null,
+ "HA1": "NO EVALUABLE",
+ "HA2": "NO EVALUABLE",
+ "HA3": "NO EVALUABLE",
+ "vib_mattersim": {
+  "rutilo": {
+   "clase": "evaluable_con_regla",
+   "f_imag": 0.009270674096,
+   "fmin_THz": -3.344229621
+  },
+  "anatasa": {
+   "clase": "normal",
+   "f_imag": 0.0,
+   "fmin_THz": -1.651001733e-07
+  }
+ },
+ "dvib_ms": {
+  "ZPE_eV_at": 2.6611449999999897,
+  "U_vib_eV_at": 1.7120690100000113,
+  "F_vib_eV_at": 5.437105380000001
+ },
+ "HB1": "PASA",
+ "HB2": "PASA",
+ "dvib_mace": {
+  "ZPE_eV_at": 3.7548116300000003,
+  "U_vib_eV_at": 2.347268700000002,
+  "F_vib_eV_at": 6.706641409999999
+ },
+ "H_REP": {
+  "i": true,
+  "ii": "NO EVALUABLE",
+  "veredicto": "PASA"
+ },
+ "nivel_E": "E1"
+}

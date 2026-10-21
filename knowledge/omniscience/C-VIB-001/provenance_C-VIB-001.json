@@ -1,0 +1,55 @@
+{
+ "campaign": "C-VIB-001",
+ "activity": "reimplementación mínima reproducible y prueba de H1–H6 frente a soluciones analíticas",
+ "date_local": "2026-10-18T20:17:21+02:00",
+ "agents": {
+  "human": "Lázaro López Paz (autor de la campaña original)",
+  "computational": "Grok Bot (agente ejecutor OMNISCIENCE)"
+ },
+ "seed": 7,
+ "inputs": {
+  "original_code": "NO RECUPERADO: grok-workspace-2.zip (Drive id 1pyACZBxXqzJa_WR_Gc__UyaegijsrTM8) y carpeta figs (Drive id 17tWKDUDiaFEBc_IAumtLVJQrq4LKky8n) listadas (11 imágenes) pero DownloadFile no disponible en esta sesión",
+  "specification": "OMNISCIENCE_maestro.tex §Campaña ejecutada C-VIB-001 (H1–H6 y criterios de falsación)",
+  "specification_sha256": "54d0892148680dc22c23f1ad5e3f6e626053e72f837d62cc1fefe49f0cb88276",
+  "models": "canónicos (sin CIF experimental)"
+ },
+ "code": {
+  "path": "code/cvib001_repro.py",
+  "sha256": "e796ae2eb5b06f27286d1c24ab36ac8e34d0b91fbebad3b2c301151311d39af4",
+  "version": "1.1"
+ },
+ "environment": {
+  "python": "3.13.5",
+  "platform": "Linux-6.12.94+-x86_64-with-glibc2.41",
+  "numpy": "2.4.4",
+  "scipy": "1.18.1",
+  "matplotlib": "3.11.2",
+  "lockfile": "requirements.lock",
+  "lockfile_sha256": "e24b54305b8317dc5dfd59baccb92889ab5a642cad81c8c5e452dc7342428b25"
+ },
+ "command": ".venv/bin/python code/cvib001_repro.py --out run1 (y run2)",
+ "outputs": {
+  "H1_oscilador.png": "6cc34a1dc1d523271bdbbc7c2931b3ed98c5ba02b7f0f29e0d3a1dd40c5337c0",
+  "H2_fft_espectrograma.png": "2e3a33007e9b90e0cb6bbeb19f0e4400791ceeed0e96b7a47edaee67a469de89",
+  "H3_cuerda.png": "ff9a43ae7b7ee62874061fd63b2bfb1fabc73ee1f38726530d9d7e91411019a0",
+  "H4_dispersion.png": "649320378e2509c083c16b42c5383a9b03152b7caa16c0410beeda66ee71c0e0",
+  "H5_cristal_fononico_T.png": "a354ca0cd88da4757834cc3014be85fc8091607de06424abe8398cc6f2c9d09b",
+  "H6_qho.png": "4d2ab4dff34a07092b9e51d9b28c4aece34a5bf016968788e4aa4325a10a6008",
+  "results.json": "efd277e2a47ef85ce821c971d702f577bcaf75342c4c107390fa7101d5d86c00"
+ },
+ "reproducibility": {
+  "runs": [
+   "run1",
+   "run2"
+  ],
+  "byte_identical": true
+ },
+ "criteria_history": [
+  "v1.0 (run0_criterios_originales): H4 y H5 FALLARON por diseño del arnés, no por física: H4 comparaba ω tras sqrt cerca de ω=0 (error 6.2e-9 > tol 1e-9 por redondeo amplificado); H5 exigía ≥3 gaps, pero con capas de igual tiempo de tránsito (dA/cA=dB/cB) los gaps de orden par se cierran y en 0<ωa/πc<4 solo hay 2. Los criterios de falsación del documento original (ω_ac(π)<ω_op(π); |T|² no plana) se cumplían ya en v1.0.",
+  "v1.1: H4 compara ω² (Bloch y anillo); H5 exige ≥2 gaps; ARPACK con v0 fijo (eliminaba jitter ~1e-15 entre ejecuciones). Cambio post-hoc declarado."
+ ],
+ "evidence_level": 3,
+ "experimental_measurement": false,
+ "independent_replication": false,
+ "limits": "Reimplementación por el mismo sistema; no compara con las salidas originales (no recuperadas). Modelos 1D/2D canónicos; no DFT/DFPT/FEM 3D; sin medida."
+}
