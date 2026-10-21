@@ -266,3 +266,8 @@ def test_declared_license_not_flagged():
     extra = c.project_level("license_check", Idx(), proj, fs)
     kinds = {f["kind"] for f in fs + extra}
     assert "reserved_clause" not in kinds and "no_mit" not in kinds and "declared_license" in kinds
+
+
+def test_index_skips_cache_dirs(tmp_path):
+    from projects.knowledge import SKIP_DIRS
+    assert {".venv", ".hf_cache", "node_modules", "__pycache__", ".git"} <= SKIP_DIRS

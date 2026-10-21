@@ -1,0 +1,6 @@
+FUSIÓN IA — avisos de terceros
+Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA. Código MIT (LICENSE); docs y dataset CC BY 4.0 (LICENSE-DOCS).
+- Modelos base (no se redistribuyen): HuggingFaceTB/SmolLM2-135M-Instruct, Qwen/Qwen2.5-0.5B-Instruct, Qwen/Qwen2.5-7B, mistralai/Mistral-7B-v0.3 — Apache-2.0 según sus fichas de Hugging Face (ver licencias.json). Los adaptadores LoRA son obras derivadas: conservar el aviso Apache-2.0 al distribuir.
+- Dependencias: PyTorch (BSD-3-Clause), Hugging Face Transformers y PEFT (Apache-2.0).
+- El dataset (data/*.jsonl) se generó a partir de documentos propios del autor; menciona nombres de terceros (p. ej. Karpathy/nanoGPT/minGPT, loralib, Sarfatti, IBM, Google, NVIDIA) solo como citas del contenido fuente, sin incluir su código.
+- Licencia de las combinaciones concretas y revisión legal: PENDIENTE DE VERIFICACIÓN.

@@ -226,16 +226,18 @@
       "repo": "canelonemf-byte/fusi-n-carpeta-",
       "source": "github",
       "url": "https://github.com/canelonemf-byte/fusi-n-carpeta-",
-      "description": "proyecto",
+      "description": "FUSIÓN IA: plan y scripts LoRA para AGsGPT; dataset 953 pares (CC BY 4.0); smoke SmolLM2-135M baseline 0% LLP válido; sin adaptador entrenado. E1 (E2 candidato).",
       "keywords": [
         "fusi",
         "carpeta"
       ],
       "tools": [],
-      "license": "none",
+      "license": "MIT (código: scripts/, configs/) + CC BY 4.0 (docs, *.json, data/)",
       "files": 1,
       "binaries_or_skipped": [],
-      "broken_paths": []
+      "broken_paths": [],
+      "license_declared_by_author": true,
+      "evidencia_nivel": "E1"
     },
     {
       "id": "futuro-fotonica",

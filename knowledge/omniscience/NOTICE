@@ -23,3 +23,15 @@ Autor: Lázaro López Paz. Licencia del proyecto: MIT (ver LICENSE).
 
 4) docs/OMNISCIENCE_Architecture_OCR.md procede de una presentación cuyas diapositivas llevaban la marca de
    agua «Gemini Notebook» (herramienta de terceros); se retiró la marca en la limpieza del OCR.
+
+5) Terceros mencionados en los documentos de Drive extraídos (drive/*.md, revisión 2026-10-21).
+   El escaneo automático license_check detecta 3 nombres (Google, Gemini, Grok); la búsqueda manual añade el resto:
+   - Google NotebookLM / Google Gemini (Google LLC): herramienta que generó las diapositivas (Architecture, Discovery Engine).
+     Términos de uso: PENDIENTE DE VERIFICACIÓN.
+   - Grok (xAI): asistencia de IA citada en OMNISCIENCE_PUBLICACION_v1.0.0.md; no es coautor.
+   - RO-Crate (Research Object Crate, comunidad ResearchObject.org): formato de empaquetado citado.
+   - PROV-O (W3C PROV Ontology, Recomendación W3C 2013): modelo de procedencia citado.
+   - Unreal Engine: marca de Epic Games (Discovery Engine, "UE6" = lectura OCR; versión PENDIENTE DE VERIFICACIÓN).
+   - DOI 10.1038/s41467-024-44773-7 (Nature Communications) y arXiv:1908.06841: citados en los documentos;
+     correspondencia título/autores PENDIENTE DE VERIFICACIÓN.
+   Ninguno de estos terceros es coautor ni respalda el proyecto.

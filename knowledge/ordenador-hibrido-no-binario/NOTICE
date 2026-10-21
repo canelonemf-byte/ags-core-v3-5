@@ -1,0 +1,19 @@
+ORDENADOR HÍBRIDO NO BINARIO — avisos de terceros y atribuciones
+
+Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA.
+Licencia: software MIT (ver LICENSE); documentos CC BY 4.0.
+
+1) Sarfatti: NO se usa ni se cita trabajo de Jack Sarfatti en el código ni en los documentos de este proyecto
+   (revisión 2026-10-21). La detección automática procede de la clave "sarfatti_alcubierre": "no aparecen"
+   en drive/revision_llp.json (falso positivo). No hay referencia que atribuir; si en el futuro se cita,
+   la referencia exacta queda PENDIENTE DE VERIFICACIÓN.
+
+2) Terceros mencionados:
+   - IBM (Estudio de viabilidad) y Qiskit (IBM, Apache-2.0; Manual): menciones; sin código de Qiskit en sim/.
+   - Google NotebookLM / Gemini: herramienta que generó las diapositivas Blueprint y Ultra-Low Power.
+     Términos de uso de Google: PENDIENTE DE VERIFICACIÓN.
+   - Unreal Engine es marca de Epic Games ("UE6/UEB" en el Blueprint = lectura OCR).
+   - DeepSeek / Grok: herramientas de IA de asistencia; no son coautores.
+   - Referencias bibliográficas Diana 2019 y Bormashenko 2020: PENDIENTE DE VERIFICACIÓN.
+
+3) Dependencias de sim/ (no se redistribuyen): NumPy (BSD-3-Clause), PyYAML (MIT).
