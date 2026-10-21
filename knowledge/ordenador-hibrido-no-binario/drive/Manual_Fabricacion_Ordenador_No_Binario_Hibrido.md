@@ -94,7 +94,7 @@ La desviación estándar del ruido térmico en el nodo capacitivo es: $$ \sigma 
 \sqrt{\frac{kT}{C }} $$ Para $T = 300\text{ K}$ y $C  = 1\text{ fF}$, $\sigma \approx 2\text{ mV}$. 
 C on un voltaje de alimentación $V_{D D } = 0.5\text{ V}$ y una base $b = 4$, la separación entre 
 niveles es: $$ \D elta V = \frac{V_{D D }}{b-1} = \frac{0.5\text{ V}}{3} \approx 166.7\text{ mV} $$ La 
-relación de margen frente al ruido térmico es $\D elta V / \sigma \approx 83.3$, garantizando 
+relación de margen frente al ruido térmico es $\D elta V / \sigma \approx 83.3$, lo que en este cálculo teórico (E1, PENDIENTE DE VERIFICACIÓN; solo ruido térmico kT/C) correspondería a
 una tasa de error de bit (B ER) $< 10^{-18}$. 
    
 

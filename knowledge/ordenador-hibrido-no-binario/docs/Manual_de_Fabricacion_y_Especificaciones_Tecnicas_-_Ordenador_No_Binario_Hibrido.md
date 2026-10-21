@@ -67,7 +67,7 @@ La energía disipada por conmutación en régimen adiabático se expresa como: \
 
 ### 2.3 Relación Señal/Ruido y Márgenes de Voltaje
 
-La desviación estándar del ruido térmico en el nodo capacitivo es: \$\$ \\sigma \= \\sqrt{\\frac{kT}{C}} \$\$ Para \$T \= 300\\text{ K}\$ y \$C \= 1\\text{ fF}\$, \$\\sigma \\approx 2\\text{ mV}\$. Con un voltaje de alimentación \$V\_{DD} \= 0.5\\text{ V}\$ y una base \$b \= 4\$, la separación entre niveles es: \$\$ \\Delta V \= \\frac{V\_{DD}}{b-1} \= \\frac{0.5\\text{ V}}{3} \\approx 166.7\\text{ mV} \$\$ La relación de margen frente al ruido térmico es \$\\Delta V / \\sigma \\approx 83.3\$, garantizando una tasa de error de bit (BER) \$\< 10^{-18}\$.
+La desviación estándar del ruido térmico en el nodo capacitivo es: \$\$ \\sigma \= \\sqrt{\\frac{kT}{C}} \$\$ Para \$T \= 300\\text{ K}\$ y \$C \= 1\\text{ fF}\$, \$\\sigma \\approx 2\\text{ mV}\$. Con un voltaje de alimentación \$V\_{DD} \= 0.5\\text{ V}\$ y una base \$b \= 4\$, la separación entre niveles es: \$\$ \\Delta V \= \\frac{V\_{DD}}{b-1} \= \\frac{0.5\\text{ V}}{3} \\approx 166.7\\text{ mV} \$\$ La relación de margen frente al ruido térmico es \$\\Delta V / \\sigma \\approx 83.3\$, lo que en este cálculo teórico (E1, PENDIENTE DE VERIFICACIÓN; solo ruido térmico kT/C) correspondería a una tasa de error de bit (BER) \$\< 10^{-18}\$.
 
 ---
 

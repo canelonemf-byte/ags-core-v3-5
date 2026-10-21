@@ -17,7 +17,7 @@ Alcance: revisión del estado del arte y propuesta de diseño. Ningún resultado
 ## 3. Cómputo en memoria analógico (CIM) — estado del arte
 - **MVM en crossbar**: la ley de Ohm multiplica y la de Kirchhoff suma por columna. DAC en filas y ADC en columnas [R7][R8].
 - **No idealidades**: ruido de programación y lectura, deriva, no linealidad, IR-drop y conductancia finita.
-- **Entrenamiento tolerante a ruido**: inyectar ruido durante el entrenamiento, calibrar y recalibrar, y usar esquemas de pesos diferenciales o multicelda. Se ha demostrado inferencia precisa en PCM con estas técnicas [R9].
+- **Entrenamiento tolerante a ruido**: inyectar ruido durante el entrenamiento, calibrar y recalibrar, y usar esquemas de pesos diferenciales o multicelda. Según la literatura citada, se ha demostrado inferencia precisa en PCM con estas técnicas [R9] (resultado de terceros, no propio; referencia R9 PENDIENTE DE VERIFICACIÓN).
 - **Relación con `sim/sim_mvm.py` (E2, ev_16)**: el modelo solo incluye cuantización a 2–16 niveles, ruido de programación (2 %) y de lectura (1 %) y ADC de 4–8 bits, todo con **parámetros supuestos**. Todavía no incluye deriva, IR-drop ni entrenamiento tolerante a ruido. Resultado: ninguna configuración llega a ≤1 % (la mejor da un 10,5 %) y ADC+DAC suponen el 46–62 % de la energía CIM modelada.
 
 ## 4. Planificación heterogénea CMOS/CIM/fotónica/QPU

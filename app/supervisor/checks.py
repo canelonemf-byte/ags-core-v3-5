@@ -143,10 +143,17 @@ def license_in_file(rel: str, text: str) -> list[dict]:
         for name, rx in _TP_RE.items():
             if rx.search(pn):
                 out.append(_f("third_party", "info", rel, ln, f"menciona a un tercero ({THIRD_PARTY[name]}): {name}", line.strip(), name=name))
+        reviewed = '"revision_licencia"' in line  # par revisado y atribuido (2026-10-21): queda como info, no se oculta
         if DERIVED.search(line) and (re.search(r"https?://|github", p) or Path(rel).suffix in CODE_EXT):
-            out.append(_f("derived", "medium", rel, ln, "indica que el contenido deriva de otra fuente: verificar licencia y atribución", line.strip()))
+            if reviewed:
+                out.append(_f("derived_reviewed", "info", rel, ln, "deriva de otra fuente: revisado con atribución (revision_licencia)", line.strip()))
+            else:
+              out.append(_f("derived", "medium", rel, ln, "indica que el contenido deriva de otra fuente: verificar licencia y atribución", line.strip()))
         if AI_GEN.search(p):
-            out.append(_f("ai_text", "medium", rel, ln, "texto con huella de asistente de IA: revisar autoría y no presentarlo como redacción propia sin indicarlo", line.strip()))
+            if reviewed:
+                out.append(_f("ai_text_reviewed", "info", rel, ln, "huella de IA revisada y declarada (revision_licencia)", line.strip()))
+            else:
+              out.append(_f("ai_text", "medium", rel, ln, "texto con huella de asistente de IA: revisar autoría y no presentarlo como redacción propia sin indicarlo", line.strip()))
     return out
 
 
