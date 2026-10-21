@@ -1,0 +1,15 @@
+C-NANO-001 — avisos de terceros y atribuciones
+
+Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA (ORCID 0000-0001-8601-1963).
+Licencias: código (code/, run_all.sh) MIT; documentos, figuras y results.json CC BY 4.0.
+
+Dependencias usadas y NO redistribuidas (cada una con su licencia; licencias de pesos de modelos PENDIENTE DE VERIFICACIÓN):
+  - MatterSim (Microsoft), checkpoint MatterSim-v1.0.0-5M
+  - MACE / MACE-MP-0 medium
+  - pymatgen (WulffShape), ASE (ase.vibrations), GPAW (control PBE), NumPy, Matplotlib
+
+Datos de referencia citados, NO copiados aquí (la carpeta refs/ con datos de terceros se dejó fuera):
+  - Tran et al. 2016, Scientific Data, https://doi.org/10.1038/sdata.2016.80 (energías superficiales PBE, vía Materials Project)
+  - COD 9007531 (rutilo) https://doi.org/10.1107/S0567740871005466 y COD 9015929 (anatasa) https://doi.org/10.1107/S010876819100335X
+  - Lazzeri, Vittadini, Selloni, https://doi.org/10.1103/PhysRevB.63.155409 y erratum https://doi.org/10.1103/PhysRevB.65.119901
+  Lista completa: ver datos_clave en prereg_C-NANO-001.FROZEN.md.
