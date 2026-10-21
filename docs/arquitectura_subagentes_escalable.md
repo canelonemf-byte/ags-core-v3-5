@@ -16,3 +16,6 @@ riesgos:
 decisiones:
   - "No se simula ni inventa estado de NNC."
 proximo_paso: "Usuario sube NNC (zip o repo) al box o Drive; supervisor lo integra en projects.json, knowledge/ y ingest_ucs.sh."
+
+## Actualización 2026-10-21: simulación E1–E2
+Ver `docs/subagentes_2026-10-21.md` y `scripts/sim_subagentes.py` (workers simulados, no agentes reales). Sub-agentes reales: 7.
