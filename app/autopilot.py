@@ -47,6 +47,8 @@ def main(argv=None):
     sup = Supervisor(max_workers=a.max_workers, workers_per_project=a.workers_per_project)
     log.info("autopilot iniciado: %d proyectos, max_workers=%d, sub-agentes/proyecto=%d, intervalo=%ss, reseed=%ss",
              len(sup.projects()), sup.max_workers, sup.workers_per_project, a.interval, a.reseed)
+    import agents  # noqa: F401  registra los agentes (incluye sub-agentes)
+    _sub_state = {}
     n = 0
     while not _stop and (a.cycles == 0 or n < a.cycles):
         if Path(a.stop_file).exists():
@@ -56,6 +58,13 @@ def main(argv=None):
         try:
             stale = sup.queue.requeue_stale()
             seeded = sup.seed(a.reseed)
+            try:  # sub-agentes locales (CPU, intervalos propios, estado en data/subagentes/)
+                import agents.subagents as _sa
+                ran = _sa.run_due(_sub_state)
+                if ran:
+                    log.info("sub-agentes ejecutados: %s", ",".join(ran))
+            except Exception:
+                log.exception("fallo en sub-agentes")
             stats = sup.run_cycle(max_tasks=10_000)
             sup.queue.kv_set("autopilot_heartbeat", {"ts": time.time(), "pid": os.getpid(), "cycle": n, "interval": a.interval})
             lvl = logging.WARNING if stats["errors"] else logging.INFO

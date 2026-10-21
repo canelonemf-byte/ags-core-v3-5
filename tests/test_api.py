@@ -2,7 +2,8 @@ import pytest
 from fastapi.testclient import TestClient
 from main import app
 from agents.project_agents import PROJECT_AGENTS
-TOTAL = 38 + len(PROJECT_AGENTS)
+from agents.subagents import WORKERS
+TOTAL = 38 + len(PROJECT_AGENTS) + len(WORKERS)
 pytestmark = pytest.mark.unit
 client = TestClient(app)
 
