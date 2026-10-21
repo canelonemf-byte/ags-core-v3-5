@@ -20,6 +20,43 @@ def norm(t: str) -> str:
     return re.sub(r"\s+", " ", t).strip()
 
 
+def content_key(instruction: str) -> str:
+    """Contenido propio de la instrucción, sin plantilla ni metadatos de fuente y sin espacios/puntuación.
+
+    Motivo (fuga b6d4ab22, 2026-10-21): el mismo documento llegó por dos rutas (docs/*.docx.md y
+    drive/*.md) con cabecera distinta y espaciado roto de PDF («Lóp ez»); el coseno TF-IDF del par
+    completo daba 0.77 < 0.85 y no se detectaba. Aquí se ignoran espacios, puntuación y comentarios.
+    """
+    t = instruction.split("NOTA:", 1)[1] if "NOTA:" in instruction else instruction
+    t = re.sub(r"<!--.*?-->", " ", t, flags=re.S)
+    t = re.sub(r"^>.*$", " ", t, flags=re.M)  # líneas de cita con metadatos de extracción
+    return re.sub(r"[\W_]+", "", norm(t))
+
+
+def shingles(t: str, k: int = 20) -> set:
+    return {t[i:i + k] for i in range(max(1, len(t) - k + 1))} if t else set()
+
+
+def containment_leaks(items, threshold=0.8, min_len=200):
+    """Contención de shingles de 20 caracteres (sin espacios) entre contenido no-test y test."""
+    tests = [(it, shingles(it["content"])) for it in items if it["split"] == "test" and len(it["content"]) >= min_len]
+    out = []
+    for it in items:
+        if it["split"] == "test" or len(it["content"]) < min_len:
+            continue
+        A = shingles(it["content"])
+        best = None
+        for t, B in tests:
+            c = len(A & B) / min(len(A), len(B))
+            if c >= threshold and (best is None or c > best[0]):
+                best = (c, t)
+        if best:
+            out.append({"tipo": "contencion", "similitud": round(best[0], 4),
+                        **{k: it[k] for k in ("split", "file", "line", "id")},
+                        "test_id": best[1]["id"], "test_line": best[1]["line"]})
+    return out
+
+
 def sha(t: str) -> str:
     return hashlib.sha256(t.encode()).hexdigest()
 
@@ -44,7 +81,8 @@ def load_pairs():
                 continue
             txt = norm(f"{r.get('instruction','')} {r.get('response','')}")
             items.append({"split": split, "file": str(p.relative_to(ROOT)) if ROOT in p.parents else str(p),
-                          "line": i + 1, "id": str(r.get("id", "")), "text": txt, "sha": sha(txt)})
+                          "line": i + 1, "id": str(r.get("id", "")), "text": txt, "sha": sha(txt),
+                          "content": content_key(str(r.get("instruction", "")))})
     return items
 
 
@@ -98,6 +136,8 @@ def leaks(exact, near, items):
             other = b if a["split"] == "test" else a
             test = a if a["split"] == "test" else b
             out.append({"tipo": "casi", "similitud": n["similitud"], **other, "test_id": test["id"], "test_line": test["line"]})
+    seen = {(o["file"], o["line"]) for o in out}
+    out += [c for c in containment_leaks(items) if (c["file"], c["line"]) not in seen]
     return out
 
 
@@ -154,7 +194,7 @@ def main(argv=None):
     moved = quarantine(lk) if a.quarantine and lk else []
     rep = {
         "meta": {"fecha": date.today().isoformat(), "autor": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA",
-                 "licencia": "CC BY 4.0", "metodo": "sha256 de texto normalizado + coseno TF-IDF char 5-gramas",
+                 "licencia": "CC BY 4.0", "metodo": "sha256 de texto normalizado + coseno TF-IDF char 5-gramas + contención shingles 20 car. sin espacios (contenido vs test, >=0.8)",
                  "umbral": a.threshold, "evidencia": "E1_analisis_textual", "herramienta": "scripts/near_dup.py (E3 software)"},
         "test_sha256": test_sha, "test_intacto": test_sha == TEST_SHA,
         "pares_por_split": counts,
