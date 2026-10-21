@@ -1,0 +1,21 @@
+# Todos los valores son SUPUESTOS ilustrativos (órdenes de magnitud), no cifras de literatura.
+# Sustituir por valores con referencia verificada antes de cualquier conclusión.
+semilla: {valor: 20261020, fuente: supuesto}
+tarea:
+  filas: {valor: 256, fuente: supuesto}        # tamaño de la matriz (N x N)
+  columnas: {valor: 256, fuente: supuesto}
+  n_vectores: {valor: 200, fuente: supuesto}
+cmos:
+  e_mac_pj: {valor: 1.0, fuente: "supuesto (MAC 8 bit, incluye acceso a SRAM local)"}
+  e_lectura_peso_pj: {valor: 5.0, fuente: "supuesto (lectura de peso desde memoria on-chip)"}
+  bits: {valor: 8, fuente: supuesto}
+cim:
+  niveles_conductancia: {valores: [2, 4, 8, 16], fuente: supuesto}
+  g_max_us: {valor: 100.0, fuente: supuesto}
+  ruido_programacion_rel: {valor: 0.02, fuente: "supuesto (sigma relativa a g_max)"}
+  ruido_lectura_rel: {valor: 0.01, fuente: supuesto}
+  e_celda_pj: {valor: 0.01, fuente: "supuesto (energía por celda por lectura analógica)"}
+  e_dac_pj: {valor: 0.5, fuente: "supuesto (por fila activada, por vector)"}
+  e_adc_pj_por_bit: {valor: 1.0, fuente: "supuesto (ADC escala ~lineal con bits en este modelo simple)"}
+  bits_adc: {valores: [4, 6, 8], fuente: supuesto}
+  e_calibracion_pj_por_vector: {valor: 50.0, fuente: "supuesto (calibración/periféricos amortizados)"}

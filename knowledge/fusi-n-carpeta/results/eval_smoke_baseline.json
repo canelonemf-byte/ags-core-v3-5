@@ -1,0 +1,134 @@
+{
+ "profile": "smoke",
+ "modo": "baseline",
+ "base_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+ "n_test": 20,
+ "pct_llp_valido_estricto": 0.0,
+ "pct_llp_valido_laxo": 0.0,
+ "decodificacion": "greedy",
+ "max_new_tokens": 256,
+ "segundos": 995,
+ "nota": "smoke test en modelo pequeño (E2 candidato), no es el objetivo 7B",
+ "muestras": [
+  {
+   "id": "8283573b5f09243a",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "La siguiente nota en LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso (snake_case, sin null; vacíos como \"\" o []). Responde solo con el JSON.\n\nNOTA:\n- `README-v2.md` ← README-v2.md\n- `README.md` ← README.md\n- `README_LLP_API_GATEWAY_v3-1.md` ← README_LLP_API_GATEWAY_v3-1.md\n- `README_LLP_API_GATEWAY_v3.md` ← README_LLP_API_GATEWAY_v3.md\n- `audit_monitor_dashboard.py` ← audit_monitor_dashboard.py\n- `docs/El_fin_de_los_secretos_tal_como_los_conocemos__Lo_que_FIPS_204_y"
+  },
+  {
+   "id": "16807f6216cd998f",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "La siguiente nota en LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso (snake_case, sin null; vacíos como \"\" o []). Responde solo con el JSON.\n\nNOTA:\nArchivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx) que no se pudieron pasar a texto. Siguen en Drive:\n\n- 1-quantum_blueprint_publication.pdf · pendiente: en Drive · https://drive.google.com/file/d/1o7La_6j5oWdSLKFl1mxAUG79Eb956-Ya/view?usp=drivesdk\n- Blindaje_postcuántico_bajo_el_estándar_FIPS_204.m4a · pendiente: en Drive · https://drive.google.com/file/d/1vUAoHLEdcL"
+  },
+  {
+   "id": "5e722b6b66b55595",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "```json\n{\n  \"type\": \"json\",\n  \"data\": {\n    \"type\": \"json\",\n    \"data\": {\n      \"type\": \"json\",\n      \"data\": {\n        \"type\": \"json\",\n        \"data\": {\n          \"type\": \"json\",\n          \"data\": {\n            \"type\": \"json\",\n            \"data\": {\n              \"type\": \"json\",\n              \"data\": {\n                \"type\": \"json\",\n                \"data\": {\n                  \"type\": \"json\",\n                  \"data\": {\n                    \"type\": \"json\",\n                    \"data\": {\n                      \"type\": \"json\",\n                      \"data\": {\n                        \"type\": \"json\",\n                        \"data\": {\n                          \"type\": \"json\",\n                          \"data\": {\n                            \"type\": \"json\",\n                            \"data\": {\n                              \"type\": \"json\",\n                              \"data\": {\n                                \"type\": \"json\",\n                                \"data\": {\n                                    \"type\": \"json\",\n                                    \"data\": {\n                                        \"type\": \"json\",\n                                        \"data\": {\n                                            \"type\": \"json\",\n                                            \"data\": {\n                                            \"type\": \"json\",\n                                            \"data\": {\n                                                \"type\": \"json\",\n                                                \"data\": {"
+  },
+  {
+   "id": "9379977ebaedc7a1",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "{\n  \"notas\": [\n    {\n      \"nota\": \"1\",\n      \"nota_reintentos\": \"1\",\n      \"nota_estado\": \"1\",\n      \"nota_reintentos_estado\": \"1\",\n      \"nota_estado_reintentos\": \"1\",\n      \"nota_estado_estado_reintentos\": \"1\",\n      \"nota_estado_estado_reintentos_estado\": \"1\",\n      \"nota_estado_estado_reintentos_estado\": \"1\",\n      \"nota_estado_estado_estado_reintentos_estado\": \"1\",\n      \"nota_estado_estado_estado_reintentos_estado_estado\": \"1\",\n      \"nota_estado_estado_estado_reintentos_estado_estado\": \"1\",\n      \"nota_estado_estado_estado_reintentos_estado_estado\": \"1\",\n      \"nota_estado_estado_"
+  },
+  {
+   "id": "620093d766f421cd",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "Las credenciales, si una API las requiere, deben entrar por variables de entorno y nunca formar parte del JSONL. El catálogo actual no necesita autenticación para sus probes públicos. World Bank/Banco Mundial queda explícitamente excluido del ecosistema.\n\nLas credenciales, si una API las requiere, deben entrar por variables de entorno y nunca formar parte del JSONL. El catálogo actual no necesita autenticación para sus probes públicos. World Bank/Banco Mundial queda explícitamente excluido del ecosistema."
+  },
+  {
+   "id": "6af0114c58085bd6",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "```json\n{\n  \"api_name\": \"py_compile\",\n  \"api_version\": \"10\",\n  \"api_description\": \"Esta prueba utiliza la compilación de Python para crear un archivo de archivos de datos de tipo JSON en el código de la API\",\n  \"api_version_code\": \"10\",\n  \"api_version_name\": \"10\",\n  \"api_version_description\": \"Esta prueba utiliza la compilación de Python para crear un archivo de archivos de datos de tipo JSON en el código de la API\",\n  \"api_version_code_name\": \"10\",\n  \"api_version_description\": \"Esta prueba utiliza la compilación de Python para crear un archivo de archivos de datos de tipo JSON en el código de la API\",\n  \"api_version_code_name_name\": \"10\",\n  \"api_version_description_name\": \"Esta prueba utiliza la compilación de Python para crear un archivo de arch"
+  },
+  {
+   "id": "cf4ab2d25dc6a26b",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "{\n  \"notas\": [\n    {\n      \"nota\": \"1\",\n      \"nota_reintentos\": \"1\",\n      \"nota_estado\": \"1\",\n      \"nota_reintentos_estado\": \"1\",\n      \"nota_estado_reintentos\": \"1\",\n      \"nota_estado_estado_reintentos\": \"1\",\n      \"nota_estado_estado_reintentos_estado\": \"1\",\n      \"nota_estado_estado_reintentos_estado\": \"1\",\n      \"nota_estado_estado_estado_reintentos_estado\": \"1\",\n      \"nota_estado_estado_estado_reintentos_estado_estado\": \"1\",\n      \"nota_estado_estado_estado_reintentos_estado_estado\": \"1\",\n      \"nota_estado_estado_estado_reintentos_estado_estado\": \"1\",\n      \"nota_estado_estado_"
+  },
+  {
+   "id": "588be44a12ac1d37",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "Las credenciales, si una API las requiere, deben entrar por variables de entorno y nunca formar parte del JSONL. El catálogo actual no necesita autenticación para sus probes públicos. World Bank/Banco Mundial queda explícitamente excluido del ecosistema.\n\nLas credenciales, si una API las requiere, deben entrar por variables de entorno y nunca formar parte del JSONL. El catálogo actual no necesita autenticación para sus probes públicos. World Bank/Banco Mundial queda explícitamente excluido del ecosistema."
+  },
+  {
+   "id": "3bbf9653a0346698",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "```json\n{\n  \"api_name\": \"py_compile\",\n  \"api_version\": \"10\",\n  \"api_description\": \"Esta prueba utiliza la compilación de Python para crear un archivo de archivos de datos de tipo JSON en el código de la API\",\n  \"api_version_code\": \"10\",\n  \"api_version_name\": \"10\",\n  \"api_version_description\": \"Esta prueba utiliza la compilación de Python para crear un archivo de archivos de datos de tipo JSON en el código de la API\",\n  \"api_version_code_name\": \"10\",\n  \"api_version_description\": \"Esta prueba utiliza la compilación de Python para crear un archivo de archivos de datos de tipo JSON en el código de la API\",\n  \"api_version_code_name_name\": \"10\",\n  \"api_version_description_name\": \"Esta prueba utiliza la compilación de Python para crear un archivo de arch"
+  },
+  {
+   "id": "ff688b64e67808ec",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "{\n  \"type\": \"json\",\n  \"data\": {\n    \"type\": \"json\",\n    \"data\": {\n      \"type\": \"json\",\n      \"data\": {\n        \"type\": \"json\",\n        \"data\": {\n          \"type\": \"json\",\n          \"data\": {\n            \"type\": \"json\",\n            \"data\": {\n              \"type\": \"json\",\n              \"data\": {\n                \"type\": \"json\",\n                \"data\": {\n                  \"type\": \"json\",\n                  \"data\": {\n                    \"type\": \"json\",\n                    \"data\": {\n                      \"type\": \"json\",\n                      \"data\": {\n                        \"type\": \"json\",\n                        \"data\": {\n                          \"type\": \"json\",\n                          \"data\": {\n                            \"type\": \"json\",\n                            \"data\": {\n                              \"type\": \"json\",\n                              \"data\": {\n                                \"type\": \"json\",\n                                \"data\": {\n                                    \"type\": \"json\",\n                                    \"data\": {\n                                        \"type\": \"json\",\n                                        \"data\": {\n                                            \"type\": \"json\",\n                                            \"data\": {\n                                                \"type\": \"json\",\n                                                \"data\": {\n                                                    \"type\": \"json\",\n                                                    \"data\": {\n                                                        \"type"
+  },
+  {
+   "id": "62a77f3c9bd7de35",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "{\n  \"Comparte\": {\n    \"Combustión\": {\n      \"Integración de pre-cámara de ignición para mejorar la estabilidad de llama\": {\n        \"Post-enfriador optimizado para aprovechar la entalpía del amoniaco líquido\": {\n          \"Postratamiento\": {\n            \"Calentador eléctrico (E-Cat) para eliminación de emisiones en arranque en frío\": {\n              \"Post-enfriador optimizado para aprovechar la entalpía del amoniaco líquido\": {\n                \"Post-enfriador optimizado para aprovechar la entalpía del amoniaco líquido\": {\n                  \"Post-enfriador optimizado para aprovechar la entalpía del amoniaco líquido\": {\n                    \"Post-enfriador optimizado para aprovechar la entalpía del amoniaco líquido\": {\n                      \"Post-enfriador optimizado para"
+  },
+  {
+   "id": "ca726e30b3a9c3f1",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "{\n  \"type\": \"json\",\n  \"data\": {\n    \"type\": \"json\",\n    \"data\": {\n      \"type\": \"json\",\n      \"data\": {\n        \"type\": \"json\",\n        \"data\": {\n          \"type\": \"json\",\n          \"data\": {\n            \"type\": \"json\",\n            \"data\": {\n              \"type\": \"json\",\n              \"data\": {\n                \"type\": \"json\",\n                \"data\": {\n                  \"type\": \"json\",\n                  \"data\": {\n                    \"type\": \"json\",\n                    \"data\": {\n                      \"type\": \"json\",\n                      \"data\": {\n                        \"type\": \"json\",\n                        \"data\": {\n                          \"type\": \"json\",\n                          \"data\": {\n                            \"type\": \"json\",\n                            \"data\": {\n                              \"type\": \"json\",\n                              \"data\": {\n                                \"type\": \"json\",\n                                \"data\": {\n                                    \"type\": \"json\",\n                                    \"data\": {\n                                        \"type\": \"json\",\n                                        \"data\": {\n                                            \"type\": \"json\",\n                                            \"data\": {\n                                                \"type\": \"json\",\n                                                \"data\": {\n                                                    \"type\": \"json\",\n                                                    \"data\": {\n                                                        \"type"
+  },
+  {
+   "id": "0feaabe6e589504f",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "La siguiente nota en LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso (snake_case, sin null; vacíos como \"\" o []). Responde solo con el JSON.\n\nNOTA:\n**1\\. Resumen Ejecutivo de Conclusión**El Proyecto CERO-A establece la viabilidad técnica y económica disruptiva del amoniaco verde (NH₃) como combustible definitivo para la descarbonización. Los hallazgos fundamentales se sintetizan a continuación:\n\n* **Eficiencia Térmica de Vanguardia:**  Se ha validado una eficiencia indicada del 47% y una eficiencia efectiva del 38%, superando los estándares de la combustión convencional y equiparándose a ciclos diésel de alta tecnología.  \n* **Consumo Energético"
+  },
+  {
+   "id": "d04efff87ad0a9d0",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "La siguiente nota en LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso (snake_case, sin null; vacíos como \"\" o []). Responde solo con el JSON.\n\nNOTA:\nArchivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx) que no se pudieron pasar a texto. Siguen en Drive:\n\n- Control Time & Gravity.mp4 · pendiente: en Drive · https://drive.google.com/file/d/1iBfp0Kgah-LXGwZEdTgyuiNInb6-abbB/view?usp=drivesdk\n- Control_de_convergencia_espacio-temporal.png · pendiente: en Drive · https://docs.google.com/presentation/d/1oGAM006ZyjgVZjEGu-qVHr8cvuVkgDca/edit"
+  },
+  {
+   "id": "27d6fef3702e89c9",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "[LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso](https://docs.google.com/document/document/LLP_Fuentes_2026-08-30)\n\n[LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso](https://docs.google.com/document/document/LLP_Fuentes_2026-08-30)\n\n[LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso](https://docs.google.com/document/document/LLP_Fuentes_2026-08-30)\n\n[LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_"
+  },
+  {
+   "id": "e86c994fcce6d39e",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "Esta nota está en JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso (snake_case, sin null; vacíos como \"\" o []). Responde solo con el JSON.\n\n```json\n{\n  \"status\": \"envelope\",\n  \"pregunta\": \"Esta nota está en JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso (snake_case, sin null; vacíos como \"\" o []). Responde solo con el JSON. Esto es que este código está en JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso (snake_case, sin null; vacíos como \"\" o []). Esto es que este código está en JSON compacto con claves exactas meta, objetivo, datos_clave, t"
+  },
+  {
+   "id": "daadc432a3426c49",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "[LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso (snake_case, sin null; vacíos como \"\" o []). Responde solo con el JSON.\n\nNOTA:\n1. Control gravitatorio arbitrario y viaje al pasado macroscópico: **prohibidos** por conservación, causalidad y ausencia práctica de energía negativa.\n2. Simulación cuántica de la evolución temporal de un sistema modelo: **viable** (Trotter, redes tensoriales, VQE).\n3. CTC a escala cuántica: ruta teórica autoconsistente, densidades de energía inalcanzables.\n\nHay un marco filosófico (universo como información / participación). Eso no cambia la jerarquía física del punto 1."
+  },
+  {
+   "id": "378757a512eee4ab",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "$i\\hbar \\partial_t |\\psi(t)\\rangle = \\hat H |\\psi(t)\\rangle, \\quad |\\psi(0)\\rangle = e^{-i\\hat H t/\\hbar}|\\psi(0)\\rangle$\n\n$e^{-i\\hat H t/\\hbar} \\approx \\left(\\prod_j e^{-i\\hat H_j t/n}\\right)^n$\n\n$|\\psi(0)\\rangle = e^{-i\\hat H_0/n}|\\psi(0)\\rangle$\n\n$|\\psi(t)\\rangle = e^{-i\\hat H t/\\hbar}|\\psi(t)\\rangle$\n\n$|\\psi(0)\\rangle = e^{-i\\hat H t/\\hbar}|\\psi(0)\\rangle$\n\n$|\\psi(t)\\rangle = e^{-i\\hat H t/\\hbar}|\\psi(t)\\rangle$\n\n$|\\psi(0)\\rangle = e^{-i\\hat H t/\\hbar}|\\psi(0)\\rangle$"
+  },
+  {
+   "id": "30164463c130b4d5",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "Las notas en las notas de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota de la nota"
+  },
+  {
+   "id": "24b7e5f2fd2e699f",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "En LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso (snake_case, sin null; vacíos como \"\" o []). Responde solo con el JSON.\n\nNOTA:\nEn `Control tiempo y gravedad` hay triples de:\n\n- Digital Twin Spacetime Blueprint.pdf (~20,5 MB × 3)\n- Spacetime Engineering Convergence.pdf (~14,1 MB × 3)\n- MP4 41 MB y 59 MB duplicados por nombre (`&` vs `_`)\n\nPara NotebookLM: este markdown + el PDF de 40 KB del informe.\nSi se añade un blueprint, **una sola** copia.\n\nCarpeta canónica: sin espacio al final\nhttps://drive.google.com/drive/folders/1lfyIKVTCnzzfT5MN3rLzz5Bg6GyhSeYg\n\nNo usar `Control tiempo y"
+  }
+ ]
+}

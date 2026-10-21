@@ -1,0 +1,34 @@
+{
+ "meta": {
+  "proyecto": "fusion_ia_agsgpt_lora",
+  "fecha": "2026-10-21",
+  "autor": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA",
+  "evidencia": "E2_smoke_minimo: modelo 135M, CPU, 60 pasos, n_test=20"
+ },
+ "objetivo": "Comparar baseline vs LoRA en % LLP JSON válido sobre las mismas 20 muestras de test",
+ "datos_clave": [
+  "modelo: HuggingFaceTB/SmolLM2-135M-Instruct",
+  "perfil: smoke_lowmem (batch 1, grad_accum 2, max_len 384, gradient checkpointing, 2 hilos)",
+  "baseline: 0.0% estricto, 0.0% laxo (n=20)",
+  "lora: 0.0% estricto, 0.0% laxo (n=20, mismos ids)",
+  "delta: 0 pts",
+  "train loss paso 1: 3.1891, paso 60: 3.732 (ruidoso, batch efectivo 2)",
+  "train loss media pasos 1-10: 3.1276, pasos 51-60: 2.7484",
+  "val loss (40 muestras de val): 3.1711 paso 0, 3.0326 paso 20, 2.899 paso 40, 2.8521 paso 60",
+  "segundos_train: 529",
+  "adapter: adapters/smoke_lowmem/"
+ ],
+ "tareas": [
+  "más pasos o modelo mayor (Qwen2.5-0.5B) si la RAM lo permite",
+  "modelo 7B en GPU tras aprobación"
+ ],
+ "riesgos": [
+  "135M y 60 pasos: insuficiente para aprender el formato; 0% no dice nada del 7B",
+  "n=20: baja potencia estadística"
+ ],
+ "decisiones": [
+  "sin push ni publicación",
+  "sin entrenar 7B"
+ ],
+ "proximo_paso": "decidir si ampliar el smoke (más pasos/modelo 0.5B) o pasar a GPU con Qwen2.5-7B"
+}

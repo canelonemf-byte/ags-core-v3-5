@@ -1,0 +1,60 @@
+# Config LoRA AGsGPT. "smoke" = prueba en CPU (no es el objetivo 7B).
+seed: 42
+smoke:
+  base_model: HuggingFaceTB/SmolLM2-135M-Instruct  # Apache-2.0 (ver licencias.json)
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules: [q_proj, k_proj, v_proj, o_proj]
+  lr: 2.0e-4
+  epochs: 1
+  max_steps: 60          # límite de tiempo CPU (box compartido)
+  batch_size: 2
+  max_len: 512
+  eval_max_samples: 20
+  max_new_tokens: 256
+smoke_qwen05b:  # no ejecutado: RAM/CPU insuficiente en box compartido
+  base_model: Qwen/Qwen2.5-0.5B-Instruct   # Apache-2.0 (ver licencias.json)
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules: [q_proj, k_proj, v_proj, o_proj]
+  lr: 2.0e-4
+  epochs: 1
+  max_steps: 40          # límite de tiempo CPU (box compartido)
+  batch_size: 2
+  max_len: 512
+  eval_max_samples: 12
+  max_new_tokens: 256
+target_7b:
+  base_model: Qwen/Qwen2.5-7B              # alternativa: mistralai/Mistral-7B-v0.3
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+  lr: 1.0e-4
+  epochs: 3
+  max_steps: -1
+  batch_size: 4
+  max_len: 1024
+  eval_max_samples: 66
+  max_new_tokens: 400
+  # Requiere GPU (>=24 GB con bf16, o QLoRA 4-bit). No ejecutado.
+smoke_lowmem:  # 2026-10-21: perfil tras OOM de 'smoke' en paso 4/60 (run.log). Mismo modelo y mismas 20 muestras de test.
+  base_model: HuggingFaceTB/SmolLM2-135M-Instruct  # Apache-2.0
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules: [q_proj, k_proj, v_proj, o_proj]
+  lr: 2.0e-4
+  epochs: 1
+  max_steps: 60            # pasos de optimizador
+  batch_size: 1            # antes 2
+  grad_accum: 2            # batch efectivo 2 (igual que smoke)
+  max_len: 384             # antes 512
+  gradient_checkpointing: true
+  num_threads: 2
+  val_max_samples: 40      # val loss sobre las 40 primeras de val.jsonl
+  val_every: 20
+  eval_max_samples: 20     # mismas 20 primeras de test.jsonl que el baseline
+  max_new_tokens: 256

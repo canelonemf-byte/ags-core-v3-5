@@ -1,0 +1,88 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]Loading weights:  51%|█████     | 139/272 [00:00<00:00, 1339.53it/s]Loading weights: 100%|██████████| 272/272 [00:00<00:00, 1407.08it/s]
+val step 0 3.1711
+step 1/60 loss 3.1891 40s
+step 2/60 loss 3.7046 45s
+step 3/60 loss 3.1646 50s
+step 4/60 loss 3.2615 57s
+step 5/60 loss 2.2256 66s
+step 6/60 loss 3.3587 71s
+step 7/60 loss 3.3844 77s
+step 8/60 loss 3.0648 84s
+step 9/60 loss 2.8716 90s
+step 10/60 loss 3.0507 95s
+step 11/60 loss 2.5105 101s
+step 12/60 loss 3.4998 106s
+step 13/60 loss 2.7805 112s
+step 14/60 loss 2.5733 152s
+step 15/60 loss 2.5703 175s
+step 16/60 loss 2.6816 180s
+step 17/60 loss 2.6384 188s
+step 18/60 loss 3.3207 193s
+step 19/60 loss 3.3910 198s
+step 20/60 loss 2.9365 202s
+val step 20 3.0326
+step 21/60 loss 2.8328 241s
+step 22/60 loss 3.1974 247s
+step 23/60 loss 2.6971 252s
+step 24/60 loss 2.9099 257s
+step 25/60 loss 2.7229 262s
+step 26/60 loss 2.8425 267s
+step 27/60 loss 3.0990 271s
+step 28/60 loss 2.6015 276s
+step 29/60 loss 2.7405 283s
+step 30/60 loss 3.3106 288s
+step 31/60 loss 3.3493 293s
+step 32/60 loss 2.7424 297s
+step 33/60 loss 2.7415 303s
+step 34/60 loss 2.4953 309s
+step 35/60 loss 2.5396 313s
+step 36/60 loss 2.8374 318s
+step 37/60 loss 2.5705 323s
+step 38/60 loss 2.9437 328s
+step 39/60 loss 2.9571 333s
+step 40/60 loss 2.3136 338s
+val step 40 2.899
+step 41/60 loss 2.8119 370s
+step 42/60 loss 3.5757 375s
+step 43/60 loss 2.5532 384s
+step 44/60 loss 3.1299 388s
+step 45/60 loss 2.8076 393s
+step 46/60 loss 2.5742 398s
+step 47/60 loss 2.7253 402s
+step 48/60 loss 2.9398 411s
+step 49/60 loss 3.0265 418s
+step 50/60 loss 3.3702 425s
+step 51/60 loss 3.0059 430s
+step 52/60 loss 2.8048 436s
+step 53/60 loss 2.4522 441s
+step 54/60 loss 3.2480 445s
+step 55/60 loss 2.4768 454s
+step 56/60 loss 2.4096 461s
+step 57/60 loss 2.3508 469s
+step 58/60 loss 2.1995 477s
+step 59/60 loss 2.8047 492s
+step 60/60 loss 3.7320 499s
+val step 60 2.8521
+Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]Loading weights:  19%|█▉        | 52/272 [00:00<00:00, 435.89it/s]Loading weights:  36%|███▋      | 99/272 [00:00<00:00, 417.20it/s]Loading weights:  61%|██████▏   | 167/272 [00:00<00:00, 525.09it/s]Loading weights:  82%|████████▏ | 224/272 [00:00<00:00, 541.38it/s]Loading weights: 100%|██████████| 272/272 [00:00<00:00, 519.27it/s]
+1 16
+2 34
+3 47
+4 61
+5 73
+6 87
+7 99
+8 114
+9 129
+10 143
+11 161
+12 170
+13 190
+14 206
+15 220
+16 234
+17 247
+18 261
+19 275
+20 291
+{"profile": "smoke_lowmem", "modo": "lora", "base_model": "HuggingFaceTB/SmolLM2-135M-Instruct", "n_test": 20, "pct_llp_valido_estricto": 0.0, "pct_llp_valido_laxo": 0.0, "decodificacion": "greedy", "max_new_tokens": 256, "segundos": 291, "nota": "smoke test en modelo pequeño (E2 candidato), no es el objetivo 7B"}

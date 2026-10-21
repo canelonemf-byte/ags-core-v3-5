@@ -1,0 +1,29 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]Loading weights:   0%|          | 1/272 [00:00<01:05,  4.15it/s]Loading weights:  24%|██▎       | 64/272 [00:00<00:00, 235.42it/s]Loading weights:  37%|███▋      | 101/272 [00:00<00:00, 247.76it/s]Loading weights:  49%|████▉     | 133/272 [00:00<00:00, 256.97it/s]Loading weights:  60%|██████    | 164/272 [00:00<00:00, 256.44it/s]Loading weights:  71%|███████   | 193/272 [00:00<00:00, 229.96it/s]Loading weights:  81%|████████▏ | 221/272 [00:00<00:00, 238.02it/s]Loading weights:  94%|█████████▍| 255/272 [00:01<00:00, 251.72it/s]Loading weights: 100%|██████████| 272/272 [00:01<00:00, 230.56it/s]
+1 402
+2 441
+3 490
+4 539
+5 568
+6 637
+7 668
+8 679
+9 705
+10 748
+11 774
+12 799
+13 821
+14 847
+15 870
+16 896
+17 931
+18 955
+19 977
+20 995
+{"profile": "smoke", "modo": "baseline", "base_model": "HuggingFaceTB/SmolLM2-135M-Instruct", "n_test": 20, "pct_llp_valido_estricto": 0.0, "pct_llp_valido_laxo": 0.0, "decodificacion": "greedy", "max_new_tokens": 256, "segundos": 995, "nota": "smoke test en modelo pequeño (E2 candidato), no es el objetivo 7B"}
+Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]Loading weights:  31%|███▏      | 85/272 [00:00<00:00, 846.72it/s]Loading weights:  70%|██████▉   | 190/272 [00:00<00:00, 965.98it/s]Loading weights: 100%|██████████| 272/272 [00:00<00:00, 929.50it/s]
+step 1/60 loss 2.2326 13s
+step 2/60 loss 3.1624 23s
+step 3/60 loss 1.8248 33s
+step 4/60 loss 2.6881 38s
+bash: line 1: 484884 Killed                  .venv/bin/python scripts/train_lora.py

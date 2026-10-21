@@ -1,0 +1,139 @@
+{
+ "nivel_evidencia": "E2",
+ "tipo": "simulacion",
+ "nota": "modelo simple con parámetros supuestos; no es experimento",
+ "semilla": 20261020,
+ "tarea": "MVM 256x256, 200 vectores",
+ "resultados": [
+  {
+   "config": "cmos_digital",
+   "niveles": 256,
+   "bits_adc": 0,
+   "error_rel": 0.004031668367776217,
+   "energia_total_pj": 13434880.0,
+   "energia_por_mac_pj": 1.025,
+   "ahorro_vs_cmos": 0.0,
+   "frac_adc_dac": 0.0
+  },
+  {
+   "config": "cim_memristivo",
+   "niveles": 2,
+   "bits_adc": 4,
+   "error_rel": 1.0037857345050893,
+   "energia_total_pj": 502544.0,
+   "energia_por_mac_pj": 0.038341064453125,
+   "ahorro_vs_cmos": 0.9625940834603659,
+   "frac_adc_dac": 0.4584673182845681
+  },
+  {
+   "config": "cim_memristivo",
+   "niveles": 2,
+   "bits_adc": 6,
+   "error_rel": 0.9913805420820413,
+   "energia_total_pj": 604944.0,
+   "energia_por_mac_pj": 0.046153564453125,
+   "ahorro_vs_cmos": 0.9549721322408536,
+   "frac_adc_dac": 0.5501335660821498
+  },
+  {
+   "config": "cim_memristivo",
+   "niveles": 2,
+   "bits_adc": 8,
+   "error_rel": 0.9907210938765467,
+   "energia_total_pj": 707344.0,
+   "energia_por_mac_pj": 0.053966064453125,
+   "ahorro_vs_cmos": 0.9473501810213415,
+   "frac_adc_dac": 0.6152593363342306
+  },
+  {
+   "config": "cim_memristivo",
+   "niveles": 4,
+   "bits_adc": 4,
+   "error_rel": 0.39618783338953023,
+   "energia_total_pj": 502544.0,
+   "energia_por_mac_pj": 0.038341064453125,
+   "ahorro_vs_cmos": 0.9625940834603659,
+   "frac_adc_dac": 0.4584673182845681
+  },
+  {
+   "config": "cim_memristivo",
+   "niveles": 4,
+   "bits_adc": 6,
+   "error_rel": 0.36366135503985014,
+   "energia_total_pj": 604944.0,
+   "energia_por_mac_pj": 0.046153564453125,
+   "ahorro_vs_cmos": 0.9549721322408536,
+   "frac_adc_dac": 0.5501335660821498
+  },
+  {
+   "config": "cim_memristivo",
+   "niveles": 4,
+   "bits_adc": 8,
+   "error_rel": 0.36171640529046495,
+   "energia_total_pj": 707344.0,
+   "energia_por_mac_pj": 0.053966064453125,
+   "ahorro_vs_cmos": 0.9473501810213415,
+   "frac_adc_dac": 0.6152593363342306
+  },
+  {
+   "config": "cim_memristivo",
+   "niveles": 8,
+   "bits_adc": 4,
+   "error_rel": 0.24021334900649927,
+   "energia_total_pj": 502544.0,
+   "energia_por_mac_pj": 0.038341064453125,
+   "ahorro_vs_cmos": 0.9625940834603659,
+   "frac_adc_dac": 0.4584673182845681
+  },
+  {
+   "config": "cim_memristivo",
+   "niveles": 8,
+   "bits_adc": 6,
+   "error_rel": 0.17979180031043862,
+   "energia_total_pj": 604944.0,
+   "energia_por_mac_pj": 0.046153564453125,
+   "ahorro_vs_cmos": 0.9549721322408536,
+   "frac_adc_dac": 0.5501335660821498
+  },
+  {
+   "config": "cim_memristivo",
+   "niveles": 8,
+   "bits_adc": 8,
+   "error_rel": 0.1758019315007248,
+   "energia_total_pj": 707344.0,
+   "energia_por_mac_pj": 0.053966064453125,
+   "ahorro_vs_cmos": 0.9473501810213415,
+   "frac_adc_dac": 0.6152593363342306
+  },
+  {
+   "config": "cim_memristivo",
+   "niveles": 16,
+   "bits_adc": 4,
+   "error_rel": 0.1932611371981261,
+   "energia_total_pj": 502544.0,
+   "energia_por_mac_pj": 0.038341064453125,
+   "ahorro_vs_cmos": 0.9625940834603659,
+   "frac_adc_dac": 0.4584673182845681
+  },
+  {
+   "config": "cim_memristivo",
+   "niveles": 16,
+   "bits_adc": 6,
+   "error_rel": 0.11151974582838771,
+   "energia_total_pj": 604944.0,
+   "energia_por_mac_pj": 0.046153564453125,
+   "ahorro_vs_cmos": 0.9549721322408536,
+   "frac_adc_dac": 0.5501335660821498
+  },
+  {
+   "config": "cim_memristivo",
+   "niveles": 16,
+   "bits_adc": 8,
+   "error_rel": 0.10499690689468484,
+   "energia_total_pj": 707344.0,
+   "energia_por_mac_pj": 0.053966064453125,
+   "ahorro_vs_cmos": 0.9473501810213415,
+   "frac_adc_dac": 0.6152593363342306
+  }
+ ]
+}

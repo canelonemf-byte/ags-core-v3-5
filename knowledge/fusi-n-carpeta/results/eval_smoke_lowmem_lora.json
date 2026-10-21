@@ -1,0 +1,134 @@
+{
+ "profile": "smoke_lowmem",
+ "modo": "lora",
+ "base_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+ "n_test": 20,
+ "pct_llp_valido_estricto": 0.0,
+ "pct_llp_valido_laxo": 0.0,
+ "decodificacion": "greedy",
+ "max_new_tokens": 256,
+ "segundos": 291,
+ "nota": "smoke test en modelo pequeño (E2 candidato), no es el objetivo 7B",
+ "muestras": [
+  {
+   "id": "8283573b5f09243a",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "```json\n{\n  \"notas\": [\n    {\n      \"nota\": \"El fin de los secretos tal como los conocemos_ Lo que FIPS 204 y el nuevo estándar ML-DSA dicen sobre nuestro futuro.\",\n      \"nota_v2\": \"Readme-v2.md\",\n      \"nota_v3\": \"README-v2.md\",\n      \"nota_v4\": \"README-v2.md\",\n      \"nota_v5\": \"README-v2.md\",\n      \"nota_v6\": \"README-v2.md\",\n      \"nota_v7\": \"README-v2.md\",\n      \"nota_v8\": \"README-v2.md\",\n      \"nota_v9\": \"README-v2.md\",\n      \"nota_v10\": \"README-v2.md\",\n      \"nota_v11\": \"README-v2.md\",\n      \"nota_v12\": \"README-v2.md\",\n      \""
+  },
+  {
+   "id": "16807f6216cd998f",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "[LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso (snake_case, sin null; vacíos como \"\" o []). Responde solo con el JSON.\n\nNOTA:\nArchivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx) que no se pudieron pasar a texto. Siguen en Drive:\n\n- 1-quantum_blueprint_publication.pdf · pendiente: en Drive · https://drive.google.com/file/d/1o7La_6j5oWdSLKFl1mxAUG79Eb956-Ya/view?usp=drivesdk\n- Blindaje_postcuántico_bajo_el_estándar_FIPS_204.m4a · pendiente: en Drive · https://drive.google.com/file/d/1vUAoHLEdcLFbgrGWdZ-"
+  },
+  {
+   "id": "5e722b6b66b55595",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "{\n  \"notas\": [\n    {\n      \"nota\": \"1\",\n      \"descripcion\": \"La nota 1 de esta nota está en la tabla \" + \"tareas.json. \" + \"La nota 2 de esta nota está en la tabla \" + \"datos_clave.json. \" + \"La nota 3 de esta nota está en la tabla \" + \"riesgos.json. \" + \"La nota 4 de esta nota está en la tabla \" + \"procedimientos.json. \" + \"La nota 5 de esta nota está en la tabla \" + \"decisiones.json. \" + \"La nota 6 de esta nota está en la tabla \" + \"tareas.json. \" + \"La nota 7 de esta nota está en la tabla \" + \"datos_clave.json. \" + \"La nota 8 de esta nota está en la tabla \" + \"riesgos.json. \" + \"La not"
+  },
+  {
+   "id": "9379977ebaedc7a1",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "{\n  \"notas\": [\n    {\n      \"nota\": \"1\",\n      \"descripcion\": \"La siguiente nota en LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso (snake_case, sin null; vacíos como \"\" o []).\",\n      \"descripciones\": [\n        {\n          \"nota\": \"1\",\n          \"descripcion\": \"La siguiente nota en LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso (snake_case, sin null; vacíos como \"\" o []).\",\n          \"descripciones\": [\n            {\n              \"nota\": \"1\",\n              \"descripcion\": \"La siguiente nota en LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso (snake_"
+  },
+  {
+   "id": "620093d766f421cd",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "{\n  \"notas\": [\n    {\n      \"nota\": \"Las credenciales, si una API las requiere, deben entrar por variables de entorno y nunca formar parte del JSONL. El catálogo actual no necesita autenticación para sus probes públicos. World Bank/Banco Mundial queda explícitamente excluido del ecosistema.\"\n    },\n    {\n      \"nota\": \"Las credenciales, si una API las requiere, deben entrar por variables de entorno y nunca formar parte del JSONL. El catálogo actual no necesita autenticación para sus probes públicos. World Bank/Banco Mundial queda explícitamente excluido del ecosistema.\"\n    },\n    {\n      \"nota\": \"Las credenciales, si una API las requiere, deben entrar por variables de entorno y nunca formar parte del JSONL. El catálogo actual no necesita autenticación para sus probes públicos."
+  },
+  {
+   "id": "6af0114c58085bd6",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "```json\n{\n  \"api_name\": \"py_compile\",\n  \"api_version\": \"10\",\n  \"json_compact\": {\n    \"api_name\": \"py_compile\",\n    \"api_version\": \"10\",\n    \"json_compact\": {\n      \"api_name\": \"py_compile\",\n      \"api_version\": \"10\",\n      \"json_compact\": {\n        \"api_name\": \"py_compile\",\n        \"api_version\": \"10\",\n        \"json_compact\": {\n          \"api_name\": \"py_compile\",\n          \"api_version\": \"10\",\n          \"json_compact\": {\n            \"api_name\": \"py_compile\",\n            \"api_version\": \"10\",\n            \"json_compact\": {\n              \"api_name\": \"py_compile\",\n              \"api_version\": \"10\",\n              \"json_compact\": {\n                \"api_name\": \"py_compile\",\n                \"api_version\": \"10\",\n                \"json_compact\": {\n                  \"api_name\": \"py_compile\",\n                  \"api_version\": \"10"
+  },
+  {
+   "id": "cf4ab2d25dc6a26b",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "{\n  \"notas\": [\n    {\n      \"nota\": \"1\",\n      \"descripcion\": \"La siguiente nota en LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso (snake_case, sin null; vacíos como \"\" o []).\",\n      \"descripciones\": [\n        {\n          \"nota\": \"1\",\n          \"descripcion\": \"La siguiente nota en LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso (snake_case, sin null; vacíos como \"\" o []).\",\n          \"descripciones\": [\n            {\n              \"nota\": \"1\",\n              \"descripcion\": \"La siguiente nota en LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso (snake_"
+  },
+  {
+   "id": "588be44a12ac1d37",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "{\n  \"notas\": [\n    {\n      \"nota\": \"Las credenciales, si una API las requiere, deben entrar por variables de entorno y nunca formar parte del JSONL. El catálogo actual no necesita autenticación para sus probes públicos. World Bank/Banco Mundial queda explícitamente excluido del ecosistema.\"\n    },\n    {\n      \"nota\": \"Las credenciales, si una API las requiere, deben entrar por variables de entorno y nunca formar parte del JSONL. El catálogo actual no necesita autenticación para sus probes públicos. World Bank/Banco Mundial queda explícitamente excluido del ecosistema.\"\n    },\n    {\n      \"nota\": \"Las credenciales, si una API las requiere, deben entrar por variables de entorno y nunca formar parte del JSONL. El catálogo actual no necesita autenticación para sus probes públicos."
+  },
+  {
+   "id": "3bbf9653a0346698",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "```json\n{\n  \"api_name\": \"py_compile\",\n  \"api_version\": \"10\",\n  \"json_compact\": {\n    \"api_name\": \"py_compile\",\n    \"api_version\": \"10\",\n    \"json_compact\": {\n      \"api_name\": \"py_compile\",\n      \"api_version\": \"10\",\n      \"json_compact\": {\n        \"api_name\": \"py_compile\",\n        \"api_version\": \"10\",\n        \"json_compact\": {\n          \"api_name\": \"py_compile\",\n          \"api_version\": \"10\",\n          \"json_compact\": {\n            \"api_name\": \"py_compile\",\n            \"api_version\": \"10\",\n            \"json_compact\": {\n              \"api_name\": \"py_compile\",\n              \"api_version\": \"10\",\n              \"json_compact\": {\n                \"api_name\": \"py_compile\",\n                \"api_version\": \"10\",\n                \"json_compact\": {\n                  \"api_name\": \"py_compile\",\n                  \"api_version\": \"10"
+  },
+  {
+   "id": "ff688b64e67808ec",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "{\n  \"nota\": \"Está propongo una solución para la descarbonización mediante amoniaco anhidro (NH₃) como combustible líquido libre de carbono. Mediante la integración de electrólisis renovable, síntesis Haber-Bosch de alta eficiencia, adaptación de motores de combustión interna (relación de compresión 14:1) y postratamiento catalítico avanzado (Fe-ZSM-5 \\+ CuMnOₓ), se logra un ciclo completo con emisiones netas cero y alta eficiencia térmica. Está propongo una solución para la descarbonización mediante amoniaco anhidro (NH₃) como combustible líquido libre de carbono. Mediante la integración de electrólisis renovable, síntesis Haber-Bosch de alta eficiencia, adaptación de motores de combustión interna (relación de comp"
+  },
+  {
+   "id": "62a77f3c9bd7de35",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "{\n  \"Componente\": {\n    \"Combustión\": {\n      \"Integración de pre-cámara de ignición para mejorar la estabilidad de llama\": {\n        \"Mejora\": 0.00,\n        \"Mejorar llama\": {\n          \"Mejorar llama\": {\n            \"Mejorar llama\": {\n              \"Mejorar llama\": {\n                \"Mejorar llama\": {\n                  \"Mejorar llama\": {\n                    \"Mejorar llama\": {\n                      \"Mejorar llama\": {\n                        \"Mejorar llama\": {\n                          \"Mejorar llama\": {\n                            \"Mejorar llama\": {\n                              \"Mejorar llama\": {\n                                \"Mejorar llama\": {\n                                    \"Mejorar llama\": {\n                                        \"Mejorar llama\": {\n                                            \"Mejorar llama\": {\n                                                \"Mejorar llama\": {\n                                                    \"Mejorar llama\":"
+  },
+  {
+   "id": "ca726e30b3a9c3f1",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "{\n  \"nota\": \"La proyecto CERO-A se fundamenta en la idea de un **universo consciente** donde la tecnología actúa como un metabolismo regenerateativo. La transición hacia el amoniaco verde representa una actualización necesaria en nuestra forma de procesar energía, alineándonos con los ciclos naturales y reduciendo la entropía del sistema energético global.\"\n}"
+  },
+  {
+   "id": "0feaabe6e589504f",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "1. Resumen: Establece la viabilidad técnica y económica disruptiva del amoniaco verde (NH₃) como combustible definitivo para la descarbonización. Los hallazgos fundamentales se sintetizan a continuación:\n\n* **Eficiencia Térmica de Vanguardia:**  Se ha validado una eficiencia indicada del 47% y una eficiencia efectiva del 38%, superando los estándares de la combustión convencional y equiparándose a ciclos diésel de alta tecnología.\n* **Consumo Energético Optimizado:**  El sistema registra un consumo de 6.5 kg de NH₃/100 km, lo que representa un equivalente energético de apenas 3.5 L/100 km de gasolina.\n* **Eliminación Práctica de Emisiones:**  Mediante la estrategia de combustión LTC y postratamiento bifuncional,"
+  },
+  {
+   "id": "d04efff87ad0a9d0",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "[LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso (snake_case, sin null; vacíos como \"\" o []). Responde solo con el JSON.\n\nNota:\nArchivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx) que no se pudieron pasar a texto. Siguen en Drive:\n\n- Control Time & Gravity.mp4 · pendiente: en Drive · https://drive.google.com/file/d/1iBfp0Kgah-LXGwZEdTgyuiNInb6-abbB/view?usp=drivesdk\n- Control_de_convergencia_espacio-temporal.png · pendiente: en Drive · https://docs.google.com/presentation/d/1oGAM006ZyjgVZjEGu-qVHr8cvuVkgDca/edit?usp=drivesdk&"
+  },
+  {
+   "id": "27d6fef3702e89c9",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "[LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso](https://docs.google.com/document/document/go/LLP-JSON-Compacto-with-Claves-ExactasMeta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso.md)\n\n[LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso](https://docs.google.com/document/document/go/LLP-JSON-Compacto-with-Claves-ExactasMeta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso.md)\n\n[LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso](https://docs.google.com/"
+  },
+  {
+   "id": "e86c994fcce6d39e",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "Estado: ensayo teórico + demo de evolución temporal en Qiskit (2 qubits)\nPregunta técnica: ¿qué parte de «controlar gravedad/tiempo» es física prohibida hoy y qué parte es simulación cuántica de un Hamiltoniano?\nLimitaciones: el código evoluciona H = J Z0Z1 + h(X0+X1) en 2 qubits; no es un motor de métrica ni precognición empírica.\nPróximo hito verificable: el mismo circuito en hardware real (EstimatorV2) con mitigator y comparación vs statevector.\n\nEn este caso, este código está utilizando el código evoluciona H = J Z0Z1 + h(X0+X1) en 2 qubits, que es un motor de métrica ni precognición empírica. Esto es que el código evoluciona H = J Z0Z1 + h(X0+X"
+  },
+  {
+   "id": "daadc432a3426c49",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "[JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso, CTC, universo como información / participación].\n\n[JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso, CTC, universo como información / participación].\n\n[JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso, CTC, universo como información / participación].\n\n[JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso, CTC, universo como información / participación].\n\n[JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso, CTC"
+  },
+  {
+   "id": "378757a512eee4ab",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "[JSON]\n\n{\n  \"meta\": {\n    \"objetivo\": \"Schrödinger\",\n    \"datos_clave\": \"MPS+VQE para estado inicial; Trotter si $\\hat H = \\sum_j \\hat H_j$\",\n    \"tareas\": [\n      {\n        \"tarea\": \"EstimatorV2/SamplerV2 para observables\",\n        \"datos_clave\": \"EstimatorV2/SamplerV2 para observables\",\n        \"tareas_final\": [\n          {\n            \"tarea\": \"EstimatorV2/SamplerV2 para observables\",\n            \"datos_clave\": \"EstimatorV2/SamplerV2 para observables\",\n            \"tareas_final_final\": [\n              {\n                \"tarea\": \"EstimatorV2/SamplerV2 para observables\",\n                \"datos_clave\": \"EstimatorV2/SamplerV2 para observables\",\n                \"tareas_final_final_final\": [\n                  {\n                    \"tarea\": \"EstimatorV2/S"
+  },
+  {
+   "id": "30164463c130b4d5",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "[JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso, sistema físico realista, la siguiente nota está en LLP JSON compacto con claves exactas meta, objetivo, datos_clave, tareas, riesgos, decisiones, proximo_paso, sistema físico realista.](https://json.huggingface.com/json/lLP/lLP-json-compacto-with-claves-exactas-meta-objetivo-objetivo-datos-clave-objetivo-datos-clave-objetivo-datos-clave-objetivo-datos-clave-objetivo-datos-clave-objetivo-datos-clave-objetivo-datos-clave-objetivo-datos-clave-objetivo-datos-clave-objetivo-datos-clave-objetivo-datos-clave-objet"
+  },
+  {
+   "id": "24b7e5f2fd2e699f",
+   "valido_estricto": false,
+   "valido_laxo": false,
+   "salida": "```json\n{\n  \"nota\": [\n    {\n      \"nota1\": \"En Control tiempo y gravedad\",\n      \"nota2\": \"Para notebookLM\",\n      \"nota3\": \"Para notebookLM\",\n      \"nota4\": \"Para notebookLM\",\n      \"nota5\": \"Para notebookLM\",\n      \"nota6\": \"Para notebookLM\",\n      \"nota7\": \"Para notebookLM\",\n      \"nota8\": \"Para notebookLM\",\n      \"nota9\": \"Para notebookLM\",\n      \"nota10\": \"Para notebookLM\",\n      \"nota11\": \"Para notebookLM\",\n      \"nota12\": \"Para notebookLM\",\n      \"nota13\": \"Para notebookLM\",\n      \"nota14\": \"Para notebookLM\",\n      \"nota15\": \"Para notebookLM\",\n      \"nota16\": \"Para notebookLM\",\n      \"nota17\": \"Para notebookLM\",\n      \"nota18\": \"Para note"
+  }
+ ]
+}
