@@ -1,7 +1,77 @@
-{"meta":{"fecha_verificacion":"2026-10-20","metodo":"campo cardData.license de la API pública de Hugging Face (ficha del modelo)","autor":"Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA"},
-"modelos":[
-{"id":"HuggingFaceTB/SmolLM2-135M-Instruct","licencia":"apache-2.0","gated":false,"url":"https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct","uso":"modelo smoke test ejecutado (Qwen2.5-0.5B no cupo en RAM del box compartido); aprobado retroactivamente por Lázaro 2026-10-21 13:47","nota":"Licencia apache-2.0 declarada en ficha HF (verificado 2026-10-21); sin archivo LICENSE en el repo: texto completo PENDIENTE DE VERIFICACIÓN"},
-{"id":"mistralai/Mistral-7B-v0.3","licencia":"apache-2.0","gated":false,"url":"https://huggingface.co/mistralai/Mistral-7B-v0.3","api":"https://huggingface.co/api/models/mistralai/Mistral-7B-v0.3","nota":"Licencia declarada en la ficha; el repo no incluye archivo LICENSE propio (texto completo PENDIENTE DE VERIFICACIÓN). La ficha enlaza la política de privacidad de Mistral."},
-{"id":"Qwen/Qwen2.5-7B","licencia":"apache-2.0","gated":false,"url":"https://huggingface.co/Qwen/Qwen2.5-7B","license_link":"https://huggingface.co/Qwen/Qwen2.5-7B/blob/main/LICENSE","nota":"Confirmado en la ficha. Otros tamaños de Qwen2.5 (p.ej. 3B, 72B) tienen licencias distintas: PENDIENTE DE VERIFICACIÓN por tamaño."},
-{"id":"Qwen/Qwen2.5-0.5B-Instruct","licencia":"apache-2.0","gated":false,"url":"https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct","license_link":"https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/blob/main/LICENSE","uso":"modelo smoke test"}],
-"riesgos":["Los adaptadores LoRA son obras derivadas: conservar aviso Apache-2.0 del modelo base al distribuir","Revisión legal formal: PENDIENTE DE VERIFICACIÓN"]}
+{
+ "meta": {
+  "fecha_verificacion": "2026-10-21",
+  "metodo": "campo cardData.license de la API pública de Hugging Face (ficha del modelo); 2026-10-21 14:00 (Madrid): API HF (tags/cardData) + API GitHub /license + README oficiales",
+  "autor": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA"
+ },
+ "modelos": [
+  {
+   "id": "HuggingFaceTB/SmolLM2-135M-Instruct",
+   "licencia": "apache-2.0",
+   "gated": false,
+   "url": "https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct",
+   "uso": "modelo smoke test ejecutado (Qwen2.5-0.5B no cupo en RAM del box compartido); aprobado retroactivamente por Lázaro 2026-10-21 13:47",
+   "nota": "Licencia apache-2.0 declarada en ficha HF (verificado 2026-10-21); sin archivo LICENSE en el repo: texto completo PENDIENTE DE VERIFICACIÓN",
+   "verificacion_2026_10_21": "API HF: license:apache-2.0; sin archivo LICENSE en el repo HF; texto completo PENDIENTE DE VERIFICACIÓN"
+  },
+  {
+   "id": "mistralai/Mistral-7B-v0.3",
+   "licencia": "apache-2.0",
+   "gated": false,
+   "url": "https://huggingface.co/mistralai/Mistral-7B-v0.3",
+   "api": "https://huggingface.co/api/models/mistralai/Mistral-7B-v0.3",
+   "nota": "Licencia declarada en la ficha; el repo no incluye archivo LICENSE propio (texto completo PENDIENTE DE VERIFICACIÓN). La ficha enlaza la política de privacidad de Mistral.",
+   "verificacion_2026_10_21": "API HF: tag license:apache-2.0 y cardData.license=apache-2.0; gated=false; sin archivo LICENSE en el repo HF. Texto completo PENDIENTE DE VERIFICACIÓN (estándar Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0)"
+  },
+  {
+   "id": "Qwen/Qwen2.5-7B",
+   "licencia": "apache-2.0",
+   "gated": false,
+   "url": "https://huggingface.co/Qwen/Qwen2.5-7B",
+   "license_link": "https://huggingface.co/Qwen/Qwen2.5-7B/blob/main/LICENSE",
+   "nota": "Confirmado en la ficha. Otros tamaños de Qwen2.5 (p.ej. 3B, 72B) tienen licencias distintas: PENDIENTE DE VERIFICACIÓN por tamaño."
+  },
+  {
+   "id": "Qwen/Qwen2.5-0.5B-Instruct",
+   "licencia": "apache-2.0",
+   "gated": false,
+   "url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct",
+   "license_link": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/blob/main/LICENSE",
+   "uso": "modelo smoke test"
+  },
+  {
+   "id": "HuggingFaceTB/SmolLM2-135M",
+   "licencia": "apache-2.0",
+   "gated": false,
+   "url": "https://huggingface.co/HuggingFaceTB/SmolLM2-135M",
+   "api": "https://huggingface.co/api/models/HuggingFaceTB/SmolLM2-135M",
+   "nota": "Verificado 2026-10-21 por API HF (tag y cardData). Sin archivo LICENSE en el repo HF: texto completo PENDIENTE DE VERIFICACIÓN"
+  },
+  {
+   "id": "microsoft/mattersim (código y pesos MatterSim-v1.0.0-1M/5M)",
+   "licencia": "MIT",
+   "gated": false,
+   "url": "https://github.com/microsoft/mattersim/blob/main/LICENSE.txt",
+   "nota": "API GitHub: MIT. Los checkpoints mattersim-v1.0.0-1M.pth y -5M.pth se distribuyen en el mismo repo (pretrained_models/), por lo que quedan bajo esa LICENSE.txt; el README no declara una licencia aparte para los pesos. Las fichas HF microsoft/MatterSim-v1.0.0-* no son accesibles (401 sin sesión): PENDIENTE DE VERIFICACIÓN. Citar la versión exacta del checkpoint, como pide el README."
+  },
+  {
+   "id": "ACEsuit/mace (código)",
+   "licencia": "MIT",
+   "gated": false,
+   "url": "https://github.com/ACEsuit/mace/blob/develop/LICENSE.md",
+   "nota": "Texto MIT 'Copyright (c) 2022 ACEsuit/mace' (la API de GitHub da NOASSERTION, pero el archivo es MIT)."
+  },
+  {
+   "id": "MACE-MP-0 (pesos, mace-foundations/mace-mp-0)",
+   "licencia": "MIT",
+   "gated": false,
+   "url": "https://github.com/ACEsuit/mace-foundations/blob/main/README.md",
+   "url_hf": "https://huggingface.co/mace-foundations/mace-mp-0",
+   "nota": "Tabla de licencias de mace-foundations: MACE-MP-0a/0b/0b2/0b3 y MACE-MPA-0 con MIT (entrenados con MPTrj); MACE-OMAT-0, MATPES, OMOL y MH con ASL (no MIT). La ficha HF dice mit. Antes de usarlo, confirmar qué variante concreta se usa: PENDIENTE DE VERIFICACIÓN. Licencia del dataset MPTrj PENDIENTE DE VERIFICACIÓN."
+  }
+ ],
+ "riesgos": [
+  "Los adaptadores LoRA son obras derivadas: conservar aviso Apache-2.0 del modelo base al distribuir",
+  "Revisión legal formal: PENDIENTE DE VERIFICACIÓN"
+ ]
+}
