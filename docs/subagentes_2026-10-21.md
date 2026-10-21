@@ -37,3 +37,8 @@ Supuestos: servicio exp(30 s), 1000 tareas/s, 100 coordinadores, 2 % de fallos c
 | 50 000 | 221,1 | 21,3 | 91,8 | 0,14 |
 
 Lectura: con estos supuestos, 50 000 workers quedarían infrautilizados (14 %). La escala real está limitada por CPU/RAM del box y por los costes de LLM. Son resultados de modelo, PENDIENTES DE VERIFICACIÓN con carga real.
+
+## Integración de pares 14:1x (Madrid)
+- ORÁCULO: 42 pares matemáticos verificados con sympy (`aprobado=true`), convertidos al esquema en `knowledge/oraculo-mesoscopico/lora_pares.jsonl` y unidos con `merge_pares.py`: 42 aceptados, 0 duplicados exactos, 0 casi-duplicados (Jaccard ≥0,85 contra train/val/test/simulados); 35 a train y 7 a val. Evidencia E1 (verificación simbólica).
+- GRAVEDAD: los 12 pares provisionales de `/workspace/p003/pares_lora.jsonl` (2 marcados simulado) van a `data/staging/gravedad_provisional.jsonl`, no a train. Además citan trabajos de terceros (DOI), y merge_pares rechaza esas fuentes.
+- Recuentos: train 891, val 193, test 66 (sha256 0937f06c…f8ef5 intacto). 0 filtraciones a test (near_dup).
