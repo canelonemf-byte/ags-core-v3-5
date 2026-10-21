@@ -1,3 +1,5 @@
+> **Nota de evidencia (2026-10-21, supervisor):** Este informe se movió desde `peptidos-terapeuticos-ia` (estaba en el proyecto equivocado). Las afirmaciones de "control del tiempo", "retrocausalidad"/"retrocausal" y "obtención de información del futuro" son **afirmaciones extraordinarias E0, sin evidencia experimental**. El texto del autor se conserva sin cambios.
+
 > Texto extraído automáticamente del PDF original «informe_viabilidad_gravedad_tiempo.pdf». Fórmulas, figuras y maquetación se han perdido; el original está en Drive: https://drive.google.com/file/d/1ZDVizrsa0l6LeQEKnDupazZEk83l8Ym5/view?usp=drivesdk
 
 
