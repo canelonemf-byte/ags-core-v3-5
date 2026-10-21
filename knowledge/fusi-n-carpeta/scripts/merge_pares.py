@@ -96,6 +96,17 @@ def resolve_fuente(f):
         if c.is_file() and (c.is_relative_to(WS)): return c
     return None
 
+# 2026-10-21 (Lázaro): rutas alternativas de documentos de test -> se tratan como test (nunca train/val)
+ALIAS_TEST = {"knowledge/ordenador-hibrido-no-binario/docs/Estudio_viabilidad_arquitectura_hibrida_revisado.docx.md":
+              "knowledge/ordenador-hibrido-no-binario/drive/Estudio_viabilidad_arquitectura_hibrida_revisado.md"}
+DOC_DUP = 0.85  # Jaccard de shingles del documento completo frente a documentos fuente de test
+
+def doc_shingles(path):
+    p = resolve_fuente(path)
+    if not p: return set()
+    t = re.sub(r"\s+", " ", unicodedata.normalize("NFKC", p.read_text(errors="ignore")).lower())
+    return {t[i:i + 9] for i in range(0, max(1, len(t) - 8))}
+
 def load(sp):
     f = DATA / f"{sp}.jsonl"
     return [json.loads(l) for l in f.read_text().splitlines() if l.strip()] if f.exists() else []
@@ -123,6 +134,22 @@ def main():
         ids.add(x["id"]); hashes.add(nhash(x["instruction"], x["response"]))
     rf = DATA / "test_ampliado_reserva.json"  # enmienda ORÁCULO 2026-10-21: documentos reservados para test_ampliado
     reservados = set(json.loads(rf.read_text())["datos_clave"]["documentos_reservados"]) if rf.exists() else set()
+    test_docs = {s for s, sp in src_split.items() if sp == "test"}
+    _tdsh = {}
+    _cache = {}
+    def es_doc_de_test(fuente):
+        """True si la fuente es alias de un documento de test o su contenido coincide (Jaccard >= DOC_DUP) con uno."""
+        f = fuente.split("#", 1)[0]
+        if f in test_docs or ALIAS_TEST.get(f) in test_docs: return True
+        if f not in _cache:
+            sh = doc_shingles(f); _cache[f] = False
+            if sh:
+                for td in test_docs:
+                    if td not in _tdsh: _tdsh[td] = doc_shingles(td)
+                    o = _tdsh[td]
+                    if o and min(len(sh), len(o)) / max(len(sh), len(o)) >= DOC_DUP and jaccard(sh, o) >= DOC_DUP:
+                        _cache[f] = True; break
+        return _cache[f]
     for x in load("test_ampliado"):
         ids.add(x["id"]); hashes.add(nhash(x["instruction"], x["response"])); src_split.setdefault(x["source"], "test")
     index = [(x["id"], "test_ampliado", shingles(x["instruction"], x["response"])) for x in load("test_ampliado")]
@@ -145,6 +172,9 @@ def main():
             except Exception: rech.append({**ref, "motivo": "json_invalido"}); o["rechazados_esquema"] += 1; continue
             why = validate(r, proy)
             if why: o["rechazados_esquema"] += 1; rech.append({**ref, "motivo": why, "id_origen": str(r.get("id", "")) if isinstance(r, dict) else ""}); continue
+            if r["fuente"].split("#", 1)[0] not in src_split and es_doc_de_test(r["fuente"]):
+                o["rechazados_esquema"] += 1
+                rech.append({**ref, "motivo": "fuente_es_documento_de_test", "id_origen": str(r.get("id", ""))}); continue
             if r["fuente"].split("#", 1)[0] in reservados:
                 o["rechazados_esquema"] += 1
                 rech.append({**ref, "motivo": "fuente_reservada_test_ampliado", "id_origen": str(r.get("id", ""))}); continue
