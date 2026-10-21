@@ -58,3 +58,74 @@ smoke_lowmem:  # 2026-10-21: perfil tras OOM de 'smoke' en paso 4/60 (run.log). 
   val_every: 20
   eval_max_samples: 20     # mismas 20 primeras de test.jsonl que el baseline
   max_new_tokens: 256
+# --- 2026-10-21: perfiles 7B (NO ejecutados; entrenar requiere aprobación expresa de Lázaro) ---
+# Hiperparámetros comunes = target_7b (r16, alpha32, dropout 0.05, 7 proyecciones, lr 1e-4, 3 épocas,
+# batch efectivo 4, max_len 1024, seed 42). VRAM/tiempo: PENDIENTE DE VERIFICACIÓN.
+target_7b_qwen_qlora4:
+  base_model: Qwen/Qwen2.5-7B
+  quantization: {load_in_4bit: true, bnb_4bit_quant_type: nf4, bnb_4bit_use_double_quant: true, bnb_4bit_compute_dtype: bfloat16}
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+  lr: 1.0e-4
+  epochs: 3
+  max_steps: -1
+  batch_size: 1
+  grad_accum: 4
+  max_len: 1024
+  gradient_checkpointing: true
+  eval_max_samples: 66
+  max_new_tokens: 400
+  vram_estimada_gb: "12-16 (PENDIENTE DE VERIFICACIÓN)"
+target_7b_mistral_qlora4:
+  base_model: mistralai/Mistral-7B-v0.3
+  quantization: {load_in_4bit: true, bnb_4bit_quant_type: nf4, bnb_4bit_use_double_quant: true, bnb_4bit_compute_dtype: bfloat16}
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+  lr: 1.0e-4
+  epochs: 3
+  max_steps: -1
+  batch_size: 1
+  grad_accum: 4
+  max_len: 1024
+  gradient_checkpointing: true
+  eval_max_samples: 66
+  max_new_tokens: 400
+  vram_estimada_gb: "12-16 (PENDIENTE DE VERIFICACIÓN)"
+target_7b_qwen_bf16:
+  base_model: Qwen/Qwen2.5-7B
+  dtype: bfloat16
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+  lr: 1.0e-4
+  epochs: 3
+  max_steps: -1
+  batch_size: 1
+  grad_accum: 4
+  max_len: 1024
+  gradient_checkpointing: true
+  eval_max_samples: 66
+  max_new_tokens: 400
+  vram_estimada_gb: "~24 (PENDIENTE DE VERIFICACIÓN)"
+target_7b_mistral_bf16:
+  base_model: mistralai/Mistral-7B-v0.3
+  dtype: bfloat16
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+  lr: 1.0e-4
+  epochs: 3
+  max_steps: -1
+  batch_size: 1
+  grad_accum: 4
+  max_len: 1024
+  gradient_checkpointing: true
+  eval_max_samples: 66
+  max_new_tokens: 400
+  vram_estimada_gb: "~24 (PENDIENTE DE VERIFICACIÓN)"

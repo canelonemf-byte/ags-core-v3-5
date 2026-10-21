@@ -11,7 +11,12 @@ ap.add_argument("--mode", choices=["baseline", "lora"], required=True); a = ap.p
 cfg = yaml.safe_load(open(H / "configs/lora.yaml")); c = cfg[a.profile]
 torch.manual_seed(cfg["seed"]); torch.set_num_threads(int(__import__("os").environ.get("NUM_THREADS", "2")))
 tok = AutoTokenizer.from_pretrained(c["base_model"])
-model = AutoModelForCausalLM.from_pretrained(c["base_model"], dtype=torch.float32)
+_kw = {"dtype": getattr(torch, c.get("dtype", "float32"))}  # 2026-10-21: perfiles 7B bf16/QLoRA
+if c.get("quantization"):
+    from transformers import BitsAndBytesConfig
+    _q = dict(c["quantization"]); _q["bnb_4bit_compute_dtype"] = getattr(torch, _q.get("bnb_4bit_compute_dtype", "bfloat16"))
+    _kw = {"quantization_config": BitsAndBytesConfig(**_q), "device_map": "auto"}
+model = AutoModelForCausalLM.from_pretrained(c["base_model"], **_kw)
 if a.mode == "lora":
     from peft import PeftModel; model = PeftModel.from_pretrained(model, H / f"adapters/{a.profile}")
 model.eval()

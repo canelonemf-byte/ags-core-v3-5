@@ -21,7 +21,8 @@
    "url": "https://huggingface.co/mistralai/Mistral-7B-v0.3",
    "api": "https://huggingface.co/api/models/mistralai/Mistral-7B-v0.3",
    "nota": "Licencia declarada en la ficha; el repo no incluye archivo LICENSE propio (texto completo PENDIENTE DE VERIFICACIÓN). La ficha enlaza la política de privacidad de Mistral.",
-   "verificacion_2026_10_21": "API HF: tag license:apache-2.0 y cardData.license=apache-2.0; gated=false; sin archivo LICENSE en el repo HF. Texto completo PENDIENTE DE VERIFICACIÓN (estándar Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0)"
+   "verificacion_2026_10_21": "API HF: tag license:apache-2.0 y cardData.license=apache-2.0; gated=false; sin archivo LICENSE en el repo HF. Texto completo PENDIENTE DE VERIFICACIÓN (estándar Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0)",
+   "verificacion_2026_10_21_1410": "API HF solo lectura: cardData.license=apache-2.0, gated=false, sha caa1feb0e54d415e2df31207e5f4e273e33509b1, lastModified 2025-07-24; siblings sin LICENSE; /resolve/main/LICENSE -> HTTP 404. Texto completo sigue PENDIENTE DE VERIFICACIÓN"
   },
   {
    "id": "Qwen/Qwen2.5-7B",

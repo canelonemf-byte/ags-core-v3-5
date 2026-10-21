@@ -10,7 +10,15 @@ ap = argparse.ArgumentParser(); ap.add_argument("--profile", default="smoke"); a
 cfg_all = yaml.safe_load(open(H / "configs/lora.yaml")); c = cfg_all[a.profile]; seed = cfg_all["seed"]
 random.seed(seed); torch.manual_seed(seed); torch.set_num_threads(int(c.get("num_threads", __import__("os").environ.get("NUM_THREADS", "2"))))
 tok = AutoTokenizer.from_pretrained(c["base_model"])
-model = AutoModelForCausalLM.from_pretrained(c["base_model"], dtype=torch.float32)
+_kw = {"dtype": getattr(torch, c.get("dtype", "float32"))}  # 2026-10-21: perfiles 7B bf16/QLoRA
+if c.get("quantization"):
+    from transformers import BitsAndBytesConfig
+    _q = dict(c["quantization"]); _q["bnb_4bit_compute_dtype"] = getattr(torch, _q.get("bnb_4bit_compute_dtype", "bfloat16"))
+    _kw = {"quantization_config": BitsAndBytesConfig(**_q), "device_map": "auto"}
+model = AutoModelForCausalLM.from_pretrained(c["base_model"], **_kw)
+if c.get("quantization"):
+    from peft import prepare_model_for_kbit_training
+    model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=bool(c.get("gradient_checkpointing")))
 model = get_peft_model(model, LoraConfig(r=c["r"], lora_alpha=c["alpha"], lora_dropout=c["dropout"],
                        target_modules=c["target_modules"], task_type="CAUSAL_LM"))
 GA = c.get("grad_accum", 1)

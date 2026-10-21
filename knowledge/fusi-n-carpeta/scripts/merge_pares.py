@@ -6,6 +6,8 @@
 - Nunca mueve items existentes; fuentes nuevas -> split determinista por fuente (seed 42), SOLO train/val
 - TEST CONGELADO (Opción A, 2026-10-21): nunca se añade a test; aborta si sha256(test.jsonl) != prerregistrado
 - SIMULADOS (Lázaro, 2026-10-21): pares simulado=true -> data/simulados.jsonl (split_origen), nunca a train/val/test
+- NEAR-DUP (2026-10-21): Jaccard de shingles de 5 caracteres (Python puro) >= 0.85 contra train/val/test/simulados -> rechazado near_dup (test siempre)
+- RETIRADOS: data/retirados.jsonl (par completo + motivo) se copia a rechazados.jsonl en cada ejecución
 - Reescribe data/*.jsonl solo si hay pares nuevos válidos; manifest siempre actualizado (backup en manifest_prev.json)
 Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA. Licencia MIT."""
 import hashlib, json, re, shutil, sys, unicodedata
@@ -52,11 +54,47 @@ def validate(r, proyecto_dir):
     if resto and not re.search(r"asistencia de (ia|inteligencia artificial)|el prat|barcelona|espa", resto, re.I):
         return "autor_con_coautores_no_permitidos"
     if THIRD.search(r["fuente"]): return "fuente_de_terceros_o_pdf"
-    fp = ROOT / r["fuente"]
-    if not r["fuente"].startswith(("knowledge/", "docs/")) or not fp.is_file(): return "fuente_no_existe_en_ags_core"
+    if not resolve_fuente(r["fuente"]): return "fuente_no_existe"
     if r["licencia"].strip().lower() not in LIC_OK: return "licencia_no_permitida"
     if r["proyecto"] != proyecto_dir: return "proyecto_no_coincide_con_carpeta"
     return ""
+
+NEAR_DUP = 0.85
+SHINGLE_K = 5
+
+def shingles(ins, out, k=SHINGLE_K):
+    t = norm(ins) + " \u241e " + norm(out)
+    return {t[i:i + k] for i in range(max(1, len(t) - k + 1))}
+
+def jaccard(a, b):
+    if not a or not b: return 0.0
+    i = len(a & b)
+    return i / (len(a) + len(b) - i)
+
+def best_match(sh, index):
+    """index: lista de (id, split, shingles). Devuelve (sim, id, split) del más parecido; prefiltro por tamaño."""
+    best = (0.0, "", "")
+    n = len(sh)
+    for pid, sp, other in index:
+        m = len(other)
+        if min(n, m) / max(n, m) < NEAR_DUP: continue  # cota: J <= min/max
+        j = jaccard(sh, other)
+        if j > best[0] or (sp == "test" and j >= NEAR_DUP and best[2] != "test"): best = (j, pid, sp)
+    return best
+
+WS = Path("/workspace")
+
+def resolve_fuente(f):
+    """2026-10-21: quita #fragmento; absoluta -> debe estar bajo /workspace; relativa -> prueba ags-core-v3.6/ y luego /workspace/."""
+    f = f.split("#", 1)[0].strip()
+    if not f: return None
+    p = Path(f)
+    cands = [p] if p.is_absolute() else [ROOT / p, WS / p]
+    for c in cands:
+        try: c = c.resolve()
+        except Exception: continue
+        if c.is_file() and (c.is_relative_to(WS)): return c
+    return None
 
 def load(sp):
     f = DATA / f"{sp}.jsonl"
@@ -68,6 +106,11 @@ def check_test():
         sys.exit(f"ABORTADO: sha256 de test.jsonl {got} != prerregistrado {TEST_SHA256}")
 
 def main():
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--dry-run", action="store_true", help="no escribe nada; solo cuenta")
+    ap.add_argument("--input", action="append", default=[], help="lora_pares.jsonl extra (proyecto = carpeta padre); implica revisión")
+    a = ap.parse_args()
     check_test()
     now = datetime.now(timezone(timedelta(hours=2))).isoformat(timespec="minutes")
     data = {sp: load(sp) for sp in SPLITS}
@@ -78,35 +121,56 @@ def main():
             src_split.setdefault(x["source"], sp)
     for x in load("simulados"):  # dedup contra simulados ya apartados
         ids.add(x["id"]); hashes.add(nhash(x["instruction"], x["response"]))
+    index = [(x["id"], sp, shingles(x["instruction"], x["response"])) for sp, rows in data.items() for x in rows]
+    index += [(x["id"], "simulados", shingles(x["instruction"], x["response"])) for x in load("simulados")]
+    orig = {}
     files = sorted((ROOT / "knowledge").glob("*/lora_pares.jsonl"))
     files = [f for f in files if f.parent.name != HERE.name]
+    if a.input: files = [Path(x).resolve() for x in a.input]
+    rel = lambda f: str(f.relative_to(ROOT)) if f.is_relative_to(ROOT) else str(f)
     nuevos = {sp: [] for sp in SPLITS}; sim_new = []; rech = []; dup = 0; leidos = 0
     for f in files:
         proy = f.parent.name
+        o = orig.setdefault(proy, {"leidos": 0, "aceptados": 0, "simulados": 0, "dup_exacto": 0, "near_dup": 0, "rechazados_esquema": 0})
         for i, l in enumerate(f.read_text(errors="ignore").splitlines(), 1):
             if not l.strip(): continue
-            leidos += 1
-            ref = {"archivo": str(f.relative_to(ROOT)), "linea": i}
+            leidos += 1; o["leidos"] += 1
+            ref = {"archivo": rel(f), "linea": i}
             try: r = json.loads(l)
-            except Exception: rech.append({**ref, "motivo": "json_invalido"}); continue
+            except Exception: rech.append({**ref, "motivo": "json_invalido"}); o["rechazados_esquema"] += 1; continue
             why = validate(r, proy)
-            if why: rech.append({**ref, "motivo": why, "id_origen": str(r.get("id", "")) if isinstance(r, dict) else ""}); continue
+            if why: o["rechazados_esquema"] += 1; rech.append({**ref, "motivo": why, "id_origen": str(r.get("id", "")) if isinstance(r, dict) else ""}); continue
             h = nhash(r["instruction"], r["response"])
             pid = hashlib.sha256((r["fuente"] + h).encode()).hexdigest()[:16]
-            if pid in ids or h in hashes: dup += 1; continue
+            if pid in ids or h in hashes: dup += 1; o["dup_exacto"] += 1; continue
+            sh = shingles(r["instruction"], r["response"])
+            j, mid, msp = best_match(sh, index)
+            if j >= NEAR_DUP:  # incluye siempre near-dups de test
+                o["near_dup"] += 1
+                rech.append({**ref, "motivo": "near_dup", "id_origen": str(r.get("id", "")), "id_coincidente": mid,
+                             "split_coincidente": msp, "jaccard": round(j, 4)}); continue
             sp = src_split.get(r["fuente"]) or split_for(r["fuente"])
-            if sp == "test": dup += 1; continue  # fuente ya presente en test: no se añade (test congelado, sin fuga)
+            if sp == "test": dup += 1; o["dup_exacto"] += 1; continue  # fuente ya presente en test: no se añade (test congelado, sin fuga)
             row = {"id": pid, "instruction": r["instruction"], "response": r["response"], "source": r["fuente"],
                    "autor": AUTOR, "licencia": r["licencia"], "proyecto": proy, "simulado": r["simulado"], "origen": "lora_pares"}
             ids.add(pid); hashes.add(h)
             if r["simulado"] is True:
+                index.append((pid, "simulados", sh)); o["simulados"] += 1
                 sim_new.append({**row, "split_origen": sp}); continue
+            index.append((pid, sp, sh)); o["aceptados"] += 1
             src_split.setdefault(r["fuente"], sp)
             nuevos[sp].append(row)
     assert not nuevos["test"]
     assert all(r["simulado"] is False for v in nuevos.values() for r in v)
     n_new = sum(len(v) for v in nuevos.values())
-    (DATA / "rechazados.jsonl").write_text("".join(json.dumps({**x, "fecha": now}, ensure_ascii=False) + "\n" for x in rech))
+    if a.dry_run:
+        print(json.dumps({"dry_run": True, "archivos": [rel(f) for f in files], "por_agente": orig,
+                          "aceptarian_por_split": {k: len(v) for k, v in nuevos.items()}, "simulados": len(sim_new),
+                          "rechazos": [{k: x[k] for k in x if k != "fecha"} for x in rech]}, ensure_ascii=False, indent=1))
+        return 0
+    # retirados manuales aprobados (p. ej. near_dup_cross_split 2026-10-21) se conservan en rechazados en cada ejecución
+    ret = [{k: v for k, v in x.items() if k != "par"} for x in load("retirados")]
+    (DATA / "rechazados.jsonl").write_text("".join(json.dumps(x, ensure_ascii=False) + "\n" for x in ret + rech))
     if sim_new:
         with open(DATA / "simulados.jsonl", "a") as fh:
             fh.write("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in sim_new))
@@ -138,11 +202,19 @@ def main():
     man["total_pares"] = sum(len(v) for v in data.values())
     man["por_fuente"] = dict(sorted(por_fuente.items()))
     man["fecha"] = now
-    man["ultima_fusion"] = {"fecha": now, "archivos_encontrados": [str(f.relative_to(ROOT)) for f in files],
+    man["ultima_fusion"] = {"fecha": now, "archivos_encontrados": [rel(f) for f in files],
                             "pares_leidos": leidos, "pares_nuevos": n_new, "nuevos_por_split": {k: len(v) for k, v in nuevos.items()},
                             "simulados_nuevos": len(sim_new), "duplicados": dup, "rechazados": len(rech), "datos_reescritos": bool(n_new or sim_new)}
     check_test()
     man["test_prerregistrado"] = {"sha256": TEST_SHA256, "coincide": True, "congelado": True}
+    tot = {k: sum(v[k] for v in orig.values()) for k in ("leidos", "aceptados", "simulados", "dup_exacto", "near_dup", "rechazados_esquema")}
+    (DATA / "originalidad.json").write_text(json.dumps({
+        "meta": {"fecha": now[:10], "autor": AUTOR, "licencia": "CC BY 4.0", "metodo": f"jaccard_shingles_{SHINGLE_K}_caracteres_python_puro", "umbral": NEAR_DUP},
+        "objetivo": "medir originalidad de pares de agentes frente a train/val/test/simulados",
+        "datos_clave": {"por_agente": dict(sorted(orig.items())), "total": tot},
+        "tareas": [], "riesgos": ["shingles de caracteres no detectan paráfrasis semánticas"],
+        "decisiones": ["near_dup >= 0.85 -> rechazados.jsonl con id_coincidente; near-dup de test siempre rechazado"],
+        "proximo_paso": "revisar rechazados near_dup con cada agente"}, ensure_ascii=False, separators=(",", ":")))
     man_f.write_text(json.dumps(man, ensure_ascii=False, indent=1))
     print(json.dumps(man["ultima_fusion"], ensure_ascii=False, separators=(",", ":")))
 
