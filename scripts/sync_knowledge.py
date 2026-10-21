@@ -75,7 +75,7 @@ def copy_repo(src: Path, pid: str, repo: str, source: str) -> dict:
         shutil.rmtree(dst)
     files, skipped = [], []
     for p in sorted(src.rglob("*")):
-        if not p.is_file() or ".git" in p.parts:
+        if not p.is_file() or set(p.parts) & {".git", ".venv", "venv", "site-packages", "node_modules", "__pycache__", ".hf_cache"}:
             continue
         rel = p.relative_to(src)
         if len(str(rel)) > 200:  # nombres rotos (p. ej. contenido pegado en el nombre)

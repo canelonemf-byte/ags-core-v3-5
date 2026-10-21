@@ -48,7 +48,7 @@ def chunk_text(text: str, size: int = 900, overlap: int = 150) -> list[str]:
 
 # Directorios de entorno/caché que no son obra del proyecto (no se escanean).
 SKIP_DIRS = frozenset({".venv", "venv", ".hf_cache", "node_modules", "__pycache__", ".git",
-                       ".pytest_cache", ".mypy_cache", ".ruff_cache", ".cache", ".ipynb_checkpoints", ".tox"})
+                       ".pytest_cache", ".mypy_cache", ".ruff_cache", ".cache", ".ipynb_checkpoints", ".tox", "env", ".env", "site-packages", "dist-packages", ".hf_cache", "bower_components"})
 
 
 class _Tfidf:
