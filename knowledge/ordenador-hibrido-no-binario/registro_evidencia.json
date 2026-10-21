@@ -1,7 +1,7 @@
 {
  "meta": {
   "proyecto": "ordenador_hibrido_no_binario",
-  "fecha": "2026-10-20",
+  "fecha": "2026-10-21",
   "escala_evidencia": {
    "E0": "especulación/objetivo sin respaldo",
    "E1": "teoría establecida o cálculo derivado / hecho documental",
@@ -11,7 +11,8 @@
    "E5": "experimento propio reproducido",
    "E6": "validación independiente"
   },
-  "nota": "E5–E6 sin entradas: no hay experimentos propios"
+  "nota": "E5–E6 sin entradas: no hay experimentos propios",
+  "nota_originalidad": "originalidad: estado_del_arte|adaptacion|propuesta_propia; tipo: teorico|simulacion|documental"
  },
  "registro": [
   {
@@ -20,7 +21,9 @@
    "nivel": "E1",
    "tipo": "teorico",
    "fuente": "documento_maestro_proyecto.md §2.1; repo README (Landauer 1961)",
-   "estado": "verificado"
+   "estado": "verificado",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "física establecida (Landauer)"
   },
   {
    "id": "ev_02",
@@ -28,7 +31,9 @@
    "nivel": "E1",
    "tipo": "teorico",
    "fuente": "documento_maestro_proyecto.md §2.3",
-   "estado": "verificado"
+   "estado": "verificado",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "física establecida (ruido kT/C)"
   },
   {
    "id": "ev_03",
@@ -36,7 +41,9 @@
    "nivel": "E0",
    "tipo": "teorico",
    "fuente": "documento_maestro_proyecto.md §1.3; docs/Ordenador_hibrido.md",
-   "estado": "verificado"
+   "estado": "verificado",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "declaración de alcance del propio proyecto"
   },
   {
    "id": "ev_04",
@@ -44,7 +51,9 @@
    "nivel": "E0",
    "tipo": "teorico",
    "fuente": "docs/Ordenador_hibrido.md §criterios",
-   "estado": "verificado"
+   "estado": "verificado",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "objetivos de diseño propios"
   },
   {
    "id": "ev_05",
@@ -52,24 +61,30 @@
    "nivel": "E0",
    "tipo": "teorico",
    "fuente": "docs/Estudio_viabilidad_arquitectura_hibrida_revisado.docx.md cap. 7 y anexo",
-   "estado": "verificado"
+   "estado": "verificado",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "decisión editorial propia sobre el manuscrito"
   },
   {
    "id": "ev_06",
    "afirmacion": "Memresonador III–V/Si: Tossoun et al., 'High-speed and energy-efficient non-volatile silicon photonic memory based on heterogeneously integrated memresonator', Nature Communications 15, 551 (2024-01-16), doi:10.1038/s41467-024-44773-7 (literatura ajena)",
    "nivel": "E4",
-   "tipo": "experimento",
+   "tipo": "documental",
    "fuente": "docs/Estudio_viabilidad... referencias; doi.org → 302 a nature.com/articles/s41467-024-44773-7; metadatos Crossref (2026-10-20)",
    "estado": "verificado",
-   "nota": "Verificada la existencia y metadatos del DOI; contenido técnico no revisado ni sus cifras incorporadas"
+   "nota": "Verificada la existencia y metadatos del DOI; contenido técnico no revisado ni sus cifras incorporadas",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "artículo de terceros"
   },
   {
    "id": "ev_07",
    "afirmacion": "Dispositivos resistivos de HfOx muestran múltiples estados de conductancia útiles para CIM (literatura ajena, sin cita concreta local)",
    "nivel": "E3",
-   "tipo": "experimento",
+   "tipo": "documental",
    "fuente": "documento_maestro_proyecto.md §3.2",
-   "estado": "PENDIENTE DE VERIFICACIÓN"
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "literatura ajena sin cita concreta"
   },
   {
    "id": "ev_08",
@@ -77,7 +92,9 @@
    "nivel": "E2",
    "tipo": "simulacion",
    "fuente": "docs/Manual_de_Fabricacion... §3-5",
-   "estado": "PENDIENTE DE VERIFICACIÓN"
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "adaptacion",
+   "justificacion_originalidad": "código propio ilustrativo sobre métodos conocidos"
   },
   {
    "id": "ev_09",
@@ -85,7 +102,9 @@
    "nivel": "E0",
    "tipo": "teorico",
    "fuente": "docs/Manual_de_Fabricacion... §6",
-   "estado": "PENDIENTE DE VERIFICACIÓN"
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "protocolo prospectivo propio"
   },
   {
    "id": "ev_10",
@@ -93,7 +112,9 @@
    "nivel": "E0",
    "tipo": "teorico",
    "fuente": "docs/Manual §8; docs/Estudio_viabilidad cap. 8",
-   "estado": "PENDIENTE DE VERIFICACIÓN"
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "estimación propia"
   },
   {
    "id": "ev_11",
@@ -101,7 +122,9 @@
    "nivel": "E0",
    "tipo": "simulacion",
    "fuente": "github canelonemf-byte/Atlas0-ordenador2.6-x-10- README",
-   "estado": "PENDIENTE DE VERIFICACIÓN"
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "contenido del repo del autor"
   },
   {
    "id": "ev_12",
@@ -109,7 +132,9 @@
    "nivel": "E1",
    "tipo": "teorico",
    "fuente": "GitHub API git/trees HEAD (2026-10-20)",
-   "estado": "verificado"
+   "estado": "verificado",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "hecho documental sobre el repo propio"
   },
   {
    "id": "ev_13",
@@ -117,7 +142,9 @@
    "nivel": "E1",
    "tipo": "teorico",
    "fuente": "GitHub descripción del repo",
-   "estado": "PENDIENTE DE VERIFICACIÓN"
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "cálculo de la descripción del repo propio"
   },
   {
    "id": "ev_14",
@@ -125,7 +152,9 @@
    "nivel": "E0",
    "tipo": "teorico",
    "fuente": "repo README",
-   "estado": "PENDIENTE DE VERIFICACIÓN"
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "concepto especulativo del autor"
   },
   {
    "id": "ev_15",
@@ -133,7 +162,9 @@
    "nivel": "E0",
    "tipo": "teorico",
    "fuente": "documento_maestro_proyecto.md cabecera; repo README",
-   "estado": "PENDIENTE DE VERIFICACIÓN"
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "afirmación sobre el propio proyecto"
   },
   {
    "id": "ev_16",
@@ -141,7 +172,110 @@
    "nivel": "E2",
    "tipo": "simulacion",
    "fuente": "sim/sim_mvm.py, sim/parametros.yaml, sim/salidas/resultados.csv (semilla 20261020)",
-   "estado": "PENDIENTE DE VERIFICACIÓN"
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "adaptacion",
+   "justificacion_originalidad": "simulación propia de un modelo CIM estándar con parámetros supuestos",
+   "nota_ciclo_2026_10_21": "test mínimo sim/test_sim_mvm.py pasa (1 passed, re-ejecución local 2026-10-21 09:40 Europe/Madrid); sigue siendo E2: re-ejecución propia, no reproducción independiente ni experimento"
+  },
+  {
+   "id": "ev_17",
+   "afirmacion": "VQE: bucle variacional QPU+optimizador clásico para estado fundamental (Peruzzo et al. 2014, doi:10.1038/ncomms5213)",
+   "nivel": "E4",
+   "tipo": "documental",
+   "fuente": "docs/algoritmos_hibridos.md",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "método publicado por terceros; DOI verificado, contenido no revisado"
+  },
+  {
+   "id": "ev_18",
+   "afirmacion": "QAOA: optimización combinatoria con p capas coste/mezclador (Farhi et al., arXiv:1411.4028)",
+   "nivel": "E3",
+   "tipo": "documental",
+   "fuente": "docs/algoritmos_hibridos.md",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "preprint arXiv verificado, no revisado por pares en esta cita"
+  },
+  {
+   "id": "ev_19",
+   "afirmacion": "Limitaciones de algoritmos variacionales: barren plateaus, ruido NISQ, coste en mediciones (Cerezo 2021; McClean 2018)",
+   "nivel": "E4",
+   "tipo": "documental",
+   "fuente": "docs/algoritmos_hibridos.md",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "literatura ajena; DOIs verificados, contenido no revisado"
+  },
+  {
+   "id": "ev_20",
+   "afirmacion": "Qudits: más información por portador a cambio de control/calibración más complejos (Wang et al. 2020)",
+   "nivel": "E4",
+   "tipo": "documental",
+   "fuente": "docs/algoritmos_hibridos.md",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "revisión de terceros; DOI verificado"
+  },
+  {
+   "id": "ev_21",
+   "afirmacion": "MVL clásica: menor interconexión por dígito, márgenes de ruido decrecientes con la base (Hurst 1984)",
+   "nivel": "E4",
+   "tipo": "documental",
+   "fuente": "docs/algoritmos_hibridos.md",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "literatura ajena; DOI verificado"
+  },
+  {
+   "id": "ev_22",
+   "afirmacion": "CIM analógico en crossbar y técnicas de entrenamiento tolerante a ruido (Ielmini 2018; Sebastian 2020; Joshi 2020)",
+   "nivel": "E4",
+   "tipo": "documental",
+   "fuente": "docs/algoritmos_hibridos.md",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "literatura ajena; DOIs verificados, cifras no incorporadas"
+  },
+  {
+   "id": "ev_23",
+   "afirmacion": "Planificación de DAG en sistemas heterogéneos tipo HEFT (Topcuoglu et al. 2002)",
+   "nivel": "E4",
+   "tipo": "documental",
+   "fuente": "docs/algoritmos_hibridos.md",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "algoritmo clásico de terceros; DOI verificado"
+  },
+  {
+   "id": "ev_24",
+   "afirmacion": "Integrar CIM multinivel, entrenamiento con ruido y QPU opcional como acelerador en la arquitectura del proyecto",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "docs/algoritmos_hibridos.md",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "adaptacion",
+   "justificacion_originalidad": "combinación de técnicas conocidas aplicada a esta arquitectura; sin implementación"
+  },
+  {
+   "id": "ev_25",
+   "afirmacion": "Planificador consciente de error y de coste de conversión ADC/DAC/E-O para CMOS/CIM/fotónica/QPU",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "docs/algoritmos_hibridos.md",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "diseño propio del proyecto, no implementado ni evaluado"
+  },
+  {
+   "id": "ev_26",
+   "afirmacion": "Usar las tablas error/energía de sim_mvm como modelo de coste del planificador",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "docs/algoritmos_hibridos.md",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "idea propia; datos subyacentes E2 con parámetros supuestos"
   }
  ]
 }
