@@ -119,7 +119,7 @@ v2.0 en Drive = 3 Google Docs; no sustituye al PDF v1.1.
 ### 2.5 CERO-A (Drive → energía terrestre)
 
 NH₃ verde, licencia **CC0** (el autor renuncia a IP en ese documento).
-Cifras del ejecutivo: η indicada 47 %, η efectiva 38 %, 6,5 kg NH₃/100 km ≈ 3,5 L gasolina, NOₓ/NH₃ \< 1 ppm, r=14:1, λ=1,8–2,0, EGR 40 %, T_llama ≤ 1700 K, 120 kW / 2.0 L, 11,7 MWh/t NH₃, 350–400 €/t.
+Cifras del ejecutivo: η indicada 47 %, η efectiva 38 %, 6,5 kg NH₃/100 km ≈ 3,5 L gasolina, NOₓ/NH₃ \< 1 ppm, r=14:1, λ=1,8–2,0, EGR 40 %, T_llama ≤ 1700 K, 120 kW / 2.0 L, 11,7 MWh/t NH₃, 350–400 €/t (objetivo/escenario anterior a escala industrial, no validado; LCOA simulado actual 3166 €/t, SIMULADO E2, P5–P95 2960–3701, piloto El Prat; fuente: knowledge/cero-a-amoniaco/informe_v3.md).
 Motor cinético citado: 30 especies / 150 reacciones en GT-Power / WLTP.
 **Puente:** CERO-A no usa ³He. Comparte con MEI-RIT la idea «vector denso vs xenón/H₂»; no compartir cuaderno NotebookLM.
 Hay Doc «Matriz de Tensores Físicos CERO-A y MEI-RIT» en la carpeta de propulsión: es el único cruce explícito en Drive.
