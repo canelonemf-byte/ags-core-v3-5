@@ -22,7 +22,7 @@ Próximo hito: ensayo en motor instrumentado (indicado/efectivo, NH₃ slip, NO�
 - WTW \< 2 g CO₂-eq/MJ.
 - NH₃: 22,5 MJ/L; 180 Mt/año mercado.
 - Planta: PEM 10 MW η 70 % LHV; N₂ 99,5 %; KM1; 176,5 kg H₂ + 823,5 kg N₂ + 11,7 MWh + 1600 kg agua / t NH₃.
-- Coste citado 350–400 €/t.
+- Coste citado 350–400 €/t (objetivo/escenario anterior a escala industrial, no validado; LCOA simulado actual 3166 €/t, SIMULADO E2, P5–P95 2960–3701, piloto El Prat; fuente: knowledge/cero-a-amoniaco/informe_v3.md).
 - Motor: r=14:1, RON 130, Nimonic 80A / Inconel 625 / 316L / PTFE, DI 200 bar, chispa 100 mJ.
 - Cinética: 30 especies, 150 reacciones.
 

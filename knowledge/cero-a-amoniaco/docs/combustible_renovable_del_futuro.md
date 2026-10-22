@@ -596,7 +596,7 @@ Electricidad total: 1.33 MWh/h intensidad energética: 11.7 MWh/t NH₃
 
 El coste estimado de producción, asumiendo electricidad renovable a 30 €/MWh, es de
 
-350–400 €/t NH₃, equivalente a 0.017–0.019 €/MJ (antes de distribución e impuestos),
+350–400 €/t NH₃, equivalente a 0.017–0.019 €/MJ (objetivo/escenario anterior a escala industrial, no validado; LCOA simulado actual 3166 €/t, SIMULADO E2, P5–P95 2960–3701, piloto El Prat; fuente: knowledge/cero-a-amoniaco/informe_v3.md) (antes de distribución e impuestos),
 
 competitivo con la gasolina antes de impuestos.
 
