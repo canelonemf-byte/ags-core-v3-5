@@ -46,7 +46,7 @@ La estructura de costes está dominada por el gasto energético, donde la electr
 
 * **CAPEX:**  Inversión de  **18-26 M€**  (incluye electrólisis PEM, Haber-Bosch y almacenamiento).  
 * **OPEX:**  Coste operativo anual de  **4.0-5.0 M€**  (asumiendo energía a 30 €/MWh).  
-* **LCOA:**  Rango de  **380-520 €/t**  **\$NH\_3**\$  (proyectado a 250-350 €/t para 2035).**Comparativa Operativa (Coste por 100 km):**| Sistema de Propulsión | Consumo (estimado) | Coste Proyectado || \------ | \------ | \------ || **CERO-A (NH₃ ICE)** | 6.5 kg / 100 km | **5.2 € – 7.8 €** || **Gasolina Convencional** | 7.0 L / 100 km | **\~10.5 €** |
+* **LCOA:**  **3166 €/t NH₃ (SIMULADO, E2; P5–P95 2960–3701; piloto 50 kg/h El Prat, PPA FV+eólica vía red; desglose €/t: PPA ~846, electrolizador ~522, PSA+HB ~407, alquiler 724, personal 426, peajes ~216, permisos 92, conexión 21, tanque 12; fuente: knowledge/cero-a-amoniaco/informe_v3.md)**. Objetivo/escenario anterior a escala industrial, no validado: 380–520 €/t (250–350 €/t en 2035).**Comparativa Operativa (Coste por 100 km):**| Sistema de Propulsión | Consumo (estimado) | Coste Proyectado || \------ | \------ | \------ || **CERO-A (NH₃ ICE)** | 6.5 kg / 100 km | **5.2 € – 7.8 €** || **Gasolina Convencional** | 7.0 L / 100 km | **\~10.5 €** |
 
 Este ahorro operativo del \~30-50% justifica el despliegue acelerado a través del siguiente cronograma.
 
