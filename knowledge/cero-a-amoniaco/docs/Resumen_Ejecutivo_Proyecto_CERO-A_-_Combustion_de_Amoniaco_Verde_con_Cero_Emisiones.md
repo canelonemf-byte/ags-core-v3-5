@@ -29,4 +29,4 @@ Consumo en Ciclo WLTP (NH₃),6.5 kg/100 km
 Equivalente en Consumo de Gasolina,3.5 L/100 km  
 Emisiones Finales de NOₓ / NH₃,\< 1 ppm  
 Intensidad de Emisiones (WTW),\< 2 g CO₂-eq/MJ  
-Coste de Producción Estimado,350 – 400 €/t  
+Coste de Producción Estimado,350 – 400 €/t (escenario anterior, no validado; LCOA simulado actual 3166 €/t, SIMULADO E2, informe_v3)  
