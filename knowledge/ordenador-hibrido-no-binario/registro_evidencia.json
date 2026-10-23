@@ -1,7 +1,7 @@
 {
  "meta": {
   "proyecto": "ordenador_hibrido_no_binario",
-  "fecha": "2026-10-21",
+  "fecha": "2026-10-22",
   "escala_evidencia": {
    "E0": "especulación/objetivo sin respaldo",
    "E1": "teoría establecida o cálculo derivado / hecho documental",
@@ -12,7 +12,8 @@
    "E6": "validación independiente"
   },
   "nota": "E5–E6 sin entradas: no hay experimentos propios",
-  "nota_originalidad": "originalidad: estado_del_arte|adaptacion|propuesta_propia; tipo: teorico|simulacion|documental"
+  "nota_originalidad": "originalidad: estado_del_arte|adaptacion|propuesta_propia; tipo: teorico|simulacion|documental",
+  "nota_ciclo_2026_10_22": "Novedades desde el ciclo 2026-10-21 09:39: Manual (docs/ y drive/) anotado a las 13:58 con niveles E y PENDIENTE (kT/C E1; CMOS 0,8 vs 9,8 W/mm²) → ev_27; docs/algoritmos_hibridos.md marca R9 PENDIENTE (coherente con ev_22). Repo Atlas0 sin cambios (último push 2026-10-08 10:49 UTC+2). Sin nuevas simulaciones ni experimentos; E5–E6 siguen vacíos."
  },
  "registro": [
   {
@@ -276,6 +277,16 @@
    "estado": "PENDIENTE DE VERIFICACIÓN",
    "originalidad": "propuesta_propia",
    "justificacion_originalidad": "idea propia; datos subyacentes E2 con parámetros supuestos"
+  },
+  {
+   "id": "ev_27",
+   "afirmacion": "Densidad de potencia de la línea base CMOS binaria: el Manual usa 0,8 W/mm² mientras otras fuentes del proyecto dan 9,8 W/mm²; cifra inconsistente y sin referencia",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "docs/Manual_de_Fabricacion... línea 304 (anotación del 2026-10-21 13:58)",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "supuesto propio del Manual sin fuente"
   }
  ]
 }
