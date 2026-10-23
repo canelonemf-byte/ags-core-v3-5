@@ -271,3 +271,17 @@ def test_declared_license_not_flagged():
 def test_index_skips_cache_dirs(tmp_path):
     from projects.knowledge import SKIP_DIRS
     assert {".venv", ".hf_cache", "node_modules", "__pycache__", ".git"} <= SKIP_DIRS
+
+
+def test_dft_free_energy_output_not_flagged():
+    from app.supervisor.checks import claims_in_file
+    out = claims_in_file("x/relax.txt", "Free energy:    -10.604137\n")
+    assert not [f for f in out if f["kind"] == "physics"]
+    out = claims_in_file("x/a.md", "Hemos conseguido energía libre infinita para todos.\n")
+    assert [f for f in out if f["kind"] == "physics"]
+
+
+def test_derived_regex_word_boundary():
+    from app.supervisor.checks import DERIVED
+    assert not DERIVED.search("Feasibility study in support of future policy")
+    assert DERIVED.search("port of numpy code")

@@ -28,6 +28,7 @@ PHYSICS = [
     "faster than light", "energia libre", "free energy", "movimiento perpetuo", "perpetual motion",
     "energia del punto cero", "zero-point energy", "energia infinita", "retrocausal",
 ]
+DFT_OUTPUT = re.compile(r"(free energy|energia libre)\s*[:=]\s*[-+]?\d")  # salida de código DFT (energía libre de Mermin/smearing), no afirmación
 GIBBS = re.compile(r"gibbs|helmholtz|barrera|delta ?g|δg|\\delta|activacion|de union|binding|kcal|kj/mol")
 VALIDATION_WORDS = ["demostrado", "validado", "probado", "comprobado", "certificado", "proven", "validated", "certified"]
 UNIT = re.compile(
@@ -60,7 +61,7 @@ THIRD_PARTY = {
 }
 _TP_RE = {n: re.compile(r"(?<![a-z0-9])" + re.escape(n) + r"(?![a-z0-9])") for n in THIRD_PARTY}
 NEEDS_NOTICE = {"karpathy", "nanogpt", "mingpt", "loralib", "sarfatti"}
-DERIVED = re.compile(r"(basado en|adaptado de|copiado de|tomado de|based on|adapted from|copied from|taken from|fork of|port of)\b", re.I)
+DERIVED = re.compile(r"\b(basado en|adaptado de|copiado de|tomado de|based on|adapted from|copied from|taken from|fork of|port of)\b", re.I)
 AI_GEN = re.compile(
     r"(as an ai language model|como modelo de lenguaje|como ia,? no puedo|generado (?:por|con) (?:chatgpt|grok|claude|gemini|deepseek|ia)|"
     r"generated (?:by|with) (?:chatgpt|grok|claude|gemini|deepseek|ai)|aqui tienes|here is (?:a|the|your)|espero que (?:esto|te) (?:te )?(?:sirva|ayude)|"
@@ -98,7 +99,7 @@ def claims_in_file(rel: str, text: str) -> list[dict]:
         p = plain(s)
         cited = bool(CITE.search(s))
         for w in PHYSICS:
-            if w in p and not (w in ("energia libre", "free energy") and GIBBS.search(p)):
+            if w in p and not (w in ("energia libre", "free energy") and (GIBBS.search(p) or DFT_OUTPUT.search(p))):
                 out.append(_f("physics", "high", rel, ln, f"afirmación física extraordinaria ('{w}') sin evidencia experimental", s))
                 break
         for w in HYPE:
