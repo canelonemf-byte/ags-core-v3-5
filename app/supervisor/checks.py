@@ -95,10 +95,13 @@ def _f(kind, sev, file, line, msg, quote="", **extra):
 
 def claims_in_file(rel: str, text: str) -> list[dict]:
     out = []
+    is_ref_list = bool(re.match(r"(referencias|references|bibliograf)", rel.rsplit("/", 1)[-1], re.I))
     for ln, s in _sentences(text):
         p = plain(s)
         cited = bool(CITE.search(s))
         for w in PHYSICS:
+            if is_ref_list:  # títulos de obras citadas (p. ej. Sarfatti 2015 'Retro-Causal…'), no afirmaciones propias
+                break
             if w in p and not (w in ("energia libre", "free energy") and (GIBBS.search(p) or DFT_OUTPUT.search(p))):
                 out.append(_f("physics", "high", rel, ln, f"afirmación física extraordinaria ('{w}') sin evidencia experimental", s))
                 break

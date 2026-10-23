@@ -39,7 +39,7 @@ Textos del paquete NotebookLM (Drive `NotebookLM_Fuentes_2026-08-30`) que no exi
 - [docs/notebooklm/06_GRAVEDAD_TIEMPO.md](docs/notebooklm/06_GRAVEDAD_TIEMPO.md)
 - Quantum_Metamaterial_Gravitation.pdf · pendiente: en Drive · https://drive.google.com/file/d/1QkklfSEbtYEBA20XDk8W8aGu7CjpIGLi/view?usp=drivesdk
 
-
-## Nota de evidencia (2026-10-21)
-
-Las afirmaciones de "control del tiempo" y "energía infinita" (README y `docs/Informe_Control_Espacio_Tiempo_Cuantico.md`), así como "retrocausal" en `docs/informe_viabilidad_gravedad_tiempo.md`, son **afirmaciones extraordinarias E0, sin evidencia experimental**. Se conserva el texto del autor sin borrar nada. Ver `NOTICE`.
+## Estado científico y fuentes
+- Todo lo relativo a «control del tiempo», motores warp o retrocausalidad es **especulativo (evidencia E0)**: no hay ningún experimento que lo respalde.
+- Física establecida en la que se apoya la discusión: relatividad general, métricas de Alcubierre (1994) y Natário (2002), desigualdades cuánticas de Ford-Roman (1995, 1996).
+- Ideas de Jack Sarfatti (metamateriales, ansatz Sarfatti-Wanser, teoría post-cuántica): son obra de su autor, se citan y resumen con palabras propias en [REFERENCIAS.md](REFERENCIAS.md).
