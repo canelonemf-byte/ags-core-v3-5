@@ -1,7 +1,5 @@
 > Texto extraído automáticamente del PDF original «omni_2_proyecto.pdf». Fórmulas, figuras y maquetación se han perdido; el original está en Drive: https://drive.google.com/file/d/1XzrBPyGmlYLdHpcOq0J3AGjInkm1nNkO/view?usp=drivesdk
 
-> Licencia de esta copia: CC BY 4.0 (decisión del autor, 2026-10-18). El aviso de licencia no comercial (NC) del original se ha sustituido; el resto del texto no se ha modificado.
-
 
 
 omni-2-proyecto
@@ -30,8 +28,8 @@ y criptograf´ıa post-cu´antica. Este documento sienta las bases t´ecnicas
 para su desarrollo y validaci´on.
 
 Documento liberado bajo licencia Creative Commons
-Reconocimiento 4.0 Internacional (CC
-BY 4.0).
+Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC
+BY-NC-SA 4.0).
 
 Contents
 

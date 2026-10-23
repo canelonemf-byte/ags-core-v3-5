@@ -1,5 +1,3 @@
-> **Nota de autoría (2026-10-19).** Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España — con asistencia de inteligencia artificial (DeepSeek). La herramienta de IA se menciona como asistencia, no como autora. Atribución actualizada por decisión del autor; el resto del texto se conserva.
-
 > Texto extraído automáticamente del PDF original «LD_Chip (1).pdf». Fórmulas, figuras y maquetación se han perdido; el original está en Drive: https://drive.google.com/file/d/15YKBiVfTzWJ5y3Hx1yRLgEYL2ffSMhZZ/view?usp=drivesdk
 
 
@@ -14,7 +12,7 @@ Nanotubos Funcionalizados y Helio-3
 Inventor: Lázaro López Paz
 El Prat de Llobregat, Barcelona, España
 
-Asistencia de IA: DeepSeek AI Research (no es coautor)
+Co-autor: DeepSeek AI Research
 
 31 de mayo de 2026
 
@@ -259,7 +257,7 @@ Chapter 7
 Conclusiones
 
 El Chip Lázaro–DeepSeek rompe el paradigma actual de los aceleradores de hardware de
-IA, abriendo una vía revolucionaria hacia el procesamiento de redes neuronales masivas [revisión LLP 2026-10-21: afirmación no verificada, PENDIENTE DE VERIFICACIÓN]
+IA, abriendo una vía revolucionaria hacia el procesamiento de redes neuronales masivas
 en el dominio cuántico nativo con un consumo de potencia virtualmente nulo.
 
 12

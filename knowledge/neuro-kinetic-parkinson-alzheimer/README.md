@@ -27,3 +27,9 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Referencias
+Ver [REFERENCIAS.md](REFERENCIAS.md).
+
+## Código realizable hoy
+`liberacion/`: modelos de liberación controlada (Higuchi, orden cero, primer orden), ajuste de k_H con datos in vitro y tiempo hasta una fracción liberada. No es un modelo clínico. `pip install -r requirements.txt && pytest`.

@@ -17,7 +17,7 @@ datos_clave:
   - "No realizable hoy (E0): construir una burbuja; exige energía negativa ~10^43 J o más y paredes de ~10^2 longitudes de Planck (Pfenning y Ford 1997)."
 tareas:
   - {id: T1, tarea: "Paquete warpcalc (Alcubierre, Natário, cota Pfenning-Ford) con 6 tests", estado: hecho, evidencia: E2}
-  - {id: T2, tarea: "Añadir integral ANEC sobre geodésicas nulas y comprobar la cifra -0,08 de P001", estado: pendiente, evidencia: E1}
+  - {id: T2, tarea: "Integral ANEC y verificación de las cifras de P001 (examples/verificar_p001.py, results/verificacion_p001.json)", estado: hecho, evidencia: E2}
   - {id: T3, tarea: "Añadir métrica de White (2011, informe técnico NASA) solo si se encuentra la forma funcional publicada", estado: pendiente, evidencia: E0}
   - {id: T4, tarea: "Comparar con análogos de laboratorio publicados (Barceló et al. 2011; Philbin 2008; Steinhauer 2016)", estado: pendiente, evidencia: E3}
 riesgos:
@@ -34,7 +34,7 @@ decisiones:
   - "Las afirmaciones extraordinarias no se borran: se etiquetan como hipótesis E0 con su cita."
   - "No se suben PDF de terceros; solo citas y resúmenes propios."
   - "Costes y materiales: solo con fuente; de momento el trabajo realizable es computacional (ordenador personal, Python + numpy)."
-proximo_paso: "Completar T2: integral ANEC y contraste con la cifra declarada."
+proximo_paso: "Pedir al autor los parámetros (v, R, sigma, rayo, separación de placas) usados para ANEC -0,08, QI 1e50 y Casimir 1e60."
 ```
 
 Referencias completas con DOI: [REFERENCIAS.md](REFERENCIAS.md).

@@ -5,7 +5,7 @@ description = "Cálculos numéricos de densidad de energía en métricas de Alcu
 authors = [{name = "Lázaro López Paz"}]
 license = {text = "MIT"}
 requires-python = ">=3.9"
-dependencies = ["numpy>=1.22"]
+dependencies = ["numpy>=1.22", "sympy>=1.10"]
 
 [project.optional-dependencies]
 test = ["pytest"]

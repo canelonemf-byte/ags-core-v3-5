@@ -17,7 +17,7 @@ Plataforma de diseño de péptidos terapéuticos inteligentes guiada por IA.
 - `docs/Manual_Fabricacion_Todos_Peptidos_v31.md` ← Manual_Fabricacion_Todos_Peptidos_v31.pdf
 - `docs/Paquete_Completo_NeuroPlastin_Protocolo_Patente_v3.md` ← Paquete_Completo_NeuroPlastin_Protocolo_Patente_v3.pdf
 - `docs/Protocolos_Laboratorio_NeuroPlastin_SenolytX_v3.md` ← Protocolos_Laboratorio_NeuroPlastin_SenolytX_v3.pdf
-- `docs/informe_viabilidad_gravedad_tiempo.md` ← informe_viabilidad_gravedad_tiempo.pdf
+- `informe_viabilidad_gravedad_tiempo` (trasladado a [control-tiempo-gravedad](https://github.com/canelonemf-byte/control-tiempo-gravedad/blob/main/docs/informe_viabilidad_gravedad_tiempo.md): estaba en el proyecto equivocado)
 
 ## Pendiente: en Drive
 
@@ -44,3 +44,6 @@ Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpe
 Textos del paquete NotebookLM (Drive `NotebookLM_Fuentes_2026-08-30`) que no existían en este repositorio:
 
 - [docs/notebooklm/08_PEPTIDOS_NEURO.md](docs/notebooklm/08_PEPTIDOS_NEURO.md)
+
+## Referencias
+Ver [REFERENCIAS.md](REFERENCIAS.md).

@@ -17,3 +17,12 @@ Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asisten
 
 ## Código
 `warpcalc/`: densidad de energía euleriana de Alcubierre (analítica y numérica) y Natário, energía total, cota de Pfenning-Ford. `pip install -e .[test] && pytest`; ejemplo: `python examples/energia_burbuja.py`. Plan: [PLAN_REALIZABLE.md](PLAN_REALIZABLE.md).
+
+## Verificación de P001 (2026-10-24, `examples/verificar_p001.py`)
+| cifra declarada | resultado |
+|---|---|
+| NEC/WEC violadas | **verificado** (tensor de Einstein simbólico; coincide con Alcubierre ec. 19) |
+| T00 nulo en el eje | **verificado** para el observador euleriano |
+| ANEC en la pared −0,08 | **signo y orden verificados** (−0,09 a −0,25 con v=0,5, R=1, σ=8); el valor exacto no es reproducible sin los parámetros |
+| QI ~10^50 | **no reproducido**: pared de 1 m ≈ 6·10^32 veces la cota de Pfenning-Ford; masa negativa ≈ −2·10^62 kg (R=100 m, v=c) |
+| Casimir ~10^60 | **no reproducido**: cociente de 7·10^44 a 3·10^110 según el grosor de pared; 10^60 cae dentro, depende de parámetros no declarados |

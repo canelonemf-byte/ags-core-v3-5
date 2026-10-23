@@ -2,7 +2,7 @@
 
 QuantumSynovia MetaLub (QSM): lubricación articular humana, registro técnico y simulaciones DFT.
 
-**Autor:** Lázaro López Paz · **Licencia:** documentos CC BY 4.0 (`LICENSE-docs.md`) · código MIT (`LICENSE`)
+**Autor:** Lázaro López Paz · **Licencia:** Todos los derechos reservados (ver `LICENSE`)
 
 ## Carpetas de origen en Google Drive
 
@@ -48,7 +48,7 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 
 ## Licencia
 
-Copyright (c) 2026 Lázaro López Paz. Documentos bajo CC BY 4.0 (ver `LICENSE-docs.md`); código y configuración bajo MIT (ver `LICENSE`). Decisión del autor del 2026-10-18; sustituye al aviso anterior de reserva de derechos.
+Copyright (c) 2026 Lázaro López Paz. Todos los derechos reservados (confidencial, propiedad intelectual protegida). Ver `LICENSE`.
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.

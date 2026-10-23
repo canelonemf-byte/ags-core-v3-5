@@ -1,5 +1,3 @@
-> **Nota de autoría (2026-10-19).** Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España — con asistencia de inteligencia artificial (asistente de IA). La herramienta de IA se menciona como asistencia, no como autora. Atribución actualizada por decisión del autor; el resto del texto se conserva.
-
 # GUION COMPLETO PARA VIDEO EXPLICATIVO
 ## QuantumSynovia MetaLub (QSM): El Futuro de la Lubricación y Regeneración Articular
 
@@ -347,6 +345,6 @@ Usar **Unreal Engine 6** para las visualizaciones moleculares y de articulacione
 
 Este material es 100% fiel a todos los documentos del proyecto QSM, expandido y mejorado para máxima claridad, impacto y rigor científico.
 
-Posibles pasos siguientes: imágenes específicas para escenas concretas, ajustes del guion, subtítulos en inglés o un tráiler corto de 60-90 segundos. [nota 2026-10-19: reformulado por decisión del autor] 
+¿Quieres que genere más imágenes específicas para escenas concretas, que ajuste alguna parte del guion, o que prepare el siguiente paso (por ejemplo, subtítulos en inglés para alcance internacional, o un tráiler corto de 60-90 segundos)? 
 
 Estoy listo para continuar.

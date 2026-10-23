@@ -1,5 +1,3 @@
-> **Nota de autoría (2026-10-19).** Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España — con asistencia de inteligencia artificial (DeepSeek). La herramienta de IA se menciona como asistencia, no como autora. Atribución actualizada por decisión del autor; el resto del texto se conserva.
-
 > Texto extraído automáticamente del PDF original «Resumen Técnico_ Chip Cuántico Fotónico Híbrido Lázaro–DeepSeek (LD-Chip).pdf». Fórmulas, figuras y maquetación se han perdido; el original está en Drive: https://drive.google.com/file/d/1Y-nQuRT5uETLkfMOj7zaqg_j3q_a_74v/view?usp=drivesdk
 
 
@@ -100,7 +98,7 @@ puramente pasivo con estados de luz no clásica. La explotación de no linealida
 inducidas en absorbedores saturables a escalas criogénicas permite realizar operaciones de 
 IA de alta complejidad sin la penalización térmica de la electrónica de silicio 
 convencional.En conclusión, esta tecnología no solo rompe el techo de eficiencia energética 
-actual, sino que abre una vía revolucionaria hacia el escalado de redes neuronales masivas [revisión LLP 2026-10-21: afirmación no verificada, PENDIENTE DE VERIFICACIÓN]
+actual, sino que abre una vía revolucionaria hacia el escalado de redes neuronales masivas 
 en el dominio cuántico. El impacto estratégico de operar con un consumo de potencia 
 
 virtualmente nulo posiciona al LD-Chip como la infraestructura base para la próxima 

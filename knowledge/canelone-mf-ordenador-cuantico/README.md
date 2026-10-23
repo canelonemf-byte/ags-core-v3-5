@@ -33,3 +33,9 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Referencias
+Ver [REFERENCIAS.md](REFERENCIAS.md).
+
+## Código realizable hoy
+`canelone_sim/`: simulador de vector de estado en numpy (H, X, Z, CNOT, muestreo); tests con estados de Bell y GHZ. `pip install -r requirements.txt && pytest`.

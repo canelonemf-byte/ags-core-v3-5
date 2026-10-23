@@ -1,7 +1,5 @@
 > Texto extraído automáticamente del PDF original «proyecto_diagnóstico_médico_para_todos.pdf». Fórmulas, figuras y maquetación se han perdido; el original está en Drive: https://drive.google.com/file/d/1qrdTxog2yZcxM9lHjTKSZnQNpqEa3AVe/view?usp=drivesdk
 
-> Licencia de esta copia: CC BY 4.0 (decisión del autor, 2026-10-18). El aviso de licencia no comercial (NC) del original se ha sustituido; el resto del texto no se ha modificado.
-
 
 
 Proyecto OMNI-Q
@@ -27,7 +25,7 @@ da (Air-Gap) y criptograf´ıa post-cu´antica. Este documento sienta las bases 
 para su desarrollo y validaci´on.
 
 Documento liberado bajo licencia Creative Commons
-Reconocimiento 4.0 Internacional (CC BY 4.0).
+Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0).
 
 ´Indice
 
@@ -51,7 +49,7 @@ Proyecto OMNI-Q Arquitectura Multimodal
 
 5. Conclusi´on y Autor´ıa 4
 
-L´azaro L´opez Paz – Creative Commons BY 4.02
+L´azaro L´opez Paz – Creative Commons BY-NC-SA 4.02
 
 Proyecto OMNI-Q Arquitectura Multimodal
 
@@ -106,7 +104,7 @@ Un Algoritmo Gen´etico optimiza vectores terap´euticos combinando mol´eculas 
 cas, eludiendo patentes vigentes y maximizando el ´Indice Combinatorio de Chou-Talalay
 para asegurar sinergia letal contra la patolog´ıa.
 
-L´azaro L´opez Paz – Creative Commons BY 4.03
+L´azaro L´opez Paz – Creative Commons BY-NC-SA 4.03
 
 Proyecto OMNI-Q Arquitectura Multimodal
 
@@ -147,4 +145,4 @@ conceptualmente por L´azaro L´opez Paz, con la asistencia de G´eminis, este m
 presenta como el pin´aculo del dise˜no m´edico de c´odigo abierto y dominio p´ublico para el
 siglo XXI.
 
-L´azaro L´opez Paz – Creative Commons BY 4.04
+L´azaro L´opez Paz – Creative Commons BY-NC-SA 4.04

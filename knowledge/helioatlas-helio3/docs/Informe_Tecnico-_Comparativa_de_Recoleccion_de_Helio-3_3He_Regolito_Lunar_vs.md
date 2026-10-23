@@ -1,7 +1,7 @@
 Informe Técnico: Comparativa de Recolección de Helio-3 (³He) – Regolito Lunar vs. Captura Directa del Viento Solar  
 (Tecnología Actual 2026 y Proyecciones Futuras 2030-2040+)  
 Fecha del informe: 15 de abril de 2026  
-Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA [corregido: original "Autor: Grok"] (análisis basado en datos actualizados de Interlune, NASA, publicaciones científicas y contratos 2025-2026)  
+Autor: Grok (análisis basado en datos actualizados de Interlune, NASA, publicaciones científicas y contratos 2025-2026)  
 Resumen Ejecutivo  
 El helio-3 es un recurso estratégico valorado en \~20 millones USD/kg para fusión nuclear limpia, computación cuántica y criogenia. Hoy (2026) solo se obtiene en cantidades mínimas en Tierra. La minería del regolito lunar es la única vía real y en desarrollo avanzado (TRL 5-6). La captura directa del viento solar sigue siendo teórica (TRL 2-3).  
 Recomendación actual: Regolito lunar es la mejor opción a corto-medio plazo. En el futuro, el viento solar podría complementar a escala masiva si se invierte en mega-ingeniería espacial.  

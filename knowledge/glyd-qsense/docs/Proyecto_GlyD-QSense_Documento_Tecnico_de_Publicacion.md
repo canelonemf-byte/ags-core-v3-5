@@ -1,10 +1,8 @@
 # **GlyD-QSense: Sensor Cuántico de Temperatura Orgánico basado en nanocristales de glicina deuterada y lectura mediante IA**
 
-> Licencia de esta copia: CC BY 4.0 (decisión del autor, 2026-10-18). El aviso de licencia no comercial (NC) del original se ha sustituido; el resto del texto no se ha modificado.
-
 **Autor:** Lázaro López Paz  
 **Fecha:** 18 de junio de 2026  
-**Licencia:** CC BY 4.0
+**Licencia:** CC BY-NC-ND 4.0
 
 ## **1\. Resumen Ejecutivo**
 

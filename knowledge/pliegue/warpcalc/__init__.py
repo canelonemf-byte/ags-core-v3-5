@@ -12,4 +12,5 @@ Teoría de terceros (no es obra de este proyecto):
 from .metrics import (alcubierre_shape, alcubierre_rho_analytic, alcubierre_shift,
                       natario_shift, eulerian_energy_density, total_energy, grid)
 from .bounds import planck_length, pfenning_ford_wall_bound, gravitational_redshift
+from .nec import anec_x_ray, T_kk, energia_total_aprox, casimir_energy_density
 __all__ = [n for n in dir() if not n.startswith("_")]

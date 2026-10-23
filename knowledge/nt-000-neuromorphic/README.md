@@ -39,3 +39,9 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Referencias
+Ver [REFERENCIAS.md](REFERENCIAS.md).
+
+## Código realizable hoy
+`lif/`: neurona integrar-y-disparar con fugas; el test comprueba que la frecuencia simulada coincide con la analítica (<5 %). `pip install -r requirements.txt && pytest`.

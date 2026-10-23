@@ -38,3 +38,9 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Referencias
+Ver [REFERENCIAS.md](REFERENCIAS.md).
+
+## Código realizable hoy
+`swcnt/`: diámetro, ángulo quiral y carácter metálico/semiconductor a partir de (n, m), y lista de objetivos de síntesis por diámetro (tests incluidos). `pip install -r requirements.txt && pytest`.
