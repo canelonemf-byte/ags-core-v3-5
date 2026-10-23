@@ -56,3 +56,9 @@ No se han subido por contener material o nombres de terceros, o datos personales
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Código ejecutable (union)
+
+`pip install -r requirements.txt && python -m pytest -q`
+
+Ocupación con la Kd=45 nM declarada por el autor (E1, sin medida publicada).

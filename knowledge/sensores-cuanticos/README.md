@@ -42,3 +42,9 @@ Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpe
 Textos del paquete NotebookLM (Drive `NotebookLM_Fuentes_2026-08-30`) que no existían en este repositorio:
 
 - [docs/notebooklm/09_SENSORES_LDCHIP.md](docs/notebooklm/09_SENSORES_LDCHIP.md)
+
+## Código ejecutable (nv_odmr)
+
+`pip install -r requirements.txt && python -m pytest -q`
+
+Modelo de referencia público, no los datos del autor: ODMR de NV y la inversión campo↔separación de las líneas.

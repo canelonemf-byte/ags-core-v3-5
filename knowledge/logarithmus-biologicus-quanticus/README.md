@@ -45,3 +45,9 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Código ejecutable (lcpb)
+
+`pip install -r requirements.txt && python -m pytest -q`
+
+**Hallazgo:** en el código original, γ hace que Λ_final = Λ_MCMC para todos los planetas, así que los datos del planeta se cancelan. lcpb usa γ=0 y el test lo demuestra. Índice exploratorio (E0/E1).

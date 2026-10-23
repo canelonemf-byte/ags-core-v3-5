@@ -6,3 +6,6 @@ Autor del proyecto: Lázaro López Paz, El Prat de Llobregat, Barcelona, España
 - Binnig G., Rohrer H., Gerber Ch., Weibel E. (1982). Surface Studies by Scanning Tunneling Microscopy. Phys. Rev. Lett. 49, 57-61. doi:10.1103/PhysRevLett.49.57
 
 Nota: son referencias de contexto científico de terceros; no validan por sí solas las afirmaciones propias del proyecto, que siguen en E1 hasta tener datos o cálculo.
+
+## Referencias del módulo de código (verificadas en Crossref, 24-10-2026)
+- Binnig G., Rohrer H., Gerber Ch., Weibel E. (1982) Surface Studies by Scanning Tunneling Microscopy. Phys. Rev. Lett. 49, 57. doi:10.1103/PhysRevLett.49.57

@@ -1,0 +1,13 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+*.pyo
+target/
+*.swp
+*.swo
+.DS_Store
+Cargo.lock
+.idea/
+*.log
+docs/*.pdf

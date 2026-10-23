@@ -35,3 +35,9 @@ Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpe
 
 ## Referencias
 Ver [REFERENCIAS.md](REFERENCIAS.md).
+
+## Código ejecutable (vb_spin)
+
+`pip install -r requirements.txt && python -m pytest -q`
+
+Hamiltoniano S=1 de V_B⁻ con los parámetros del autor (D=3,47 GHz, E=60 MHz): da las líneas ODMR D±E y la pendiente Zeeman. Es un modelo del sensor, no una medida (E1).

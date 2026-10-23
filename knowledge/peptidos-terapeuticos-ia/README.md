@@ -47,3 +47,9 @@ Textos del paquete NotebookLM (Drive `NotebookLM_Fuentes_2026-08-30`) que no exi
 
 ## Referencias
 Ver [REFERENCIAS.md](REFERENCIAS.md).
+
+## Código ejecutable (liberacion)
+
+`pip install -r requirements.txt && python -m pytest -q`
+
+Ajuste de Korsmeyer-Peppas (n≈0,7 en el documento, transporte anómalo), Higuchi y Arrhenius. Solo vale in vitro.

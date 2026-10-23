@@ -33,3 +33,9 @@ Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpe
 
 ## Referencias
 Ver [REFERENCIAS.md](REFERENCIAS.md).
+
+## Código ejecutable (ldchip)
+
+`pip install -r requirements.txt && python -m pytest -q`
+
+Absorbente saturable y cadena de eficiencias del documento del autor. Los parámetros se fijan con medidas.

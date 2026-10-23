@@ -45,3 +45,9 @@ Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpe
 
 ## Referencias
 Ver [REFERENCIAS.md](REFERENCIAS.md).
+
+## Código ejecutable (otp)
+
+`pip install -r requirements.txt && python -m pytest -q`
+
+Libreta de un solo uso. Solo tiene seguridad incondicional si la clave es aleatoria, igual de larga que el mensaje y nunca se reutiliza. "Inmunidad total" no es una afirmación demostrable para un sistema completo.

@@ -7,3 +7,6 @@ Autor del proyecto: Lázaro López Paz, El Prat de Llobregat, Barcelona, España
 - Su W.P., Schrieffer J.R., Heeger A.J. (1979). Phys. Rev. Lett. 42, 1698. doi:10.1103/PhysRevLett.42.1698
 
 Nota: son referencias de contexto científico de terceros; no validan por sí solas las afirmaciones propias del proyecto, que siguen en E1 hasta tener datos o cálculo.
+
+## Referencias del módulo de código (verificadas en Crossref, 24-10-2026)
+- Su W.P., Schrieffer J.R., Heeger A.J. (1979) Solitons in Polyacetylene. Phys. Rev. Lett. 42, 1698. doi:10.1103/PhysRevLett.42.1698

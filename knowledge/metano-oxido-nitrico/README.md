@@ -43,3 +43,9 @@ Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpe
 Textos del paquete NotebookLM (Drive `NotebookLM_Fuentes_2026-08-30`) que no existían en este repositorio:
 
 - [docs/notebooklm/04_METANO.md](docs/notebooklm/04_METANO.md)
+
+## Código ejecutable (liberacion)
+
+`pip install -r requirements.txt && python -m pytest -q`
+
+Ajuste de Korsmeyer-Peppas (n≈0,7 en el documento, transporte anómalo), Higuchi y Arrhenius. Solo vale in vitro.

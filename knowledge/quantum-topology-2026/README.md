@@ -64,3 +64,9 @@ Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpe
 
 ## Referencias
 Ver [REFERENCIAS.md](REFERENCIAS.md).
+
+## Código ejecutable (ssh)
+
+`pip install -r requirements.txt && python -m pytest -q`
+
+Número de winding y modos de borde del modelo SSH.

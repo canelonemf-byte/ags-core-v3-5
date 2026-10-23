@@ -1,900 +1,894 @@
 {
- "version": "3.6.0",
- "owner": "canelonemf-byte",
- "projects": [
-  {
-   "id": "api-seguridad-postcuantica",
-   "name": "api-seguridad-postcuantica",
-   "repo": "canelonemf-byte/api-seguridad-postcuantica",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/api-seguridad-postcuantica",
-   "description": "API de seguridad postcuántica (FIPS 204 / ML-DSA): auditoría, benchmarks y tests.",
-   "keywords": [
-    "api",
-    "seguridad",
-    "postcuantica"
-   ],
-   "tools": [],
-   "license": "Apache-2.0",
-   "files": 21,
-   "binaries_or_skipped": [],
-   "license_declared_by_author": true
-  },
-  {
-   "id": "apoquadina-3",
-   "name": "apoquadina-3",
-   "repo": "canelonemf-byte/apoquadina-3",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/apoquadina-3",
-   "description": "ApoQuadina-3: control traduccional de la Lipoproteína(a) mediante estabilización de G-quadruplex (medicina abierta).",
-   "keywords": [
-    "apoquadina"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 4,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "atlas0-ordenador2-6-x-10",
-   "name": "Atlas0: Quantum Foundation Sprint",
-   "repo": "canelonemf-byte/Atlas0-ordenador2.6-x-10-",
-   "source": "github",
-   "url": "https://github.com/canelonemf-byte/Atlas0-ordenador2.6-x-10-",
-   "description": "Atlas0 Phase 1 bootstraps a computational framework merging:",
-   "keywords": [
-    "atlas0",
-    "ordenador2",
-    "quantum",
-    "foundation",
-    "sprint"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 11,
-   "binaries_or_skipped": [
-    ".gitignore"
-   ],
-   "broken_paths": [
-    "Makefile (nombre de archivo roto: contiene el contenido)",
-    "docs/atlas0_phase2.md (nombre de archivo roto: contiene el contenido)",
-    "lean/Atlas0.lean (nombre de archivo roto: contiene el contenido)",
-    "src/rewind_demo.rs (nombre de archivo roto: contiene el contenido)",
-    "tests/rewind/src/lib.rs (nombre de archivo roto: contiene el contenido)"
-   ]
-  },
-  {
-   "id": "atomvisor-microscopio-atomos",
-   "name": "atomvisor-microscopio-atomos",
-   "repo": "canelonemf-byte/atomvisor-microscopio-atomos",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/atomvisor-microscopio-atomos",
-   "description": "AtomVisor QX-1: microscopio para átomos.",
-   "keywords": [
-    "atomvisor",
-    "microscopio",
-    "atomos"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 2,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "canelone-mf-ordenador-cuantico",
-   "name": "canelone-mf-ordenador-cuantico",
-   "repo": "canelonemf-byte/canelone-mf-ordenador-cuantico",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/canelone-mf-ordenador-cuantico",
-   "description": "Canelone.mf: software Python de ordenador cuántico (Research Edition).",
-   "keywords": [
-    "canelone",
-    "ordenador",
-    "cuantico"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 4,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "cero-a-amoniaco",
-   "name": "cero-a-amoniaco",
-   "repo": "canelonemf-byte/cero-a-amoniaco",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/cero-a-amoniaco",
-   "description": "Proyecto CERO-A: combustión de amoniaco verde con cero emisiones.",
-   "keywords": [
-    "cero",
-    "amoniaco"
-   ],
-   "tools": [
-    "zero_a"
-   ],
-   "license": "MIT",
-   "files": 9,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "control-tiempo-gravedad",
-   "name": "control-tiempo-gravedad",
-   "repo": "canelonemf-byte/control-tiempo-gravedad",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/control-tiempo-gravedad",
-   "description": "Control del tiempo y la gravedad: gemelo digital del espacio-tiempo e ingeniería espacio-temporal.",
-   "keywords": [
-    "control",
-    "tiempo",
-    "gravedad"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 4,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "cymaquantum-resonator",
-   "name": "cymaquantum-resonator",
-   "repo": "canelonemf-byte/cymaquantum-resonator",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/cymaquantum-resonator",
-   "description": "CymaQuantum Resonator y ecosistema cuántico-fractal (Protocolo Barcelona 2026).",
-   "keywords": [
-    "cymaquantum",
-    "resonator"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 3,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "ecosistema-cuantico-fractal",
-   "name": "ecosistema-cuantico-fractal",
-   "repo": "canelonemf-byte/ecosistema-cuantico-fractal",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/ecosistema-cuantico-fractal",
-   "description": "El Ecosistema Cuántico Integrado y su arquitectura fractal.",
-   "keywords": [
-    "ecosistema",
-    "cuantico",
-    "fractal"
-   ],
-   "tools": [
-    "ecosistema"
-   ],
-   "license": "MIT",
-   "files": 2,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "espana-sin-petroleo",
-   "name": "espana-sin-petroleo",
-   "repo": "canelonemf-byte/espana-sin-petroleo",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/espana-sin-petroleo",
-   "description": "España sin petróleo: hoja de ruta y gemelo digital de descarbonización.",
-   "keywords": [
-    "espana",
-    "sin",
-    "petroleo"
-   ],
-   "tools": [
-    "zero_a"
-   ],
-   "license": "MIT",
-   "files": 6,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "fractal-quantum-engineering",
-   "name": "fractal-quantum-engineering",
-   "repo": "canelonemf-byte/fractal-quantum-engineering",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/fractal-quantum-engineering",
-   "description": "Fractal Quantum Engineering: dossier maestro de I+D.",
-   "keywords": [
-    "fractal",
-    "quantum",
-    "engineering"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 2,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "fractal-quantum-hardware",
-   "name": "fractal-quantum-hardware",
-   "repo": "canelonemf-byte/fractal-quantum-hardware",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/fractal-quantum-hardware",
-   "description": "Fractal Quantum Hardware.",
-   "keywords": [
-    "fractal",
-    "quantum",
-    "hardware"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 2,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "fusi-n-carpeta",
-   "name": "fusi-n-carpeta-",
-   "repo": "canelonemf-byte/fusi-n-carpeta-",
-   "source": "github",
-   "url": "https://github.com/canelonemf-byte/fusi-n-carpeta-",
-   "description": "FUSIÓN IA: plan y scripts LoRA para AGsGPT; dataset 953 pares (CC BY 4.0); smoke SmolLM2-135M baseline 0% LLP válido; sin adaptador entrenado. E1 (E2 candidato).",
-   "keywords": [
-    "fusi",
-    "carpeta"
-   ],
-   "tools": [],
-   "license": "MIT (código: scripts/, configs/) + CC BY 4.0 (docs, *.json, data/)",
-   "files": 1,
-   "binaries_or_skipped": [],
-   "broken_paths": [],
-   "license_declared_by_author": true,
-   "evidencia_nivel": "E1"
-  },
-  {
-   "id": "futuro-fotonica",
-   "name": "futuro-fotonica",
-   "repo": "canelonemf-byte/futuro-fotonica",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/futuro-fotonica",
-   "description": "Futuro de la fotónica.",
-   "keywords": [
-    "futuro",
-    "fotonica"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 2,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "glyd-qsense",
-   "name": "glyd-qsense",
-   "repo": "canelonemf-byte/glyd-qsense",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/glyd-qsense",
-   "description": "Sensor GlyD-QSense: termometría cuántica orgánica.",
-   "keywords": [
-    "glyd",
-    "qsense"
-   ],
-   "tools": [
-    "q_matrix"
-   ],
-   "license": "CC BY-NC-ND 4.0",
-   "license_docs": "CC-BY-4.0",
-   "files": 6,
-   "binaries_or_skipped": [],
-   "license_declared_by_author": true
-  },
-  {
-   "id": "helio3-fusion-qmc-h3",
-   "name": "helio3-fusion-qmc-h3",
-   "repo": "canelonemf-byte/helio3-fusion-qmc-h3",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/helio3-fusion-qmc-h3",
-   "description": "Reactor de fusión aneutrónica D-³He QMC-H3 (versiones en español e inglés).",
-   "keywords": [
-    "helio3",
-    "fusion",
-    "qmc"
-   ],
-   "tools": [
-    "d3he_tokamak"
-   ],
-   "license": "MIT",
-   "files": 5,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "helioatlas-helio3",
-   "name": "helioatlas-helio3",
-   "repo": "canelonemf-byte/helioatlas-helio3",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/helioatlas-helio3",
-   "description": "HelioAtlas: plano estratégico del Helio-3 y su recolección (regolito lunar vs. viento solar).",
-   "keywords": [
-    "helioatlas",
-    "helio3"
-   ],
-   "tools": [
-    "d3he_tokamak"
-   ],
-   "license": "Todos los derechos reservados (patente en trámite)",
-   "license_docs": "CC-BY-4.0",
-   "files": 12,
-   "binaries_or_skipped": [],
-   "license_declared_by_author": true
-  },
-  {
-   "id": "hibridacion-ia-biologica-fmo",
-   "name": "hibridacion-ia-biologica-fmo",
-   "repo": "canelonemf-byte/hibridacion-ia-biologica-fmo",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/hibridacion-ia-biologica-fmo",
-   "description": "Hibridación inteligencia artificial, biología y mecánica cuántica (pipeline FMO-HEOM-IA).",
-   "keywords": [
-    "hibridacion",
-    "biologica",
-    "fmo"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 7,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "iqm-he3-anti-platform",
-   "name": "iqm-he3-anti-platform",
-   "repo": "canelonemf-byte/iqm-he3-anti-platform",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/iqm-he3-anti-platform",
-   "description": "Plataforma IQM-He3-Anti: sistema cuántico integrado Helio-3 / antimateria (ciclo 2026-2030).",
-   "keywords": [
-    "iqm",
-    "he3",
-    "anti",
-    "platform"
-   ],
-   "tools": [
-    "d3he_tokamak"
-   ],
-   "license": "MIT",
-   "files": 3,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "ld-chip",
-   "name": "ld-chip",
-   "repo": "canelonemf-byte/ld-chip",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/ld-chip",
-   "description": "LD-Chip: chip cuántico fotónico híbrido.",
-   "keywords": [
-    "chip"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 4,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "lecn-llp-evolucion-cuantica",
-   "name": "lecn-llp-evolucion-cuantica",
-   "repo": "canelonemf-byte/lecn-llp-evolucion-cuantica",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/lecn-llp-evolucion-cuantica",
-   "description": "Logaritmo Evolutivo Cuántico-Nanotecnológico (sistema LECN-LLP).",
-   "keywords": [
-    "lecn",
-    "llp",
-    "evolucion",
-    "cuantica"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 4,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "logarithmus-biologicus-quanticus",
-   "name": "logarithmus-biologicus-quanticus",
-   "repo": "canelonemf-byte/logarithmus-biologicus-quanticus",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/logarithmus-biologicus-quanticus",
-   "description": "Logarithmus Biologicus Quanticus / índice LCPB: algoritmo cuántico para evaluar el potencial biológico de exoplanetas.",
-   "keywords": [
-    "logarithmus",
-    "biologicus",
-    "quanticus"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 5,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "mei-rit-propulsion",
-   "name": "mei-rit-propulsion",
-   "repo": "canelonemf-byte/mei-rit-propulsion",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/mei-rit-propulsion",
-   "description": "MEI-RIT: propulsor iónico RF de yodo mejorado con metasuperficies (v1.1 y v2.0).",
-   "keywords": [
-    "mei",
-    "rit",
-    "propulsion"
-   ],
-   "tools": [
-    "mei_rit"
-   ],
-   "license": "MIT",
-   "files": 24,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "memoria-cognitiva-ia",
-   "name": "memoria-cognitiva-ia",
-   "repo": "canelonemf-byte/memoria-cognitiva-ia",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/memoria-cognitiva-ia",
-   "description": "La memoria cognitiva IA / agentes de IA: chunking de documentos, decaimiento de memoria e interfaz Streamlit.",
-   "keywords": [
-    "memoria",
-    "cognitiva"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 5,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "metanano-microbiota-quantum",
-   "name": "metanano-microbiota-quantum",
-   "repo": "canelonemf-byte/metanano-microbiota-quantum",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/metanano-microbiota-quantum",
-   "description": "MetaNanoMicrobiota Quantum: plataforma de ingeniería cuántica del microbioma.",
-   "keywords": [
-    "metanano",
-    "microbiota",
-    "quantum"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 12,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "metano-oxido-nitrico",
-   "name": "metano-oxido-nitrico",
-   "repo": "canelonemf-byte/metano-oxido-nitrico",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/metano-oxido-nitrico",
-   "description": "MetaNO Quantum Patch v2: optimización endógena de óxido nítrico.",
-   "keywords": [
-    "metano",
-    "oxido",
-    "nitrico"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 4,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "nanocreativon-formalismo",
-   "name": "nanocreativon-formalismo",
-   "repo": "canelonemf-byte/nanocreativon-formalismo",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/nanocreativon-formalismo",
-   "description": "Nanocreativón: formalismo, block-encoding LCU y números de winding (SSH, Hatano-Nelson).",
-   "keywords": [
-    "nanocreativon",
-    "formalismo"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 9,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "neuro-kinetic-parkinson-alzheimer",
-   "name": "neuro-kinetic-parkinson-alzheimer",
-   "repo": "canelonemf-byte/neuro-kinetic-parkinson-alzheimer",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/neuro-kinetic-parkinson-alzheimer",
-   "description": "Ingeniería neurocinética para Parkinson y Alzheimer: protocolos de liberación controlada neuroprotectora.",
-   "keywords": [
-    "neuro",
-    "kinetic",
-    "parkinson",
-    "alzheimer"
-   ],
-   "tools": [
-    "neuroglyq"
-   ],
-   "license": "MIT",
-   "files": 3,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "neuroglyq",
-   "name": "neuroglyq",
-   "repo": "canelonemf-byte/neuroglyq",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/neuroglyq",
-   "description": "NeuroGlyQ: plataforma neuroinhibitoria de precisión cuántica guiada por IA.",
-   "keywords": [
-    "neuroglyq"
-   ],
-   "tools": [
-    "neuroglyq"
-   ],
-   "license": "MIT",
-   "files": 7,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "next-gen-quantum-architecture",
-   "name": "next-gen-quantum-architecture",
-   "repo": "canelonemf-byte/next-gen-quantum-architecture",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/next-gen-quantum-architecture",
-   "description": "Gen Quantum Arquitectura: arquitectura cuántica de próxima generación.",
-   "keywords": [
-    "next",
-    "gen",
-    "quantum",
-    "architecture"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 2,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "nt-000-neuromorphic",
-   "name": "nt-000-neuromorphic",
-   "repo": "canelonemf-byte/nt-000-neuromorphic",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/nt-000-neuromorphic",
-   "description": "NT-000: sistemas neuromórficos (publicación Zenodo y simulación cuántica).",
-   "keywords": [
-    "000",
-    "neuromorphic"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 5,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "nuevos-inventos-ia",
-   "name": "nuevos-inventos-ia",
-   "repo": "canelonemf-byte/nuevos-inventos-ia",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/nuevos-inventos-ia",
-   "description": "Nuevos inventos generados con IA.",
-   "keywords": [
-    "nuevos",
-    "inventos"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 3,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "omni-diagnostico-medico",
-   "name": "omni-diagnostico-medico",
-   "repo": "canelonemf-byte/omni-diagnostico-medico",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/omni-diagnostico-medico",
-   "description": "OMNI: proyecto de diagnóstico médico para todos.",
-   "keywords": [
-    "omni",
-    "diagnostico",
-    "medico"
-   ],
-   "tools": [],
-   "license": "CC BY-NC-SA 4.0",
-   "license_docs": "CC-BY-4.0",
-   "files": 5,
-   "binaries_or_skipped": [],
-   "license_declared_by_author": true
-  },
-  {
-   "id": "omniscience",
-   "name": "omniscience",
-   "repo": "canelonemf-byte/omniscience",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/omniscience",
-   "description": "OMNISCIENCE: motor de descubrimiento científico (documento maestro).",
-   "keywords": [
-    "omniscience"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 25,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "ordenador-hibrido-no-binario",
-   "name": "ordenador-hibrido-no-binario",
-   "repo": "canelonemf-byte/ordenador-hibrido-no-binario",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/ordenador-hibrido-no-binario",
-   "description": "Ordenador híbrido no binario de ultra bajo consumo (y blueprint Helios-Aether).",
-   "keywords": [
-    "ordenador",
-    "hibrido",
-    "binario"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 6,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "pantographix-shield",
-   "name": "pantographix-shield",
-   "repo": "canelonemf-byte/pantographix-shield",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/pantographix-shield",
-   "description": "Pantographix Shield.",
-   "keywords": [
-    "pantographix",
-    "shield"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 2,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "peptidos-terapeuticos-ia",
-   "name": "peptidos-terapeuticos-ia",
-   "repo": "canelonemf-byte/peptidos-terapeuticos-ia",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/peptidos-terapeuticos-ia",
-   "description": "Plataforma de diseño de péptidos terapéuticos inteligentes guiada por IA.",
-   "keywords": [
-    "peptidos",
-    "terapeuticos"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 10,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "q-matrix-autonomous-control",
-   "name": "q-matrix-autonomous-control",
-   "repo": "canelonemf-byte/q-matrix-autonomous-control",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/q-matrix-autonomous-control",
-   "description": "Q-MATRIX: materiales cuánticos con ajuste autónomo, aprendizaje por refuerzo y experimentación inteligente.",
-   "keywords": [
-    "matrix",
-    "autonomous",
-    "control"
-   ],
-   "tools": [
-    "q_matrix"
-   ],
-   "license": "MIT",
-   "files": 3,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "quantum-blueprint",
-   "name": "quantum-blueprint",
-   "repo": "canelonemf-byte/quantum-blueprint",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/quantum-blueprint",
-   "description": "The Quantum Blueprint: plan maestro de ejecución y materiales cuánticos.",
-   "keywords": [
-    "quantum",
-    "blueprint"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 4,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "quantum-topology-2026",
-   "name": "quantum-topology-2026",
-   "repo": "canelonemf-byte/quantum-topology-2026",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/quantum-topology-2026",
-   "description": "Quantum Topology 2026: síntesis cuántico-fractal y topología cuántica.",
-   "keywords": [
-    "quantum",
-    "topology",
-    "2026"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 3,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "quantumsynovia-metalub",
-   "name": "quantumsynovia-metalub",
-   "repo": "canelonemf-byte/quantumsynovia-metalub",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/quantumsynovia-metalub",
-   "description": "QuantumSynovia MetaLub (QSM): lubricación articular humana, registro técnico y simulaciones DFT.",
-   "keywords": [
-    "quantumsynovia",
-    "metalub"
-   ],
-   "tools": [],
-   "license": "Todos los derechos reservados",
-   "license_docs": "CC-BY-4.0",
-   "files": 13,
-   "binaries_or_skipped": [],
-   "license_declared_by_author": true
-  },
-  {
-   "id": "red-neuronal-gpt-pytorch",
-   "name": "red-neuronal-gpt-pytorch",
-   "repo": "canelonemf-byte/red-neuronal-gpt-pytorch",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/red-neuronal-gpt-pytorch",
-   "description": "Construcción de una red neuronal GPT en PyTorch (base de AGsGPT / AGs-Core).",
-   "keywords": [
-    "red",
-    "neuronal",
-    "gpt",
-    "pytorch"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 7,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "remplast-q",
-   "name": "remplast-q",
-   "repo": "canelonemf-byte/remplast-q",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/remplast-q",
-   "description": "REMPLAST-Q: depuradora de microplásticos (expediente técnico e industrial).",
-   "keywords": [
-    "remplast"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 14,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "sensores-cuanticos",
-   "name": "sensores-cuanticos",
-   "repo": "canelonemf-byte/sensores-cuanticos",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/sensores-cuanticos",
-   "description": "Sensores cuánticos para neurociencia y cardiología (libro blanco y proyectos 1-7).",
-   "keywords": [
-    "sensores",
-    "cuanticos"
-   ],
-   "tools": [
-    "q_matrix"
-   ],
-   "license": "MIT",
-   "files": 11,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "swcnt-sintesis-quiral",
-   "name": "swcnt-sintesis-quiral",
-   "repo": "canelonemf-byte/swcnt-sintesis-quiral",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/swcnt-sintesis-quiral",
-   "description": "Síntesis inteligente y quiral de nanotubos de carbono SWCNT con optimización autónoma.",
-   "keywords": [
-    "swcnt",
-    "sintesis",
-    "quiral"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 4,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "total-quantum-immunity",
-   "name": "total-quantum-immunity",
-   "repo": "canelonemf-byte/total-quantum-immunity",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/total-quantum-immunity",
-   "description": "Total Quantum Immunity / Cifrado Inquebrantable: arquitectura integrada de criptografía y metamateriales.",
-   "keywords": [
-    "total",
-    "quantum",
-    "immunity"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 3,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "oraculo-mesoscopico",
-   "name": "ORÁCULO MESOSCÓPICO",
-   "repo": null,
-   "source": "local",
-   "url": null,
-   "description": "ORÁCULO MESOSCÓPICO: predicción probabilística y simulación mesoscópica; indicar siempre incertidumbre, supuestos y límites. Evidencia E0, PENDIENTE DE VERIFICACIÓN: sin documentos fuente.",
-   "keywords": [
-    "oraculo",
-    "mesoscopico",
-    "prediccion",
-    "probabilistica",
-    "simulacion"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 1,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "agsgpt-lora",
-   "name": "agsgpt-lora",
-   "repo": "",
-   "source": "local",
-   "url": "",
-   "description": "AGsGPT + LoRA: capa de red neuronal con adaptadores LoRA sobre AGs-Core. Hipótesis E1; sin código ni adaptadores entrenados.",
-   "keywords": [
-    "agsgpt",
-    "lora",
-    "red-neuronal"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 1,
-   "binaries_or_skipped": [],
-   "license_declared_by_author": true,
-   "evidencia_nivel": "E1"
-  },
-  {
-   "id": "pliegue",
-   "name": "pliegue",
-   "repo": "",
-   "source": "local",
-   "url": "",
-   "description": "PLIEGUE (P001): simulación de métricas warp (rayo NEC, toro T00, Ford-Roman). Métricas Alcubierre/Natario/White son teoría publicada de terceros (citar). E1: sin código en el ordenador; 'hecho' declarado, no verificado.",
-   "keywords": [
-    "warp",
-    "nec",
-    "ford-roman"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 1,
-   "binaries_or_skipped": [],
-   "license_declared_by_author": true,
-   "evidencia_nivel": "E1"
-  },
-  {
-   "id": "nnc",
-   "name": "nnc",
-   "repo": "",
-   "source": "local",
-   "url": "",
-   "description": "NNC + AGs-Core corregido 1.0.0 (/workspace/agsgpt/NNC). Software E3: suite 7/7 PASS (WGS84/ECEF Bowring, triangulación ENU sintética, entropía, EKF, CRC, HMAC, etiquetado simulado). Telemetría satelital sintética etiquetada. Solo build-beta/ws_vivo.py consulta datos reales (ADS-B adsb.lol Prat + ISS wheretheiss.at; ambas APIs respondieron 200 el 2026-10-20). GIBS/USGS/radar real: solo mencionados en docs, sin conector. Ninguna detección validada: E0-E1 para afirmaciones físicas.",
-   "keywords": [
-    "adsb",
-    "ecef",
-    "enu",
-    "ekf",
-    "radar",
-    "dashboard3d"
-   ],
-   "tools": [
-    "dashboard:8080",
-    "rest:8010"
-   ],
-   "license": "MIT",
-   "files": 70,
-   "binaries_or_skipped": [
-    "assets/*.png",
-    "docs/*.pdf"
-   ],
-   "license_declared_by_author": true,
-   "evidencia_nivel": "E3_software;E1_deteccion"
-  }
- ]
+  "version": "3.6.0",
+  "owner": "canelonemf-byte",
+  "projects": [
+    {
+      "id": "api-seguridad-postcuantica",
+      "name": "api-seguridad-postcuantica",
+      "repo": "canelonemf-byte/api-seguridad-postcuantica",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/api-seguridad-postcuantica",
+      "description": "API de seguridad postcuántica (FIPS 204 / ML-DSA): auditoría, benchmarks y tests.",
+      "keywords": [
+        "api",
+        "seguridad",
+        "postcuantica"
+      ],
+      "tools": [],
+      "license": "Apache-2.0",
+      "files": 21,
+      "binaries_or_skipped": [],
+      "license_declared_by_author": true
+    },
+    {
+      "id": "apoquadina-3",
+      "name": "apoquadina-3",
+      "repo": "canelonemf-byte/apoquadina-3",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/apoquadina-3",
+      "description": "ApoQuadina-3: control traduccional de la Lipoproteína(a) mediante estabilización de G-quadruplex (medicina abierta).",
+      "keywords": [
+        "apoquadina"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 4,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "atlas0-ordenador2-6-x-10",
+      "name": "Atlas0: Quantum Foundation Sprint",
+      "repo": "canelonemf-byte/Atlas0-ordenador2.6-x-10-",
+      "source": "github",
+      "url": "https://github.com/canelonemf-byte/Atlas0-ordenador2.6-x-10-",
+      "description": "Atlas0 Phase 1 bootstraps a computational framework merging:",
+      "keywords": [
+        "atlas0",
+        "ordenador2",
+        "quantum",
+        "foundation",
+        "sprint"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 11,
+      "binaries_or_skipped": [
+        ".gitignore"
+      ],
+      "broken_paths": []
+    },
+    {
+      "id": "atomvisor-microscopio-atomos",
+      "name": "atomvisor-microscopio-atomos",
+      "repo": "canelonemf-byte/atomvisor-microscopio-atomos",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/atomvisor-microscopio-atomos",
+      "description": "AtomVisor QX-1: microscopio para átomos.",
+      "keywords": [
+        "atomvisor",
+        "microscopio",
+        "atomos"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 2,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "canelone-mf-ordenador-cuantico",
+      "name": "canelone-mf-ordenador-cuantico",
+      "repo": "canelonemf-byte/canelone-mf-ordenador-cuantico",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/canelone-mf-ordenador-cuantico",
+      "description": "Canelone.mf: software Python de ordenador cuántico (Research Edition).",
+      "keywords": [
+        "canelone",
+        "ordenador",
+        "cuantico"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 4,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "cero-a-amoniaco",
+      "name": "cero-a-amoniaco",
+      "repo": "canelonemf-byte/cero-a-amoniaco",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/cero-a-amoniaco",
+      "description": "Proyecto CERO-A: combustión de amoniaco verde con cero emisiones.",
+      "keywords": [
+        "cero",
+        "amoniaco"
+      ],
+      "tools": [
+        "zero_a"
+      ],
+      "license": "MIT",
+      "files": 9,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "control-tiempo-gravedad",
+      "name": "control-tiempo-gravedad",
+      "repo": "canelonemf-byte/control-tiempo-gravedad",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/control-tiempo-gravedad",
+      "description": "Control del tiempo y la gravedad: gemelo digital del espacio-tiempo e ingeniería espacio-temporal.",
+      "keywords": [
+        "control",
+        "tiempo",
+        "gravedad"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 4,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "cymaquantum-resonator",
+      "name": "cymaquantum-resonator",
+      "repo": "canelonemf-byte/cymaquantum-resonator",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/cymaquantum-resonator",
+      "description": "CymaQuantum Resonator y ecosistema cuántico-fractal (Protocolo Barcelona 2026).",
+      "keywords": [
+        "cymaquantum",
+        "resonator"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 3,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "ecosistema-cuantico-fractal",
+      "name": "ecosistema-cuantico-fractal",
+      "repo": "canelonemf-byte/ecosistema-cuantico-fractal",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/ecosistema-cuantico-fractal",
+      "description": "El Ecosistema Cuántico Integrado y su arquitectura fractal.",
+      "keywords": [
+        "ecosistema",
+        "cuantico",
+        "fractal"
+      ],
+      "tools": [
+        "ecosistema"
+      ],
+      "license": "MIT",
+      "files": 2,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "espana-sin-petroleo",
+      "name": "espana-sin-petroleo",
+      "repo": "canelonemf-byte/espana-sin-petroleo",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/espana-sin-petroleo",
+      "description": "España sin petróleo: hoja de ruta y gemelo digital de descarbonización.",
+      "keywords": [
+        "espana",
+        "sin",
+        "petroleo"
+      ],
+      "tools": [
+        "zero_a"
+      ],
+      "license": "MIT",
+      "files": 6,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "fractal-quantum-engineering",
+      "name": "fractal-quantum-engineering",
+      "repo": "canelonemf-byte/fractal-quantum-engineering",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/fractal-quantum-engineering",
+      "description": "Fractal Quantum Engineering: dossier maestro de I+D.",
+      "keywords": [
+        "fractal",
+        "quantum",
+        "engineering"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 2,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "fractal-quantum-hardware",
+      "name": "fractal-quantum-hardware",
+      "repo": "canelonemf-byte/fractal-quantum-hardware",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/fractal-quantum-hardware",
+      "description": "Fractal Quantum Hardware.",
+      "keywords": [
+        "fractal",
+        "quantum",
+        "hardware"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 2,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "fusi-n-carpeta",
+      "name": "fusi-n-carpeta-",
+      "repo": "canelonemf-byte/fusi-n-carpeta-",
+      "source": "github",
+      "url": "https://github.com/canelonemf-byte/fusi-n-carpeta-",
+      "description": "FUSIÓN IA: plan y scripts LoRA para AGsGPT; dataset 953 pares (CC BY 4.0); smoke SmolLM2-135M baseline 0% LLP válido; sin adaptador entrenado. E1 (E2 candidato).",
+      "keywords": [
+        "fusi",
+        "carpeta"
+      ],
+      "tools": [],
+      "license": "MIT (código: scripts/, configs/) + CC BY 4.0 (docs, *.json, data/)",
+      "files": 1,
+      "binaries_or_skipped": [],
+      "broken_paths": [],
+      "license_declared_by_author": true,
+      "evidencia_nivel": "E1"
+    },
+    {
+      "id": "futuro-fotonica",
+      "name": "futuro-fotonica",
+      "repo": "canelonemf-byte/futuro-fotonica",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/futuro-fotonica",
+      "description": "Futuro de la fotónica.",
+      "keywords": [
+        "futuro",
+        "fotonica"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 2,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "glyd-qsense",
+      "name": "glyd-qsense",
+      "repo": "canelonemf-byte/glyd-qsense",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/glyd-qsense",
+      "description": "Sensor GlyD-QSense: termometría cuántica orgánica.",
+      "keywords": [
+        "glyd",
+        "qsense"
+      ],
+      "tools": [
+        "q_matrix"
+      ],
+      "license": "CC BY-NC-ND 4.0",
+      "license_docs": "CC-BY-4.0",
+      "files": 6,
+      "binaries_or_skipped": [],
+      "license_declared_by_author": true
+    },
+    {
+      "id": "helio3-fusion-qmc-h3",
+      "name": "helio3-fusion-qmc-h3",
+      "repo": "canelonemf-byte/helio3-fusion-qmc-h3",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/helio3-fusion-qmc-h3",
+      "description": "Reactor de fusión aneutrónica D-³He QMC-H3 (versiones en español e inglés).",
+      "keywords": [
+        "helio3",
+        "fusion",
+        "qmc"
+      ],
+      "tools": [
+        "d3he_tokamak"
+      ],
+      "license": "MIT",
+      "files": 5,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "helioatlas-helio3",
+      "name": "helioatlas-helio3",
+      "repo": "canelonemf-byte/helioatlas-helio3",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/helioatlas-helio3",
+      "description": "HelioAtlas: plano estratégico del Helio-3 y su recolección (regolito lunar vs. viento solar).",
+      "keywords": [
+        "helioatlas",
+        "helio3"
+      ],
+      "tools": [
+        "d3he_tokamak"
+      ],
+      "license": "Todos los derechos reservados (patente en trámite)",
+      "license_docs": "CC-BY-4.0",
+      "files": 12,
+      "binaries_or_skipped": [],
+      "license_declared_by_author": true
+    },
+    {
+      "id": "hibridacion-ia-biologica-fmo",
+      "name": "hibridacion-ia-biologica-fmo",
+      "repo": "canelonemf-byte/hibridacion-ia-biologica-fmo",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/hibridacion-ia-biologica-fmo",
+      "description": "Hibridación inteligencia artificial, biología y mecánica cuántica (pipeline FMO-HEOM-IA).",
+      "keywords": [
+        "hibridacion",
+        "biologica",
+        "fmo"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 7,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "iqm-he3-anti-platform",
+      "name": "iqm-he3-anti-platform",
+      "repo": "canelonemf-byte/iqm-he3-anti-platform",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/iqm-he3-anti-platform",
+      "description": "Plataforma IQM-He3-Anti: sistema cuántico integrado Helio-3 / antimateria (ciclo 2026-2030).",
+      "keywords": [
+        "iqm",
+        "he3",
+        "anti",
+        "platform"
+      ],
+      "tools": [
+        "d3he_tokamak"
+      ],
+      "license": "MIT",
+      "files": 3,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "ld-chip",
+      "name": "ld-chip",
+      "repo": "canelonemf-byte/ld-chip",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/ld-chip",
+      "description": "LD-Chip: chip cuántico fotónico híbrido.",
+      "keywords": [
+        "chip"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 4,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "lecn-llp-evolucion-cuantica",
+      "name": "lecn-llp-evolucion-cuantica",
+      "repo": "canelonemf-byte/lecn-llp-evolucion-cuantica",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/lecn-llp-evolucion-cuantica",
+      "description": "Logaritmo Evolutivo Cuántico-Nanotecnológico (sistema LECN-LLP).",
+      "keywords": [
+        "lecn",
+        "llp",
+        "evolucion",
+        "cuantica"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 4,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "logarithmus-biologicus-quanticus",
+      "name": "logarithmus-biologicus-quanticus",
+      "repo": "canelonemf-byte/logarithmus-biologicus-quanticus",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/logarithmus-biologicus-quanticus",
+      "description": "Logarithmus Biologicus Quanticus / índice LCPB: algoritmo cuántico para evaluar el potencial biológico de exoplanetas.",
+      "keywords": [
+        "logarithmus",
+        "biologicus",
+        "quanticus"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 5,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "mei-rit-propulsion",
+      "name": "mei-rit-propulsion",
+      "repo": "canelonemf-byte/mei-rit-propulsion",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/mei-rit-propulsion",
+      "description": "MEI-RIT: propulsor iónico RF de yodo mejorado con metasuperficies (v1.1 y v2.0).",
+      "keywords": [
+        "mei",
+        "rit",
+        "propulsion"
+      ],
+      "tools": [
+        "mei_rit"
+      ],
+      "license": "MIT",
+      "files": 24,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "memoria-cognitiva-ia",
+      "name": "memoria-cognitiva-ia",
+      "repo": "canelonemf-byte/memoria-cognitiva-ia",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/memoria-cognitiva-ia",
+      "description": "La memoria cognitiva IA / agentes de IA: chunking de documentos, decaimiento de memoria e interfaz Streamlit.",
+      "keywords": [
+        "memoria",
+        "cognitiva"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 5,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "metanano-microbiota-quantum",
+      "name": "metanano-microbiota-quantum",
+      "repo": "canelonemf-byte/metanano-microbiota-quantum",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/metanano-microbiota-quantum",
+      "description": "MetaNanoMicrobiota Quantum: plataforma de ingeniería cuántica del microbioma.",
+      "keywords": [
+        "metanano",
+        "microbiota",
+        "quantum"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 12,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "metano-oxido-nitrico",
+      "name": "metano-oxido-nitrico",
+      "repo": "canelonemf-byte/metano-oxido-nitrico",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/metano-oxido-nitrico",
+      "description": "MetaNO Quantum Patch v2: optimización endógena de óxido nítrico.",
+      "keywords": [
+        "metano",
+        "oxido",
+        "nitrico"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 4,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "nanocreativon-formalismo",
+      "name": "nanocreativon-formalismo",
+      "repo": "canelonemf-byte/nanocreativon-formalismo",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/nanocreativon-formalismo",
+      "description": "Nanocreativón: formalismo, block-encoding LCU y números de winding (SSH, Hatano-Nelson).",
+      "keywords": [
+        "nanocreativon",
+        "formalismo"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 9,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "neuro-kinetic-parkinson-alzheimer",
+      "name": "neuro-kinetic-parkinson-alzheimer",
+      "repo": "canelonemf-byte/neuro-kinetic-parkinson-alzheimer",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/neuro-kinetic-parkinson-alzheimer",
+      "description": "Ingeniería neurocinética para Parkinson y Alzheimer: protocolos de liberación controlada neuroprotectora.",
+      "keywords": [
+        "neuro",
+        "kinetic",
+        "parkinson",
+        "alzheimer"
+      ],
+      "tools": [
+        "neuroglyq"
+      ],
+      "license": "MIT",
+      "files": 3,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "neuroglyq",
+      "name": "neuroglyq",
+      "repo": "canelonemf-byte/neuroglyq",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/neuroglyq",
+      "description": "NeuroGlyQ: plataforma neuroinhibitoria de precisión cuántica guiada por IA.",
+      "keywords": [
+        "neuroglyq"
+      ],
+      "tools": [
+        "neuroglyq"
+      ],
+      "license": "MIT",
+      "files": 7,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "next-gen-quantum-architecture",
+      "name": "next-gen-quantum-architecture",
+      "repo": "canelonemf-byte/next-gen-quantum-architecture",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/next-gen-quantum-architecture",
+      "description": "Gen Quantum Arquitectura: arquitectura cuántica de próxima generación.",
+      "keywords": [
+        "next",
+        "gen",
+        "quantum",
+        "architecture"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 2,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "nt-000-neuromorphic",
+      "name": "nt-000-neuromorphic",
+      "repo": "canelonemf-byte/nt-000-neuromorphic",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/nt-000-neuromorphic",
+      "description": "NT-000: sistemas neuromórficos (publicación Zenodo y simulación cuántica).",
+      "keywords": [
+        "000",
+        "neuromorphic"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 5,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "nuevos-inventos-ia",
+      "name": "nuevos-inventos-ia",
+      "repo": "canelonemf-byte/nuevos-inventos-ia",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/nuevos-inventos-ia",
+      "description": "Nuevos inventos generados con IA.",
+      "keywords": [
+        "nuevos",
+        "inventos"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 3,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "omni-diagnostico-medico",
+      "name": "omni-diagnostico-medico",
+      "repo": "canelonemf-byte/omni-diagnostico-medico",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/omni-diagnostico-medico",
+      "description": "OMNI: proyecto de diagnóstico médico para todos.",
+      "keywords": [
+        "omni",
+        "diagnostico",
+        "medico"
+      ],
+      "tools": [],
+      "license": "CC BY-NC-SA 4.0",
+      "license_docs": "CC-BY-4.0",
+      "files": 5,
+      "binaries_or_skipped": [],
+      "license_declared_by_author": true
+    },
+    {
+      "id": "omniscience",
+      "name": "omniscience",
+      "repo": "canelonemf-byte/omniscience",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/omniscience",
+      "description": "OMNISCIENCE: motor de descubrimiento científico (documento maestro).",
+      "keywords": [
+        "omniscience"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 25,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "ordenador-hibrido-no-binario",
+      "name": "ordenador-hibrido-no-binario",
+      "repo": "canelonemf-byte/ordenador-hibrido-no-binario",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/ordenador-hibrido-no-binario",
+      "description": "Ordenador híbrido no binario de ultra bajo consumo (y blueprint Helios-Aether).",
+      "keywords": [
+        "ordenador",
+        "hibrido",
+        "binario"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 6,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "pantographix-shield",
+      "name": "pantographix-shield",
+      "repo": "canelonemf-byte/pantographix-shield",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/pantographix-shield",
+      "description": "Pantographix Shield.",
+      "keywords": [
+        "pantographix",
+        "shield"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 2,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "peptidos-terapeuticos-ia",
+      "name": "peptidos-terapeuticos-ia",
+      "repo": "canelonemf-byte/peptidos-terapeuticos-ia",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/peptidos-terapeuticos-ia",
+      "description": "Plataforma de diseño de péptidos terapéuticos inteligentes guiada por IA.",
+      "keywords": [
+        "peptidos",
+        "terapeuticos"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 10,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "q-matrix-autonomous-control",
+      "name": "q-matrix-autonomous-control",
+      "repo": "canelonemf-byte/q-matrix-autonomous-control",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/q-matrix-autonomous-control",
+      "description": "Q-MATRIX: materiales cuánticos con ajuste autónomo, aprendizaje por refuerzo y experimentación inteligente.",
+      "keywords": [
+        "matrix",
+        "autonomous",
+        "control"
+      ],
+      "tools": [
+        "q_matrix"
+      ],
+      "license": "MIT",
+      "files": 3,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "quantum-blueprint",
+      "name": "quantum-blueprint",
+      "repo": "canelonemf-byte/quantum-blueprint",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/quantum-blueprint",
+      "description": "The Quantum Blueprint: plan maestro de ejecución y materiales cuánticos.",
+      "keywords": [
+        "quantum",
+        "blueprint"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 4,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "quantum-topology-2026",
+      "name": "quantum-topology-2026",
+      "repo": "canelonemf-byte/quantum-topology-2026",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/quantum-topology-2026",
+      "description": "Quantum Topology 2026: síntesis cuántico-fractal y topología cuántica.",
+      "keywords": [
+        "quantum",
+        "topology",
+        "2026"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 3,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "quantumsynovia-metalub",
+      "name": "quantumsynovia-metalub",
+      "repo": "canelonemf-byte/quantumsynovia-metalub",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/quantumsynovia-metalub",
+      "description": "QuantumSynovia MetaLub (QSM): lubricación articular humana, registro técnico y simulaciones DFT.",
+      "keywords": [
+        "quantumsynovia",
+        "metalub"
+      ],
+      "tools": [],
+      "license": "Todos los derechos reservados",
+      "license_docs": "CC-BY-4.0",
+      "files": 13,
+      "binaries_or_skipped": [],
+      "license_declared_by_author": true
+    },
+    {
+      "id": "red-neuronal-gpt-pytorch",
+      "name": "red-neuronal-gpt-pytorch",
+      "repo": "canelonemf-byte/red-neuronal-gpt-pytorch",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/red-neuronal-gpt-pytorch",
+      "description": "Construcción de una red neuronal GPT en PyTorch (base de AGsGPT / AGs-Core).",
+      "keywords": [
+        "red",
+        "neuronal",
+        "gpt",
+        "pytorch"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 7,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "remplast-q",
+      "name": "remplast-q",
+      "repo": "canelonemf-byte/remplast-q",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/remplast-q",
+      "description": "REMPLAST-Q: depuradora de microplásticos (expediente técnico e industrial).",
+      "keywords": [
+        "remplast"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 14,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "sensores-cuanticos",
+      "name": "sensores-cuanticos",
+      "repo": "canelonemf-byte/sensores-cuanticos",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/sensores-cuanticos",
+      "description": "Sensores cuánticos para neurociencia y cardiología (libro blanco y proyectos 1-7).",
+      "keywords": [
+        "sensores",
+        "cuanticos"
+      ],
+      "tools": [
+        "q_matrix"
+      ],
+      "license": "MIT",
+      "files": 11,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "swcnt-sintesis-quiral",
+      "name": "swcnt-sintesis-quiral",
+      "repo": "canelonemf-byte/swcnt-sintesis-quiral",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/swcnt-sintesis-quiral",
+      "description": "Síntesis inteligente y quiral de nanotubos de carbono SWCNT con optimización autónoma.",
+      "keywords": [
+        "swcnt",
+        "sintesis",
+        "quiral"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 4,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "total-quantum-immunity",
+      "name": "total-quantum-immunity",
+      "repo": "canelonemf-byte/total-quantum-immunity",
+      "source": "local",
+      "url": "https://github.com/canelonemf-byte/total-quantum-immunity",
+      "description": "Total Quantum Immunity / Cifrado Inquebrantable: arquitectura integrada de criptografía y metamateriales.",
+      "keywords": [
+        "total",
+        "quantum",
+        "immunity"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 3,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "oraculo-mesoscopico",
+      "name": "ORÁCULO MESOSCÓPICO",
+      "repo": null,
+      "source": "local",
+      "url": null,
+      "description": "ORÁCULO MESOSCÓPICO: predicción probabilística y simulación mesoscópica; indicar siempre incertidumbre, supuestos y límites. Evidencia E0, PENDIENTE DE VERIFICACIÓN: sin documentos fuente.",
+      "keywords": [
+        "oraculo",
+        "mesoscopico",
+        "prediccion",
+        "probabilistica",
+        "simulacion"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 1,
+      "binaries_or_skipped": []
+    },
+    {
+      "id": "agsgpt-lora",
+      "name": "agsgpt-lora",
+      "repo": "",
+      "source": "local",
+      "url": "",
+      "description": "AGsGPT + LoRA: capa de red neuronal con adaptadores LoRA sobre AGs-Core. Hipótesis E1; sin código ni adaptadores entrenados.",
+      "keywords": [
+        "agsgpt",
+        "lora",
+        "red-neuronal"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 1,
+      "binaries_or_skipped": [],
+      "license_declared_by_author": true,
+      "evidencia_nivel": "E1"
+    },
+    {
+      "id": "pliegue",
+      "name": "pliegue",
+      "repo": "",
+      "source": "local",
+      "url": "",
+      "description": "PLIEGUE (P001): simulación de métricas warp (rayo NEC, toro T00, Ford-Roman). Métricas Alcubierre/Natario/White son teoría publicada de terceros (citar). E1: sin código en el ordenador; 'hecho' declarado, no verificado.",
+      "keywords": [
+        "warp",
+        "nec",
+        "ford-roman"
+      ],
+      "tools": [],
+      "license": "MIT",
+      "files": 1,
+      "binaries_or_skipped": [],
+      "license_declared_by_author": true,
+      "evidencia_nivel": "E1"
+    },
+    {
+      "id": "nnc",
+      "name": "nnc",
+      "repo": "",
+      "source": "local",
+      "url": "",
+      "description": "NNC + AGs-Core corregido 1.0.0 (/workspace/agsgpt/NNC). Software E3: suite 7/7 PASS (WGS84/ECEF Bowring, triangulación ENU sintética, entropía, EKF, CRC, HMAC, etiquetado simulado). Telemetría satelital sintética etiquetada. Solo build-beta/ws_vivo.py consulta datos reales (ADS-B adsb.lol Prat + ISS wheretheiss.at; ambas APIs respondieron 200 el 2026-10-20). GIBS/USGS/radar real: solo mencionados en docs, sin conector. Ninguna detección validada: E0-E1 para afirmaciones físicas.",
+      "keywords": [
+        "adsb",
+        "ecef",
+        "enu",
+        "ekf",
+        "radar",
+        "dashboard3d"
+      ],
+      "tools": [
+        "dashboard:8080",
+        "rest:8010"
+      ],
+      "license": "MIT",
+      "files": 70,
+      "binaries_or_skipped": [
+        "assets/*.png",
+        "docs/*.pdf"
+      ],
+      "license_declared_by_author": true,
+      "evidencia_nivel": "E3_software;E1_deteccion"
+    }
+  ]
 }

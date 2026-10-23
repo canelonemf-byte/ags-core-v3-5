@@ -37,3 +37,9 @@ Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpe
 
 ## Referencias
 Ver [REFERENCIAS.md](REFERENCIAS.md).
+
+## Código ejecutable (stm)
+
+`pip install -r requirements.txt && python -m pytest -q`
+
+Modelo de referencia público, no los datos del autor: corriente túnel ∝ exp(−2κd), aproximadamente ×10 por ångström.
