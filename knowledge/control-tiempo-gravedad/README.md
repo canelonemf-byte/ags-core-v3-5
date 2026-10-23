@@ -1,6 +1,8 @@
 # control-tiempo-gravedad
 
-Control del tiempo y la gravedad: gemelo digital del espacio-tiempo e ingeniería espacio-temporal.
+Gemelo digital del espacio-tiempo: simulación y medida de la dilatación temporal gravitacional (realizable hoy, ver [PLAN_REALIZABLE.md](PLAN_REALIZABLE.md)).
+
+> **Hipótesis E0 (especulativa, sin evidencia experimental):** la idea original de «control del tiempo y la gravedad» se conserva como hipótesis de trabajo; las desigualdades cuánticas la limitan (Ford y Roman 1995, doi:10.1103/PhysRevD.51.4277; Pfenning y Ford 1997, doi:10.1088/0264-9381/14/7/011).
 
 **Autor:** Lázaro López Paz · **Licencia:** MIT (ver `LICENSE`)
 
@@ -43,3 +45,8 @@ Textos del paquete NotebookLM (Drive `NotebookLM_Fuentes_2026-08-30`) que no exi
 - Todo lo relativo a «control del tiempo», motores warp o retrocausalidad es **especulativo (evidencia E0)**: no hay ningún experimento que lo respalde.
 - Física establecida en la que se apoya la discusión: relatividad general, métricas de Alcubierre (1994) y Natário (2002), desigualdades cuánticas de Ford-Roman (1995, 1996).
 - Ideas de Jack Sarfatti (metamateriales, ansatz Sarfatti-Wanser, teoría post-cuántica): son obra de su autor, se citan y resumen con palabras propias en [REFERENCIAS.md](REFERENCIAS.md).
+
+## Qué es realizable hoy
+- **Medible (E3):** la dilatación temporal gravitacional con relojes ópticos (Chou et al. 2010; Bothwell et al. 2022).
+- **Simulable (E2):** paquete `warpcalc` (densidad de energía de Alcubierre y Natário, cota de Pfenning-Ford, corrimiento gravitacional). `pip install -e .[test] && pytest` y `python examples/energia_burbuja.py`.
+- **No realizable hoy (E0):** control del tiempo, motores warp, retrocausalidad.

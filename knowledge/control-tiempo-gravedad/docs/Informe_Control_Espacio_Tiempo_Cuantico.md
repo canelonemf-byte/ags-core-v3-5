@@ -205,7 +205,9 @@ decoherencia rompa la simulación.
 
 5. Conclusión General
 
-Doblar el espacio-tiempo de manera macroscópica u obtener energía infinita para generar anomalías
+> **Hipótesis E0 (sin evidencia; ver Ford y Roman 1995, doi:10.1103/PhysRevD.51.4277):** el texto siguiente se conserva tal como lo escribió el autor.
+
+[Hipótesis E0] Doblar el espacio-tiempo de manera macroscópica u obtener energía infinita para generar anomalías
 
 gravitacionales sigue estando más allá de nuestras matrices físicas de generación. Sin embargo, "ver el
 

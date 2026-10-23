@@ -37,3 +37,15 @@ Autor del proyecto: Lázaro López Paz, El Prat de Llobregat, Barcelona, España
 
 ## D. Material del zip no utilizado como fuente
 Transcripciones de chatbots (Grok, Google AI) sobre Sarfatti y textos de terceros (Ducci, King, Cottle, Blaszynski…) no se usan como autoridad; se listan solo en el inventario privado.
+
+## Referencias para el plan realizable (DOI comprobados en Crossref, 2026-10-24)
+- Barceló C., Liberati S., Visser M. (2011). Analogue Gravity. Living Reviews in Relativity 14, 3. doi:10.12942/lrr-2011-3
+- Philbin T.G. et al. (2008). Fiber-Optical Analog of the Event Horizon. Science 319, 1367. doi:10.1126/science.1153625
+- Weinfurtner S. et al. (2011). Measurement of Stimulated Hawking Emission in an Analogue System. Phys. Rev. Lett. 106, 021302. doi:10.1103/PhysRevLett.106.021302
+- Steinhauer J. (2016). Observation of quantum Hawking radiation and its entanglement in an analogue black hole. Nature Physics 12, 959. doi:10.1038/nphys3863
+- Lamoreaux S.K. (1997). Demonstration of the Casimir Force in the 0.6 to 6 μm Range. Phys. Rev. Lett. 78, 5. doi:10.1103/PhysRevLett.78.5
+- Wilson C.M. et al. (2011). Observation of the dynamical Casimir effect in a superconducting circuit. Nature 479, 376. doi:10.1038/nature10561
+- Smolyaninov I.I., Narimanov E.E. (2010). Metric Signature Transitions in Optical Metamaterials. Phys. Rev. Lett. 105, 067402. doi:10.1103/PhysRevLett.105.067402
+- Pfenning M.J., Ford L.H. (1997). The unphysical nature of 'warp drive'. Class. Quantum Grav. 14, 1743. doi:10.1088/0264-9381/14/7/011
+- Chou C.W. et al. (2010). Optical Clocks and Relativity. Science 329, 1630. doi:10.1126/science.1192720
+- Bothwell T. et al. (2022). Resolving the gravitational redshift across a millimetre-scale atomic sample. Nature 602, 420. doi:10.1038/s41586-021-04349-7

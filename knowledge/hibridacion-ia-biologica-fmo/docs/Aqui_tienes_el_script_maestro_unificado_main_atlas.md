@@ -1,10 +1,8 @@
-> **Nota de autoría (2026-10-19).** Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España — con asistencia de inteligencia artificial (asistente de IA). La herramienta de IA se menciona como asistencia, no como autora. Atribución actualizada por decisión del autor; el resto del texto se conserva.
-
-> Texto extraído automáticamente del PDF original (archivo «main_atlas», script maestro unificado). Fórmulas, figuras y maquetación se han perdido; el original está en Drive: https://drive.google.com/file/d/1c02OiTGFS5pCyztxCkqqsaN33YSXbVwS/view?usp=drivesdk
+> Texto extraído automáticamente del PDF original «Aquí tienes el script maestro unificado main_atlas.pdf». Fórmulas, figuras y maquetación se han perdido; el original está en Drive: https://drive.google.com/file/d/1c02OiTGFS5pCyztxCkqqsaN33YSXbVwS/view?usp=drivesdk
 
 
 
-Script maestro unificado m a i n _ a t l a s . p y [nota 2026-10-19: reformulado por decisión del autor]. Consolida todos los módulos en 
+Aquí tienes el script maestro unificado m a i n _ a t l a s . p y . He consolidado todos los módulos en 
 una arquitectura estructurada y lista para ejecución. 
 
 Como es normativo en todos los despliegues de este proyecto, la cabecera del archivo integra 

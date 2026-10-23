@@ -44,3 +44,6 @@ Textos del paquete NotebookLM (Drive `NotebookLM_Fuentes_2026-08-30`) que no exi
 
 - [docs/notebooklm/01_HELIO3_QMC-H3.md](docs/notebooklm/01_HELIO3_QMC-H3.md)
 - [docs/notebooklm/DISCREPANCIAS_QMC_H3.md](docs/notebooklm/DISCREPANCIAS_QMC_H3.md)
+
+## Código realizable hoy
+`fusionrate/`: reactividad térmica <σv> de D-T y D-³He (ajuste de Bosch y Hale 1992) y densidad de potencia de fusión. Muestra por qué el D-³He necesita temperaturas mucho mayores que el D-T (a 10 keV su reactividad es ~0,2 % de la del D-T). `pip install -r requirements.txt && pytest`; ejemplo: `python examples/comparar_dt_dhe3.py`. Referencias: [REFERENCIAS.md](REFERENCIAS.md).

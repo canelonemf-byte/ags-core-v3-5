@@ -38,6 +38,8 @@ UNIT = re.compile(
 )
 CITE = re.compile(r"\[\d+\]|\(\w[\w\s.&-]*,?\s(19|20)\d\d\)|doi|arxiv|https?://|et al\.?|fuente:|source:|ref\.", re.I)
 
+HYPOTHESIS = re.compile(r"hipotesis e0|\be0\b|especulativ|hypothesis|sin evidencia experimental")
+
 RESERVED = [
     ("todos los derechos reservados", "high"), ("all rights reserved", "high"),
     ("derechos reservados", "high"), ("prohibida su reproduccion", "high"),
@@ -103,7 +105,10 @@ def claims_in_file(rel: str, text: str) -> list[dict]:
             if is_ref_list:  # títulos de obras citadas (p. ej. Sarfatti 2015 'Retro-Causal…'), no afirmaciones propias
                 break
             if w in p and not (w in ("energia libre", "free energy") and (GIBBS.search(p) or DFT_OUTPUT.search(p))):
-                out.append(_f("physics", "high", rel, ln, f"afirmación física extraordinaria ('{w}') sin evidencia experimental", s))
+                if HYPOTHESIS.search(p):  # etiquetada como hipótesis/E0: sigue visible, pero no es una afirmación oculta
+                    out.append(_f("physics_hypothesis", "medium", rel, ln, f"afirmación extraordinaria ('{w}') etiquetada como hipótesis E0", s))
+                else:
+                    out.append(_f("physics", "high", rel, ln, f"afirmación física extraordinaria ('{w}') sin evidencia experimental", s))
                 break
         for w in HYPE:
             if w in p:

@@ -6,7 +6,7 @@
 
 Informe de viabilidad técnico-matemático:
 
-Control del tiempo y la gravedad mediante convergencia tecnológica
+Hipótesis E0: control del tiempo y la gravedad mediante convergencia tecnológica (ver Pfenning y Ford 1997, doi:10.1088/0264-9381/14/7/011)
 
 Lázaro López Paz
 El Prat de Llobregat, Barcelona, España
@@ -47,7 +47,7 @@ Contents
 4.2 Curvas temporales cerradas (CTCs) . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
 4.3 Agujero de gusano de MorrisThorne . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
 
-5 Obtención de información del futuro y retrocausalidad 5
+5 Hipótesis E0: obtención de información del futuro y retrocausalidad 5
  1
 
 6 Convergencia tecnológica y algoritmos 5
@@ -295,9 +295,9 @@ garganta r = r0 exige: b − b′r
 
 La densidad de energía en la garganta es negativa.
 
-5. Obtención de información del futuro y retrocausalidad
+5. Hipótesis E0: obtención de información del futuro y retrocausalidad (sin evidencia experimental)
 
-En interpretaciones retrocausales de la mecánica cuántica, el estado de un sistema puede depender
+Hipótesis E0 (interpretación minoritaria, sin evidencia experimental de señalización al pasado): en interpretaciones retrocausales de la mecánica cuántica, el estado de un sistema puede depender
 de condiciones de contorno futuras. En el formalismo de post-selección de CTCs cuánticos (Lloyd
 et al.), la evolución se describe mediante un canal que proyecta sobre el estado ˝nal deseado. Estos
 esquemas son simulables experimentalmente con fotones, pero no constituyen un canal de información
