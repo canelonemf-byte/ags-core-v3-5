@@ -227,6 +227,9 @@ class GeneradorParesLora(WorkerAgent):
             for l in p.read_text(encoding="utf-8").splitlines():
                 try: r = json.loads(l)
                 except Exception: invalidos += 1; continue
+                if isinstance(r, dict):  # alias aceptados por knowledge/fusi-n-carpeta/docs/esquema_lora_pares.md
+                    if "instruction" not in r and "instruccion" in r: r = {**{k: v for k, v in r.items() if k != "instruccion"}, "instruction": r["instruccion"]}
+                    if "response" not in r and "respuesta" in r: r = {**{k: v for k, v in r.items() if k != "respuesta"}, "response": r["respuesta"]}
                 if not isinstance(r, dict) or not str(r.get("instruction", "")).strip() or not str(r.get("response", "")).strip():
                     invalidos += 1; continue
                 k = key(r)
