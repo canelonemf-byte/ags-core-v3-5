@@ -1,0 +1,8 @@
+visibilidad_codigo:
+  descripcion: "el código está en el repo privado canelonemf-byte/nnc; decidir si se hace público o se enlaza solo su resumen"
+  unidades: texto
+  valor: ""
+telemetria_real:
+  descripcion: "telemetría real (la incluida es sintética)"
+  unidades: archivo
+  valor: ""

@@ -1,0 +1,31 @@
+caudal_alimentacion_m3h:
+  descripcion: caudal de diseño
+  unidades: m³/h
+  valor: 5
+  fuente: expediente del autor v2.1
+recuperacion:
+  descripcion: recuperación de permeado
+  unidades: fracción
+  valor: 0.9
+  fuente: expediente del autor
+flujo_diseno_lmh:
+  descripcion: flujo sostenible
+  unidades: L/(m²·h)
+  valor: 200
+  fuente: expediente del autor (rango 120-350)
+permeabilidad_lmh_bar:
+  descripcion: permeabilidad hidráulica medida de la membrana elegida
+  unidades: L/(m²·h·bar)
+  valor: ''
+presion_transmembrana_bar:
+  descripcion: presión transmembrana de operación
+  unidades: bar
+  valor: ''
+presion_osmotica_bar:
+  descripcion: diferencia de presión osmótica del efluente real
+  unidades: bar
+  valor: ''
+analitica_efluente:
+  descripcion: analítica del efluente (DQO, SST, conductividad)
+  unidades: tabla
+  valor: []

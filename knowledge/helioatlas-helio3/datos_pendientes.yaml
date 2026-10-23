@@ -1,0 +1,8 @@
+licencia_codigo:
+  descripcion: "licencia bajo la que el autor permite publicar código en este repositorio (p. ej. MIT, Apache-2.0, o mantener todos los derechos reservados)"
+  unidades: texto
+  valor: ""
+licencia_documentos:
+  descripcion: "licencia de los documentos (actualmente reservada o no comercial)"
+  unidades: texto
+  valor: ""

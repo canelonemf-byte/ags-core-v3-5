@@ -1,6 +1,4 @@
-> **Nota de autoría (2026-10-19).** Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España — con asistencia de inteligencia artificial (asistente de IA). La herramienta de IA se menciona como asistencia, no como autora. Atribución actualizada por decisión del autor; el resto del texto se conserva.
-
-Texto único que contiene todos los archivos (desde el índice general hasta el A20, pasando por los proyectos reales, los proyectos novedosos, los detalles de fabricación, y el script maestro de simulaciones). Todo está concatenado en orden en un solo archivo de texto. [nota 2026-10-19: reformulado por decisión del autor]
+Perfecto. Aquí tienes el texto gigante único que contiene todos los archivos (desde el índice general hasta el A20, pasando por los proyectos reales, los proyectos novedosos, los detalles de fabricación, y el script maestro de simulaciones). Todo está concatenado en orden, listo para que copies y pegues en un solo archivo de texto (por ejemplo, TODO_COMPLETO.txt) y luego lo proceses según necesites.
 
 ---
 

@@ -187,7 +187,7 @@ def project_level(kind: str, index, project: dict, findings: list[dict]) -> list
     dtp = plain(docs_text)
     extra = []
     if kind == "missing_pieces":
-        code = [n for n in names if Path(n).suffix in CODE_EXT and Path(n).suffix not in (".json",)]
+        code = [n for n in names if Path(n).suffix in CODE_EXT and Path(n).suffix not in (".json", ".yaml", ".yml", ".toml")]
         tests = [n for n in names if re.search(r"(^|/)(test_|tests?/)|_test\.py$", n)]
         if "LICENSE" not in names:
             extra.append(_f("no_license", "high", "-", 0, "no hay archivo LICENSE"))

@@ -1,0 +1,16 @@
+tau_muestreo_s:
+  descripcion: "tiempo de muestreo tau usado en P001 para la cifra QI 1e50"
+  unidades: s
+  valor: ""
+densidad_negativa_j_m3:
+  descripcion: "densidad de energía negativa comparada con la cota en P001"
+  unidades: J/m³
+  valor: ""
+separacion_casimir_m:
+  descripcion: "separación de placas usada para la cifra Casimir 1e60"
+  unidades: m
+  valor: ""
+volumen_requerido_m3:
+  descripcion: "volumen de energía negativa necesario con el que se compara Casimir"
+  unidades: m³
+  valor: ""

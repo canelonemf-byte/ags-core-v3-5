@@ -1,0 +1,12 @@
+sistema:
+  descripcion: dispositivo mesoscópico a predecir
+  unidades: texto
+  valor: ''
+transmisiones_media:
+  descripcion: transmisión media de cada canal
+  unidades: lista [0-1]
+  valor: []
+transmisiones_sigma:
+  descripcion: incertidumbre de cada transmisión
+  unidades: lista
+  valor: []

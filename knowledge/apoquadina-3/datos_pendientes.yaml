@@ -1,0 +1,14 @@
+secuencia_diana:
+  descripcion: secuencia G4 diana de Apoquadina (ADN 5'->3')
+  unidades: nucleótidos
+  valor: ''
+  ejemplo_publico: AGGGTTAGGGTTAGGGTTAGGG
+  fuente_ejemplo: repetición telomérica humana, Moyzis 1988
+kd_medida_nm:
+  descripcion: Kd medida experimentalmente (la de 45 nM es declarada)
+  unidades: nM
+  valor: ''
+metodo_medida_kd:
+  descripcion: técnica usada (SPR, ITC, FRET-melting...)
+  unidades: texto
+  valor: ''

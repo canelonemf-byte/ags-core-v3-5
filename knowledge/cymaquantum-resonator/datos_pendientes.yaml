@@ -1,0 +1,39 @@
+lado_a_m:
+  descripcion: lado a de la placa del resonador
+  unidades: m
+  valor: ''
+lado_b_m:
+  descripcion: lado b
+  unidades: m
+  valor: ''
+espesor_m:
+  descripcion: espesor
+  unidades: m
+  valor: ''
+frecuencia_excitacion_hz:
+  descripcion: frecuencia de excitación del protocolo
+  unidades: Hz
+  valor: ''
+modulo_young_pa:
+  descripcion: módulo de Young
+  unidades: Pa
+  valor: ''
+  ejemplo_publico: 69000000000.0
+  fuente_ejemplo: aluminio, valor típico de manual
+poisson:
+  descripcion: coeficiente de Poisson
+  unidades: adimensional
+  valor: ''
+  ejemplo_publico: 0.33
+  fuente_ejemplo: aluminio
+densidad_kg_m3:
+  descripcion: densidad
+  unidades: kg/m³
+  valor: ''
+  ejemplo_publico: 2700
+  fuente_ejemplo: aluminio
+condicion_contorno:
+  descripcion: apoyo de la placa (el modelo supone simplemente apoyada; Chladni clásica
+    es libre)
+  unidades: texto
+  valor: ''

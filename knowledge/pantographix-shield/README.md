@@ -25,3 +25,9 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Módulo funcional `blindaje` (esperando datos)
+
+blindaje: eficacia de blindaje electromagnético de campo lejano de una lámina, SE = A + R (Schelkunoff 1938). SUPUESTO: Pantographix Shield es un blindaje EM. El autor debe confirmarlo, porque los documentos fuente están en Drive y no se han podido leer.
+
+`pip install -r requirements.txt && python -m pytest -q`. Los datos que faltan están en [DATOS_PENDIENTES.md](DATOS_PENDIENTES.md).

@@ -1,0 +1,32 @@
+variable_principal:
+  descripcion: variable de resultado primaria del ensayo
+  unidades: texto
+  valor: ''
+diferencia_clinica_relevante:
+  descripcion: diferencia mínima clínicamente relevante
+  unidades: unidades de la variable
+  valor: ''
+desviacion_estandar:
+  descripcion: desviación estándar de la variable (de estudios previos)
+  unidades: unidades de la variable
+  valor: ''
+alfa:
+  descripcion: error tipo I bilateral
+  unidades: probabilidad
+  valor: ''
+  ejemplo_publico: 0.05
+  fuente_ejemplo: convención, Noordzij 2010
+potencia:
+  descripcion: 1 - error tipo II
+  unidades: probabilidad
+  valor: ''
+  ejemplo_publico: 0.8
+  fuente_ejemplo: convención, Noordzij 2010
+abandono:
+  descripcion: fracción de abandono esperada
+  unidades: fracción
+  valor: ''
+datos_preclinicos:
+  descripcion: datos in vitro/in vivo que justifiquen pasar a ensayo
+  unidades: tabla
+  valor: []

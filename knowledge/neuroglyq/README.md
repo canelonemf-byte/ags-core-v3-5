@@ -13,7 +13,7 @@ NeuroGlyQ: plataforma neuroinhibitoria de precisión cuántica guiada por IA.
 
 - `docs/Copia_de_PROYECTO_NEUROGLYQ_v2.md` ← Copia de PROYECTO NEUROGLYQ (v2
 - `docs/Informe_Tecnico_Integral_Plataforma_de_Neuromodulacion_de_Precision_NeuroGlyQ.md` ← Informe Técnico Integral: Plataforma de Neuromodulación de Precisión NeuroGlyQ
-- `docs/NeuroGlyQ_Plataforma_Neuroinhibitoria_de_Precision_Cuantica_Guiada_por_Inteligencia_Artificial_-_Memoria_Tecnica_Definit.md` ← NeuroGlyQ: Plataforma Neuroinhibitoria de Precisión Cuántica Guiada por Inteligencia Artificial - Memoria Técnica Definitiva [revisión LLP 2026-10-21: afirmación no verificada, PENDIENTE DE VERIFICACIÓN]
+- `docs/NeuroGlyQ_Plataforma_Neuroinhibitoria_de_Precision_Cuantica_Guiada_por_Inteligencia_Artificial_-_Memoria_Tecnica_Definit.md` ← NeuroGlyQ: Plataforma Neuroinhibitoria de Precisión Cuántica Guiada por Inteligencia Artificial - Memoria Técnica Definitiva
 - `docs/NeuroGlyQ__Plataforma_Neuroinhibitoria_de_Precision_Cuantica_Guiada_por_Inteligencia_Artificial.md` ← NeuroGlyQ_ Plataforma Neuroinhibitoria de Precisión Cuántica Guiada por Inteligencia Artificial .pdf
 - `docs/PROYECTO_NEUROGLYQ_v2.md` ← PROYECTO NEUROGLYQ (v2
 
@@ -43,3 +43,9 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Módulo funcional `tamano_muestra` (esperando datos)
+
+tamano_muestra: tamaño muestral de un ensayo de dos grupos con resultado continuo, n = 2(z_{1-α/2} + z_{1-β})² σ²/Δ² por grupo. Sirve para planificar la validación clínica que NeuroGlyQ aún no tiene. α = 0,05 y potencia 0,80 son las convenciones de la referencia.
+
+`pip install -r requirements.txt && python -m pytest -q`. Los datos que faltan están en [DATOS_PENDIENTES.md](DATOS_PENDIENTES.md).

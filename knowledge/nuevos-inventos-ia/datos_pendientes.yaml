@@ -1,0 +1,30 @@
+distancia_m:
+  descripcion: separación entre placas (sensor A2)
+  unidades: m
+  valor: 5.0e-08
+  fuente: documento del autor A2_FABRICACION
+area_m2:
+  descripcion: área efectiva
+  unidades: m²
+  valor: 0.0001
+  fuente: documento del autor
+eps_estado_1:
+  descripcion: permitividad del tejido en reposo
+  unidades: adimensional
+  valor: 55
+  fuente: documento del autor, sin medida citada
+eps_estado_2:
+  descripcion: permitividad del tejido en isquemia
+  unidades: adimensional
+  valor: 57
+  fuente: documento del autor, sin medida citada
+fuente_permitividades:
+  descripcion: referencia medida de la permitividad del tejido a la frecuencia de
+    trabajo
+  unidades: texto
+  valor: ''
+espectro_dielectrico_lifshitz:
+  descripcion: función dieléctrica eps(i xi) de placas y medio, para el cálculo de
+    Lifshitz
+  unidades: tabla
+  valor: []

@@ -51,3 +51,9 @@ No se han subido por contener material o nombres de terceros, o datos personales
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Módulo funcional `membrana` (esperando datos)
+
+membrana: dimensionado de la etapa de membrana del expediente REMPLAST-Q v2.1 (Q = 5 m³/h, recuperación 90 %, J = 200 LMH, así que A = 22,5 m²) y flujo por solución-difusión, J = Lp·(ΔP − Δπ).
+
+`pip install -r requirements.txt && python -m pytest -q`. Los datos que faltan están en [DATOS_PENDIENTES.md](DATOS_PENDIENTES.md).

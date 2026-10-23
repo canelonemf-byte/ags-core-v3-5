@@ -1,0 +1,24 @@
+error_fisico_por_ciclo:
+  descripcion: tasa de error física por operación del hardware del autor
+  unidades: probabilidad
+  valor: ''
+error_logico_objetivo:
+  descripcion: error lógico aceptable por qubit y ciclo
+  unidades: probabilidad
+  valor: ''
+qubits_logicos:
+  descripcion: número de qubits lógicos que necesita la arquitectura
+  unidades: entero
+  valor: ''
+prefactor_A:
+  descripcion: prefactor de la ley de escala
+  unidades: adimensional
+  valor: ''
+  ejemplo_publico: 0.03
+  fuente_ejemplo: Fowler et al. 2012
+umbral_p_th:
+  descripcion: umbral del código
+  unidades: probabilidad
+  valor: ''
+  ejemplo_publico: 0.0057
+  fuente_ejemplo: Fowler et al. 2012

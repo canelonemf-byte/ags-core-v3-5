@@ -62,3 +62,9 @@ Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpe
 `pip install -r requirements.txt && python -m pytest -q`
 
 Ocupación con la Kd=45 nM declarada por el autor (E1, sin medida publicada).
+
+## Módulo funcional `g4` (esperando datos)
+
+g4: búsqueda de motivos G-cuádruplex con la regla de Huppert y Balasubramanian (2005), G3+ N1-7 G3+ N1-7 G3+ N1-7 G3+, en las dos hebras. El ejemplo público es la repetición telomérica humana; la diana G4 del autor está pendiente.
+
+`pip install -r requirements.txt && python -m pytest -q`. Los datos que faltan están en [DATOS_PENDIENTES.md](DATOS_PENDIENTES.md).

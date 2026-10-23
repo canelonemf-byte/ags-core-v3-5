@@ -1,0 +1,15 @@
+ruta_patron:
+  descripcion: patrón binario del diseño fractal del autor (.npy o .csv de 0/1)
+  unidades: píxeles
+  valor: ''
+  ejemplo_publico: ejemplo:sierpinski
+  fuente_ejemplo: alfombra de Sierpinski, D = log8/log3 (matemática pública)
+escala_pixel_m:
+  descripcion: tamaño físico de un píxel del patrón
+  unidades: m
+  valor: ''
+objetivo_ingenieria:
+  descripcion: qué propiedad física debe dar la geometría fractal (p. ej. banda de
+    antena, área de electrodo)
+  unidades: texto
+  valor: ''

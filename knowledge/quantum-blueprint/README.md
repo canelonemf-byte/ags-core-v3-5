@@ -37,3 +37,9 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Módulo funcional `breit_rabi` (esperando datos)
+
+breit_rabi: niveles hiperfinos con J = 1/2 en un campo B (fórmula de Breit-Rabi). Completa las fórmulas de Zeeman parciales del documento. Los parámetros del material están pendientes.
+
+`pip install -r requirements.txt && python -m pytest -q`. Los datos que faltan están en [DATOS_PENDIENTES.md](DATOS_PENDIENTES.md).

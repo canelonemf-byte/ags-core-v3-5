@@ -51,3 +51,9 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Módulo funcional `chladni` (esperando datos)
+
+chladni: modos de una placa rectangular delgada simplemente apoyada (Kirchhoff), f_mn = (π/2)·sqrt(D/(ρh))·((m/a)² + (n/b)²), con D = E h³/(12(1−ν²)), y sus líneas nodales. Modelo de referencia público, no los datos del autor; la geometría está pendiente. El ejemplo de material es aluminio.
+
+`pip install -r requirements.txt && python -m pytest -q`. Los datos que faltan están en [DATOS_PENDIENTES.md](DATOS_PENDIENTES.md).

@@ -1,0 +1,18 @@
+ruta_patron:
+  descripcion: patrón binario del diseño fractal del autor (.npy o .csv de 0/1)
+  unidades: píxeles
+  valor: ''
+  ejemplo_publico: ejemplo:sierpinski
+  fuente_ejemplo: alfombra de Sierpinski, D = log8/log3 (matemática pública)
+escala_pixel_m:
+  descripcion: tamaño físico de un píxel del patrón
+  unidades: m
+  valor: ''
+frecuencia_objetivo_hz:
+  descripcion: frecuencia de trabajo del hardware fractal (si es antena/resonador)
+  unidades: Hz
+  valor: ''
+material:
+  descripcion: material y espesor de la estructura
+  unidades: texto
+  valor: ''

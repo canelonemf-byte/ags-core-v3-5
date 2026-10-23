@@ -49,3 +49,4 @@ Transcripciones de chatbots (Grok, Google AI) sobre Sarfatti y textos de tercero
 - Pfenning M.J., Ford L.H. (1997). The unphysical nature of 'warp drive'. Class. Quantum Grav. 14, 1743. doi:10.1088/0264-9381/14/7/011
 - Chou C.W. et al. (2010). Optical Clocks and Relativity. Science 329, 1630. doi:10.1126/science.1192720
 - Bothwell T. et al. (2022). Resolving the gravitational redshift across a millimetre-scale atomic sample. Nature 602, 420. doi:10.1038/s41586-021-04349-7
+- Ford L.H., Roman T.A. (1997) Restrictions on negative energy density in flat spacetime. Phys. Rev. D 55, 2082. doi:10.1103/PhysRevD.55.2082 (verificada en Crossref, 24-10-2026)

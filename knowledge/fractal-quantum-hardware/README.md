@@ -23,3 +23,9 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Módulo funcional `fractal` (esperando datos)
+
+fractal: dimensión fractal por conteo de cajas (modelo de referencia público, no los datos del autor). Sustituye el ejemplo de Sierpinski por el patrón real en datos_pendientes.yaml.
+
+`pip install -r requirements.txt && python -m pytest -q`. Los datos que faltan están en [DATOS_PENDIENTES.md](DATOS_PENDIENTES.md).

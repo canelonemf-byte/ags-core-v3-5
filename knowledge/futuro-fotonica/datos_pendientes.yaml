@@ -1,0 +1,24 @@
+longitud_onda_m:
+  descripcion: longitud de onda de trabajo
+  unidades: m
+  valor: ''
+radio_m:
+  descripcion: radio del anillo
+  unidades: m
+  valor: ''
+n_eff:
+  descripcion: índice efectivo de la guía
+  unidades: adimensional
+  valor: ''
+n_g:
+  descripcion: índice de grupo
+  unidades: adimensional
+  valor: ''
+r_acoplo:
+  descripcion: coeficiente de autoacoplo del acoplador (0-1)
+  unidades: adimensional
+  valor: ''
+a_perdidas:
+  descripcion: transmisión de amplitud en una vuelta (0-1)
+  unidades: adimensional
+  valor: ''

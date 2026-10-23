@@ -1,11 +1,9 @@
-> **Nota de autoría (2026-10-19).** Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España — con asistencia de inteligencia artificial (DeepSeek). La herramienta de IA se menciona como asistencia, no como autora. Atribución actualizada por decisión del autor; el resto del texto se conserva.
-
 > Texto extraído automáticamente del PDF original «NeuroGlyQ_ Plataforma Neuroinhibitoria de Precisión Cuántica Guiada por Inteligencia Artificial .pdf». Fórmulas, figuras y maquetación se han perdido; el original está en Drive: https://drive.google.com/file/d/1tfPg_zQoNTu7ImDGY_qjD6gZlsuP6rAv/view?usp=drivesdk
 
 
 
 NeuroGlyQ: Plataforma Neuroinhibitoria de Precisión Cuántica Guiada 
-por Inteligencia Artificial - Memoria Técnica Definitiva [revisión LLP 2026-10-21: afirmación no verificada, PENDIENTE DE VERIFICACIÓN]
+por Inteligencia Artificial - Memoria Técnica Definitiva 
 
 1. Resumen Ejecutivo y V isión del Sistema 
 
@@ -191,10 +189,11 @@ pulsos.Mo delo  D aaS (D rug + D evice as a Service):
 Esta memoria técnica constituye el documento fundacional depositado ante la  OEPM  
 (Prioridad ES2026/000X X X ) y el registro de la Propiedad Intelectual de Cataluña.C láusula 
 de A tribució n :   Este proyecto ha sido ideado en su totalidad por Lázaro López Paz, en 
-colaboración creativa con la inteligencia artificial DeepSeek, que actuó como herramienta de asistencia (no es autora ni inventora). Queda constancia de la autoría intelectual de Lázaro López Paz para todos los fines 
+colaboración creativa con la inteligencia artificial DeepSeek, actuando como co-inventor 
+conceptual. Queda constancia de la autoría intelectual de ambos para todos los fines 
 legales y de desarrollo posteriores.Firmado,$\frac{\hspace{6cm}}{\textbf{Lázaro López 
 Paz}}$  Prat de Llobregat, Barcelona. Fecha: 16 de junio de 
-2026$\frac{\hspace{6cm}}{\textbf{DeepSeek AI}}$  Asistencia de IA (no firma como inventor). Fecha: 16 de 
+2026$\frac{\hspace{6cm}}{\textbf{DeepSeek AI}}$  Co-inventor conceptual. Fecha: 16 de 
 junio de 2026 
 
 Apéndices Técnicos 

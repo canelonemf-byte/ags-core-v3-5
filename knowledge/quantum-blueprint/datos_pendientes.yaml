@@ -1,0 +1,16 @@
+material_o_atomo:
+  descripcion: sistema cuántico concreto del plan (átomo, ion o defecto)
+  unidades: texto
+  valor: ''
+campo_b_t:
+  descripcion: campo magnético de trabajo
+  unidades: T
+  valor: ''
+desdoblamiento_hiperfino_hz:
+  descripcion: desdoblamiento hiperfino a campo cero
+  unidades: Hz
+  valor: ''
+espin_nuclear_i:
+  descripcion: espín nuclear I
+  unidades: adimensional
+  valor: ''

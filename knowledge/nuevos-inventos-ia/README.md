@@ -39,3 +39,9 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Módulo funcional `casimir` (esperando datos)
+
+casimir: presión de Casimir entre placas ideales, P = π²ħc/(240 d⁴), y la fuerza del sensor A2 del documento del autor (d = 50 nm, A = 1e-4 m², eps 55 y 57). AVISO: el factor (eps−1)/(eps+1) del autor es una aproximación heurística, no la teoría de Lifshitz. Por debajo de unos 100 nm tampoco valen las placas ideales.
+
+`pip install -r requirements.txt && python -m pytest -q`. Los datos que faltan están en [DATOS_PENDIENTES.md](DATOS_PENDIENTES.md).

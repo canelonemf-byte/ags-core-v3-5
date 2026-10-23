@@ -22,3 +22,9 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Módulo funcional `microring` (esperando datos)
+
+microring: transmisión de un microanillo all-pass, FSR, finesa y Q (Bogaerts et al. 2012). Modelo de referencia público; todos los parámetros del dispositivo están pendientes.
+
+`pip install -r requirements.txt && python -m pytest -q`. Los datos que faltan están en [DATOS_PENDIENTES.md](DATOS_PENDIENTES.md).

@@ -25,3 +25,9 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Módulo funcional `surface_code` (esperando datos)
+
+surface_code: estimación de recursos del código de superficie, p_L ≈ A (p/p_th)^((d+1)/2), con 2d²−1 qubits físicos por qubit lógico (Fowler et al. 2012). Los valores A=0,03 y p_th=0,0057 son el ejemplo público del artículo.
+
+`pip install -r requirements.txt && python -m pytest -q`. Los datos que faltan están en [DATOS_PENDIENTES.md](DATOS_PENDIENTES.md).

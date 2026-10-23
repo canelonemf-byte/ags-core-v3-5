@@ -1,0 +1,24 @@
+frecuencia_hz:
+  descripcion: frecuencia de la interferencia a blindar
+  unidades: Hz
+  valor: ''
+espesor_m:
+  descripcion: espesor de la lámina
+  unidades: m
+  valor: ''
+conductividad_s_m:
+  descripcion: conductividad del material
+  unidades: S/m
+  valor: ''
+  ejemplo_publico: 58000000.0
+  fuente_ejemplo: cobre recocido (IACS)
+mu_r:
+  descripcion: permeabilidad relativa
+  unidades: adimensional
+  valor: ''
+  ejemplo_publico: 1.0
+  fuente_ejemplo: cobre
+confirmar_tipo_blindaje:
+  descripcion: confirmar si es blindaje EM, mecánico o de otro tipo
+  unidades: texto
+  valor: ''

@@ -1,0 +1,12 @@
+datos_planetas:
+  descripcion: "tabla de factores F_k y R_j por planeta, con fuente (p. ej. NASA Exoplanet Archive)"
+  unidades: tabla
+  valor: []
+pesos_omega_rho:
+  descripcion: "pesos justificados de cada factor (en el original son 1, placeholder)"
+  unidades: lista
+  valor: []
+masa_creencia_m:
+  descripcion: "masa de creencia Dempster-Shafer por planeta, con método"
+  unidades: "fracción (0-1)"
+  valor: []

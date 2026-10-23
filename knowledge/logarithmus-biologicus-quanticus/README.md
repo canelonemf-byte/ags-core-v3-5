@@ -51,3 +51,5 @@ Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpe
 `pip install -r requirements.txt && python -m pytest -q`
 
 **Hallazgo:** en el código original, γ hace que Λ_final = Λ_MCMC para todos los planetas, así que los datos del planeta se cancelan. lcpb usa γ=0 y el test lo demuestra. Índice exploratorio (E0/E1).
+
+> **Aviso:** la tabla LCPB v2.0 del documento no es válida, porque Λ es igual para todos los planetas. Ver [AVISO_TABLA_V2.md](AVISO_TABLA_V2.md).

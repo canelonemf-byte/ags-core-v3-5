@@ -1,0 +1,18 @@
+anio_objetivo:
+  descripcion: año en que se quiere alcanzar el objetivo
+  unidades: año
+  valor: ''
+fraccion_petroleo_restante:
+  descripcion: fracción del consumo de petróleo del año base que queda en el año objetivo
+    (0 = eliminación)
+  unidades: fracción
+  valor: ''
+vectores_sustitucion:
+  descripcion: reparto de la sustitución por sector (electrificación, H2, biocombustibles)
+    con eficiencias
+  unidades: tabla
+  valor: []
+datos_ree:
+  descripcion: series de generación de REE si se quieren añadir (apidatos.ree.es)
+  unidades: tabla
+  valor: []

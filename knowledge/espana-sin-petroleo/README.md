@@ -34,3 +34,9 @@ Archivos binarios (presentaciones, PDFs grandes, vídeos, imágenes, zips, docx)
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Módulo funcional `eurostat_es` (esperando datos)
+
+eurostat_es: datos reales de Eurostat para España (energía bruta disponible de petróleo y total en ktep, y dependencia importadora del petróleo en %), descargados de la API pública y guardados en data/eurostat_es.json. Con ellos calcula la trayectoria lineal de reducción hacia el objetivo del usuario.
+
+`pip install -r requirements.txt && python -m pytest -q`. Los datos que faltan están en [DATOS_PENDIENTES.md](DATOS_PENDIENTES.md).
