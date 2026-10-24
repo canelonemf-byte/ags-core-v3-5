@@ -1,8 +1,17 @@
-licencia_codigo:
-  descripcion: "licencia bajo la que el autor permite publicar código en este repositorio (p. ej. MIT, Apache-2.0, o mantener todos los derechos reservados)"
+masa_he3_objetivo_kg:
+  descripcion: masa de He-3 a obtener
+  unidades: kg
+  valor: ''
+concentracion_he3_ppb_masa:
+  descripcion: concentración de He-3 en el regolito del emplazamiento (medida en muestras
+    Apolo/Chang'e o modelo)
+  unidades: ppb en masa
+  valor: ''
+eficiencia_extraccion:
+  descripcion: fracción del He-3 liberada y recogida por el proceso térmico
+  unidades: fracción
+  valor: ''
+fuente_concentracion:
+  descripcion: referencia de la concentración usada
   unidades: texto
-  valor: ""
-licencia_documentos:
-  descripcion: "licencia de los documentos (actualmente reservada o no comercial)"
-  unidades: texto
-  valor: ""
+  valor: ''

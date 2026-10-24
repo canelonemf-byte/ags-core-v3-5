@@ -58,3 +58,9 @@ Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpe
 Textos del paquete NotebookLM (Drive `NotebookLM_Fuentes_2026-08-30`) que no existían en este repositorio:
 
 - [docs/notebooklm/03_QSM.md](docs/notebooklm/03_QSM.md)
+
+## Módulo funcional `lubricacion` (esperando datos)
+
+lubricacion: espesor mínimo de película en contacto blando isoviscoso-elástico, H_min = 7,43(1 − 0,85 e^(−0,31k)) U^0,65 W^(−0,21) con h = H·Rx (Hamrock y Dowson 1978), y razón lambda = h/sqrt(Rq1² + Rq2²) para identificar el régimen de lubricación. Modelo de ingeniería que no sustituye ensayos en cartílago.
+
+`pip install -r requirements.txt && python -m pytest -q`. Los datos que faltan están en [DATOS_PENDIENTES.md](DATOS_PENDIENTES.md).

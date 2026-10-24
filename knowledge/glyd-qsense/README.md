@@ -39,3 +39,9 @@ Documentación bajo [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Módulo funcional `termometria` (esperando datos)
+
+termometria: termometría Raman. Incluye la temperatura absoluta por cociente anti-Stokes/Stokes, I_AS/I_S = ((ν0+ν)/(ν0−ν))^4 · exp(−hcν/kT) (Rassat y Davis 1994); la calibración lineal de un parámetro espectral frente a T; y las figuras de mérito S_r = |dX/dT|/X y δT = σ_X/|dX/dT| (Brites et al. 2012). La precisión de 0,08 °C del documento solo podrá confirmarse con los espectros reales.
+
+`pip install -r requirements.txt && python -m pytest -q`. Los datos que faltan están en [DATOS_PENDIENTES.md](DATOS_PENDIENTES.md).

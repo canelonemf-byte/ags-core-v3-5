@@ -1,8 +1,10 @@
 # Datos pendientes: glyd-qsense
 
-No se ha añadido código porque la licencia actual reserva derechos o no permite uso comercial, y el autor no ha decidido la licencia del código. Cuando se rellene `licencia_codigo` en `datos_pendientes.yaml` se podrá añadir el módulo de cálculo.
+El código funciona; donde falte un dato lanza `PENDIENTE: falta dato X`. Rellena `datos_pendientes.yaml` (campo `valor`).
 
-| clave | estado |
-|---|---|
-| `licencia_codigo` | PENDIENTE |
-| `licencia_documentos` | PENDIENTE (confirmar) |
+| clave | descripción | unidades | estado |
+|---|---|---|---|
+| `temperaturas_calibracion_k` | temperaturas de referencia de la calibración | K (lista) | PENDIENTE |
+| `parametro_espectral` | parámetro Raman medido en cada temperatura (posición de la banda C-D, cociente...) | cm⁻¹ o adimensional (lista) | PENDIENTE |
+| `sigma_parametro` | desviación típica del parámetro en medidas repetidas | mismas que el parámetro | PENDIENTE |
+| `espectros_crudos` | ruta a los espectros Raman crudos para la 1D-CNN | ruta | PENDIENTE |

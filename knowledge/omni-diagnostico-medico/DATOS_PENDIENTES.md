@@ -1,8 +1,13 @@
 # Datos pendientes: omni-diagnostico-medico
 
-No se ha añadido código porque la licencia actual reserva derechos o no permite uso comercial, y el autor no ha decidido la licencia del código. Cuando se rellene `licencia_codigo` en `datos_pendientes.yaml` se podrá añadir el módulo de cálculo.
+El código funciona; donde falte un dato lanza `PENDIENTE: falta dato X`. Rellena `datos_pendientes.yaml` (campo `valor`).
 
-| clave | estado |
-|---|---|
-| `licencia_codigo` | PENDIENTE |
-| `licencia_documentos` | PENDIENTE (confirmar) |
+| clave | descripción | unidades | estado |
+|---|---|---|---|
+| `prueba` | prueba o modalidad OMNI evaluada y patrón de referencia | texto | PENDIENTE |
+| `verdaderos_positivos` | VP frente al patrón de referencia | recuento | PENDIENTE |
+| `falsos_positivos` | FP | recuento | PENDIENTE |
+| `falsos_negativos` | FN | recuento | PENDIENTE |
+| `verdaderos_negativos` | VN | recuento | PENDIENTE |
+| `prevalencia` | prevalencia en la población de uso prevista | fracción | PENDIENTE |
+| `aprobacion_etica` | comité de ética y protocolo del estudio de validación | texto | PENDIENTE |

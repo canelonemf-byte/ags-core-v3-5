@@ -1,8 +1,44 @@
-licencia_codigo:
-  descripcion: "licencia bajo la que el autor permite publicar código en este repositorio (p. ej. MIT, Apache-2.0, o mantener todos los derechos reservados)"
-  unidades: texto
-  valor: ""
-licencia_documentos:
-  descripcion: "licencia de los documentos (actualmente reservada o no comercial)"
-  unidades: texto
-  valor: ""
+viscosidad_pa_s:
+  descripcion: viscosidad del lubricante QSM medida a la cizalla de trabajo
+  unidades: Pa·s
+  valor: ''
+velocidad_m_s:
+  descripcion: velocidad media de arrastre en la articulación
+  unidades: m/s
+  valor: ''
+carga_n:
+  descripcion: carga normal sobre el contacto
+  unidades: N
+  valor: ''
+radio_rx_m:
+  descripcion: radio equivalente en la dirección de rodadura
+  unidades: m
+  valor: ''
+elipticidad_k:
+  descripcion: relación de elipticidad del contacto
+  unidades: adimensional
+  valor: ''
+modulo_e1_pa:
+  descripcion: módulo de Young del cartílago o material 1
+  unidades: Pa
+  valor: ''
+poisson_1:
+  descripcion: coeficiente de Poisson 1
+  unidades: adimensional
+  valor: ''
+modulo_e2_pa:
+  descripcion: módulo de Young del material 2
+  unidades: Pa
+  valor: ''
+poisson_2:
+  descripcion: coeficiente de Poisson 2
+  unidades: adimensional
+  valor: ''
+rugosidad_rq1_m:
+  descripcion: rugosidad RMS de la superficie 1
+  unidades: m
+  valor: ''
+rugosidad_rq2_m:
+  descripcion: rugosidad RMS de la superficie 2
+  unidades: m
+  valor: ''

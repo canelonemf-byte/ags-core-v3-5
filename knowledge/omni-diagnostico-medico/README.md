@@ -32,3 +32,11 @@ Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpe
 
 ## Referencias
 Ver [REFERENCIAS.md](REFERENCIAS.md).
+
+## Módulo funcional `diagnostico` (esperando datos)
+
+diagnostico: métricas de evaluación de una prueba diagnóstica a partir de la tabla 2×2: sensibilidad, especificidad, valores predictivos según la prevalencia (Bayes), razones de verosimilitud e intervalos de Wilson al 95 % (Altman y Bland 1994).
+
+AVISO MÉDICO: herramienta estadística de investigación. NO diagnostica, NO es un producto sanitario, NO sustituye el juicio clínico y NO está validada clínicamente. Cualquier uso clínico requiere estudios de validación y marcado CE conforme al Reglamento (UE) 2017/745.
+
+`pip install -r requirements.txt && python -m pytest -q`. Los datos que faltan están en [DATOS_PENDIENTES.md](DATOS_PENDIENTES.md).

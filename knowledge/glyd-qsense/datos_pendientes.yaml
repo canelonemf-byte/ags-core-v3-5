@@ -1,8 +1,17 @@
-licencia_codigo:
-  descripcion: "licencia bajo la que el autor permite publicar código en este repositorio (p. ej. MIT, Apache-2.0, o mantener todos los derechos reservados)"
-  unidades: texto
-  valor: ""
-licencia_documentos:
-  descripcion: "licencia de los documentos (actualmente reservada o no comercial)"
-  unidades: texto
-  valor: ""
+temperaturas_calibracion_k:
+  descripcion: temperaturas de referencia de la calibración
+  unidades: K (lista)
+  valor: []
+parametro_espectral:
+  descripcion: parámetro Raman medido en cada temperatura (posición de la banda C-D,
+    cociente...)
+  unidades: cm⁻¹ o adimensional (lista)
+  valor: []
+sigma_parametro:
+  descripcion: desviación típica del parámetro en medidas repetidas
+  unidades: mismas que el parámetro
+  valor: ''
+espectros_crudos:
+  descripcion: ruta a los espectros Raman crudos para la 1D-CNN
+  unidades: ruta
+  valor: ''

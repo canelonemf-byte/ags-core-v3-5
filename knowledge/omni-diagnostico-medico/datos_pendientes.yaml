@@ -1,8 +1,28 @@
-licencia_codigo:
-  descripcion: "licencia bajo la que el autor permite publicar código en este repositorio (p. ej. MIT, Apache-2.0, o mantener todos los derechos reservados)"
+prueba:
+  descripcion: prueba o modalidad OMNI evaluada y patrón de referencia
   unidades: texto
-  valor: ""
-licencia_documentos:
-  descripcion: "licencia de los documentos (actualmente reservada o no comercial)"
+  valor: ''
+verdaderos_positivos:
+  descripcion: VP frente al patrón de referencia
+  unidades: recuento
+  valor: ''
+falsos_positivos:
+  descripcion: FP
+  unidades: recuento
+  valor: ''
+falsos_negativos:
+  descripcion: FN
+  unidades: recuento
+  valor: ''
+verdaderos_negativos:
+  descripcion: VN
+  unidades: recuento
+  valor: ''
+prevalencia:
+  descripcion: prevalencia en la población de uso prevista
+  unidades: fracción
+  valor: ''
+aprobacion_etica:
+  descripcion: comité de ética y protocolo del estudio de validación
   unidades: texto
-  valor: ""
+  valor: ''

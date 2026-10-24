@@ -88,3 +88,9 @@ Copyright (c) 2026 Lázaro López Paz. Todos los derechos reservados. Patente en
 
 ---
 Los archivos `.trashed-*`, las copias («- copia») y los duplicados entre carpetas no se han listado.
+
+## Módulo funcional `he3` (esperando datos)
+
+he3: balance de masas y energía del helio-3 lunar. Calcula el regolito a procesar para una masa de He-3, dada la concentración y la eficiencia de extracción, y la energía de fusión D-He3 (18,35 MeV por reacción, Q de la reacción D + 3He -> 4He + p) por kg de He-3 (Wittenberg et al. 1986). La concentración y la eficiencia del emplazamiento son datos pendientes.
+
+`pip install -r requirements.txt && python -m pytest -q`. Los datos que faltan están en [DATOS_PENDIENTES.md](DATOS_PENDIENTES.md).

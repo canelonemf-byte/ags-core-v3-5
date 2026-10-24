@@ -217,8 +217,8 @@ class Supervisor:
         for r in reps:
             s = r["summary"]
             bp = by_proj.setdefault(s["project"], {"high": 0, "medium": 0, "low": 0, "info": 0})
-            for k, v in s["counts"].items():
-                bp[k] += v
+            for f in r["findings"]:  # contar desde los hallazgos (los counts del informe pueden ir desfasados)
+                bp[f["severity"]] = bp.get(f["severity"], 0) + 1
             for f in r["findings"]:
                 if f["severity"] in ("high", "medium"):
                     kinds_tot[(f["severity"], f["kind"])] = kinds_tot.get((f["severity"], f["kind"]), 0) + 1
@@ -229,8 +229,11 @@ class Supervisor:
         for (sev, kind), n in sorted(kinds_tot.items(), key=lambda x: (x[0][0] != "high", -x[1])):
             lines.append(f"- [{sev}] {kind}: {n}")
         lines += ["", "## Proyectos con más hallazgos de severidad alta", "", "| proyecto | alta | media | baja |", "|---|---|---|---|"]
-        for pid, c in sorted(by_proj.items(), key=lambda x: (-x[1]["high"], -x[1]["medium"])):
+        con_alta = [(pid, c) for pid, c in sorted(by_proj.items(), key=lambda x: (-x[1]["high"], -x[1]["medium"], x[0])) if c["high"] > 0]
+        for pid, c in con_alta:
             lines.append(f"| {pid} | {c['high']} | {c['medium']} | {c['low']} |")
+        if not con_alta:
+            lines.append("| (ninguno) | 0 | - | - |")
         lines += ["", "## Ejemplos de hallazgos de severidad alta", ""]
         for pid, f in top[:40]:
             lines.append(f"- **{pid}** `{f['file']}:{f['line']}` {f['message']}" + (f" — «{f['quote'][:160]}»" if f.get("quote") else ""))
