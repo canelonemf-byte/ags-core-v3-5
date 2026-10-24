@@ -108,6 +108,12 @@ def main(argv=None):
                     log.info("sub-agentes ejecutados: %s", ",".join(ran))
             except Exception:
                 log.exception("fallo en sub-agentes")
+            try:  # matriz_el_prat: ingesta diaria de fuentes públicas (no bloquea si una fuente cae)
+                import agents.matriz_el_prat_agents as _mx
+                if _mx.run_due(_sub_state):
+                    log.info("matriz_el_prat: ciclo de ingesta completado")
+            except Exception:
+                log.exception("fallo en matriz_el_prat")
             stats = sup.run_cycle(max_tasks=10_000)
             sup.queue.kv_set("autopilot_heartbeat", {"ts": time.time(), "pid": os.getpid(), "cycle": n, "interval": a.interval})
             lvl = logging.WARNING if stats["errors"] else logging.INFO

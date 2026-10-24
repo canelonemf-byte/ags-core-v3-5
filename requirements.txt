@@ -10,3 +10,4 @@ torch>=2.2
 scikit-learn>=1.4
 # v3.6 UI de estado (opcional)
 streamlit>=1.38,<2
+pyyaml>=6

@@ -3,7 +3,7 @@ from fastapi.testclient import TestClient
 from main import app
 from agents.project_agents import PROJECT_AGENTS
 from agents.subagents import WORKERS
-TOTAL = 38 + len(PROJECT_AGENTS) + len(WORKERS)
+TOTAL = 38 + len(PROJECT_AGENTS) + len(WORKERS) + 20  # matriz_el_prat
 pytestmark = pytest.mark.unit
 client = TestClient(app)
 

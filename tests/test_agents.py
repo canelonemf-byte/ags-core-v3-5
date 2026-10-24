@@ -4,7 +4,7 @@ from agents.project_agents import PROJECT_AGENTS
 pytestmark = pytest.mark.unit
 CORE = 38  # agentes de la v3.5
 from agents.subagents import WORKERS
-EXPECTED = CORE + len(PROJECT_AGENTS) + len(WORKERS)  # v3.6 + sub-agentes locales
+EXPECTED = CORE + len(PROJECT_AGENTS) + len(WORKERS) + 20  # + matriz_el_prat (5+15)  # v3.6 + sub-agentes locales
 
 def test_registry_count():
     assert len(all_agents()) == EXPECTED
