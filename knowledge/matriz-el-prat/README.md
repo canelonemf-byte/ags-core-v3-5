@@ -1,7 +1,7 @@
 # matriz_el_prat
 
 Sistema multi-agente de auditoría ciudadana y gobernanza municipal del Prat de Llobregat (Barcelona, España).
-Autoría: Lázaro López Paz, El Prat de Llobregat, Barcelona, España (ORCID 0000-0001-8601-1963), con asistencia de IA. Licencia MIT.
+Autoría: Lázaro López Paz, El Prat de Llobregat, Barcelona, España (ORCID 0000-0001-8601-1963), con asistencia de IA. Licencia: MIT (código) y CC BY 4.0 (documentos); ver «Licencia».
 
 ## Objetivo
 Mejorar la vida de la ciudadanía del Prat de Llobregat. Todo hallazgo o propuesta indica su **beneficio ciudadano**
@@ -35,3 +35,13 @@ pytest -q
 
 ## Protección de datos
 No se recogen datos personales; NIF/DNI/NIE y correos se enmascaran antes de guardar (RGPD (UE) 2016/679, LO 3/2018).
+
+## Licencia
+
+Autoría: Lázaro López Paz, El Prat de Llobregat, Barcelona, España (ORCID 0000-0001-8601-1963), con asistencia de IA.
+
+Licencia dual:
+- **Código y software** (`matriz_el_prat/`, `scripts/`, `tests/` y demás código fuente): **MIT** — ver [`LICENSE`](LICENSE).
+- **Documentos** (`docs/`, contenido de los `*.md`, documentación de datos como los `*.yaml` de inventario y catálogo, y `borradores/`): **CC BY 4.0** — ver [`LICENSE-DOCS`](LICENSE-DOCS) y https://creativecommons.org/licenses/by/4.0/.
+
+Atribución sugerida: «Lázaro López Paz, El Prat de Llobregat, Barcelona, España — matriz_el_prat (CC BY 4.0)».
