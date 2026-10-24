@@ -8,6 +8,8 @@ Cada ciclo: reencola tareas atascadas, siembra las revisiones estándar que toca
 Deja un latido en la cola para que GET /supervisor/status sepa si está vivo.
 """
 import argparse
+import fcntl
+import importlib
 import logging
 import os
 import signal
@@ -20,6 +22,38 @@ if str(APP) not in sys.path:
     sys.path.insert(0, str(APP))
 
 from supervisor import Supervisor  # noqa: E402
+
+# Módulos que se recargan en cada ciclo (orden de dependencias) para no usar nunca
+# projects.json ni código de comprobaciones obsoletos.
+RELOAD_ORDER = ["projects.manifest", "projects.knowledge", "projects",
+                "supervisor.checks", "supervisor.supervisor", "supervisor"]
+
+
+def reload_config():
+    """Vacía la caché del manifiesto y recarga el código de comprobaciones.
+    Devuelve la clase Supervisor recién cargada."""
+    for name in RELOAD_ORDER:
+        mod = sys.modules.get(name)
+        if mod is not None:
+            importlib.reload(mod)
+    import supervisor as _s
+    return _s.Supervisor
+
+
+def acquire_lock(pid_file):
+    """Bloqueo exclusivo (flock) sobre pid_file y escribe el PID real de Python.
+    Devuelve el descriptor abierto, o None si ya hay otra instancia activa."""
+    Path(pid_file).parent.mkdir(parents=True, exist_ok=True)
+    fd = os.open(str(pid_file), os.O_RDWR | os.O_CREAT, 0o644)
+    try:
+        fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except OSError:
+        os.close(fd)
+        return None
+    os.ftruncate(fd, 0)
+    os.write(fd, f"{os.getpid()}\n".encode())
+    os.fsync(fd)
+    return fd
 
 log = logging.getLogger("autopilot")
 _stop = False
@@ -40,10 +74,16 @@ def main(argv=None):
     ap.add_argument("--max-workers", type=int, default=None)
     ap.add_argument("--workers-per-project", type=int, default=None)
     ap.add_argument("--stop-file", default=os.getenv("AGS_AUTOPILOT_STOP", str(APP.parent / "data" / "STOP")))
+    ap.add_argument("--pid-file", default=os.getenv("AGS_AUTOPILOT_PIDFILE", str(APP.parent / "data" / "autopilot.pid")))
+    ap.add_argument("--no-reload", action="store_true", help="no recargar config/código cada ciclo")
     a = ap.parse_args(argv)
     logging.basicConfig(level=os.getenv("LOG_LEVEL", "INFO"), format="%(asctime)s %(levelname)s %(name)s: %(message)s")
     signal.signal(signal.SIGTERM, _handle)
     signal.signal(signal.SIGINT, _handle)
+    lock_fd = acquire_lock(a.pid_file)
+    if lock_fd is None:
+        log.error("ya hay otro autopilot activo (bloqueo %s): salgo", a.pid_file)
+        return 2
     sup = Supervisor(max_workers=a.max_workers, workers_per_project=a.workers_per_project)
     log.info("autopilot iniciado: %d proyectos, max_workers=%d, sub-agentes/proyecto=%d, intervalo=%ss, reseed=%ss",
              len(sup.projects()), sup.max_workers, sup.workers_per_project, a.interval, a.reseed)
@@ -56,6 +96,9 @@ def main(argv=None):
             break
         n += 1
         try:
+            if not a.no_reload:
+                Sup = reload_config()
+                sup = Sup(max_workers=a.max_workers, workers_per_project=a.workers_per_project)
             stale = sup.queue.requeue_stale()
             seeded = sup.seed(a.reseed)
             try:  # sub-agentes locales (CPU, intervalos propios, estado en data/subagentes/)
@@ -84,6 +127,7 @@ def main(argv=None):
     hb.update({"ts": time.time(), "stopped": True, "pid": os.getpid()})
     sup.queue.kv_set("autopilot_heartbeat", hb)
     log.info("autopilot detenido tras %d ciclos", n)
+    os.close(lock_fd)
     return 0
 
 

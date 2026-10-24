@@ -11,3 +11,4 @@ reports/
 data/ucs_memory.sqlite3
 data/ucs_chunker_manifest.json
 ucs/.doc_chunker_manifest.json
+data/autopilot.pid
