@@ -4,7 +4,7 @@ import agents  # noqa: F401
 
 def test_matriz_registrados():
     names = [n for n in all_agents() if n.startswith("matriz_")]
-    assert len(names) == 20
+    assert len(names) == 21
     a = all_agents()["matriz_sub_1_3_gestor_rom_secretaria"]
     assert "ciudadanía" in a.system_prompt
 

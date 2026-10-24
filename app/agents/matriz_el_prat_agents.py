@@ -64,3 +64,42 @@ def run_due(state: dict, now=None) -> bool:
     STATUS.parent.mkdir(parents=True, exist_ok=True)
     STATUS.write_text(json.dumps(res, ensure_ascii=False, indent=1, default=str), encoding="utf-8")
     return True
+
+
+# --- Ciclo semanal de control económico (repo matriz-el-prat: scripts/actualizar_todo.py). Solo local; nunca hace push ni envía nada.
+REPO = Path(os.getenv("MATRIZ_REPO", "/workspace/gh/repos/matriz-el-prat"))
+WEEKLY = float(os.getenv("MATRIZ_WEEKLY_INTERVAL", 7 * 86400))
+WEEKLY_STATUS = ROOT / "data" / "subagentes" / "matriz_actualizar_todo.json"
+
+
+def actualizar_todo(timeout=1800) -> dict:
+    import subprocess, sys
+    script = REPO / "scripts" / "actualizar_todo.py"
+    if not script.exists():
+        return {"estado": "sin_repo", "repo": str(REPO)}
+    py = os.getenv("MATRIZ_PYTHON", sys.executable)
+    p = subprocess.run([py, str(script)], cwd=REPO, capture_output=True, text=True, timeout=timeout)
+    return {"estado": "ok" if p.returncode == 0 else "error", "rc": p.returncode, "salida": p.stdout[-6000:], "error": p.stderr[-2000:]}
+
+
+class MatrizActualizarTodo(MatrizAgent):
+    name = "matriz_actualizar_todo"
+    clave = "actualizar_todo"
+    description = "Ciclo semanal: fuentes oficiales, tests, diff, anomalías e iniciativas BORRADOR (El Prat)"
+
+    def execute(self):
+        return actualizar_todo()
+
+
+register(MatrizActualizarTodo)
+
+
+def run_weekly_due(state: dict, now=None) -> bool:
+    now = now or time.time()
+    if now - state.get("matriz_weekly_last", 0) < WEEKLY:
+        return False
+    state["matriz_weekly_last"] = now
+    res = actualizar_todo()
+    WEEKLY_STATUS.parent.mkdir(parents=True, exist_ok=True)
+    WEEKLY_STATUS.write_text(json.dumps({"ts": now, **res}, ensure_ascii=False, indent=1), encoding="utf-8")
+    return True

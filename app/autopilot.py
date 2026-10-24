@@ -112,6 +112,8 @@ def main(argv=None):
                 import agents.matriz_el_prat_agents as _mx
                 if _mx.run_due(_sub_state):
                     log.info("matriz_el_prat: ciclo de ingesta completado")
+                if _mx.run_weekly_due(_sub_state):
+                    log.info("matriz_el_prat: actualizar_todo semanal completado")
             except Exception:
                 log.exception("fallo en matriz_el_prat")
             stats = sup.run_cycle(max_tasks=10_000)
