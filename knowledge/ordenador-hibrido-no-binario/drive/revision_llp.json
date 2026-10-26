@@ -151,7 +151,7 @@
      "estado": "sobredeclaración: no hay validación"
     },
     {
-     "texto": "CMOS 9.8 W/mm² vs híbrido 0.2 W/mm²",
+     "texto": "CMOS 9.8 W/mm² vs híbrido 0.2 W/mm²", "conflicto_cmos_2026_10_26": "Probable error OCR: la otra OCR del mismo PDF (Hybrid Non-Binary Blueprint.pdf.ocr.md:160) y el código thermal_model.py (odeint args=(0.8,...), Ultra-Low Power Hybrid Architectures) dan 0.8 W/mm². Valor de trabajo 0.8 W/mm² (E2 simulación); PDF original PENDIENTE DE VERIFICACIÓN visual",
      "nivel": "E2",
      "estado": "PENDIENTE DE VERIFICACIÓN"
     },
