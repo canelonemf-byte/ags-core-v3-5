@@ -13,7 +13,8 @@
   },
   "nota": "E5–E6 sin entradas: no hay experimentos propios",
   "nota_originalidad": "originalidad: estado_del_arte|adaptacion|propuesta_propia; tipo: teorico|simulacion|documental",
-  "nota_ciclo_2026_10_22": "Novedades desde el ciclo 2026-10-21 09:39: Manual (docs/ y drive/) anotado a las 13:58 con niveles E y PENDIENTE (kT/C E1; CMOS 0,8 vs 9,8 W/mm²) → ev_27; docs/algoritmos_hibridos.md marca R9 PENDIENTE (coherente con ev_22). Repo Atlas0 sin cambios (último push 2026-10-08 10:49 UTC+2). Sin nuevas simulaciones ni experimentos; E5–E6 siguen vacíos."
+  "nota_ciclo_2026_10_22": "Novedades desde el ciclo 2026-10-21 09:39: Manual (docs/ y drive/) anotado a las 13:58 con niveles E y PENDIENTE (kT/C E1; CMOS 0,8 vs 9,8 W/mm²) → ev_27; docs/algoritmos_hibridos.md marca R9 PENDIENTE (coherente con ev_22). Repo Atlas0 sin cambios (último push 2026-10-08 10:49 UTC+2). Sin nuevas simulaciones ni experimentos; E5–E6 siguen vacíos.",
+  "nota_ciclo_2026_10_27": "Novedad desde ciclo 2026-10-26 09:31: solo commit e60e2c1 (revision_llp.json, nota conflicto CMOS) → anotada en ev_27 sin cambiar nivel. Repo GitHub Atlas0 sin cambios (último push 2026-10-23 22:41 UTC). Sin experimentos: E5–E6 vacíos"
  },
  "registro": [
   {
@@ -286,7 +287,8 @@
    "fuente": "docs/Manual_de_Fabricacion... línea 304 (anotación del 2026-10-21 13:58)",
    "estado": "PENDIENTE DE VERIFICACIÓN",
    "originalidad": "propuesta_propia",
-   "justificacion_originalidad": "supuesto propio del Manual sin fuente"
+   "justificacion_originalidad": "supuesto propio del Manual sin fuente",
+   "nota_2026_10_27": "drive/revision_llp.json (commit e60e2c1, 2026-10-26 20:18) atribuye 9,8 W/mm² a probable error OCR: la otra OCR del Blueprint (.pdf.ocr.md:160) y thermal_model.py (odeint args=(0.8,...)) dan 0,8 W/mm². Valor de trabajo 0,8 W/mm² = E2 simulación no reproducida; cifra en sí sigue sin referencia (E0); PDF original PENDIENTE DE VERIFICACIÓN visual"
   }
  ]
 }
