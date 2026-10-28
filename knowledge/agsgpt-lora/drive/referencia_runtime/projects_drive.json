@@ -1,0 +1,101 @@
+{
+  "projects": [
+    {
+      "id": "canelone",
+      "name": "canelone",
+      "domain": "ordenador hibrido NISQ / CAM-VQE",
+      "status": "activo",
+      "version": "1.9.0",
+      "summary": "Canelone.mf: circuitos, readout, ZNE probabilistico y CAM-VQE. Simulacion, no hardware.",
+      "keywords": ["canelone", "cam-vqe", "cam vqe", "zne", "qiskit", "circuito", "qubit", "ising", "readout", "ordenador", "hibrido"]
+    },
+    {
+      "id": "zero_a",
+      "name": "zero_a",
+      "domain": "amoniaco verde / combustible sintético / CERO-A",
+      "status": "activo",
+      "summary": "Producción de amoniaco verde como vector energético. CERO-A descarbonización.",
+      "keywords": ["amoniaco", "nh3", "combustible", "sintetico", "haber", "bosch", "electrolisis", "t/dia", "tdia", "coste", "inversion", "cero-a", "cero a"]
+    },
+    {
+      "id": "neuroglyq",
+      "name": "neuroglyq",
+      "domain": "neuromodulación de precisión",
+      "status": "activo",
+      "summary": "Neuromodulación de precisión: estimulación dirigida.",
+      "keywords": ["neuromodulacion", "tdcs", "tacs", "estimulacion", "cerebro", "eeg", "electrodo", "protocolo", "dosis", "ma/cm2"]
+    },
+    {
+      "id": "d3he_tokamak",
+      "name": "d3he_tokamak",
+      "domain": "fusión D-He3 esférica",
+      "status": "activo",
+      "summary": "Reactor de fusión esférico deuterio-helio-3.",
+      "keywords": ["fusion", "tokamak", "deuterio", "helio-3", "he3", "plasma", "confinamiento", "kev", "densidad", "ignicion", "tau", "lawson"]
+    },
+    {
+      "id": "mei_rit",
+      "name": "mei_rit",
+      "domain": "propulsor de plasma de yodo",
+      "status": "activo",
+      "summary": "Propulsor de plasma de yodo (MEI-RIT).",
+      "keywords": ["propulsor", "yodo", "propulsion", "corrosion", "ion", "empuje", "thrust", "impulso", "consumo"]
+    },
+    {
+      "id": "q_matrix",
+      "name": "q_matrix",
+      "domain": "ODMR / sensores cuánticos",
+      "status": "activo",
+      "summary": "Matriz de sensores cuánticos ODMR.",
+      "keywords": ["odmr", "nv", "diamante", "cuantico", "sensor", "espines", "zeeman", "split", "ghz", "magnetico", "contraste", "fotones", "sensibilidad"]
+    },
+    {
+      "id": "iqm_he3",
+      "name": "iqm_he3",
+      "domain": "patente OEPM (completado)",
+      "status": "completado",
+      "summary": "Patente registrada ante OEPM. Sin herramienta de cálculo nueva.",
+      "keywords": ["patente", "oepm", "iqm", "registro"]
+    },
+    {
+      "id": "ecosistema",
+      "name": "ecosistema",
+      "domain": "co-simulación integrada",
+      "status": "sistema",
+      "summary": "Balance de energía y materiales. El He-3 no se inventa sin fracción D-D.",
+      "keywords": ["ecosistema", "co-simulacion", "integrado", "sinergia", "balance del ecosistema"]
+    },
+    {
+      "id": "omniscience",
+      "name": "omniscience",
+      "domain": "descubrimiento científico asistido por IA / Universal Matter + Phonon",
+      "status": "activo",
+      "summary": "Núcleo científico: prioridad Universal Matter + Vibrational/Phonon Engine. Luego Quantum Dynamics, Sensing, Metamaterials, Energy, Biology.",
+      "keywords": ["omniscience", "materia universal", "fonon", "phonon", "descubrimiento", "ia cientifica"]
+    },
+    {
+      "id": "oraculo_meso",
+      "name": "oraculo_meso",
+      "domain": "predicción probabilística mesoscópica / ORÁCULO",
+      "status": "activo",
+      "summary": "Motor experimental de predicción probabilística. Incertidumbre, supuestos y límites siempre. No determinista.",
+      "keywords": ["oraculo", "mesoscopico", "prediccion", "probabilistica", "incertidumbre", "e0", "e6"]
+    },
+    {
+      "id": "remplast_q",
+      "name": "remplast_q",
+      "domain": "detección y tratamiento de microplásticos / REMPLAST-Q",
+      "status": "activo",
+      "summary": "Detección y tratamiento de microplásticos.",
+      "keywords": ["microplasticos", "remplast", "deteccion", "tratamiento", "plastico"]
+    },
+    {
+      "id": "fusion_ia",
+      "name": "fusion_ia",
+      "domain": "integración de proyectos entre IAs / FUSIÓN IA",
+      "status": "activo",
+      "summary": "Integración de proyectos entre diferentes inteligencias artificiales vía Gateway LLP.",
+      "keywords": ["fusion ia", "integracion", "gateway", "interoperabilidad", "handoff"]
+    }
+  ]
+}

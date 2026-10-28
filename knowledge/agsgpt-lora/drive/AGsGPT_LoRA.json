@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "id": "agsgpt-lora",
+    "nombre": "AGsGPT + LoRA / AGs-Core v3.0 integrado",
+    "estado": "activo-integracion",
+    "fecha": "2026-10-27",
+    "responsable": "Lazaro Lopez Paz",
+    "tags": ["agsgpt", "lora", "agentes", "orquestador", "llp", "local-ai", "fusión-ia"],
+    "version": "3.0-integrado",
+    "evidencia": "E1",
+    "fuente": "Descripción propia AGs-Core v3.0 (YouTube Lázaro lp_ El Prat de Llobregat, 2026-10-02); arquitectura LoRA pública (Hu et al. 2021)"
+  },
+  "objetivo": "Integrar y escalar AGsGPT (red neuronal generativa local ~10M params) con adaptadores LoRA, RAG, REST API y catálogo expandido de agentes/sub-agentes especializados en proyectos LLP (OMNISCIENCE, ORÁCULO MESOSCÓPICO, REMPLAST-Q, CERO-A, ORDENADOR HÍBRIDO, FUSIÓN IA, MEI-RIT y afines). Automatización jerárquica supervisada para ejecución continua de simulación, verificación, falsación y refinamiento hasta realizabilidad.",
+  "arquitectura": {
+    "nucleo": "AGsGPT causal self-attention + custom char tokenizer, base frozen",
+    "lora": {
+      "rank": 8,
+      "trainable_params_aprox": 196000,
+      "fraccion": 0.039,
+      "tamaño_adapter_MB": "<1",
+      "formula": "y = W_0 x + (B A x) * (alpha / r)"
+    },
+    "orquestador_maestro": "Routing por keywords + multi-step planner (decompose → route → verify/retry) + fallback a AGsGPT auto-learn desde SQLite",
+    "rag": "Recuperación semántica local",
+    "api": "REST HTTP (FastAPI/Uvicorn) con X-API-Token, endpoints /api/v1/query, /status",
+    "memoria": "SQLite local para autoaprendizaje supervisado cada n turns",
+    "seguridad": "Cortacircuitos permanentes activos; no futuro determinista; modelo ≠ realidad; simulación ≠ experimento"
+  },
+  "agentes_especializados": {
+    "base_existentes": ["cero-a_ammonia", "d3he_fusion", "qmatrix_odmr", "planner_multistep", "fallback_agsgpt"],
+    "integrados_llp": [
+      "omniscience_universal_matter_phonon",
+      "oraculo_mesoscopico_probabilistico",
+      "remplast_q_microplasticos",
+      "ordenador_hibrido_clasico_cuantico",
+      "fusion_ia_gateway",
+      "mei_rit_propulsion_iodine",
+      "metamateriales_nano",
+      "quantum_dynamics_sensing",
+      "biology_chemistry_domain"
+    ],
+    "jerarquia": {
+      "supervisores": "Meta-agentes de orquestación, evidencia E0-E6, riesgos/falsación, copyright/plagio check",
+      "especializados": "Uno por dominio/proyecto LLP",
+      "sub_agentes": "Herramientas físicas, ecuaciones, diagramas, simulación, verificación",
+      "escala_objetivo": "Jerárquica expansible (no literal 50000 concurrentes; enjambre modular con límites de profundidad y presupuesto)"
+    },
+    "automatizacion": "Bucles cerrados: problema → hipótesis → predicción → simulación → falsación → réplica → evidencia. Continuos bajo supervisión hasta criterios de parada (E6, recursos, o flag usuario). Notificación de problemas."
+  },
+  "integracion_chats": "Fusión de contextos disponibles (MEI-RIT, skills agentes-ciencia/enjambre/llp/oraculo) en este nodo único. No duplicar documentos existentes.",
+  "copyright_plagio": {
+    "estado": "PENDIENTE DE VERIFICACIÓN",
+    "notas": "Arquitectura propia del autor. LoRA y GPT son técnicas públicas estándar. No se copia código propietario. Revisar implementaciones concretas antes de distribución."
+  },
+  "evidencia_niveles": {
+    "AGs-Core_base": "E1 (descripción + simulaciones reportadas en vídeo)",
+    "expansion_agentes": "E0-E1 (hipótesis de integración)",
+    "lora_funcional": "E2 (predicción basada en fórmula estándar)",
+    "automatizacion_50k": "E0 (idea; límites computacionales reales aplican)"
+  },
+  "riesgos": [
+    "Escalabilidad: 50k agentes concurrentes no es viable en hardware local típico; usar jerarquía + pooling",
+    "Alucinaciones en agentes no verificados",
+    "Dependencia de datos locales SQLite incompletos",
+    "Conflicto entre proyectos físicos (balance material/energía en co-simulación)",
+    "Copyright si se integran fuentes externas sin atribución"
+  ],
+  "proximo_paso": "Implementar esqueleto Python del orquestador jerárquico + catálogo de agentes LLP como tools; simular bucle cerrado en 2-3 dominios (CERO-A + MEI-RIT + ORÁCULO); verificar fuentes y evidencias."
+}

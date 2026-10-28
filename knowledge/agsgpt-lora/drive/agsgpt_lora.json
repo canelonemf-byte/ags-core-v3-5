@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "id": "agsgpt_lora",
+    "nombre": "AGsGPT + LoRA (AGs-Core v3.0)",
+    "estado": "activo integrado",
+    "fecha": "2026-10-27",
+    "responsable": "Lazaro Lopez Paz",
+    "tags": ["agsgpt", "lora", "flota", "canelone", "agentes", "subagentes"]
+  },
+  "objetivo": "Integrar AGsGPT con adaptadores LoRA propios y flota de SubAgentes especializados por proyecto del ecosistema LLP. Herramientas numéricas propias, sin pesos ajenos. Automatización supervisada finita.",
+  "datos_clave": {
+    "semilla": 20260416,
+    "arquitectura": "d128 h4 n_layers4 ctx128 lora_rank8",
+    "escala": "alpha/r",
+    "flota": "SubAgentes por dominio (canelone, zero_a/CERO-A, fusion, ODMR, omniscience, oraculo, remplast, etc.) + herramientas físicas",
+    "num_proyectos": 12,
+    "correo": "la consola no envia correo",
+    "citas": ["Vaswani 2017", "Hu ICLR 2022"],
+    "evidencia_modelo": "E1 (generación de texto propia, no medida física)",
+    "evidencia_herramientas": "E2-E3 (cálculos con supuestos explícitos, simulaciones)"
+  },
+  "tareas": [
+    {
+      "id": "t1",
+      "tarea": "Entrenar solo A y B en el navegador",
+      "estado": "hecho",
+      "prioridad": "alta",
+      "responsable": "Grok",
+      "fecha": "2026-10-06"
+    },
+    {
+      "id": "t2",
+      "tarea": "Barrido de mas de 5000 casos y parada al cerrar",
+      "estado": "hecho",
+      "prioridad": "alta",
+      "responsable": "Grok",
+      "fecha": "2026-10-06"
+    },
+    {
+      "id": "t3",
+      "tarea": "Integrar proyectos ecosistema LLP (OMNISCIENCE, ORÁCULO, REMPLAST-Q, FUSIÓN IA) como SubAgentes",
+      "estado": "hecho",
+      "prioridad": "alta",
+      "responsable": "Grok",
+      "fecha": "2026-10-27"
+    },
+    {
+      "id": "t4",
+      "tarea": "Automatización supervisada finita con log (no bucle infinito)",
+      "estado": "en marcha",
+      "prioridad": "media",
+      "responsable": "Grok",
+      "fecha": "2026-10-27"
+    }
+  ],
+  "riesgos": [
+    "Un enjambre de modelos de lenguaje inventaria fisica",
+    "Pesos de terceros serian material ajeno",
+    "La consola no puede avisar por correo",
+    "50.000 SubAgentes no es viable en este entorno; se usa especialización jerárquica por dominio + herramientas",
+    "Proyectos de investigación abiertos no se 'terminan' en una sesión"
+  ],
+  "decisiones": [
+    "Base aleatoria de semilla propia, congelada",
+    "La muestra de texto no es una medida",
+    "La flota se detiene; no hay bucle infinito",
+    "Código original propio (GPT from scratch + LoRA), conceptos citados, sin copia de código de terceros",
+    "Herramientas marcan supuestos; no se inventan <σv>, umbrales no medidos, etc."
+  ],
+  "proximo_paso": "Ejecutar auto_runner.py para ciclos supervisados. Instalar torch si se desea generación AGsGPT. Verificar resultados con E0-E6. Ampliar herramientas específicas para omniscience/oraculo/remplast sin inventar datos."
+}

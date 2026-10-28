@@ -1,0 +1,111 @@
+{
+  "kind": "review_claims",
+  "project": "agsgpt-lora",
+  "source": "drive_imports/2026-10-27",
+  "generated": "2026-10-28T13:40+01:00",
+  "score": {
+    "high": 0,
+    "medium": 2,
+    "low": 10,
+    "info": 0
+  },
+  "findings": [
+    {
+      "kind": "hype",
+      "severity": "medium",
+      "file": "drive/agsgpt_lora.json",
+      "line": 49,
+      "message": "superlativo / afirmación absoluta ('infinit')",
+      "quote": "\"tarea\": \"Automatización supervisada finita con log (no bucle infinito)\","
+    },
+    {
+      "kind": "hype",
+      "severity": "medium",
+      "file": "drive/agsgpt_lora.json",
+      "line": 66,
+      "message": "superlativo / afirmación absoluta ('infinit')",
+      "quote": "\"La flota se detiene; no hay bucle infinito\","
+    },
+    {
+      "kind": "number",
+      "severity": "low",
+      "file": "drive/AGsGPT_LoRA.json",
+      "line": 62,
+      "message": "cifra cuantitativa sin fuente ni cálculo enlazado",
+      "quote": "\"Escalabilidad: 50k agentes concurrentes no es viable en hardware local típico; usar jerarquía + pooling\","
+    },
+    {
+      "kind": "number",
+      "severity": "low",
+      "file": "drive/AGsGPT_LoRA.md",
+      "line": 12,
+      "message": "cifra cuantitativa sin fuente ni cálculo enlazado",
+      "quote": "- Núcleo AGsGPT (~10M params, base frozen) + LoRA (rank 8, ~196k trainable, ~3.9 %) + RAG + REST + planner multi-step + auto-learn SQLite."
+    },
+    {
+      "kind": "number",
+      "severity": "low",
+      "file": "drive/auto_log.jsonl",
+      "line": 3,
+      "message": "cifra cuantitativa sin fuente ni cálculo enlazado",
+      "quote": "{\"ciclo\": 1, \"tarea\": \"produccion amoniaco 10 MW\", \"salida\": \"[produccion_amoniaco]\\n  [produccion_amoniaco] potencia 10 MW\\n  kg_NH3/h 1050.0\\n  CO2_evitado_kg/h 1680.0 (1,6 kg CO2/kg NH3 de gas, supuesto)\\n  kWh/kg 9.52 (50 kWh/kg H2 · 3/"
+    },
+    {
+      "kind": "number",
+      "severity": "low",
+      "file": "drive/auto_log.jsonl",
+      "line": 4,
+      "message": "cifra cuantitativa sin fuente ni cálculo enlazado",
+      "quote": "{\"ciclo\": 2, \"tarea\": \"balance fusion densidad 1e20 m-3 <σv> 1e-22\", \"salida\": \"[balance_fusion]\\n  [balance_fusion] reaccion D + He3 → α (3,6 MeV) + p (14,7 MeV)\\n  MeV 18.3\\n  J/reaccion 2.931983e-12\\n  potencia no calculada: faltan densi"
+    },
+    {
+      "kind": "number",
+      "severity": "low",
+      "file": "drive/auto_log.jsonl",
+      "line": 5,
+      "message": "cifra cuantitativa sin fuente ni cálculo enlazado",
+      "quote": "{\"ciclo\": 3, \"tarea\": \"zeeman ODMR 10 µT\", \"salida\": \"[zeeman_odmr]\\n  [zeeman_odmr] D 2.87 GHz\\n  f+ 2.870280 GHz\\n  f- 2.869720 GHz\\n  split 0.560 MHz (γ = 28,025 GHz/T)\", \"ok\": true}"
+    },
+    {
+      "kind": "number",
+      "severity": "low",
+      "file": "drive/auto_log.jsonl",
+      "line": 9,
+      "message": "cifra cuantitativa sin fuente ni cálculo enlazado",
+      "quote": "{\"ciclo\": 7, \"tarea\": \"produccion amoniaco 10 MW\", \"salida\": \"[produccion_amoniaco]\\n  [produccion_amoniaco] potencia 10 MW\\n  kg_NH3/h 1050.0\\n  CO2_evitado_kg/h 1680.0 (1,6 kg CO2/kg NH3 de gas, supuesto)\\n  kWh/kg 9.52 (50 kWh/kg H2 · 3/"
+    },
+    {
+      "kind": "number",
+      "severity": "low",
+      "file": "drive/auto_log.jsonl",
+      "line": 10,
+      "message": "cifra cuantitativa sin fuente ni cálculo enlazado",
+      "quote": "{\"ciclo\": 8, \"tarea\": \"balance fusion densidad 1e20 m-3 <σv> 1e-22\", \"salida\": \"[balance_fusion]\\n  [balance_fusion] reaccion D + He3 → α (3,6 MeV) + p (14,7 MeV)\\n  MeV 18.3\\n  J/reaccion 2.931983e-12\\n  potencia no calculada: faltan densi"
+    },
+    {
+      "kind": "number",
+      "severity": "low",
+      "file": "drive/auto_log.jsonl",
+      "line": 11,
+      "message": "cifra cuantitativa sin fuente ni cálculo enlazado",
+      "quote": "{\"ciclo\": 9, \"tarea\": \"zeeman ODMR 10 µT\", \"salida\": \"[zeeman_odmr]\\n  [zeeman_odmr] D 2.87 GHz\\n  f+ 2.870280 GHz\\n  f- 2.869720 GHz\\n  split 0.560 MHz (γ = 28,025 GHz/T)\", \"ok\": true}"
+    },
+    {
+      "kind": "number",
+      "severity": "low",
+      "file": "drive/auto_log.jsonl",
+      "line": 15,
+      "message": "cifra cuantitativa sin fuente ni cálculo enlazado",
+      "quote": "{\"ciclo\": 13, \"tarea\": \"produccion amoniaco 10 MW\", \"salida\": \"[produccion_amoniaco]\\n  [produccion_amoniaco] potencia 10 MW\\n  kg_NH3/h 1050.0\\n  CO2_evitado_kg/h 1680.0 (1,6 kg CO2/kg NH3 de gas, supuesto)\\n  kWh/kg 9.52 (50 kWh/kg H2 · 3"
+    },
+    {
+      "kind": "number",
+      "severity": "low",
+      "file": "drive/auto_log.jsonl",
+      "line": 16,
+      "message": "cifra cuantitativa sin fuente ni cálculo enlazado",
+      "quote": "{\"ciclo\": 14, \"tarea\": \"balance fusion densidad 1e20 m-3 <σv> 1e-22\", \"salida\": \"[balance_fusion]\\n  [balance_fusion] reaccion D + He3 → α (3,6 MeV) + p (14,7 MeV)\\n  MeV 18.3\\n  J/reaccion 2.931983e-12\\n  potencia no calculada: faltan dens"
+    }
+  ],
+  "note": "PENDIENTE DE VERIFICACIÓN. No inventar. No es veredicto."
+}
