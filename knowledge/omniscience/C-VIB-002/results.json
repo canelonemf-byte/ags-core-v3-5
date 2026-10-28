@@ -1,0 +1,117 @@
+{
+ "n_ms": 15,
+ "n_mace": 15,
+ "C1_excluidos_ms": [],
+ "C1_excluidos_mace": [],
+ "ratio_ms": {
+  "BN": 0.771,
+  "BP": 0.968,
+  "AlP": 1.02,
+  "AlAs": 1.006,
+  "AlSb": 0.616,
+  "GaP": 0.86,
+  "GaAs": 0.643,
+  "GaSb": 0.426,
+  "InP": 0.568,
+  "InAs": 1.008,
+  "InSb": 0.481,
+  "ZnS": 2.024,
+  "ZnSe": 1.057,
+  "ZnTe": 0.717,
+  "CdTe": 0.61
+ },
+ "ratio_mace": {
+  "BN": 0.42,
+  "BP": 0.578,
+  "AlP": 0.309,
+  "AlAs": 1.044,
+  "AlSb": 0.755,
+  "GaP": 1.256,
+  "GaAs": 0.525,
+  "GaSb": 0.487,
+  "InP": 0.951,
+  "InAs": 0.506,
+  "InSb": 0.351,
+  "ZnS": 1.356,
+  "ZnSe": 0.857,
+  "ZnTe": 1.579,
+  "CdTe": 0.522
+ },
+ "kappa_ms": {
+  "BN": 585.89,
+  "BP": 338.85,
+  "AlP": 91.79,
+  "AlAs": 98.62,
+  "AlSb": 34.5,
+  "GaP": 86.01,
+  "GaAs": 28.96,
+  "GaSb": 17.04,
+  "InP": 52.86,
+  "InAs": 30.23,
+  "InSb": 9.61,
+  "ZnS": 54.63,
+  "ZnSe": 20.08,
+  "ZnTe": 12.9,
+  "CdTe": 4.57
+ },
+ "kappa_mace": {
+  "BN": 319.14,
+  "BP": 202.17,
+  "AlP": 27.8,
+  "AlAs": 102.35,
+  "AlSb": 42.3,
+  "GaP": 125.57,
+  "GaAs": 23.6,
+  "GaSb": 19.46,
+  "InP": 88.42,
+  "InAs": 15.18,
+  "InSb": 7.03,
+  "ZnS": 36.62,
+  "ZnSe": 16.28,
+  "ZnTe": 28.42,
+  "CdTe": 3.92
+ },
+ "hipotesis": {
+  "H1": {
+   "valor": "12/15",
+   "pasa": true
+  },
+  "H2": {
+   "valor": 0.149,
+   "pasa": true
+  },
+  "H3": {
+   "valor": 0.889,
+   "pasa": true
+  },
+  "H4": {
+   "valor": [
+    0.149,
+    0.227
+   ],
+   "pasa": true
+  },
+  "H5": {
+   "valor": 0.578,
+   "pasa": true
+  },
+  "H6": {
+   "valor": 0.131,
+   "pasa": true
+  },
+  "H_REP": {
+   "valor": 0.0,
+   "pasa": true
+  },
+  "C1": {
+   "valor": [],
+   "pasa": true
+  },
+  "C2": {
+   "valor": 0.0415819042485549,
+   "pasa": true
+  },
+  "MACE_dentro_factor2": "11/15"
+ },
+ "nivel": "E3"
+}

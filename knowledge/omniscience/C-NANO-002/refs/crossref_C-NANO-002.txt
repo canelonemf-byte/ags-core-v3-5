@@ -1,0 +1,15 @@
+10.1103/PhysRevB.71.205214 | First-principles determination of the structural, vibrational and thermodynamic properties | Physical Review B | 71 205214 | 2005 | Mounet, Marzari
+10.1103/PhysRevB.84.155413 | Phonons in single-layer and few-layer MoS
+                    <mml:math xmlns:mml="http:// | Physical Review B | 84 155413 | 2011 | Molina-Sánchez, Wirtz
+10.1021/nn1003937 | Anomalous Lattice Vibrations of Single- and Few-Layer MoS
+                    <sub>2</sub> | ACS Nano | 4 2695-2700 | 2010 | Lee, Yan, Brus
+10.1103/PhysRevLett.97.187401 | Raman Spectrum of Graphene and Graphene Layers | Physical Review Letters | 97 187401 | 2006 | Ferrari, Meyer, Scardaci
+10.1002/smll.201001628 | Hunting for Monolayer Boron Nitride: Optical and Raman Signatures | Small | 7 465-468 | 2011 | Gorbachev, Riaz, Nair
+10.1103/PhysRevB.96.205422 | Length-dependent lattice thermal conductivity of single-layer and multilayer hexagonal bor | Physical Review B | 96 205422 | 2017 | D'Souza, Mukherjee
+10.1103/PhysRevB.99.144309 | Phonon dispersion in
+                    <mml:math xmlns:mml="http://www.w3.org/1998/Math/ | Physical Review B | 99 144309 | 2019 | Tornatzky, Gillen, Uchiyama
+10.1063/1.3382344 | A consistent and accurate
+                    <i>ab initio</i>
+                    paramet | The Journal of Chemical Physic | 132 154104 | 2010 | Grimme, Antony, Ehrlich
+10.1002/jcc.21759 | Effect of the damping function in dispersion corrected density functional theory | Journal of Computational Chemi | 32 1456-1465 | 2011 | Grimme, Ehrlich, Goerigk
+10.1038/s41524-025-01650-1 | Universal machine learning interatomic potentials are ready for phonons | npj Computational Materials | 11 178 | 2025 | Loew, Sun, Wang

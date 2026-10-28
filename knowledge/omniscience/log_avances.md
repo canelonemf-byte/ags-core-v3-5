@@ -219,3 +219,50 @@
 - 2026-10-21 13:03 CEST C-NANO-001: 10 metales×3 facetas + 6 losas TiO2; H1,H4,H7 PASAN; H2,H5,H6 FALLAN; réplica y control GPAW PASAN; E3
 
 - 2026-10-21 13:15 CEST C-UMF-006: parte B: ΔU_vib(A−R) +1.7 (MatterSim) / +2.3 (MACE) meV/át, HB1/HB2/H_REP(i) PASAN; parte A en curso; E1 provisional
+
+- 2026-10-22 09:50 CEST C-NANO-002 (NANO-04, NANO-05): prerregistro congelado 09:15 (sha256 3f4ceeaa…dc46). MatterSim: Γ ópticos 7/8 dentro de ±5 % (H1 PASA), grafeno M/K 3/9 fuera (H2 FALLA: M ZA −13.5 %), Raman 3/3 (H3 PASA), n_ZA 2.04/2.07/1.82 (H4 PASA); ΔS mono−masivo(MS+D3) 0.092/0.096/0.117 k_B/át (H5 PASA), efecto D3 0.079/0.092/0.107 (H6 FALLA). GPAW Γ grafeno PASA (±0.4 %), JANAF grafito/h-BN +1.9/+3.1 % PASA, MACE ~25 % blando. H_REP FALLA solo por |Δn_ZA| 0.104 > 0.10 → NANO-04 E1 (=), NANO-05 E0→E1. Incidente: un humo previo causó OOM que cortó la etapa PBE0TC rutilo de run_a.sh (ver C-NANO-002/desviaciones.md). Pares LoRA +6. Próximo: C-NANO-003 (regla rotacional/ajuste ZA robusto)
+
+## 2026-10-22 23:40 (UTC+2) C-UMF-006 cerrada
+PBE0-TC no terminó (tope 5 h / señal 9). HA1–HA3 NO EVALUABLES. UM-23 se queda en E1 definitivo. Backup: evidence_register.bak_C-UMF-006final_20261022_2340.csv
+
+## 2026-10-23 01:18 (UTC+2) C-NANO-003 evaluada
+H1 FALLA, H2 PASA, H3 FALLA (M ZA −15.8 %), H4/H5/C3/H_REP PASAN; C1 GPAW no evaluable al cierre. NANO-04 E2, NANO-05 E3, NANO-14..17 añadidas. LoRA +4. Backup *_C-NANO-003_20261023_0118.
+
+## 2026-10-23 20:45 (UTC+2) C-NANO-003 control C1 cerrado
+C1 GPAW WS2 Γ PASA: E' −0.41 %, A1' −0.44 % (343.2/344.6 y 405.2/407.0 cm⁻¹). NANO-04 E2→E3; NANO-14/15/16 E2→E3 (herencia del prerregistro). Preprint y dataset v1.1 en publicacion/ (v1 intacto). Backup *_C1_20261023_2042.
+
+## 2026-10-26 09:15 (UTC+1) C-VIB-002 lanzada
+```yaml
+meta: {campana: C-VIB-002, ciclo: diario, autoria: "Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de inteligencia artificial", orcid: "0000-0001-8601-1963"}
+objetivo: "κL(300 K) RTA con phono3py + MatterSim/MACE-MP-0 frente a κ experimental en 15 blendas (UM-12, VP-05, UM-07)"
+datos_clave: {prereg: "congelado 2026-10-21 09:08 (sin cambios)", desviacion_nueva: "D5: el ordenador fue restaurado el 24-oct; se reinstala ase==3.29.0 como en D4; código con sha256 verificado", primer_resultado: "BN MatterSim 586 W/mK (exp 760), ν_min 2.81 THz, 222 s", lanzamiento: "2026-10-26 09:07 UTC+1, run_all_v2.sh"}
+tareas: ["run1 MatterSim+MACE", "run2 réplica MatterSim", "control malla 25³ GaAs", "evaluar con cvib002_eval.py congelado ~13:30"]
+riesgos: ["RAM libre ~3 GB (proceso agsgpt autopilot en paralelo)", "2×2×2 corta para BN/BP"]
+decisiones: ["Niveles sin cambio hasta evaluar; ningún parámetro se ajusta"]
+originalidad: {grado: parcial, fuentes: ["Póta, Ahlawat, Csányi, Simoncelli, arXiv:2408.00755 / Nat. Commun. 2026, https://www.nature.com/articles/s41467-026-76391-w (benchmark κ de uMLIP, incl. MACE-MP-0, frente a DFT-PBE en 103 sólidos, WTE)", "Togo, Chaput, Tanaka, PRB 91, 094306 (2015), https://doi.org/10.1103/PhysRevB.91.094306 (LDA-RTA y κ exp de blendas)"], nota: "Lo nuevo aquí es MatterSim-v1 frente a κ experimental (no DFT) con prerregistro y réplica byte a byte"}
+proximo_paso: "Evaluar C-VIB-002 hoy ~13:30 y aplicar regla_decision del prereg"
+```
+
+## 2026-10-26 13:40 (UTC+1) C-VIB-002 evaluada
+```yaml
+meta: {campana: C-VIB-002, autoria: "Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de inteligencia artificial", orcid: "0000-0001-8601-1963"}
+objetivo: "κL(300 K) RTA phono3py con MatterSim/MACE-MP-0 frente a κ experimental en 15 blendas"
+datos_clave: {H1: "12/15 PASA", H2: "0.149 PASA", H3: "0.889 PASA", H4: "0.149 vs 0.227 PASA", H5: "0.578 PASA", H6: "0.131 PASA", H_REP: "0.0 PASA", C1: "PASA", C2: "4.16 % PASA", fuera_factor2: [ZnS, GaSb, InSb], nivel: E3}
+tareas: ["UM-12 E0→E3", "UM-07 sigue E1 con nota paso κL E3 (D6)", "VP-05 nota interna", "LoRA +4 (C-VIB-002_01..04)"]
+riesgos: ["RTA y 2×2×2 en BN/BP", "κexp sin incertidumbre"]
+decisiones: ["Evaluador congelado sin cambios", "Nada subido a repositorios"]
+originalidad: {grado: parcial, fuentes: ["arXiv:2408.00755", "https://doi.org/10.1103/PhysRevB.91.094306"]}
+proximo_paso: "Prerregistrar C-VIB-003: LBTE y/o 3×3×3 en BN/BP y benchmark de κ bajo (PbTe, SnSe)"
+```
+
+## 2026-10-28 09:15 (UTC+1) C-VIB-003 cerrada
+```yaml
+meta: {campana: C-VIB-003, ciclo: diario, autoria: "Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de inteligencia artificial", orcid: "0000-0001-8601-1963"}
+objetivo: "Volcar al registro la evaluación congelada de C-VIB-003 (RTA/LBTE blendas, 3×3×3, 17 sales de roca)"
+datos_clave: {UM-25: "nueva E2 (Spearman 0.904, pero 9/17 en factor 2 y κ bajo subestimado, mediana 0.239)", UM-12: "E3 sin cambio (CA PASA; LBTE 13/15 en factor 2; BN 686 y BP 375 W/mK en 3×3×3)", controles_fallidos: ["C1 KI imaginario", "C2 PbTe malla +5.65 %"], A_H1: "FALLA (GaSb)"}
+tareas: ["resultados_C-VIB-003.md", "D2 en desviaciones.md", "LoRA 195→199", "backup *_C-VIB-003close_20261028_0910"]
+riesgos: ["Sin NAC ni 4 fonones", "Solapamiento alto con arXiv:2509.03401 en sales"]
+decisiones: ["Sin recalcular ni tocar el evaluador", "Nada subido a repositorios"]
+originalidad: {grado: parcial, fuentes: ["https://arxiv.org/abs/2509.03401", "https://doi.org/10.1103/PhysRevX.10.041029", "https://doi.org/10.1103/PhysRevB.91.094306"]}
+proximo_paso: "Prerregistrar C-VIB-004 (κ bajo con 4 fonones/SCPH, dilatación y NAC)"
+```

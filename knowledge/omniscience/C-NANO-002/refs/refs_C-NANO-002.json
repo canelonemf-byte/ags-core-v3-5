@@ -1,0 +1,6 @@
+{"meta": {"verificacion_doi": "Crossref API 2026-10-22 (crossref_C-NANO-002.txt)", "valores_leidos_de": "texto de los preprints arXiv indicados (no se redistribuyen)"},
+ "mounet_marzari_2005": {"doi": "10.1103/PhysRevB.71.205214", "arxiv": "cond-mat/0412643v1", "tabla": "IV, grafeno GGA", "cm-1": {"G_ZO": 881, "G_LO/TO": 1554, "M_ZA": 471, "M_TA": 626, "M_ZO": 635, "M_LA": 1328, "M_LO": 1340, "M_TO": 1390, "K_ZA": 535, "K_ZO": 535, "K_TA": 997, "K_LA/LO": 1213, "K_TO": 1288}},
+ "dsouza_mukherjee_2017": {"doi": "10.1103/PhysRevB.96.205422", "arxiv": "1711.02366v1", "tabla": "I, SLBN", "cm-1": {"G_ZO": 819.37, "G_LO/TO": 1363.88}},
+ "molina_sanchez_wirtz_2011": {"doi": "10.1103/PhysRevB.84.155413", "arxiv": "1109.5499v1", "tabla": "II, monocapa", "cm-1": {"E''": 289.2, "E'": 391.7, "A1'": 410.3, "A2''": 476.0}},
+ "experimental": {"grafeno_G": {"valor": 1580, "doi": "10.1103/PhysRevLett.97.187401"}, "hBN_E2g_monocapa": {"valor": 1368, "nota": "1366 masivo + hasta 4", "doi": "10.1002/smll.201001628"}, "MoS2_E_prima_monocapa": {"valor": 384, "doi": "10.1021/nn1003937"}},
+ "janaf_S298_J_K_mol": {"C_ref_grafito": 5.740, "BN_cr": 14.795, "doi": "10.18434/T42S31", "tablas": ["janaf_C-002.txt", "janaf_B-072.txt"]}}

@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "fecha": "2026-10-28T13:40:10",
+    "zona": "Europe/Madrid",
+    "autor": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de inteligencia artificial",
+    "orcid": "0000-0001-8601-1963"
+  },
+  "objetivo": "Regenerar pares LoRA OMNISCIENCE con fuentes válidas",
+  "datos_clave": {
+    "pares": 230,
+    "simulado_true": 210,
+    "simulado_false": 20,
+    "validation_errors": 0,
+    "cursor_stores_en_fuente": 0,
+    "sha256": "facbc4d2197b83ecbb847fd0a2cb5da55a336c03da5b43cfa7f3883060fbfd55",
+    "salida_repo": "/workspace/agsgpt/ags-core-v3.6/knowledge/omniscience/lora_pares.jsonl",
+    "copia_store": "/cursor/stores/store-228d687d-cb00-4ece-829b-9a5115f9c989/omniscience/lora/lora_pares.jsonl",
+    "backup_repo": "/workspace/agsgpt/ags-core-v3.6/knowledge/omniscience/lora_pares.bak_20261028_1339.jsonl",
+    "fuentes_distintas": 35,
+    "origenes": {
+      "fusion": 199,
+      "staging_omni_extra": 31,
+      "nano_extra": 0
+    }
+  },
+  "errores_validacion": [],
+  "fuentes": {
+    "knowledge/omniscience/evidence_register.csv": 73,
+    "knowledge/omniscience/C-MAT-001/informe_resultados.md": 5,
+    "knowledge/omniscience/C-MAT-002/informe_resultados.md": 1,
+    "knowledge/omniscience/C-MAT-003/informe_resultados.md": 1,
+    "knowledge/omniscience/C-MAT-004/informe_resultados.md": 1,
+    "knowledge/omniscience/C-MAT-005/informe_resultados.md": 9,
+    "knowledge/omniscience/C-MAT-006/informe_resultados.md": 1,
+    "knowledge/omniscience/C-UMF-001/informe_resultados.md": 6,
+    "knowledge/omniscience/C-UMF-002/informe_resultados.md": 4,
+    "knowledge/omniscience/C-UMF-003/resultados_C-UMF-003.md": 1,
+    "knowledge/omniscience/C-UMF-004/resultados_C-UMF-004.md": 5,
+    "knowledge/omniscience/C-UMF-005/resultados_C-UMF-005.md": 5,
+    "knowledge/omniscience/innovacion/INN-01/informe_resultados.md": 10,
+    "knowledge/omniscience/innovacion/INN-03/informe_resultados.md": 9,
+    "knowledge/omniscience/innovacion/INN-05/informe_resultados.md": 8,
+    "knowledge/omniscience/C-MAT-001/results.json": 1,
+    "knowledge/omniscience/C-MAT-003/results.json": 1,
+    "knowledge/omniscience/C-MAT-004/results.json": 1,
+    "knowledge/omniscience/C-MAT-005/results.json": 1,
+    "knowledge/omniscience/C-MAT-006/results.json": 1,
+    "knowledge/omniscience/C-UMF-001/results.json": 1,
+    "knowledge/omniscience/C-UMF-002/results.json": 1,
+    "knowledge/omniscience/C-VIB-001/results.json": 1,
+    "knowledge/omniscience/innovacion/INN-01/results.json": 1,
+    "knowledge/omniscience/innovacion/INN-03/results.json": 1,
+    "knowledge/omniscience/innovacion/INN-05/results.json": 1,
+    "knowledge/omniscience/log_avances.md": 16,
+    "knowledge/omniscience/C-MAT-007/resultados_C-MAT-007.md": 5,
+    "knowledge/omniscience/C-NANO-001/resultados_C-NANO-001.md": 6,
+    "knowledge/omniscience/C-UMF-006/resultados_C-UMF-006.md": 4,
+    "knowledge/omniscience/C-NANO-002/resultados_C-NANO-002.md": 6,
+    "knowledge/omniscience/C-NANO-003/resultados_C-NANO-003.md": 4,
+    "knowledge/omniscience/C-VIB-002/resultados_C-VIB-002.md": 4,
+    "knowledge/omniscience/C-VIB-003/resultados_C-VIB-003.md": 4,
+    "knowledge/omniscience/nano/cartera_nano.json": 31
+  },
+  "tareas": [
+    "fuentes C-NANO-002/003 y C-VIB-002/003 sincronizadas a knowledge/omniscience",
+    "sin commit/push/entrenamiento"
+  ],
+  "decisiones": [
+    "fuente relativa knowledge/omniscience/... (fichero, no directorio)",
+    "simulado=true si cálculo/MatterSim/MACE/GPAW/phono3py/campaña; false solo definiciones de registro sin cálculo",
+    "autor con asistencia de IA (aceptado por merge_pares)"
+  ],
+  "proximo_paso": "Avisar a AGs-Core Supervisor v3 para reintentar merge/staging"
+}

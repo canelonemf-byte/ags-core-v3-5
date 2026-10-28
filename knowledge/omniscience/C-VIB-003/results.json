@@ -1,0 +1,369 @@
+{
+ "prereg_sha256": "66275ff6e4483b5b28e0ffd6b0c502396c6e8271dc45c5f83f6588e1f8bbac1f",
+ "A_n": 15,
+ "A_kappa": {
+  "BN": {
+   "rta": 585.86,
+   "lbte": 656.78,
+   "r": 1.121,
+   "fmin": 2.806
+  },
+  "BP": {
+   "rta": 338.78,
+   "lbte": 363.39,
+   "r": 1.073,
+   "fmin": 1.127
+  },
+  "AlP": {
+   "rta": 91.79,
+   "lbte": 93.03,
+   "r": 1.013,
+   "fmin": 0.738
+  },
+  "AlAs": {
+   "rta": 98.62,
+   "lbte": 104.03,
+   "r": 1.055,
+   "fmin": 0.541
+  },
+  "AlSb": {
+   "rta": 34.48,
+   "lbte": 35.98,
+   "r": 1.044,
+   "fmin": 0.354
+  },
+  "GaP": {
+   "rta": 86.01,
+   "lbte": 90.9,
+   "r": 1.057,
+   "fmin": 0.548
+  },
+  "GaAs": {
+   "rta": 28.96,
+   "lbte": 30.17,
+   "r": 1.042,
+   "fmin": 0.423
+  },
+  "GaSb": {
+   "rta": 17.04,
+   "lbte": 16.81,
+   "r": 0.986,
+   "fmin": 0.294
+  },
+  "InP": {
+   "rta": 52.87,
+   "lbte": 61.98,
+   "r": 1.172,
+   "fmin": 0.42
+  },
+  "InAs": {
+   "rta": 30.23,
+   "lbte": 30.73,
+   "r": 1.017,
+   "fmin": 0.322
+  },
+  "InSb": {
+   "rta": 9.61,
+   "lbte": 11.3,
+   "r": 1.176,
+   "fmin": 0.243
+  },
+  "ZnS": {
+   "rta": 54.63,
+   "lbte": 56.44,
+   "r": 1.033,
+   "fmin": 0.474
+  },
+  "ZnSe": {
+   "rta": 20.08,
+   "lbte": 21.37,
+   "r": 1.065,
+   "fmin": 0.357
+  },
+  "ZnTe": {
+   "rta": 12.9,
+   "lbte": 13.9,
+   "r": 1.077,
+   "fmin": 0.285
+  },
+  "CdTe": {
+   "rta": 4.57,
+   "lbte": 4.81,
+   "r": 1.052,
+   "fmin": 0.212
+  }
+ },
+ "A_H1": {
+  "valor": "14/15",
+  "pasa": false
+ },
+ "A_H2": {
+  "valor": "12/15",
+  "pasa": true
+ },
+ "A_H3": {
+  "valor": [
+   0.134,
+   0.149
+  ],
+  "pasa": true
+ },
+ "A_H4": {
+  "valor": "13/15",
+  "pasa": true
+ },
+ "A_fuera_factor2_lbte": [
+  "GaSb",
+  "ZnS"
+ ],
+ "CA": {
+  "valor": 0.0006639738755473967,
+  "pasa": true
+ },
+ "B_n": 5,
+ "B_kappa": {
+  "BP": {
+   "rta": 346.78,
+   "lbte": 374.67,
+   "rta_3_sobre_2": 1.024,
+   "fmin": 1.081
+  },
+  "BN": {
+   "rta": 603.86,
+   "lbte": 686.46,
+   "rta_3_sobre_2": 1.031,
+   "fmin": 2.717
+  },
+  "ZnS": {
+   "rta": 44.95,
+   "lbte": 46.67,
+   "rta_3_sobre_2": 0.823,
+   "fmin": 0.478
+  },
+  "GaSb": {
+   "rta": 17.5,
+   "lbte": 17.16,
+   "rta_3_sobre_2": 1.027,
+   "fmin": 0.256
+  },
+  "InSb": {
+   "rta": 9.81,
+   "lbte": 11.67,
+   "rta_3_sobre_2": 1.021,
+   "fmin": 0.193
+  }
+ },
+ "B_H1": {
+  "valor": "4/5 (presentes 5)",
+  "pasa": true
+ },
+ "B_H2": {
+  "valor": [
+   "BN",
+   "BP"
+  ],
+  "pasa": true
+ },
+ "B_H3": {
+  "valor": [
+   "ZnS",
+   "InSb"
+  ],
+  "pasa": true
+ },
+ "C_n": 17,
+ "C1": {
+  "valor": [
+   "KI"
+  ],
+  "pasa": false
+ },
+ "C_kappa": {
+  "MgO": {
+   "rta": 50.449,
+   "lbte": 56.0,
+   "exp": 52,
+   "ratio_rta": 0.97,
+   "a": 4.2563,
+   "fmin": 1.118
+  },
+  "CaO": {
+   "rta": 22.223,
+   "lbte": 23.682,
+   "exp": 30,
+   "ratio_rta": 0.741,
+   "a": 4.8403,
+   "fmin": 0.817
+  },
+  "SrO": {
+   "rta": 8.003,
+   "lbte": 8.087,
+   "exp": 10,
+   "ratio_rta": 0.8,
+   "a": 5.209,
+   "fmin": 0.535
+  },
+  "BaO": {
+   "rta": 1.898,
+   "lbte": 1.956,
+   "exp": 3,
+   "ratio_rta": 0.633,
+   "a": 5.614,
+   "fmin": 0.357
+  },
+  "LiF": {
+   "rta": 10.025,
+   "lbte": 10.871,
+   "exp": 16.1,
+   "ratio_rta": 0.623,
+   "a": 4.069,
+   "fmin": 0.824
+  },
+  "NaF": {
+   "rta": 19.646,
+   "lbte": 24.609,
+   "exp": 18.5,
+   "ratio_rta": 1.062,
+   "a": 4.6997,
+   "fmin": 0.659
+  },
+  "NaCl": {
+   "rta": 3.653,
+   "lbte": 4.573,
+   "exp": 7.2,
+   "ratio_rta": 0.507,
+   "a": 5.7007,
+   "fmin": 0.392
+  },
+  "NaBr": {
+   "rta": 1.51,
+   "lbte": 1.575,
+   "exp": 2.9,
+   "ratio_rta": 0.521,
+   "a": 6.0423,
+   "fmin": 0.276
+  },
+  "NaI": {
+   "rta": 0.423,
+   "lbte": 0.441,
+   "exp": 1.9,
+   "ratio_rta": 0.223,
+   "a": 6.5155,
+   "fmin": 0.192
+  },
+  "KF": {
+   "rta": 5.255,
+   "lbte": 5.685,
+   "exp": 7.8,
+   "ratio_rta": 0.674,
+   "a": 5.4198,
+   "fmin": 0.457
+  },
+  "KCl": {
+   "rta": 2.224,
+   "lbte": 2.99,
+   "exp": 7.2,
+   "ratio_rta": 0.309,
+   "a": 6.3716,
+   "fmin": 0.268
+  },
+  "KBr": {
+   "rta": 0.217,
+   "lbte": 0.213,
+   "exp": 3.4,
+   "ratio_rta": 0.064,
+   "a": 6.7037,
+   "fmin": 0.146
+  },
+  "KI": {
+   "rta": 0.424,
+   "lbte": 0.583,
+   "exp": 2.8,
+   "ratio_rta": 0.152,
+   "a": 7.1592,
+   "fmin": -0.079
+  },
+  "RbCl": {
+   "rta": 0.437,
+   "lbte": 0.424,
+   "exp": 2.9,
+   "ratio_rta": 0.151,
+   "a": 6.7103,
+   "fmin": 0.189
+  },
+  "PbS": {
+   "rta": 1.114,
+   "lbte": 1.111,
+   "exp": 2.5,
+   "ratio_rta": 0.446,
+   "a": 6.01,
+   "fmin": 0.237
+  },
+  "PbSe": {
+   "rta": 0.41,
+   "lbte": 0.44,
+   "exp": 1.6,
+   "ratio_rta": 0.256,
+   "a": 6.2252,
+   "fmin": 0.206
+  },
+  "PbTe": {
+   "rta": 0.476,
+   "lbte": 0.542,
+   "exp": 2.2,
+   "ratio_rta": 0.216,
+   "a": 6.5662,
+   "fmin": 0.18
+  }
+ },
+ "C_H1": {
+  "valor": "9/17",
+  "pasa": false
+ },
+ "C_H2": {
+  "valor": 0.388,
+  "pasa": false
+ },
+ "C_H3": {
+  "valor": 0.904,
+  "pasa": true
+ },
+ "C_H4": {
+  "valor": {
+   "factor2": "2/9",
+   "media_log10": 0.595
+  },
+  "pasa": false
+ },
+ "C_H5": {
+  "valor": 0.29,
+  "pasa": false
+ },
+ "C_H6": {
+  "valor": 0.239,
+  "pasa": true
+ },
+ "C_H7": {
+  "valor": 1.07,
+  "pasa": true
+ },
+ "C_fuera_factor2": {
+  "NaI": 0.223,
+  "KCl": 0.309,
+  "KBr": 0.064,
+  "RbCl": 0.151,
+  "PbS": 0.446,
+  "PbSe": 0.256,
+  "PbTe": 0.216
+ },
+ "H_REP": {
+  "valor": 0.0,
+  "pasa": true
+ },
+ "C2": {
+  "valor": 0.0565,
+  "pasa": false
+ },
+ "nivel_UM-25": "E2",
+ "nivel_UM-12": "E3"
+}

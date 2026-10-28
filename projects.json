@@ -912,6 +912,27 @@
    "files": 12,
    "binaries_or_skipped": [],
    "license_declared_by_author": true
+  },
+  {
+   "id": "gravedad",
+   "name": "gravedad",
+   "repo": "",
+   "source": "local",
+   "url": "",
+   "description": "GRAVEDAD (P003): registro de evidencia sobre gravedad, espacio-tiempo y métricas warp (Alcubierre/Sarfatti, teoría publicada de terceros, citar) y relación con MEI-RIT. E0-E1.",
+   "keywords": [
+    "gravedad",
+    "espacio-tiempo",
+    "warp",
+    "alcubierre",
+    "mei-rit"
+   ],
+   "tools": [],
+   "license": "CC BY 4.0",
+   "files": 3,
+   "binaries_or_skipped": [],
+   "license_declared_by_author": true,
+   "evidencia_nivel": "E1"
   }
  ]
 }

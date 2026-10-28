@@ -1,0 +1,3 @@
+# Texto completo de artículos de terceros: solo uso local, no se versiona (copyright)
+omniscience/C-VIB-*/refs/*.txt
+omniscience/lora_pares.bak_*.jsonl
