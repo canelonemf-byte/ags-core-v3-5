@@ -95,9 +95,25 @@ def _f(kind, sev, file, line, msg, quote="", **extra):
 
 # ---------------- revisiones por archivo (lo que ejecuta cada sub-agente) ----------------
 
+def _is_bibliography_path(rel: str) -> bool:
+    """True si el path es una lista o carpeta de referencias/bibliografía (no afirmaciones propias).
+
+    Cubre nombres tipo referencias.md / bibliography.txt y carpetas refs/, references/,
+    bibliografia/ (p. ej. C-VIB-003/refs/xia2020.txt con títulos que mencionan 'free energy').
+    """
+    parts = rel.replace("\\", "/").split("/")
+    name = parts[-1]
+    if re.match(r"(referencias|references|bibliograf)", name, re.I):
+        return True
+    for part in parts[:-1]:
+        if re.fullmatch(r"refs?|references?|referencias|bibliograf\w*", part, re.I):
+            return True
+    return False
+
+
 def claims_in_file(rel: str, text: str) -> list[dict]:
     out = []
-    is_ref_list = bool(re.match(r"(referencias|references|bibliograf)", rel.rsplit("/", 1)[-1], re.I))
+    is_ref_list = _is_bibliography_path(rel)
     for ln, s in _sentences(text):
         p = plain(s)
         cited = bool(CITE.search(s))
