@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "id": "val",
+    "nombre": "Validacion LLP",
+    "estado": "hecho",
+    "fecha": "2026-10-28",
+    "responsable": "validar.mjs",
+    "tags": [
+      "llp",
+      "v1.1"
+    ]
+  },
+  "n": 3,
+  "pass": 3,
+  "fail": 0,
+  "ultima": "2026-10-28",
+  "validador": "node artifacts/llp/validar.mjs",
+  "report": [
+    {
+      "file": "AGSGPT-LORA.json",
+      "ok": true,
+      "fails": []
+    },
+    {
+      "file": "APEX-OMEGA.json",
+      "ok": true,
+      "fails": []
+    },
+    {
+      "file": "CONTROL.json",
+      "ok": true,
+      "fails": []
+    }
+  ]
+}

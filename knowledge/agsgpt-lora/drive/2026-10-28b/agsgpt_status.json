@@ -1,0 +1,19 @@
+{
+  "estado": "activo",
+  "inicio": "2026-10-28T19:37:51.588595Z",
+  "iteraciones": 2,
+  "dominios_activos": [
+    "mei_rit_propulsion_iodine",
+    "cero-a_ammonia",
+    "oraculo_mesoscopico_probabilistico",
+    "omniscience_universal_matter_phonon",
+    "remplast_q_microplasticos",
+    "ordenador_hibrido_clasico_cuantico",
+    "fusion_ia_gateway",
+    "metamateriales_nano",
+    "quantum_dynamics_sensing",
+    "biology_chemistry_domain"
+  ],
+  "nota": "Jerárquico modular. No 50k concurrentes literales. Notificar problemas.",
+  "problemas": []
+}
