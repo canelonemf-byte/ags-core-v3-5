@@ -1,8 +1,13 @@
 # Configuración de LiteLLM proxy para AGs-Core (http://localhost:4000).
-# Las claves se leen SOLO del entorno (p. ej. `set -a; . ~/.secrets/xai.env; set +a` antes de arrancar). Nunca se guardan aquí.
-# Arranque: litellm --config config/litellm.yaml --port 4000
+# Las claves se leen SOLO del entorno (start_litellm.sh carga ~/.secrets/*.env). Nunca se guardan aquí.
+# Arranque: scripts/start_litellm.sh
+#
+# Nota 2026-10: claves nuevas de Gemini ya no admiten gemini-2.5-*; el alias "gemini" apunta a
+# gemini-3.5-flash (probado). Se mantienen entradas 2.5 para claves antiguas que aún las tengan.
 model_list:
   - model_name: grok
+    litellm_params: {model: xai/grok-4.7, api_key: os.environ/GROK_API_KEY}
+  - model_name: grok-primary
     litellm_params: {model: xai/grok-4.7, api_key: os.environ/GROK_API_KEY}
   - model_name: grok-4.7
     litellm_params: {model: xai/grok-4.7, api_key: os.environ/GROK_API_KEY}
@@ -10,7 +15,17 @@ model_list:
     litellm_params: {model: xai/grok-4.6, api_key: os.environ/GROK_API_KEY}
   - model_name: grok-4.20-reasoning
     litellm_params: {model: xai/grok-4.20-0309-reasoning, api_key: os.environ/GROK_API_KEY}
+  # Alias por defecto (claves nuevas, oct 2026+)
   - model_name: gemini
-    litellm_params: {model: gemini/gemini-2.0-flash, api_key: os.environ/GEMINI_API_KEY}
+    litellm_params: {model: gemini/gemini-3.5-flash, api_key: os.environ/GEMINI_API_KEY}
+  - model_name: gemini-primary
+    litellm_params: {model: gemini/gemini-3.5-flash, api_key: os.environ/GEMINI_API_KEY}
+  - model_name: gemini-3.5-flash
+    litellm_params: {model: gemini/gemini-3.5-flash, api_key: os.environ/GEMINI_API_KEY}
+  # Entradas pedidas / legado 2.5 (fallan en claves "new user")
+  - model_name: gemini-2.5-flash
+    litellm_params: {model: gemini/gemini-2.5-flash, api_key: os.environ/GEMINI_API_KEY}
+  - model_name: gemini-2.5-pro
+    litellm_params: {model: gemini/gemini-2.5-pro, api_key: os.environ/GEMINI_API_KEY}
 litellm_settings: {drop_params: true}
 general_settings: {master_key: os.environ/LITELLM_MASTER_KEY}

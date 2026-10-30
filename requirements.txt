@@ -11,3 +11,6 @@ scikit-learn>=1.4
 # v3.6 UI de estado (opcional)
 streamlit>=1.38,<2
 pyyaml>=6
+
+# Proxy LLM (Grok + Gemini). Opcional si solo usas agentes locales.
+litellm[proxy]>=1.50

@@ -4,7 +4,7 @@ from agents.project_agents import PROJECT_AGENTS
 pytestmark = pytest.mark.unit
 CORE = 38  # agentes de la v3.5
 from agents.subagents import WORKERS
-EXPECTED = CORE + len(PROJECT_AGENTS) + len(WORKERS) + 21  # + matriz_el_prat (5+15+actualizar_todo)  # v3.6 + sub-agentes locales
+EXPECTED = CORE + len(PROJECT_AGENTS) + len(WORKERS) + 22  # + matriz_el_prat (5+15+actualizar_todo) + gemini_reviewer
 
 def test_registry_count():
     assert len(all_agents()) == EXPECTED
@@ -20,7 +20,7 @@ def test_domains():
     assert len(agents_by_domain("domain")) == 6
     assert len(agents_by_domain("multimodal")) == 4
     assert len(agents_by_domain("lab")) == 4
-    assert len(agents_by_domain("validation")) == 4
+    assert len(agents_by_domain("validation")) == 5  # + gemini_reviewer
     assert len(agents_by_domain("orchestration")) == 3
     assert len(agents_by_domain("tools")) == 6
     assert len(agents_by_domain("local")) == 1
