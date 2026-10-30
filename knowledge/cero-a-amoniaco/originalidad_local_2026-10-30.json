@@ -1,0 +1,13 @@
+{
+  "proyecto": "cero-a-amoniaco",
+  "archivos": 12,
+  "duplicados_exactos": [],
+  "casi_duplicados_ge085": [],
+  "manifiesto_2026-10-21": "cero-a-amoniaco E2 simulado=sí NOTICE=no",
+  "reports_supervisor": [
+    "reports/cero-a-amoniaco/license_check.md",
+    "reports/cero-a-amoniaco/missing_pieces.md",
+    "reports/cero-a-amoniaco/review_claims.md"
+  ],
+  "nota": "herramienta scripts/near_dup.py es global (fusión-ia + knowledge); aquí chequeo acotado al proyecto sin escribir data/"
+}
