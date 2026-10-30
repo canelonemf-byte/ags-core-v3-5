@@ -1,15 +1,16 @@
-# sim/ — MVM: baseline CMOS digital vs CIM memristivo multinivel
+# sim/ — MVM y planificador (E2 simulación, no experimento)
 
 **Nivel de evidencia: E2 (simulación propia, no experimento, no reproducida por terceros).**
 
-- `parametros.yaml`: todos los parámetros; **todos marcados `supuesto`** (órdenes de magnitud ilustrativos, sin fuente de literatura verificada).
-- `sim_mvm.py`: MVM 256×256, 200 vectores, semilla fija 20261020. Ejecutar: `python3 sim_mvm.py` (requiere numpy, pyyaml).
-- `salidas/resultados.csv|json`: error relativo (norma L2 vs MVM exacta en float) y energía por configuración.
+## MVM (`sim_mvm.py`)
+- `parametros.yaml`: todos los parámetros siguen marcados `supuesto` tras intento t6 (2026-10-30): Horowitz doi:10.1109/isscc.2014.6757323 y Andrulis arXiv:2404.06553 verificados en existencia, sin valor sustituible limpio.
+- Ejecutar: `python3 sim_mvm.py` (numpy, pyyaml). Semilla 20261020.
+- `salidas/resultados.csv|json`: error relativo y energía por configuración.
 
-## Modelo
-- CMOS: E = K·N·M·e_mac + N·M·e_lectura_peso; pesos/entradas cuantizados a 8 bits.
-- CIM: pesos diferenciales (2 celdas) cuantizados a L niveles + ruido gaussiano de programación y lectura; salida cuantizada por ADC de b bits.
-  E = celdas + DAC (por fila y vector) + ADC (por columna, lineal en bits) + calibración por vector.
+## Planificador (`planificador.py`) — t7
+- Prototipo mínimo: HEFT clásico vs planificador consciente de error + coste de conversión, usando las tablas de `salidas/resultados.csv` como modelo de coste sobre un DAG sintético.
+- Semilla fija; salidas en `salidas/planificador_*.json|csv`. Test: `test_planificador.py`.
+- La **propuesta de diseño** sigue E0; esta corrida es **E2 simulación** con supuestos explícitos (DAG sintético, latencias supuestos, tablas MVM con parámetros supuestos).
 
-## Limitaciones
-Sin no linealidades del dispositivo, IR-drop, deriva temporal, variabilidad ciclo a ciclo, ni tiling/acumulación parcial; ADC lineal en bits (en realidad suele crecer más rápido); el ahorro energético es consecuencia directa de los supuestos y no es una predicción.
+## Limitaciones del modelo MVM
+Sin no linealidades del dispositivo, IR-drop, deriva, variabilidad ciclo a ciclo, ni tiling; ADC lineal en bits; el ahorro energético es consecuencia de los supuestos, no una predicción.

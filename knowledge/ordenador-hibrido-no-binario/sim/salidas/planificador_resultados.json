@@ -1,0 +1,262 @@
+{
+ "nivel_evidencia": "E2",
+ "tipo": "simulacion",
+ "nota": "prototipo mínimo; no es experimento ni validación de hardware",
+ "semilla": 20261030,
+ "propuesta_diseno_nivel": "E0",
+ "supuestos": [
+  "DAG sintético de 8 tareas con macs y error_max inventados para la demo",
+  "latencias relativas CMOS=1.0, CIM=0.4 (supuesto)",
+  "COM_COST=0.05 entre tareas (supuesto)",
+  "ponderación α=0.3 (energía) β=0.2 (frac ADC/DAC) en el planificador consciente (supuesto)",
+  "modelo de coste = tablas sim_mvm con parámetros supuestos (E2)",
+  "sin fotónica ni QPU en esta corrida (solo CMOS y configs CIM de la tabla)"
+ ],
+ "procesadores": [
+  {
+   "name": "cmos",
+   "error_rel": 0.004031668367776217,
+   "energia_por_mac_pj": 1.025,
+   "frac_adc_dac": 0.0
+  },
+  {
+   "name": "cim_L4_adc4",
+   "error_rel": 0.39618783338953023,
+   "energia_por_mac_pj": 0.038341064453125,
+   "frac_adc_dac": 0.4584673182845681
+  },
+  {
+   "name": "cim_L8_adc6",
+   "error_rel": 0.17979180031043862,
+   "energia_por_mac_pj": 0.046153564453125,
+   "frac_adc_dac": 0.5501335660821498
+  },
+  {
+   "name": "cim_L16_adc8",
+   "error_rel": 0.10499690689468484,
+   "energia_por_mac_pj": 0.053966064453125,
+   "frac_adc_dac": 0.6152593363342306
+  }
+ ],
+ "comparacion": {
+  "HEFT_makespan": 1.4666666666666668,
+  "HEFT_energia_pj": 1872342.529296875,
+  "aware_makespan": 2.2152971251234215,
+  "aware_energia_pj": 8903955.078124998,
+  "ahorro_energia_aware_vs_heft": -3.755516118874211
+ },
+ "resultados": {
+  "HEFT": {
+   "asignacion": {
+    "T0": {
+     "procesador": "cim_L4_adc4",
+     "inicio": 0.0,
+     "fin": 0.16666666666666669,
+     "duracion": 0.16666666666666669,
+     "energia_pj": 191705.32226562497,
+     "error_rel_modelo": 0.39618783338953023,
+     "frac_adc_dac": 0.4584673182845681,
+     "error_max_tarea": 0.5
+    },
+    "T1": {
+     "procesador": "cim_L4_adc4",
+     "inicio": 0.21666666666666667,
+     "fin": 0.48333333333333334,
+     "duracion": 0.26666666666666666,
+     "energia_pj": 306728.515625,
+     "error_rel_modelo": 0.39618783338953023,
+     "frac_adc_dac": 0.4584673182845681,
+     "error_max_tarea": 0.2
+    },
+    "T3": {
+     "procesador": "cim_L4_adc4",
+     "inicio": 0.5333333333333333,
+     "fin": 0.9333333333333333,
+     "duracion": 0.4,
+     "energia_pj": 460092.77343749994,
+     "error_rel_modelo": 0.39618783338953023,
+     "frac_adc_dac": 0.4584673182845681,
+     "error_max_tarea": 0.4
+    },
+    "T2": {
+     "procesador": "cim_L8_adc6",
+     "inicio": 0.21666666666666667,
+     "fin": 0.31666666666666665,
+     "duracion": 0.1,
+     "energia_pj": 138460.693359375,
+     "error_rel_modelo": 0.17979180031043862,
+     "frac_adc_dac": 0.5501335660821498,
+     "error_max_tarea": 0.05
+    },
+    "T4": {
+     "procesador": "cim_L8_adc6",
+     "inicio": 0.5333333333333333,
+     "fin": 0.6666666666666666,
+     "duracion": 0.13333333333333333,
+     "energia_pj": 184614.2578125,
+     "error_rel_modelo": 0.17979180031043862,
+     "frac_adc_dac": 0.5501335660821498,
+     "error_max_tarea": 0.02
+    },
+    "T5": {
+     "procesador": "cim_L4_adc4",
+     "inicio": 0.9833333333333334,
+     "fin": 1.1833333333333333,
+     "duracion": 0.2,
+     "energia_pj": 230046.38671874997,
+     "error_rel_modelo": 0.39618783338953023,
+     "frac_adc_dac": 0.4584673182845681,
+     "error_max_tarea": 0.3
+    },
+    "T6": {
+     "procesador": "cim_L8_adc6",
+     "inicio": 0.7166666666666667,
+     "fin": 0.7833333333333333,
+     "duracion": 0.06666666666666667,
+     "energia_pj": 92307.12890625,
+     "error_rel_modelo": 0.17979180031043862,
+     "frac_adc_dac": 0.5501335660821498,
+     "error_max_tarea": 0.15
+    },
+    "T7": {
+     "procesador": "cim_L4_adc4",
+     "inicio": 1.2333333333333334,
+     "fin": 1.4666666666666668,
+     "duracion": 0.23333333333333336,
+     "energia_pj": 268387.451171875,
+     "error_rel_modelo": 0.39618783338953023,
+     "frac_adc_dac": 0.4584673182845681,
+     "error_max_tarea": 0.25
+    }
+   },
+   "makespan": 1.4666666666666668,
+   "energia_total_pj": 1872342.529296875,
+   "orden": [
+    "T0",
+    "T1",
+    "T3",
+    "T2",
+    "T4",
+    "T5",
+    "T6",
+    "T7"
+   ],
+   "ranks": {
+    "T7": 0.320833,
+    "T5": 0.645833,
+    "T3": 1.245833,
+    "T6": 0.4625,
+    "T4": 0.695833,
+    "T1": 1.6625,
+    "T2": 0.883333,
+    "T0": 1.941667
+   }
+  },
+  "error_coste_aware": {
+   "asignacion": {
+    "T0": {
+     "procesador": "cim_L4_adc4",
+     "inicio": 0.0,
+     "fin": 0.26958190528547055,
+     "duracion": 0.26958190528547055,
+     "energia_pj": 191705.32226562497,
+     "error_rel_modelo": 0.39618783338953023,
+     "frac_adc_dac": 0.4584673182845681,
+     "error_max_tarea": 0.5
+    },
+    "T1": {
+     "procesador": "cim_L8_adc6",
+     "inicio": 0.31958190528547054,
+     "fin": 0.7097836454963111,
+     "duracion": 0.39020174021084053,
+     "energia_pj": 369228.515625,
+     "error_rel_modelo": 0.17979180031043862,
+     "frac_adc_dac": 0.5501335660821498,
+     "error_max_tarea": 0.2
+    },
+    "T2": {
+     "procesador": "cmos",
+     "inicio": 0.31958190528547054,
+     "fin": 0.8695819052854705,
+     "duracion": 0.55,
+     "energia_pj": 3074999.9999999995,
+     "error_rel_modelo": 0.004031668367776217,
+     "frac_adc_dac": 0.0,
+     "error_max_tarea": 0.05
+    },
+    "T3": {
+     "procesador": "cim_L4_adc4",
+     "inicio": 0.7597836454963112,
+     "fin": 1.2626988841151152,
+     "duracion": 0.5029152386188039,
+     "energia_pj": 460092.77343749994,
+     "error_rel_modelo": 0.39618783338953023,
+     "frac_adc_dac": 0.4584673182845681,
+     "error_max_tarea": 0.4
+    },
+    "T4": {
+     "procesador": "cmos",
+     "inicio": 0.9195819052854706,
+     "fin": 1.5529152386188039,
+     "duracion": 0.6333333333333333,
+     "energia_pj": 4099999.9999999995,
+     "error_rel_modelo": 0.004031668367776217,
+     "frac_adc_dac": 0.0,
+     "error_max_tarea": 0.02
+    },
+    "T5": {
+     "procesador": "cim_L8_adc6",
+     "inicio": 1.3126988841151153,
+     "fin": 1.636233957659289,
+     "duracion": 0.3235350735441739,
+     "energia_pj": 276921.38671875,
+     "error_rel_modelo": 0.17979180031043862,
+     "frac_adc_dac": 0.5501335660821498,
+     "error_max_tarea": 0.3
+    },
+    "T6": {
+     "procesador": "cim_L16_adc8",
+     "inicio": 1.602915238618804,
+     "fin": 1.8084287182459142,
+     "duracion": 0.20551347962711036,
+     "energia_pj": 107932.12890625,
+     "error_rel_modelo": 0.10499690689468484,
+     "frac_adc_dac": 0.6152593363342306,
+     "error_max_tarea": 0.15
+    },
+    "T7": {
+     "procesador": "cim_L8_adc6",
+     "inicio": 1.8584287182459143,
+     "fin": 2.2152971251234215,
+     "duracion": 0.35686840687750726,
+     "energia_pj": 323074.951171875,
+     "error_rel_modelo": 0.17979180031043862,
+     "frac_adc_dac": 0.5501335660821498,
+     "error_max_tarea": 0.25
+    }
+   },
+   "makespan": 2.2152971251234215,
+   "energia_total_pj": 8903955.078124998,
+   "orden": [
+    "T0",
+    "T1",
+    "T2",
+    "T3",
+    "T4",
+    "T5",
+    "T6",
+    "T7"
+   ],
+   "ranks": {
+    "T7": 0.537461,
+    "T5": 1.074921,
+    "T3": 1.841246,
+    "T6": 0.923551,
+    "T4": 1.606884,
+    "T1": 2.478706,
+    "T2": 2.206884,
+    "T0": 2.924197
+   }
+  }
+ }
+}

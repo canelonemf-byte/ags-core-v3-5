@@ -1,1 +1,324 @@
-{"meta": {"proyecto": "ordenador_hibrido_no_binario", "fecha": "2026-10-22", "escala_evidencia": {"E0": "especulación/objetivo sin respaldo", "E1": "teoría establecida o cálculo derivado / hecho documental", "E2": "simulación propia no reproducida", "E3": "literatura citada sin referencia exacta", "E4": "literatura revisada por pares con referencia", "E5": "experimento propio reproducido", "E6": "validación independiente"}, "nota": "E5–E6 sin entradas: no hay experimentos propios", "nota_originalidad": "originalidad: estado_del_arte|adaptacion|propuesta_propia; tipo: teorico|simulacion|documental", "nota_ciclo_2026_10_22": "Novedades desde el ciclo 2026-10-21 09:39: Manual (docs/ y drive/) anotado a las 13:58 con niveles E y PENDIENTE (kT/C E1; CMOS 0,8 vs 9,8 W/mm²) → ev_27; docs/algoritmos_hibridos.md marca R9 PENDIENTE (coherente con ev_22). Repo Atlas0 sin cambios (último push 2026-10-08 10:49 UTC+2). Sin nuevas simulaciones ni experimentos; E5–E6 siguen vacíos.", "nota_ciclo_2026_10_27": "Novedad desde ciclo 2026-10-26 09:31: solo commit e60e2c1 (revision_llp.json, nota conflicto CMOS) → anotada en ev_27 sin cambiar nivel. Repo GitHub Atlas0 sin cambios (último push 2026-10-23 22:41 UTC). Sin experimentos: E5–E6 vacíos", "nota_ciclo_2026_10_29": "Novedad desde ciclo 2026-10-28 09:32: commit local d776d15 (2026-10-28 18:10) solo corrige lora_pares.jsonl: campo simulado false→true en lp_008, lp_011, lp_037 (coherente con tipo simulacion de ev_08 y ev_11); sin cambio de nivel. Resto de archivos con mtime 10-28 restaurados sin diferencias de contenido frente a git. Repo GitHub Atlas0 sin cambios (último push 2026-10-23 22:41 UTC). Sin experimentos: E5–E6 vacíos"}, "registro": [{"id": "ev_01", "afirmacion": "El límite de Landauer por bit equivalente (k_B·T·ln2 ≈ 2,87e-21 J a 300 K) no se reduce con lógica multivaluada", "nivel": "E1", "tipo": "teorico", "fuente": "documento_maestro_proyecto.md §2.1; repo README (Landauer 1961)", "estado": "verificado", "originalidad": "estado_del_arte", "justificacion_originalidad": "física establecida (Landauer)"}, {"id": "ev_02", "afirmacion": "Ruido térmico sigma_V=sqrt(kT/C) ≈ 2,04 mV para C=1 fF, 300 K; tabla de márgenes por base es cota idealizada", "nivel": "E1", "tipo": "teorico", "fuente": "documento_maestro_proyecto.md §2.3", "estado": "verificado", "originalidad": "estado_del_arte", "justificacion_originalidad": "física establecida (ruido kT/C)"}, {"id": "ev_03", "afirmacion": "No existe fabricación, demostración experimental ni validación independiente del ordenador híbrido", "nivel": "E0", "tipo": "teorico", "fuente": "documento_maestro_proyecto.md §1.3; docs/Ordenador_hibrido.md", "estado": "verificado", "originalidad": "propuesta_propia", "justificacion_originalidad": "declaración de alcance del propio proyecto"}, {"id": "ev_04", "afirmacion": "Las cifras de rendimiento (≥20 % energía, ≥20 % temperatura, ≥99,9 % disponibilidad) son objetivos de diseño, no resultados", "nivel": "E0", "tipo": "teorico", "fuente": "docs/Ordenador_hibrido.md §criterios", "estado": "verificado", "originalidad": "propuesta_propia", "justificacion_originalidad": "objetivos de diseño propios"}, {"id": "ev_05", "afirmacion": "Las tablas de 'resultados de simulación' del manuscrito previo no son reproducibles y se retiran; probabilidades 70 %/10 % sustituidas por tesis A/B/C", "nivel": "E0", "tipo": "teorico", "fuente": "docs/Estudio_viabilidad_arquitectura_hibrida_revisado.docx.md cap. 7 y anexo", "estado": "verificado", "originalidad": "propuesta_propia", "justificacion_originalidad": "decisión editorial propia sobre el manuscrito"}, {"id": "ev_06", "afirmacion": "Memresonador III–V/Si: Tossoun et al., 'High-speed and energy-efficient non-volatile silicon photonic memory based on heterogeneously integrated memresonator', Nature Communications 15, 551 (2024-01-16), doi:10.1038/s41467-024-44773-7 (literatura ajena)", "nivel": "E4", "tipo": "documental", "fuente": "docs/Estudio_viabilidad... referencias; doi.org → 302 a nature.com/articles/s41467-024-44773-7; metadatos Crossref (2026-10-20)", "estado": "verificado", "nota": "Verificada la existencia y metadatos del DOI; contenido técnico no revisado ni sus cifras incorporadas", "originalidad": "estado_del_arte", "justificacion_originalidad": "artículo de terceros"}, {"id": "ev_07", "afirmacion": "Dispositivos resistivos de HfOx muestran múltiples estados de conductancia útiles para CIM (literatura ajena, sin cita concreta local)", "nivel": "E3", "tipo": "documental", "fuente": "documento_maestro_proyecto.md §3.2", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "estado_del_arte", "justificacion_originalidad": "literatura ajena sin cita concreta"}, {"id": "ev_08", "afirmacion": "Código VQE, algoritmo genético de puertas multinivel y modelo térmico del Manual son simulaciones analíticas ilustrativas sin datos de salida archivados", "nivel": "E2", "tipo": "simulacion", "fuente": "docs/Manual_de_Fabricacion... §3-5", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "adaptacion", "justificacion_originalidad": "código propio ilustrativo sobre métodos conocidos"}, {"id": "ev_09", "afirmacion": "Protocolo de fabricación en sala blanca del Manual describe un prototipo experimental no realizado", "nivel": "E0", "tipo": "teorico", "fuente": "docs/Manual_de_Fabricacion... §6", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "propuesta_propia", "justificacion_originalidad": "protocolo prospectivo propio"}, {"id": "ev_10", "afirmacion": "Presupuestos de fases (p.ej. Fase 1 15 M€; MPW 5–25 M€) son estimaciones sin desglose verificable", "nivel": "E0", "tipo": "teorico", "fuente": "docs/Manual §8; docs/Estudio_viabilidad cap. 8", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "propuesta_propia", "justificacion_originalidad": "estimación propia"}, {"id": "ev_11", "afirmacion": "Repo Atlas0: demos TQC (anyones Fibonacci), lógica reversible Toffoli en Rust y dossier Zenodo marcados 'Ready'/'Green'", "nivel": "E0", "tipo": "simulacion", "fuente": "github canelonemf-byte/Atlas0-ordenador2.6-x-10- README", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "propuesta_propia", "justificacion_originalidad": "contenido del repo del autor"}, {"id": "ev_12", "afirmacion": "Repo Atlas0: árbol actual solo contiene .gitignore, LICENSE y Makefile; src/, docs/, scripts/ declarados en README no aparecen", "nivel": "E1", "tipo": "teorico", "fuente": "GitHub API git/trees HEAD (2026-10-20)", "estado": "verificado", "originalidad": "propuesta_propia", "justificacion_originalidad": "hecho documental sobre el repo propio"}, {"id": "ev_13", "afirmacion": "Descripción del repo: 2,6e32 unidades a 1 µm² ≈ 5,1e5 superficies terrestres; ≈1,4e5 t de ADN", "nivel": "E1", "tipo": "teorico", "fuente": "GitHub descripción del repo", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "propuesta_propia", "justificacion_originalidad": "cálculo de la descripción del repo propio"}, {"id": "ev_14", "afirmacion": "'Conscious Substrate Informatics: coherencia como sincronización con la red informacional' (README Atlas0)", "nivel": "E0", "tipo": "teorico", "fuente": "repo README", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "propuesta_propia", "justificacion_originalidad": "concepto especulativo del autor"}, {"id": "ev_15", "afirmacion": "Existe DOI Zenodo del proyecto", "nivel": "E0", "tipo": "teorico", "fuente": "documento_maestro_proyecto.md cabecera; repo README", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "propuesta_propia", "justificacion_originalidad": "afirmación sobre el propio proyecto"}, {"id": "ev_16", "afirmacion": "Simulación MVM 256x256: CIM memristivo (2–16 niveles, ADC 4–8 bits) da error relativo 10,5–100 % frente a 0,4 % de CMOS 8 bits; ahorro energético modelado 95–96 % con ADC+DAC = 46–62 % de la energía CIM; todos los parámetros son supuestos", "nivel": "E2", "tipo": "simulacion", "fuente": "sim/sim_mvm.py, sim/parametros.yaml, sim/salidas/resultados.csv (semilla 20261020)", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "adaptacion", "justificacion_originalidad": "simulación propia de un modelo CIM estándar con parámetros supuestos", "nota_ciclo_2026_10_21": "test mínimo sim/test_sim_mvm.py pasa (1 passed, re-ejecución local 2026-10-21 09:40 Europe/Madrid); sigue siendo E2: re-ejecución propia, no reproducción independiente ni experimento"}, {"id": "ev_17", "afirmacion": "VQE: bucle variacional QPU+optimizador clásico para estado fundamental (Peruzzo et al. 2014, doi:10.1038/ncomms5213)", "nivel": "E4", "tipo": "documental", "fuente": "docs/algoritmos_hibridos.md", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "estado_del_arte", "justificacion_originalidad": "método publicado por terceros; DOI verificado, contenido no revisado"}, {"id": "ev_18", "afirmacion": "QAOA: optimización combinatoria con p capas coste/mezclador (Farhi et al., arXiv:1411.4028)", "nivel": "E3", "tipo": "documental", "fuente": "docs/algoritmos_hibridos.md", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "estado_del_arte", "justificacion_originalidad": "preprint arXiv verificado, no revisado por pares en esta cita"}, {"id": "ev_19", "afirmacion": "Limitaciones de algoritmos variacionales: barren plateaus, ruido NISQ, coste en mediciones (Cerezo 2021; McClean 2018)", "nivel": "E4", "tipo": "documental", "fuente": "docs/algoritmos_hibridos.md", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "estado_del_arte", "justificacion_originalidad": "literatura ajena; DOIs verificados, contenido no revisado"}, {"id": "ev_20", "afirmacion": "Qudits: más información por portador a cambio de control/calibración más complejos (Wang et al. 2020)", "nivel": "E4", "tipo": "documental", "fuente": "docs/algoritmos_hibridos.md", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "estado_del_arte", "justificacion_originalidad": "revisión de terceros; DOI verificado"}, {"id": "ev_21", "afirmacion": "MVL clásica: menor interconexión por dígito, márgenes de ruido decrecientes con la base (Hurst 1984)", "nivel": "E4", "tipo": "documental", "fuente": "docs/algoritmos_hibridos.md", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "estado_del_arte", "justificacion_originalidad": "literatura ajena; DOI verificado"}, {"id": "ev_22", "afirmacion": "CIM analógico en crossbar y técnicas de entrenamiento tolerante a ruido (Ielmini 2018; Sebastian 2020; Joshi 2020)", "nivel": "E4", "tipo": "documental", "fuente": "docs/algoritmos_hibridos.md", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "estado_del_arte", "justificacion_originalidad": "literatura ajena; DOIs verificados, cifras no incorporadas"}, {"id": "ev_23", "afirmacion": "Planificación de DAG en sistemas heterogéneos tipo HEFT (Topcuoglu et al. 2002)", "nivel": "E4", "tipo": "documental", "fuente": "docs/algoritmos_hibridos.md", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "estado_del_arte", "justificacion_originalidad": "algoritmo clásico de terceros; DOI verificado"}, {"id": "ev_24", "afirmacion": "Integrar CIM multinivel, entrenamiento con ruido y QPU opcional como acelerador en la arquitectura del proyecto", "nivel": "E0", "tipo": "teorico", "fuente": "docs/algoritmos_hibridos.md", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "adaptacion", "justificacion_originalidad": "combinación de técnicas conocidas aplicada a esta arquitectura; sin implementación"}, {"id": "ev_25", "afirmacion": "Planificador consciente de error y de coste de conversión ADC/DAC/E-O para CMOS/CIM/fotónica/QPU", "nivel": "E0", "tipo": "teorico", "fuente": "docs/algoritmos_hibridos.md", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "propuesta_propia", "justificacion_originalidad": "diseño propio del proyecto, no implementado ni evaluado"}, {"id": "ev_26", "afirmacion": "Usar las tablas error/energía de sim_mvm como modelo de coste del planificador", "nivel": "E0", "tipo": "teorico", "fuente": "docs/algoritmos_hibridos.md", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "propuesta_propia", "justificacion_originalidad": "idea propia; datos subyacentes E2 con parámetros supuestos"}, {"id": "ev_27", "afirmacion": "Densidad de potencia de la línea base CMOS binaria: el Manual usa 0,8 W/mm² mientras otras fuentes del proyecto dan 9,8 W/mm²; cifra inconsistente y sin referencia", "nivel": "E0", "tipo": "teorico", "fuente": "docs/Manual_de_Fabricacion... línea 304 (anotación del 2026-10-21 13:58)", "estado": "PENDIENTE DE VERIFICACIÓN", "originalidad": "propuesta_propia", "justificacion_originalidad": "supuesto propio del Manual sin fuente", "nota_2026_10_27": "drive/revision_llp.json (commit e60e2c1, 2026-10-26 20:18) atribuye 9,8 W/mm² a probable error OCR: la otra OCR del Blueprint (.pdf.ocr.md:160) y thermal_model.py (odeint args=(0.8,...)) dan 0,8 W/mm². Valor de trabajo 0,8 W/mm² = E2 simulación no reproducida; cifra en sí sigue sin referencia (E0); PDF original PENDIENTE DE VERIFICACIÓN visual"}]}
+{
+ "meta": {
+  "proyecto": "ordenador_hibrido_no_binario",
+  "fecha": "2026-10-30",
+  "escala_evidencia": {
+   "E0": "especulación/objetivo sin respaldo",
+   "E1": "teoría establecida o cálculo derivado / hecho documental",
+   "E2": "simulación propia no reproducida",
+   "E3": "literatura citada sin referencia exacta",
+   "E4": "literatura revisada por pares con referencia",
+   "E5": "experimento propio reproducido",
+   "E6": "validación independiente"
+  },
+  "nota": "E5–E6 sin entradas: no hay experimentos propios",
+  "nota_originalidad": "originalidad: estado_del_arte|adaptacion|propuesta_propia; tipo: teorico|simulacion|documental",
+  "nota_ciclo_2026_10_22": "Novedades desde el ciclo 2026-10-21 09:39: Manual (docs/ y drive/) anotado a las 13:58 con niveles E y PENDIENTE (kT/C E1; CMOS 0,8 vs 9,8 W/mm²) → ev_27; docs/algoritmos_hibridos.md marca R9 PENDIENTE (coherente con ev_22). Repo Atlas0 sin cambios (último push 2026-10-08 10:49 UTC+2). Sin nuevas simulaciones ni experimentos; E5–E6 siguen vacíos.",
+  "nota_ciclo_2026_10_27": "Novedad desde ciclo 2026-10-26 09:31: solo commit e60e2c1 (revision_llp.json, nota conflicto CMOS) → anotada en ev_27 sin cambiar nivel. Repo GitHub Atlas0 sin cambios (último push 2026-10-23 22:41 UTC). Sin experimentos: E5–E6 vacíos",
+  "nota_ciclo_2026_10_29": "Novedad desde ciclo 2026-10-28 09:32: commit local d776d15 (2026-10-28 18:10) solo corrige lora_pares.jsonl: campo simulado false→true en lp_008, lp_011, lp_037 (coherente con tipo simulacion de ev_08 y ev_11); sin cambio de nivel. Resto de archivos con mtime 10-28 restaurados sin diferencias de contenido frente a git. Repo GitHub Atlas0 sin cambios (último push 2026-10-23 22:41 UTC). Sin experimentos: E5–E6 vacíos",
+  "nota_ciclo_2026_10_30": "Activación LLP v1.1: t6 sin sustitución de parámetros (Horowitz/Andrulis verificados, valores no sustituibles); t7 planificador.py E2 (HEFT vs error/coste-aware; aware más energía por forzar CMOS); originalidad ev_25/ev_26 → adaptacion con CLSA-CIM/HARP/Lee/Andrulis; ev_28 nueva; UCS ingesta con prefijo ordenador-hibrido-no-binario; sin push.",
+  "recuento": {
+   "E0": 12,
+   "E1": 5,
+   "E2": 3,
+   "E3": 2,
+   "E4": 7
+  }
+ },
+ "registro": [
+  {
+   "id": "ev_01",
+   "afirmacion": "El límite de Landauer por bit equivalente (k_B·T·ln2 ≈ 2,87e-21 J a 300 K) no se reduce con lógica multivaluada",
+   "nivel": "E1",
+   "tipo": "teorico",
+   "fuente": "documento_maestro_proyecto.md §2.1; repo README (Landauer 1961)",
+   "estado": "verificado",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "física establecida (Landauer)"
+  },
+  {
+   "id": "ev_02",
+   "afirmacion": "Ruido térmico sigma_V=sqrt(kT/C) ≈ 2,04 mV para C=1 fF, 300 K; tabla de márgenes por base es cota idealizada",
+   "nivel": "E1",
+   "tipo": "teorico",
+   "fuente": "documento_maestro_proyecto.md §2.3",
+   "estado": "verificado",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "física establecida (ruido kT/C)"
+  },
+  {
+   "id": "ev_03",
+   "afirmacion": "No existe fabricación, demostración experimental ni validación independiente del ordenador híbrido",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "documento_maestro_proyecto.md §1.3; docs/Ordenador_hibrido.md",
+   "estado": "verificado",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "declaración de alcance del propio proyecto"
+  },
+  {
+   "id": "ev_04",
+   "afirmacion": "Las cifras de rendimiento (≥20 % energía, ≥20 % temperatura, ≥99,9 % disponibilidad) son objetivos de diseño, no resultados",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "docs/Ordenador_hibrido.md §criterios",
+   "estado": "verificado",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "objetivos de diseño propios"
+  },
+  {
+   "id": "ev_05",
+   "afirmacion": "Las tablas de 'resultados de simulación' del manuscrito previo no son reproducibles y se retiran; probabilidades 70 %/10 % sustituidas por tesis A/B/C",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "docs/Estudio_viabilidad_arquitectura_hibrida_revisado.docx.md cap. 7 y anexo",
+   "estado": "verificado",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "decisión editorial propia sobre el manuscrito"
+  },
+  {
+   "id": "ev_06",
+   "afirmacion": "Memresonador III–V/Si: Tossoun et al., 'High-speed and energy-efficient non-volatile silicon photonic memory based on heterogeneously integrated memresonator', Nature Communications 15, 551 (2024-01-16), doi:10.1038/s41467-024-44773-7 (literatura ajena)",
+   "nivel": "E4",
+   "tipo": "documental",
+   "fuente": "docs/Estudio_viabilidad... referencias; doi.org → 302 a nature.com/articles/s41467-024-44773-7; metadatos Crossref (2026-10-20)",
+   "estado": "verificado",
+   "nota": "Verificada la existencia y metadatos del DOI; contenido técnico no revisado ni sus cifras incorporadas",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "artículo de terceros"
+  },
+  {
+   "id": "ev_07",
+   "afirmacion": "Dispositivos resistivos de HfOx muestran múltiples estados de conductancia útiles para CIM (literatura ajena, sin cita concreta local)",
+   "nivel": "E3",
+   "tipo": "documental",
+   "fuente": "documento_maestro_proyecto.md §3.2",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "literatura ajena sin cita concreta"
+  },
+  {
+   "id": "ev_08",
+   "afirmacion": "Código VQE, algoritmo genético de puertas multinivel y modelo térmico del Manual son simulaciones analíticas ilustrativas sin datos de salida archivados",
+   "nivel": "E2",
+   "tipo": "simulacion",
+   "fuente": "docs/Manual_de_Fabricacion... §3-5",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "adaptacion",
+   "justificacion_originalidad": "código propio ilustrativo sobre métodos conocidos"
+  },
+  {
+   "id": "ev_09",
+   "afirmacion": "Protocolo de fabricación en sala blanca del Manual describe un prototipo experimental no realizado",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "docs/Manual_de_Fabricacion... §6",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "protocolo prospectivo propio"
+  },
+  {
+   "id": "ev_10",
+   "afirmacion": "Presupuestos de fases (p.ej. Fase 1 15 M€; MPW 5–25 M€) son estimaciones sin desglose verificable",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "docs/Manual §8; docs/Estudio_viabilidad cap. 8",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "estimación propia"
+  },
+  {
+   "id": "ev_11",
+   "afirmacion": "Repo Atlas0: demos TQC (anyones Fibonacci), lógica reversible Toffoli en Rust y dossier Zenodo marcados 'Ready'/'Green'",
+   "nivel": "E0",
+   "tipo": "simulacion",
+   "fuente": "github canelonemf-byte/Atlas0-ordenador2.6-x-10- README",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "contenido del repo del autor"
+  },
+  {
+   "id": "ev_12",
+   "afirmacion": "Repo Atlas0: árbol actual solo contiene .gitignore, LICENSE y Makefile; src/, docs/, scripts/ declarados en README no aparecen",
+   "nivel": "E1",
+   "tipo": "teorico",
+   "fuente": "GitHub API git/trees HEAD (2026-10-20)",
+   "estado": "verificado",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "hecho documental sobre el repo propio"
+  },
+  {
+   "id": "ev_13",
+   "afirmacion": "Descripción del repo: 2,6e32 unidades a 1 µm² ≈ 5,1e5 superficies terrestres; ≈1,4e5 t de ADN",
+   "nivel": "E1",
+   "tipo": "teorico",
+   "fuente": "GitHub descripción del repo",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "cálculo de la descripción del repo propio"
+  },
+  {
+   "id": "ev_14",
+   "afirmacion": "'Conscious Substrate Informatics: coherencia como sincronización con la red informacional' (README Atlas0)",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "repo README",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "concepto especulativo del autor"
+  },
+  {
+   "id": "ev_15",
+   "afirmacion": "Existe DOI Zenodo del proyecto",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "documento_maestro_proyecto.md cabecera; repo README",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "afirmación sobre el propio proyecto"
+  },
+  {
+   "id": "ev_16",
+   "afirmacion": "Simulación MVM 256x256: CIM memristivo (2–16 niveles, ADC 4–8 bits) da error relativo 10,5–100 % frente a 0,4 % de CMOS 8 bits; ahorro energético modelado 95–96 % con ADC+DAC = 46–62 % de la energía CIM; todos los parámetros son supuestos",
+   "nivel": "E2",
+   "tipo": "simulacion",
+   "fuente": "sim/sim_mvm.py, sim/parametros.yaml, sim/salidas/resultados.csv (semilla 20261020)",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "adaptacion",
+   "justificacion_originalidad": "simulación propia de un modelo CIM estándar con parámetros supuestos",
+   "nota_ciclo_2026_10_21": "test mínimo sim/test_sim_mvm.py pasa (1 passed, re-ejecución local 2026-10-21 09:40 Europe/Madrid); sigue siendo E2: re-ejecución propia, no reproducción independiente ni experimento"
+  },
+  {
+   "id": "ev_17",
+   "afirmacion": "VQE: bucle variacional QPU+optimizador clásico para estado fundamental (Peruzzo et al. 2014, doi:10.1038/ncomms5213)",
+   "nivel": "E4",
+   "tipo": "documental",
+   "fuente": "docs/algoritmos_hibridos.md",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "método publicado por terceros; DOI verificado, contenido no revisado"
+  },
+  {
+   "id": "ev_18",
+   "afirmacion": "QAOA: optimización combinatoria con p capas coste/mezclador (Farhi et al., arXiv:1411.4028)",
+   "nivel": "E3",
+   "tipo": "documental",
+   "fuente": "docs/algoritmos_hibridos.md",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "preprint arXiv verificado, no revisado por pares en esta cita"
+  },
+  {
+   "id": "ev_19",
+   "afirmacion": "Limitaciones de algoritmos variacionales: barren plateaus, ruido NISQ, coste en mediciones (Cerezo 2021; McClean 2018)",
+   "nivel": "E4",
+   "tipo": "documental",
+   "fuente": "docs/algoritmos_hibridos.md",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "literatura ajena; DOIs verificados, contenido no revisado"
+  },
+  {
+   "id": "ev_20",
+   "afirmacion": "Qudits: más información por portador a cambio de control/calibración más complejos (Wang et al. 2020)",
+   "nivel": "E4",
+   "tipo": "documental",
+   "fuente": "docs/algoritmos_hibridos.md",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "revisión de terceros; DOI verificado"
+  },
+  {
+   "id": "ev_21",
+   "afirmacion": "MVL clásica: menor interconexión por dígito, márgenes de ruido decrecientes con la base (Hurst 1984)",
+   "nivel": "E4",
+   "tipo": "documental",
+   "fuente": "docs/algoritmos_hibridos.md",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "literatura ajena; DOI verificado"
+  },
+  {
+   "id": "ev_22",
+   "afirmacion": "CIM analógico en crossbar y técnicas de entrenamiento tolerante a ruido (Ielmini 2018; Sebastian 2020; Joshi 2020)",
+   "nivel": "E4",
+   "tipo": "documental",
+   "fuente": "docs/algoritmos_hibridos.md",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "literatura ajena; DOIs verificados, cifras no incorporadas"
+  },
+  {
+   "id": "ev_23",
+   "afirmacion": "Planificación de DAG en sistemas heterogéneos tipo HEFT (Topcuoglu et al. 2002)",
+   "nivel": "E4",
+   "tipo": "documental",
+   "fuente": "docs/algoritmos_hibridos.md",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "algoritmo clásico de terceros; DOI verificado"
+  },
+  {
+   "id": "ev_24",
+   "afirmacion": "Integrar CIM multinivel, entrenamiento con ruido y QPU opcional como acelerador en la arquitectura del proyecto",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "docs/algoritmos_hibridos.md",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "adaptacion",
+   "justificacion_originalidad": "combinación de técnicas conocidas aplicada a esta arquitectura; sin implementación"
+  },
+  {
+   "id": "ev_25",
+   "afirmacion": "Planificador consciente de error y de coste de conversión ADC/DAC/E-O para CMOS/CIM/fotónica/QPU (propuesta de diseño). Trabajo previo relacionado verificado: CLSA-CIM (Pelke et al., DATE 2024, doi:10.23919/date58400.2024.10546668) scheduling CIM por latencia/utilización; HARP (Ferro et al., IEEE TPDS 2026, doi:10.1109/tpds.2026.3706975) scheduling analógico-digital; Lee et al. (IEEE TCSI 2025, doi:10.1109/tcsi.2025.3530637) mapeo heterogéneo approx DCIM energía-precisión; Andrulis et al. (arXiv:2404.06553) modelo de energía ADC para CIM. Ninguno es idéntico a HEFT + umbral de error + coste ADC/DAC desde tablas MVM en DAG CMOS/CIM/fotónica/QPU.",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "docs/algoritmos_hibridos.md; Crossref/arXiv 2026-10-30",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "adaptacion",
+   "justificacion_originalidad": "combinación propia sobre HEFT y literatura CIM de scheduling/ADC; no propuesta aislada sin precedentes"
+  },
+  {
+   "id": "ev_26",
+   "afirmacion": "Usar las tablas error/energía de sim_mvm como modelo de coste del planificador (idea de diseño). Relacionado: modelos de coste ADC en CIM (Andrulis arXiv:2404.06553). Implementación mínima en sim/planificador.py = E2 (ev_28).",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "docs/algoritmos_hibridos.md; sim/planificador.py",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "adaptacion",
+   "justificacion_originalidad": "adaptación de tablas MVM propias + idea de modelar coste ADC; datos subyacentes E2 con parámetros supuestos"
+  },
+  {
+   "id": "ev_27",
+   "afirmacion": "Densidad de potencia de la línea base CMOS binaria: el Manual usa 0,8 W/mm² mientras otras fuentes del proyecto dan 9,8 W/mm²; cifra inconsistente y sin referencia",
+   "nivel": "E0",
+   "tipo": "teorico",
+   "fuente": "docs/Manual_de_Fabricacion... línea 304 (anotación del 2026-10-21 13:58)",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "supuesto propio del Manual sin fuente",
+   "nota_2026_10_27": "drive/revision_llp.json (commit e60e2c1, 2026-10-26 20:18) atribuye 9,8 W/mm² a probable error OCR: la otra OCR del Blueprint (.pdf.ocr.md:160) y thermal_model.py (odeint args=(0.8,...)) dan 0,8 W/mm². Valor de trabajo 0,8 W/mm² = E2 simulación no reproducida; cifra en sí sigue sin referencia (E0); PDF original PENDIENTE DE VERIFICACIÓN visual"
+  },
+  {
+   "id": "ev_28",
+   "afirmacion": "Simulación planificador: HEFT vs error/coste-aware sobre DAG sintético de 8 tareas usando tablas sim_mvm (cim_L4_adc4, cim_L8_adc6, cim_L16_adc8, cmos). En la corrida con semilla 20261030, HEFT asigna solo CIM (menor makespan y energía modelada) mientras el aware respeta error_max y asigna CMOS a tareas estrictas, con más energía total modelada. Todos los supuestos (DAG, latencias, α/β) están listados en salidas/planificador_resultados.json.",
+   "nivel": "E2",
+   "tipo": "simulacion",
+   "fuente": "sim/planificador.py, sim/salidas/planificador_resultados.json, test_planificador.py",
+   "estado": "PENDIENTE DE VERIFICACIÓN",
+   "originalidad": "adaptacion",
+   "justificacion_originalidad": "prototipo propio sobre HEFT + restricciones de error; no experimento",
+   "nota": "etiqueta obligatoria: simulación, nunca experimento"
+  },
+  {
+   "id": "ev_29",
+   "afirmacion": "t6: intento de sustituir parámetros supuestos. Horowitz ISSCC 2014 doi:10.1109/isscc.2014.6757323 resuelve (Crossref) y PDF accesible; texto cita ~10 pJ operación funcional, ~20 pJ cache, ~70 pJ/instrucción, DRAM 1–2 nJ; Fig. 1.1.9 no aporta MAC 8 bit sustituible. Andrulis et al. arXiv:2404.06553 existe (modelo ADC vs throughput/ENOB) sin constante e_adc_pj_por_bit para este modelo. parametros.yaml permanece supuesto.",
+   "nivel": "E1",
+   "tipo": "documental",
+   "fuente": "sim/parametros.yaml; doi.org/10.1109/isscc.2014.6757323; arXiv:2404.06553",
+   "estado": "verificado",
+   "originalidad": "estado_del_arte",
+   "justificacion_originalidad": "verificación documental de fuentes ajenas; sin incorporación de cifras al modelo"
+  }
+ ]
+}

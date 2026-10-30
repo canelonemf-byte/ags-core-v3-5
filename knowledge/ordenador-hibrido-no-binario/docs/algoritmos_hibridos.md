@@ -1,7 +1,7 @@
 # Algoritmos híbridos clásico-cuánticos y no binarios — ORDENADOR HÍBRIDO
 
-Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España + asistencia IA · Licencia CC BY 4.0 · 2026-10-21
-Alcance: revisión del estado del arte y propuesta de diseño. Ningún resultado de este documento es experimental. Niveles E según `registro_evidencia.json` (ev_17–ev_26).
+Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España + asistencia IA · Licencia CC BY 4.0 · 2026-10-21; actualización originalidad/planificador 2026-10-30
+Alcance: revisión del estado del arte y propuesta de diseño. Ningún resultado de este documento es experimental. Niveles E según `registro_evidencia.json` (ev_17–ev_26, ev_28).
 
 ## 1. Variacionales híbridos (VQE, QAOA) — estado del arte
 - **Bucle**: la QPU prepara un estado parametrizado |ψ(θ)⟩ y mide ⟨H⟩. Un optimizador clásico (CMOS) actualiza θ, y el ciclo se repite hasta converger. El coste está dominado por el número de disparos (shots) y por las iteraciones.
@@ -21,17 +21,20 @@ Alcance: revisión del estado del arte y propuesta de diseño. Ningún resultado
 - **Relación con `sim/sim_mvm.py` (E2, ev_16)**: el modelo solo incluye cuantización a 2–16 niveles, ruido de programación (2 %) y de lectura (1 %) y ADC de 4–8 bits, todo con **parámetros supuestos**. Todavía no incluye deriva, IR-drop ni entrenamiento tolerante a ruido. Resultado: ninguna configuración llega a ≤1 % (la mejor da un 10,5 %) y ADC+DAC suponen el 46–62 % de la energía CIM modelada.
 
 ## 4. Planificación heterogénea CMOS/CIM/fotónica/QPU
-- **Estado del arte**: list scheduling sobre un DAG de tareas con costes distintos por procesador; HEFT es la referencia clásica [R10].
-- **Propuesta propia (E0, no implementada)**: un planificador tipo HEFT cuya función de coste por tarea y destino incluye energía, latencia y **error esperado**. Si una tarea pide más precisión de la que puede dar el CIM, se descarta o se envía a CMOS. Además se contabilizan las conversiones ADC/DAC y E/O, y la QPU solo se considera para subproblemas variacionales cuando el coste en disparos está justificado.
-- **Usar sim_mvm como modelo de coste**: las tablas error/energía de `sim/salidas/resultados.csv` podrían alimentar la decisión CMOS↔CIM. Solo serán significativas cuando se sustituyan los supuestos por parámetros con fuente (tarea t6).
+- **Estado del arte**: list scheduling sobre un DAG de tareas con costes distintos por procesador; HEFT es la referencia clásica [R10]. En CIM: scheduling cross-layer por latencia/utilización (CLSA-CIM) [R11]; frameworks de scheduling analógico-digital (HARP) [R12]; mapeo heterogéneo approximate-DCIM energía–precisión [R13]; modelos arquitecturales de energía ADC [R14].
+- **Diseño del proyecto (E0, originalidad=adaptacion)**: planificador tipo HEFT cuya función de coste incluye energía, latencia y **error esperado**, más conversiones ADC/DAC (y E/O a futuro). No es idéntico a [R11]–[R14], pero se apoya en ellos: deja de reclamarse como propuesta_propia aislada.
+- **Prototipo E2 (2026-10-30)**: `sim/planificador.py` compara HEFT con un planificador consciente de error/coste sobre un DAG sintético, usando tablas de `sim_mvm`. En la corrida, el aware respeta `error_max` (fuerza CMOS en tareas estrictas) y **gasta más energía modelada** que HEFT. Supuestos listados en `salidas/planificador_resultados.json`. Etiqueta: **simulación**, no experimento. Fotónica/QPU aún no están en el prototipo.
+- **Usar sim_mvm como modelo de coste**: tablas error/energía alimentan la decisión CMOS↔CIM. Siguen siendo poco significativas mientras los parámetros de `parametros.yaml` sean supuestos (t6: sin sustitución limpia el 2026-10-30).
 
 ## 5. Qué es propio del proyecto y qué no
 | tema | originalidad | E |
 |---|---|---|
 | VQE/QAOA, qudits, MVL, CIM, HEFT | estado_del_arte | E4 (literatura con referencia) |
+| Scheduling CIM / ADC cost models (CLSA-CIM, HARP, Lee, Andrulis) | estado_del_arte | E4 |
 | Integrar CIM, entrenamiento con ruido y QPU opcional en esta arquitectura | adaptacion | E0 |
-| Planificador consciente de error y conversión | propuesta_propia | E0 |
-| Modelo de coste sim_mvm para planificación | propuesta_propia | E0 (los datos de la simulación son E2) |
+| Planificador consciente de error y conversión (diseño) | adaptacion | E0 |
+| Prototipo sim/planificador.py | adaptacion | E2 simulación |
+| Modelo de coste sim_mvm para planificación | adaptacion | E0 diseño / E2 datos |
 
 ## Referencias (comprobadas con Crossref/doi.org o la API de arXiv el 2026-10-21; solo existencia y metadatos, sin revisión técnica del contenido)
 - [R1] Peruzzo et al., *A variational eigenvalue solver on a photonic quantum processor*, Nat. Commun. (2014). doi:10.1038/ncomms5213
@@ -44,5 +47,9 @@ Alcance: revisión del estado del arte y propuesta de diseño. Ningún resultado
 - [R8] Sebastian et al., *Memory devices and applications for in-memory computing*, Nat. Nanotechnol. (2020). doi:10.1038/s41565-020-0655-z
 - [R9] Joshi et al., *Accurate deep neural network inference using computational phase-change memory*, Nat. Commun. (2020). doi:10.1038/s41467-020-16108-9
 - [R10] Topcuoglu, Hariri, Wu, *Performance-effective and low-complexity task scheduling for heterogeneous computing*, IEEE TPDS (2002). doi:10.1109/71.993206
+- [R11] Pelke et al., *CLSA-CIM: A Cross-Layer Scheduling Approach for Computing-in-Memory Architectures*, DATE (2024). doi:10.23919/date58400.2024.10546668 (Crossref 2026-10-30; contenido técnico no revisado en profundidad)
+- [R12] Ferro, Benmeziane, Boybat, *HARP: Heterogeneous Analog-Digital Resource-Aware Performance and Scheduling Framework for Transformer Acceleration*, IEEE TPDS (2026). doi:10.1109/tpds.2026.3706975 (Crossref 2026-10-30)
+- [R13] Lee, Lee, Park, *A Design Framework of Heterogeneous Approximate DCIM-Based Accelerator for Energy-Efficient NN Processing*, IEEE TCSI (2025). doi:10.1109/tcsi.2025.3530637 (Crossref 2026-10-30)
+- [R14] Andrulis et al., *Modeling Analog-Digital-Converter Energy and Area for Compute-In-Memory Accelerator Design*, arXiv:2404.06553 (2024) (arXiv HTML 2026-10-30)
 
 Las afirmaciones cualitativas atribuidas a [R1]–[R10] proceden del conocimiento general del campo y no se han contrastado con el texto completo: quedan **PENDIENTE DE VERIFICACIÓN** en cuanto a su contenido.

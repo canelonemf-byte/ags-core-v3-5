@@ -1,14 +1,127 @@
 {
-  "proyecto": {
-    "meta": {
-      "id": "ordenador_hibrido"
-    },
-    "objetivo": "Computación clásica-cuántica.",
-    "datos_clave": {
-      "drive": "1-me3Bhikfvlnpg3_uXloqTW_cV1rhtu5"
-    },
-    "evidencia_nivel": "E1"
+ "schema": "llp.proyecto.v1.1",
+ "proyecto": {
+  "meta": {
+   "id": "ordenador_hibrido",
+   "nombre": "ORDENADOR HÍBRIDO (no binario)",
+   "estado": "activo",
+   "fecha": "2026-10-30",
+   "responsable": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España + asistencia de IA",
+   "tags": [
+    "cim",
+    "memristor",
+    "hibrido",
+    "planificador",
+    "clasico_cuantico",
+    "e0_e1"
+   ]
   },
-  "_fuente": "pegado por el usuario en chat 2026-10-20; archivo original no disponible en el ordenador; reconstruido mínimo solo con los datos pegados (resumen, no JSON literal)",
-  "_evidencia_tipo": "declarada_en_pack"
+  "objetivo": "Computación clásica-cuántica y no binaria: evaluar arquitectura heterogénea (CMOS + CIM memristivo multinivel + NVM + fotónica selectiva + planificación con IA) frente a baseline CMOS; sin fabricación.",
+  "datos_clave": {
+   "carpeta": "knowledge/ordenador-hibrido-no-binario",
+   "drive": "1-me3Bhikfvlnpg3_uXloqTW_cV1rhtu5",
+   "registro": "registro_evidencia.json",
+   "sim_mvm": "sim/ (E2 simulación; parámetros supuestos tras t6)",
+   "planificador": "sim/planificador.py (E2 simulación; propuesta de diseño E0)",
+   "atlas0": "repo público solo lectura; commit/push pendiente de aprobación del autor",
+   "evidencia_global": "E1",
+   "recuento_niveles_nota": "ver registro; E5–E6 vacíos"
+  },
+  "tareas": [
+   {
+    "id": "t1",
+    "tarea": "LICENSE-docs CC BY 4.0 y unificar autoría",
+    "estado": "pendiente",
+    "prioridad": "media",
+    "responsable": "autor",
+    "fecha": ""
+   },
+   {
+    "id": "t2",
+    "tarea": "Alinear README Atlas0 o subir código (aprobación autor)",
+    "estado": "pendiente",
+    "prioridad": "alta",
+    "responsable": "autor",
+    "fecha": ""
+   },
+   {
+    "id": "t3",
+    "tarea": "Baseline CMOS + kernel de referencia reproducible",
+    "estado": "en_curso",
+    "prioridad": "alta",
+    "responsable": "agente",
+    "fecha": "2026-10-30"
+   },
+   {
+    "id": "t6",
+    "tarea": "Sustituir supuestos parametros.yaml por valores con fuente verificada",
+    "estado": "intentado_sin_sustitucion",
+    "prioridad": "alta",
+    "responsable": "agente",
+    "fecha": "2026-10-30"
+   },
+   {
+    "id": "t7",
+    "tarea": "Prototipo planificador HEFT vs error/coste-aware",
+    "estado": "completado_e2",
+    "prioridad": "alta",
+    "responsable": "agente",
+    "fecha": "2026-10-30"
+   },
+   {
+    "id": "t8",
+    "tarea": "Leer texto completo R1–R10 antes de cifras de terceros",
+    "estado": "pendiente",
+    "prioridad": "media",
+    "responsable": "agente",
+    "fecha": ""
+   }
+  ],
+  "riesgos": [
+   "Overhead ADC/DAC puede anular ganancia CIM (H5); sim planificador: aware usa más energía que HEFT al forzar CMOS",
+   "Afirmaciones Ready/Green/DOI sin respaldo en Atlas0",
+   "Parámetros MVM siguen supuestos tras t6",
+   "Licencias inconsistentes MIT vs CC BY 4.0"
+  ],
+  "decisiones": [
+   "evidencia_global E0/E1; simulaciones etiquetadas E2 nunca como experimento",
+   "sin push ni publicar sin aprobación del autor",
+   "archivo base llp_pack/ordenador_hibrido.json (no duplicar ordenador-hibrido.json)"
+  ],
+  "proximo_paso": "Incorporar no idealidades (IR-drop/deriva) en sim_mvm cuando haya fuentes; ampliar planificador a fotónica/QPU sintéticas; aprobación autor para Atlas0",
+  "fuentes": [
+   "knowledge/ordenador-hibrido-no-binario",
+   "llp_pack/ordenador_hibrido.json",
+   "doi:10.1109/isscc.2014.6757323 (Horowitz; sin MAC 8b sustituible)",
+   "arXiv:2404.06553 (modelo ADC; sin constante única)",
+   "doi:10.23919/date58400.2024.10546668 (CLSA-CIM)",
+   "doi:10.1109/tpds.2026.3706975 (HARP)",
+   "doi:10.1109/tcsi.2025.3530637 (Lee et al. approx DCIM)"
+  ],
+  "evidencia_nivel": "E1",
+  "alias": [
+   "ordenador_hibrido_no_binario",
+   "ORDENADOR HÍBRIDO"
+  ],
+  "drive_canonicos": [
+   "1-me3Bhikfvlnpg3_uXloqTW_cV1rhtu5"
+  ],
+  "drive_duplicados": []
+ },
+ "_conflictos": [
+  {
+   "tipo": "nombre",
+   "pack": "ordenador_hibrido.json / meta.id=ordenador_hibrido",
+   "estado_local": "estado_proyecto_llp.json meta.proyecto=ordenador_hibrido_no_binario",
+   "resolucion": "CONFLICTO de nombre: se conserva ordenador_hibrido.json como base (sin crear ordenador-hibrido.json); alias apunta al nombre de carpeta"
+  },
+  {
+   "tipo": "contenido",
+   "pack_previo": "pack mínimo (objetivo corto, solo drive, E1 declarado)",
+   "estado_local": "estado_proyecto_llp.json rico (tareas t1–t8, riesgos, incoherencias repo)",
+   "resolucion": "prevalece estado verificado local; pack actualizado 2026-10-30 a esquema v1.1"
+  }
+ ],
+ "_fuente": "actualizado 2026-10-30 desde estado_proyecto_llp.json + sim/; pack original era reconstrucción mínima 2026-10-20",
+ "_evidencia_tipo": "verificado_local_mas_simulacion_e2"
 }
