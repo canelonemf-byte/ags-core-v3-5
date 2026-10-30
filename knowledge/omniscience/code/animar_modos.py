@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Animación de modos de cuerda + superposición (video MP4)."""
+"""Animación de modos de cuerda + superposición (video MP4).
+
+Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, ORCID 0000-0001-8601-1963, con asistencia de IA.
+Licencia: MIT. La IA no es autora.
+"""
 import os
 from pathlib import Path
 import numpy as np

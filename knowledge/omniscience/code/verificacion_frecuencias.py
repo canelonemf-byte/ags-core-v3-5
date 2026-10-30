@@ -1,7 +1,11 @@
 """ADICIÓN NUEVA (ORÁCULO, 2026-10-18), no forma parte del código original de C-VIB-001.
 Comprobación analítica independiente de H3: frecuencias de una cuerda fija-fija
 f_n = n·c/(2L), con c = sqrt(T/mu). No altera simular_vibraciones.py (allí sigue el xfail).
-Método: autovalores de la discretización por diferencias finitas de u_tt = c² u_xx."""
+Método: autovalores de la discretización por diferencias finitas de u_tt = c² u_xx.
+
+Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, ORCID 0000-0001-8601-1963, con asistencia de IA.
+Licencia: MIT. La IA no es autora.
+"""
 import numpy as np
 from scipy.linalg import eigh_tridiagonal
 

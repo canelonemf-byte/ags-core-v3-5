@@ -1,4 +1,8 @@
-"""Genera ro-crate-metadata.json (RO-Crate 1.1) con sha256 de cada fichero. Ejecutar tras run_c_vib_001.sh (o sin salidas)."""
+"""Genera ro-crate-metadata.json (RO-Crate 1.1) con sha256 de cada fichero. Ejecutar tras run_c_vib_001.sh (o sin salidas).
+
+Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, ORCID 0000-0001-8601-1963, con asistencia de IA.
+Licencia: MIT. La IA no es autora.
+"""
 import json, hashlib, os, datetime
 
 base = [
