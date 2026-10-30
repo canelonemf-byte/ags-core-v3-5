@@ -1,1 +1,72 @@
-{"meta": {"proyecto": "fusion_ia_agsgpt_lora", "fecha": "2026-10-21", "autor": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA", "evidencia": "E0 FUSIÓN IA / E2_smoke_minimo AGsGPT+LoRA (pipeline de punta a punta; sin mejora medible)"}, "objetivo": "E1 a E2: experimento LoRA reproducible y medido", "datos_clave": ["dataset 2026-10-21 15:36: splits 889/193/66 + 157 simulados; 2 retirados (near-dup train-val y contaminación test)", "sin_respuesta v2 corregido: 100 (no_clinico 75 + sustituto_v2 25), sha256 fe53a5624aeb9f33cc91ab047c89ac7f5c9c4a8c4075d2b4f70df8c38ca95e8d", "contaminación tras corrección: test 14/66 con solape de contenido, ninguno >= 0.5 (máx. 0.375); sin_respuesta 0/100", "enmienda ORÁCULO aplicada 2026-10-21 (aprobada por Lázaro 14:51): McNemar exacto + Holm (alfa 0.025 primer paso), IC95 pareado, semillas 42/43/44, contaminación 13-gram, m4 por estrato; criterio 10 pts conservado como relevancia práctica", "test_ampliado PENDIENTE: 109 ítems/64 documentos disponibles (83% omniscience); documentos reservados en data/test_ampliado_reserva.json", "estadistica.py selftest OK con datos sintéticos (McNemar, Holm, IC Agresti-Min y potencia cuadran con ORÁCULO)", "auditoría near-dup 14:28: 0 en todos los cruces (train-test, val-test, simulados-test, train-val, simulados-train, simulados-val); documentos compartidos entre splits: 0", "retirado train f6174fae56fef69a (copia en knowledge/omniscience/llp_pack_notas.md) por near_dup_cross_split con val 41e539f8975d8c39 (knowledge/llp_pack/README.md, J=0.972); registrado en data/retirados.jsonl y rechazados.jsonl; dry-run confirma que merge_pares lo bloquea como near_dup", "test intacto: sha256 0937f06c329f1744f22570dab347aca26fa487c771356027b9bdead33e6f8ef5", "merge_pares.py: near-dup Jaccard shingles 5 caracteres >= 0.85 (test siempre), fuente resoluble en ags-core-v3.6/ o /workspace/ (sin #fragmento), --dry-run, --input; idempotente (2 ejecuciones sin cambios, también con un minuto de diferencia)", "cero-a-amoniaco: 8 pares rechazados fuente_no_existe (knowledge/cero-a/informe_v3.md ya no existe; proyecto 'cero-a' != carpeta)", "preflight_7b.py: NO-GO (sin GPU, sin torch/transformers/peft/bitsandbytes/accelerate, RAM 15.6 GB); disco, test y hashes OK", "Mistral-7B-v0.3: apache-2.0 en ficha HF (cardData, re-verificado 2026-10-26 20:20 Madrid, sha caa1feb0); sin archivo LICENSE en repo (404); texto canónico Apache-2.0 en https://www.apache.org/licenses/LICENSE-2.0", "test congelado 66 pares, sha256 0937f06c329f1744f22570dab347aca26fa487c771356027b9bdead33e6f8ef5, verificado tras restauración 2026-10-21", "data/simulados.jsonl: 157 pares (recalculado 2026-10-26), sha256 691962b2f4f11fc654cfb593247b1f91305dc013f15e42958e48ded1a4d16d05; valor anterior (26 pares, 500668dd…) obsoleto", "fuga entre splits por documento: 0; simulados en splits: 0", "smoke_lowmem (previo): 60 pasos, val loss 3.1711 a 2.8521; baseline 0.0% vs LoRA 0.0% LLP válido (n=20); calculado con el dataset anterior a excluir simulados"], "tareas": ["aprobación de Lázaro para fusionar gravedad y oraculo", "corregir fuente/proyecto de cero-a-amoniaco", "GPU y aprobación de entrenamiento 7B", "piloto con GPU para discordancia y n de test_ampliado", "validar heurística de abstención v2 con salidas reales"], "riesgos": ["sin GPU en el box", "n_test=66: poca potencia estadística", "licencia Mistral: Apache-2.0 declarada en ficha HF; repo sin LICENSE propio (se usa texto canónico ASF)", "confusión LoRA adaptadores vs LoRA radio NNC", "test 1beefb60f0b00499 con solape 0.375 con README de cymaquantum en train (sin decisión)"], "decisiones": ["Opción A 2026-10-21: test de 66 congelado", "excluir simulados (Lázaro, 2026-10-21): data/simulados.jsonl, fuera de train/val/test", "incidente 2026-10-21 ~11:30: reinicio borró la carpeta; restaurada íntegra (repo ce31349) y hash de test verificado; backup /workspace/backup_fusion_20261021_114349", "sin push, sin publicación, sin commit, sin entrenar 7B", "2026-10-21 13:47 Madrid: Lázaro aprueba retroactivamente el smoke run CPU SmolLM2-135M-Instruct (adapters/smoke_lowmem, E2_smoke_minimo, 0% LLP válido en base y LoRA); entrenamiento 7B sigue NO aprobado", "2026-10-21 Lázaro: se mantienen los 50 pares omniscience en train (fusión 14:08)", "2026-10-21 Lázaro: retirar near-dup train↔val f6174fae56fef69a, conservar val 41e539f8975d8c39", "gravedad y oraculo (/workspace/knowledge) NO fusionados", "2026-10-21 14:51 Lázaro: aprobada y aplicada la enmienda ORÁCULO completa (protocolo_comparacion.json enmienda_2026_10_21_oraculo); test.jsonl sin cambios", "2026-10-21 Lázaro: retirar train b6d4ab227f1389f3 (contaminacion_test con e5df021a5dbb40a3) y bloquear su ruta alternativa en merge_pares", "2026-10-21 Lázaro: retirar sin_respuesta dd86ea20047a5c33; sustituido por 8c6aed4bd864ac11 (isbn remplast-q, verificado ausente)"], "proximo_paso": "GPU y aprobación para el piloto (discordancia, n de test_ampliado)", "smoke_run_aprobacion": {"modelo": "HuggingFaceTB/SmolLM2-135M-Instruct", "adaptador": "adapters/smoke_lowmem", "nivel_e": "E2_smoke_minimo", "llp_valido_base": "0%", "llp_valido_lora": "0%", "aprobado_por": "Lázaro López Paz", "fecha_aprobacion": "2026-10-21T13:47+02:00", "tipo": "retroactiva", "entrenamiento_7b_aprobado": false}, "licencia_smollm2": {"estado": "verificado_en_ficha_hf", "licencia": "apache-2.0", "fuente": "https://huggingface.co/api/models/HuggingFaceTB/SmolLM2-135M-Instruct", "nota": "cardData.license=apache-2.0 en ficha HF (consultado 2026-10-21); el repo no incluye archivo LICENSE propio: texto completo PENDIENTE DE VERIFICACIÓN"}}
+{
+ "meta": {
+  "proyecto": "fusion_ia_agsgpt_lora",
+  "fecha": "2026-10-30",
+  "autor": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA",
+  "evidencia": "E0 FUSIÓN IA / E2_smoke_minimo AGsGPT+LoRA (pipeline de punta a punta; sin mejora medible)"
+ },
+ "objetivo": "E1 a E2: experimento LoRA reproducible y medido",
+ "datos_clave": [
+  "dataset 2026-10-30 10:46 Madrid: splits 889/200/66 + 157 simulados; +7 GRAVEDAD a val (aprobación Lázaro 09:44 vía Supervisor «Si fusióna»); 28 simulados de gravedad NO añadidos (restaurados desde backup 20261030_0945_pre_merge_gravedad); 1 near_dup excluido (línea 24, J=0.9049, id_coincidente 744936f2d1e1ba34); test sha 0937f06c…8ef5 intacto; val sha 65f6b7f61b403730b9cd2afd969e8a7b6a5145c81c923a2733a0f6632f512f67",
+  "sin_respuesta v2 corregido: 100 (no_clinico 75 + sustituto_v2 25), sha256 fe53a5624aeb9f33cc91ab047c89ac7f5c9c4a8c4075d2b4f70df8c38ca95e8d",
+  "contaminación tras corrección: test 14/66 con solape de contenido, ninguno >= 0.5 (máx. 0.375); sin_respuesta 0/100",
+  "enmienda ORÁCULO aplicada 2026-10-21 (aprobada por Lázaro 14:51): McNemar exacto + Holm (alfa 0.025 primer paso), IC95 pareado, semillas 42/43/44, contaminación 13-gram, m4 por estrato; criterio 10 pts conservado como relevancia práctica",
+  "test_ampliado PENDIENTE: 109 ítems/64 documentos disponibles (83% omniscience); documentos reservados en data/test_ampliado_reserva.json",
+  "estadistica.py selftest OK con datos sintéticos (McNemar, Holm, IC Agresti-Min y potencia cuadran con ORÁCULO)",
+  "auditoría near-dup 14:28: 0 en todos los cruces (train-test, val-test, simulados-test, train-val, simulados-train, simulados-val); documentos compartidos entre splits: 0",
+  "retirado train f6174fae56fef69a (copia en knowledge/omniscience/llp_pack_notas.md) por near_dup_cross_split con val 41e539f8975d8c39 (knowledge/llp_pack/README.md, J=0.972); registrado en data/retirados.jsonl y rechazados.jsonl; dry-run confirma que merge_pares lo bloquea como near_dup",
+  "test intacto: sha256 0937f06c329f1744f22570dab347aca26fa487c771356027b9bdead33e6f8ef5",
+  "merge_pares.py: near-dup Jaccard shingles 5 caracteres >= 0.85 (test siempre), fuente resoluble en ags-core-v3.6/ o /workspace/ (sin #fragmento), --dry-run, --input; idempotente (2 ejecuciones sin cambios, también con un minuto de diferencia)",
+  "cero-a-amoniaco: 8 pares rechazados fuente_no_existe (knowledge/cero-a/informe_v3.md ya no existe; proyecto 'cero-a' != carpeta)",
+  "preflight_7b.py: NO-GO (sin GPU, sin torch/transformers/peft/bitsandbytes/accelerate, RAM 15.6 GB); disco, test y hashes OK",
+  "Mistral-7B-v0.3: apache-2.0 en ficha HF (cardData, re-verificado 2026-10-26 20:20 Madrid, sha caa1feb0); sin archivo LICENSE en repo (404); texto canónico Apache-2.0 en https://www.apache.org/licenses/LICENSE-2.0",
+  "test congelado 66 pares, sha256 0937f06c329f1744f22570dab347aca26fa487c771356027b9bdead33e6f8ef5, verificado tras restauración 2026-10-21",
+  "data/simulados.jsonl: 157 pares (recalculado 2026-10-26), sha256 691962b2f4f11fc654cfb593247b1f91305dc013f15e42958e48ded1a4d16d05; valor anterior (26 pares, 500668dd…) obsoleto",
+  "fuga entre splits por documento: 0; simulados en splits: 0",
+  "smoke_lowmem (previo): 60 pasos, val loss 3.1711 a 2.8521; baseline 0.0% vs LoRA 0.0% LLP válido (n=20); calculado con el dataset anterior a excluir simulados"
+ ],
+ "tareas": [
+  "corregir fuente/proyecto de cero-a-amoniaco",
+  "GPU y aprobación de entrenamiento 7B",
+  "piloto con GPU para discordancia y n de test_ampliado",
+  "validar heurística de abstención v2 con salidas reales"
+ ],
+ "riesgos": [
+  "sin GPU en el box",
+  "n_test=66: poca potencia estadística",
+  "licencia Mistral: Apache-2.0 declarada en ficha HF; repo sin LICENSE propio (se usa texto canónico ASF)",
+  "confusión LoRA adaptadores vs LoRA radio NNC",
+  "test 1beefb60f0b00499 con solape 0.375 con README de cymaquantum en train (sin decisión)"
+ ],
+ "decisiones": [
+  "Opción A 2026-10-21: test de 66 congelado",
+  "excluir simulados (Lázaro, 2026-10-21): data/simulados.jsonl, fuera de train/val/test",
+  "incidente 2026-10-21 ~11:30: reinicio borró la carpeta; restaurada íntegra (repo ce31349) y hash de test verificado; backup /workspace/backup_fusion_20261021_114349",
+  "sin push, sin publicación, sin commit, sin entrenar 7B",
+  "2026-10-21 13:47 Madrid: Lázaro aprueba retroactivamente el smoke run CPU SmolLM2-135M-Instruct (adapters/smoke_lowmem, E2_smoke_minimo, 0% LLP válido en base y LoRA); entrenamiento 7B sigue NO aprobado",
+  "2026-10-21 Lázaro: se mantienen los 50 pares omniscience en train (fusión 14:08)",
+  "2026-10-21 Lázaro: retirar near-dup train↔val f6174fae56fef69a, conservar val 41e539f8975d8c39",
+  "2026-10-30 09:44 Madrid: Lázaro aprueba vía Supervisor fusionar SOLO 7 pares válidos de GRAVEDAD a validation (193→200), local, sin push ni entrenamiento; 28 simulados excluidos; near_dup línea 24 excluido; OMNISCIENCE/ORÁCULO/CERO-A/REMPLAST-Q/ORDENADOR-HÍBRIDO fuera de alcance",
+  "2026-10-21 14:51 Lázaro: aprobada y aplicada la enmienda ORÁCULO completa (protocolo_comparacion.json enmienda_2026_10_21_oraculo); test.jsonl sin cambios",
+  "2026-10-21 Lázaro: retirar train b6d4ab227f1389f3 (contaminacion_test con e5df021a5dbb40a3) y bloquear su ruta alternativa en merge_pares",
+  "2026-10-21 Lázaro: retirar sin_respuesta dd86ea20047a5c33; sustituido por 8c6aed4bd864ac11 (isbn remplast-q, verificado ausente)"
+ ],
+ "proximo_paso": "GPU y aprobación para el piloto (discordancia, n de test_ampliado)",
+ "smoke_run_aprobacion": {
+  "modelo": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "adaptador": "adapters/smoke_lowmem",
+  "nivel_e": "E2_smoke_minimo",
+  "llp_valido_base": "0%",
+  "llp_valido_lora": "0%",
+  "aprobado_por": "Lázaro López Paz",
+  "fecha_aprobacion": "2026-10-21T13:47+02:00",
+  "tipo": "retroactiva",
+  "entrenamiento_7b_aprobado": false
+ },
+ "licencia_smollm2": {
+  "estado": "verificado_en_ficha_hf",
+  "licencia": "apache-2.0",
+  "fuente": "https://huggingface.co/api/models/HuggingFaceTB/SmolLM2-135M-Instruct",
+  "nota": "cardData.license=apache-2.0 en ficha HF (consultado 2026-10-21); el repo no incluye archivo LICENSE propio: texto completo PENDIENTE DE VERIFICACIÓN"
+ }
+}
