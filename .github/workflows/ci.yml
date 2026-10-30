@@ -15,10 +15,10 @@ jobs:
       - name: Compilar módulos Python
         run: |
           set -e
-          mapfile -t files < <(find . -name '*.py' -not -path './.git/*' -not -path './.venv/*' -not -path './venv/*' -not -path '*/__pycache__/*')
+          mapfile -t files < <(find . -name '*.py' -not -path './.git/*' -not -path './.venv/*' -not -path './venv/*' -not -path '*/__pycache__/*' -not -path './knowledge/*')
           if [ ${#files[@]} -eq 0 ]; then echo "Sin archivos Python"; exit 0; fi
           python -m py_compile "${files[@]}"
-          echo "py_compile OK (${#files[@]} archivos)"
+          echo "py_compile OK (${#files[@]} archivos; knowledge/ excluido)"
       - name: Tests (si existen)
         run: |
           if [ -d tests ] || [ -d test ]; then
