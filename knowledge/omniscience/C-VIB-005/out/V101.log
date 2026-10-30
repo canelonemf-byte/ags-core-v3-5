@@ -1,0 +1,18 @@
+[32m2026-10-30 09:22:07.279[0m | [1mINFO    [0m | [36mmattersim.forcefield.potential[0m:[36mfrom_checkpoint[0m:[36m936[0m - [1mLoading the pre-trained mattersim-v1.0.0-5M.pth model[0m
+/workspace/omniscience_cvib005/code/cvib005_run.py:48: PrimitiveMatrixAutoDefaultWarning: primitive_matrix defaulted to 'auto' and was resolved to a non-identity matrix:
+  [ 0.00000,  0.50000,  0.50000]
+  [ 0.50000,  0.00000,  0.50000]
+  [ 0.50000,  0.50000,  0.00000]
+This differs from phonopy v3, whose default was the identity matrix. Pass primitive_matrix='P' (or --pa P on the command line) to restore the v3 behaviour.
+  ph3 = Phono3py(uc, supercell_matrix=S, primitive_matrix="auto", log_level=0)
+KBr aexp1.010 6.666 0.208 0.319 0.141 146 53 1460
+KI aexp1.010 7.1407 0.079 0.447 -0.219 146 43 1460
+RbCl aexp1.010 6.6559 0.311 0.645 0.164 146 56 1488
+NaI aexp1.010 6.5347 -0.166 0.323 0.184 146 55 1488
+NaBr aexp1.010 6.0297 0.13 1.605 0.281 146 52 1488
+BaO aexp1.010 5.5752 1.432 2.853 0.382 146 58 1695
+PbS aexp1.010 5.9956 0.369 1.228 0.235 146 49 1695
+PbSe aexp1.010 6.1886 0.829 0.667 0.202 146 54 1695
+PbTe aexp1.010 6.5266 0.658 0.871 0.18 146 48 1695
+NaCl aexp1.010 5.6964 0.052 3.738 0.39 146 57 1695
+MgO aexp1.010 4.2541 0.231 51.041 1.121 146 100 2447

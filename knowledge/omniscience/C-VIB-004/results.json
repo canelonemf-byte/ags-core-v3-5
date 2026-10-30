@@ -1,0 +1,268 @@
+{
+ "prereg_sha256": "901c5eecf74920ec17e655403153c5ed6426179e3486b6806fc60f4cdbc63193",
+ "A_n": 17,
+ "A_kappa": {
+  "MgO": {
+   "k_aexp": 63.974,
+   "k_arel_cvib003": 50.449,
+   "exp": 52,
+   "ratio_exp": 1.23,
+   "ratio_aexp_arel": 1.268,
+   "a_exp": 4.212,
+   "a_rel": 4.2563,
+   "P_GPa": 5.081,
+   "fmin": 1.184
+  },
+  "CaO": {
+   "k_aexp": 27.142,
+   "k_arel_cvib003": 22.223,
+   "exp": 30,
+   "ratio_exp": 0.905,
+   "ratio_aexp_arel": 1.221,
+   "a_exp": 4.81,
+   "a_rel": 4.8403,
+   "P_GPa": 2.071,
+   "fmin": 0.845
+  },
+  "SrO": {
+   "k_aexp": 10.918,
+   "k_arel_cvib003": 8.003,
+   "exp": 10,
+   "ratio_exp": 1.092,
+   "ratio_aexp_arel": 1.364,
+   "a_exp": 5.16,
+   "a_rel": 5.209,
+   "P_GPa": 2.496,
+   "fmin": 0.564
+  },
+  "BaO": {
+   "k_aexp": 4.062,
+   "k_arel_cvib003": 1.898,
+   "exp": 3,
+   "ratio_exp": 1.354,
+   "ratio_aexp_arel": 2.141,
+   "a_exp": 5.52,
+   "a_rel": 5.614,
+   "P_GPa": 3.766,
+   "fmin": 0.41
+  },
+  "LiF": {
+   "k_aexp": 12.453,
+   "k_arel_cvib003": 10.025,
+   "exp": 16.1,
+   "ratio_exp": 0.773,
+   "ratio_aexp_arel": 1.242,
+   "a_exp": 4.03,
+   "a_rel": 4.069,
+   "P_GPa": 1.888,
+   "fmin": 0.885
+  },
+  "NaF": {
+   "k_aexp": 25.397,
+   "k_arel_cvib003": 19.646,
+   "exp": 18.5,
+   "ratio_exp": 1.373,
+   "ratio_aexp_arel": 1.293,
+   "a_exp": 4.63,
+   "a_rel": 4.6997,
+   "P_GPa": 2.252,
+   "fmin": 0.695
+  },
+  "NaCl": {
+   "k_aexp": 5.471,
+   "k_arel_cvib003": 3.653,
+   "exp": 7.2,
+   "ratio_exp": 0.76,
+   "ratio_aexp_arel": 1.498,
+   "a_exp": 5.64,
+   "a_rel": 5.7007,
+   "P_GPa": 0.747,
+   "fmin": 0.387
+  },
+  "NaBr": {
+   "k_aexp": 2.341,
+   "k_arel_cvib003": 1.51,
+   "exp": 2.9,
+   "ratio_exp": 0.807,
+   "ratio_aexp_arel": 1.551,
+   "a_exp": 5.97,
+   "a_rel": 6.0423,
+   "P_GPa": 0.806,
+   "fmin": 0.288
+  },
+  "NaI": {
+   "k_aexp": 0.862,
+   "k_arel_cvib003": 0.423,
+   "exp": 1.9,
+   "ratio_exp": 0.454,
+   "ratio_aexp_arel": 2.036,
+   "a_exp": 6.47,
+   "a_rel": 6.5155,
+   "P_GPa": 0.423,
+   "fmin": 0.204
+  },
+  "KF": {
+   "k_aexp": 7.963,
+   "k_arel_cvib003": 5.255,
+   "exp": 7.8,
+   "ratio_exp": 1.021,
+   "ratio_aexp_arel": 1.515,
+   "a_exp": 5.34,
+   "a_rel": 5.4198,
+   "P_GPa": 1.599,
+   "fmin": 0.477
+  },
+  "KCl": {
+   "k_aexp": 4.66,
+   "k_arel_cvib003": 2.224,
+   "exp": 7.2,
+   "ratio_exp": 0.647,
+   "ratio_aexp_arel": 2.095,
+   "a_exp": 6.29,
+   "a_rel": 6.3716,
+   "P_GPa": 0.712,
+   "fmin": 0.285
+  },
+  "KBr": {
+   "k_aexp": 1.395,
+   "k_arel_cvib003": 0.217,
+   "exp": 3.4,
+   "ratio_exp": 0.41,
+   "ratio_aexp_arel": 6.424,
+   "a_exp": 6.6,
+   "a_rel": 6.7037,
+   "P_GPa": 0.636,
+   "fmin": 0.137
+  },
+  "KI": {
+   "k_aexp": 0.018,
+   "k_arel_cvib003": 0.424,
+   "exp": 2.8,
+   "ratio_exp": 0.006,
+   "ratio_aexp_arel": 0.043,
+   "a_exp": 7.07,
+   "a_rel": 7.1592,
+   "P_GPa": 0.41,
+   "fmin": 0.022
+  },
+  "RbCl": {
+   "k_aexp": 0.925,
+   "k_arel_cvib003": 0.437,
+   "exp": 2.9,
+   "ratio_exp": 0.319,
+   "ratio_aexp_arel": 2.115,
+   "a_exp": 6.59,
+   "a_rel": 6.7103,
+   "P_GPa": 0.732,
+   "fmin": 0.12
+  },
+  "PbS": {
+   "k_aexp": 1.739,
+   "k_arel_cvib003": 1.114,
+   "exp": 2.5,
+   "ratio_exp": 0.696,
+   "ratio_aexp_arel": 1.56,
+   "a_exp": 5.9362,
+   "a_rel": 6.01,
+   "P_GPa": 2.043,
+   "fmin": 0.228
+  },
+  "PbSe": {
+   "k_aexp": 1.458,
+   "k_arel_cvib003": 0.41,
+   "exp": 1.6,
+   "ratio_exp": 0.911,
+   "ratio_aexp_arel": 3.558,
+   "a_exp": 6.1273,
+   "a_rel": 6.2252,
+   "P_GPa": 2.384,
+   "fmin": 0.194
+  },
+  "PbTe": {
+   "k_aexp": 1.699,
+   "k_arel_cvib003": 0.476,
+   "exp": 2.2,
+   "ratio_exp": 0.772,
+   "ratio_aexp_arel": 3.572,
+   "a_exp": 6.462,
+   "a_rel": 6.5662,
+   "P_GPa": 1.945,
+   "fmin": 0.175
+  }
+ },
+ "C1": {
+  "valor": {
+   "fallan_o_ausentes": []
+  },
+  "pasa": true
+ },
+ "H1": {
+  "valor": "13/17",
+  "pasa": true
+ },
+ "H2": {
+  "valor": 0.276,
+  "pasa": false
+ },
+ "H3": {
+  "valor": 0.888,
+  "pasa": true
+ },
+ "H4": {
+  "valor": {
+   "factor2": "5/9",
+   "media_log10": 0.439
+  },
+  "pasa": false
+ },
+ "H5": {
+  "valor": {
+   "mayor_que_1": "16/17",
+   "mediana": 1.551
+  },
+  "pasa": true
+ },
+ "H6": {
+  "valor": 0.696,
+  "pasa": true
+ },
+ "H7": {
+  "valor": 0.233,
+  "pasa": false
+ },
+ "fuera_factor2": {
+  "NaI": 0.454,
+  "KBr": 0.41,
+  "KI": 0.006,
+  "RbCl": 0.319
+ },
+ "B_H1": {
+  "valor": {
+   "cocientes": {
+    "KBr": 0.973,
+    "KI": 1.9974,
+    "RbCl": 0.9244,
+    "NaI": 0.971,
+    "PbTe": 0.9786
+   },
+   "pasan": "4/5"
+  },
+  "pasa": true
+ },
+ "H_REP": {
+  "valor": 0.0,
+  "pasa": true
+ },
+ "C2": {
+  "valor": 0.0155,
+  "pasa": true
+ },
+ "CA": {
+  "valor": {
+   "NaCl": 0.0002885721779394279,
+   "KBr": 0.0
+  },
+  "pasa": true
+ },
+ "nivel_UM-25": "E2"
+}

@@ -1,0 +1,3 @@
+# Desviaciones C-VIB-005 (2026-10-30, Europe/Madrid)
+- D1 entorno: el primer lanzamiento (09:05:37) abortó en 1 s en todas las etapas porque /workspace/omniscience_cvib004/pylib/ase había perdido ase/build (igual que el venv compartido en C-VIB-004). Sin cálculo alguno. Se movió a pylib_roto_20261030 y se reinstaló ase==3.29.0 (uv --no-deps) en la misma ruta, así runner, evaluador y run_all.sh siguen con el mismo sha256. Relanzado tras comprobar hashes.
+- D2 lectura post hoc (no decisoria): KBr no es monótono (κ a 0.99 < κ a 1.00), lo que apunta a ruido numérico o fragilidad del modelo cerca de a_exp; no se recalcula.
