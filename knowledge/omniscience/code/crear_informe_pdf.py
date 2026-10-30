@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """Informe PDF: Análisis científico de vibraciones (lo que un chat de texto no entrega).
 
-Nota de autoría: Lázaro López Paz (El Prat de Llobregat, Barcelona, España) e inteligencia artificial.
-Texto y código asistidos por IA (herramienta: Grok, de xAI), revisados por el autor (revisión PENDIENTE DE VERIFICACIÓN). Se conserva la declaración original
-de atribución en la tabla de metadatos del informe (fila «Atribución»).
+Nota de autoría: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA.
+Texto y código asistidos por IA (herramienta: Grok, de xAI); la IA no es autora. Revisados por el autor (revisión PENDIENTE DE VERIFICACIÓN).
 """
 import os
 from pathlib import Path
@@ -60,7 +59,7 @@ def header_footer(canvas, doc):
     canvas.rect(0, PAGE_H - 12.6 * mm, PAGE_W, 1.6 * mm, fill=1, stroke=0)
     canvas.setFillColor(colors.white)
     canvas.setFont("DejaVu", 8)
-    canvas.drawString(16 * mm, PAGE_H - 8 * mm, "Análisis científico de vibraciones  ·  Grok × Lázaro López Paz")
+    canvas.drawString(16 * mm, PAGE_H - 8 * mm, "Análisis científico de vibraciones  ·  Lázaro López Paz (con asistencia de IA)")
     canvas.drawRightString(PAGE_W - 16 * mm, PAGE_H - 8 * mm, "Documento reproducible")
 
     canvas.setFillColor(NAVY)
@@ -191,7 +190,7 @@ def make():
         [P("<b>Qué no es</b>"), P("Una respuesta conversacional. Es un paquete de trabajo cerrado y reproducible.")],
         [P("<b>Ámbito</b>"), P("Clásico → espectral → modal → fonónico → cuántico → experimental → aplicaciones")],
         [P("<b>Atribución</b>"), P("Autor: Lázaro López Paz, con asistencia de IA (Grok, xAI). Citar a Lázaro López Paz.")],
-        [P("<b>Autoría</b>"), P("Lázaro López Paz (El Prat de Llobregat, Barcelona, España) e inteligencia artificial. Texto asistido por IA (herramienta: Grok, de xAI), revisado por el autor (revisión PENDIENTE DE VERIFICACIÓN). Autor responsable: Lázaro López Paz.")],
+        [P("<b>Autoría</b>"), P("Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA (Grok, xAI). La IA no es autora. Revisado por el autor (revisión PENDIENTE DE VERIFICACIÓN). Autor responsable: Lázaro López Paz.")],
     ]
     t = Table(meta, colWidths=[38 * mm, 140 * mm])
     t.setStyle(TableStyle([
@@ -475,7 +474,7 @@ def make():
     ))
     story.append(Spacer(1, 6 * mm))
     story.append(P(
-        "Si un tercero continúa este trabajo, debe citar a Lázaro López Paz y a Grok. "
+        "Si un tercero continúa este trabajo, debe citar a Lázaro López Paz (asistencia de IA no es coautoría). "
         "El contenido está pensado para uso constructivo, verificable y no destructivo.",
         "Note",
     ))

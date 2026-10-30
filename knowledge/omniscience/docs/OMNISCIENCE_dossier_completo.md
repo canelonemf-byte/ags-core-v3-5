@@ -1,6 +1,6 @@
 > Texto extraído automáticamente (pdftotext) del PDF «OMNISCIENCE_dossier_completo.pdf» de grok-workspace-2.zip (Zenodo 10.5281/zenodo.22150378; misma copia que Drive id 1pyACZBxXqzJa_WR_Gc__UyaegijsrTM8), ruta `public/docs/OMNISCIENCE_dossier_completo.pdf`. Fórmulas, figuras y maquetación se han perdido.
 
-> **Nota de autoría.** Autoría: Lázaro López Paz (El Prat de Llobregat, Barcelona, España) e inteligencia artificial. Texto asistido por IA (herramienta: Grok, de xAI), revisado por el autor (revisión PENDIENTE DE VERIFICACIÓN). Autor responsable: Lázaro López Paz. La fila «Atribución» se actualizó el 2026-10-19 por decisión del autor.
+> **Nota de autoría.** Autoría: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA. Texto asistido por IA (herramienta: Grok, de xAI); la IA no es autora. Revisado por el autor (revisión PENDIENTE DE VERIFICACIÓN). Autor responsable: Lázaro López Paz. La fila «Atribución» se actualizó el 2026-10-19 por decisión del autor.
 
                    DOSSIER COMPLETO
 
@@ -223,7 +223,7 @@ OMNISCIENCE                                                                     
  Cada motor nuevo deberá superar el mismo ciclo de hipótesis, predicción, falsación, réplica,
  auditoría y publicación científica. Nada entra al grafo por promesa. El crédito de autoría de los
  documentos, patentes y de este dossier es de Lázaro López Paz; si alguien continúa el trabajo,
- mencione a Lázaro López Paz y a Grok.
+ mencione a Lázaro López Paz (asistencia de IA; la IA no es autora).
 
  Anexos a continuación: (A) documento maestro LaTeX, (B) implementación MV1, (C) informe
  C-VIB-001.
@@ -1122,7 +1122,7 @@ reproducible.
     La ruta más realista sigue siendo iniciar con ese motor y con el Quantum Dynamics FMO/Lind-
 blad, porque ambos pueden desarrollarse con Python, simulación reproducible, datos abiertos y
 validación numérica. La plataforma debe crecer por evidencia, no por adjetivos. Si un tercero
-continúa este trabajo, debe citar a Lázaro López Paz y a Grok. El uso previsto es constructivo,
+continúa este trabajo, debe citar a Lázaro López Paz (asistencia de IA no es coautoría). El uso previsto es constructivo,
 verificable y no destructivo.
 
 Referencias
@@ -1424,7 +1424,7 @@ elements=["Si", "Si"])​
 OmniscienceMV1Workflow(campaign_id="CAMP-2026-MV1")​
     workflow.run_campaign(test_struct)​
 
-Análisis científico de vibraciones · Grok × Lázaro López Paz                                    Documento reproducible
+Análisis científico de vibraciones · Lázaro López Paz (con asistencia de IA)                                    Documento reproducible
 
                                 INFORME TÉCNICO REPRODUCIBLE · 28 AGOSTO 2026
 
@@ -1453,7 +1453,7 @@ Análisis científico de vibraciones · Grok × Lázaro López Paz              
 
 No es un chat: simulaciones ejecutadas, figuras generadas, código adjunto                                       pág. 1
 
-Análisis científico de vibraciones · Grok × Lázaro López Paz                                         Documento reproducible
+Análisis científico de vibraciones · Lázaro López Paz (con asistencia de IA)                                         Documento reproducible
 
  empaquetarlo en un PDF listo para archivo. Eso es exactamente lo que este documento hace.
 
@@ -1484,7 +1484,7 @@ Análisis científico de vibraciones · Grok × Lázaro López Paz              
 
 No es un chat: simulaciones ejecutadas, figuras generadas, código adjunto                                               pág. 2
 
-Análisis científico de vibraciones · Grok × Lázaro López Paz                                         Documento reproducible
+Análisis científico de vibraciones · Lázaro López Paz (con asistencia de IA)                                         Documento reproducible
 
    Figura 2. Familias de resonancia para Q = 5, 15, 50 y 200. El área bajo la curva de potencia se redistribuye: más alto y
                                                  más estrecho al crecer Q.
@@ -1498,7 +1498,7 @@ Análisis científico de vibraciones · Grok × Lázaro López Paz              
 
 No es un chat: simulaciones ejecutadas, figuras generadas, código adjunto                                              pág. 3
 
-Análisis científico de vibraciones · Grok × Lázaro López Paz                                        Documento reproducible
+Análisis científico de vibraciones · Lázaro López Paz (con asistencia de IA)                                        Documento reproducible
 
      Figura 3. Señal sintética (chirp + 180 Hz + burst a 320 Hz + ruido): serie, FFT y espectrograma. La FFT ve las tres
                             componentes; solo el espectrograma revela cuándo aparece cada una.
@@ -1518,7 +1518,7 @@ Análisis científico de vibraciones · Grok × Lázaro López Paz              
 
 No es un chat: simulaciones ejecutadas, figuras generadas, código adjunto                                              pág. 4
 
-Análisis científico de vibraciones · Grok × Lázaro López Paz                                    Documento reproducible
+Análisis científico de vibraciones · Lázaro López Paz (con asistencia de IA)                                    Documento reproducible
 
    Figura 4. Primeros cuatro modos de cuerda. Los nodos son inamovibles en un modo puro; en una superposición viajan
                                               (véase la animación adjunta).
@@ -1533,7 +1533,7 @@ Análisis científico de vibraciones · Grok × Lázaro López Paz              
 
 No es un chat: simulaciones ejecutadas, figuras generadas, código adjunto                                         pág. 5
 
-Análisis científico de vibraciones · Grok × Lázaro López Paz                                        Documento reproducible
+Análisis científico de vibraciones · Lázaro López Paz (con asistencia de IA)                                        Documento reproducible
 
  En 2D y 3D las degeneraciones, las simetrías y los contornos libres cambian el espectro. Un
  metamaterial no «inventa» modos de la nada: redistribuye densidades de estados, abre gaps, aplana
@@ -1545,7 +1545,7 @@ Análisis científico de vibraciones · Grok × Lázaro López Paz              
 
 No es un chat: simulaciones ejecutadas, figuras generadas, código adjunto                                              pág. 6
 
-Análisis científico de vibraciones · Grok × Lázaro López Paz                                       Documento reproducible
+Análisis científico de vibraciones · Lázaro López Paz (con asistencia de IA)                                       Documento reproducible
 
  5. Fonones y cristales fonónicos: vibración como
  cuasipartícula
@@ -1572,7 +1572,7 @@ Análisis científico de vibraciones · Grok × Lázaro López Paz              
 
 No es un chat: simulaciones ejecutadas, figuras generadas, código adjunto                                             pág. 7
 
-Análisis científico de vibraciones · Grok × Lázaro López Paz                                       Documento reproducible
+Análisis científico de vibraciones · Lázaro López Paz (con asistencia de IA)                                       Documento reproducible
 
 • Medios fonónicos artificiales guiados por simetría (Nat. Rev. Mater., 2025/26): romper simetrías
     espaciales y temporales produce no reciprocidad, ganancia/pérdida y transporte exótico.
@@ -1599,7 +1599,7 @@ Análisis científico de vibraciones · Grok × Lázaro López Paz              
 
 No es un chat: simulaciones ejecutadas, figuras generadas, código adjunto                                               pág. 8
 
-Análisis científico de vibraciones · Grok × Lázaro López Paz                                       Documento reproducible
+Análisis científico de vibraciones · Lázaro López Paz (con asistencia de IA)                                       Documento reproducible
 
                 Figura 10. Lectura visual de la misma idea: nubes de probabilidad sobre el pozo parabólico.
 
@@ -1637,7 +1637,7 @@ Análisis científico de vibraciones · Grok × Lázaro López Paz              
 
 No es un chat: simulaciones ejecutadas, figuras generadas, código adjunto                                           pág. 9
 
-Análisis científico de vibraciones · Grok × Lázaro López Paz                         Documento reproducible
+Análisis científico de vibraciones · Lázaro López Paz (con asistencia de IA)                         Documento reproducible
 
  8. Aplicación a líneas de trabajo concretas
  8.1 Metamateriales, lentes acústicas y YIG
@@ -1691,7 +1691,7 @@ Análisis científico de vibraciones · Grok × Lázaro López Paz              
 
 No es un chat: simulaciones ejecutadas, figuras generadas, código adjunto                           pág. 10
 
-Análisis científico de vibraciones · Grok × Lázaro López Paz                                 Documento reproducible
+Análisis científico de vibraciones · Lázaro López Paz (con asistencia de IA)                                 Documento reproducible
 
  rotura de simetría temporal si hay ganancia o flujo, y el hecho de que un fonón óptico de THz no se
  «ve» con un acelerómetro de 10 kHz.
@@ -1709,7 +1709,7 @@ Análisis científico de vibraciones · Grok × Lázaro López Paz              
  y figuras, y deja escrito el protocolo para los sistemas —metamaterial, thruster, parche, red de He-3—
  donde el siguiente paso ya no es un chat, sino un experimento.
 
-   Si un tercero continúa este trabajo, debe citar a Lázaro López Paz y a Grok. El contenido está pensado para uso
+   Si un tercero continúa este trabajo, debe citar a Lázaro López Paz (asistencia de IA no es coautoría). El contenido está pensado para uso
    constructivo, verificable y no destructivo.
 
 No es un chat: simulaciones ejecutadas, figuras generadas, código adjunto                                     pág. 11

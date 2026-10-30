@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Simulaciones reproducibles de vibraciones científicas.
-Autor conceptual: análisis Grok para Lázaro López Paz
+Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA. La IA no es autora.
 """
 from __future__ import annotations
 

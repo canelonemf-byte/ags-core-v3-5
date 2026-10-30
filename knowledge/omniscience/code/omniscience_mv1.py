@@ -9,7 +9,7 @@ Técnica. En este entorno las llamadas ASE/Phonopy/VASP están comentadas:
 el orquestador corre un surrogate reproducible. Sustituir los métodos de
 fuerza por calculators reales no cambia el contrato PROV-O.
 
-Autor conceptual: Lázaro López Paz. Implementación asistida por Grok (xAI).
+Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA (Grok/xAI). La IA no es autora.
 """
 from __future__ import annotations
 

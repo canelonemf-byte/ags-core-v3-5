@@ -2,9 +2,9 @@
 
 OMNISCIENCE: motor de descubrimiento científico (documento maestro).
 
-**Autoría:** Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA · ORCID 0000-0001-8601-1963 · **Licencia:** MIT (ver `LICENSE`)
+**Autoría:** Lázaro López Paz, El Prat de Llobregat, Barcelona, España · ORCID 0000-0001-8601-1963 · **Licencia:** MIT (código; ver `LICENSE`) · CC BY 4.0 (documentos)
 
-Elaborado con asistencia de inteligencia artificial (herramientas de IA generativa; p. ej. Grok/xAI). Autor responsable: Lázaro López Paz.
+Elaborado con asistencia de inteligencia artificial (herramientas de IA generativa; p. ej. Grok/xAI). La IA no es autora. Autor responsable: Lázaro López Paz.
 
 ## Carpetas de origen en Google Drive
 

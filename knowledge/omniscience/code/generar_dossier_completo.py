@@ -397,7 +397,7 @@ def build_front() -> int:
         "Cada motor nuevo deberá superar el mismo ciclo de hipótesis, predicción, falsación, réplica, "
         "auditoría y publicación científica. Nada entra al grafo por promesa. El crédito de autoría "
         "de los documentos, patentes y de este dossier es de Lázaro López Paz; si alguien continúa "
-        "el trabajo, mencione a Lázaro López Paz y a Grok.",
+        "el trabajo, mencione a Lázaro López Paz (asistencia de IA; la IA no es autora).",
         S["body"],
     ))
     story.append(Paragraph(
@@ -416,7 +416,7 @@ def build_front() -> int:
         title="OMNISCIENCE — Dossier completo",
         author="Lázaro López Paz",
         subject="Arquitectura, MV1, C-VIB-001, metadatos y zonas seguras",
-        creator="OMNISCIENCE / Grok Build",
+        creator="OMNISCIENCE (Lázaro López Paz, con asistencia de IA)",
     )
     doc.build(story, onFirstPage=cover_page, onLaterPages=header_footer)
     n = len(PdfReader(str(STAGE)).pages)
@@ -453,7 +453,7 @@ def merge(front_pages: int) -> None:
         "/Author": "Lázaro López Paz",
         "/Subject": "Arquitectura, MV1, C-VIB-001, Open Graph, JSON-LD y zonas seguras",
         "/Keywords": "OMNISCIENCE, PROV-O, fonones, Open Graph, TikTok, Instagram, JSON-LD",
-        "/Creator": "OMNISCIENCE / Grok Build",
+        "/Creator": "OMNISCIENCE (Lázaro López Paz, con asistencia de IA)",
     })
 
     tmp = ROOT / ".grok" / "OMNISCIENCE_dossier_completo.pdf"
