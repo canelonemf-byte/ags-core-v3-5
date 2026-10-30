@@ -11,19 +11,23 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.11'
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
+          # skip heavy optional
+          pip install pytest pytest-asyncio httpx -q
       - name: Compilar módulos Python
         run: |
           set -e
           mapfile -t files < <(find . -name '*.py' -not -path './.git/*' -not -path './.venv/*' -not -path './venv/*' -not -path '*/__pycache__/*' -not -path './knowledge/*')
-          if [ ${#files[@]} -eq 0 ]; then echo "Sin archivos Python"; exit 0; fi
           python -m py_compile "${files[@]}"
-          echo "py_compile OK (${#files[@]} archivos; knowledge/ excluido)"
-      - name: Tests (si existen)
+          echo "py_compile OK (${#files[@]} archivos)"
+      - name: Tests (sin gemini externo)
+        env:
+          AGS_API_KEY: test-key
+          PYTHONPATH: app
         run: |
-          if [ -d tests ] || [ -d test ]; then
-            pip install pytest -q || true
-            python -m pytest -q || true
-          else
-            echo "Sin directorio tests"
-          fi
+          python -m pytest -q --ignore=tests/test_gemini_agent.py
