@@ -3,12 +3,12 @@ import streamlit as st
 import pandas as pd  
 import plotly.express as px  
 import folium  
-from streamlit\_folium import st\_folium
+from streamlit_folium import st_folium
 
-st.set\_page\_config(page\_title="Estrategia Nacional Descarbonización 2026", page\_icon="🇪🇸", layout="wide")
+st.set_page_config(page_title="Estrategia Nacional Descarbonización 2026", page_icon="🇪🇸", layout="wide")
 
-@st.cache\_data  
-def cargar\_datos\_proyectos():  
+@st.cache_data  
+def cargar_datos_proyectos():  
     return pd.DataFrame(\[  
         {"Proyecto": "Moeve Biocombustibles 2G", "Ubicación": "Palos de la Frontera (Huelva)", "Tipo": "Biocombustible", "Producción (t/año)": 500000, "Inversión (M€)": 1200, "Estado": "Construcción", "Lat": 37.229, "Lon": \-6.895, "Descripción": "Mayor complejo de biocombustibles 2G del sur de Europa. SAF y diésel renovable."},  
         {"Proyecto": "Dreexo Energy Hub", "Ubicación": "Zona Franca de Cádiz", "Tipo": "Biocombustible", "Producción (t/año)": 100000, "Inversión (M€)": 46, "Estado": "Permisos", "Lat": 36.500, "Lon": \-6.250, "Descripción": "Primera planta de pretratamiento de doble cómputo para UCO y grasas animales."},  
@@ -28,53 +28,53 @@ def cargar\_datos\_proyectos():
         {"Proyecto": "Cemex SOMZERO", "Ubicación": "Alcanar (Tarragona)", "Tipo": "Captura CO₂", "Producción (t/año)": 500000, "Inversión (M€)": 450, "Estado": "Desarrollo", "Lat": 40.542, "Lon": 0.478, "Descripción": "Captura de \>500.000 t/año de CO₂. Hub de CO₂ en Cataluña."}  
     \])
 
-@st.cache\_data  
-def cargar\_metadatos\_archivos():  
+@st.cache_data  
+def cargar_metadatos_archivos():  
     try:  
-        return pd.read\_csv("table\_20260925.csv")  
+        return pd.read_csv("table_20260925.csv")  
     except Exception:  
         return pd.DataFrame(columns=\["Archivo", "Formato", "Uso"\])
 
-df\_proyectos \= cargar\_datos\_proyectos()  
-df\_archivos \= cargar\_metadatos\_archivos()
+df_proyectos \= cargar_datos_proyectos()  
+df_archivos \= cargar_metadatos_archivos()
 
-colores \= {"Biocombustible": "\#2E8B57", "H₂ verde": "\#1F77B4", "Amoníaco NH₃": "\#8E44AD", "e-Fuels": "\#E67E22", "e-Metanol": "\#C0392B", "Biogás": "\#17A2B8", "Captura CO₂": "\#7F8C8D"}
+colores \= {"Biocombustible": "#2E8B57", "H₂ verde": "#1F77B4", "Amoníaco NH₃": "#8E44AD", "e-Fuels": "#E67E22", "e-Metanol": "#C0392B", "Biogás": "#17A2B8", "Captura CO₂": "#7F8C8D"}
 
 seccion \= st.sidebar.radio("Navegación:", \["📊 Dashboard y Análisis", "🗺️ Mapa Interactivo", "📑 Documentación Técnica", "✉️ Carta MITECO"\])
 
 if seccion \== "📊 Dashboard y Análisis":  
     st.title("Estrategia Nacional para la Descarbonización (2026)")  
-    df\_filtrado \= df\_proyectos.copy()  
+    df_filtrado \= df_proyectos.copy()  
       
     k1, k2, k3, k4 \= st.columns(4)  
-    k1.metric("Proyectos", len(df\_filtrado))  
-    k2.metric("Inversión (M€)", f"{df\_filtrado\['Inversión (M€)'\].sum():,.0f}")  
-    k3.metric("Producción (t/año)", f"{df\_filtrado\['Producción (t/año)'\].sum():,}")  
-    k4.metric("Tecnologías", df\_filtrado\["Tipo"\].nunique())
+    k1.metric("Proyectos", len(df_filtrado))  
+    k2.metric("Inversión (M€)", f"{df_filtrado\['Inversión (M€)'\].sum():,.0f}")  
+    k3.metric("Producción (t/año)", f"{df_filtrado\['Producción (t/año)'\].sum():,}")  
+    k4.metric("Tecnologías", df_filtrado\["Tipo"\].nunique())
 
-    col\_g1, col\_g2 \= st.columns(2)  
-    with col\_g1:  
-        df\_inv \= df\_filtrado\[df\_filtrado\["Inversión (M€)"\] \> 0\].sort\_values("Inversión (M€)")  
-        if not df\_inv.empty:  
-            fig1 \= px.bar(df\_inv, x="Inversión (M€)", y="Proyecto", orientation="h", color="Tipo", color\_discrete\_map=colores, text="Inversión (M€)")  
-            st.plotly\_chart(fig1, use\_container\_width=True)  
-    with col\_g2:  
-        df\_prod \= df\_filtrado\[df\_filtrado\["Producción (t/año)"\] \> 0\].groupby("Tipo")\["Producción (t/año)"\].sum().reset\_index()  
-        if not df\_prod.empty:  
-            fig2 \= px.pie(df\_prod, values="Producción (t/año)", names="Tipo", color="Tipo", color\_discrete\_map=colores, hole=0.4)  
-            st.plotly\_chart(fig2, use\_container\_width=True)
+    col_g1, col_g2 \= st.columns(2)  
+    with col_g1:  
+        df_inv \= df_filtrado\[df_filtrado\["Inversión (M€)"\] \> 0\].sort_values("Inversión (M€)")  
+        if not df_inv.empty:  
+            fig1 \= px.bar(df_inv, x="Inversión (M€)", y="Proyecto", orientation="h", color="Tipo", color_discrete_map=colores, text="Inversión (M€)")  
+            st.plotly_chart(fig1, use_container_width=True)  
+    with col_g2:  
+        df_prod \= df_filtrado\[df_filtrado\["Producción (t/año)"\] \> 0\].groupby("Tipo")\["Producción (t/año)"\].sum().reset_index()  
+        if not df_prod.empty:  
+            fig2 \= px.pie(df_prod, values="Producción (t/año)", names="Tipo", color="Tipo", color_discrete_map=colores, hole=0.4)  
+            st.plotly_chart(fig2, use_container_width=True)
 
 elif seccion \== "🗺️ Mapa Interactivo":  
     st.title("Mapa de Proyectos")  
-    m \= folium.Map(location=\[40.0, \-3.5\], zoom\_start=6, tiles="CartoDB positron")  
-    for \_, row in df\_proyectos.dropna(subset=\["Lat", "Lon"\]).iterrows():  
-        folium.Marker(location=\[row\["Lat"\], row\["Lon"\]\], tooltip=row\['Proyecto'\]).add\_to(m)  
-    st\_folium(m, width=1200, height=650)
+    m \= folium.Map(location=\[40.0, \-3.5\], zoom_start=6, tiles="CartoDB positron")  
+    for _, row in df_proyectos.dropna(subset=\["Lat", "Lon"\]).iterrows():  
+        folium.Marker(location=\[row\["Lat"\], row\["Lon"\]\], tooltip=row\['Proyecto'\]).add_to(m)  
+    st_folium(m, width=1200, height=650)
 
 elif seccion \== "📑 Documentación Técnica":  
     st.title("Documentación y Entregables")  
-    st.dataframe(df\_archivos, use\_container\_width=True, hide\_index=True)  
-    st.code("xelatex 03\_propuesta.tex", language="bash")
+    st.dataframe(df_archivos, use_container_width=True, hide_index=True)  
+    st.code("xelatex 03_propuesta.tex", language="bash")
 
 elif seccion \== "✉️ Carta MITECO":  
     st.title("Carta de Presentación")  
