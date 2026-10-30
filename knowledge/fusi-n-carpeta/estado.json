@@ -7,6 +7,7 @@
  },
  "objetivo": "E1 a E2: experimento LoRA reproducible y medido",
  "datos_clave": [
+  "activación LLP 2026-10-30 12:52 Madrid: ficha knowledge/llp_pack/proyectos/fusion-ia.json (schema llp.proyecto.v1.1, evidencia E0); gateway_llp=transporte_no_nucleo; handoffs modo prueba; UCS dry-run OK, ingesta real bloqueada (AGS_API_KEY ausente); ORÁCULO 40 pares e ítem 1beefb60f0b00499 sin aprobar; splits 889/200/66 +157 simulados; commit previo 2f89ee4; sin push ni 7B",
   "dataset 2026-10-30 10:46 Madrid: splits 889/200/66 + 157 simulados; +7 GRAVEDAD a val (aprobación Lázaro 09:44 vía Supervisor «Si fusióna»); 28 simulados de gravedad NO añadidos (restaurados desde backup 20261030_0945_pre_merge_gravedad); 1 near_dup excluido (línea 24, J=0.9049, id_coincidente 744936f2d1e1ba34); test sha 0937f06c…8ef5 intacto; val sha 65f6b7f61b403730b9cd2afd969e8a7b6a5145c81c923a2733a0f6632f512f67",
   "sin_respuesta v2 corregido: 100 (no_clinico 75 + sustituto_v2 25), sha256 fe53a5624aeb9f33cc91ab047c89ac7f5c9c4a8c4075d2b4f70df8c38ca95e8d",
   "contaminación tras corrección: test 14/66 con solape de contenido, ninguno >= 0.5 (máx. 0.375); sin_respuesta 0/100",
@@ -49,9 +50,10 @@
   "2026-10-30 09:44 Madrid: Lázaro aprueba vía Supervisor fusionar SOLO 7 pares válidos de GRAVEDAD a validation (193→200), local, sin push ni entrenamiento; 28 simulados excluidos; near_dup línea 24 excluido; OMNISCIENCE/ORÁCULO/CERO-A/REMPLAST-Q/ORDENADOR-HÍBRIDO fuera de alcance",
   "2026-10-21 14:51 Lázaro: aprobada y aplicada la enmienda ORÁCULO completa (protocolo_comparacion.json enmienda_2026_10_21_oraculo); test.jsonl sin cambios",
   "2026-10-21 Lázaro: retirar train b6d4ab227f1389f3 (contaminacion_test con e5df021a5dbb40a3) y bloquear su ruta alternativa en merge_pares",
-  "2026-10-21 Lázaro: retirar sin_respuesta dd86ea20047a5c33; sustituido por 8c6aed4bd864ac11 (isbn remplast-q, verificado ausente)"
+  "2026-10-21 Lázaro: retirar sin_respuesta dd86ea20047a5c33; sustituido por 8c6aed4bd864ac11 (isbn remplast-q, verificado ausente)",
+  "2026-10-30 12:52 Madrid: activación LLP FUSIÓN IA; Gateway LLP solo transporte; handoffs en modo prueba"
  ],
- "proximo_paso": "GPU y aprobación para el piloto (discordancia, n de test_ampliado)",
+ "proximo_paso": "GPU y aprobación para el piloto (discordancia, n de test_ampliado); exportar AGS_API_KEY para UCS",
  "smoke_run_aprobacion": {
   "modelo": "HuggingFaceTB/SmolLM2-135M-Instruct",
   "adaptador": "adapters/smoke_lowmem",
