@@ -11,10 +11,14 @@ authors:
 license:
   - MIT
   - CC-BY-4.0
+doi: "10.5281/zenodo.23823737"
 identifiers:
   - type: doi
+    value: "10.5281/zenodo.23823737"
+    description: "DOI de la versión 1.0.1 (Zenodo record 23823737, verificado en la API de Zenodo el 2026-10-31)."
+  - type: doi
     value: "10.5281/zenodo.22150377"
-    description: "DOI de concepto Zenodo (todas las versiones). Consta en zenodo_fix/raw/mine.json como conceptdoi del record 22150378. DOI de la versión 1.0.1: PENDIENTE DE VERIFICACIÓN (aún no reservado)."
+    description: "DOI de concepto Zenodo (todas las versiones)."
 keywords: [OMNISCIENCE, vibraciones, fonones, modos normales, reproducibilidad]
 references:
   - type: article
