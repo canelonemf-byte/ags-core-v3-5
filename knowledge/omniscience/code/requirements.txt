@@ -6,6 +6,6 @@ scipy==1.18.1
 matplotlib==3.11.2
 reportlab==5.0.1
 pillow==13.0.0
-pypdf==6.21.2
+pypdf==6.21.4
 # solo tests
 pytest==9.1.1
