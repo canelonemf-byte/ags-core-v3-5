@@ -1,0 +1,12 @@
+maestro_cuantico:
+  fecha: '2026-11-01'
+  zona: Europe/Madrid
+  autoria: Lázaro López Paz, El Prat de Llobregat, Barcelona, España; asistencia IA
+  licencia: MIT
+  backend: qiskit_statevector
+  es_hardware_cuantico: false
+  aplica: true
+  uso: vqe_modelo_si_hay_hamiltoniano
+  modulo: shared.maestro_cuantico
+  agente: maestro_cuantico
+  nota: simulacion_clasica_statevector

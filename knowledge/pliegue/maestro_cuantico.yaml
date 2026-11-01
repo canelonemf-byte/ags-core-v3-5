@@ -1,0 +1,9 @@
+maestro_cuantico:
+  fecha: '2026-11-01'
+  zona: Europe/Madrid
+  autoria: Lázaro López Paz, El Prat de Llobregat, Barcelona, España; asistencia IA
+  licencia: MIT
+  backend: qiskit_statevector
+  es_hardware_cuantico: false
+  aplica: false
+  uso: no_aplica

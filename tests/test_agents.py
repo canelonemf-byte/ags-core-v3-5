@@ -4,7 +4,7 @@ from agents.project_agents import PROJECT_AGENTS
 pytestmark = pytest.mark.unit
 CORE = 38  # agentes de la v3.5
 from agents.subagents import WORKERS
-EXPECTED = CORE + len(PROJECT_AGENTS) + len(WORKERS) + 22  # + matriz_el_prat (5+15+actualizar_todo) + gemini_reviewer
+EXPECTED = CORE + len(PROJECT_AGENTS) + len(WORKERS) + 23  # + matriz_el_prat (5+15+actualizar_todo) + gemini_reviewer + maestro_cuantico
 
 def test_registry_count():
     assert len(all_agents()) == EXPECTED
@@ -16,7 +16,7 @@ def test_required_fields():
 
 def test_domains():
     assert len(agents_by_domain("research")) == 5
-    assert len(agents_by_domain("compute")) == 5
+    assert len(agents_by_domain("compute")) == 6  # + maestro_cuantico
     assert len(agents_by_domain("domain")) == 6
     assert len(agents_by_domain("multimodal")) == 4
     assert len(agents_by_domain("lab")) == 4

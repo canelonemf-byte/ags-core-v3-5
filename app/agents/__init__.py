@@ -11,3 +11,4 @@ from . import project_agents
 from . import subagents
 from . import matriz_el_prat_agents
 from . import gemini_agent
+from . import maestro_cuantico_agent

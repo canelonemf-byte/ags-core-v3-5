@@ -14,3 +14,8 @@ pyyaml>=6
 
 # Proxy LLM (Grok + Gemini). Opcional si solo usas agentes locales.
 litellm[proxy]>=1.50
+
+# Maestro Cuántico (VQE statevector + annealing). Simulación clásica.
+numpy>=1.26
+qiskit>=1.2,<3
+

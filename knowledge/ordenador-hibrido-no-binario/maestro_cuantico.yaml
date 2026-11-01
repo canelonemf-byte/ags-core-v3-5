@@ -1,0 +1,12 @@
+maestro_cuantico:
+  fecha: '2026-11-01'
+  zona: Europe/Madrid
+  autoria: Lázaro López Paz, El Prat de Llobregat, Barcelona, España; asistencia IA
+  licencia: MIT
+  backend: qiskit_statevector
+  es_hardware_cuantico: false
+  aplica: true
+  uso: optimizador_modular_coste_scheduling
+  modulo: shared.maestro_cuantico
+  agente: maestro_cuantico
+  nota: annealing_clasico_no_ventaja_cuantica
