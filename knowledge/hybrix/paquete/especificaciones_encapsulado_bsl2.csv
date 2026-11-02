@@ -1,0 +1,8 @@
+Componente,Material / Especificación,Dimensiones_mm,Función,Precio_USD
+Chasis Exterior,Aluminio 6061-T6 Anodizado CNC,250 x 200 x 120,Contención mecánica y apantallamiento electromagnético Faradaico,45.0
+Ventana Óptica ODMR,Cristal PMMA Grado Óptico (Transmisión >98% a 532nm),50 x 50 x 4,Excitación láser de nanodiamantes NV para magnetometría Q-MATRIX,12.5
+Filtros de Aire Bio,Doble Filtro HEPA H14 (Retención 99.995% a 0.3µm),45 x 25 x 15,Mantenimiento de presión negativa y biocontención estéril BSL-2,18.0
+Control Térmico,Módulo Peltier TEC1-12706 + Sensor NTC 10K,40 x 40 x 3.8,Estabilización térmica del cultivo neuronal a 37.0°C (±0.1°C),8.5
+Sellado Hermético,Junta Tórica O-Ring de Silicona Médica USP Clase VI,Diámetro 3mm / Perímetro 850mm,Aislamiento contra fugas biológicas y preservación de gas CO2 (5%),6.0
+Aislamiento Vibracional,Bases de Neopreno Sorbothane de Alta Densidad,4x (25 x 25 x 10),Amortiguación de micro-vibraciones mecánicas externas en la MEA,9.0
+Interlock de Seguridad,Sensor Óptico de Apertura + Cortacircuitos SSR L1,15 x 10 x 5,Corte de estimulación instantáneo (<1ms) al detectar apertura de tapa,5.5

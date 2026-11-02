@@ -1,0 +1,21 @@
+{
+  "proyecto": "HYBRIX BSL-2 Biological Containment Enclosure",
+  "version": "2.0.0",
+  "material_main": "Aluminum 6061-T6 Anodized",
+  "containment_level": "BSL-2 (Biosafety Level 2)",
+  "thermal_control": {
+    "target_temp_C": 37.0,
+    "tolerance_C": 0.1,
+    "sensor": "NTC 10k"
+  },
+  "optical_window": {
+    "laser_wavelength_nm": 532,
+    "transmission": 0.98,
+    "diameter_mm": 20
+  },
+  "safety_interlock": {
+    "response_time_ms": 0.8,
+    "mode": "Zero-Trust Physical Cutoff"
+  },
+  "bom_total_usd": 104.5
+}

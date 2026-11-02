@@ -1,0 +1,15 @@
+HYBRIX — Procesador Biológico / orquestación bio-digital
+Autoría: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA
+Software: MIT
+Documentos: CC BY 4.0
+
+Terceros citados (estado del arte, no código incorporado):
+- Cortical Labs CL1 / biOS (referencia comercial; no se usa biOS)
+- FinalSpark Bioprocessors (referencia comercial)
+- SpiNNaker (referencia de neuromórfico digital)
+- DishBrain / free-energy principle experiments (literatura)
+- FastAPI, Pydantic, Uvicorn, Python (open source)
+- Componentes electrónicos comerciales listados en BOM (CN3791, LM2596, TPS73733, SX1276, etc.)
+
+ORCID en drive/gemini_code_zenodo.json (0000-0001-8601-1963): PENDIENTE DE VERIFICACIÓN —
+la API pública ORCID resuelve ese id a "Helios Energía Solar", no a Lázaro López Paz.

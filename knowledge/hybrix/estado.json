@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "proyecto": "hybrix",
+    "nombre": "HYBRIX Procesador Biológico / orquestación bio-digital",
+    "fecha": "2026-11-02",
+    "autor": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA",
+    "version_material": "docs v1.9.0 / paquete v2.0.0",
+    "evidencia_global": "E1_diseno_E2_simulacion_software_parcial_E3; biologia_E0",
+    "licencias": [
+      "MIT",
+      "CC-BY-4.0"
+    ],
+    "ultima_verificacion": "2026-11-02 Europe/Madrid"
+  },
+  "objetivo": "Orquestar telemetría bio-digital (API) y documentar diseño de nodo Bio-Core; separar hipótesis/simulación/experimento",
+  "datos_clave": [
+    "import_drive_2026-11-01_15:48-16:21_Europe/Madrid",
+    "zip_hybrix_sistema_completo_v2.0=953465_bytes",
+    "originalidad_vs_knowledge: exact=0 near_jaccard_ge_0.85=0",
+    "certificado_bsl2=no_valido_como_certificacion (autogenerado; Dr.Aris Thorne no verificable; hash SHA256-HYB20-PASSED inválido)",
+    "orcid_0000-0001-8601-1963=conflicto (API ORCID: Helios Energía Solar)",
+    "doi_hybrix=ausente",
+    "main.py_SyntaxError_corregido_local; test_suite Path import añadido",
+    "qmatrix_y_event_logs=simulacion_E2",
+    "gemini-code-zenodo.json=metadatos_autor_zenodo_no_codigo_hybrix",
+    "ucs_ingest_2026-11-02: hybrix_md_fragments=40; memoria 3230→3341 (+111 incl. ordenador renombrados)",
+    "ordenador_hibrido: 4 archivos con espacios renombrados snake_case e ingeridos (71 fragmentos nuevos en esos 4)",
+    "hybrix_test_suite_local_tras_fixes: 3/3 OK (unittest)"
+  ],
+  "tareas": [
+    "corregir ORCID en plantilla Zenodo o retirar id erróneo",
+    "retirar o etiquetar certificado BSL-2 como no oficial / simulado",
+    "reproducir benchmarks API y completar tests",
+    "decidir publicación Zenodo (requiere aprobación Lázaro)",
+    "no fusionar LoRA ni push sin Sube"
+  ],
+  "riesgos": [
+    "lectura del certificado como acreditación regulatoria real",
+    "confusión experimento vs simulación (wetware narrativo)",
+    "ORCID incorrecto en metadatos de depósito",
+    "main/tests frágiles: afirmaciones de validación total no sostenidas"
+  ],
+  "decisiones": [
+    "2026-11-02 Lázaro: importar HYBRIX como proyecto NUEVO (no dentro de ordenador-hibrido)",
+    "licencias aplicadas MIT software + CC BY 4.0 documentos",
+    "sin push / sin publish / sin merge LoRA"
+  ],
+  "proximo_paso": "Aprobar corrección de ORCID y etiquetado del certificado; opcional Sube del commit local hybrix"
+}

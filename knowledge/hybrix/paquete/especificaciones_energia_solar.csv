@@ -1,0 +1,6 @@
+Modulo,Voltaje_Nominal,Potencia,Funcion,Voltaje_Entrada,Eficiencia,Capacidad,Voltaje_Salida,Corriente_Max,Ruido
+Panel Solar PV,18.0V,10W,Generacion fotovoltaica diurna,,,,,,
+Controlador MPPT (CN3791),,,Seguimiento del punto de maxima potencia,12V - 28V,93%,,,,
+Bateria LiFePO4 4S,12.8V,,Almacenamiento de energia a largo plazo,,,6.0Ah (76.8Wh),,,
+Regulador Buck 5V,,,Alimentacion de bombas de microfluidica,,,,5.0V,2.0A,
+LDO 3.3V Ultra-Low Noise,,,Alimentacion limpia para chip MEA y LoRa SX1276,,,,3.3V,,< 30uVrms

@@ -1,0 +1,20 @@
+[
+  {
+    "person_or_org": {
+      "type": "personal",
+      "given_name": "Lázaro",
+      "family_name": "López Paz",
+      "identifiers": [
+        {
+          "scheme": "orcid",
+          "identifier": "0000-0001-8601-1963"
+        }
+      ]
+    },
+    "affiliations": [
+      {
+        "name": "Investigador Independiente, El Prat de Llobregat, Barcelona, España"
+      }
+    ]
+  }
+]

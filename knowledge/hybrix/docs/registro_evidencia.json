@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "proyecto": "hybrix",
+    "fecha": "2026-11-02",
+    "zona": "Europe/Madrid",
+    "autor_revision": "AGs-Core Supervisor",
+    "autor_material": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA"
+  },
+  "entradas": [
+    {
+      "id": "HYB-001",
+      "claim": "API FastAPI v1.9.0 de telemetría/predicciones existe en paquete",
+      "tipo": "software",
+      "evidencia": "E3",
+      "nota": "main.py presente; SyntaxError corregido localmente"
+    },
+    {
+      "id": "HYB-002",
+      "claim": "Suite unittest 100% PASS / TEST-01..06 del informe-auditoria",
+      "tipo": "software",
+      "evidencia": "E0",
+      "nota": "PENDIENTE DE VERIFICACIÓN; test_suite.py venía roto (Path)"
+    },
+    {
+      "id": "HYB-003",
+      "claim": "Cultivo neuronal humano vivo operando en Bio-Core HYBRIX",
+      "tipo": "experimento",
+      "evidencia": "E0",
+      "nota": "Sin datos experimentales crudos; solo narrativa"
+    },
+    {
+      "id": "HYB-004",
+      "claim": "Q-MATRIX ODMR lee campos neuronales reales",
+      "tipo": "simulacion",
+      "evidencia": "E2",
+      "nota": "Código se autodenomina Simulador"
+    },
+    {
+      "id": "HYB-005",
+      "claim": "Certificado oficial auditoría BSL-2 ISO 14644",
+      "tipo": "documento",
+      "evidencia": "E0",
+      "nota": "Autogenerado; no organismo emisor verificable; no válido como certificación"
+    },
+    {
+      "id": "HYB-006",
+      "claim": "Mediciones certificado (ΔP, viabilidad 96.4%, ODMR 99.1%)",
+      "tipo": "experimento",
+      "evidencia": "E0",
+      "nota": "Sin trazas instrumentales; PENDIENTE DE VERIFICACIÓN"
+    },
+    {
+      "id": "HYB-007",
+      "claim": "Eventos LoRa/GenAI en hybrix_events_sample.log",
+      "tipo": "simulacion",
+      "evidencia": "E2",
+      "nota": "Generados por script de eventos"
+    },
+    {
+      "id": "HYB-008",
+      "claim": "BOM / coste hardware ~167.50 USD",
+      "tipo": "hipotesis_diseno",
+      "evidencia": "E1",
+      "nota": "Lista de componentes; precios no auditados"
+    },
+    {
+      "id": "HYB-009",
+      "claim": "Benchmark 225.87 req/s",
+      "tipo": "software",
+      "evidencia": "E0",
+      "nota": "PENDIENTE DE VERIFICACIÓN; no reproducido en esta revisión"
+    },
+    {
+      "id": "HYB-010",
+      "claim": "ORCID 0000-0001-8601-1963 = Lázaro López Paz",
+      "tipo": "autoria",
+      "evidencia": "E0",
+      "nota": "API ORCID resuelve a Helios Energía Solar; conflicto"
+    },
+    {
+      "id": "HYB-011",
+      "claim": "DOI Zenodo/Crossref del proyecto HYBRIX",
+      "tipo": "publicacion",
+      "evidencia": "E0",
+      "nota": "No hay DOI en el material importado"
+    },
+    {
+      "id": "HYB-012",
+      "claim": "Arquitectura 5 capas L1–L5 como diseño",
+      "tipo": "hipotesis",
+      "evidencia": "E1",
+      "nota": "Documentación de diseño; no impl. biológica verificada"
+    }
+  ],
+  "conteo": {
+    "E0": 6,
+    "E1": 2,
+    "E2": 2,
+    "E3": 1,
+    "E4": 0,
+    "E5": 0,
+    "E6": 0
+  }
+}

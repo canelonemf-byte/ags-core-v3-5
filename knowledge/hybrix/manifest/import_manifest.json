@@ -1,0 +1,198 @@
+{
+  "imported_from_drive": "2026-11-01",
+  "imported_at": "2026-11-02",
+  "files": [
+    {
+      "src": "README.md",
+      "dest": "paquete/readme.md",
+      "sha256": "991f77f21dc2987b4ab6625d44ea82da8716fc34524c530b4c7b30b33c4ebdaf",
+      "bytes": 468
+    },
+    {
+      "src": "diagrama_temporal_conmutaciones.png",
+      "dest": "paquete/diagrama_temporal_conmutaciones.png",
+      "sha256": "da22a2db3e6c4ee476da7a17343ee0b068b3ca775f99fae37420faa324366c27",
+      "bytes": 147953
+    },
+    {
+      "src": "certificado-auditoria-bioseguridad-hybrix.pdf",
+      "dest": "paquete/certificado_auditoria_bioseguridad_hybrix.pdf",
+      "sha256": "75becc5a0b5fa373784ed26f1955ff697d3ecfc1701cd9c97462110fbee8c4ff",
+      "bytes": 5273
+    },
+    {
+      "src": "test_genai_fallback.py",
+      "dest": "paquete/test_genai_fallback.py",
+      "sha256": "fe0f31e606fc36a6217f3852e429fbf806450f22d7f61942696168633a3116bb",
+      "bytes": 3930
+    },
+    {
+      "src": "resumen_estructurado_hybrix.yaml",
+      "dest": "paquete/resumen_estructurado_hybrix.yaml",
+      "sha256": "6c4c778e03c20e51cbf91ec5ffe6050ba02de3a12bd1056cb8ad30a31075f35b",
+      "bytes": 2079
+    },
+    {
+      "src": "hybrix_events_sample.log",
+      "dest": "paquete/hybrix_events_sample.log",
+      "sha256": "2dc40b271ce4e924b8e32678f58a7d45d6e864697d77b95e6501b2cbfde4108c",
+      "bytes": 6062
+    },
+    {
+      "src": "manual_mantenimiento_esterilizacion_bsl2.md",
+      "dest": "paquete/manual_mantenimiento_esterilizacion_bsl2.md",
+      "sha256": "8ee8d5f09df1845abb092ca41c74c6ff42c60753694979ea9764daae6f527e28",
+      "bytes": 3544
+    },
+    {
+      "src": "validador_esquema_hybrix.py",
+      "dest": "paquete/validador_esquema_hybrix.py",
+      "sha256": "11407412171a19218ecfec23b9891e02f1f9cd575801304ba38cf41918af9bd0",
+      "bytes": 3113
+    },
+    {
+      "src": "especificaciones_encapsulado_bsl2.csv",
+      "dest": "paquete/especificaciones_encapsulado_bsl2.csv",
+      "sha256": "f1606afb234af5a786b8bbdd3e2f8f30f40b5136017b5182845ce5a4cd224fa0",
+      "bytes": 1172
+    },
+    {
+      "src": "hybrix_genai_l5.py",
+      "dest": "paquete/hybrix_genai_l5.py",
+      "sha256": "d72656c198c71fc9aa14f1d59edcc3d03b20bee1ddde1f17c8262fc44d60b4a6",
+      "bytes": 5403
+    },
+    {
+      "src": "hybrix_logger.py",
+      "dest": "paquete/hybrix_logger.py",
+      "sha256": "04db919bdceccd79df09801ad3af8700e2bdfca88491a00a257c493202d35480",
+      "bytes": 3241
+    },
+    {
+      "src": "esquema_encapsulado_bsl2_hybrix.png",
+      "dest": "paquete/esquema_encapsulado_bsl2_hybrix.png",
+      "sha256": "30842f64a29e37429ec52d488b2623818eea2508477b281d65a4379b1cf4e295",
+      "bytes": 216717
+    },
+    {
+      "src": "especificaciones_energia_solar.csv",
+      "dest": "paquete/especificaciones_energia_solar.csv",
+      "sha256": "e82315b2d880473b39b0e4ce4e73291623c7f9a35955e93e67b8b1c4ba348b75",
+      "bytes": 515
+    },
+    {
+      "src": "generate_event_logs_and_plot.py",
+      "dest": "paquete/generate_event_logs_and_plot.py",
+      "sha256": "49b1e3f37e6acea7428053e6ad5f07df6b4e523b98dcfcb7401688bcb32632ee",
+      "bytes": 5890
+    },
+    {
+      "src": "gerber_cad_bsl2_hybrix.zip",
+      "dest": "paquete/gerber_cad_bsl2_hybrix.zip",
+      "sha256": "f601ae921b6c319cfc3513260449ab96e8c27ce6e70bd07a1c60341375ebd03d",
+      "bytes": 218861
+    },
+    {
+      "src": "export_preventivo_viabilidad_critica.csv",
+      "dest": "paquete/export_preventivo_viabilidad_critica.csv",
+      "sha256": "265e83ae5db4c7433b1137a4cc952256616a7d12ba373cb3d7b1bbbb2d5f10fd",
+      "bytes": 162
+    },
+    {
+      "src": "hybrix_qmatrix_sensor.py",
+      "dest": "paquete/hybrix_qmatrix_sensor.py",
+      "sha256": "79601e6cf6bab117c6d3f3a14edbdf24fc1cb64f958653f1924a74fa168beadc",
+      "bytes": 5790
+    },
+    {
+      "src": "informe-auditoria-hybrix.md",
+      "dest": "paquete/informe_auditoria_hybrix.md",
+      "sha256": "8cecda9f2afa59c893f8144709a8f795f2ab04d650736cbaf2a775a6070d43f8",
+      "bytes": 9770
+    },
+    {
+      "src": "generate_qmatrix_plot.py",
+      "dest": "paquete/generate_qmatrix_plot.py",
+      "sha256": "e1ef8d097417fdc878c8d67870117b40c33a4d40b873e5fa00363d14298952ca",
+      "bytes": 2777
+    },
+    {
+      "src": "main.py",
+      "dest": "paquete/main.py",
+      "sha256": "9815e58197545ba7ccc0200f406c21c4608e6726d2a2acf8c2b3ae1e4b248db5",
+      "bytes": 10880
+    },
+    {
+      "src": "bsl2_enclosure_cad_spec.json",
+      "dest": "paquete/bsl2_enclosure_cad_spec.json",
+      "sha256": "e6f828ba7b14762e3fdb67048f916d5543aabef8d235529c3a24bcc5c6336153",
+      "bytes": 522
+    },
+    {
+      "src": "test_suite.py",
+      "dest": "paquete/test_suite.py",
+      "sha256": "d3bb7b95ec23c1ffe516f2efe53676b11d61b61eeba94063e205e0260d00e42c",
+      "bytes": 1483
+    },
+    {
+      "src": "simulador_nodo_biologico.py",
+      "dest": "paquete/simulador_nodo_biologico.py",
+      "sha256": "d6e07989fd1976917858b689a8c4d18f63184db523152c087610db8303f1aa7b",
+      "bytes": 5280
+    },
+    {
+      "src": "resumen_estructurado_hybrix.json",
+      "dest": "paquete/resumen_estructurado_hybrix.json",
+      "sha256": "b77f2705e9f08d38e0ea4a3e0787ad5abf02e71d09a2feb8ede1629b02033cb4",
+      "bytes": 1990
+    },
+    {
+      "src": "qmatrix_odmr_spectrum.png",
+      "dest": "paquete/qmatrix_odmr_spectrum.png",
+      "sha256": "3dbd6155a1b2e89dad60799b51db929995da6c60006ac7c2352bd1694a71f83b",
+      "bytes": 219912
+    },
+    {
+      "src": "hybrix_cicd_pipeline_v1.9.0/main.py",
+      "dest": "paquete/hybrix_cicd_pipeline_v1_9_0/main.py",
+      "sha256": "def953307af9edcb0d98bbe9839aa8b10e28410ea7e19d203cd2b0f80cd5f655",
+      "bytes": 6488
+    },
+    {
+      "src": "hybrix_cicd_pipeline_v1.9.0/tests/test_ci_pipeline.py",
+      "dest": "paquete/hybrix_cicd_pipeline_v1_9_0/tests/test_ci_pipeline.py",
+      "sha256": "19e4ad834daca8e1ba9715f00c5f6f151cb9567ef2e376f649aa573c82e0571f",
+      "bytes": 2304
+    },
+    {
+      "src": "hybrix_cicd_pipeline_v1.9.0/scripts/run_ci.sh",
+      "dest": "paquete/hybrix_cicd_pipeline_v1_9_0/scripts/run_ci.sh",
+      "sha256": "6775465cfcfe053cb79fd3c512451ceec887d2c689e8f14b593e79c94de83e7c",
+      "bytes": 1401
+    },
+    {
+      "src": "hybrix_cicd_pipeline_v1.9.0/.github/workflows/hybrix_ci.yml",
+      "dest": "paquete/hybrix_cicd_pipeline_v1_9_0/github/workflows/hybrix_ci.yml",
+      "sha256": "b7770b89bf2c915004ddd8667a08a8a2fe212be85fb725032a0585bd2d179415",
+      "bytes": 878
+    },
+    {
+      "src": "gerber_cad_bsl2_hybrix/especificaciones_encapsulado_bsl2.csv",
+      "dest": "paquete/gerber_cad_bsl2_hybrix/especificaciones_encapsulado_bsl2.csv",
+      "sha256": "f1606afb234af5a786b8bbdd3e2f8f30f40b5136017b5182845ce5a4cd224fa0",
+      "bytes": 1172
+    },
+    {
+      "src": "gerber_cad_bsl2_hybrix/esquema_encapsulado_bsl2_hybrix.png",
+      "dest": "paquete/gerber_cad_bsl2_hybrix/esquema_encapsulado_bsl2_hybrix.png",
+      "sha256": "30842f64a29e37429ec52d488b2623818eea2508477b281d65a4379b1cf4e295",
+      "bytes": 216717
+    },
+    {
+      "src": "gerber_cad_bsl2_hybrix/bsl2_enclosure_cad_spec.json",
+      "dest": "paquete/gerber_cad_bsl2_hybrix/bsl2_enclosure_cad_spec.json",
+      "sha256": "e6f828ba7b14762e3fdb67048f916d5543aabef8d235529c3a24bcc5c6336153",
+      "bytes": 522
+    }
+  ]
+}

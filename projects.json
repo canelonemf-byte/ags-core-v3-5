@@ -3,6 +3,25 @@
  "owner": "canelonemf-byte",
  "projects": [
   {
+   "id": "agsgpt-lora",
+   "name": "agsgpt-lora",
+   "repo": "",
+   "source": "local",
+   "url": "",
+   "description": "AGsGPT + LoRA: capa de red neuronal con adaptadores LoRA sobre AGs-Core. Hipótesis E1; sin código ni adaptadores entrenados.",
+   "keywords": [
+    "agsgpt",
+    "lora",
+    "red-neuronal"
+   ],
+   "tools": [],
+   "license": "MIT",
+   "files": 1,
+   "binaries_or_skipped": [],
+   "license_declared_by_author": true,
+   "evidencia_nivel": "E1"
+  },
+  {
    "id": "api-seguridad-postcuantica",
    "name": "api-seguridad-postcuantica",
    "repo": "canelonemf-byte/api-seguridad-postcuantica",
@@ -270,6 +289,27 @@
    "license_declared_by_author": true
   },
   {
+   "id": "gravedad",
+   "name": "gravedad",
+   "repo": "",
+   "source": "local",
+   "url": "",
+   "description": "GRAVEDAD (P003): registro de evidencia sobre gravedad, espacio-tiempo y métricas warp (Alcubierre/Sarfatti, teoría publicada de terceros, citar) y relación con MEI-RIT. E0-E1.",
+   "keywords": [
+    "gravedad",
+    "espacio-tiempo",
+    "warp",
+    "alcubierre",
+    "mei-rit"
+   ],
+   "tools": [],
+   "license": "CC BY 4.0",
+   "files": 3,
+   "binaries_or_skipped": [],
+   "license_declared_by_author": true,
+   "evidencia_nivel": "E1"
+  },
+  {
    "id": "helio3-fusion-qmc-h3",
    "name": "helio3-fusion-qmc-h3",
    "repo": "canelonemf-byte/helio3-fusion-qmc-h3",
@@ -323,6 +363,25 @@
    "tools": [],
    "license": "MIT",
    "files": 7,
+   "binaries_or_skipped": []
+  },
+  {
+   "id": "hybrix",
+   "name": "hybrix",
+   "repo": "canelonemf-byte/hybrix",
+   "source": "local",
+   "url": "",
+   "description": "HYBRIX: orquestación bio-digital / procesador biológico (API telemetría + diseño Bio-Core). Import Drive 2026-11-01.",
+   "keywords": [
+    "hybrix",
+    "biocomputacion",
+    "wetware",
+    "fastapi",
+    "bioseguridad"
+   ],
+   "tools": [],
+   "license": "MIT",
+   "files": 47,
    "binaries_or_skipped": []
   },
   {
@@ -394,6 +453,29 @@
    "license": "MIT",
    "files": 5,
    "binaries_or_skipped": []
+  },
+  {
+   "id": "matriz-el-prat",
+   "name": "matriz_el_prat",
+   "repo": "canelonemf-byte/matriz-el-prat",
+   "source": "local",
+   "url": "https://github.com/canelonemf-byte/matriz-el-prat",
+   "description": "Sistema multi-agente (5 agentes + 15 sub-agentes) de auditoría y gobernanza municipal del Prat de Llobregat orientado a mejorar la vida de la ciudadanía: fuentes públicas (BOE, DOGC, BOPB, PLACSP, dades obertes), cálculo IBI/BICE/residuos con TRLRHL y OF1 2026, borradores de moción, alegación y solicitud.",
+   "keywords": [
+    "el_prat",
+    "ayuntamiento",
+    "ordenanzas_fiscales",
+    "ibi_urbano",
+    "bics_aena_puerto",
+    "mas_blau",
+    "tasa_residuos",
+    "prat_espais"
+   ],
+   "tools": [],
+   "license": "MIT",
+   "files": 12,
+   "binaries_or_skipped": [],
+   "license_declared_by_author": true
   },
   {
    "id": "mei-rit-propulsion",
@@ -536,6 +618,34 @@
    "binaries_or_skipped": []
   },
   {
+   "id": "nnc",
+   "name": "nnc",
+   "repo": "",
+   "source": "local",
+   "url": "",
+   "description": "NNC + AGs-Core corregido 1.0.0 (/workspace/agsgpt/NNC). Software E3: suite 7/7 PASS (WGS84/ECEF Bowring, triangulación ENU sintética, entropía, EKF, CRC, HMAC, etiquetado simulado). Telemetría satelital sintética etiquetada. Solo build-beta/ws_vivo.py consulta datos reales (ADS-B adsb.lol Prat + ISS wheretheiss.at; ambas APIs respondieron 200 el 2026-10-20). GIBS/USGS/radar real: solo mencionados en docs, sin conector. Ninguna detección validada: E0-E1 para afirmaciones físicas.",
+   "keywords": [
+    "adsb",
+    "ecef",
+    "enu",
+    "ekf",
+    "radar",
+    "dashboard3d"
+   ],
+   "tools": [
+    "dashboard:8080",
+    "rest:8010"
+   ],
+   "license": "MIT",
+   "files": 70,
+   "binaries_or_skipped": [
+    "assets/*.png",
+    "docs/*.pdf"
+   ],
+   "license_declared_by_author": true,
+   "evidencia_nivel": "E3_software;E1_deteccion"
+  },
+  {
    "id": "nt-000-neuromorphic",
    "name": "nt-000-neuromorphic",
    "repo": "canelonemf-byte/nt-000-neuromorphic",
@@ -602,6 +712,25 @@
    "binaries_or_skipped": []
   },
   {
+   "id": "oraculo-mesoscopico",
+   "name": "ORÁCULO MESOSCÓPICO",
+   "repo": null,
+   "source": "local",
+   "url": null,
+   "description": "ORÁCULO MESOSCÓPICO: predicción probabilística y simulación mesoscópica; indicar siempre incertidumbre, supuestos y límites. Evidencia E0, PENDIENTE DE VERIFICACIÓN: sin documentos fuente.",
+   "keywords": [
+    "oraculo",
+    "mesoscopico",
+    "prediccion",
+    "probabilistica",
+    "simulacion"
+   ],
+   "tools": [],
+   "license": "MIT",
+   "files": 1,
+   "binaries_or_skipped": []
+  },
+  {
    "id": "ordenador-hibrido-no-binario",
    "name": "ordenador-hibrido-no-binario",
    "repo": "canelonemf-byte/ordenador-hibrido-no-binario",
@@ -649,6 +778,25 @@
    "license": "MIT",
    "files": 10,
    "binaries_or_skipped": []
+  },
+  {
+   "id": "pliegue",
+   "name": "pliegue",
+   "repo": "",
+   "source": "local",
+   "url": "",
+   "description": "PLIEGUE (P001): simulación de métricas warp (rayo NEC, toro T00, Ford-Roman). Métricas Alcubierre/Natario/White son teoría publicada de terceros (citar). E1: sin código en el ordenador; 'hecho' declarado, no verificado.",
+   "keywords": [
+    "warp",
+    "nec",
+    "ford-roman"
+   ],
+   "tools": [],
+   "license": "MIT",
+   "files": 1,
+   "binaries_or_skipped": [],
+   "license_declared_by_author": true,
+   "evidencia_nivel": "E1"
   },
   {
    "id": "q-matrix-autonomous-control",
@@ -804,135 +952,6 @@
    "license": "MIT",
    "files": 3,
    "binaries_or_skipped": []
-  },
-  {
-   "id": "oraculo-mesoscopico",
-   "name": "ORÁCULO MESOSCÓPICO",
-   "repo": null,
-   "source": "local",
-   "url": null,
-   "description": "ORÁCULO MESOSCÓPICO: predicción probabilística y simulación mesoscópica; indicar siempre incertidumbre, supuestos y límites. Evidencia E0, PENDIENTE DE VERIFICACIÓN: sin documentos fuente.",
-   "keywords": [
-    "oraculo",
-    "mesoscopico",
-    "prediccion",
-    "probabilistica",
-    "simulacion"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 1,
-   "binaries_or_skipped": []
-  },
-  {
-   "id": "agsgpt-lora",
-   "name": "agsgpt-lora",
-   "repo": "",
-   "source": "local",
-   "url": "",
-   "description": "AGsGPT + LoRA: capa de red neuronal con adaptadores LoRA sobre AGs-Core. Hipótesis E1; sin código ni adaptadores entrenados.",
-   "keywords": [
-    "agsgpt",
-    "lora",
-    "red-neuronal"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 1,
-   "binaries_or_skipped": [],
-   "license_declared_by_author": true,
-   "evidencia_nivel": "E1"
-  },
-  {
-   "id": "pliegue",
-   "name": "pliegue",
-   "repo": "",
-   "source": "local",
-   "url": "",
-   "description": "PLIEGUE (P001): simulación de métricas warp (rayo NEC, toro T00, Ford-Roman). Métricas Alcubierre/Natario/White son teoría publicada de terceros (citar). E1: sin código en el ordenador; 'hecho' declarado, no verificado.",
-   "keywords": [
-    "warp",
-    "nec",
-    "ford-roman"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 1,
-   "binaries_or_skipped": [],
-   "license_declared_by_author": true,
-   "evidencia_nivel": "E1"
-  },
-  {
-   "id": "nnc",
-   "name": "nnc",
-   "repo": "",
-   "source": "local",
-   "url": "",
-   "description": "NNC + AGs-Core corregido 1.0.0 (/workspace/agsgpt/NNC). Software E3: suite 7/7 PASS (WGS84/ECEF Bowring, triangulación ENU sintética, entropía, EKF, CRC, HMAC, etiquetado simulado). Telemetría satelital sintética etiquetada. Solo build-beta/ws_vivo.py consulta datos reales (ADS-B adsb.lol Prat + ISS wheretheiss.at; ambas APIs respondieron 200 el 2026-10-20). GIBS/USGS/radar real: solo mencionados en docs, sin conector. Ninguna detección validada: E0-E1 para afirmaciones físicas.",
-   "keywords": [
-    "adsb",
-    "ecef",
-    "enu",
-    "ekf",
-    "radar",
-    "dashboard3d"
-   ],
-   "tools": [
-    "dashboard:8080",
-    "rest:8010"
-   ],
-   "license": "MIT",
-   "files": 70,
-   "binaries_or_skipped": [
-    "assets/*.png",
-    "docs/*.pdf"
-   ],
-   "license_declared_by_author": true,
-   "evidencia_nivel": "E3_software;E1_deteccion"
-  },
-  {
-   "id": "matriz-el-prat",
-   "name": "matriz_el_prat",
-   "repo": "canelonemf-byte/matriz-el-prat",
-   "source": "local",
-   "url": "https://github.com/canelonemf-byte/matriz-el-prat",
-   "description": "Sistema multi-agente (5 agentes + 15 sub-agentes) de auditoría y gobernanza municipal del Prat de Llobregat orientado a mejorar la vida de la ciudadanía: fuentes públicas (BOE, DOGC, BOPB, PLACSP, dades obertes), cálculo IBI/BICE/residuos con TRLRHL y OF1 2026, borradores de moción, alegación y solicitud.",
-   "keywords": [
-    "el_prat",
-    "ayuntamiento",
-    "ordenanzas_fiscales",
-    "ibi_urbano",
-    "bics_aena_puerto",
-    "mas_blau",
-    "tasa_residuos",
-    "prat_espais"
-   ],
-   "tools": [],
-   "license": "MIT",
-   "files": 12,
-   "binaries_or_skipped": [],
-   "license_declared_by_author": true
-  },
-  {
-   "id": "gravedad",
-   "name": "gravedad",
-   "repo": "",
-   "source": "local",
-   "url": "",
-   "description": "GRAVEDAD (P003): registro de evidencia sobre gravedad, espacio-tiempo y métricas warp (Alcubierre/Sarfatti, teoría publicada de terceros, citar) y relación con MEI-RIT. E0-E1.",
-   "keywords": [
-    "gravedad",
-    "espacio-tiempo",
-    "warp",
-    "alcubierre",
-    "mei-rit"
-   ],
-   "tools": [],
-   "license": "CC BY 4.0",
-   "files": 3,
-   "binaries_or_skipped": [],
-   "license_declared_by_author": true,
-   "evidencia_nivel": "E1"
   }
  ]
 }
