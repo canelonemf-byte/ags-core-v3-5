@@ -1,7 +1,7 @@
 {
  "meta": {
   "proyecto": "ordenador_hibrido_no_binario",
-  "fecha": "2026-10-30",
+  "fecha": "2026-11-02",
   "escala_evidencia": {
    "E0": "especulación/objetivo sin respaldo",
    "E1": "teoría establecida o cálculo derivado / hecho documental",
@@ -23,7 +23,8 @@
    "E2": 3,
    "E3": 2,
    "E4": 7
-  }
+  },
+  "nota_ciclo_2026_11_02": "Novedades desde ciclo 2026-10-30 09:37: (1) repo Atlas0 PR #1 fusionado 2026-10-30 22:53 UTC+1 (c45dc21): CI añadido y en success, README honesto E1, Makefile corregido → ev_30; ev_12 superado; ev_11 anotado. (2) local: maestro_cuantico.yaml (commit 5186f96, 2026-11-01) declara optimizador compartido qiskit_statevector + annealing clásico, es_hardware_cuantico false, sin ventaja cuántica; sin salidas archivadas → no crea entrada. Cambios 10-30 12:5x ya registrados en ciclo 10-30. Sin experimentos: E5–E6 vacíos."
  },
  "registro": [
   {
@@ -135,7 +136,8 @@
    "fuente": "github canelonemf-byte/Atlas0-ordenador2.6-x-10- README",
    "estado": "PENDIENTE DE VERIFICACIÓN",
    "originalidad": "propuesta_propia",
-   "justificacion_originalidad": "contenido del repo del autor"
+   "justificacion_originalidad": "contenido del repo del autor",
+   "nota": "2026-11-02: README nuevo (c45dc21) retira Ready/Green, declara E1 y demo TQC de juguete; la afirmación histórica sigue E0"
   },
   {
    "id": "ev_12",
@@ -143,9 +145,10 @@
    "nivel": "E1",
    "tipo": "teorico",
    "fuente": "GitHub API git/trees HEAD (2026-10-20)",
-   "estado": "verificado",
+   "estado": "superado",
    "originalidad": "propuesta_propia",
-   "justificacion_originalidad": "hecho documental sobre el repo propio"
+   "justificacion_originalidad": "hecho documental sobre el repo propio",
+   "nota": "2026-11-02: obsoleto. HEAD c45dc21 (y ya dce8029, 2026-10-23) contiene src/, docs/, scripts/, lean/, tests/ (21+ rutas). Ver ev_30"
   },
   {
    "id": "ev_13",
@@ -319,6 +322,17 @@
    "estado": "verificado",
    "originalidad": "estado_del_arte",
    "justificacion_originalidad": "verificación documental de fuentes ajenas; sin incorporación de cifras al modelo"
+  },
+  {
+   "id": "ev_30",
+   "afirmacion": "Repo Atlas0 HEAD c45dc21 (merge PR #1, 2026-10-30 22:53 UTC+1): añade .github/workflows/ci.yml; README honesto (autoría Lázaro López Paz + IA, ORCID, MIT/CC BY 4.0, E1, sin DOI ni hardware); Makefile corregido; ejecuciones CI 'ci' success en 9e3efc7 y c45dc21",
+   "nivel": "E1",
+   "tipo": "documental",
+   "fuente": "GitHub API solo lectura 2026-11-02 (commits, árbol, actions/runs, readme)",
+   "estado": "verificado",
+   "nota": "CI success verifica que el workflow pasa, no la física; demo TQC = simulación de juguete; Lean no validado en CI",
+   "originalidad": "propuesta_propia",
+   "justificacion_originalidad": "estado documental del repo propio"
   }
  ]
 }

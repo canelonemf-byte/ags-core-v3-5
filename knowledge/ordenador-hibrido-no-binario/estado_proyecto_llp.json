@@ -1,8 +1,8 @@
 {
  "meta": {
   "proyecto": "ordenador_hibrido_no_binario",
-  "version": "1.4",
-  "fecha": "2026-10-30",
+  "version": "1.5",
+  "fecha": "2026-11-02",
   "autoria": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España + asistencia de IA",
   "licencias": {
    "software": "MIT",
@@ -51,7 +51,7 @@
    "estado": "PENDIENTE DE VERIFICACIÓN"
   },
   {
-   "dato": "Repo Atlas0 público, MIT, último push 2026-10-08 10:49 (UTC+2); solo 3 archivos en HEAD",
+   "dato": "Repo Atlas0 público, MIT, último push 2026-10-30 22:53 (UTC+1, c45dc21); src/docs/scripts/lean/tests/CI presentes; CI success; README E1 honesto",
    "nivel": "E1",
    "tipo": "teorico",
    "estado": "verificado"
@@ -203,16 +203,13 @@
  ],
  "incoherencias_local_repo": [
   "README local declara solo MIT; documento_maestro declara CC-BY-4.0 y no hay licencia de documentos separada (falta LICENSE CC BY 4.0)",
-  "Repo README lista src/, docs/atlas0.*, scripts/ y crates/rewind; el árbol HEAD solo tiene .gitignore, LICENSE, Makefile",
-  "Repo README declara 'MIT/Apache' en A6/A5 pero GitHub detecta solo MIT",
-  "Repo marca CI 'Green' y tests 'Ready' sin código fuente visible ni workflows",
   "Enfoque distinto: local = arquitectura heterogénea CMOS+memristor+fotónica; repo = computación cuántica topológica (anyones Fibonacci), Toffoli y 'substrato consciente'",
   "Local promete 'GitHub/GitLab + Zenodo DOI'; ningún DOI propio existe en ninguna de las dos fuentes",
-  "Autoría local 'Cataluña, España' vs requerida 'El Prat de Llobregat, Barcelona, España'; repo no declara autoría ni asistencia IA",
+  "Autoría local 'Cataluña, España' vs requerida 'El Prat de Llobregat, Barcelona, España'; repo ya declara autoría + IA (c45dc21)",
   "Manual de Fabricación usa tono de fabricación/prototipo, contradiciendo la declaración de alcance 'NO hay fabricación' del documento maestro y del estudio revisado",
   "Sprint del repo 2026-10-07→2026-10-21 (presupuesto 2.500 €) no aparece en el plan de I+D local",
   "Manual: docs/ conserva 'Versión 1.0 (Definitiva para Implementación)' mientras drive/ lleva AVISO de documento no experimental; densidad CMOS 0,8 vs 9,8 W/mm² (ev_27)",
   "CONFLICTO nombre: llp_pack/ordenador_hibrido.json vs meta.proyecto ordenador_hibrido_no_binario / carpeta ordenador-hibrido-no-binario (sin crear ordenador-hibrido.json)"
  ],
- "proximo_paso": "Añadir IR-drop/deriva cuando haya fuente; ampliar planificador a fotónica/QPU; aprobación del autor para Atlas0"
+ "proximo_paso": "Contrastar docs/atlas0* del repo con docs locales; añadir IR-drop/deriva cuando haya fuente; ampliar planificador a fotónica/QPU"
 }
