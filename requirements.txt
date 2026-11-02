@@ -13,7 +13,9 @@ streamlit>=1.38,<2
 pyyaml>=6
 
 # Proxy LLM (Grok + Gemini). Opcional si solo usas agentes locales.
-litellm[proxy]>=1.50
+litellm[proxy]>=1.50,<1.104
+# filelock>=4.2.1 cierra CVE-2026-1129xx; litellm>=1.104 exige filelock<4 (incompatible).
+filelock>=4.2.1
 
 # Maestro Cuántico (VQE statevector + annealing). Simulación clásica.
 numpy>=1.26
