@@ -1,0 +1,9 @@
+# Allowlist: Zenodo deposit snapshot stores public file object "key" fields
+# (filenames within the deposit), not API tokens or credentials.
+title = "ags-core-v3-5 gitleaks config"
+
+[allowlist]
+description = "Public Zenodo metadata file keys"
+paths = [
+  '''tools/zenodo_orcid/zenodo_explore_snapshot\.json''',
+]
