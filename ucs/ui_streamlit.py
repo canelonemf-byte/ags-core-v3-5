@@ -4,9 +4,21 @@ Arranque:  streamlit run ui_streamlit.py
 API:       variable de entorno API_URL (por defecto http://localhost:8000)
 """
 import os
+import sys
+from pathlib import Path
 
 import requests
 import streamlit as st
+
+_APP = Path(__file__).resolve().parents[1] / "app"
+if str(_APP) not in sys.path:
+    sys.path.insert(0, str(_APP))
+try:
+    from shared.metrics import track_streamlit_visit, render_visit_badge, render_app_metrics
+except ImportError:  # pragma: no cover
+    track_streamlit_visit = None
+    render_visit_badge = None
+    render_app_metrics = None
 
 API_URL = os.getenv("API_URL", "http://localhost:8000")
 TOP_K = 5
@@ -19,7 +31,15 @@ except ImportError:
 API_KEY = os.getenv("AGS_API_KEY", "")  # cabecera X-API-Key de AGs-Core
 
 st.set_page_config(page_title="Cognitive Stack UI", layout="wide")
+APP_NAME = "ucs_ui"
+if track_streamlit_visit is not None:
+    track_streamlit_visit(APP_NAME)
 st.title("🧠 Unified Cognitive Stack")
+if render_visit_badge is not None:
+    render_visit_badge(APP_NAME)
+if render_app_metrics is not None:
+    with st.expander("Visitas de esta app", expanded=False):
+        render_app_metrics(APP_NAME)
 
 
 class ApiError(Exception):
