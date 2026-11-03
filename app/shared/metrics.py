@@ -324,6 +324,72 @@ def track_streamlit_visit(
     return total
 
 
+
+def svg_badge(app_name: str, label: str | None = None) -> str:
+    """Devuelve un SVG con las visitas de ESTA app (sin totales globales)."""
+    data = get_app_metrics(app_name)
+    total = int(data["total_visits"])
+    unicos = int(data["unique_users"])
+    title = (label or app_name.replace("_", " ")).strip() or app_name
+    # Escape mínimo para XML
+    def esc(s: str) -> str:
+        return (
+            str(s)
+            .replace("&", "&amp;")
+            .replace("<", "&lt;")
+            .replace(">", "&gt;")
+            .replace('"', "&quot;")
+        )
+
+    left = "visitas"
+    right = f"{_format_es(total)} · {_format_es(unicos)} ún."
+    # Anchos aproximados
+    lw = max(52, 7 * len(left) + 16)
+    rw = max(64, 7 * len(right) + 20)
+    w = lw + rw
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="20" role="img" '
+        f'aria-label="{esc(title)}: {esc(right)}">'
+        f"<title>{esc(title)} — {esc(right)}</title>"
+        f'<linearGradient id="s" x2="0" y2="100%">'
+        f'<stop offset="0" stop-color="#bbb" stop-opacity=".1"/>'
+        f'<stop offset="1" stop-opacity=".1"/>'
+        f"</linearGradient>"
+        f'<mask id="m"><rect width="{w}" height="20" rx="3" fill="#fff"/></mask>'
+        f'<g mask="url(#m)">'
+        f'<rect width="{lw}" height="20" fill="#555"/>'
+        f'<rect x="{lw}" width="{rw}" height="20" fill="#4CAF50"/>'
+        f'<rect width="{w}" height="20" fill="url(#s)"/>'
+        f"</g>"
+        f'<g fill="#fff" text-anchor="middle" '
+        f'font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11">'
+        f'<text x="{lw/2}" y="14">{esc(left)}</text>'
+        f'<text x="{lw + rw/2}" y="14">{esc(right)}</text>'
+        f"</g></svg>\n"
+    )
+
+
+def track_http_visit(
+    app_name: str,
+    visitor_id: str,
+    city: str = "desconocida",
+) -> Dict[str, Any]:
+    """Cuenta una visita HTTP (apps no-Streamlit) y devuelve métricas de esa app.
+
+    ``visitor_id`` debe ser un token opaco (p. ej. UUID en localStorage/cookie),
+    nunca IP ni datos personales. Se hashea con sal antes de persistir.
+    """
+    # Solo AGS_METRICS_DISABLE (los tests de API deben poder contar).
+    if os.environ.get("AGS_METRICS_DISABLE") == "1":
+        data = get_app_metrics(app_name)
+        return {"app": app_name, **data, "counted": False}
+    user_hash = make_user_hash(visitor_id)
+    total = update_metrics(app_name, city=city, user_hash=user_hash)
+    data = get_app_metrics(app_name)
+    data["total_visits"] = total
+    return {"app": app_name, **data, "counted": True}
+
+
 # Alias de compatibilidad: el borrador original llamaba render_master_metrics
 # mostrando un total global. Ahora delega al render por app y exige app_name.
 def render_master_metrics(app_name: str) -> None:
@@ -343,4 +409,6 @@ __all__ = [
     "render_visit_badge",
     "render_master_metrics",
     "track_streamlit_visit",
+    "svg_badge",
+    "track_http_visit",
 ]

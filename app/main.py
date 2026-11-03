@@ -14,6 +14,9 @@ from projects import load_manifest, get_index
 VERSION = "3.6.0"
 app = FastAPI(title="AGs-Core", version=VERSION)
 
+from metrics_api import router as metrics_router
+app.include_router(metrics_router)
+
 class TrainRequest(BaseModel):
     steps: int = Field(default=40, ge=1, le=200)
     text: str = Field(default="", max_length=200000)

@@ -117,6 +117,19 @@ def main(argv=None):
             except Exception:
                 log.exception("fallo en matriz_el_prat")
             stats = sup.run_cycle(max_tasks=10_000)
+            try:  # informes por app (DB+xlsx propios; no mezcla)
+                import subprocess, sys
+                script = Path(__file__).resolve().parents[1] / "scripts" / "build_app_reports.py"
+                if script.is_file():
+                    subprocess.run(
+                        [sys.executable, str(script), "--apps-only"],
+                        cwd=str(script.parent.parent),
+                        timeout=120,
+                        check=False,
+                        capture_output=True,
+                    )
+            except Exception:
+                log.exception("fallo en build_app_reports")
             sup.queue.kv_set("autopilot_heartbeat", {"ts": time.time(), "pid": os.getpid(), "cycle": n, "interval": a.interval})
             lvl = logging.WARNING if stats["errors"] else logging.INFO
             log.log(lvl, "ciclo %d: sembradas=%d reencoladas=%d hechas=%d errores=%d (%.1fs) cola=%s",
