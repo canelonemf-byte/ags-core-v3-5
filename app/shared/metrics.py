@@ -301,7 +301,11 @@ def track_streamlit_visit(
     """Cuenta una visita por sesión Streamlit (no en cada rerun).
 
     Devuelve el total de visitas de esta app tras el (posible) incremento.
+    No cuenta bajo pytest ni si ``AGS_METRICS_DISABLE=1`` (evita inflar el JSON
+    en tests / AppTest).
     """
+    if os.environ.get("AGS_METRICS_DISABLE") == "1" or os.environ.get("PYTEST_CURRENT_TEST"):
+        return get_app_metrics(app_name)["total_visits"]
     try:
         import streamlit as st
     except ImportError as exc:  # pragma: no cover
