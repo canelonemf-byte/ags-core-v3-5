@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "proyecto": "cero_a",
+    "documento": "estado_paquete_ejecucion",
+    "version": "ejecucion_2026-11-05_opcion_b",
+    "fecha": "2026-11-05",
+    "zona_horaria": "Europe/Madrid",
+    "autoria": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España; con asistencia de inteligencia artificial",
+    "nivel_evidencia": "e2",
+    "emplazamiento": "el_prat_de_llobregat_partner_planta_existente",
+    "ficheros": [
+      "README_reproducible.md",
+      "bom.json",
+      "bom.md",
+      "cronograma.md",
+      "data/lcoa_bom_recalc.json",
+      "permisos_y_normativa.md",
+      "presupuesto.json",
+      "presupuesto.md",
+      "scripts/recalcular_lcoa_bom.py",
+      "interesados.json",
+      "interesados.md",
+      "dossier_terceros/resumen_ejecutivo.md",
+      "dossier_terceros/modelo_colaboracion.md",
+      "dossier_terceros/indice_paquete.md",
+      "borradores_contacto/"
+    ]
+  },
+  "objetivo": "dossier_terceros_reproducible_sin_envio_autor_solo_idea_proyecto",
+  "datos_clave": {
+    "lcoa_bom_opcion_b_eur_t": 2208,
+    "lcoa_bom_4fte_alquiler_eur_t": 3145,
+    "lcoa_v3_eur_t": 3166,
+    "lcoa_gris_eur_t": [
+      383,
+      562
+    ],
+    "rentable_hoy_vs_gris": false,
+    "organigrama": "b_vigilancia_remota",
+    "personal_fte_base": 2.0,
+    "alquiler_parcela_propia_eur_a": 0,
+    "compartir_instalacion_estado": "PENDIENTE_DE_VERIFICACION",
+    "capex_indicativo_con_pendientes_punto_medio_eur": 4122806,
+    "prototipos_e2_conservados": [
+      "v1/",
+      "v2/",
+      "resultados.json",
+      "informe.md"
+    ],
+    "contactos_realizados": [],
+    "envios_realizados": [],
+    "n_interesados": 10,
+    "n_borradores": 10
+  },
+  "tareas": [
+    {
+      "id": "e0",
+      "tarea": "paquete proyecto_ejecucion creado",
+      "estado": "hecho"
+    },
+    {
+      "id": "p6",
+      "tarea": "organigrama B cerrado + LCOA recalculado",
+      "estado": "hecho"
+    },
+    {
+      "id": "e1",
+      "tarea": "dossier_terceros + interesados + borradores",
+      "estado": "hecho"
+    },
+    {
+      "id": "e2",
+      "tarea": "autorizar envios uno a uno",
+      "estado": "pendiente_lazaro"
+    },
+    {
+      "id": "p1",
+      "tarea": "cotizaciones suelo/partner fee",
+      "estado": "pendiente"
+    },
+    {
+      "id": "p2",
+      "tarea": "cotizaciones equipos",
+      "estado": "pendiente"
+    },
+    {
+      "id": "p3",
+      "tarea": "ofertas PPA",
+      "estado": "pendiente"
+    }
+  ],
+  "riesgos": [
+    {
+      "riesgo": "no rentabilidad a escala piloto",
+      "impacto": "alto",
+      "mitigacion": "transparencia en dossier"
+    },
+    {
+      "riesgo": "fee partner desconocido",
+      "impacto": "alto",
+      "mitigacion": "PENDIENTE + sensibilidad 50-150k"
+    },
+    {
+      "riesgo": "envio sin autorizacion",
+      "impacto": "alto",
+      "mitigacion": "borradores solo; envios=[]"
+    }
+  ],
+  "decisiones": [
+    {
+      "decision": "organigrama_b",
+      "estado": "hecho"
+    },
+    {
+      "decision": "socio_planta_existente",
+      "estado": "hecho"
+    },
+    {
+      "decision": "autor_solo_idea_y_proyecto",
+      "estado": "hecho"
+    },
+    {
+      "decision": "no_enviar_ni_contactar_sin_aprobacion",
+      "estado": "hecho"
+    },
+    {
+      "decision": "mantener_e2_y_prototipos",
+      "estado": "hecho"
+    }
+  ],
+  "proximo_paso": "Lazaro autoriza envio de borradores por destinatario; cotizar fee partner"
+}

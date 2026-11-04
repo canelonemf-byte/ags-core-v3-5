@@ -1,0 +1,231 @@
+{
+  "meta": {
+    "proyecto": "cero_a",
+    "documento": "presupuesto_lcoa",
+    "version": "ejecucion_2026-11-05_opcion_b",
+    "fecha": "2026-11-05",
+    "zona_horaria": "Europe/Madrid",
+    "autoria": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España; con asistencia de inteligencia artificial",
+    "nivel_evidencia": "e2",
+    "moneda": "EUR",
+    "wacc_real": 0.07,
+    "vida_economica_a": 20,
+    "crf_20": 0.094393,
+    "advertencia": "Recalculo indicativo BOM + organigrama B (2 FTE), sin alquiler parcela propia; compartir instalacion = PENDIENTE DE VERIFICACION (0 EUR). No es oferta vinculante. Modelo fisico = v3 sin re-optimizar."
+  },
+  "objetivo": "capex_opex_lcoa_con_bom_y_veredicto_rentabilidad",
+  "datos_clave": {
+    "escenario": "ppa_rfnbo_horario_organigrama_b_partner",
+    "produccion_t_ano": 422.6,
+    "capex": {
+      "pem_eur": 1183196,
+      "buffer_h2_eur": 110278,
+      "psa_eur": 183000,
+      "hb_eur": 1090000,
+      "tanque_nh3_eur": 44069,
+      "bateria_eur": 16,
+      "conexion_red_eur": 94792,
+      "permisos_ingenieria_eur": 384971,
+      "subtotal_preciado_eur": 3090323,
+      "pendientes_punto_medio_eur": 1032500,
+      "total_indicativo_con_pendientes_eur": 4122823,
+      "referencia_modelo_v3_eur": 2742506,
+      "nota_pem": "unitario 2196 EUR/kW EHO 2025 (antes 2263 IEA en v3)"
+    },
+    "opex_anual_eur": {
+      "personal_2fte_opcion_b": 90000,
+      "alquiler_parcela_propia": 0,
+      "compartir_instalacion_partner": 0,
+      "compartir_instalacion_estado": "PENDIENTE_DE_VERIFICACION",
+      "om_incluido_en_anualizado": "si (fracciones sobre CAPEX)",
+      "energia_ppa_neto_con_venta_y_peajes": 408654,
+      "agua": 1268,
+      "total_caja_aproximado_sin_capital": 499922
+    },
+    "lcoa": {
+      "v3_original_eur_t": 3166,
+      "recalculado_bom_4fte_alquiler_eur_t": 3145,
+      "recalculado_bom_opcion_b_eur_t": 2208,
+      "desglose_eur_t": {
+        "pem": 501,
+        "buffer_h2": 30,
+        "psa_hb": 375,
+        "bateria": 0,
+        "tanque_nh3": 12,
+        "conexion_red": 21,
+        "permisos_ingenieria": 86,
+        "personal": 213,
+        "alquiler_terreno": 0,
+        "compartir_instalacion": 0,
+        "ppa": 1001,
+        "venta_excedentes": -246,
+        "red_peajes_cargos": 212,
+        "agua": 3,
+        "fv": 0,
+        "eolica": 0,
+        "red_energia_omie": 0
+      },
+      "mc_v3_p5_p95_reopt": [
+        2960,
+        3702
+      ],
+      "delta_vs_bom_4fte_eur_t": -937,
+      "causa_delta": "opcion B: personal 4->2 FTE (-213 EUR/t) y sin alquiler propio (-724 EUR/t); fee partner = PENDIENTE (0)"
+    },
+    "comparacion_gris": {
+      "lcoa_gris_eur_t": [
+        383,
+        562
+      ],
+      "ratio_verde_sobre_gris": [
+        3.93,
+        5.77
+      ],
+      "brecha_eur_t": [
+        1646,
+        1825
+      ],
+      "factor_emision_gris_tco2_t_nh3_supuesto": 1.9,
+      "precio_co2_para_paridad_eur_tco2": [
+        866,
+        961
+      ],
+      "nota_co2": "orden de magnitud; CBAM/ETS real depende de ruta y periodo. PENDIENTE DE VERIFICACIÓN valor exacto aplicable a NH3"
+    },
+    "sensibilidad": [
+      {
+        "caso": "base_opcion_b_2fte_sin_alquiler",
+        "produccion_t_ano": 422.6,
+        "lcoa_eur_t": 2208,
+        "nota": "caso base 2026-11-05; compartir instalacion 0 PENDIENTE"
+      },
+      {
+        "caso": "opcion_b_fee_partner_50k",
+        "lcoa_eur_t": 2326,
+        "nota": "aritmetica; PENDIENTE DE VERIFICACION"
+      },
+      {
+        "caso": "opcion_b_fee_partner_150k",
+        "lcoa_eur_t": 2563,
+        "nota": "aritmetica; PENDIENTE DE VERIFICACION"
+      },
+      {
+        "caso": "base_1x",
+        "produccion_t_ano": 422.6,
+        "lcoa_eur_t_diluyendo_fijos": 3145,
+        "nota": "diluye solo personal+alquiler; CAPEX especifico y energia se mantienen — optimista para escala real"
+      },
+      {
+        "caso": "escala_5x_misma_plantilla_fija",
+        "produccion_t_ano": 2113.0,
+        "lcoa_eur_t_diluyendo_fijos": 2225,
+        "nota": "diluye solo personal+alquiler; CAPEX especifico y energia se mantienen — optimista para escala real"
+      },
+      {
+        "caso": "escala_10x_misma_plantilla_fija",
+        "produccion_t_ano": 4226.0,
+        "lcoa_eur_t_diluyendo_fijos": 2110,
+        "nota": "diluye solo personal+alquiler; CAPEX especifico y energia se mantienen — optimista para escala real"
+      },
+      {
+        "caso": "sin_alquiler_terreno_propio",
+        "lcoa_eur_t": 2421,
+        "delta_vs_bom": -724
+      },
+      {
+        "caso": "personal_2_fte",
+        "lcoa_eur_t": 2932,
+        "delta_vs_bom": -213
+      },
+      {
+        "caso": "vigilancia_remota_1_5_fte",
+        "lcoa_eur_t": 2879,
+        "delta_vs_bom": -266
+      },
+      {
+        "caso": "capex_hb_psa_en_max_1_9meur",
+        "lcoa_eur_t": 3395
+      },
+      {
+        "caso": "capex_hb_psa_en_min",
+        "lcoa_eur_t": 3028
+      },
+      {
+        "caso": "ppa_30_93_levelten_q3_2026",
+        "lcoa_eur_t": "delta_<1pct_segun_estado",
+        "nota": "LevelTen ES FV P25 30.93 vs base 33.5"
+      },
+      {
+        "caso": "ayuda_hipotetica_todo_v3",
+        "lcoa_eur_t": 2817,
+        "nota": "variante v3 O2+pioneros+h2bank; h2bank no elegible <5 MWe"
+      }
+    ],
+    "veredicto_rentabilidad": {
+      "rentable_hoy_vs_gris": false,
+      "razon": "LCOA opcion B ~2208 EUR/t frente a gris 383-562 EUR/t (ratio ~3.9-5.8x). Mejora vs 3145 por quitar alquiler y bajar personal, pero sigue lejos del gris.",
+      "que_faltaria": [
+        "escalar produccion",
+        "fee real de partner (ahora 0 PENDIENTE)",
+        "cotizaciones equipos (p2)",
+        "PPA con adicionalidad (p3,p4)",
+        "prima RFNBO / offtake",
+        "CBAM/ETS + mandatos (combo, no CO2 solo)",
+        "ayudas si abre convocatoria elegible"
+      ],
+      "no_hacer": "no presentar el piloto 50 kg/h como negocio rentable frente a gris; marcar E2 y no rentable en cada envio"
+    }
+  },
+  "tareas": [
+    {
+      "id": "pre1",
+      "tarea": "re-optimizar v4 cuando lleguen cotizaciones reales",
+      "estado": "pendiente"
+    },
+    {
+      "id": "pre2",
+      "tarea": "modelar offtake RFNBO y CBAM con asesor",
+      "estado": "pendiente"
+    }
+  ],
+  "riesgos": [
+    {
+      "riesgo": "rentabilidad malinterpretada por terceros",
+      "impacto": "alto",
+      "mitigacion": "veredicto explicito en README y en cada envio"
+    },
+    {
+      "riesgo": "pendientes de BOM pueden subir CAPEX 0.5-1.5 MEUR",
+      "impacto": "alto",
+      "mitigacion": "usar rango alto en decision go/no-go"
+    }
+  ],
+  "decisiones": [
+    {
+      "decision": "no_es_rentable_hoy_frente_a_gris",
+      "estado": "hecho",
+      "tipo": "resultado"
+    },
+    {
+      "decision": "organigrama_b",
+      "estado": "hecho",
+      "tipo": "operacion"
+    },
+    {
+      "decision": "socio_planta_existente",
+      "estado": "hecho",
+      "tipo": "emplazamiento"
+    },
+    {
+      "decision": "autor_solo_idea_y_proyecto",
+      "estado": "hecho",
+      "tipo": "gobernanza"
+    },
+    {
+      "decision": "paquete_reproducible_si_envio_no_sin_aprobacion",
+      "estado": "hecho",
+      "tipo": "gestion"
+    }
+  ],
+  "proximo_paso": "autorizar envio de borradores uno a uno; cotizar fee partner y equipos"
+}

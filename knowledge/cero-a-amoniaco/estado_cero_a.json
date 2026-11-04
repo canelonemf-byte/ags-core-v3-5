@@ -18,7 +18,20 @@
       "grafico_lcoa_v3.png",
       "simulacion_cero_a_v3.py",
       "construir_v3.py",
-      "log_v3.txt"
+      "log_v3.txt",
+      "docs/plantilla_piloto.md",
+      "proyecto_ejecucion/",
+      "proyecto_ejecucion/dossier_terceros/",
+      "proyecto_ejecucion/interesados.json",
+      "proyecto_ejecucion/borradores_contacto/",
+      "estado_cero_a.bak_2026-11-05.json"
+    ],
+    "ultima_revision": "2026-11-05",
+    "revisiones": [
+      "2026-10-26: seguimiento semanal automatico; sin cambio material de lcoa",
+      "2026-11-02: seguimiento semanal automatico; sin cambio material de lcoa; borrador docs/plantilla_piloto.md (p6)",
+      "2026-11-04: paquete proyecto_ejecucion/ (BOM, presupuesto LCOA 3145, permisos, cronograma, README reproducible); p6 organigrama A/B documentado; sin envios ni contactos",
+      "2026-11-05: p6 cerrado organigrama B; LCOA BOM opcion B 2208 EUR/t; dossier_terceros + interesados + borradores (0 envios); autor solo idea/proyecto"
     ]
   },
   "objetivo": "amoniaco_verde_piloto_50_kg_h_nh3_rfnbo_con_lcoa_completo",
@@ -134,7 +147,111 @@
       383,
       562
     ],
-    "produccion_t_ano": 422.6
+    "produccion_t_ano": 422.6,
+    "vigilancia_2026_10_26": {
+      "omie_es_eur_mwh": {
+        "semana_08_14_oct": 141.51,
+        "semana_15_21_oct": 160.83,
+        "media_oct_hasta_25": 155.02,
+        "max_diario": "215.11 (19-10-2026, maximo desde abr-2022)",
+        "fuente": "consultoriala.com informes semanales; electricidadde.com/mes/2026-10",
+        "impacto": "no afecta al escenario ppa (red_energia_omie 0); encarece red_spot_omie_no_verde y auxiliares de red; modelo usa omie 2024-2025"
+      },
+      "ppa_es": {
+        "fv_p25_q3_2026_eur_mwh": 30.93,
+        "hibrido_fv_bess_p25_eur_mwh": 48.0,
+        "eolica_es": "sin precio eur/mwh publicado (indice europeo eolico 0.99 vs q3-2024)",
+        "pexapark_sep_2026_es": "-3.5 %",
+        "nota": "en espana la mayoria de ofertas fv son ya de activos operativos (sin adicionalidad)",
+        "fuente": "LevelTen PPA Index Q3 2026; pv-magazine.es 13-10-2026; elperiodicodelaenergia.com 23-10-2026",
+        "impacto": "fv 30.93 dentro del rango [30,40] (base 33.5); delta lcoa estimado < 1 %"
+      },
+      "capex_pem": {
+        "eho_2025_pem_eur_kw": 2196,
+        "desglose": "stack 494, bop 567, utilities 608, otros 527 (100 MW)",
+        "fuente": "European Hydrogen Observatory, electrolyser cost 2025",
+        "impacto": "consistente con base 2263 EUR/kW; sin cambio"
+      },
+      "capex_hb_modular": {
+        "novedad": "Casale contrato planta modular 100 t/d en Noruega (24-09-2026), sin capex publicado",
+        "impacto": "sin dato nuevo para 50 kg/h"
+      },
+      "rfnbo": {
+        "estado": "revision dirigida del acto delegado 2023/1184 anunciada en abril 2026, aun no publicada a 26-10-2026",
+        "propuestas": "adicionalidad: transicion 2028 -> 2032-2035; correlacion mensual mas alla de 2030; grandfathering; umbral 90 % -> 80 %",
+        "fuente": "hyzenergy.com 12-10-2026; Hydrogen Europe carta conjunta 08-07-2026",
+        "impacto": "potencialmente favorable (ppa de activos existentes); no aplicado al caso base hasta publicacion"
+      },
+      "ayudas": {
+        "estado": "sin convocatoria idae/perte erha de h2 abierta; aaas 2a convocatoria cerrada 03-06-2026; ehb 3a subasta: proyecto minimo 5 MWe",
+        "fuente": "idae.es; climate.ec.europa.eu if25",
+        "impacto": "sin cambio; piloto sigue no elegible"
+      },
+      "conclusion": "sin cambio material en lcoa ni riesgos nuevos"
+    },
+    "vigilancia_2026_11_02": {
+      "omie_es_eur_mwh": {
+        "semana_26_oct_01_nov": 207.01,
+        "diarios": "196.86, 206.89, 197.46, 231.01, 244.69, 208.98, 163.19",
+        "max_diario": "244.69 (30-10-2026)",
+        "dia_02_nov": 177.06,
+        "fuente": "prices.eu.org (datos OMIE); canalenergex.com/mercado-energetico",
+        "impacto": "+33 % vs media oct hasta 25 (155.02); no afecta escenario ppa (red_energia_omie 0); encarece red_spot_omie_no_verde y auxiliares de red; modelo usa omie 2024-2025"
+      },
+      "ppa_es": {
+        "novedad": "sin dato nuevo; confirmado fv standalone 30.93 EUR/MWh e hibrido fv+bess 48 EUR/MWh (LevelTen Q3 2026)",
+        "fuente": "pv-magazine.com 29-10-2026; leveltenenergy.com 22-10-2026",
+        "impacto": "sin cambio"
+      },
+      "capex_electrolisis": {
+        "novedad": "Stiesdal 6.5 MW (alcalino presurizado, Dinamarca) en operacion comercial a ~500 EUR/kW sistema (26-10-2026); benchmark europeo ~1000 EUR/kW; h2hub cita PEM 971 EUR/kW (EHO jul-2026) con alcance distinto al dato EHO 2025 de 2196 EUR/kW usado como contraste",
+        "fuente": "thespendledger.com 27-10-2026; h2hub.reneenergy.com (no verificado contra EHO original); IEA 15-10-2026",
+        "impacto": "sin cambio en base 2263 EUR/kW (escala 0.5-1 MW); discrepancia de alcance a revisar en p2"
+      },
+      "capex_hb_modular": {
+        "novedad": "sin capex publicado para escala 1-2 t/d; Ammobia-Lummus reclama -50 % capex sin dato verificable",
+        "fuente": "fertilizerdaily.com 03-09-2026",
+        "impacto": "sin dato nuevo"
+      },
+      "rfnbo": {
+        "estado": "revision del acto delegado 2023/1184 aun no publicada a 28-10-2026; se espera antes de fin de 2026, con >= 4 semanas de consulta",
+        "fuente": "hyzenergy.com; vdma.eu carta 21-09-2026; nlhydrogen.nl",
+        "impacto": "sin cambio; caso base mantiene reglas vigentes"
+      },
+      "ayudas": {
+        "estado": "sin convocatoria nueva idae/perte; ehb if25: 13 proyectos, firma de acuerdos prevista t4-2026; aaas 2a resuelta (440 MEUR)",
+        "fuente": "energy.ec.europa.eu; climate.ec.europa.eu if25; ayudasenergiaidae.es",
+        "impacto": "sin cambio; piloto no elegible"
+      },
+      "conclusion": "sin cambio material en lcoa ni riesgos nuevos; alza omie solo afecta a escenarios con compra spot"
+    },
+    "paquete_ejecucion_2026_11_04": {
+      "ruta": "proyecto_ejecucion/",
+      "lcoa_bom_eur_t": 3145,
+      "lcoa_v3_eur_t": 3166,
+      "rentable_hoy_vs_gris": false,
+      "capex_indicativo_punto_medio_eur": 4122806,
+      "contactos_realizados": [],
+      "envios_realizados": [],
+      "superseded_by": "paquete_ejecucion_2026_11_05"
+    },
+    "paquete_ejecucion_2026_11_05": {
+      "ruta": "proyecto_ejecucion/",
+      "lcoa_bom_opcion_b_eur_t": 2208,
+      "lcoa_bom_4fte_alquiler_eur_t": 3145,
+      "lcoa_v3_eur_t": 3166,
+      "rentable_hoy_vs_gris": false,
+      "organigrama": "b_vigilancia_remota",
+      "personal_fte": 2.0,
+      "alquiler_parcela_propia_eur_a": 0,
+      "compartir_instalacion_estado": "PENDIENTE_DE_VERIFICACION",
+      "rol_autor": "solo_idea_y_proyecto",
+      "ejecucion_inversion_operacion": "terceros_con_planta_existente",
+      "n_interesados": 10,
+      "n_borradores": 10,
+      "contactos_realizados": [],
+      "envios_realizados": []
+    }
   },
   "tareas": [
     {
@@ -143,7 +260,10 @@
       "criterio_aceptacion": ">= 3 ofertas escritas con EUR/m2/mes y condiciones de uso; rango recalculado y LCOA v4 actualizado",
       "entregable": "data/cotizaciones_suelo.csv + delta LCOA en informe v4",
       "plazo_semanas": 4,
-      "estado": "pendiente"
+      "estado": "pendiente",
+      "avance": [
+        "2026-11-05: prioridad pasa a fee de partner / utilities en planta existente (sin parcela propia); cotizaciones suelo propio quedan secundarias"
+      ]
     },
     {
       "id": "p2",
@@ -159,7 +279,10 @@
       "criterio_aceptacion": ">= 2 ofertas con precio EUR/MWh, perfil horario y fecha de puesta en servicio de la planta",
       "entregable": "data/ofertas_ppa.csv + verificacion art. 5/6 en informe v4",
       "plazo_semanas": 8,
-      "estado": "pendiente"
+      "estado": "pendiente",
+      "avance": [
+        "2026-10-26: benchmark mercado (no oferta): fv p25 30.93 EUR/MWh, hibrido fv+bess 48 EUR/MWh (LevelTen Q3 2026); oferta de fv nueva construccion en espana en descenso. Siguen faltando ofertas reales"
+      ]
     },
     {
       "id": "p4",
@@ -183,7 +306,13 @@
       "criterio_aceptacion": "organigrama con FTE justificados y coste por perfil con fuente (convenio quimico Cataluna)",
       "entregable": "docs/plantilla_piloto.md; rango personal_fte/coste_fte sustituido",
       "plazo_semanas": 4,
-      "estado": "pendiente"
+      "estado": "hecho",
+      "avance": [
+        "2026-10-26: tablas 2026 del XXI convenio general industria quimica (BOE-A-2026-3870): minimos brutos grupo 1-8 20311-53825 EUR/a; proceso continuo 25024-58538 EUR/a. Con cotizacion empresa ~30 % (supuesto) el coste de grupos 4-6 queda ~34-45 kEUR/a, coherente con rango coste_fte [37525, 60000]. Falta organigrama FTE y convenio provincial/empresa si aplica",
+        "2026-11-02: borrador docs/plantilla_piloto.md con sensibilidad coste personal 161-852 EUR/t (2-6 fte x 34-60 kEUR/a); base 426 EUR/t reproduce el modelo. Falta decidir modo de operacion (continuo vs remoto compartido) y organigrama",
+        "2026-11-04: organigrama A (24/7 ~5.5 FTE) vs B (remoto ~1.5-2.5 FTE) en docs/plantilla_piloto.md y proyecto_ejecucion/cronograma.md; falta decision del usuario",
+        "2026-11-05: Lazaro elige B (vigilancia remota compartida) y socio con planta existente; autor solo idea/proyecto. LCOA BOM recalculado 2208 EUR/t (personal 2 FTE, alquiler 0, fee partner PENDIENTE). docs/plantilla_piloto.md cerrado."
+      ]
     },
     {
       "id": "p7",
@@ -208,6 +337,22 @@
       "entregable": "resultados.json v3",
       "plazo_semanas": 0,
       "estado": "hecho"
+    },
+    {
+      "id": "e1",
+      "tarea": "dossier_terceros + interesados + borradores de contacto (sin envio)",
+      "criterio_aceptacion": "resumen_ejecutivo, modelo_colaboracion, indice, interesados.json con URLs verificadas, 1 borrador por interesado, envios=[]",
+      "entregable": "proyecto_ejecucion/dossier_terceros/ + interesados.* + borradores_contacto/",
+      "plazo_semanas": 0,
+      "estado": "hecho"
+    },
+    {
+      "id": "e2",
+      "tarea": "autorizacion de envio de borradores por destinatario",
+      "criterio_aceptacion": "si explicito de Lazaro con destinatario y texto; un envio cada vez",
+      "entregable": "registro en estado_cero_a.json envios_realizados",
+      "plazo_semanas": "",
+      "estado": "pendiente_lazaro"
     }
   ],
   "riesgos": [
@@ -224,7 +369,8 @@
     {
       "riesgo": "adicionalidad del ppa: requiere planta nueva salvo entrada en servicio antes de 1-1-2028",
       "impacto": "alto",
-      "mitigacion": "p3, p4; calendario"
+      "mitigacion": "p3, p4; calendario; vigilar revision del acto delegado rfnbo (posible transicion a 2032-2035), aun no publicada",
+      "evidencia": "2026-10-26: mayoria de ofertas ppa fv en espana son de activos operativos; ppa de planta nueva mas escaso"
     },
     {
       "riesgo": "interpretacion rfnbo de la electricidad de auxiliares tomada de red (lectura a vs b) en fv in situ",
@@ -272,7 +418,32 @@
       "decision": "v2 conservada en v2/",
       "tipo": "gestion",
       "estado": "hecho"
+    },
+    {
+      "decision": "paquete_ejecucion_creado_sin_envio_externo",
+      "tipo": "gestion",
+      "estado": "hecho"
+    },
+    {
+      "decision": "organigrama_b_vigilancia_remota",
+      "tipo": "operacion",
+      "estado": "hecho"
+    },
+    {
+      "decision": "socio_planta_existente_el_prat_entorno",
+      "tipo": "emplazamiento",
+      "estado": "hecho"
+    },
+    {
+      "decision": "autor_solo_idea_y_proyecto_terceros_ejecutan",
+      "tipo": "gobernanza",
+      "estado": "hecho"
+    },
+    {
+      "decision": "dossier_terceros_preparado_sin_envio",
+      "tipo": "gestion",
+      "estado": "hecho"
     }
   ],
-  "proximo_paso": "p1 y p3 en paralelo (suelo y ppa: ~60 % del lcoa del escenario ppa); despues p2 y p4; re-optimizar en v4"
+  "proximo_paso": "Lazaro autoriza envio de borradores uno a uno; cotizar fee partner (PENDIENTE) y equipos p2; LCOA opcion B 2208 EUR/t no rentable vs gris 383-562"
 }

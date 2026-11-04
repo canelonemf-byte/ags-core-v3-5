@@ -2,8 +2,8 @@
   "meta": {
     "proyecto": "cero_a",
     "documento": "presupuesto_lcoa",
-    "version": "ejecucion_2026-11-04",
-    "fecha": "2026-11-04",
+    "version": "ejecucion_2026-11-05_opcion_b",
+    "fecha": "2026-11-05",
     "zona_horaria": "Europe/Madrid",
     "autoria": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España; con asistencia de inteligencia artificial",
     "nivel_evidencia": "e2",
@@ -11,11 +11,11 @@
     "wacc_real": 0.07,
     "vida_economica_a": 20,
     "crf_20": 0.094393,
-    "advertencia": "Recalculo indicativo con precios BOM de literatura. No es oferta vinculante. Modelo fisico de produccion = v3 sin re-optimizar."
+    "advertencia": "Recalculo indicativo BOM + organigrama B (2 FTE), sin alquiler parcela propia; compartir instalacion = PENDIENTE DE VERIFICACION (0 EUR). No es oferta vinculante. Modelo fisico = v3 sin re-optimizar."
   },
   "objetivo": "capex_opex_lcoa_con_bom_y_veredicto_rentabilidad",
   "datos_clave": {
-    "escenario": "ppa_rfnbo_horario",
+    "escenario": "ppa_rfnbo_horario_organigrama_b_partner",
     "produccion_t_ano": 422.6,
     "capex": {
       "pem_eur": 1183196,
@@ -33,16 +33,19 @@
       "nota_pem": "unitario 2196 EUR/kW EHO 2025 (antes 2263 IEA en v3)"
     },
     "opex_anual_eur": {
-      "personal_4fte": 180000,
-      "alquiler_3000m2": 306000,
+      "personal_2fte_opcion_b": 90000,
+      "alquiler_parcela_propia": 0,
+      "compartir_instalacion_partner": 0,
+      "compartir_instalacion_estado": "PENDIENTE_DE_VERIFICACION",
       "om_incluido_en_anualizado": "si (fracciones sobre CAPEX)",
       "energia_ppa_neto_con_venta_y_peajes": 408654,
       "agua": 1268,
-      "total_caja_aproximado_sin_capital": 972695
+      "total_caja_aproximado_sin_capital": 499922
     },
     "lcoa": {
       "v3_original_eur_t": 3166,
-      "recalculado_bom_eur_t": 3145,
+      "recalculado_bom_4fte_alquiler_eur_t": 3145,
+      "recalculado_bom_opcion_b_eur_t": 2208,
       "desglose_eur_t": {
         "pem": 501,
         "buffer_h2": 30,
@@ -51,8 +54,9 @@
         "tanque_nh3": 12,
         "conexion_red": 21,
         "permisos_ingenieria": 86,
-        "personal": 426,
-        "alquiler_terreno": 724,
+        "personal": 213,
+        "alquiler_terreno": 0,
+        "compartir_instalacion": 0,
         "ppa": 1001,
         "venta_excedentes": -246,
         "red_peajes_cargos": 212,
@@ -65,8 +69,8 @@
         2960,
         3702
       ],
-      "delta_vs_v3_eur_t": -21,
-      "causa_delta": "principalmente PEM 2196 vs 2263 EUR/kW (~-15 EUR/t); resto alineado"
+      "delta_vs_bom_4fte_eur_t": -937,
+      "causa_delta": "opcion B: personal 4->2 FTE (-213 EUR/t) y sin alquiler propio (-724 EUR/t); fee partner = PENDIENTE (0)"
     },
     "comparacion_gris": {
       "lcoa_gris_eur_t": [
@@ -74,21 +78,37 @@
         562
       ],
       "ratio_verde_sobre_gris": [
-        5.6,
-        8.21
+        3.93,
+        5.77
       ],
       "brecha_eur_t": [
-        2583,
-        2762
+        1646,
+        1825
       ],
       "factor_emision_gris_tco2_t_nh3_supuesto": 1.9,
       "precio_co2_para_paridad_eur_tco2": [
-        1360,
-        1454
+        866,
+        961
       ],
-      "nota_co2": "orden de magnitud; CBAM/ETS real depende de ruta y periodo. PENDIENTE DE VERIFICACIÓN valor exacto aplicable a NH3 importado/producido"
+      "nota_co2": "orden de magnitud; CBAM/ETS real depende de ruta y periodo. PENDIENTE DE VERIFICACIÓN valor exacto aplicable a NH3"
     },
     "sensibilidad": [
+      {
+        "caso": "base_opcion_b_2fte_sin_alquiler",
+        "produccion_t_ano": 422.6,
+        "lcoa_eur_t": 2208,
+        "nota": "caso base 2026-11-05; compartir instalacion 0 PENDIENTE"
+      },
+      {
+        "caso": "opcion_b_fee_partner_50k",
+        "lcoa_eur_t": 2326,
+        "nota": "aritmetica; PENDIENTE DE VERIFICACION"
+      },
+      {
+        "caso": "opcion_b_fee_partner_150k",
+        "lcoa_eur_t": 2563,
+        "nota": "aritmetica; PENDIENTE DE VERIFICACION"
+      },
       {
         "caso": "base_1x",
         "produccion_t_ano": 422.6,
@@ -143,17 +163,17 @@
     ],
     "veredicto_rentabilidad": {
       "rentable_hoy_vs_gris": false,
-      "razon": "LCOA verde ~3145 EUR/t frente a gris 383-562 EUR/t (ratio ~5.6-8.2x). A escala piloto los fijos (alquiler+personal) suman ~1150 EUR/t.",
+      "razon": "LCOA opcion B ~2208 EUR/t frente a gris 383-562 EUR/t (ratio ~3.9-5.8x). Mejora vs 3145 por quitar alquiler y bajar personal, pero sigue lejos del gris.",
       "que_faltaria": [
-        "escalar produccion (diluye fijos; a 5-10x solo personal+alquiler bajan a ~115-230 EUR/t en sensibilidad aritmetica)",
-        "suelo propio o alquiler quimico real << 8.5 EUR/m2/mes (p1)",
-        "cotizaciones que bajen HB+PEM o skids compartidos (p2)",
-        "PPA adicional con planta nueva o entrada en servicio antes de 2028 (p3,p4)",
-        "prima RFNBO / offtake a precio verde (mercado aun inmaduro)",
-        "precio CO2/CBAM del orden de ~1300-1400 EUR/tCO2 para paridad pura sin prima de producto — irreal a corto plazo; la paridad exige combo escala+prima+CO2",
-        "vigilancia remota compartida (baja personal de 4 a ~1.5 FTE)"
+        "escalar produccion",
+        "fee real de partner (ahora 0 PENDIENTE)",
+        "cotizaciones equipos (p2)",
+        "PPA con adicionalidad (p3,p4)",
+        "prima RFNBO / offtake",
+        "CBAM/ETS + mandatos (combo, no CO2 solo)",
+        "ayudas si abre convocatoria elegible"
       ],
-      "no_hacer": "no presentar el piloto 50 kg/h como negocio rentable frente a gris; si se envia a terceros, marcar E2 simulado y no rentable hoy"
+      "no_hacer": "no presentar el piloto 50 kg/h como negocio rentable frente a gris; marcar E2 y no rentable en cada envio"
     }
   },
   "tareas": [
@@ -187,9 +207,25 @@
       "tipo": "resultado"
     },
     {
-      "decision": "paquete_reproducible_si_listo_envio_no_sin_aprobacion",
-      "estado": "provisional"
+      "decision": "organigrama_b",
+      "estado": "hecho",
+      "tipo": "operacion"
+    },
+    {
+      "decision": "socio_planta_existente",
+      "estado": "hecho",
+      "tipo": "emplazamiento"
+    },
+    {
+      "decision": "autor_solo_idea_y_proyecto",
+      "estado": "hecho",
+      "tipo": "gobernanza"
+    },
+    {
+      "decision": "paquete_reproducible_si_envio_no_sin_aprobacion",
+      "estado": "hecho",
+      "tipo": "gestion"
     }
   ],
-  "proximo_paso": "decision de Lazaro: modo de operacion (turnos vs remoto) y si se solicitan cotizaciones p1/p2 sin compromiso"
+  "proximo_paso": "autorizar envio de borradores uno a uno; cotizar fee partner y equipos"
 }

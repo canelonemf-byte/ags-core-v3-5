@@ -1,0 +1,197 @@
+{
+  "meta": {
+    "proyecto": "cero_a",
+    "documento": "interesados",
+    "fecha": "2026-11-05",
+    "zona_horaria": "Europe/Madrid",
+    "autoria": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España; con asistencia de inteligencia artificial",
+    "nivel_evidencia": "e2",
+    "advertencia": "Solo contactos publicos verificados. No se ha enviado nada. No inventar personas. Correos institucionales, no privados.",
+    "envios_realizados": []
+  },
+  "objetivo": "listar_entidades_con_interes_demostrable_para_posible_colaboracion_terceros",
+  "datos_clave": {
+    "criterio_inclusion": "interes_publico_demostrable_en_h2_rfnbo_nh3_o_descarbonizacion_industrial_en_catalunya_o_entorno_puerto_bcn",
+    "politica_contacto": "borrador_listo_envio_solo_con_aprobacion_explicita_por_destinatario",
+    "entidades": [
+      {
+        "id": "h2valley",
+        "nombre": "Vall de l'Hidrogen de Catalunya",
+        "tipo": "plataforma_ecosistema",
+        "interes_demostrable": "Plataforma multiactor del hidrogeno renovable catalan; impulsor Port de Barcelona e industria quimica; contacto publico info@h2valley.cat",
+        "ambito": "catalunya",
+        "email_publico": "info@h2valley.cat",
+        "web": "https://www.h2valley.cat/",
+        "fuente_contacto_url": "https://www.h2valley.cat/",
+        "fuente_interes_url": "https://www.h2valley.cat/",
+        "persona_nombrada": "",
+        "borrador": "borradores_contacto/01_h2valley.md",
+        "estado_envio": "no_enviado"
+      },
+      {
+        "id": "ceec_gt_h2",
+        "nombre": "Clúster de l'Energia Eficient de Catalunya — Grup de Treball Hidrogen",
+        "tipo": "cluster",
+        "interes_demostrable": "GT Hidrogen con jornadas de proyectos H2 verde (p. ej. Hysencia); email de contacto del grupo publicado",
+        "ambito": "catalunya",
+        "email_publico": "hidrogen@clusterenergia.cat",
+        "web": "https://clusterenergia.cat/gt-hidrogen/",
+        "fuente_contacto_url": "https://clusterenergia.cat/gt-hidrogen/",
+        "fuente_interes_url": "https://clusterenergia.cat/gt-hidrogen/",
+        "persona_nombrada": "",
+        "borrador": "borradores_contacto/02_ceec_gt_h2.md",
+        "estado_envio": "no_enviado"
+      },
+      {
+        "id": "h2cat",
+        "nombre": "Xarxa H2CAT",
+        "tipo": "red_investigacion",
+        "interes_demostrable": "Red catalana de innovacion en hidrogeno renovable (>60 grupos); pagina de contacto publica",
+        "ambito": "catalunya",
+        "email_publico": "miquel.anglada@eurecat.org",
+        "web": "https://xarxah2cat.org/",
+        "fuente_contacto_url": "https://xarxah2cat.org/contact-us/",
+        "fuente_interes_url": "https://xarxah2cat.org/",
+        "persona_nombrada": "",
+        "nota": "Email institucional publicado en /contact-us/ como promotor tecnologico de la red; alternativa dolores.gonzalez@eurecat.org en la misma pagina",
+        "borrador": "borradores_contacto/03_h2cat.md",
+        "estado_envio": "no_enviado"
+      },
+      {
+        "id": "irec",
+        "nombre": "Institut de Recerca en Energia de Catalunya (IREC)",
+        "tipo": "centro_investigacion",
+        "interes_demostrable": "I+D energia y transferencia; canal KTT publico ktt@irec.cat; colaboraciones con Port de Barcelona en combustibles",
+        "ambito": "catalunya_barcelona",
+        "email_publico": "ktt@irec.cat",
+        "web": "https://www.irec.cat/",
+        "fuente_contacto_url": "https://www.irec.cat/research-transfer/ktt",
+        "fuente_interes_url": "https://www.irec.cat/",
+        "persona_nombrada": "",
+        "borrador": "borradores_contacto/04_irec.md",
+        "estado_envio": "no_enviado"
+      },
+      {
+        "id": "port_bcn",
+        "nombre": "Port de Barcelona",
+        "tipo": "infraestructura_portuaria",
+        "interes_demostrable": "Plan de transicion energetica; combustibles alternativos (NH3, metanol); adjudicacion hidrogenera SympH2ony en ZAL Prat; atraques para amoniaco/metanol",
+        "ambito": "el_prat_puerto_barcelona",
+        "email_publico": "comunicacioport@portdebarcelona.cat",
+        "web": "https://www.portdebarcelona.cat/",
+        "fuente_contacto_url": "https://www.portdebarcelona.cat/es/comunicacion/medios-de-comunicacion/contactos-de-prensa",
+        "fuente_interes_url": "https://www.portdebarcelona.cat/es/sostenibilidad/sostenibilidad-ambiental/transicion-energetica/combustibles-alternativos",
+        "persona_nombrada": "",
+        "nota": "Canal prensa/comunicacion publico; para tramite de innovacion puede redirigir internamente. No usar como canal comercial sin confirmacion.",
+        "borrador": "borradores_contacto/05_port_bcn.md",
+        "estado_envio": "no_enviado"
+      },
+      {
+        "id": "czfb",
+        "nombre": "Consorci de la Zona Franca de Barcelona (CZFB)",
+        "tipo": "suelo_industrial",
+        "interes_demostrable": "Gestion de suelo industrial colindante a El Prat y al puerto; contacto comercial publico",
+        "ambito": "zona_franca_el_prat",
+        "email_publico": "info@zfbarcelona.es",
+        "web": "https://zfbarcelona.es/",
+        "fuente_contacto_url": "https://zfbarcelona.es/ca/contacte/",
+        "fuente_interes_url": "https://zfbarcelona.es/",
+        "persona_nombrada": "",
+        "borrador": "borradores_contacto/06_czfb.md",
+        "estado_envio": "no_enviado"
+      },
+      {
+        "id": "messer",
+        "nombre": "Messer Ibérica de Gases (socio SympH2ony)",
+        "tipo": "operador_gases_h2",
+        "interes_demostrable": "JV SympH2ony (con Toyota Tsusho) adjudicada para hidrogenera con electrolisis en ZAL Prat; linea publica de hidrogeno verde",
+        "ambito": "el_prat_zal_prat_tarragona",
+        "email_publico": "info.es@messergroup.com",
+        "web": "https://www.messer.es/",
+        "fuente_contacto_url": "https://www.messer.es/contacto",
+        "fuente_interes_url": "https://www.portdebarcelona.cat/ca/comunicacio/noticies/symph2ony-preveu-invertir-20-milions-deuros-al-port-de-barcelona-impulsar-un-ecosistema-europeu-dhidrogen-verd",
+        "persona_nombrada": "",
+        "borrador": "borradores_contacto/07_messer.md",
+        "estado_envio": "no_enviado"
+      },
+      {
+        "id": "aeh2",
+        "nombre": "Asociación Española del Hidrógeno (AeH2)",
+        "tipo": "asociacion_sectorial",
+        "interes_demostrable": "Asociacion nacional del sector H2; canal info@aeh2.org publicado",
+        "ambito": "espana",
+        "email_publico": "info@aeh2.org",
+        "web": "https://aeh2.org/",
+        "fuente_contacto_url": "https://aeh2.org/contacto/",
+        "fuente_interes_url": "https://aeh2.org/",
+        "persona_nombrada": "",
+        "borrador": "borradores_contacto/08_aeh2.md",
+        "estado_envio": "no_enviado"
+      },
+      {
+        "id": "aeqt",
+        "nombre": "Associació d'Empreses Químiques de Tarragona (AEQT)",
+        "tipo": "asociacion_quimica",
+        "interes_demostrable": "Pol quimico del sur de Europa; impulsor institucional de la Vall de l'Hidrogen",
+        "ambito": "tarragona_catalunya",
+        "email_publico": "aeqt@aeqtonline.com",
+        "web": "https://www.aeqtonline.com/",
+        "fuente_contacto_url": "https://www.aeqtonline.com/es/contacto/",
+        "fuente_interes_url": "https://www.h2valley.cat/",
+        "persona_nombrada": "",
+        "borrador": "borradores_contacto/09_aeqt.md",
+        "estado_envio": "no_enviado"
+      },
+      {
+        "id": "idae",
+        "nombre": "Instituto para la Diversificación y Ahorro de la Energía (IDAE)",
+        "tipo": "organismo_ayudas",
+        "interes_demostrable": "Convocatorias H2 Pioneros / cadena de valor / valles H2 en el marco PRTR; canal ciudadano y PRTR publicos",
+        "ambito": "espana",
+        "email_publico": "consultas.prtr@idae.es",
+        "web": "https://www.idae.es/",
+        "fuente_contacto_url": "https://www.idae.es/contacto",
+        "fuente_interes_url": "https://www.idae.es/ayudas-y-financiacion/programas-de-ayuda-la-cadena-de-valor-innovadora-del-hidrogeno-renovable-en",
+        "persona_nombrada": "",
+        "nota": "Consulta informativa sobre elegibilidad; el piloto ~0.5 MWe probablemente no cumple umbrales tipo >=5 MWe. Alternativa general: ciudadano@idae.es",
+        "borrador": "borradores_contacto/10_idae.md",
+        "estado_envio": "no_enviado"
+      }
+    ]
+  },
+  "tareas": [
+    {
+      "id": "i1",
+      "tarea": "autorizacion_envio_por_destinatario",
+      "estado": "pendiente_lazaro"
+    },
+    {
+      "id": "i2",
+      "tarea": "anadir_operadores_quimicos_nominativos_cuando_haya_contacto_publico_verificado",
+      "estado": "pendiente"
+    }
+  ],
+  "riesgos": [
+    {
+      "riesgo": "contacto_prensa_port_no_es_canal_tecnico",
+      "impacto": "medio",
+      "mitigacion": "pedir reenvio interno en el cuerpo del correo"
+    },
+    {
+      "riesgo": "interpreacion_como_oferta_de_inversion_rentable",
+      "impacto": "alto",
+      "mitigacion": "veredicto no rentable en asunto/cuerpo y dossier"
+    }
+  ],
+  "decisiones": [
+    {
+      "decision": "solo_emails_institucionales_publicos",
+      "estado": "hecho"
+    },
+    {
+      "decision": "no_enviar_sin_aprobacion",
+      "estado": "hecho"
+    }
+  ],
+  "proximo_paso": "Lazaro aprueba envio uno a uno; hasta entonces solo borradores"
+}

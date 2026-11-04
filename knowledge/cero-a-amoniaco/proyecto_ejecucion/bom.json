@@ -1,0 +1,361 @@
+{
+  "meta": {
+    "proyecto": "cero_a",
+    "documento": "bom_piloto",
+    "version": "ejecucion_2026-11-04",
+    "fecha": "2026-11-04",
+    "zona_horaria": "Europe/Madrid",
+    "autoria": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España; con asistencia de inteligencia artificial",
+    "nivel_evidencia": "e2",
+    "emplazamiento": {
+      "nombre": "el_prat_de_llobregat",
+      "lat": 41.3,
+      "lon": 2.08
+    },
+    "escenario_base": "ppa_rfnbo_horario",
+    "advertencia": "Precios de literatura o rangos; sin cotizaciones firmes. No constituye oferta comercial ni asesoramiento de compra."
+  },
+  "objetivo": "lista_materiales_equipos_piloto_50_kg_h_nh3_realizable_con_fuentes",
+  "datos_clave": {
+    "diseno_v3": {
+      "ppa_fv_kw": 1187.493,
+      "ppa_eol_kw": 3662.419,
+      "pem_kw": 538.796,
+      "buffer_h": 14.134,
+      "bat_kwh": 0.041,
+      "carga_min_hb": 0.3,
+      "nh3_nom_kg_h": 50.0,
+      "nh3_t_ano": 422.6,
+      "tanque_nh3_t": 15.9,
+      "superficie_m2": 3000.0,
+      "potencia_contratada_kw": 655.0,
+      "conexion_km": 0.5
+    },
+    "caudales": {
+      "h2_kg_h_nominal": 9.004,
+      "buffer_h2_kg_util": 127.3,
+      "n2_kg_h": 42.02,
+      "n2_nm3_h": 33.6,
+      "nh3_kg_h": 50.0,
+      "nh3_t_ano": 422.6
+    },
+    "capex_lineas_con_precio_eur": 2705335,
+    "permisos_ingenieria_15pct_eur": 384971,
+    "pendientes_verificacion_rango_eur": [
+      535000,
+      1530000
+    ],
+    "pendientes_verificacion_punto_medio_eur": 1032500,
+    "capex_total_indicativo_eur": {
+      "solo_lineas_preciadas_mas_permisos": 3090306,
+      "mas_punto_medio_pendientes": 4122806,
+      "rango_bajo": 3625306,
+      "rango_alto": 4620306,
+      "modelo_v3_referencia": 2742506
+    },
+    "items": [
+      {
+        "id": "eq_pem_01",
+        "categoria": "electrolisis",
+        "item": "electrolizador_pem_containerizado",
+        "cantidad": 538.8,
+        "unidad": "kW",
+        "especificacion": "PEM containerizado ~0.54 MW, carga minima <=10 %, rampa <=10 %/s, H2 ~30 barg, pureza >=99.999 %, agua RO/EDI integrada preferible",
+        "proveedor_candidato": "Nel Hydrogen (MC Series; unidad comercial minima MC250 = 1.25 MW — sobredimensionado vs diseño 0.54 MW)",
+        "url_proveedor": "https://nelhydrogen.com/product/mc-series-pem/",
+        "precio_unitario_eur": 2196,
+        "precio_total_eur": 1183196,
+        "fuente_precio": "European Hydrogen Observatory, Electrolyser cost 2025: PEM total CAPEX 2196 EUR/kW (stack 494 + BoP 567 + utilities 608 + other 527) para proyecto representativo 100 MWel",
+        "fecha_fuente": "2025",
+        "estado_precio": "literatura_citada",
+        "rango_literatura_eur": [
+          1755,
+          3000
+        ],
+        "notas": "PENDIENTE DE VERIFICACIÓN cotización a escala 0.5-1 MW. Alternativas: H-TEC ME450 (1 MW) https://www.h-tec.com/en/products/detail/h-tec-pem-electrolyser-me450/me450 ; ITM Power https://itm-power.com/products/ ; Siemens Energy Silyzer https://www.siemens-energy.com/global/en/home/products-services/product-offerings/hydrogen-solutions.html. Pedidos Nel históricos ~1600-2080 USD/kW (2020-2021, no comparables 1:1). Modelo v3 usaba 2263 EUR/kW."
+      },
+      {
+        "id": "eq_alk_alt",
+        "categoria": "electrolisis_alternativa",
+        "item": "electrolizador_alcalino_alternativa",
+        "cantidad": 538.8,
+        "unidad": "kW",
+        "especificacion": "Alcalino (alternativa a PEM): menor CAPEX, peor rampa; evaluar si RFNBO horario lo permite con buffer",
+        "proveedor_candidato": "Nel Hydrogen / Stiesdal (referencia de mercado ~500-2075 EUR/kW segun alcance)",
+        "url_proveedor": "https://observatory.clean-hydrogen.europa.eu/hydrogen-landscape/production-trade-and-cost/electrolyser-cost",
+        "precio_unitario_eur": 2075,
+        "precio_total_eur": 1118002,
+        "fuente_precio": "EHO 2025: alkaline total CAPEX 2075 EUR/kW (100 MWel)",
+        "fecha_fuente": "2025",
+        "estado_precio": "literatura_citada",
+        "rango_literatura_eur": [
+          500,
+          2310
+        ],
+        "notas": "NO incluido en CAPEX base (caso base = PEM). Stiesdal 6.5 MW ~500 EUR/kW sistema (prensa 2026) PENDIENTE DE VERIFICACIÓN alcance. Marca alternativa informativa."
+      },
+      {
+        "id": "eq_buf_01",
+        "categoria": "almacenamiento_h2",
+        "item": "buffer_h2_comprimido",
+        "cantidad": 127.3,
+        "unidad": "kg_h2_util",
+        "especificacion": "Almacenamiento H2 ~127 kg utiles (~14.134 h a caudal nominal 9.0 kg/h), 200-450 bar tipico, packs de botellas o tubos",
+        "proveedor_candidato": "Luxfer Gas Cylinders (G-Stor Pro Bundle) / Hexagon Purus (X-STORE)",
+        "url_proveedor": "https://www.luxfercylinders.com/product/g-stor-pro-bundle/",
+        "precio_unitario_eur": 866.58,
+        "precio_total_eur": 110278,
+        "fuente_precio": "Haber-Bosch 2.0, Energy Environ. Sci. 2026 Tabla 2: 26 EUR/kWh (=867 EUR/kg); ENTEC/Fraunhofer 2022 ~535 EUR/kg tanques",
+        "fecha_fuente": "2026",
+        "estado_precio": "literatura_citada",
+        "rango_literatura_eur": [
+          535,
+          1000
+        ],
+        "notas": "PENDIENTE DE VERIFICACIÓN cotización. Sin precio público EUR/kg en fichas Luxfer/Hexagon. Trailer 1000 kg ~450 EUR/kg payload citado en literatura FCH (referencia de orden)."
+      },
+      {
+        "id": "eq_comp_01",
+        "categoria": "compresion",
+        "item": "compresor_h2_booster",
+        "cantidad": 1,
+        "unidad": "ud",
+        "especificacion": "Booster H2 desde ~30 barg (salida PEM tipica) hasta presion de buffer (200-450 bar), caudal ~9 kg/h, ATEX",
+        "proveedor_candidato": "Howden / PDC Machines / Maximator",
+        "url_proveedor": "https://www.howden.com/en-gb/products/compressors/hydrogen-compressors",
+        "precio_unitario_eur": 0,
+        "precio_total_eur": 0,
+        "fuente_precio": "",
+        "fecha_fuente": "",
+        "estado_precio": "pendiente_verificacion",
+        "rango_literatura_eur": [
+          80000,
+          250000
+        ],
+        "notas": "PENDIENTE DE VERIFICACIÓN. Rango orden de magnitud para booster pequena escala (sin ficha de precio publica verificada 2026-11-04). Parte del BoP PEM puede incluir compresion hasta 30 bar; booster a buffer es adicional."
+      },
+      {
+        "id": "eq_psa_01",
+        "categoria": "nitrogeno",
+        "item": "generador_n2_psa",
+        "cantidad": 1,
+        "unidad": "ud",
+        "especificacion": "PSA N2 >=99.9 %, caudal >= 40.3 Nm3/h (margen 20 % sobre 33.6 Nm3/h = 42.0 kg/h), ~0.3-0.6 kWh/Nm3",
+        "proveedor_candidato": "CEZIUM CZ-N2M-50B / Parker Industrial Gas / Air Products PRISM",
+        "url_proveedor": "https://cezium.eu/en/produits/generators/nitrogen-psa/cz-n2m-50b/",
+        "precio_unitario_eur": 183000,
+        "precio_total_eur": 183000,
+        "fuente_precio": "EES 2026 Tabla 2: ASU 1720 EUR/(kg N2/h) a 20 t/d, escalado exp 0.6-0.8 a 42 kg N2/h (base modelo v3)",
+        "fecha_fuente": "2026",
+        "estado_precio": "literatura_citada",
+        "rango_literatura_eur": [
+          126000,
+          222000
+        ],
+        "notas": "PENDIENTE DE VERIFICACIÓN cotización industrial. WAVE N2-40 (40 Nm3/h 99.9 %) lista ~24900 EUR neto (https://www.wave.cc/de/product/wave-n2-40) pero pureza/servicio industrial y comisionado aparte — no usado como base por alcance distinto."
+      },
+      {
+        "id": "eq_hb_01",
+        "categoria": "sintesis_nh3",
+        "item": "lazo_haber_bosch_modular",
+        "cantidad": 1,
+        "unidad": "ud",
+        "especificacion": "Loop HB electrico modular 50 kg/h NH3 (1.2 t/d), carga minima ~20-40 %, rampa ~20 %/h, conversion global ~98 %, consumo ~0.6-3.6 kWh/kg NH3",
+        "proveedor_candidato": "Proton Ventures (NFUEL / Casale license) / Casale SMART-N / thyssenkrupp Uhde dynamic ammonia",
+        "url_proveedor": "https://protonventures.com/what-we-do/ammonia-production/",
+        "precio_unitario_eur": 1090000,
+        "precio_total_eur": 1090000,
+        "fuente_precio": "EES 2026 Tabla 2: 8600 EUR/(kg NH3/h) a 20 t/d escalado exp 0.6-0.8 a 50 kg/h; max Malmali et al. Processes 2018",
+        "fecha_fuente": "2026",
+        "estado_precio": "literatura_citada",
+        "rango_literatura_eur": [
+          750000,
+          1900000
+        ],
+        "notas": "PENDIENTE DE VERIFICACIÓN cotización. NFUEL brochure: capacidades tipicas 1000/4000/20000 t/a (piloto 423 t/a es sub-escala). Casale SkiGA 100 t/d Noruega (2026) sin CAPEX publicado. Stamicarbon NX STAMI: https://www.stamicarbon.com/"
+      },
+      {
+        "id": "eq_nh3_01",
+        "categoria": "almacenamiento_nh3",
+        "item": "tanque_nh3_presurizado",
+        "cantidad": 15.9,
+        "unidad": "t_capacidad",
+        "especificacion": "Tanque NH3 anhidro presurizado ~16 t (~7 dias produccion), bajo umbral SEVESO 50 t (nivel inferior), conforme APQ-4",
+        "proveedor_candidato": "Fabricantes EN 13445 / ASME (cotizar a taller homologado ES); referencia tecnica Rouwenhorst 2021",
+        "url_proveedor": "https://www.boe.es/eli/es/rd/2017/06/23/656",
+        "precio_unitario_eur": 2772,
+        "precio_total_eur": 44069,
+        "fuente_precio": "Rouwenhorst et al. 2021 Techno-Economic Challenges of Green Ammonia ~3000 USD/t presurizado pequena escala; cambio USD->EUR 1/1.0824",
+        "fecha_fuente": "2021",
+        "estado_precio": "literatura_citada",
+        "rango_literatura_eur": [
+          1848,
+          3695
+        ],
+        "notas": "PENDIENTE DE VERIFICACIÓN cotización taller ES. SEVESO: NH3 50 t umbral inferior / 200 t superior (RD 840/2015 Anexo I)."
+      },
+      {
+        "id": "eq_h2o_01",
+        "categoria": "agua",
+        "item": "tratamiento_agua_ro_edi",
+        "cantidad": 1,
+        "unidad": "ud",
+        "especificacion": "RO+EDI o equivalente para agua de electrolisis (~9-10 L/kg H2) + servicios; caudal pico ~0.1 m3/h",
+        "proveedor_candidato": "Veolia / SUEZ / integrado en skid PEM (Nel MC incluye RO/EDI)",
+        "url_proveedor": "https://nelhydrogen.com/product/mc-series-pem/",
+        "precio_unitario_eur": 0,
+        "precio_total_eur": 0,
+        "fuente_precio": "",
+        "fecha_fuente": "",
+        "estado_precio": "pendiente_verificacion",
+        "rango_literatura_eur": [
+          25000,
+          80000
+        ],
+        "notas": "PENDIENTE DE VERIFICACIÓN. Si el skid PEM lo incluye (Nel MC), coste marginal bajo; si se compra aparte, rango de literatura pequena planta."
+      },
+      {
+        "id": "eq_bop_01",
+        "categoria": "bop_proceso",
+        "item": "tuberias_valvulas_intercambiadores_instrumentacion",
+        "cantidad": 1,
+        "unidad": "lote",
+        "especificacion": "Piping H2/N2/NH3, valvulas ATEX, HEX, instrumentacion (caudal, P, T, analitica H2/NH3), PLC/SCADA, cableado",
+        "proveedor_candidato": "Ingenieria EPC local + Emerson/Siemens/Endress+Hauser",
+        "url_proveedor": "https://www.siemens.com/global/en/products/automation.html",
+        "precio_unitario_eur": 0,
+        "precio_total_eur": 0,
+        "fuente_precio": "",
+        "fecha_fuente": "",
+        "estado_precio": "pendiente_verificacion",
+        "rango_literatura_eur": [
+          150000,
+          400000
+        ],
+        "notas": "PENDIENTE DE VERIFICACIÓN. Parcialmente cubierto en 'other utilities' del EHO PEM y en CAPEX HB modular; evitar doble conteo al cotizar."
+      },
+      {
+        "id": "eq_seg_01",
+        "categoria": "seguridad",
+        "item": "sistemas_seguridad_atex_deteccion_pci",
+        "cantidad": 1,
+        "unidad": "lote",
+        "especificacion": "Clasificacion ATEX (RD 681/2003), detectores H2/NH3, ventilacion, alivio, PCI (extincion, hidrantes), EPIs, sirenas, paro de emergencia",
+        "proveedor_candidato": "Organismo de control + instalador ATEX (p.ej. Applus, SGS, Bureau Veritas como OCA)",
+        "url_proveedor": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-11833",
+        "precio_unitario_eur": 0,
+        "precio_total_eur": 0,
+        "fuente_precio": "",
+        "fecha_fuente": "",
+        "estado_precio": "pendiente_verificacion",
+        "rango_literatura_eur": [
+          80000,
+          200000
+        ],
+        "notas": "PENDIENTE DE VERIFICACIÓN. Incluye proyecto ATEX, certificado, equipos. RD 681/2003 ATEX lugares de trabajo."
+      },
+      {
+        "id": "eq_civ_01",
+        "categoria": "obra_civil",
+        "item": "obra_civil_cimentaciones_cubetos_vallado",
+        "cantidad": 3000.0,
+        "unidad": "m2_parcela",
+        "especificacion": "Cimentaciones skids, cubetos APQ, drenajes, viales internos, vallado, caseta control ~3000 m2 parcela",
+        "proveedor_candidato": "Constructora industrial local (El Prat / Zona Franca)",
+        "url_proveedor": "https://www.elprat.cat/",
+        "precio_unitario_eur": 0,
+        "precio_total_eur": 0,
+        "fuente_precio": "",
+        "fecha_fuente": "",
+        "estado_precio": "pendiente_verificacion",
+        "rango_literatura_eur": [
+          200000,
+          600000
+        ],
+        "notas": "PENDIENTE DE VERIFICACIÓN. Modelo v3 no desglosa obra civil aparte (parcial en permisos/ingenieria 15 % y en alquiler). Rango bruto piloto."
+      },
+      {
+        "id": "eq_elec_01",
+        "categoria": "electrica",
+        "item": "conexion_mt_trafo_cuadros",
+        "cantidad": 1,
+        "unidad": "lote",
+        "especificacion": "Punto conexion MT, ~655.0 kW contratados, linea 0.5 km, trafo, cuadros BT, protecciones",
+        "proveedor_candidato": "e-distribución (consulta punto de conexion) + instalador autorizado",
+        "url_proveedor": "https://www.edistribucion.com/",
+        "precio_unitario_eur": 94792,
+        "precio_total_eur": 94792,
+        "fuente_precio": "Derechos extension+acceso CNMC 1-36 kV suelo urbanizado 32.7112 EUR/kW; linea MT subterranea simple CNMC 2013: 146733 EUR/km",
+        "fecha_fuente": "2013-2024",
+        "estado_precio": "literatura_citada",
+        "rango_literatura_eur": [
+          50772,
+          457412
+        ],
+        "notas": "PENDIENTE DE VERIFICACIÓN pliego e-distribucion (tarea p7). Valores CNMC 2013 sin actualizar a EUR 2026."
+      },
+      {
+        "id": "eq_fv_opt",
+        "categoria": "fv_opcional",
+        "item": "fv_cubierta_opcional_no_caso_base",
+        "cantidad": 0,
+        "unidad": "kWp",
+        "especificacion": "FV in situ NO es el caso base (PPA). Si se elige cubierta: ~3.7 MWp escenario fv_cubierta_red_aux",
+        "proveedor_candidato": "Instaladores UNEF / fabricantes modulos",
+        "url_proveedor": "https://www.unef.es/",
+        "precio_unitario_eur": 800,
+        "precio_total_eur": 0,
+        "fuente_precio": "IRENA RPGC 2023 Espana utility 671 USD/kW + prima piloto; modelo 800 EUR/kWp",
+        "fecha_fuente": "2023",
+        "estado_precio": "literatura_citada",
+        "rango_literatura_eur": [
+          620,
+          1000
+        ],
+        "notas": "Excluido del CAPEX base PPA. Incluido solo como opcion."
+      }
+    ]
+  },
+  "tareas": [
+    {
+      "id": "bom1",
+      "tarea": "solicitar cotizaciones PEM 0.5-1 MW, HB+PSA 1-2 t/d, buffer H2, tanque NH3",
+      "estado": "pendiente"
+    },
+    {
+      "id": "bom2",
+      "tarea": "evitar doble conteo BoP al integrar ofertas skid",
+      "estado": "pendiente"
+    }
+  ],
+  "riesgos": [
+    {
+      "riesgo": "EHO 2196 EUR/kW es para 100 MW; piloto 0.5 MW puede ser 1.5-3x",
+      "impacto": "alto",
+      "mitigacion": "cotizar Nel/H-TEC/ITM"
+    },
+    {
+      "riesgo": "HB modular a 50 kg/h casi no tiene referencia comercial publica",
+      "impacto": "alto",
+      "mitigacion": "Proton Ventures/Casale/Uhde"
+    },
+    {
+      "riesgo": "doble conteo utilities PEM vs BOP aparte",
+      "impacto": "medio",
+      "mitigacion": "revisar alcance de cada oferta"
+    }
+  ],
+  "decisiones": [
+    {
+      "decision": "caso_base_tecnologia_pem_no_alcalino",
+      "estado": "provisional",
+      "motivo": "mejor rampa para RFNBO horario"
+    },
+    {
+      "decision": "caso_base_energia_ppa_no_fv_in_situ",
+      "estado": "provisional",
+      "motivo": "LCOA 3166 vs 4114-19129"
+    }
+  ],
+  "proximo_paso": "lanzar p2 (cotizaciones equipos) y p1 (suelo) en paralelo; no enviar solicitudes sin aprobacion de Lazaro"
+}
