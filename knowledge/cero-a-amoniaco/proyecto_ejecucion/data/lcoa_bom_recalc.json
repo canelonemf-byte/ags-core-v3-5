@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "proyecto": "cero_a",
+    "documento": "lcoa_bom_recalc",
+    "fecha": "2026-11-05",
+    "zona_horaria": "Europe/Madrid",
+    "autoria": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España; con asistencia de inteligencia artificial",
+    "nivel_evidencia": "e2",
+    "escenario_opex": "organigrama_b_sin_parcela_propia"
+  },
+  "objetivo": "recalculo_lcoa_con_unitarios_bom_opcion_b",
+  "datos_clave": {
+    "lcoa_eur_t": 2208,
+    "desglose_eur_t": {
+      "pem": 501,
+      "buffer_h2": 30,
+      "psa_hb": 375,
+      "tanque_nh3": 12,
+      "conexion_red": 21,
+      "permisos_ingenieria": 86,
+      "personal": 213,
+      "alquiler_terreno": 0,
+      "compartir_instalacion": 0,
+      "ppa": 1001,
+      "venta_excedentes": -246,
+      "red_peajes_cargos": 212,
+      "agua": 3
+    },
+    "capex_eur": {
+      "pem": 1183196,
+      "buffer": 110278,
+      "psa_hb": 1273000,
+      "tanque": 44075,
+      "conexion": 94792,
+      "permisos": 384971
+    },
+    "opex_supuestos": {
+      "personal_fte": 2.0,
+      "coste_fte_eur_a": 45000.0,
+      "personal_eur_a": 90000,
+      "alquiler_parcela_propia_eur_a": 0.0,
+      "compartir_instalacion_eur_a": 0.0,
+      "compartir_instalacion_estado": "PENDIENTE_DE_VERIFICACION"
+    },
+    "rentable_vs_gris": false,
+    "gris_eur_t": [
+      383,
+      562
+    ],
+    "lcoa_bom_anterior_eur_t": 3145,
+    "delta_vs_bom_anterior_eur_t": -937
+  },
+  "tareas": [],
+  "riesgos": [
+    {
+      "riesgo": "no sustituye cotizaciones",
+      "impacto": "alto",
+      "mitigacion": "p2"
+    },
+    {
+      "riesgo": "fee partner compartir instalacion desconocido",
+      "impacto": "alto",
+      "mitigacion": "marcar PENDIENTE; pedir oferta antes de FID"
+    }
+  ],
+  "decisiones": [
+    {
+      "decision": "organigrama_b_vigilancia_remota",
+      "estado": "hecho"
+    },
+    {
+      "decision": "socio_planta_existente_sin_alquiler_propio",
+      "estado": "hecho"
+    }
+  ],
+  "proximo_paso": "cotizar fee de partner y equipos; reoptimizar v4"
+}
