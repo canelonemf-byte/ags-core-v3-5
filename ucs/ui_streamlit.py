@@ -14,11 +14,10 @@ _APP = Path(__file__).resolve().parents[1] / "app"
 if str(_APP) not in sys.path:
     sys.path.insert(0, str(_APP))
 try:
-    from shared.metrics import track_streamlit_visit, render_visit_badge, render_app_metrics
+    from shared.metrics import track_streamlit_visit, render_visit_badge
 except ImportError:  # pragma: no cover
     track_streamlit_visit = None
     render_visit_badge = None
-    render_app_metrics = None
 
 API_URL = os.getenv("API_URL", "http://localhost:8000")
 TOP_K = 5
@@ -34,12 +33,9 @@ st.set_page_config(page_title="Cognitive Stack UI", layout="wide")
 APP_NAME = "ucs_ui"
 if track_streamlit_visit is not None:
     track_streamlit_visit(APP_NAME)
-st.title("🧠 Unified Cognitive Stack")
 if render_visit_badge is not None:
     render_visit_badge(APP_NAME)
-if render_app_metrics is not None:
-    with st.expander("Visitas de esta app", expanded=False):
-        render_app_metrics(APP_NAME)
+st.title("🧠 Unified Cognitive Stack")
 
 
 class ApiError(Exception):

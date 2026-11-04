@@ -19,11 +19,10 @@ _APP = ROOT / "app"
 if str(_APP) not in sys.path:
     sys.path.insert(0, str(_APP))
 try:
-    from shared.metrics import track_streamlit_visit, render_visit_badge, render_app_metrics
+    from shared.metrics import track_streamlit_visit, render_visit_badge
 except ImportError:  # pragma: no cover
     track_streamlit_visit = None
     render_visit_badge = None
-    render_app_metrics = None
 API = os.getenv("AGS_BASE_URL", "http://127.0.0.1:8000")
 REPORTS = ROOT / "reports"
 SEVS = ("high", "medium", "low", "info")
@@ -65,9 +64,9 @@ st.set_page_config(page_title="AGs-Core v3.6 · estado", layout="wide")
 APP_NAME = "ags_core_ui"
 if track_streamlit_visit is not None:
     track_streamlit_visit(APP_NAME)
-st.title("AGs-Core v3.6 · estado del stack")
 if render_visit_badge is not None:
     render_visit_badge(APP_NAME)
+st.title("AGs-Core v3.6 · estado del stack")
 st.caption("Solo lectura. Los informes son indicios a revisar, no veredictos. "
            "Lo no verificado figura como PENDIENTE DE VERIFICACIÓN.")
 if st.button("Recargar"):
@@ -101,12 +100,6 @@ else:
                      **{s: c.get(s, 0) for s in SEVS}, "informe": c.get("generated") or "sin informe"})
     st.write(f"{projects.get('total', len(rows))} proyectos")
     st.dataframe(rows, width="stretch", hide_index=True)
-
-st.subheader("Visitas de esta app")
-if render_app_metrics is not None:
-    render_app_metrics(APP_NAME)
-else:
-    st.caption("Contador no disponible (módulo shared.metrics).")
 
 st.subheader("reports/SUMMARY.md")
 summary = REPORTS / "SUMMARY.md"
