@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "proyecto": "cero_a",
+    "documento": "estado_paquete_ejecucion",
+    "version": "ejecucion_2026-11-04",
+    "fecha": "2026-11-04",
+    "zona_horaria": "Europe/Madrid",
+    "autoria": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España; con asistencia de inteligencia artificial",
+    "nivel_evidencia": "e2",
+    "emplazamiento": "el_prat_de_llobregat",
+    "ficheros": [
+      "README_reproducible.md",
+      "bom.json",
+      "bom.md",
+      "cronograma.md",
+      "data/lcoa_bom_recalc.json",
+      "permisos_y_normativa.md",
+      "presupuesto.json",
+      "presupuesto.md",
+      "scripts/recalcular_lcoa_bom.py"
+    ]
+  },
+  "objetivo": "paquete_ejecucion_piloto_realizable_hoy_con_fuentes_y_sin_enviar_a_terceros",
+  "datos_clave": {
+    "lcoa_bom_eur_t": 3145,
+    "lcoa_v3_eur_t": 3166,
+    "lcoa_gris_eur_t": [
+      383,
+      562
+    ],
+    "rentable_hoy_vs_gris": false,
+    "capex_indicativo_con_pendientes_punto_medio_eur": 4122806,
+    "prototipos_e2_conservados": [
+      "v1/",
+      "v2/",
+      "resultados.json",
+      "informe.md"
+    ],
+    "contactos_realizados": [],
+    "envios_realizados": []
+  },
+  "tareas": [
+    {
+      "id": "e0",
+      "tarea": "paquete proyecto_ejecucion creado",
+      "estado": "hecho"
+    },
+    {
+      "id": "p6",
+      "tarea": "decidir organigrama A vs B",
+      "estado": "pendiente_lazaro"
+    },
+    {
+      "id": "p1",
+      "tarea": "cotizaciones suelo",
+      "estado": "pendiente"
+    },
+    {
+      "id": "p2",
+      "tarea": "cotizaciones equipos",
+      "estado": "pendiente"
+    },
+    {
+      "id": "p3",
+      "tarea": "ofertas PPA",
+      "estado": "pendiente"
+    }
+  ],
+  "riesgos": [
+    {
+      "riesgo": "no rentabilidad a escala piloto",
+      "impacto": "alto",
+      "mitigacion": "transparencia en README"
+    },
+    {
+      "riesgo": "precios sin cotizar",
+      "impacto": "alto",
+      "mitigacion": "marcar PENDIENTE DE VERIFICACION"
+    }
+  ],
+  "decisiones": [
+    {
+      "decision": "no_enviar_ni_contactar_sin_aprobacion",
+      "estado": "hecho"
+    },
+    {
+      "decision": "mantener_e2_y_prototipos",
+      "estado": "hecho"
+    },
+    {
+      "decision": "caso_base_ppa_pem",
+      "estado": "provisional"
+    }
+  ],
+  "proximo_paso": "Lazaro decide organigrama A/B y si autoriza RFIs p1/p2; no hay envio pendiente"
+}
