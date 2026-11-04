@@ -134,7 +134,11 @@ class ValidadorEsquemaLLP(WorkerAgent):
     def check(self):
         tot = llp = 0; bad = []
         for split in ("train", "val", "test"):
-            for i, line in enumerate((DATA / f"{split}.jsonl").read_text(encoding="utf-8").splitlines(), 1):
+            path = DATA / f"{split}.jsonl"
+            if not path.exists():
+                return {"pares": 0, "respuestas_json": 0, "invalidas": 0, "ejemplos": [],
+                        "problemas": [f"falta dataset {path.relative_to(ROOT)}"]}
+            for i, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
                 tot += 1
                 try:
                     obj = json.loads(json.loads(line)["response"])
@@ -175,6 +179,12 @@ class Preflight7B(WorkerAgent):
     interval = 3600
     def check(self):
         prob = []
+        if not (DATA / "manifest.json").exists() or not all((DATA / f"{s}.jsonl").exists() for s in ("train", "val", "test")):
+            return {"splits": {}, "test_congelado_ok": False, "lora_yaml": False,
+                    "licencias_modelos": [], "gpu": False, "ram_total_gb": 0, "ram_libre_gb": 0,
+                    "disco_libre_gb": 0, "estimacion": {}, "aprobacion_usuario": "requerida",
+                    "entrena": False, "descarga_pesos": False,
+                    "problemas": [f"falta dataset en {DATA.relative_to(ROOT)}"]}
         man = json.loads((DATA / "manifest.json").read_text(encoding="utf-8"))
         splits = {}
         for s in ("train", "val", "test"):
@@ -218,6 +228,11 @@ class GeneradorParesLora(WorkerAgent):
     def check(self):
         def key(r): return hashlib.sha256(re.sub(r"\s+", " ", f"{r.get('instruction','')} {r.get('response','')}".lower()).strip().encode()).hexdigest()
         seen = set()
+        missing = [s for s in ("train", "val", "test") if not (DATA / f"{s}.jsonl").exists()]
+        if missing:
+            return {"archivos": 0, "nuevos_staging": 0, "simulados_fuera": 0, "ya_en_dataset": 0,
+                    "invalidos": 0, "toca_test": False,
+                    "problemas": [f"falta dataset {', '.join(missing)} en {DATA.relative_to(ROOT)}"]}
         for s in ("train", "val", "test"):
             for l in (DATA / f"{s}.jsonl").read_text(encoding="utf-8").splitlines():
                 if l.strip(): seen.add(key(json.loads(l)))
