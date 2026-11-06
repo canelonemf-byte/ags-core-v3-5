@@ -6,3 +6,6 @@ os.environ['LITELLM_BASE_URL'] = 'http://127.0.0.1:9'  # sin LLM real en tests
 os.environ.setdefault('AGSGPT_DATA_DIR', tempfile.mkdtemp(prefix='agsgpt-test-'))
 os.environ.pop('AGSGPT_CKPT_DIR', None)
 os.environ.setdefault('AGS_REPORTS_DIR', tempfile.mkdtemp(prefix='agsgpt-reports-'))
+
+# Carga el registro de agentes para tests aislados (p. ej. test_gemini_agent).
+import agents  # noqa: E402,F401

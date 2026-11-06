@@ -16,16 +16,17 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           # requirements.txt puede incluir torch; instalar núcleo de tests
-          pip install fastapi uvicorn httpx python-dotenv pydantic pytest pytest-asyncio pyyaml -q
+          # Núcleo API + deps científicas ligeras usadas por tests (sin torch)
+          pip install fastapi uvicorn httpx python-dotenv pydantic pytest pytest-asyncio pyyaml numpy 'qiskit>=1.2,<3' 'scikit-learn>=1.4' -q
       - name: Compilar módulos Python
         run: |
           set -e
           mapfile -t files < <(find . -name '*.py' -not -path './.git/*' -not -path './.venv/*' -not -path './venv/*' -not -path '*/__pycache__/*' -not -path './knowledge/*')
           python -m py_compile "${files[@]}"
           echo "py_compile OK (${#files[@]} archivos)"
-      - name: Tests (informativo; gemini/subagentes frágiles no bloquean)
+      - name: Tests
         env:
           AGS_API_KEY: test-key
           PYTHONPATH: app
         run: |
-          python -m pytest -q --ignore=tests/test_gemini_agent.py --maxfail=20 || echo "pytest_exit=$?"
+          python -m pytest -q --maxfail=20

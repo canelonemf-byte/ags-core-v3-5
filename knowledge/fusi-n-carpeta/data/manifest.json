@@ -1,0 +1,1189 @@
+{
+ "meta": {
+  "seed": 42,
+  "autor": "Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA",
+  "licencia": "CC BY 4.0",
+  "split": "80/10/10 por documento fuente"
+ },
+ "archivos_incluidos": 218,
+ "archivos_excluidos": 4,
+ "excluidos": [
+  "knowledge/atlas0-ordenador2-6-x-10/README.md",
+  "knowledge/atlas0-ordenador2-6-x-10/scripts/sprint_01_manifest.json",
+  "knowledge/oraculo-mesoscopico/README.md",
+  "docs/notebooklm/99_MAPA_CARGAS.md"
+ ],
+ "splits": {
+  "train": {
+   "pares": 889,
+   "documentos": 214,
+   "sha256": "b45bbd4fe2da1fcba046f808389de64994bc969c9cdadf8ffa704efa8f28cb73"
+  },
+  "val": {
+   "pares": 200,
+   "documentos": 31,
+   "sha256": "65f6b7f61b403730b9cd2afd969e8a7b6a5145c81c923a2733a0f6632f512f67"
+  },
+  "test": {
+   "pares": 66,
+   "documentos": 22,
+   "sha256": "0937f06c329f1744f22570dab347aca26fa487c771356027b9bdead33e6f8ef5"
+  }
+ },
+ "total_pares": 1155,
+ "por_fuente": {
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#AL-01": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#AL-02": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#AL-03": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#AL-04": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#AL-05": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#AL-06": {
+   "split": "val",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#AL-07": {
+   "split": "val",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#AL-08": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#AL-09": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#AL-10": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#AL-11": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#AL-12": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#EQ-01": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#EQ-02": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#EQ-03": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#EQ-04": {
+   "split": "val",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#EQ-05": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#EQ-06": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#EQ-07": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#EQ-08": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#EQ-09": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#EQ-10": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#EQ-11": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#EQ-12": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#EQ-13": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#EQ-14": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#LG-01": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#LG-02": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#LG-03": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#LG-04": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#LG-05": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#LG-06": {
+   "split": "val",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#LG-07": {
+   "split": "val",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#LG-08": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#LG-09": {
+   "split": "val",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#LG-10": {
+   "split": "val",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#LG-11": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#LG-12": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#LG-13": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#LG-14": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#LG-15": {
+   "split": "train",
+   "pares": 1
+  },
+  "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#LG-16": {
+   "split": "train",
+   "pares": 1
+  },
+  "docs/arquitectura_subagentes_escalable.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "docs/correcciones_PDFs.md": {
+   "split": "val",
+   "pares": 8
+  },
+  "docs/notebooklm/00_GUIA_NOTEBOOKLM.md": {
+   "split": "train",
+   "pares": 5
+  },
+  "docs/notebooklm/ATLAS_INTEGRADO_PORTFOLIO.md": {
+   "split": "train",
+   "pares": 21
+  },
+  "knowledge/agsgpt-lora/README.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/api-seguridad-postcuantica/README-v2.md": {
+   "split": "train",
+   "pares": 4
+  },
+  "knowledge/api-seguridad-postcuantica/README.md": {
+   "split": "test",
+   "pares": 3
+  },
+  "knowledge/api-seguridad-postcuantica/README_LLP_API_GATEWAY_v3-1.md": {
+   "split": "test",
+   "pares": 3
+  },
+  "knowledge/api-seguridad-postcuantica/README_LLP_API_GATEWAY_v3.md": {
+   "split": "test",
+   "pares": 3
+  },
+  "knowledge/api-seguridad-postcuantica/docs/El_fin_de_los_secretos_tal_como_los_conocemos__Lo_que_FIPS_204_y_el_nuevo_estandar_ML-DSA_dicen_sobre_nuestro_futuro.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/api-seguridad-postcuantica/docs/informe_auditoria_quantum_blueprint.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/apoquadina-3/README.md": {
+   "split": "train",
+   "pares": 3
+  },
+  "knowledge/apoquadina-3/docs/ApoQuadina-3__Un_Nuevo_Paradigma_en_el_Control_Traduccional_de_la_Lipoproteina_a_mediante_Estabilizacion_de_G-Quadruplex.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/apoquadina-3/docs/MANIFIESTO_DEL_PRAT_DE_LLOBREGAT.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/atlas0-ordenador2-6-x-10/docs/atlas0.md": {
+   "split": "train",
+   "pares": 4
+  },
+  "knowledge/atomvisor-microscopio-atomos/README.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/canelone-mf-ordenador-cuantico/INVENTARIO_Y_AUDITORIA.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/canelone-mf-ordenador-cuantico/README.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/canelone-mf-ordenador-cuantico/docs/Canelone_mf_Research_Edition_DOCUMENTO_UNICO.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/cero-a-amoniaco/README.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/cero-a-amoniaco/docs/Plan_de_Implementacion_Industrial_Ecosistema_CERO-A_2026-2035.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/cero-a-amoniaco/docs/Proyecto_CERO-A_-_Documento_de_Lazaro_Lopez_Paz.md": {
+   "split": "train",
+   "pares": 5
+  },
+  "knowledge/cero-a-amoniaco/docs/Proyecto_CERO-A_Combustible_sintetico_de_amoniaco_verde.md": {
+   "split": "test",
+   "pares": 3
+  },
+  "knowledge/cero-a-amoniaco/docs/Resumen_Ejecutivo_Proyecto_CERO-A_-_Combustion_de_Amoniaco_Verde_con_Cero_Emisiones.md": {
+   "split": "test",
+   "pares": 1
+  },
+  "knowledge/cero-a-amoniaco/docs/combustible_renovable_del_futuro.md": {
+   "split": "train",
+   "pares": 15
+  },
+  "knowledge/cero-a-amoniaco/docs/notebooklm/07_CERO_A.md": {
+   "split": "train",
+   "pares": 3
+  },
+  "knowledge/control-tiempo-gravedad/README.md": {
+   "split": "test",
+   "pares": 2
+  },
+  "knowledge/control-tiempo-gravedad/docs/Informe_Control_Espacio_Tiempo_Cuantico.md": {
+   "split": "train",
+   "pares": 3
+  },
+  "knowledge/control-tiempo-gravedad/docs/notebooklm/06_GRAVEDAD_TIEMPO.md": {
+   "split": "test",
+   "pares": 5
+  },
+  "knowledge/cymaquantum-resonator/README.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/cymaquantum-resonator/docs/Dossier_Tecnico_de_Replicacion_Ecosistema_Cuantico-Fractal_Protocolo_Barcelona_2026.md": {
+   "split": "train",
+   "pares": 20
+  },
+  "knowledge/ecosistema-cuantico-fractal/README.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/espana-sin-petroleo/README.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/espana-sin-petroleo/docs/Python_eliminar_petroleo_en_Espana.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/fractal-quantum-engineering/README.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/fractal-quantum-hardware/README.md": {
+   "split": "test",
+   "pares": 1
+  },
+  "knowledge/futuro-fotonica/README.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/glyd-qsense/LICENSE-docs.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/glyd-qsense/README.md": {
+   "split": "train",
+   "pares": 3
+  },
+  "knowledge/glyd-qsense/docs/Dossier_Integral_Plan_Maestro_de_Implementacion_del_Sensor_GlyD-QSense.md": {
+   "split": "val",
+   "pares": 26
+  },
+  "knowledge/glyd-qsense/docs/Expediente_Tecnico_de_Validacion_Sistema_de_Termometria_Cuantica_Organica_GlyD-QSense.md": {
+   "split": "val",
+   "pares": 9
+  },
+  "knowledge/glyd-qsense/docs/Proyecto_GlyD-QSense_Documento_Tecnico_de_Publicacion.md": {
+   "split": "train",
+   "pares": 6
+  },
+  "knowledge/glyd-qsense/docs/proyecto_GlyD-QSense.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/gravedad/registro_evidencia.json": {
+   "split": "val",
+   "pares": 7
+  },
+  "knowledge/helio3-fusion-qmc-h3/README.md": {
+   "split": "train",
+   "pares": 3
+  },
+  "knowledge/helio3-fusion-qmc-h3/docs/Resumen_del_Proyecto_Maestro__Reactor_de_Fusion_Aneutronica_QMC-H3.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/helio3-fusion-qmc-h3/docs/notebooklm/01_HELIO3_QMC-H3.md": {
+   "split": "train",
+   "pares": 7
+  },
+  "knowledge/helio3-fusion-qmc-h3/docs/notebooklm/DISCREPANCIAS_QMC_H3.md": {
+   "split": "train",
+   "pares": 12
+  },
+  "knowledge/helioatlas-helio3/AGENTS.md": {
+   "split": "train",
+   "pares": 15
+  },
+  "knowledge/helioatlas-helio3/LICENSE-docs.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/helioatlas-helio3/README.md": {
+   "split": "train",
+   "pares": 5
+  },
+  "knowledge/helioatlas-helio3/docs/Analisis_Comparativo__Recoleccion_de_Helio-3_3He_Regolito_Lunar_vs._Viento_Solar.md": {
+   "split": "val",
+   "pares": 1
+  },
+  "knowledge/helioatlas-helio3/docs/Analisis_Estrategico_para_la_Recoleccion_de_Helio-3_3He___Del_Regolito_Lunar_a_la_Captura_en_el_Punto_L1.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/helioatlas-helio3/docs/Comparative_Strategic_Analysis__The_Acquisition_of_Helium-3_3He_Lunar_Regolith_Mining_vs._Solar_Wind_Harvesting.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/helioatlas-helio3/docs/Informe_Tecnico-_Comparativa_de_Recoleccion_de_Helio-3_3He_Regolito_Lunar_vs.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/helioatlas-helio3/docs/Recoleccion_de_Helio_3.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/helioatlas-helio3/docs/Strategic_Roadmap_for_Helium-3_Extraction__Technical_Specifications_Economic_Models_and_Multi-Phase_Implementation_20262.md": {
+   "split": "test",
+   "pares": 1
+  },
+  "knowledge/helioatlas-helio3/package.json": {
+   "split": "val",
+   "pares": 1
+  },
+  "knowledge/helioatlas-helio3/tsconfig.json": {
+   "split": "test",
+   "pares": 1
+  },
+  "knowledge/hibridacion-ia-biologica-fmo/README.md": {
+   "split": "train",
+   "pares": 3
+  },
+  "knowledge/hibridacion-ia-biologica-fmo/docs/Aqui_tienes_el_script_maestro_unificado_main_atlas.md": {
+   "split": "test",
+   "pares": 6
+  },
+  "knowledge/hibridacion-ia-biologica-fmo/docs/Ejecutable_proyecto_inteligencia_artificial_hibridacion.md": {
+   "split": "train",
+   "pares": 7
+  },
+  "knowledge/hibridacion-ia-biologica-fmo/docs/FMO_Hybrid_AI_Technical_Report.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/hibridacion-ia-biologica-fmo/docs/Implementacion_Avanzada-_Proyecto_Atlas_Cientifico_FMO-HEOM-IA.md": {
+   "split": "test",
+   "pares": 4
+  },
+  "knowledge/iqm-he3-anti-platform/README.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/iqm-he3-anti-platform/docs/Plataforma_IQM-He3.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/ld-chip/README.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/ld-chip/docs/LD_Chip_1.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/ld-chip/docs/Resumen_Tecnico__Chip_Cuantico_Fotonico_Hibrido_LazaroDeepSeek_LD-Chip.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/lecn-llp-evolucion-cuantica/README.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/lecn-llp-evolucion-cuantica/docs/LOGARITHMUS_BIOLOGICUS_QUANTICUS_v2.0.docx.md": {
+   "split": "train",
+   "pares": 10
+  },
+  "knowledge/lecn-llp-evolucion-cuantica/docs/Manual_de_Implementacion_Tecnica_Sistema_LECN-LLP.md": {
+   "split": "test",
+   "pares": 19
+  },
+  "knowledge/llp_pack/README.md": {
+   "split": "val",
+   "pares": 2
+  },
+  "knowledge/llp_pack/cambio.json": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/llp_pack/conflictos.json": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/llp_pack/omniscience.json": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/llp_pack/ordenador_hibrido.json": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/llp_pack/proyectos/P001.json": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/llp_pack/proyectos/P003-AGsGPT.json": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/llp_pack/spec.json": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/logarithmus-biologicus-quanticus/README.md": {
+   "split": "train",
+   "pares": 4
+  },
+  "knowledge/logarithmus-biologicus-quanticus/docs/Logarithmus_Biologicus_Quanticus_v2.0.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/mei-rit-propulsion/MEI-RIT_MONOGRAFIA.md": {
+   "split": "train",
+   "pares": 17
+  },
+  "knowledge/mei-rit-propulsion/MEI-RIT_QC_MAPA_2026.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/mei-rit-propulsion/MEI-RIT_freq_13p56_vs_2p45.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/mei-rit-propulsion/MEI-RIT_proto1_BANCO.md": {
+   "split": "train",
+   "pares": 3
+  },
+  "knowledge/mei-rit-propulsion/MEI-RIT_proto1_DESIGN.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/mei-rit-propulsion/MEI-RIT_proto1_REALIZABLE.md": {
+   "split": "val",
+   "pares": 2
+  },
+  "knowledge/mei-rit-propulsion/MEI-RIT_proto1_RFQ.md": {
+   "split": "val",
+   "pares": 1
+  },
+  "knowledge/mei-rit-propulsion/MEI-RIT_v2.1_QC.md": {
+   "split": "train",
+   "pares": 12
+  },
+  "knowledge/mei-rit-propulsion/README.md": {
+   "split": "train",
+   "pares": 4
+  },
+  "knowledge/mei-rit-propulsion/docs/MEI-RIT_Proyecto_Propulsion_v2.0.md": {
+   "split": "train",
+   "pares": 7
+  },
+  "knowledge/mei-rit-propulsion/docs/MEI_RIT_Proyecto_Propuldion_Lazaro_Lopez_Paz_2026.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/mei-rit-propulsion/docs/MEI_RIT_Proyecto_propulsion_v1.1_Lazaro_Lopez_Paz_2026.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/mei-rit-propulsion/docs/Matriz_de_Tensores_Fisicos_CERO-A_y_MEI-RIT.md": {
+   "split": "train",
+   "pares": 4
+  },
+  "knowledge/mei-rit-propulsion/docs/Propuesta_Proyecto_MEI-RIT_Consolidado.md": {
+   "split": "train",
+   "pares": 8
+  },
+  "knowledge/mei-rit-propulsion/docs/Propuesta_de_Proyecto_Tecnologico_Propulsor_MEI-RIT_Metasurface-Enhanced_Iodine_RF_Ion_Thruster.md": {
+   "split": "train",
+   "pares": 102
+  },
+  "knowledge/mei-rit-propulsion/docs/import_numpy_as_np_2_Python_-1.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/mei-rit-propulsion/docs/notebooklm/02_MEI_RIT.md": {
+   "split": "train",
+   "pares": 9
+  },
+  "knowledge/mei-rit-propulsion/vqe_i2_scan.json": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/memoria-cognitiva-ia/README.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/metanano-microbiota-quantum/README.md": {
+   "split": "train",
+   "pares": 3
+  },
+  "knowledge/metanano-microbiota-quantum/docs/Addendum_Master_Document_MetaNanoMicrobiota_Quantum.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/metanano-microbiota-quantum/docs/Clinical_Pilot_Protocol_MetaNanoMicrobiota.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/metanano-microbiota-quantum/docs/FINAL_CONSOLIDATED_PACKAGE_INDEX.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/metanano-microbiota-quantum/docs/Final_Implementation_Package_MetaNanoMicrobiota_Quantum.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/metanano-microbiota-quantum/docs/GMP_DoE_Protocol_MetaNanoMicrobiota.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/metanano-microbiota-quantum/docs/Plataforma_Meta_Nano_Microbiota_Quantum.md": {
+   "split": "train",
+   "pares": 31
+  },
+  "knowledge/metanano-microbiota-quantum/docs/Proyecto_Global_Unificado_MetaNano_CERO-A.md": {
+   "split": "val",
+   "pares": 6
+  },
+  "knowledge/metanano-microbiota-quantum/docs/Updated_Patent_Draft_MetaNanoMicrobiota_Quantum_v2.md": {
+   "split": "test",
+   "pares": 1
+  },
+  "knowledge/metanano-microbiota-quantum/docs/notebooklm/05_MICROBIOTA.md": {
+   "split": "train",
+   "pares": 7
+  },
+  "knowledge/metano-oxido-nitrico/README.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/metano-oxido-nitrico/docs/Resumen_Tecnico__MetaNO_Quantum_Patch_v2_-_Sistema_de_Optimizacion_Endogena_de_Oxido_Nitrico.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/metano-oxido-nitrico/docs/notebooklm/04_METANO.md": {
+   "split": "train",
+   "pares": 6
+  },
+  "knowledge/nanocreativon-formalismo/README.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/nanocreativon-formalismo/docs/nanocreativon_report.md": {
+   "split": "val",
+   "pares": 1
+  },
+  "knowledge/nanocreativon-formalismo/nanocreativon_report.json": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/neuro-kinetic-parkinson-alzheimer/README.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/neuro-kinetic-parkinson-alzheimer/docs/Reporte_Tecnico_de_Capacidades__Validacion_de_Protocolos_de_Liberacion_Controlada_Neuroprotectora.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/neuroglyq/README.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/neuroglyq/docs/Copia_de_PROYECTO_NEUROGLYQ_v2.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/neuroglyq/docs/Informe_Tecnico_Integral_Plataforma_de_Neuromodulacion_de_Precision_NeuroGlyQ.md": {
+   "split": "train",
+   "pares": 8
+  },
+  "knowledge/neuroglyq/docs/NeuroGlyQ_Plataforma_Neuroinhibitoria_de_Precision_Cuantica_Guiada_por_Inteligencia_Artificial_-_Memoria_Tecnica_Definit.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/neuroglyq/docs/NeuroGlyQ__Plataforma_Neuroinhibitoria_de_Precision_Cuantica_Guiada_por_Inteligencia_Artificial.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/neuroglyq/docs/PROYECTO_NEUROGLYQ_v2.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/next-gen-quantum-architecture/README.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/nt-000-neuromorphic/README.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/nt-000-neuromorphic/docs/NT-000_Publicacion_Zenodo.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/nt-000-neuromorphic/docs/proyecto_nt000_informe_completo.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/nt-000-neuromorphic/docs/simulacion_cuantica_16pmvs_reporte.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/nuevos-inventos-ia/README.md": {
+   "split": "test",
+   "pares": 1
+  },
+  "knowledge/omni-diagnostico-medico/LICENSE-docs.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/omni-diagnostico-medico/README.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/omni-diagnostico-medico/docs/omni_2_proyecto.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/omni-diagnostico-medico/docs/proyecto_diagnostico_medico_para_todos.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/omniscience/README.md": {
+   "split": "train",
+   "pares": 6
+  },
+  "knowledge/omniscience/code/README_vibraciones.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/omniscience/docs/Analisis_vibraciones_cientificas_Grok.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/omniscience/docs/OMNISCIENCE-MV1-implementacion.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/omniscience/docs/OMNISCIENCE_Architecture_OCR.md": {
+   "split": "train",
+   "pares": 17
+  },
+  "knowledge/omniscience/docs/OMNISCIENCE_Documento_Maestro_2026.md": {
+   "split": "test",
+   "pares": 1
+  },
+  "knowledge/omniscience/docs/OMNISCIENCE_PUBLICACION_v1.0.0.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/omniscience/docs/OMNISCIENCE_dossier_completo.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/omniscience/drive/Lazaro_Lopez_Paz_autor.json": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/omniscience/drive/Lazaro_Lopez_Paz_citas.json": {
+   "split": "val",
+   "pares": 1
+  },
+  "knowledge/omniscience/drive/OMNISCIENCE_PUBLICACION_v1.0.0.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/omniscience/evidence_register.csv": {
+   "split": "train",
+   "pares": 50
+  },
+  "knowledge/ordenador-hibrido-no-binario/README.md": {
+   "split": "train",
+   "pares": 3
+  },
+  "knowledge/ordenador-hibrido-no-binario/docs/Manual_de_Fabricacion_y_Especificaciones_Tecnicas_-_Ordenador_No_Binario_Hibrido.md": {
+   "split": "train",
+   "pares": 12
+  },
+  "knowledge/ordenador-hibrido-no-binario/docs/Ordenador_hibrido.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/ordenador-hibrido-no-binario/docs/algoritmos_hibridos.md": {
+   "split": "train",
+   "pares": 4
+  },
+  "knowledge/ordenador-hibrido-no-binario/documento_maestro_proyecto.md": {
+   "split": "val",
+   "pares": 35
+  },
+  "knowledge/ordenador-hibrido-no-binario/drive/Estudio_viabilidad_arquitectura_hibrida_revisado.md": {
+   "split": "test",
+   "pares": 1
+  },
+  "knowledge/ordenador-hibrido-no-binario/drive/Manual_Fabricacion_Ordenador_No_Binario_Hibrido.md": {
+   "split": "train",
+   "pares": 3
+  },
+  "knowledge/ordenador-hibrido-no-binario/drive/Ordenador_hibrido_arroba.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/ordenador-hibrido-no-binario/drive/documento_maestro_proyecto.md": {
+   "split": "val",
+   "pares": 35
+  },
+  "knowledge/ordenador-hibrido-no-binario/estado_proyecto_llp.json": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/ordenador-hibrido-no-binario/registro_evidencia.json": {
+   "split": "train",
+   "pares": 24
+  },
+  "knowledge/pantographix-shield/README.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/peptidos-terapeuticos-ia/README.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/peptidos-terapeuticos-ia/docs/Dossier_Peptidos_Inteligentes_v2_Mejorado.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/peptidos-terapeuticos-ia/docs/Dossier_Peptidos_Inteligentes_v3_Realizable_Laboratorio.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/peptidos-terapeuticos-ia/docs/Geminis__Dossier_Maestro_Peptidos_Inteligentes_v3-2.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/peptidos-terapeuticos-ia/docs/Manual_Fabricacion_Todos_Peptidos_v31.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/peptidos-terapeuticos-ia/docs/Paquete_Completo_NeuroPlastin_Protocolo_Patente_v3.md": {
+   "split": "test",
+   "pares": 1
+  },
+  "knowledge/peptidos-terapeuticos-ia/docs/Protocolos_Laboratorio_NeuroPlastin_SenolytX_v3.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/peptidos-terapeuticos-ia/docs/informe_viabilidad_gravedad_tiempo.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/peptidos-terapeuticos-ia/docs/notebooklm/08_PEPTIDOS_NEURO.md": {
+   "split": "val",
+   "pares": 2
+  },
+  "knowledge/pliegue/README.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/q-matrix-autonomous-control/README.md": {
+   "split": "train",
+   "pares": 3
+  },
+  "knowledge/q-matrix-autonomous-control/docs/Q_MATRIX__Quantum_Materials_with_Autonomous_Tuning_Reinforcement_learning___Intelligent_eXperimentation.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/quantum-blueprint/README.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/quantum-blueprint/docs/Futuro_y_Fusion_de_Tecnologias_1.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/quantum-blueprint/docs/Plan_Maestro_de_Ejecucion__The_Quantum_Blueprint.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/quantum-topology-2026/README.md": {
+   "split": "test",
+   "pares": 1
+  },
+  "knowledge/quantum-topology-2026/docs/Dossier_Tecnico_de_Replicacion__Ecosistema_Cuantico-Fractal_Protocolo_Barcelona_2026.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/quantumsynovia-metalub/LICENSE-docs.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/quantumsynovia-metalub/QSM_Full_Publishable_Technical_Report.md": {
+   "split": "train",
+   "pares": 34
+  },
+  "knowledge/quantumsynovia-metalub/QSM_Video_Guion_Completo_Extenso.md": {
+   "split": "train",
+   "pares": 14
+  },
+  "knowledge/quantumsynovia-metalub/README.md": {
+   "split": "val",
+   "pares": 4
+  },
+  "knowledge/quantumsynovia-metalub/docs/Fusion_Registro_Maestro_Tecnico__Sistema_QuantumSynovia_MetaLub_QSM.md": {
+   "split": "val",
+   "pares": 2
+  },
+  "knowledge/quantumsynovia-metalub/docs/Informe_Tecnico_Maestro__QuantumSynovia_MetaLub_QSM_Registro_de_Tecnologia_y_Protocolos_Cientificos.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/quantumsynovia-metalub/docs/QSM_DFT_Complete_Presentation.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/quantumsynovia-metalub/docs/Registro_Maestro_Tecnico__Sistema_QuantumSynovia_MetaLub_QSM.md": {
+   "split": "val",
+   "pares": 1
+  },
+  "knowledge/quantumsynovia-metalub/docs/Registro_Maestro_de_Tecnologia__QuantumSynovia_MetaLub_QSM_-1.md": {
+   "split": "val",
+   "pares": 1
+  },
+  "knowledge/quantumsynovia-metalub/docs/notebooklm/03_QSM.md": {
+   "split": "train",
+   "pares": 7
+  },
+  "knowledge/red-neuronal-gpt-pytorch/README.md": {
+   "split": "train",
+   "pares": 3
+  },
+  "knowledge/red-neuronal-gpt-pytorch/docs/Formulacion_Cuantica_Variacional_y_AGsGPT.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/red-neuronal-gpt-pytorch/docs/Reporte_Tecnico_Consolidado_AGs_Core.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/red-neuronal-gpt-pytorch/docs/Zenodo_AGs_Core_v3_Complete_Specification.md": {
+   "split": "test",
+   "pares": 3
+  },
+  "knowledge/remplast-q/README.md": {
+   "split": "test",
+   "pares": 4
+  },
+  "knowledge/remplast-q/docs/REMPLAST-Q_ANX-Q-001_Quimicos_Custodia.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/remplast-q/docs/REMPLAST-Q_ARR-001_Paquete_Arranque.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/remplast-q/docs/REMPLAST-Q_CONV-EDAR-001_RevA.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/remplast-q/docs/REMPLAST-Q_DOC-000_Indice_Carta_Permisos.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/remplast-q/docs/REMPLAST-Q_ENV-001_Pack_Envio_GO0.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/remplast-q/docs/REMPLAST-Q_FAT-SAT-001_RevA.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/remplast-q/docs/REMPLAST-Q_INTK-001_RevA.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/remplast-q/docs/REMPLAST-Q_LAY-001_Implantacion.md": {
+   "split": "val",
+   "pares": 1
+  },
+  "knowledge/remplast-q/docs/REMPLAST-Q_PID-001_RevA.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/remplast-q/docs/REMPLAST-Q_SOP_HAZOP_RevA.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/remplast-q/docs/REMPLAST-Q_v2_1_Expediente_Ejecucion.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/remplast-q/docs/REMPLAST-Q_v2_Documento_Tecnico_Realizable.md": {
+   "split": "val",
+   "pares": 1
+  },
+  "knowledge/remplast-q/fuentes_cc_by/01_revision_tratamiento/revision_tratamiento_microplasticos.md": {
+   "split": "val",
+   "pares": 27
+  },
+  "knowledge/remplast-q/fuentes_cc_by/02_lodos/tratamiento_lodos_microplasticos.md": {
+   "split": "train",
+   "pares": 12
+  },
+  "knowledge/remplast-q/fuentes_cc_by/03_costes/comparativa_costes.md": {
+   "split": "train",
+   "pares": 9
+  },
+  "knowledge/remplast-q/fuentes_cc_by/04_plan_proyecto/plan_proyecto_remplast_q.md": {
+   "split": "train",
+   "pares": 15
+  },
+  "knowledge/remplast-q/fuentes_cc_by/05_solicitud_aei/presupuesto_aei.md": {
+   "split": "train",
+   "pares": 5
+  },
+  "knowledge/remplast-q/fuentes_cc_by/05_solicitud_aei/requisitos_aei.md": {
+   "split": "train",
+   "pares": 8
+  },
+  "knowledge/remplast-q/fuentes_cc_by/LICENSE.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/sensores-cuanticos/README.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/sensores-cuanticos/docs/Libro_Blanco_Sensores_Cuanticos.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/sensores-cuanticos/docs/Proyecto_1_Sensor_Cuantico_Lazaro_Lopez_Paz_v1-.md": {
+   "split": "val",
+   "pares": 18
+  },
+  "knowledge/sensores-cuanticos/docs/Proyecto_numero_2_del_30_7_2026.md": {
+   "split": "train",
+   "pares": 10
+  },
+  "knowledge/sensores-cuanticos/docs/Proyecto_numero_3_30_07_2026.md": {
+   "split": "train",
+   "pares": 18
+  },
+  "knowledge/sensores-cuanticos/docs/Proyecto_numero_4_30_07_2026.md": {
+   "split": "train",
+   "pares": 18
+  },
+  "knowledge/sensores-cuanticos/docs/Proyecto_numero_5_30_07_2026.md": {
+   "split": "train",
+   "pares": 21
+  },
+  "knowledge/sensores-cuanticos/docs/Proyecto_numero_6_30_07_2026.md": {
+   "split": "train",
+   "pares": 15
+  },
+  "knowledge/sensores-cuanticos/docs/Proyecto_numero_7_30_07_2026.md": {
+   "split": "train",
+   "pares": 16
+  },
+  "knowledge/sensores-cuanticos/docs/notebooklm/09_SENSORES_LDCHIP.md": {
+   "split": "train",
+   "pares": 2
+  },
+  "knowledge/swcnt-sintesis-quiral/README.md": {
+   "split": "train",
+   "pares": 3
+  },
+  "knowledge/swcnt-sintesis-quiral/docs/El_Laboratorio_del_Futuro__Como_la_IA_y_los_Robots_estan_Domando_los_Nanotubos_de_Carbono.md": {
+   "split": "test",
+   "pares": 1
+  },
+  "knowledge/swcnt-sintesis-quiral/docs/Nanotubos_de_Carbono_SWCNT_con_Optimizaci_on_Inteligente.md": {
+   "split": "val",
+   "pares": 1
+  },
+  "knowledge/total-quantum-immunity/README.md": {
+   "split": "train",
+   "pares": 3
+  },
+  "knowledge/total-quantum-immunity/docs/Copia_de_Cosechar_Ahora_Descifrar_Despues_La_Carrera_por_la_Inmunidad_Cuantica_Total.md": {
+   "split": "train",
+   "pares": 1
+  }
+ },
+ "fecha": "2026-10-30T10:46+02:00",
+ "ultima_fusion": {
+  "fecha": "2026-10-30T10:46+02:00",
+  "archivos_encontrados": [
+   "knowledge/gravedad/lora_pares.jsonl"
+  ],
+  "pares_leidos": 36,
+  "pares_nuevos": 7,
+  "nuevos_por_split": {
+   "train": 0,
+   "val": 7,
+   "test": 0
+  },
+  "simulados_nuevos": 0,
+  "duplicados": 0,
+  "rechazados": 1,
+  "datos_reescritos": true,
+  "simulados_script_habria_anadido": 28,
+  "simulados_restaurados_desde_backup": true,
+  "backup": "/workspace/backups/fusi-n-carpeta/20261030_0945_pre_merge_gravedad",
+  "near_dup_excluido": {
+   "linea": 24,
+   "jaccard": 0.9049,
+   "id_coincidente": "744936f2d1e1ba34",
+   "split_coincidente": "simulados"
+  },
+  "ids_val_anadidos": [
+   "65812676b7c79a72",
+   "1524c0f1f47b8f10",
+   "19338cbc3800793a",
+   "9ba4bbaafc6e156d",
+   "517c59babf809b46",
+   "48c0838451d2f827",
+   "da3e4c38216b29a7"
+  ],
+  "alcance": "solo 7 pares gravedad a val; sin simulados; sin train/test",
+  "aprobacion": "Lázaro 2026-10-30 09:44 Madrid vía Supervisor: Si fusióna"
+ },
+ "test_prerregistrado": {
+  "sha256": "0937f06c329f1744f22570dab347aca26fa487c771356027b9bdead33e6f8ef5",
+  "coincide": true,
+  "congelado": true
+ },
+ "simulados": {
+  "pares": 157,
+  "documentos": 34,
+  "sha256": "691962b2f4f11fc654cfb593247b1f91305dc013f15e42958e48ded1a4d16d05",
+  "por_split_origen": {
+   "train": 140,
+   "val": 17
+  },
+  "decision": "excluir simulados de train/val/test (Lázaro, 2026-10-21); merge 2026-10-30: script añadió 28 de gravedad y se restauró desde backup (alcance: solo 7 a val)"
+ },
+ "archivos_sha256": {
+  "rechazados.jsonl": "9ed0203ade92c9a281fed6a3723dd6470c6594ab3ffa2e31e8399ab84e4ef85a",
+  "retirados.jsonl": "00d9ef13a33d7991181ee72e70521198cebd640222699660ced5a543f9ca78d6",
+  "simulados.jsonl": "691962b2f4f11fc654cfb593247b1f91305dc013f15e42958e48ded1a4d16d05",
+  "sin_respuesta.jsonl": "fe53a5624aeb9f33cc91ab047c89ac7f5c9c4a8c4075d2b4f70df8c38ca95e8d",
+  "sin_respuesta_retirados.jsonl": "50fb14089b4ebb722b08f23acfcd53690768eb16944e1eabf5dae2c6d83a4733",
+  "sin_respuesta_v1.jsonl": "64f6863b90be2a24d1a36299fd7bf9ac8d89e8956bbe316701371b473825365e",
+  "test.jsonl": "0937f06c329f1744f22570dab347aca26fa487c771356027b9bdead33e6f8ef5",
+  "train.jsonl": "b45bbd4fe2da1fcba046f808389de64994bc969c9cdadf8ffa704efa8f28cb73",
+  "val.jsonl": "65f6b7f61b403730b9cd2afd969e8a7b6a5145c81c923a2733a0f6632f512f67",
+  "test_prerregistro.json": "f3d914df2964bb7a8ce1f14a87e0404e6be6012bb21439390c1fa6feec501ea5",
+  "test_ampliado_reserva.json": "4c43b959f7556f19e258f618b148a7c8bab1e41065bdf18c61fbb8a3c00fc551"
+ },
+ "revisiones": [
+  {
+   "fecha": "2026-10-21",
+   "cambio": "7 pares train/val con revision_licencia; ruta cero-a-amoniaco",
+   "sha256_previo": {
+    "train": "f569d8f33510460ece5602d3b9ad2866eff9f6df36795964dae2a80823492ca4",
+    "val": "48a579c0fd88cbaacc4b7bdf755864f69c17a033bf6d4db91fd781798ac37145"
+   }
+  }
+ ],
+ "sin_respuesta": {
+  "version": "v2",
+  "n": 100,
+  "por_estrato": {
+   "no_clinico": 75,
+   "sustituto_v2": 25
+  },
+  "v1_sha256": "64f6863b90be2a24d1a36299fd7bf9ac8d89e8956bbe316701371b473825365e"
+ }
+}
