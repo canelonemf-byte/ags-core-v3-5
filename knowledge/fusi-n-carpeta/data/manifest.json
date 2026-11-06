@@ -15,14 +15,14 @@
  ],
  "splits": {
   "train": {
-   "pares": 889,
-   "documentos": 214,
-   "sha256": "b45bbd4fe2da1fcba046f808389de64994bc969c9cdadf8ffa704efa8f28cb73"
+   "pares": 912,
+   "documentos": 216,
+   "sha256": "6ba2644aac45e55eae45ef23e7d5a2a4f29c66e92cf3c21d652c8115970a8f38"
   },
   "val": {
-   "pares": 200,
-   "documentos": 31,
-   "sha256": "65f6b7f61b403730b9cd2afd969e8a7b6a5145c81c923a2733a0f6632f512f67"
+   "pares": 217,
+   "documentos": 32,
+   "sha256": "3eb4eb249736615e0b212fab75dae78cb1d4b817128c873265eeffcd4756c1c7"
   },
   "test": {
    "pares": 66,
@@ -30,7 +30,7 @@
    "sha256": "0937f06c329f1744f22570dab347aca26fa487c771356027b9bdead33e6f8ef5"
   }
  },
- "total_pares": 1155,
+ "total_pares": 1195,
  "por_fuente": {
   "/workspace/knowledge/oraculo/matematicas/pares_matematicas.jsonl#AL-01": {
    "split": "train",
@@ -788,6 +788,18 @@
    "split": "train",
    "pares": 50
   },
+  "knowledge/oraculo/ciclos/2026-10-20.md": {
+   "split": "train",
+   "pares": 1
+  },
+  "knowledge/oraculo/matematicas/pares_matematicas.jsonl": {
+   "split": "val",
+   "pares": 17
+  },
+  "knowledge/oraculo/predicciones.json": {
+   "split": "train",
+   "pares": 22
+  },
   "knowledge/ordenador-hibrido-no-binario/README.md": {
    "split": "train",
    "pares": 3
@@ -1101,43 +1113,23 @@
    "pares": 1
   }
  },
- "fecha": "2026-10-30T10:46+02:00",
+ "fecha": "2026-11-06T15:04+02:00",
  "ultima_fusion": {
-  "fecha": "2026-10-30T10:46+02:00",
+  "fecha": "2026-11-06T15:04+02:00",
   "archivos_encontrados": [
-   "knowledge/gravedad/lora_pares.jsonl"
+   "/workspace/knowledge/oraculo/lora_pares.jsonl"
   ],
-  "pares_leidos": 36,
-  "pares_nuevos": 7,
+  "pares_leidos": 50,
+  "pares_nuevos": 40,
   "nuevos_por_split": {
-   "train": 0,
-   "val": 7,
+   "train": 23,
+   "val": 17,
    "test": 0
   },
-  "simulados_nuevos": 0,
+  "simulados_nuevos": 6,
   "duplicados": 0,
-  "rechazados": 1,
-  "datos_reescritos": true,
-  "simulados_script_habria_anadido": 28,
-  "simulados_restaurados_desde_backup": true,
-  "backup": "/workspace/backups/fusi-n-carpeta/20261030_0945_pre_merge_gravedad",
-  "near_dup_excluido": {
-   "linea": 24,
-   "jaccard": 0.9049,
-   "id_coincidente": "744936f2d1e1ba34",
-   "split_coincidente": "simulados"
-  },
-  "ids_val_anadidos": [
-   "65812676b7c79a72",
-   "1524c0f1f47b8f10",
-   "19338cbc3800793a",
-   "9ba4bbaafc6e156d",
-   "517c59babf809b46",
-   "48c0838451d2f827",
-   "da3e4c38216b29a7"
-  ],
-  "alcance": "solo 7 pares gravedad a val; sin simulados; sin train/test",
-  "aprobacion": "Lázaro 2026-10-30 09:44 Madrid vía Supervisor: Si fusióna"
+  "rechazados": 4,
+  "datos_reescritos": true
  },
  "test_prerregistrado": {
   "sha256": "0937f06c329f1744f22570dab347aca26fa487c771356027b9bdead33e6f8ef5",
@@ -1145,25 +1137,25 @@
   "congelado": true
  },
  "simulados": {
-  "pares": 157,
-  "documentos": 34,
-  "sha256": "691962b2f4f11fc654cfb593247b1f91305dc013f15e42958e48ded1a4d16d05",
+  "pares": 163,
+  "documentos": 37,
+  "sha256": "52eaee3b90c553627214e4a1a84606b6bf15b411a6715ad8610986aeec0ac451",
   "por_split_origen": {
-   "train": 140,
+   "train": 146,
    "val": 17
   },
-  "decision": "excluir simulados de train/val/test (Lázaro, 2026-10-21); merge 2026-10-30: script añadió 28 de gravedad y se restauró desde backup (alcance: solo 7 a val)"
+  "decision": "excluir simulados de train/val/test (Lázaro, 2026-10-21)"
  },
  "archivos_sha256": {
-  "rechazados.jsonl": "9ed0203ade92c9a281fed6a3723dd6470c6594ab3ffa2e31e8399ab84e4ef85a",
+  "rechazados.jsonl": "d60fed478b543d61fd4f32e7d1203cf0e3f199896833ee8599118da0023e2415",
   "retirados.jsonl": "00d9ef13a33d7991181ee72e70521198cebd640222699660ced5a543f9ca78d6",
-  "simulados.jsonl": "691962b2f4f11fc654cfb593247b1f91305dc013f15e42958e48ded1a4d16d05",
+  "simulados.jsonl": "52eaee3b90c553627214e4a1a84606b6bf15b411a6715ad8610986aeec0ac451",
   "sin_respuesta.jsonl": "fe53a5624aeb9f33cc91ab047c89ac7f5c9c4a8c4075d2b4f70df8c38ca95e8d",
   "sin_respuesta_retirados.jsonl": "50fb14089b4ebb722b08f23acfcd53690768eb16944e1eabf5dae2c6d83a4733",
   "sin_respuesta_v1.jsonl": "64f6863b90be2a24d1a36299fd7bf9ac8d89e8956bbe316701371b473825365e",
   "test.jsonl": "0937f06c329f1744f22570dab347aca26fa487c771356027b9bdead33e6f8ef5",
-  "train.jsonl": "b45bbd4fe2da1fcba046f808389de64994bc969c9cdadf8ffa704efa8f28cb73",
-  "val.jsonl": "65f6b7f61b403730b9cd2afd969e8a7b6a5145c81c923a2733a0f6632f512f67",
+  "train.jsonl": "6ba2644aac45e55eae45ef23e7d5a2a4f29c66e92cf3c21d652c8115970a8f38",
+  "val.jsonl": "3eb4eb249736615e0b212fab75dae78cb1d4b817128c873265eeffcd4756c1c7",
   "test_prerregistro.json": "f3d914df2964bb7a8ce1f14a87e0404e6be6012bb21439390c1fa6feec501ea5",
   "test_ampliado_reserva.json": "4c43b959f7556f19e258f618b148a7c8bab1e41065bdf18c61fbb8a3c00fc551"
  },
