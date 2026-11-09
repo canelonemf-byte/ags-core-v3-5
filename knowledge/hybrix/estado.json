@@ -10,7 +10,7 @@
       "MIT",
       "CC-BY-4.0"
     ],
-    "ultima_verificacion": "2026-11-02 Europe/Madrid"
+    "ultima_verificacion": "2026-11-09 Europe/Madrid"
   },
   "objetivo": "Orquestar telemetría bio-digital (API) y documentar diseño de nodo Bio-Core; separar hipótesis/simulación/experimento",
   "datos_clave": [
@@ -25,7 +25,8 @@
     "gemini-code-zenodo.json=metadatos_autor_zenodo_no_codigo_hybrix",
     "ucs_ingest_2026-11-02: hybrix_md_fragments=40; memoria 3230→3341 (+111 incl. ordenador renombrados)",
     "ordenador_hibrido: 4 archivos con espacios renombrados snake_case e ingeridos (71 fragmentos nuevos en esos 4)",
-    "hybrix_test_suite_local_tras_fixes: 3/3 OK (unittest)"
+    "hybrix_test_suite_local_tras_fixes: 3/3 OK (unittest)",
+    "2026-11-09_gemini_meta_agent: integrado GeminiMetaAgent+PheromoneBus; modelo default gemini-4-argon (GEMINI_MODEL); interactions+output_text verificados; argon cuota pendiente"
   ],
   "tareas": [
     "corregir ORCID en plantilla Zenodo o retirar id erróneo",
@@ -45,5 +46,5 @@
     "licencias aplicadas MIT software + CC BY 4.0 documentos",
     "sin push / sin publish / sin merge LoRA"
   ],
-  "proximo_paso": "Aprobar corrección de ORCID y etiquetado del certificado; opcional Sube del commit local hybrix"
+  "proximo_paso": "Probar GeminiMetaAgent en vivo con GEMINI_MODEL=gemini-3.5-flash o créditos en gemini-4-argon; opcional Sube del commit local hybrix L5"
 }

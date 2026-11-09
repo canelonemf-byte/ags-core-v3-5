@@ -8,12 +8,12 @@ cuando falla la red o la API de Gemini.
 
 import sys
 import os
+from pathlib import Path
 import unittest
 from unittest.mock import MagicMock, patch
 
-# Asegurar importación de hybrix_genai_l5
-sys.path.insert(0, "/workspace/scratch")
-import hybrix_genai_l5
+# Asegurar importación desde el paquete local HYBRIX
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from hybrix_genai_l5 import GenAIMetaAgent
 
 

@@ -4,6 +4,9 @@
 HYBRIX Capa L5: Meta-Orquestador mediante Google GenAI SDK e Interactions API.
 Permite optimizar hiperparámetros y realizar análisis cruzado de viabilidad celular
 con fallback automático a heurística local en caso de error de red o desconexión.
+
+Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA
+Licencia: MIT
 """
 
 import os
@@ -31,10 +34,13 @@ class GenAIMetaAgent:
     Agente de Capa L5 (Meta-Gobernanza) integrado con el SDK oficial 'google-genai'
     y la Interactions API ('client.interactions.create').
     Cuenta con conmutación automática (fallback) a heurística local ante errores de red.
+
+    Modelo por defecto: gemini-4-argon (existe en API; configurable con GEMINI_MODEL).
+    Verificado 2026-11-09 Europe/Madrid: interactions.create + output_text OK con gemini-3.5-flash.
     """
-    def __init__(self, model_name: str = "gemini-2.5-flash", api_key: Optional[str] = None):
-        self.model_name = model_name
-        self.api_key = api_key or os.environ.get("GEMINI_API_KEY", "")
+    def __init__(self, model_name: Optional[str] = None, api_key: Optional[str] = None):
+        self.model_name = (model_name or os.environ.get("GEMINI_MODEL") or "gemini-4-argon").strip()
+        self.api_key = api_key if api_key is not None else os.environ.get("GEMINI_API_KEY", "")
         self.client = None
         self.previous_interaction_id = None
         

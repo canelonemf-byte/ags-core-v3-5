@@ -1,0 +1,8 @@
+# Dependencias opcionales para Capa L5 (GeminiMetaAgent / GenAIMetaAgent)
+# Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA
+# Licencia: MIT
+google-genai>=1.0
+pydantic>=2.9
+fastapi>=0.115
+httpx>=0.27
+pytest>=8.0
