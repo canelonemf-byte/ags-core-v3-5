@@ -156,11 +156,12 @@ class ValidadorEsquemaLLP(WorkerAgent):
 
 @register
 class MonitorServicios(WorkerAgent):
-    name = "monitor_servicios"; description = "estado HTTP de API, UIs, NNC y LiteLLM (solo localhost)"
+    name = "monitor_servicios"; description = "estado HTTP de API, UIs, NNC, matriz_el_prat y LiteLLM (solo localhost)"
     interval = 300
     URLS = {"api_8000": "http://127.0.0.1:8000/health", "ui_8501": "http://127.0.0.1:8501/",
             "ucs_8502": "http://127.0.0.1:8502/", "nnc_8080": "http://127.0.0.1:8080/", "nnc_8010": "http://127.0.0.1:8010/",
-            "litellm": os.getenv("LITELLM_BASE_URL", "http://localhost:4000") + "/health/liveliness"}
+            "matriz_8510": "http://127.0.0.1:8510/",
+            "litellm": os.getenv("LITELLM_BASE_URL", "http://localhost:4000") + "/health/readiness"}
     def check(self):
         import httpx
         st = {}
@@ -236,7 +237,7 @@ class GeneradorParesLora(WorkerAgent):
         for s in ("train", "val", "test"):
             for l in (DATA / f"{s}.jsonl").read_text(encoding="utf-8").splitlines():
                 if l.strip(): seen.add(key(json.loads(l)))
-        files = [p for p in sorted(KN.rglob("*.jsonl")) if DATA not in p.parents] + [p for p in self.SOURCES if p.exists()]
+        files = [p for p in sorted(KN.rglob("*.jsonl")) if DATA not in p.parents and p != KN / "agsgpt-lora" / "drive" / "referencia_runtime" / "auto_log_drive.jsonl"] + [p for p in self.SOURCES if p.exists()]
         nuevos, simulados, invalidos, ya = [], [], 0, 0
         for p in files:
             for l in p.read_text(encoding="utf-8").splitlines():

@@ -45,6 +45,10 @@ METRICS_FILE = Path(
     os.environ.get("AGS_MASTER_METRICS_FILE", "/workspace/agsgpt/data/master_metrics.json")
 )
 API_BASE = os.environ.get("AGS_BASE_URL", "http://127.0.0.1:8000")
+# Filas de historial de comprobaciones que se conservan por app (≈ 1 año cada 20 min).
+MAX_CHECKS = int(os.environ.get("AGS_APP_REPORTS_MAX_CHECKS", "30000"))
+# Filas de 'checks' que se vuelcan al Excel (las más recientes).
+XLSX_MAX_CHECKS = int(os.environ.get("AGS_APP_REPORTS_XLSX_CHECKS", "2000"))
 
 
 @dataclass
@@ -445,11 +449,16 @@ def write_db(spec: AppSpec, visits: int, unicos: int, http_status: Optional[int]
     data_dir = spec.root / "data"
     data_dir.mkdir(parents=True, exist_ok=True)
     db_path = data_dir / f"{spec.app_id}.db"
-    if db_path.exists():
-        db_path.unlink()
-    conn = sqlite3.connect(str(db_path))
+    # Historial: la DB de cada app se conserva entre pasadas (antes se borraba en cada una).
+    # - apps: una fila por app (estado actual, upsert)
+    # - checks: se ACUMULA (serie temporal), recortada a MAX_CHECKS filas
+    # - hallazgos/ecuaciones: instantánea de la spec (se reemplaza, no se duplica)
+    conn = sqlite3.connect(str(db_path), timeout=30)
     try:
         conn.executescript(SCHEMA)
+        conn.execute("DELETE FROM apps WHERE name = ?", (spec.app_id,))
+        conn.execute("DELETE FROM hallazgos WHERE project = ?", (spec.app_id,))
+        conn.execute("DELETE FROM ecuaciones WHERE project = ?", (spec.app_id,))
         status = "ok" if http_status and 200 <= http_status < 400 else (
             "sin_ui" if spec.url is None and spec.port is None else "down_or_error"
         )
@@ -475,6 +484,11 @@ def write_db(spec: AppSpec, visits: int, unicos: int, http_status: Optional[int]
         conn.execute(
             "INSERT INTO checks(timestamp,app,http_status,tests_result,detail) VALUES (?,?,?,?,?)",
             (now_iso(), spec.app_id, http_status, http_detail, http_detail),
+        )
+        conn.execute(
+            "DELETE FROM checks WHERE app = ? AND id NOT IN "
+            "(SELECT id FROM checks WHERE app = ? ORDER BY id DESC LIMIT ?)",
+            (spec.app_id, spec.app_id, MAX_CHECKS),
         )
         for h in hallazgos:
             conn.execute(
@@ -524,7 +538,13 @@ def write_xlsx(spec: AppSpec, db_path: Path) -> Path:
     header_font = Font(color="FFFFFF", bold=True)
     for table in ("apps", "checks", "hallazgos", "ecuaciones"):
         ws = wb.create_sheet(table)
-        cur = conn.execute(f"SELECT * FROM {table}")
+        if table == "checks":
+            cur = conn.execute(
+                "SELECT * FROM (SELECT * FROM checks WHERE app = ? ORDER BY id DESC LIMIT ?) ORDER BY id",
+                (spec.app_id, XLSX_MAX_CHECKS),
+            )
+        else:
+            cur = conn.execute(f"SELECT * FROM {table}")
         cols = [d[0] for d in cur.description]
         ws.append(cols)
         for col_i, _ in enumerate(cols, 1):

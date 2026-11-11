@@ -35,5 +35,5 @@ def test_integrations_configurable():
 
 def test_health_reports_litellm_state():
     j = client.get("/health").json()
-    assert j["version"] == "3.6.0" and j["litellm"] in {"ok", "unreachable"} or j["litellm"].startswith("http_")
+    assert j["version"] == "3.6.0" and j["litellm"] in {"ready", "unreachable"} or j["litellm"].startswith("http_")
     assert "docker" not in j

@@ -1,6 +1,6 @@
 # ags-core-v3-5
 
-# AGs-Core v3.6  84 agentes: 46 agentes de proyecto (v3.6, uno por repositorio) + los 38 de la v3.5: 31 por LLM (vía LiteLLM, de la v3.4) + 6 agentes de herramientas físicas deterministas (`tool_<proyecto>`) + 1 agente local `agsgpt` (PyTor
+# AGs-Core v3.6 — 121 agentes (verificado con `GET /health` el 11-11-2026): 53 agentes de proyecto (uno por proyecto de `projects.json`) + 38 de la v3.5 (31 por LLM vía LiteLLM, 6 herramientas físicas deterministas `tool_<proyecto>` y 1 agente local `agsgpt` PyTorch) + 7 sub-agentes locales (`app/agents/subagents.py`) + 23 de matriz_el_prat, gemini_reviewer y maestro_cuantico.
 
 ## Autoría
 
@@ -41,8 +41,31 @@ ui/
 ## Instalación
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt          # pruebas: pip install -r requirements-dev.txt
 ```
+
+## Operación (puertos y recuperación)
+
+| servicio | puerto | log |
+|---|---|---|
+| API FastAPI | 8000 (`/health`) | `/workspace/agsgpt/api.log` |
+| UI de estado (Streamlit) | 8501 | `/workspace/agsgpt/ui.log` |
+| UI UCS (Streamlit) | 8502 | `/workspace/agsgpt/ucs_ui.log` |
+| matriz_el_prat (Streamlit, repo aparte) | 8510 | `/workspace/agsgpt/matriz_ui.log` |
+| NNC dashboard / API (repo aparte) | 8080 / 8010 | `/workspace/agsgpt/NNC/logs/` |
+| LiteLLM (opcional) | 4000 (`/health/readiness`) | `/workspace/agsgpt/litellm.log` |
+| Autopilot | — | `/workspace/agsgpt/autopilot.log` |
+
+Tras una restauración del equipo (venvs perdidos, servicios caídos):
+
+```bash
+scripts/recuperar_todo.sh               # recrea venvs, limpia .pid obsoletos, arranca todo y verifica HTTP
+scripts/recuperar_todo.sh --verificar   # solo comprobación
+```
+
+El autopilot genera los informes por app (`scripts/build_app_reports.py --apps-only`) cada 20 min
+(`AGS_APP_REPORTS_INTERVAL`, límite `AGS_APP_REPORTS_TIMEOUT`=300 s) y registra la duración en el log.
+Cada app conserva su propia DB (`data/<app>.db`, historial de comprobaciones) y su propio Excel; no se mezclan.
 
 
 ## Uso

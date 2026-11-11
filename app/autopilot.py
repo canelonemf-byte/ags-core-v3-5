@@ -56,6 +56,38 @@ def acquire_lock(pid_file):
     return fd
 
 log = logging.getLogger("autopilot")
+
+# Informes por app: antes se lanzaban en CADA ciclo (60 s) con timeout de 120 s y el 9-11-2026
+# un ciclo superó ese límite. Ahora se espacian (por defecto 20 min) y se registra la duración.
+APP_REPORTS_INTERVAL = float(os.getenv("AGS_APP_REPORTS_INTERVAL", 20 * 60))
+APP_REPORTS_TIMEOUT = float(os.getenv("AGS_APP_REPORTS_TIMEOUT", 300))
+APP_REPORTS_SCRIPT = APP.parent / "scripts" / "build_app_reports.py"
+
+
+def maybe_build_app_reports(state: dict, now: float | None = None, runner=None) -> dict | None:
+    """Ejecuta scripts/build_app_reports.py --apps-only si han pasado APP_REPORTS_INTERVAL
+    segundos desde la última vez (estado en state["build_app_reports"]). Devuelve un resumen
+    {"rc", "segundos", "timeout"} o None si aún no tocaba. runner permite inyectar subprocess.run en tests."""
+    import subprocess
+    now = time.time() if now is None else now
+    if now - state.get("build_app_reports", 0) < APP_REPORTS_INTERVAL:
+        return None
+    state["build_app_reports"] = now
+    if not APP_REPORTS_SCRIPT.is_file():
+        return None
+    runner = runner or subprocess.run
+    t0 = time.monotonic()
+    try:
+        r = runner([sys.executable, str(APP_REPORTS_SCRIPT), "--apps-only"], cwd=str(APP.parent),
+                   timeout=APP_REPORTS_TIMEOUT, check=False, capture_output=True)
+        res = {"rc": getattr(r, "returncode", None), "segundos": round(time.monotonic() - t0, 1), "timeout": False}
+    except subprocess.TimeoutExpired:
+        res = {"rc": None, "segundos": round(time.monotonic() - t0, 1), "timeout": True}
+    lvl = logging.INFO if res["rc"] == 0 else logging.WARNING
+    log.log(lvl, "build_app_reports: rc=%s duracion=%.1fs timeout=%s (limite %.0fs, cada %.0fs)",
+            res["rc"], res["segundos"], res["timeout"], APP_REPORTS_TIMEOUT, APP_REPORTS_INTERVAL)
+    return res
+
 _stop = False
 
 
@@ -117,17 +149,8 @@ def main(argv=None):
             except Exception:
                 log.exception("fallo en matriz_el_prat")
             stats = sup.run_cycle(max_tasks=10_000)
-            try:  # informes por app (DB+xlsx propios; no mezcla)
-                import subprocess, sys
-                script = Path(__file__).resolve().parents[1] / "scripts" / "build_app_reports.py"
-                if script.is_file():
-                    subprocess.run(
-                        [sys.executable, str(script), "--apps-only"],
-                        cwd=str(script.parent.parent),
-                        timeout=120,
-                        check=False,
-                        capture_output=True,
-                    )
+            try:  # informes por app (DB+xlsx propios; no mezcla): cada 15-30 min, no en cada ciclo
+                maybe_build_app_reports(_sub_state)
             except Exception:
                 log.exception("fallo en build_app_reports")
             sup.queue.kv_set("autopilot_heartbeat", {"ts": time.time(), "pid": os.getpid(), "cycle": n, "interval": a.interval})

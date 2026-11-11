@@ -109,6 +109,22 @@ def test_claim_checks():
     assert by["physics"] == [1] and 2 in by["hype"] and 3 in by["number"] and 4 not in by["number"] and 5 not in by.get("physics", []) and by["validation"] == [6]
 
 
+@pytest.mark.parametrize("texto,esperado", [
+    ("# p\n\n## Fuentes\n- BOPB 26-10-2026", False),
+    ("# p\n\nDato tomado de https://bop.diba.cat/anunci/4006661", False),
+    ("# p\n\n## Bibliografía\n- Autor (2020)", False),
+    ("# p\n\nidea breve sin citas", True),
+])
+def test_no_references_acepta_fuentes_y_urls(tmp_path, texto, esperado):
+    root = tmp_path / "k"
+    (root / "p").mkdir(parents=True)
+    (root / "p" / "README.md").write_text(texto, encoding="utf-8")
+    idx = KnowledgeIndex(root, None, prefer_sklearn=False)
+    proj = {"id": "p", "license": "mit", "tools": [], "broken_paths": []}
+    kinds = {f["kind"] for f in checks.project_level("missing_pieces", idx, proj, [])}
+    assert ("no_references" in kinds) is esperado
+
+
 def test_project_level_missing_and_collapse(tmp_path):
     root = tmp_path / "k"
     (root / "solo").mkdir(parents=True)

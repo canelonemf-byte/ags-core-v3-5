@@ -47,8 +47,8 @@ def auth(x_api_key: str | None):
 async def litellm_state():
     try:
         async with httpx.AsyncClient(base_url=settings.LITELLM_BASE_URL, timeout=settings.HEALTH_TIMEOUT) as client:
-            r = await client.get("/health/liveliness")
-        return "ok" if r.status_code == 200 else f"http_{r.status_code}"
+            r = await client.get("/health/readiness")
+        return "ready" if r.status_code == 200 else f"http_{r.status_code}"
     except httpx.HTTPError:
         return "unreachable"
 

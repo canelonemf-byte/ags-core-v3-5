@@ -71,6 +71,7 @@ AI_GEN = re.compile(
     re.I,
 )
 EXTERNAL_COPYRIGHT = re.compile(r"(?:copyright\b|©)\s*(?:\(c\)\s*)?(?:(?:19|20)\d\d\s*)?([^\n]{0,80})", re.I)
+REFERENCES = re.compile(r"referencias|references|bibliograf|doi|arxiv|et al|\bfuentes\b|\bfuente:|\bsources?\b|https?://\S+")
 URL = re.compile(r"https?://\S+|\b[\w.-]+\.(?:com|org|net|io|es)/\S*")
 
 
@@ -213,7 +214,9 @@ def project_level(kind: str, index, project: dict, findings: list[dict]) -> list
             extra.append(_f("no_tests", "medium", "-", 0, f"hay {len(code)} archivo(s) de código pero ningún test"))
         if code and not any(n.endswith(("requirements.txt", "pyproject.toml", "package.json", "Cargo.toml")) for n in names) and any(n.endswith(".py") for n in code):
             extra.append(_f("no_requirements", "low", "-", 0, "código Python sin requirements.txt/pyproject: no es reproducible"))
-        if not re.search(r"referencias|references|bibliograf|doi|arxiv|et al", dtp):
+        # Referencias: además de las palabras clásicas, cuentan una sección «Fuentes»/«Bibliografía»
+        # y URL http(s) de fuentes (p. ej. BOPB, BOE, datos abiertos) citadas en la documentación.
+        if not REFERENCES.search(dtp):
             extra.append(_f("no_references", "high", "-", 0, "ninguna referencia bibliográfica en los documentos"))
         if not re.search(r"resultado|experiment|medicion|medida|ensayo|prototipo|validaci|benchmark|results", dtp):
             extra.append(_f("no_validation", "medium", "-", 0, "no se describen resultados experimentales, prototipos ni validación"))
