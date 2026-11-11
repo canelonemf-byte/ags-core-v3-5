@@ -107,7 +107,7 @@ arrancar() {  # arrancar <nombre> <pidfile> <patron> <puerto|-> <log> <dir> <cmd
     # clave de la API por entorno (nunca por argv, no aparece en `ps`)
     if [ "${CON_CLAVE:-0}" = 1 ] && [ -f "$REPO/data/api_key" ]; then AGS_API_KEY="$(cat "$REPO/data/api_key")"; export AGS_API_KEY; fi
     [ -n "${API_URL_ENV:-}" ] && export API_URL="$API_URL_ENV"
-    nohup "$@" >> "$lg" 2>&1 &
+    nohup "$@" >> "$lg" 2>&1 < /dev/null &
     echo $! > "$f"
   )
   log "$n arrancado (pid $(cat "$f"))"
@@ -150,7 +150,9 @@ servicios() {
     limpiar_pid "$ROOT/autopilot.pid" "app.autopilot"
     if pid_vivo_de "$ROOT/autopilot.pid" "app.autopilot"; then log "autopilot ya en marcha (pid $(cat "$ROOT/autopilot.pid"))"
     else
-      ( cd "$REPO" && nohup "$VENV/bin/python" -m app.autopilot --interval 60 >> "$ROOT/autopilot.log" 2>&1 & echo $! > "$ROOT/autopilot.pid" )
+      # ojo: `cd X && cmd &` pondría en segundo plano un subshell (el pid sería el de bash, no el de python)
+      ( cd "$REPO"; nohup "$VENV/bin/python" -m app.autopilot --interval 60 >> "$ROOT/autopilot.log" 2>&1 < /dev/null &
+        echo $! > "$ROOT/autopilot.pid" )
       log "autopilot arrancado (pid $(cat "$ROOT/autopilot.pid"))"
     fi
   fi
