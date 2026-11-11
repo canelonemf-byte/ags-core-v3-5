@@ -8,7 +8,7 @@ Gemini ajustes de hiperparámetros (p. ej. Beta Ridge) en JSON.
 
 Verificación API (2026-11-09 Europe/Madrid):
 - Modelo `gemini-4-argon` existe en models.list(); cuota agotada en la prueba
-  en vivo → default configurable con GEMINI_MODEL (recomendado: gemini-3.5-flash).
+  en vivo → default gemini-3.5-flash (2026-11-11), sobrescribible con GEMINI_MODEL.
 - SDK google-genai 3.0.0: client.interactions.create y interaction.output_text
   confirmados con llamada real a gemini-3.5-flash.
 - Fallback: client.models.generate_content si interactions no está disponible.
@@ -36,9 +36,9 @@ except ImportError:  # pragma: no cover - entorno sin SDK
     genai = None  # type: ignore
     GENAI_AVAILABLE = False
 
-# Default: modelo pedido por el usuario; sobrescribible por GEMINI_MODEL.
-# Si argon no tiene cuota, usar p. ej. gemini-3.5-flash.
-DEFAULT_GEMINI_MODEL = "gemini-4-argon"
+# Default: gemini-3.5-flash (respondió en la prueba en vivo del 2026-11-09). gemini-4-argon existe en
+# models.list() pero agotó cuota (429); se puede elegir con GEMINI_MODEL=gemini-4-argon.
+DEFAULT_GEMINI_MODEL = "gemini-3.5-flash"
 
 
 class PheroBusProtocol(Protocol):

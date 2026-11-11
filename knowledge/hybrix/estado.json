@@ -10,7 +10,7 @@
       "MIT",
       "CC-BY-4.0"
     ],
-    "ultima_verificacion": "2026-11-09 Europe/Madrid"
+    "ultima_verificacion": "2026-11-11 Europe/Madrid"
   },
   "objetivo": "Orquestar telemetría bio-digital (API) y documentar diseño de nodo Bio-Core; separar hipótesis/simulación/experimento",
   "datos_clave": [
@@ -26,7 +26,8 @@
     "ucs_ingest_2026-11-02: hybrix_md_fragments=40; memoria 3230→3341 (+111 incl. ordenador renombrados)",
     "ordenador_hibrido: 4 archivos con espacios renombrados snake_case e ingeridos (71 fragmentos nuevos en esos 4)",
     "hybrix_test_suite_local_tras_fixes: 3/3 OK (unittest)",
-    "2026-11-09_gemini_meta_agent: integrado GeminiMetaAgent+PheromoneBus; modelo default gemini-4-argon (GEMINI_MODEL); interactions+output_text verificados; argon cuota pendiente"
+    "2026-11-09_gemini_meta_agent: integrado GeminiMetaAgent+PheromoneBus; modelo default gemini-4-argon (GEMINI_MODEL); interactions+output_text verificados; argon cuota pendiente",
+    "2026-11-11_l5_integrado_en_main: PheromoneBus+GeminiMetaAgent conectados a /predictions y /predictions/batch (BackgroundTasks); GET /api/v1/hybrix/l5/status; modelo default gemini-3.5-flash (override GEMINI_MODEL); estado API fuera del cwd (HYBRIX_DB_PATH / HYBRIX_DATA_DIR / ~/.local/share/hybrix); pydantic min_length/max_length; tests paquete 19/19 + CI 4/4"
   ],
   "tareas": [
     "corregir ORCID en plantilla Zenodo o retirar id erróneo",
@@ -46,5 +47,5 @@
     "licencias aplicadas MIT software + CC BY 4.0 documentos",
     "sin push / sin publish / sin merge LoRA"
   ],
-  "proximo_paso": "Probar GeminiMetaAgent en vivo con GEMINI_MODEL=gemini-3.5-flash o créditos en gemini-4-argon; opcional Sube del commit local hybrix L5"
+  "proximo_paso": "Prueba en vivo del L5 con GEMINI_API_KEY (gemini-3.5-flash) pendiente; opcional Sube de los commits locales hybrix"
 }

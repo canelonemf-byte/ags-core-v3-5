@@ -13,8 +13,18 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import APIKeyHeader
 from pydantic import BaseModel, Field
 
+def _default_db_path() -> Path:
+    """Estado persistente FUERA del directorio de trabajo (antes: ./hybrix_api_state.json en el cwd).
+    Prioridad: HYBRIX_DB_PATH > HYBRIX_DATA_DIR > $XDG_DATA_HOME/hybrix > ~/.local/share/hybrix."""
+    if os.getenv("HYBRIX_DB_PATH"):
+        return Path(os.environ["HYBRIX_DB_PATH"])
+    base = os.getenv("HYBRIX_DATA_DIR") or os.path.join(
+        os.getenv("XDG_DATA_HOME") or os.path.join(os.path.expanduser("~"), ".local", "share"), "hybrix")
+    return Path(base) / "hybrix_api_state.json"
+
+
 API_KEY = os.getenv("HYBRIX_API_KEY", "")
-DB_PATH = Path(os.getenv("HYBRIX_DB_PATH", "hybrix_api_state.json"))
+DB_PATH = _default_db_path()
 PROJECTS_PATH = Path(os.getenv("HYBRIX_PROJECTS_PATH", "projects.json"))
 MAX_RECORDS = int(os.getenv("HYBRIX_MAX_RECORDS", "100000"))
 MAX_PAGE_SIZE = 1000

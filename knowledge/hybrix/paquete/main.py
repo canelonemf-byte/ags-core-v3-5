@@ -9,13 +9,33 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from fastapi import Depends, FastAPI, HTTPException, Query, Request, Security
+from fastapi import BackgroundTasks, Depends, FastAPI, HTTPException, Query, Request, Security
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import APIKeyHeader
 from pydantic import BaseModel, Field, field_validator
 
+# Capa L5 (meta-gobernanza): bus de feromonas + GeminiMetaAgent. Si faltan los módulos, la API sigue igual.
+try:
+    from hybrix_phero_bus import PheromoneBus
+    from gemini_meta_agent import GeminiMetaAgent
+    L5_DISPONIBLE = True
+except ImportError:  # pragma: no cover
+    PheromoneBus = None  # type: ignore
+    GeminiMetaAgent = None  # type: ignore
+    L5_DISPONIBLE = False
+
+def _default_db_path() -> Path:
+    """Estado persistente FUERA del directorio de trabajo (antes: ./hybrix_api_state.json en el cwd).
+    Prioridad: HYBRIX_DB_PATH > HYBRIX_DATA_DIR > $XDG_DATA_HOME/hybrix > ~/.local/share/hybrix."""
+    if os.getenv("HYBRIX_DB_PATH"):
+        return Path(os.environ["HYBRIX_DB_PATH"])
+    base = os.getenv("HYBRIX_DATA_DIR") or os.path.join(
+        os.getenv("XDG_DATA_HOME") or os.path.join(os.path.expanduser("~"), ".local", "share"), "hybrix")
+    return Path(base) / "hybrix_api_state.json"
+
+
 API_KEY = os.getenv("HYBRIX_API_KEY", "")
-DB_PATH = Path(os.getenv("HYBRIX_DB_PATH", "hybrix_api_state.json"))
+DB_PATH = _default_db_path()
 PROJECTS_PATH = Path(os.getenv("HYBRIX_PROJECTS_PATH", "projects.json"))
 MAX_RECORDS = int(os.getenv("HYBRIX_MAX_RECORDS", "100000"))
 MAX_PAGE_SIZE = 1000
@@ -65,7 +85,7 @@ class TelemetryData(BaseModel):
 
 
 class TelemetryBatch(BaseModel):
-    items: List[TelemetryData] = Field(..., min_items=1, max_items=500)
+    items: List[TelemetryData] = Field(..., min_length=1, max_length=500)
 
 
 class PredictionData(BaseModel):
@@ -89,21 +109,53 @@ class PredictionData(BaseModel):
 
 
 class PredictionBatch(BaseModel):
-    items: List[PredictionData] = Field(..., min_items=1, max_items=500)
+    items: List[PredictionData] = Field(..., min_length=1, max_length=500)
 
 
 def _guardar_estado(db: Dict[str, Any]) -> None:
     tmp = DB_PATH.with_suffix(".tmp")
     try:
+        DB_PATH.parent.mkdir(parents=True, exist_ok=True)
         tmp.write_text(json.dumps({"telemetry": db["telemetry"], "predictions": db["predictions"]}), encoding="utf-8")
         tmp.replace(DB_PATH)
     except OSError:
         logger.exception("Error al guardar estado en %s", DB_PATH)
 
 
+L5_ENABLED = os.getenv("HYBRIX_L5_ENABLED", "1") not in ("0", "false", "no")
+L5_INTERVAL = int(os.getenv("HYBRIX_L5_INTERVAL", "50"))
+
+
+def _init_l5(app: FastAPI) -> None:
+    """Crea el bus de feromonas y el GeminiMetaAgent (modelo: GEMINI_MODEL o gemini-3.5-flash).
+    Sin GEMINI_API_KEY el agente queda en estado 'pending' y no llama a la red."""
+    app.state.phero = None
+    app.state.l5 = None
+    if not (L5_ENABLED and L5_DISPONIBLE):
+        return
+    app.state.phero = PheromoneBus()
+    app.state.l5 = GeminiMetaAgent(app.state.phero, None, analysis_interval=L5_INTERVAL)
+
+
+def _l5_feed(records: List[Dict[str, Any]]) -> None:
+    """Deposita cada predicción como feromona 'prediccion_final' y avanza un ciclo del agente L5.
+    Se ejecuta en segundo plano (BackgroundTasks) para no retrasar la respuesta HTTP."""
+    agent = getattr(app.state, "l5", None)
+    bus = getattr(app.state, "phero", None)
+    if agent is None or bus is None:
+        return
+    for r in records:
+        try:
+            bus.deposit("prediccion_final", r, ttl_s=300)
+            agent.step()
+        except Exception:  # el L5 nunca debe tumbar la API
+            logger.exception("[L5] fallo al procesar la predicción trial_id=%s", r.get("trial_id"))
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     app.state.db = {"projects_meta": {}, "telemetry": [], "predictions": []}
+    _init_l5(app)
     if PROJECTS_PATH.exists():
         try:
             app.state.db["projects_meta"] = json.loads(PROJECTS_PATH.read_text(encoding="utf-8"))
@@ -210,18 +262,19 @@ def post_telemetry_batch(batch: TelemetryBatch) -> Dict[str, Any]:
 
 
 @app.post("/api/v1/hybrix/predictions", status_code=201, dependencies=[Depends(require_api_key)])
-def post_prediction(data: PredictionData) -> Dict[str, Any]:
+def post_prediction(data: PredictionData, background_tasks: BackgroundTasks) -> Dict[str, Any]:
     record = data.model_dump()
     record["timestamp"] = record["timestamp"] or utc_now()
     record["received_at"] = utc_now()
     with _lock:
         _append(app.state.db["predictions"], record)
         _guardar_estado(app.state.db)
+    background_tasks.add_task(_l5_feed, [dict(record)])
     return {"status": "success", "inserted": 1}
 
 
 @app.post("/api/v1/hybrix/predictions/batch", status_code=201, dependencies=[Depends(require_api_key)])
-def post_prediction_batch(batch: PredictionBatch) -> Dict[str, Any]:
+def post_prediction_batch(batch: PredictionBatch, background_tasks: BackgroundTasks) -> Dict[str, Any]:
     now = utc_now()
     records = []
     for item in batch.items:
@@ -233,7 +286,28 @@ def post_prediction_batch(batch: PredictionBatch) -> Dict[str, Any]:
         for record in records:
             _append(app.state.db["predictions"], record)
         _guardar_estado(app.state.db)
+    background_tasks.add_task(_l5_feed, [dict(r) for r in records])
     return {"status": "success", "inserted": len(records)}
+
+
+@app.get("/api/v1/hybrix/l5/status", dependencies=[Depends(require_read_access)])
+def get_l5_status() -> Dict[str, Any]:
+    """Estado de la capa L5 (GeminiMetaAgent). No expone claves."""
+    agent = getattr(app.state, "l5", None)
+    bus = getattr(app.state, "phero", None)
+    if agent is None:
+        return {"enabled": False, "status": "disabled" if not L5_ENABLED else "unavailable"}
+    return {
+        "enabled": True,
+        "status": agent.status,
+        "model": agent.model_name,
+        "cycle_count": agent.cycle_count,
+        "analysis_interval": agent.analysis_interval,
+        "buffer": len(agent.history_buffer),
+        "buffer_max": agent.history_buffer.maxlen,
+        "last_error": agent.last_error,
+        "ultima_directriz": bus.sniff("gemini_hyperparameters_update") if bus else None,
+    }
 
 
 @app.get("/api/v1/hybrix/telemetry", dependencies=[Depends(require_read_access)])
