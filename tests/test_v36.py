@@ -114,6 +114,9 @@ def test_claim_checks():
     ("# p\n\nDato tomado de https://bop.diba.cat/anunci/4006661", False),
     ("# p\n\n## Bibliografía\n- Autor (2020)", False),
     ("# p\n\nidea breve sin citas", True),
+    ("# p\n\nCódigo: https://github.com/canelonemf-byte/nnc", True),  # el propio repo no es una fuente
+    ("# p\n\nLicencia https://creativecommons.org/licenses/by/4.0/legalcode", True),
+    ("# p\n\nWGS84: https://nsgreg.nga.mil/doc/view?i=4085", False),
 ])
 def test_no_references_acepta_fuentes_y_urls(tmp_path, texto, esperado):
     root = tmp_path / "k"

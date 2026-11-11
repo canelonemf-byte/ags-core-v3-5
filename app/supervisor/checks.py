@@ -72,7 +72,16 @@ AI_GEN = re.compile(
 )
 EXTERNAL_COPYRIGHT = re.compile(r"(?:copyright\b|©)\s*(?:\(c\)\s*)?(?:(?:19|20)\d\d\s*)?([^\n]{0,80})", re.I)
 REFERENCES = re.compile(r"referencias|references|bibliograf|doi|arxiv|et al|\bfuentes\b|\bfuente:|\bsources?\b|https?://\S+")
+# URL que no son fuentes: textos de licencia y el propio repositorio del autor
+NON_SOURCE_URL = re.compile(
+    r"https?://(?:www\.)?(?:creativecommons\.org|opensource\.org|spdx\.org|choosealicense\.com|"
+    r"github\.com/canelonemf-byte)\S*", re.I)
 URL = re.compile(r"https?://\S+|\b[\w.-]+\.(?:com|org|net|io|es)/\S*")
+
+
+def has_references(text: str) -> bool:
+    """True si el texto cita fuentes. No cuentan las URL de licencias ni la del propio repo."""
+    return bool(REFERENCES.search(NON_SOURCE_URL.sub(" ", text)))
 
 
 def _is_owner(s: str) -> bool:
@@ -216,7 +225,7 @@ def project_level(kind: str, index, project: dict, findings: list[dict]) -> list
             extra.append(_f("no_requirements", "low", "-", 0, "código Python sin requirements.txt/pyproject: no es reproducible"))
         # Referencias: además de las palabras clásicas, cuentan una sección «Fuentes»/«Bibliografía»
         # y URL http(s) de fuentes (p. ej. BOPB, BOE, datos abiertos) citadas en la documentación.
-        if not REFERENCES.search(dtp):
+        if not has_references(dtp):
             extra.append(_f("no_references", "high", "-", 0, "ninguna referencia bibliográfica en los documentos"))
         if not re.search(r"resultado|experiment|medicion|medida|ensayo|prototipo|validaci|benchmark|results", dtp):
             extra.append(_f("no_validation", "medium", "-", 0, "no se describen resultados experimentales, prototipos ni validación"))

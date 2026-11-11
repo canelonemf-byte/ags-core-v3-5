@@ -209,12 +209,14 @@ def app_registry() -> List[AppSpec]:
                     "status": "verificado",
                 },
                 {
-                    "title": "Referencias bibliograficas ausentes (supervisor)",
-                    "description": "SUMMARY.md marca nnc con hallazgo high no_references.",
+                    "title": "Referencias bibliograficas (supervisor)",
+                    "description": "Corregido 2026-11-11: README de knowledge/nnc con seccion Referencias "
+                                   "(Bowring 1976 doi:10.1179/sre.1976.23.181.323, NGA WGS84, catalogo CRC); "
+                                   "SUMMARY.md ya no marca no_references.",
                     "equations": "",
-                    "evidence": "ags-core-v3.6/reports/SUMMARY.md",
-                    "feasibility": "media",
-                    "status": "pendiente",
+                    "evidence": "ags-core-v3.6/knowledge/nnc/README.md; ags-core-v3.6/reports/SUMMARY.md",
+                    "feasibility": "alta",
+                    "status": "verificado",
                 },
             ],
         ),

@@ -2,7 +2,7 @@ NNC + AGs-Core — NOTICE
 Copyright (c) 2026 Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA. Software: MIT. Documentos: CC BY 4.0.
 
 Terceros citados / utilizados (no son obra del autor):
-- Método de Bowring (conversión ECEF→geodésicas): B. R. Bowring, Survey Review (1976). Referencia exacta PENDIENTE DE VERIFICACIÓN.
+- Método de Bowring (conversión ECEF→geodésicas): B. R. Bowring, Survey Review 23(181), 323-327 (1976), doi:10.1179/sre.1976.23.181.323 (verificado en Crossref, 2026-11-11).
 - WGS84: World Geodetic System 1984, NGA/NIMA TR8350.2 (parámetros del elipsoide).
 - CRC-16/CCITT-FALSE: polinomio 0x1021, valor inicial 0xFFFF (vector de prueba "123456789" = 0x29B1).
 - three.js (MIT, mrdoob y colaboradores), cargado por CDN; OrbitControls de los ejemplos de three.js.
