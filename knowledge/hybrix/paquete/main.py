@@ -306,6 +306,7 @@ def get_l5_status() -> Dict[str, Any]:
         "buffer": len(agent.history_buffer),
         "buffer_max": agent.history_buffer.maxlen,
         "last_error": agent.last_error,
+        "last_warning": getattr(agent, "last_warning", None),
         "ultima_directriz": bus.sniff("gemini_hyperparameters_update") if bus else None,
     }
 

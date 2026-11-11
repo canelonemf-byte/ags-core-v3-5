@@ -132,6 +132,21 @@ class TestGeminiMetaAgent(unittest.TestCase):
         self.assertEqual(len(bus.deposits), 0)
         self.assertIn("ConnectionError", agent.last_error or "")
 
+    def test_interactions_503_falls_back_to_generate_content(self):
+        bus = FakePheroBus()
+        agent = GeminiMetaAgent(bus, None, api_key="test-key", analysis_interval=1, history_maxlen=1)
+        mock_client = MagicMock()
+        mock_client.interactions.create.side_effect = RuntimeError("503 high demand")
+        mock_client.models.generate_content.return_value = SimpleNamespace(text='{"beta_ridge": 0.03}')
+        agent.client, agent.status, agent._use_interactions = mock_client, "ready", True
+
+        bus.data["prediccion_final"] = {"trial_id": 1}
+        agent.step()
+        mock_client.models.generate_content.assert_called_once()
+        self.assertEqual(bus.deposits[-1][1], {"beta_ridge": 0.03})
+        self.assertIsNone(agent.last_error)
+        self.assertIn("503", agent.last_warning or "")
+
     def test_extract_json_from_fence(self):
         raw = 'Aquí va:\n```json\n{"a": 1}\n```\nfin'
         self.assertEqual(json.loads(_extract_json_text(raw)), {"a": 1})

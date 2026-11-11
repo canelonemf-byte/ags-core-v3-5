@@ -11,7 +11,11 @@ Verificación API (2026-11-09 Europe/Madrid):
   en vivo → default gemini-3.5-flash (2026-11-11), sobrescribible con GEMINI_MODEL.
 - SDK google-genai 3.0.0: client.interactions.create y interaction.output_text
   confirmados con llamada real a gemini-3.5-flash.
-- Fallback: client.models.generate_content si interactions no está disponible.
+- Fallback: client.models.generate_content si interactions no está disponible o falla.
+  Prueba en vivo 2026-11-11 20:35 (Europe/Madrid): interactions → 503 "high demand";
+  generate_content con el mismo modelo → OK. Antes la llamada reintentaba sin límite
+  (>120 s colgada); ahora hay timeout (HYBRIX_GEMINI_TIMEOUT_S, 30 s) y reintentos
+  acotados (HYBRIX_GEMINI_ATTEMPTS, 2).
 
 Autor: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA
 Licencia: MIT
@@ -69,6 +73,18 @@ def _extract_json_text(raw: str) -> str:
     return text[start:]
 
 
+def _http_options():
+    """Timeout y reintentos acotados: un 503/429 no debe bloquear el bucle de estigmergia."""
+    try:
+        from google.genai import types
+        timeout_s = float(os.environ.get("HYBRIX_GEMINI_TIMEOUT_S", "30"))
+        attempts = max(1, int(os.environ.get("HYBRIX_GEMINI_ATTEMPTS", "2")))
+        return types.HttpOptions(timeout=int(timeout_s * 1000),
+                                 retry_options=types.HttpRetryOptions(attempts=attempts))
+    except Exception:  # pragma: no cover - SDK sin HttpOptions
+        return None
+
+
 class GeminiMetaAgent:
     """
     Agente de Capa L5 (Meta-Gobernanza) impulsado por Gemini.
@@ -101,6 +117,7 @@ class GeminiMetaAgent:
         self.client = None
         self.status = "pending"  # pending | ready | error
         self.last_error: Optional[str] = None
+        self.last_warning: Optional[str] = None  # p. ej. interactions 503 resuelto con generate_content
         self._use_interactions = False
 
         self.system_instruction = (
@@ -126,7 +143,7 @@ class GeminiMetaAgent:
             return
 
         try:
-            self.client = genai.Client(api_key=self.api_key)
+            self.client = genai.Client(api_key=self.api_key, http_options=_http_options())
             self._use_interactions = hasattr(self.client, "interactions") and hasattr(
                 getattr(self.client, "interactions", None), "create"
             )
@@ -194,6 +211,7 @@ class GeminiMetaAgent:
         try:
             self.phero.deposit("gemini_hyperparameters_update", parsed, ttl_s=self.deposit_ttl_s)
             self.history_buffer.clear()
+            self.last_error = None  # la llamada terminó bien (aunque fuera por el fallback)
             logger.info("[GeminiMetaAgent] Directriz JSON depositada en gemini_hyperparameters_update.")
         except Exception as exc:
             self.last_error = f"{type(exc).__name__}: {exc}"
@@ -202,14 +220,20 @@ class GeminiMetaAgent:
     def _llamar_gemini(self, prompt: str) -> str:
         """Preferir Interactions API; si no, generate_content."""
         if self._use_interactions:
-            interaction = self.client.interactions.create(
-                model=self.model_name,
-                input=prompt,
-            )
-            text = getattr(interaction, "output_text", None)
-            if text:
-                return str(text).strip()
-            return str(interaction).strip()
+            try:
+                interaction = self.client.interactions.create(
+                    model=self.model_name,
+                    input=prompt,
+                )
+                text = getattr(interaction, "output_text", None)
+                if text:
+                    return str(text).strip()
+                return str(interaction).strip()
+            except Exception as exc:
+                # p. ej. 503 "high demand" en interactions mientras generate_content responde
+                self.last_error = self.last_warning = f"{type(exc).__name__}: {exc}"
+                logger.warning("[GeminiMetaAgent] interactions falló (%s); pruebo generate_content.",
+                               self.last_error[:200])
 
         # Fallback documentado: generate_content
         response = self.client.models.generate_content(
