@@ -94,3 +94,8 @@ def test_autopilot_build_app_reports_timeout_no_rompe():
 def test_monitor_servicios_vigila_matriz_8510():
     from agents.subagents import MonitorServicios
     assert MonitorServicios.URLS.get("matriz_8510") == "http://127.0.0.1:8510/"
+
+
+def test_monitor_servicios_vigila_hybrix_8520():
+    from agents.subagents import MonitorServicios
+    assert MonitorServicios.URLS.get("hybrix_8520") == "http://127.0.0.1:8520/api/v1/hybrix/l5/status"

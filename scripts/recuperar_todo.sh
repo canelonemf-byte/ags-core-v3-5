@@ -9,7 +9,8 @@
 #        /workspace/gh_verify/clones/nnc/.venv (solo pruebas del clon nnc, si existe el clon)
 #   2. Borra archivos .pid obsoletos (proceso muerto o que no es el servicio esperado).
 #   3. Arranca en segundo plano (nohup, logs en /workspace/agsgpt): LiteLLM :4000, API :8000,
-#      UI :8501, UCS :8502, NNC :8080/:8010, matriz Streamlit :8510 y el autopilot.
+#      UI :8501, UCS :8502, NNC :8080/:8010, matriz Streamlit :8510,
+#      HYBRIX API + L5 :8520 (clave Gemini desde /home/box/.secrets/gemini.env) y el autopilot.
 #   4. Comprueba HTTP de cada servicio y el primer ciclo del autopilot.
 # Nunca imprime claves: se cargan con `set -a; . archivo` solo dentro de los procesos que las usan.
 # Uso: scripts/recuperar_todo.sh [--solo-venvs | --solo-servicios | --verificar]
@@ -22,6 +23,8 @@ NNC_DIR=$ROOT/NNC
 NNC_VENV=$NNC_DIR/.venv
 NNC_CLONE=/workspace/gh_verify/clones/nnc
 MATRIZ=/workspace/matriz-el-prat
+HYBRIX_DIR=$REPO/knowledge/hybrix/paquete
+GEMINI_ENV=/home/box/.secrets/gemini.env
 PYBIN="${PYBIN:-python3}"
 TORCH_INDEX="${TORCH_INDEX:-https://download.pytorch.org/whl/cpu}"
 MODO="${1:-todo}"
@@ -107,6 +110,8 @@ arrancar() {  # arrancar <nombre> <pidfile> <patron> <puerto|-> <log> <dir> <cmd
     # clave de la API por entorno (nunca por argv, no aparece en `ps`)
     if [ "${CON_CLAVE:-0}" = 1 ] && [ -f "$REPO/data/api_key" ]; then AGS_API_KEY="$(cat "$REPO/data/api_key")"; export AGS_API_KEY; fi
     [ -n "${API_URL_ENV:-}" ] && export API_URL="$API_URL_ENV"
+    # clave Gemini (HYBRIX L5): se carga del archivo dentro del subshell, nunca se imprime
+    if [ "${CON_GEMINI:-0}" = 1 ] && [ -f "$GEMINI_ENV" ]; then set -a; . "$GEMINI_ENV"; set +a; fi
     nohup "$@" >> "$lg" 2>&1 < /dev/null &
     echo $! > "$f"
   )
@@ -137,6 +142,12 @@ servicios() {
       "$VENV/bin/streamlit" run app/main.py --server.address 127.0.0.1 --server.port 8510 \
       --server.headless true --browser.gatherUsageStats false
   fi
+  # HYBRIX API + capa L5 :8520 (estado fuera del repo; escritura solo desde localhost sin HYBRIX_API_KEY)
+  if [ -f "$HYBRIX_DIR/main.py" ]; then
+    HYBRIX_L5_ENABLED=1 HYBRIX_DATA_DIR="$ROOT/hybrix_data" CON_GEMINI=1 \
+    arrancar hybrix "$ROOT/hybrix.pid" "uvicorn main:app --host 127.0.0.1 --port 8520" 8520 "$ROOT/hybrix.log" "$HYBRIX_DIR" \
+      "$VENV/bin/uvicorn" main:app --host 127.0.0.1 --port 8520
+  fi
   # NNC :8080/:8010 con su script (usa $NNC_DIR/.venv)
   if [ -x "$NNC_VENV/bin/python" ] && [ -f "$NNC_DIR/start_nnc.sh" ]; then
     limpiar_pid "$NNC_DIR/dashboard.pid" "dashboard_server.py"
@@ -161,7 +172,8 @@ servicios() {
 verificar() {
   local fallos=0 url code i
   for url in http://127.0.0.1:8000/health http://127.0.0.1:8501/ http://127.0.0.1:8502/ \
-             http://127.0.0.1:8080/ http://127.0.0.1:8010/health http://127.0.0.1:8510/ http://127.0.0.1:4000/health/readiness; do
+             http://127.0.0.1:8080/ http://127.0.0.1:8010/health http://127.0.0.1:8510/ \
+             http://127.0.0.1:8520/api/v1/hybrix/l5/status http://127.0.0.1:4000/health/readiness; do
     code=000
     for i in $(seq 1 30); do
       code="$(curl -s -o /dev/null -m 5 -w '%{http_code}' "$url" || true)"

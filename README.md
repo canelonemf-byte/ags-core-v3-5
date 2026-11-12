@@ -52,6 +52,7 @@ pip install -r requirements.txt          # pruebas: pip install -r requirements-
 | UI de estado (Streamlit) | 8501 | `/workspace/agsgpt/ui.log` |
 | UI UCS (Streamlit) | 8502 | `/workspace/agsgpt/ucs_ui.log` |
 | matriz_el_prat (Streamlit, repo aparte) | 8510 | `/workspace/agsgpt/matriz_ui.log` |
+| HYBRIX API + capa L5 (FastAPI, `knowledge/hybrix/paquete`) | 8520 (`/api/v1/hybrix/l5/status`) | `/workspace/agsgpt/hybrix.log` |
 | NNC dashboard / API (repo aparte) | 8080 / 8010 | `/workspace/agsgpt/NNC/logs/` |
 | LiteLLM (opcional) | 4000 (`/health/readiness`) | `/workspace/agsgpt/litellm.log` |
 | Autopilot | — | `/workspace/agsgpt/autopilot.log` |

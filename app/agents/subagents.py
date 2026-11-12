@@ -156,11 +156,12 @@ class ValidadorEsquemaLLP(WorkerAgent):
 
 @register
 class MonitorServicios(WorkerAgent):
-    name = "monitor_servicios"; description = "estado HTTP de API, UIs, NNC, matriz_el_prat y LiteLLM (solo localhost)"
+    name = "monitor_servicios"; description = "estado HTTP de API, UIs, NNC, matriz_el_prat, HYBRIX L5 y LiteLLM (solo localhost)"
     interval = 300
     URLS = {"api_8000": "http://127.0.0.1:8000/health", "ui_8501": "http://127.0.0.1:8501/",
             "ucs_8502": "http://127.0.0.1:8502/", "nnc_8080": "http://127.0.0.1:8080/", "nnc_8010": "http://127.0.0.1:8010/",
             "matriz_8510": "http://127.0.0.1:8510/",
+            "hybrix_8520": "http://127.0.0.1:8520/api/v1/hybrix/l5/status",
             "litellm": os.getenv("LITELLM_BASE_URL", "http://localhost:4000") + "/health/readiness"}
     def check(self):
         import httpx
