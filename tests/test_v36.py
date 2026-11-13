@@ -242,7 +242,7 @@ def test_autopilot_cycles(tmp_path, monkeypatch):
 
 
 # ---------- API ----------
-client = TestClient(app)
+client = TestClient(app, client=("127.0.0.1", 50000))  # las lecturas de inventario sin clave exigen localhost
 
 
 def test_api_projects():

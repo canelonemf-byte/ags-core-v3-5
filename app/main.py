@@ -1,6 +1,8 @@
 import uuid
+import secrets
 import httpx
-from fastapi import FastAPI, Header, HTTPException, Request
+from fastapi import Depends, FastAPI, HTTPException, Request, Security
+from fastapi.security import APIKeyHeader
 from pydantic import BaseModel, Field
 import agents  # noqa: F401
 from config import settings
@@ -38,11 +40,29 @@ async def request_id_middleware(request: Request, call_next):
     response.headers["X-Request-ID"] = rid
     return response
 
+# Esquema de seguridad declarado en OpenAPI (auditoría REA M08). auto_error=False:
+# la comprobación real la hacen auth() y require_read_access().
+api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False,
+                              description="Clave AGS_API_KEY. Obligatoria en escrituras y lecturas sensibles.")
+LOCAL_HOSTS = {"127.0.0.1", "::1", "localhost"}
+
 def auth(x_api_key: str | None):
     if not settings.AGS_API_KEY:
         raise HTTPException(503, "AGS_API_KEY no configurada")
     if x_api_key != settings.AGS_API_KEY:
         raise HTTPException(401, "API key invalida")
+
+def require_read_access(request: Request, x_api_key: str | None = Security(api_key_header)) -> None:
+    """Lecturas de inventario (/agents, /projects): con clave válida desde cualquier origen;
+    sin clave, solo desde localhost (mismo patrón que HYBRIX). La UI, el autopilot y los
+    scripts locales siguen funcionando sin clave."""
+    key = settings.AGS_API_KEY
+    if key and x_api_key and secrets.compare_digest(x_api_key, key):
+        return
+    client_host = request.client.host if request.client else ""
+    if client_host in LOCAL_HOSTS:
+        return
+    raise HTTPException(403, "Acceso restringido a localhost sin X-API-Key valida")
 
 async def litellm_state():
     try:
@@ -56,12 +76,12 @@ async def litellm_state():
 async def health():
     return {"status": "ok", "agents": len(all_agents()), "version": VERSION, "litellm": await litellm_state()}
 
-@app.get("/agents")
+@app.get("/agents", dependencies=[Depends(require_read_access)])
 def list_agents():
     return {"total": len(all_agents()), "agents": [{"name": a.name, "domain": a.domain, "description": a.description, "model": a.preferred_model} for a in all_agents().values()]}
 
 @app.get("/models")
-async def models(x_api_key: str | None = Header(default=None)):
+async def models(x_api_key: str | None = Security(api_key_header)):
     auth(x_api_key)
     try:
         async with httpx.AsyncClient(base_url=settings.LITELLM_BASE_URL, headers={"Authorization": f"Bearer {settings.LITELLM_API_KEY}"}, timeout=15) as client:
@@ -72,11 +92,11 @@ async def models(x_api_key: str | None = Header(default=None)):
         raise HTTPException(502, f"LiteLLM no disponible: {type(exc).__name__}")
 
 @app.get("/integrations")
-def integrations(x_api_key: str | None = Header(default=None)):
+def integrations(x_api_key: str | None = Security(api_key_header)):
     auth(x_api_key)
     return {"integrations": {k: ("configured" if v else "not_configured") for k, v in settings.INTEGRATIONS.items()}}
 
-@app.get("/agents/domain/{domain}")
+@app.get("/agents/domain/{domain}", dependencies=[Depends(require_read_access)])
 def by_domain(domain: str):
     xs = agents_by_domain(domain)
     if not xs:
@@ -84,7 +104,7 @@ def by_domain(domain: str):
     return {"domain": domain, "agents": [a.name for a in xs]}
 
 @app.post("/run/agent/{name}")
-async def run_single(name: str, req: TaskRequest, x_api_key: str | None = Header(default=None)):
+async def run_single(name: str, req: TaskRequest, x_api_key: str | None = Security(api_key_header)):
     auth(x_api_key)
     try:
         agent = get_agent(name)
@@ -96,12 +116,12 @@ async def run_single(name: str, req: TaskRequest, x_api_key: str | None = Header
         raise HTTPException(502, str(exc)[:300])
 
 @app.post("/run/orchestrated")
-async def run_orch(req: TaskRequest, x_api_key: str | None = Header(default=None)):
+async def run_orch(req: TaskRequest, x_api_key: str | None = Security(api_key_header)):
     auth(x_api_key)
     return await orchestrator.execute(req.task)
 
 @app.post("/run/tool/{project}")
-async def run_tool(project: str, req: TaskRequest, x_api_key: str | None = Header(default=None)):
+async def run_tool(project: str, req: TaskRequest, x_api_key: str | None = Security(api_key_header)):
     auth(x_api_key)
     try:
         return await asyncio.to_thread(get_engine().run_tool, project, req.task)
@@ -109,12 +129,12 @@ async def run_tool(project: str, req: TaskRequest, x_api_key: str | None = Heade
         raise HTTPException(404, f"Proyecto {project} no existe")
 
 @app.get("/agsgpt/status")
-def agsgpt_status(x_api_key: str | None = Header(default=None)):
+def agsgpt_status(x_api_key: str | None = Security(api_key_header)):
     auth(x_api_key)
     return get_engine().status()
 
 @app.post("/agsgpt/train")
-async def agsgpt_train(req: TrainRequest, x_api_key: str | None = Header(default=None)):
+async def agsgpt_train(req: TrainRequest, x_api_key: str | None = Security(api_key_header)):
     auth(x_api_key)
     try:
         return await asyncio.to_thread(get_engine().train, req.steps, req.text)
@@ -123,21 +143,21 @@ async def agsgpt_train(req: TrainRequest, x_api_key: str | None = Header(default
 
 
 # ---------------- v3.6: proyectos, supervisor y cola de tareas ----------------
-@app.get("/projects")
+@app.get("/projects", dependencies=[Depends(require_read_access)])
 def list_projects():
     ps = load_manifest()["projects"]
     return {"total": len(ps), "projects": [{"id": p["id"], "agent": "proj_" + p["id"].replace("-", "_"), "url": p.get("url"),
             "tools": p.get("tools", []), "license": p.get("license"), "files": p.get("files")} for p in ps]}
 
 @app.get("/projects/{pid}/search")
-def project_search(pid: str, q: str, k: int = 4, x_api_key: str | None = Header(default=None)):
+def project_search(pid: str, q: str, k: int = 4, x_api_key: str | None = Security(api_key_header)):
     auth(x_api_key)
     if pid not in {p["id"] for p in load_manifest()["projects"]}:
         raise HTTPException(404, f"Proyecto {pid} no existe")
     return {"project": pid, "results": get_index().search(pid, q, max(1, min(k, 20)))}
 
 @app.post("/tasks", status_code=201)
-async def create_task(req: SupervisorTask, x_api_key: str | None = Header(default=None)):
+async def create_task(req: SupervisorTask, x_api_key: str | None = Security(api_key_header)):
     auth(x_api_key)
     sup = get_supervisor()
     try:
@@ -150,13 +170,13 @@ async def create_task(req: SupervisorTask, x_api_key: str | None = Header(defaul
 
 @app.get("/tasks")
 def get_tasks(status: str | None = None, project: str | None = None, parent_id: int | None = None, limit: int = 50,
-              x_api_key: str | None = Header(default=None)):
+              x_api_key: str | None = Security(api_key_header)):
     auth(x_api_key)
     q = get_supervisor().queue
     return {"counts": q.counts(), "tasks": q.list_tasks(status, project, max(1, min(limit, 500)), parent_id)}
 
 @app.get("/tasks/{tid}")
-def get_task(tid: int, x_api_key: str | None = Header(default=None)):
+def get_task(tid: int, x_api_key: str | None = Security(api_key_header)):
     auth(x_api_key)
     t = get_supervisor().queue.get(tid)
     if not t:
@@ -164,7 +184,7 @@ def get_task(tid: int, x_api_key: str | None = Header(default=None)):
     return t
 
 @app.get("/supervisor/status")
-def supervisor_status(x_api_key: str | None = Header(default=None)):
+def supervisor_status(x_api_key: str | None = Security(api_key_header)):
     auth(x_api_key)
     return get_supervisor().status()
 
@@ -188,7 +208,7 @@ class ChatRequest(BaseModel):
     top_k: int = Field(default=5, ge=1, le=50)
 
 @app.post("/ingest", status_code=201)
-def ingest(req: IngestRequest, x_api_key: str | None = Header(default=None)):
+def ingest(req: IngestRequest, x_api_key: str | None = Security(api_key_header)):
     auth(x_api_key)
     if req.action.upper() != "ADD":
         raise HTTPException(400, "solo se admite action=ADD")
@@ -197,7 +217,7 @@ def ingest(req: IngestRequest, x_api_key: str | None = Header(default=None)):
     return {"id": mid, "status": "added"}
 
 @app.post("/chat")
-def chat(req: ChatRequest, x_api_key: str | None = Header(default=None)):
+def chat(req: ChatRequest, x_api_key: str | None = Security(api_key_header)):
     auth(x_api_key)
     hits = memory_store.search(req.message, req.top_k)
     if not hits:
@@ -208,6 +228,6 @@ def chat(req: ChatRequest, x_api_key: str | None = Header(default=None)):
     return {"answer": answer, "used_memory_ids": [m.id for m, _, _ in hits]}
 
 @app.get("/memory/stats")
-def memory_stats(x_api_key: str | None = Header(default=None)):
+def memory_stats(x_api_key: str | None = Security(api_key_header)):
     auth(x_api_key)
     return memory_store.stats()
