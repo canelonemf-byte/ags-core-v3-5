@@ -32,3 +32,11 @@ O vía agente registrado: `maestro_cuantico` (modos `vqe` / `paralelo` / `anneal
 ## Honestidad
 
 Cada `maestro_cuantico.yaml` indica `aplica` + `uso` o `uso: no_aplica`. Solo aplica donde VQE/annealing tienen sentido real (p. ej. ordenador híbrido, oráculo mesoscópico, cero-a, proyectos cuánticos de modelado).
+
+## Corrida de supervisión (rutinas 9:00 / 13:00 / 18:00)
+
+```bash
+cd /workspace/agsgpt/ags-core-v3.6 && /workspace/agsgpt/.venv/bin/python scripts/maestro_supervision.py --seed 42
+```
+
+Ejecuta el agente `maestro_cuantico` (VQE, hamiltoniano demo de 2 qubits) dos veces con la misma semilla y reescribe en sitio `knowledge/ordenador-hibrido-no-binario/maestro_cuantico_ultima_corrida.json` y `knowledge/oraculo-mesoscopico/maestro_cuantico_ultima_corrida.json` (LLP). Evidencia siempre `E2_simulacion_propia` (en la escala de ORDENADOR HÍBRIDO, E3 es literatura citada). La reproducibilidad va en el campo aparte `verificacion_software`: `reproducible_misma_semilla` si las dos corridas coinciden; si no, `no_reproducible` y código de salida 1. El hamiltoniano demo no es un modelo físico de esos proyectos; es simulación clásica, no hardware cuántico.

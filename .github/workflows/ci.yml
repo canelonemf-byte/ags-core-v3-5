@@ -16,8 +16,8 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           # requirements.txt puede incluir torch; instalar núcleo de tests
-          # Núcleo API + deps científicas ligeras usadas por tests (sin torch)
-          pip install fastapi uvicorn httpx python-dotenv pydantic pytest pytest-asyncio pyyaml numpy 'qiskit>=1.2,<3' 'scikit-learn>=1.4' -q
+          # Núcleo API + deps científicas ligeras usadas por tests (sin torch); openpyxl (requirements.txt) y pytest-timeout (requirements-dev.txt) declarados
+          pip install fastapi uvicorn httpx python-dotenv pydantic pytest pytest-asyncio 'pytest-timeout>=2.3' pyyaml numpy 'qiskit>=1.2,<3' 'scikit-learn>=1.4' 'openpyxl>=3.1.0' -q
       - name: Compilar módulos Python
         run: |
           set -e
