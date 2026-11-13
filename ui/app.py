@@ -13,6 +13,10 @@ from pathlib import Path
 
 import httpx
 import streamlit as st
+try:
+    from litellm_estado import litellm_estado_sano  # streamlit run ui/app.py
+except ImportError:  # pytest desde la raíz del repo
+    from ui.litellm_estado import litellm_estado_sano
 
 ROOT = Path(__file__).resolve().parents[1]
 _APP = ROOT / "app"
@@ -80,7 +84,7 @@ with c1:
         st.error(f"API no disponible en {API}: {err}")
     else:
         st.json(h)
-        if h.get("litellm") != "ok":
+        if not litellm_estado_sano(h.get("litellm")):
             st.warning(f"LiteLLM: {h.get('litellm')}. Los agentes que dependen de un LLM no funcionan.")
 with c2:
     st.subheader("/supervisor/status")

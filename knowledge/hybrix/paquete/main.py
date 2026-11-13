@@ -50,18 +50,25 @@ def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def _require_localhost_when_unkeyed(request: Request) -> None:
+    client_host = request.client.host if request.client else ""
+    if client_host not in LOCAL_HOSTS:
+        raise HTTPException(status_code=403, detail="Acceso restringido a localhost cuando no hay HYBRIX_API_KEY")
+
+
 def require_api_key(request: Request, key: Optional[str] = Security(api_key_header)) -> None:
     if not API_KEY:
-        client_host = request.client.host if request.client else ""
-        if client_host not in LOCAL_HOSTS:
-            raise HTTPException(status_code=403, detail="Acceso restringido a localhost cuando no hay HYBRIX_API_KEY")
+        _require_localhost_when_unkeyed(request)
         return
     if not key or not secrets.compare_digest(key, API_KEY):
         raise HTTPException(status_code=401, detail="API key invalida o ausente")
 
 
 def require_read_access(request: Request, key: Optional[str] = Security(api_key_header)) -> None:
-    if API_KEY and (not key or not secrets.compare_digest(key, API_KEY)):
+    if not API_KEY:
+        _require_localhost_when_unkeyed(request)
+        return
+    if not key or not secrets.compare_digest(key, API_KEY):
         raise HTTPException(status_code=401, detail="API key invalida o ausente para lectura")
 
 
@@ -208,6 +215,11 @@ def _append(collection: List[Dict[str, Any]], item: Dict[str, Any]) -> None:
     if excess > 0:
         del collection[:excess]
         logger.warning("Límite MAX_RECORDS (%d) alcanzado. Se han purgado los %d registros más antiguos.", MAX_RECORDS, excess)
+
+
+@app.get("/health")
+def health() -> Dict[str, Any]:
+    return {"status": "ok", "service": "hybrix", "version": app.version}
 
 
 @app.get("/api/v1/hybrix/status")
