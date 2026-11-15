@@ -2,22 +2,28 @@
 # reparar_tras_reinicio.sh — reparación ligera e idempotente tras un reinicio/restauración del box.
 # Autoría: Lázaro López Paz, El Prat de Llobregat, Barcelona, España, con asistencia de IA. Licencia: MIT.
 #
-# Qué hace (repetible sin efectos dobles; no instala paquetes ni toca ficheros modificados):
+# Qué hace (repetible sin efectos dobles; no toca ficheros modificados):
 #   1. Restaura desde HEAD SOLO los ficheros con seguimiento en git que han desaparecido
 #      (`git ls-files -d`) en ags-core-v3.6. Los ficheros modificados sin commit no se tocan.
-#   2. Repone ase/build en /workspace/omniscience_cmat003/venv_ms copiándolo desde
-#      /workspace/omniscience_cvib004/pylib/ase/build, solo si ambos son ase 3.29.0 y las
-#      entradas ase/build/ de sus RECORD coinciden; después verifica cada sha256 del RECORD.
+#   2. Comprueba ase 3.29.0 en dos destinos: /workspace/omniscience_cmat003/venv_ms (site-packages)
+#      y /workspace/omniscience_cvib004/pylib (instalación --target). Un destino es íntegro si
+#      todos los ficheros de su RECORD coinciden por sha256. Si a uno le falta ase/build o no es
+#      íntegro: (a) copia ase/build desde el otro destino si ese es íntegro y las entradas ase/build/
+#      de ambos RECORD coinciden; (b) si no hay origen íntegro o la copia no basta, reinstala
+#      ase==3.29.0 --no-deps (--target --upgrade para pylib) con el pip del Python base de venv_ms.
+#      Después verifica todo el RECORD por sha256 y `from ase.build import bulk`. En pylib comprueba
+#      que la lista de entradas de primer nivel no cambia.
 #   3. Comprueba que existen los entornos Python (no los recrea: para eso, recuperar_todo.sh).
-# Salida: 0 todo bien; 1 algo no se pudo reparar o falta un entorno.
-# Uso: scripts/reparar_tras_reinicio.sh [--verificar]   (--verificar: no cambia nada)
+# Salida: 0 todo bien; 1 si pip falla, la verificación falla o falta un entorno.
+# Uso: scripts/reparar_tras_reinicio.sh [--verificar]   (--verificar: solo comprueba, no cambia nada)
 set -uo pipefail
 
 REPO=/workspace/agsgpt/ags-core-v3.6
 VENVS=(/workspace/agsgpt/.venv /workspace/agsgpt/NNC/.venv /workspace/omniscience_cmat003/venv_ms)
 ASE_VER=3.29.0
+MS_PY=/workspace/omniscience_cmat003/venv_ms/bin/python
 MS_SP=/workspace/omniscience_cmat003/venv_ms/lib/python3.12/site-packages
-SRC_PYLIB=/workspace/omniscience_cvib004/pylib
+PYLIB=/workspace/omniscience_cvib004/pylib
 MODO="${1:-reparar}"
 RC=0
 
@@ -41,42 +47,71 @@ else
   [ "$quedan" -eq 0 ] || { log "ERROR: siguen borrados $quedan"; RC=1; }
 fi
 
-# 2. ase/build en venv_ms
-ase_check() {  # verifica sha256 de ase/build/*.py contra el RECORD de venv_ms
-  python3 - "$MS_SP" <<'PY'
-import base64, hashlib, sys
+# 2. ase 3.29.0 en venv_ms y pylib
+ase_record() {  # $1 = base; verifica sha256 de TODO el RECORD; imprime "ok total"; rc 0 si íntegro
+  python3 - "$1" "$ASE_VER" <<'PY'
+import base64, hashlib, re, sys
 from pathlib import Path
-sp = Path(sys.argv[1]); mal = 0; n = 0
-for line in (sp / "ase-3.29.0.dist-info" / "RECORD").read_text().splitlines():
-    ruta, h, *_ = line.split(",")
-    if not ruta.startswith("ase/build/") or not h.startswith("sha256="):
+base, ver = Path(sys.argv[1]), sys.argv[2]
+rec = base / f"ase-{ver}.dist-info" / "RECORD"
+if not rec.is_file():
+    print("0 0"); sys.exit(1)
+target = "site-packages" not in str(base)  # instalación --target: ../../bin/x -> base/bin/x
+n = ok = 0
+for line in rec.read_text().splitlines():
+    p = line.rsplit(",", 2)
+    if len(p) < 3 or not p[1].startswith("sha256="):
         continue
-    n += 1; f = sp / ruta
+    n += 1
+    r = re.sub(r"^(\.\./)+bin/", "bin/", p[0]) if target else p[0]
+    f = (base / r).resolve()
     d = base64.urlsafe_b64encode(hashlib.sha256(f.read_bytes()).digest()).rstrip(b"=").decode() if f.is_file() else ""
-    mal += d != h[7:]
-print(f"{n} {mal}"); sys.exit(0 if n and not mal else 1)
+    ok += d == p[1][7:]
+print(f"{ok} {n}"); sys.exit(0 if n and ok == n else 1)
 PY
 }
-if [ ! -d "$MS_SP" ]; then
-  log "ERROR: falta $MS_SP"; RC=1
-elif [ -d "$MS_SP/ase/build" ] && res=$(ase_check); then
-  log "ase/build en venv_ms presente y conforme al RECORD (${res%% *} ficheros)"
-elif [ "$MODO" = "--verificar" ]; then
-  log "ase/build en venv_ms falta o no coincide (sin reparar: --verificar)"; RC=1
-elif [ ! -d "$MS_SP/ase-$ASE_VER.dist-info" ] || [ ! -d "$SRC_PYLIB/ase-$ASE_VER.dist-info" ]; then
-  log "ERROR: versión de ase distinta de $ASE_VER en venv_ms o en pylib; no copio"; RC=1
-elif ! diff -q <(grep '^ase/build/' "$MS_SP/ase-$ASE_VER.dist-info/RECORD" | grep -v __pycache__ | sort) \
-               <(grep '^ase/build/' "$SRC_PYLIB/ase-$ASE_VER.dist-info/RECORD" | grep -v __pycache__ | sort) >/dev/null; then
-  log "ERROR: RECORD de ase/build distinto entre venv_ms y pylib; no copio"; RC=1
+ase_build_rec() { grep '^ase/build/' "$1/ase-$ASE_VER.dist-info/RECORD" 2>/dev/null | grep -v __pycache__ | sort; }
+ase_import() {  # $1 = nombre; importa ase.build y construye bulk NaCl con el Python de venv_ms
+  if [ "$1" = pylib ]; then (cd /tmp && PYTHONPATH="$PYLIB" "$MS_PY" -c "from ase.build import bulk; bulk('NaCl','rocksalt',a=5.64)") 2>/dev/null
+  else (cd /tmp && "$MS_PY" -c "from ase.build import bulk; bulk('NaCl','rocksalt',a=5.64)") 2>/dev/null; fi
+}
+PIP_PY="$(sed -n 's/^home = //p' /workspace/omniscience_cmat003/venv_ms/pyvenv.cfg 2>/dev/null)/python3.12"
+ase_pip() {  # $1 = nombre; reinstala ase==ASE_VER sin dependencias
+  if [ "$1" = pylib ]; then "$PIP_PY" -m pip install -q --disable-pip-version-check --no-deps --force-reinstall --upgrade --target "$PYLIB" "ase==$ASE_VER"
+  else "$PIP_PY" -m pip --python "$MS_PY" install -q --disable-pip-version-check --no-deps --force-reinstall "ase==$ASE_VER"; fi
+}
+reparar_ase() {  # $1 = nombre, $2 = base destino, $3 = base del otro destino
+  local nom=$1 dst=$2 otro=$3 res="" antes=""
+  if [ -d "$dst/ase/build" ] && res=$(ase_record "$dst"); then
+    log "ase $ASE_VER en $nom íntegro (RECORD ${res% *}/${res#* } sha256)"
+  elif [ "$MODO" = "--verificar" ]; then
+    log "ase en $nom: falta ase/build o RECORD no conforme (${res:-ase/build ausente}) (sin reparar: --verificar)"; RC=1; return
+  else
+    log "ase en $nom: falta ase/build o RECORD no conforme (${res:-ase/build ausente}); reparo"
+    if [ -d "$otro/ase/build" ] && ase_record "$otro" >/dev/null && [ -d "$dst/ase-$ASE_VER.dist-info" ] \
+       && diff -q <(ase_build_rec "$dst") <(ase_build_rec "$otro") >/dev/null; then
+      mkdir -p "$dst/ase/build" && cp -p "$otro"/ase/build/*.py "$dst/ase/build/" \
+        && log "ase/build copiado a $nom desde un origen íntegro"
+    fi
+    if ! res=$(ase_record "$dst"); then
+      [ "$nom" = pylib ] && antes=$(ls -A "$PYLIB" 2>/dev/null)
+      if [ ! -x "$PIP_PY" ]; then log "ERROR: no encuentro el Python base con pip ($PIP_PY)"; RC=1; return; fi
+      if ! ase_pip "$nom"; then log "ERROR: pip install ase==$ASE_VER falló en $nom"; RC=1; return; fi
+      log "ase==$ASE_VER reinstalado en $nom (--no-deps)"
+      if [ "$nom" = pylib ] && [ "$antes" != "$(ls -A "$PYLIB")" ]; then
+        log "ERROR: la lista de entradas de pylib ha cambiado tras pip --target"; RC=1; fi
+      if ! res=$(ase_record "$dst"); then log "ERROR: RECORD de $nom no conforme tras reinstalar ($res)"; RC=1; return; fi
+    fi
+    log "ase $ASE_VER en $nom reparado (RECORD ${res% *}/${res#* } sha256)"
+  fi
+  ase_import "$nom" && log "$nom: from ase.build import bulk ok" || { log "ERROR: $nom no importa ase.build.bulk"; RC=1; }
+}
+if [ ! -x "$MS_PY" ] || [ ! -d "$MS_SP" ]; then
+  log "ERROR: falta venv_ms ($MS_SP)"; RC=1
 else
-  mkdir -p "$MS_SP/ase/build"
-  cp -p "$SRC_PYLIB"/ase/build/*.py "$MS_SP/ase/build/"
-  if res=$(ase_check); then log "ase/build repuesto en venv_ms (${res%% *} ficheros, sha256 conforme al RECORD)"
-  else log "ERROR: ase/build copiado pero no coincide con el RECORD ($res)"; RC=1; fi
-fi
-if [ -x /workspace/omniscience_cmat003/venv_ms/bin/python ]; then
-  /workspace/omniscience_cmat003/venv_ms/bin/python -c "import ase.build" 2>/dev/null \
-    && log "venv_ms: import ase.build ok" || { log "ERROR: venv_ms no importa ase.build"; RC=1; }
+  reparar_ase venv_ms "$MS_SP" "$PYLIB"
+  if [ -d "$PYLIB" ]; then reparar_ase pylib "$PYLIB" "$MS_SP"
+  else log "ERROR: falta $PYLIB"; RC=1; fi
 fi
 
 # 3. entornos Python (solo comprobación; no se reinstala nada pesado)
