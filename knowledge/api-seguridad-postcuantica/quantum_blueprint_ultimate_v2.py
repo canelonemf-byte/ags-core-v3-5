@@ -414,4 +414,5 @@ def quantum_status():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("quantum_blueprint_ultimate_v2:app", host="0.0.0.0", port=8000, reload=True)
+    host = os.getenv("QUANTUM_BLUEPRINT_HOST", "127.0.0.1")
+    uvicorn.run("quantum_blueprint_ultimate_v2:app", host=host, port=8000, reload=False)
