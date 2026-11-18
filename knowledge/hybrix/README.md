@@ -15,4 +15,6 @@ Proyecto nuevo (2026-11-02) en AGs-Core v3.6: orquestación de telemetría bio-d
 
 ## Aviso de evidencia
 
+> **SIMULADO / NO OFICIAL / SIN VALIDEZ.** El fichero `paquete/certificado_auditoria_bioseguridad_hybrix.pdf` (copia idéntica en `drive/`) **no es un certificado oficial de auditoría BSL-2** ni una acreditación regulatoria. No tiene validez legal, administrativa ni de bioseguridad. El PDF lleva portada y marca de agua visibles con ese aviso (añadidas el 18-11-2026, Europe/Madrid).
+
 Muchas afirmaciones del material original (certificado BSL-2 «oficial», cultivo neuronal real, 100% tests PASS, métricas de laboratorio) **no están verificadas** como experimento. Ver `docs/revision_llp_2026-11-02.md` y `docs/registro_evidencia.json`.

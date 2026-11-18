@@ -1,5 +1,8 @@
 # HYBRIX Orchestration System (v1.9.0)
 
+> **SIMULADO / NO OFICIAL / SIN VALIDEZ.** El PDF `certificado_auditoria_bioseguridad_hybrix.pdf` no es un certificado oficial de auditoría BSL-2 ni tiene validez legal, administrativa o de bioseguridad. Está marcado con portada y marca de agua.
+
+
 Sistema de orquestación, telemetría biológica, monitor de deriva estadística y exportación de datos.
 
 ## Componentes del Paquete
