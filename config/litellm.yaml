@@ -27,5 +27,21 @@ model_list:
     litellm_params: {model: gemini/gemini-2.5-flash, api_key: os.environ/GEMINI_API_KEY}
   - model_name: gemini-2.5-pro
     litellm_params: {model: gemini/gemini-2.5-pro, api_key: os.environ/GEMINI_API_KEY}
+
+  # DeepSeek-R1 destilado local vía Ollama (solo 127.0.0.1:11434).
+  # Pesos en /workspace/ollama/models (fuera del repo; no versionar).
+  # ollama_chat usa /api/chat y respeta la plantilla oficial.
+  - model_name: deepseek-local
+    litellm_params:
+      model: ollama_chat/deepseek-r1:7b
+      api_base: http://127.0.0.1:11434
+      api_key: none
+      timeout: 180
+  - model_name: deepseek-local-small
+    litellm_params:
+      model: ollama_chat/deepseek-r1:1.5b
+      api_base: http://127.0.0.1:11434
+      api_key: none
+      timeout: 120
 litellm_settings: {drop_params: true}
 general_settings: {master_key: os.environ/LITELLM_MASTER_KEY}

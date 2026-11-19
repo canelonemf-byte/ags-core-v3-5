@@ -8,7 +8,7 @@
 #        /workspace/agsgpt/NNC/.venv        (NNC dashboard/servicio + Ojo de Dios)
 #        /workspace/gh_verify/clones/nnc/.venv (solo pruebas del clon nnc, si existe el clon)
 #   2. Borra archivos .pid obsoletos (proceso muerto o que no es el servicio esperado).
-#   3. Arranca en segundo plano (nohup, logs en /workspace/agsgpt): LiteLLM :4000, API :8000,
+#   3. Arranca en segundo plano (nohup, logs en /workspace/agsgpt): Ollama :11434 (opcional), LiteLLM :4000, API :8000,
 #      UI :8501, UCS :8502, NNC :8080/:8010, matriz Streamlit :8510,
 #      HYBRIX API + L5 :8520 (clave Gemini desde /home/box/.secrets/gemini.env) y el autopilot.
 #   4. Comprueba HTTP de cada servicio y el primer ciclo del autopilot.
@@ -120,6 +120,10 @@ arrancar() {  # arrancar <nombre> <pidfile> <patron> <puerto|-> <log> <dir> <cmd
 
 servicios() {
   [ -x "$VENV/bin/python" ] || { log "falta $VENV: ejecuta primero sin --solo-servicios"; exit 1; }
+  # Ollama :11434 (solo localhost; modelos DeepSeek-R1 locales para LiteLLM). Opcional: si falla, sigue.
+  if [ -f "$REPO/scripts/start_ollama.sh" ]; then
+    if ! puerto_ocupado 11434; then bash "$REPO/scripts/start_ollama.sh" 2>&1 | sed 's/^/[ollama] /' || log "AVISO: Ollama no arrancado"; else log "Ollama: :11434 ya ocupado"; fi
+  fi
   # LiteLLM (opcional; usa su propio script, que carga las claves sin mostrarlas)
   limpiar_pid "$ROOT/litellm.pid" "litellm"
   if [ -x "$VENV/bin/litellm" ] && [ -f "$REPO/config/litellm.yaml" ]; then
@@ -173,14 +177,15 @@ verificar() {
   local fallos=0 url code i
   for url in http://127.0.0.1:8000/health http://127.0.0.1:8501/ http://127.0.0.1:8502/ \
              http://127.0.0.1:8080/ http://127.0.0.1:8010/health http://127.0.0.1:8510/ \
-             http://127.0.0.1:8520/api/v1/hybrix/l5/status http://127.0.0.1:4000/health/readiness; do
+             http://127.0.0.1:8520/api/v1/hybrix/l5/status http://127.0.0.1:4000/health/readiness \
+             http://127.0.0.1:11434/api/version; do
     code=000
     for i in $(seq 1 30); do
       code="$(curl -s -o /dev/null -m 5 -w '%{http_code}' "$url" || true)"
       [ "$code" = "200" ] && break; sleep 2
     done
     log "HTTP $code $url"
-    case "$url" in *:4000*) ;; *) [ "$code" = "200" ] || fallos=$((fallos+1));; esac
+    case "$url" in *:4000*|*:11434*) ;; *) [ "$code" = "200" ] || fallos=$((fallos+1));; esac
   done
   if pid_vivo_de "$ROOT/autopilot.pid" "app.autopilot"; then log "autopilot vivo (pid $(cat "$ROOT/autopilot.pid"))"; else log "autopilot NO vivo"; fallos=$((fallos+1)); fi
   log "fallos: $fallos"
